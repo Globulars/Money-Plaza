@@ -85,7 +85,6 @@ class LoanTagsListView extends ViewModelWidget<LoanViewModel> {
             ),
           ),
         ),
-        // verticalSpaceTiny,
         const Divider(
           color: Colors.black,
           height: 0,
