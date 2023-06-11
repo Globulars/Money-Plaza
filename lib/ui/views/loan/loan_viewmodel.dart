@@ -23,7 +23,7 @@ class LoanViewModel extends BaseViewModel {
   var formKey = GlobalKey<FormState>();
   Map<String, dynamic> loneMachBody = {};
   List<LoanCard> loanCardList = [];
-   InterestCalculator paymentTable=InterestCalculator();
+  InterestCalculator paymentTable = InterestCalculator();
 
   List<LoanTags> loanTagsList = [];
   List<String> features = [];
@@ -99,13 +99,12 @@ class LoanViewModel extends BaseViewModel {
   TextEditingController totalInterestCtrl = TextEditingController(text: "501");
 
   Future<InterestCalculator> recalculate() async {
-     Map<String, dynamic> body = {
+    Map<String, dynamic> body = {
       "amount": borrowingAmountCtrl.text,
-    "interestRate": interestCtrl.text,
-    "monthlyRepayment": monthlyPaymentCtrl.text
+      "interestRate": interestCtrl.text,
+      "monthlyRepayment": monthlyPaymentCtrl.text
     };
-    var data =
-        await _apiHelperService.postApi( _apiUrl.scheduleByLoan,body);
+    var data = await _apiHelperService.postApi(_apiUrl.scheduleByLoan, body);
     if (data?["success"] == true) {
       var dataList = data["data"];
       log(dataList.toString());

@@ -92,7 +92,6 @@ class CalculatorItems extends ViewModelWidget<LoanViewModel> {
             ],
           ),
           verticalSpaceTiny,
-          
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -116,14 +115,15 @@ class CalculatorItems extends ViewModelWidget<LoanViewModel> {
                         text: 'tenor',
                         fontSize: 12,
                         fontWeight: FontWeight.w500),
-                        verticalSpaceTiny,
+                    verticalSpaceTiny,
                     ReturnButton(
-           
-            text:  viewModel.paymentTable.dateOfLastPayment.toString(),
-            height: 40,
-            btmRightRadius: 5,
-            topLeftRadius: 5,topRightRadius: 5,btmLeftRadius: 5,
-          ),
+                      text: viewModel.paymentTable.dateOfLastPayment.toString(),
+                      height: 40,
+                      btmRightRadius: 5,
+                      topLeftRadius: 5,
+                      topRightRadius: 5,
+                      btmLeftRadius: 5,
+                    ),
                     // CustomTextField(
                     //   controller: viewModel.tenorCtrl,
                     //   hintText: '3 months',
@@ -136,14 +136,16 @@ class CalculatorItems extends ViewModelWidget<LoanViewModel> {
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
                     ),
-                          verticalSpaceTiny,
+                    verticalSpaceTiny,
                     ReturnButton(
-           
-            text:  viewModel.paymentTable.totalPaymentAmount.toString(),
-            height: 40,
-            btmRightRadius: 5,
-            topLeftRadius: 5,topRightRadius: 5,btmLeftRadius: 5,
-          ),
+                      text:
+                          viewModel.paymentTable.totalPaymentAmount.toString(),
+                      height: 40,
+                      btmRightRadius: 5,
+                      topLeftRadius: 5,
+                      topRightRadius: 5,
+                      btmLeftRadius: 5,
+                    ),
                     // CustomTextField(
                     //   controller: viewModel.totalPaymentAmountCtrl,
                     //   hintText: '\$78.397,93',
@@ -184,12 +186,14 @@ class CalculatorItems extends ViewModelWidget<LoanViewModel> {
                     ),
                     verticalSpaceTiny,
                     ReturnButton(
-           
-            text:  viewModel.paymentTable.totalInterestAmount.toString(),
-            height: 40,
-            btmRightRadius: 5,
-            topLeftRadius: 5,topRightRadius: 5,btmLeftRadius: 5,
-          ),
+                      text:
+                          viewModel.paymentTable.totalInterestAmount.toString(),
+                      height: 40,
+                      btmRightRadius: 5,
+                      topLeftRadius: 5,
+                      topRightRadius: 5,
+                      btmLeftRadius: 5,
+                    ),
                     // CustomTextField(
                     //   controller:
                     //   hintText: '\$28.397,93',

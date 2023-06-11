@@ -28,7 +28,7 @@ class ChangePasswordView extends StackedView<ChangePasswordViewModel> {
           backgroundColor: const Color.fromARGB(0, 92, 53, 53),
           appBar: appBar(context),
           body: Form(
-         key:   viewModel.formKey,
+            key: viewModel.formKey,
             child: Column(
               children: [
                 SubBar(

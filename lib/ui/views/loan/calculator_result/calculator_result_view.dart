@@ -89,9 +89,11 @@ class CalculatorResultView extends StackedView<LoanViewModel> {
                                   itemCount: viewModel.loanCardList.length,
                                   shrinkWrap: true,
                                   physics: const NeverScrollableScrollPhysics(),
-                                  itemBuilder: (BuildContext context, int index) {
+                                  itemBuilder:
+                                      (BuildContext context, int index) {
                                     return ResultCard(
-                                        loanData: viewModel.loanCardList[index]);
+                                        loanData:
+                                            viewModel.loanCardList[index]);
                                   },
                                 ),
                           verticalSpaceTiny,

@@ -170,7 +170,6 @@ class ApiUrl {
   // final Uri optionPropertyStatus = Uri.parse("$baseUrl/option/propertyStatus");
   // final Uri optionTenorListByCalculateMethod =
   //     Uri.parse("$baseUrl/option/tenorListByCalculateMethod");
-  
 
   ///////////////////////////////////////page Controller////////////////////////////////
   // final Uri pageGetByPath = Uri.parse("$baseUrl/page/getByPath");
