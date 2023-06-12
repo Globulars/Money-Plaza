@@ -4,7 +4,6 @@ import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
 import 'package:stacked/stacked.dart';
-
 import '../../../../widgets/common/custom_text_field/custom_text_field.dart';
 import '../../../../widgets/common/icon_box_btn/return_button.dart';
 import '../../../../widgets/common/icon_box_btn/submit_button.dart';
@@ -93,9 +92,7 @@ class CalculatorItems extends ViewModelWidget<LoanViewModel> {
             ],
           ),
           verticalSpaceTiny,
-           viewModel.paymentTable.schedules == null
-                  ? const SizedBox()
-                  :
+          
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -119,24 +116,40 @@ class CalculatorItems extends ViewModelWidget<LoanViewModel> {
                         text: 'tenor',
                         fontSize: 12,
                         fontWeight: FontWeight.w500),
-                    CustomTextField(
-                      controller: viewModel.tenorCtrl,
-                      hintText: '3 months',
-                      height: 40,
-                      textAlign: TextAlign.center,
-                    ),
+                        verticalSpaceTiny,
+                    ReturnButton(
+           
+            text:  viewModel.paymentTable.dateOfLastPayment.toString(),
+            height: 40,
+            btmRightRadius: 5,
+            topLeftRadius: 5,topRightRadius: 5,btmLeftRadius: 5,
+          ),
+                    // CustomTextField(
+                    //   controller: viewModel.tenorCtrl,
+                    //   hintText: '3 months',
+                    //   height: 40,
+                    //   textAlign: TextAlign.center,
+                    // ),
                     verticalSpaceTiny,
                     CustomText(
                       text: 'totalRepaymentAmount',
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
                     ),
-                    CustomTextField(
-                      controller: viewModel.totalPaymentAmountCtrl,
-                      hintText: '\$78.397,93',
-                      height: 40,
-                      textAlign: TextAlign.center,
-                    ),
+                          verticalSpaceTiny,
+                    ReturnButton(
+           
+            text:  viewModel.paymentTable.totalPaymentAmount.toString(),
+            height: 40,
+            btmRightRadius: 5,
+            topLeftRadius: 5,topRightRadius: 5,btmLeftRadius: 5,
+          ),
+                    // CustomTextField(
+                    //   controller: viewModel.totalPaymentAmountCtrl,
+                    //   hintText: '\$78.397,93',
+                    //   height: 40,
+                    //   textAlign: TextAlign.center,
+                    // ),
                   ],
                 ),
               ),
@@ -172,7 +185,7 @@ class CalculatorItems extends ViewModelWidget<LoanViewModel> {
                     verticalSpaceTiny,
                     ReturnButton(
            
-            text:  viewModel.totalInterestCtrl.toString(),
+            text:  viewModel.paymentTable.totalInterestAmount.toString(),
             height: 40,
             btmRightRadius: 5,
             topLeftRadius: 5,topRightRadius: 5,btmLeftRadius: 5,
