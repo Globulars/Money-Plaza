@@ -1,11 +1,7 @@
-// ignore_for_file: non_constant_identifier_names, prefer_const_literals_to_create_immutables, avoid_types_as_parameter_names
-
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
-
 import '../../../../common/ui_helpers.dart';
 import '../../../../widgets/common/dropdown_textfield/dropdown_textfield.dart';
-
 import '../personal_info_viewmodel.dart';
 
 class PersonalTabBar3 extends ViewModelWidget<PersonalInfoViewModel> {
