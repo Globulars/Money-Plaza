@@ -77,8 +77,7 @@ class ApiUrl {
   // final Uri checkIdSubmit = Uri.parse("$baseUrl/checkId/submit/");
 
   ///////////////////////////////////////company Controller////////////////////////////////
-  final String getCompaniesByType =
-      "$baseUrl/company/getCompaniesByType?type=";
+  final String getCompaniesByType = "$baseUrl/company/getCompaniesByType?type=";
 
   // final Uri companyGetCompaniesByType =
   //     Uri.parse("$baseUrl/company/getCompaniesByType");
@@ -125,7 +124,7 @@ class ApiUrl {
   /////////////////////////////////////Money Plaza Reward////////////////////////////////
   final Uri userReward = Uri.parse("$baseUrl/userReward/list");
   // final Uri menuList = Uri.parse("$baseUrl/menu/list");
-  
+
   /////////////////////////////////////menu Controller////////////////////////////////
   // final Uri menuGetTopMenus = Uri.parse("$baseUrl/menu/getTopMenus");
   // final Uri menuList = Uri.parse("$baseUrl/menu/list");
@@ -143,13 +142,13 @@ class ApiUrl {
 
   ///////////////////////////////////////option Controller////////////////////////////////
   ///
- final Uri selectCountries = Uri.parse("$baseUrl/option/countries");
- 
+  final Uri selectCountries = Uri.parse("$baseUrl/option/countries");
+
   // final Uri optionAreas = Uri.parse("$baseUrl/option/areas");
   // final Uri optionCarFactories = Uri.parse("$baseUrl/option/carFactories");
   // final Uri optionCarModelByCarFactory =
   //     Uri.parse("$baseUrl/option/carModelByCarFactory");
-  
+
   // final Uri optionDistricts = Uri.parse("$baseUrl/option/districts");
   // final Uri optionEducations = Uri.parse("$baseUrl/option/educations");
   // final Uri optionEmploymentTypes =

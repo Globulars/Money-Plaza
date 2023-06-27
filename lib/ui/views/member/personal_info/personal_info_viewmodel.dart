@@ -10,10 +10,8 @@ class PersonalInfoViewModel extends BaseViewModel {
   final ApiUrl _apiUrl = ApiUrl();
   TextEditingController firstNameCtrl = TextEditingController(text: "Mudassir");
   TextEditingController lastNameCtrl = TextEditingController(text: "Mukhtar");
-  TextEditingController emailCtrl =
-      TextEditingController();
-  TextEditingController contactNumCtrl =
-      TextEditingController();
+  TextEditingController emailCtrl = TextEditingController();
+  TextEditingController contactNumCtrl = TextEditingController();
   String dob = "";
   var gender = '';
   String doYouKnow = "Facebook";
@@ -25,9 +23,9 @@ class PersonalInfoViewModel extends BaseViewModel {
     "Mortgages",
     "Credit Cards",
     "Accounts",
-    "Insurances"  
+    "Insurances"
   ];
-   final intersetProductList = [
+  final intersetProductList = [
     "Loans",
     "Search Engine",
     "Friends",
@@ -55,11 +53,11 @@ class PersonalInfoViewModel extends BaseViewModel {
     doYouKnow = value;
     notifyListeners();
   }
+
   setIntersetProduct(value) {
     intersetProduct = value;
     notifyListeners();
   }
-   
 
   Future<List<SelectCountry>> countryNameListData() async {
     if (countryDataList.isEmpty) {

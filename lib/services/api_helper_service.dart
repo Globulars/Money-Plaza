@@ -8,10 +8,10 @@ class ApiHelperService {
     "content-type": "application/json"
   };
   /////////////////////////////////////Post////////////////////////////////
-  postApi(_url,body) async {
+  postApi(_url, body) async {
     try {
-      final response = await http.post(_url,
-          body: jsonEncode(body), headers: headers);
+      final response =
+          await http.post(_url, body: jsonEncode(body), headers: headers);
       if (response.statusCode == 200) {
         var data = json.decode(response.body);
         return data;
