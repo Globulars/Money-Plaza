@@ -20,10 +20,18 @@ class PersonalInfoViewModel extends BaseViewModel {
   String dob = "";
   var gender = '';
   String doYouKnow = "Facebook";
+  String intersetProduct = "Loans";
   SelectCountry? countryList;
   List<SelectCountry> countryDataList = [];
   final doYouKnowList = [
     "Facebook",
+    "Mortgages",
+    "Credit Cards",
+    "Accounts",
+    "Insurances"  
+  ];
+   final intersetProductList = [
+    "Loans",
     "Search Engine",
     "Friends",
     "Youtube",
@@ -48,6 +56,10 @@ class PersonalInfoViewModel extends BaseViewModel {
 
   setDoYouKnow(value) {
     doYouKnow = value;
+    notifyListeners();
+  }
+  setIntersetProduct(value) {
+    intersetProduct = value;
     notifyListeners();
   }
    

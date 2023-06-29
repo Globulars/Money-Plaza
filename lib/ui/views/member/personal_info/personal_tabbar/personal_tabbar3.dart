@@ -24,9 +24,10 @@ class PersonalTabBar3 extends ViewModelWidget<PersonalInfoViewModel> {
           children: [
             verticalSpaceSmall,
             DropdownTextfield(
-              onChanged: (String) {},
-              options: [],
+              onChanged: viewModel.setIntersetProduct,
+              options: viewModel.intersetProductList,
               titleText: 'interestedProducts2',
+              value: viewModel.intersetProduct,
             ),
             verticalSpaceLarge
           ],
