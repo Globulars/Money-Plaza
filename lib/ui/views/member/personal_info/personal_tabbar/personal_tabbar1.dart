@@ -107,9 +107,10 @@ class PersonalTabBar1 extends ViewModelWidget<PersonalInfoViewModel> {
 
             verticalSpaceSmall,
             DropdownTextfield(
-              onChanged: (String) {},
-              options: [],
+              onChanged: viewModel.setDoYouKnow,
+              options:viewModel.doYouKnowList,
               titleText: 'doyouknowMoneyPlaza',
+              value: viewModel.doYouKnow,
             ),
             verticalSpaceLarge
           ],

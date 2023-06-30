@@ -11,13 +11,21 @@ import '../../../../services/api_helper_service.dart';
 class PersonalInfoViewModel extends BaseViewModel {
   final _apiHelperService = locator<ApiHelperService>();
   final ApiUrl _apiUrl = ApiUrl();
-
   TextEditingController firstNameCtrl = TextEditingController(text: "Mudassir");
   TextEditingController lastNameCtrl = TextEditingController(text: "Mukhtar");
   String dob = "";
   var gender = '';
+  String doYouKnow = "Facebook";
   SelectCountry? countryList;
   List<SelectCountry> countryDataList = [];
+  final doYouKnowList = [
+    "Facebook",
+    "Search Engine",
+    "Friends",
+    "Youtube",
+    "Instragram",
+    "Others"
+  ];
 
   setGender(value) {
     gender = value;
@@ -33,6 +41,12 @@ class PersonalInfoViewModel extends BaseViewModel {
     countryList = value;
     notifyListeners();
   }
+
+  setDoYouKnow(value) {
+    doYouKnow = value;
+    notifyListeners();
+  }
+   
 
   Future<List<SelectCountry>> countryNameListData() async {
     log("==================>");
