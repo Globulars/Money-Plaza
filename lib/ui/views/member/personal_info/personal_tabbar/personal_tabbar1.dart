@@ -95,7 +95,7 @@ class PersonalTabBar1 extends ViewModelWidget<PersonalInfoViewModel> {
             viewModel.countryList!=null?
             ModelDropdown(
               onChanged: viewModel.setSelectCountry,
-              options: [],
+              options: viewModel.countryDataList,
               value: viewModel.countryList,
               titleText: 'nationality',
             ):
