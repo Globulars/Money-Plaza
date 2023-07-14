@@ -17,7 +17,7 @@ class StartupView extends StackedView<StartupViewModel> {
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
-          image: DecorationImage(image: AssetImage("assets/screens/splashSceenBgImage.png"))
+          image: DecorationImage(image: AssetImage("assets/screens/splashSceenBgImage.png"), fit: BoxFit.fill)
         ),
         child: const Center(
         child: Column(
