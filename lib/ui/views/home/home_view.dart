@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:money_plaza/ui/widgets/common/custom_text_field/custom_text_field.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
@@ -23,6 +24,7 @@ class HomeView extends StackedView<HomeViewModel> {
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                CustomTextField(),
                 verticalSpaceLarge,
                 Column(
                   children: [
