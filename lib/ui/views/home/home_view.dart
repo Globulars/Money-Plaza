@@ -4,6 +4,7 @@ import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
 
+import '../../widgets/common/icon_box_btn/icon_box_btn.dart';
 import 'home_viewmodel.dart';
 
 class HomeView extends StackedView<HomeViewModel> {
@@ -24,19 +25,14 @@ class HomeView extends StackedView<HomeViewModel> {
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                verticalSpaceLarge,
-
-
-
-                CustomTextField(
-                  titleText: "First Name",
-                  //  hintText: 'Name',
-                      // controller: v,
+                verticalSpaceSmall,
+             
+                IconBoxBtn(
+                  height: 100,
+                  width: 90,
+                  text: 'Loans',
                 ),
-
-
-
-                verticalSpaceLarge,
+                verticalSpaceSmall,
                 Column(
                   children: [
                     const Text(
@@ -46,7 +42,7 @@ class HomeView extends StackedView<HomeViewModel> {
                         fontWeight: FontWeight.w900,
                       ),
                     ),
-                    verticalSpaceMedium,
+                    verticalSpaceSmall,
                     MaterialButton(
                       color: Colors.black,
                       onPressed: viewModel.incrementCounter,
