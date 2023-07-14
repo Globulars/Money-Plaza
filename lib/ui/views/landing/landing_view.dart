@@ -19,9 +19,7 @@ class LandingView extends StackedView<LandingViewModel> {
         width: MediaQuery.of(context).size.width,
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/screens/mainbg.png"),
-            fit: BoxFit.fill
-          ),
+              image: AssetImage("assets/screens/mainbg.png"), fit: BoxFit.fill),
         ),
         child: Column(children: [
           Image.asset(

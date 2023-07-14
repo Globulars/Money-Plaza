@@ -34,7 +34,6 @@ class StartupView extends StackedView<StartupViewModel> {
                   strokeWidth: 6,
                 ),
               )
-
             ],
           ),
         ),

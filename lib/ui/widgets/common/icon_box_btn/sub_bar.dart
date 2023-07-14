@@ -19,7 +19,6 @@ class SubBar extends StackedView<IconBoxBtnModel> {
   FontWeight? fontWeight;
   String? image;
   bool divider;
-  
 
   SubBar(
       {super.key,
@@ -31,8 +30,7 @@ class SubBar extends StackedView<IconBoxBtnModel> {
       this.fontWeight,
       this.image,
       this.imgwidth,
-      this.divider=false
-      });
+      this.divider = false});
 
   @override
   Widget builder(
@@ -73,12 +71,16 @@ class SubBar extends StackedView<IconBoxBtnModel> {
                     fontSize: fontSize ?? 15,
                     fontWeight: fontWeight ?? FontWeight.w400),
               ),
-             
             ],
           ),
         ),
-       divider? const Divider(color: darkGreenHeigh, height: 0,thickness: 6,):Container(),
-         
+        divider
+            ? const Divider(
+                color: darkGreenHeigh,
+                height: 0,
+                thickness: 6,
+              )
+            : Container(),
       ],
     );
   }
