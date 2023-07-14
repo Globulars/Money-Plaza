@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:money_plaza/ui/widgets/common/app_bar.dart';
 import 'package:stacked/stacked.dart';
 
+import '../../widgets/app_bar.dart';
 import 'landing_viewmodel.dart';
 
 class LandingView extends StackedView<LandingViewModel> {
