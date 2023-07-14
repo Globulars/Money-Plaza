@@ -24,7 +24,18 @@ class HomeView extends StackedView<HomeViewModel> {
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                CustomTextField(),
+                verticalSpaceLarge,
+
+
+
+                CustomTextField(
+                  titleText: "First Name",
+                  //  hintText: 'Name',
+                      // controller: v,
+                ),
+
+
+
                 verticalSpaceLarge,
                 Column(
                   children: [
