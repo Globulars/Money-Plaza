@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:stacked/stacked.dart';
 
 import '../../../common/app_colors.dart';
@@ -39,6 +41,8 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
   String? hintText;
 
   String? titleText;
+
+  String? validationText;
 
   Widget? prefix;
 
@@ -78,6 +82,7 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
     this.maxLines,
     this.hintText,
     this.titleText,
+    this.validationText,
     this.prefix,
     this.prefixConstraints,
     this.suffix,
@@ -113,9 +118,14 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
       CustomTextFieldModel();
   _buildTextFormFieldWidget() {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(titleText.toString()),
+        Text(
+          titleText.toString(),
+          style: GoogleFonts.ibmPlexSans(
+              fontSize: 17, fontWeight: FontWeight.w500),
+        ),
+        verticalSpaceTiny,
         Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5),
@@ -139,7 +149,7 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
             initialValue: initialValue,
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Please enter some text';
+                return validationText ?? 'Please enter some text';
               }
               return null;
             },
@@ -188,8 +198,8 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
       borderRadius: BorderRadius.circular(
         10.00,
       ),
-      borderSide: BorderSide(
-          color:  darkGreenLight.withOpacity(0.7), width: 1.0),
+      borderSide:
+          BorderSide(color: darkGreenLight.withOpacity(0.8), width: 1.0),
     );
   }
 
