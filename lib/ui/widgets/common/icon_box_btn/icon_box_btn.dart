@@ -11,7 +11,7 @@ import 'icon_box_btn_model.dart';
 class IconBoxBtn extends StackedView<IconBoxBtnModel> {
   double? height;
   double? width;
-  double? imgheight;
+  // double? imgheight;
   double? imgwidth;
   String? text;
   Color? color;
@@ -19,7 +19,7 @@ class IconBoxBtn extends StackedView<IconBoxBtnModel> {
   FontWeight? fontWeight;
   String? image;
 
-  IconBoxBtn({super.key, this.color, this.height, this.text, this.width,this.fontSize,this.fontWeight,this.image,this.imgheight,this.imgwidth});
+  IconBoxBtn({super.key, this.color, this.height, this.text, this.width,this.fontSize,this.fontWeight,this.image,this.imgwidth});
 
   @override
   Widget builder(
@@ -31,7 +31,7 @@ class IconBoxBtn extends StackedView<IconBoxBtnModel> {
       height: height,
       width: width,
       decoration: BoxDecoration(
-          color: lightGreenHeigh, borderRadius: BorderRadius.circular(5)),
+          color: lightGreenHeigh, borderRadius: BorderRadius.circular(8)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,

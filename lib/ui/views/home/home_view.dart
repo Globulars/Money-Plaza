@@ -28,10 +28,10 @@ class HomeView extends StackedView<HomeViewModel> {
                 verticalSpaceSmall,
              
                 IconBoxBtn(
-                  height: 100,
-                  width: 90,
+                  height: 90,
+                  width: 80,
                   text: 'Loans',
-                  image: loans,
+                  image: loans,imgwidth: 30,
                 ),
                 verticalSpaceSmall,
                 Column(
