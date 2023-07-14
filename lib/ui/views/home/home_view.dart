@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:money_plaza/ui/widgets/common/custom_text_field/custom_text_field.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
 
+import '../../common/app_icons.dart';
 import '../../widgets/common/icon_box_btn/icon_box_btn.dart';
 import 'home_viewmodel.dart';
 
@@ -31,6 +31,7 @@ class HomeView extends StackedView<HomeViewModel> {
                   height: 100,
                   width: 90,
                   text: 'Loans',
+                  image: loans,
                 ),
                 verticalSpaceSmall,
                 Column(
