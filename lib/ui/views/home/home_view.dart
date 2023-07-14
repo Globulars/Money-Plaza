@@ -4,8 +4,7 @@ import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
 
 import '../../common/app_icons.dart';
-import '../../widgets/common/app_bar.dart';
-import '../../widgets/common/icon_box_btn/icon_box_btn.dart';
+import '../../widgets/common/icon_box_btn/sub_bar.dart';
 import 'home_viewmodel.dart';
 
 class HomeView extends StackedView<HomeViewModel> {
@@ -18,21 +17,20 @@ class HomeView extends StackedView<HomeViewModel> {
     Widget? child,
   ) {
     return Scaffold(
-      appBar: appBar(),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25.0),
+          padding: const EdgeInsets.symmetric(horizontal: 10.0),
           child: Center(
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 verticalSpaceSmall,
-                IconBoxBtn(
-                  height: 90,
-                  width: 80,
-                  text: 'Loans',
-                  image: loans,imgwidth: 30,
+                SubBar(
+                  height: 50,
+                  text: 'Settings',
+                  image: myIcons.loans,
+                  imgwidth: 30,
                 ),
                 verticalSpaceSmall,
                 Column(
