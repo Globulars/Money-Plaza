@@ -19,6 +19,7 @@ class SubBar extends StackedView<IconBoxBtnModel> {
   FontWeight? fontWeight;
   String? image;
   bool divider;
+  
 
   SubBar(
       {super.key,

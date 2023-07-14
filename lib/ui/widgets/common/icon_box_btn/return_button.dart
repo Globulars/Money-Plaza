@@ -5,7 +5,6 @@ import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:stacked/stacked.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../common/app_colors.dart';
-
 import 'icon_box_btn_model.dart';
 
 class ReturnButton extends StackedView<IconBoxBtnModel> {
@@ -17,8 +16,8 @@ class ReturnButton extends StackedView<IconBoxBtnModel> {
   Color? color;
   double? fontSize;
   FontWeight? fontWeight;
-  String? image;
-
+  String? imageLeft;
+  String? imageRight;
   ReturnButton({
     super.key,
     this.color,
@@ -27,7 +26,8 @@ class ReturnButton extends StackedView<IconBoxBtnModel> {
     this.width,
     this.fontSize,
     this.fontWeight,
-    this.image,
+    this.imageLeft,
+    this.imageRight,
     this.imgwidth,
   });
 
@@ -37,41 +37,49 @@ class ReturnButton extends StackedView<IconBoxBtnModel> {
     IconBoxBtnModel viewModel,
     Widget? child,
   ) {
-    return Column(
-      children: [
-        Container(
-          height: height,
-          width: width,
-          decoration: BoxDecoration(
-            border: Border.all(color: darkGreenLight,),
-               borderRadius: BorderRadius.circular(5)),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              image != null
-                  ? Row(
-                      children: [
-                        verticalSpaceSmall,
-                        Image.asset(
-                          image ?? "",
-                          width: imgwidth,
-                        )
-                      ],
-                    )
-                  : Container(),
-              horizontalSpaceTiny,
-              Text(
-                text ?? "",
-                style: GoogleFonts.ibmPlexSans(
-                    color: color ??darkGreenLight,
-                    fontSize: fontSize ?? 14,
-                    fontWeight: fontWeight ?? FontWeight.w400),
-              ),
-            ],
+    return Container(
+      height: height,
+      width: width,
+      decoration: BoxDecoration(
+          border: Border.all(
+            color: darkGreenLight,
           ),
-        ),
-      ],
+          borderRadius: BorderRadius.circular(5)),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          imageLeft != null
+              ? Row(
+                  children: [
+                    Image.asset(
+                      imageLeft ?? "",
+                      width: imgwidth,
+                    ),
+                    verticalSpaceSmall,
+                  ],
+                )
+              : Container(),
+          Text(
+            text ?? "",
+            style: GoogleFonts.ibmPlexSans(
+                color: color ?? darkGreenLight,
+                fontSize: fontSize ?? 14,
+                fontWeight: fontWeight ?? FontWeight.w400),
+          ),
+          imageRight != null
+              ? Row(
+                  children: [
+                    verticalSpaceSmall,
+                    Image.asset(
+                      imageRight ?? "",
+                      width: imgwidth,
+                    )
+                  ],
+                )
+              : Container(),
+        ],
+      ),
     );
   }
 
