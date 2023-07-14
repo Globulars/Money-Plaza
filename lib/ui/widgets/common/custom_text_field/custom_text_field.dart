@@ -6,7 +6,7 @@ import 'package:stacked/stacked.dart';
 
 import 'custom_text_field_model.dart';
 
-class CustomTextField extends ViewModelWidget<CustomTextFieldModel> {
+class CustomTextField extends StackedView<CustomTextFieldModel> {
   TextAlign? textAlign;
   List<TextInputFormatter>? inputFormaters;
   // WidgetShape? shape;
@@ -36,6 +36,8 @@ class CustomTextField extends ViewModelWidget<CustomTextFieldModel> {
   int? maxLines;
 
   String? hintText;
+
+  String? titleText;
 
   Widget? prefix;
 
@@ -74,6 +76,7 @@ class CustomTextField extends ViewModelWidget<CustomTextFieldModel> {
     this.textInputType = TextInputType.text,
     this.maxLines,
     this.hintText,
+    this.titleText,
     this.prefix,
     this.prefixConstraints,
     this.suffix,
@@ -89,9 +92,10 @@ class CustomTextField extends ViewModelWidget<CustomTextFieldModel> {
   });
 
   @override
-  Widget build(
+  Widget builder(
     BuildContext context,
     CustomTextFieldModel viewModel,
+    Widget? child,
   ) {
     return alignment != null
         ? Align(
@@ -101,35 +105,46 @@ class CustomTextField extends ViewModelWidget<CustomTextFieldModel> {
         : _buildTextFormFieldWidget();
   }
 
+  @override
+  CustomTextFieldModel viewModelBuilder(
+    BuildContext context,
+  ) =>
+      CustomTextFieldModel();
   _buildTextFormFieldWidget() {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: Colors.white,
-      ),
-      width: double.infinity,
-      margin: margin,
-      child: TextFormField(
-        onTap: onTap,
-        autovalidateMode: AutovalidateMode.onUserInteraction,
-        controller: controller,
-        focusNode: focusNode,
-        style: _setFontStyle(),
-        obscureText: isObscureText!,
-        textAlign: textAlign ?? TextAlign.start,
-        textInputAction: textInputAction,
-        keyboardType: textInputType,
-        inputFormatters: inputFormaters,
-        maxLines: maxLines ?? 1,
-        decoration: _buildDecoration(),
-        initialValue: initialValue,
-        validator: (value) {
-          if (value == null || value.isEmpty) {
-            return 'Please enter some text';
-          }
-          return null;
-        },
-      ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Text(titleText.toString()),
+        Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(5),
+            color: Colors.white,
+          ),
+          width: double.infinity,
+          margin: margin,
+          child: TextFormField(
+            onTap: onTap,
+            autovalidateMode: AutovalidateMode.onUserInteraction,
+            controller: controller,
+            focusNode: focusNode,
+            style: _setFontStyle(),
+            obscureText: isObscureText!,
+            textAlign: textAlign ?? TextAlign.start,
+            textInputAction: textInputAction,
+            keyboardType: textInputType,
+            inputFormatters: inputFormaters,
+            maxLines: maxLines ?? 1,
+            decoration: _buildDecoration(),
+            initialValue: initialValue,
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter some text';
+              }
+              return null;
+            },
+          ),
+        ),
+      ],
     );
   }
 
