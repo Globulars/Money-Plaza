@@ -20,12 +20,11 @@ static const String loader = 'assets/icons/Landing_icons/loader.png';
 static const String loans = 'assets/icons/Landing_icons/Loans.png';
 static const String moneyPlaza1 = 'assets/icons/Landing_icons/Money-Plaza.png';
 static const String morgages = 'assets/icons/Landing_icons/Morgages.png';
-static const String returnIcon = 'assets/icons/Landing_icons/return_icon.png';
+static const String returnIcon1 = 'assets/icons/Landing_icons/return_icon.png';
 static const String setting = 'assets/icons/Landing_icons/setting.png';
 static const String svg = 'assets/icons/Landing_icons/svg.png';
 
 //Loans Icons
-
 static const String aiMatching = 'assets/icons/loans-icons/A-I-matching.png';
 static const String apply = 'assets/icons/loans-icons/apply.png';
 static const String calculator = 'assets/icons/loans-icons/calculator.png';
@@ -47,6 +46,23 @@ static const String promise = 'assets/icons/loans-icons/promise.png';
 static const String ownerLoan = 'assets/icons/loans-icons/property-owner-loan.png';
 static const String weLend = 'assets/icons/loans-icons/we-lend.png';
 
+//Member Icons
+static const String returnIcon2 = 'assets/icons/member-icons/return_icon.png';
+static const String save = 'assets/icons/member-icons/save.png';
 
+//Morgages
+static const String groupPenc = 'assets/icons/Morgages/Group-penc.png';
+static const String group = 'assets/icons/Morgages/Group.png';
+static const String hSBC = 'assets/icons/Morgages/HSBC.png';
+
+//Register Logins Icons
+static const String charmSquareTick = 'assets/icons/register-login-icons/charm_square-tick.png';
+static const String facebookLogo = 'assets/icons/register-login-icons/facebook-logo.png';
+static const String iconPowerReset = 'assets/icons/register-login-icons/icons_power-reset.png';
+static const String logoGoogle = 'assets/icons/register-login-icons/logo_google.png';
+static const String memberLogin = 'assets/icons/register-login-icons/Member Login.png';
+static const String register = 'assets/icons/register-login-icons/Register.png';
+static const String resetPassword = 'assets/icons/register-login-icons/Reset-password.png';
+static const String sortDown= 'assets/icons/register-login-icons/Sort Down.png';
 
 }
