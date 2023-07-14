@@ -4,7 +4,9 @@ import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
 
 import '../../common/app_icons.dart';
+import '../../widgets/common/icon_box_btn/return_button.dart';
 import '../../widgets/common/icon_box_btn/sub_bar.dart';
+import '../../widgets/common/icon_box_btn/submit_button.dart';
 import 'home_viewmodel.dart';
 
 class HomeView extends StackedView<HomeViewModel> {
@@ -26,12 +28,15 @@ class HomeView extends StackedView<HomeViewModel> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 verticalSpaceSmall,
-                SubBar(
-                  height: 50,
-                  text: 'Settings',
-                  image: myIcons.loans,
-                  imgwidth: 30,
+                ReturnButton(
+                  height: 30,
+                  width: 85,
+                  text: 'Return',
+                  image: myIcons.returnIcon1,
+                  imgwidth: 15,
+             
                 ),
+                
                 verticalSpaceSmall,
                 Column(
                   children: [
