@@ -28,7 +28,6 @@ class HomeView extends StackedView<HomeViewModel> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 verticalSpaceSmall,
-             
                 IconBoxBtn(
                   height: 100,
                   width: 90,
