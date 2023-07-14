@@ -8,7 +8,7 @@ import '../../../common/app_colors.dart';
 
 import 'icon_box_btn_model.dart';
 
-class SubBar extends StackedView<IconBoxBtnModel> {
+class SubmitButton extends StackedView<IconBoxBtnModel> {
   double? height;
   double? width;
   // double? imgheight;
@@ -18,21 +18,18 @@ class SubBar extends StackedView<IconBoxBtnModel> {
   double? fontSize;
   FontWeight? fontWeight;
   String? image;
-  bool divider;
-  
 
-  SubBar(
-      {super.key,
-      this.color,
-      this.height,
-      this.text,
-      this.width,
-      this.fontSize,
-      this.fontWeight,
-      this.image,
-      this.imgwidth,
-      this.divider=false
-      });
+  SubmitButton({
+    super.key,
+    this.color,
+    this.height,
+    this.text,
+    this.width,
+    this.fontSize,
+    this.fontWeight,
+    this.image,
+    this.imgwidth,
+  });
 
   @override
   Widget builder(
@@ -44,12 +41,9 @@ class SubBar extends StackedView<IconBoxBtnModel> {
       children: [
         Container(
           height: height,
-          width: width ?? MediaQuery.of(context).size.width - 0,
+          width: width,
           decoration: BoxDecoration(
-              color: darkGreenHeigh, borderRadius: BorderRadius.circular(8)
-              //  BorderRadius.only(
-              //     topLeft: Radius.circular(8), topRight: Radius.circular(8))
-              ),
+              color: darkGreenLight, borderRadius: BorderRadius.circular(5)),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -70,15 +64,12 @@ class SubBar extends StackedView<IconBoxBtnModel> {
                 text ?? "",
                 style: GoogleFonts.ibmPlexSans(
                     color: color ?? Colors.white,
-                    fontSize: fontSize ?? 15,
+                    fontSize: fontSize ?? 14,
                     fontWeight: fontWeight ?? FontWeight.w400),
               ),
-             
             ],
           ),
         ),
-       divider? const Divider(color: darkGreenHeigh, height: 0,thickness: 6,):Container(),
-         
       ],
     );
   }
