@@ -14,8 +14,12 @@ class StartupView extends StackedView<StartupViewModel> {
     StartupViewModel viewModel,
     Widget? child,
   ) {
-    return const Scaffold(
-      body: Center(
+    return Scaffold(
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(image: AssetImage("assets/screens/splashSceenBgImage.png"))
+        ),
+        child: const Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -41,6 +45,8 @@ class StartupView extends StackedView<StartupViewModel> {
           ],
         ),
       ),
+      ),
+      
     );
   }
 
