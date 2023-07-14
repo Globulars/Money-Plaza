@@ -1,7 +1,7 @@
 class myIcons{
 
 // Credit Card Frames
-static const String creditCardFrame = 'assets/icons/credit-cards/Frame 230.png';
+static const String creditCardFrame = 'assets/icons/credit_cards/Frame 230.png';
 
 //Landing Icons/Contact_Icons
 static const String callLog = 'assets/icons/Landing_icons/contacts_icon/call log.png';
@@ -25,30 +25,30 @@ static const String setting = 'assets/icons/Landing_icons/setting.png';
 static const String svg = 'assets/icons/Landing_icons/svg.png';
 
 //Loans Icons
-static const String aiMatching = 'assets/icons/loans-icons/A-I-matching.png';
-static const String apply = 'assets/icons/loans-icons/apply.png';
-static const String calculator = 'assets/icons/loans-icons/calculator.png';
-static const String cilSortDecending = 'assets/icons/loans-icons/cil_sort-descending.png';
-static const String commericalLoan = 'assets/icons/loans-icons/commerical-loan.png';
-static const String compare1 = 'assets/icons/loans-icons/compare.png';
-static const String compare2 = 'assets/icons/loans-icons/compare2.png';
-static const String contactInfo = 'assets/icons/loans-icons/contact-info.png';
-static const String detail = 'assets/icons/loans-icons/detail.png';
-static const String done = 'assets/icons/loans-icons/done.png';
-static const String filter = 'assets/icons/loans-icons/filter.png';
-static const String balanceTrans = 'assets/icons/loans-icons/loan-balance-trans.png';
-static const String match = 'assets/icons/loans-icons/match.png';
-static const String moneyPlaza2 = 'assets/icons/loans-icons/money-plaza.png';
-static const String next = 'assets/icons/loans-icons/next.png';
-static const String personalLoans = 'assets/icons/loans-icons/personal-loans.png';
-static const String previous = 'assets/icons/loans-icons/pervious.png';
-static const String promise = 'assets/icons/loans-icons/promise.png';
-static const String ownerLoan = 'assets/icons/loans-icons/property-owner-loan.png';
-static const String weLend = 'assets/icons/loans-icons/we-lend.png';
+static const String aiMatching = 'assets/icons/loans_icons/A-I-matching.png';
+static const String apply = 'assets/icons/loans_icons/apply.png';
+static const String calculator = 'assets/icons/loans_icons/calculator.png';
+static const String cilSortDecending = 'assets/icons/loans_icons/cil_sort-descending.png';
+static const String commericalLoan = 'assets/icons/loans_icons/commerical-loan.png';
+static const String compare1 = 'assets/icons/loans_icons/compare.png';
+static const String compare2 = 'assets/icons/loans_icons/compare2.png';
+static const String contactInfo = 'assets/icons/loans_icons/contact-info.png';
+static const String detail = 'assets/icons/loans_icons/detail.png';
+static const String done = 'assets/icons/loans_icons/done.png';
+static const String filter = 'assets/icons/loans_icons/filter.png';
+static const String balanceTrans = 'assets/icons/loans_icons/loan-balance-trans.png';
+static const String match = 'assets/icons/loans_icons/match.png';
+static const String moneyPlaza2 = 'assets/icons/loans_icons/money-plaza.png';
+static const String next = 'assets/icons/loans_icons/next.png';
+static const String personalLoans = 'assets/icons/loans_icons/personal-loans.png';
+static const String previous = 'assets/icons/loans_icons/pervious.png';
+static const String promise = 'assets/icons/loans_icons/promise.png';
+static const String ownerLoan = 'assets/icons/loans_icons/property-owner-loan.png';
+static const String weLend = 'assets/icons/loans_icons/we-lend.png';
 
 //Member Icons
-static const String returnIcon2 = 'assets/icons/member-icons/return_icon.png';
-static const String save = 'assets/icons/member-icons/save.png';
+static const String returnIcon2 = 'assets/icons/member_icons/return_icon.png';
+static const String save = 'assets/icons/member_icons/save.png';
 
 //Morgages
 static const String groupPenc = 'assets/icons/Morgages/Group-penc.png';
@@ -56,13 +56,13 @@ static const String group = 'assets/icons/Morgages/Group.png';
 static const String hSBC = 'assets/icons/Morgages/HSBC.png';
 
 //Register Logins Icons
-static const String charmSquareTick = 'assets/icons/register-login-icons/charm_square-tick.png';
-static const String facebookLogo = 'assets/icons/register-login-icons/facebook-logo.png';
-static const String iconPowerReset = 'assets/icons/register-login-icons/icons_power-reset.png';
-static const String logoGoogle = 'assets/icons/register-login-icons/logo_google.png';
-static const String memberLogin = 'assets/icons/register-login-icons/Member Login.png';
-static const String register = 'assets/icons/register-login-icons/Register.png';
-static const String resetPassword = 'assets/icons/register-login-icons/Reset-password.png';
-static const String sortDown= 'assets/icons/register-login-icons/Sort Down.png';
+static const String charmSquareTick = 'assets/icons/register_login_icons/charm_square-tick.png';
+static const String facebookLogo = 'assets/icons/register_login_icons/facebook-logo.png';
+static const String iconPowerReset = 'assets/icons/register_login_icons/icons_power-reset.png';
+static const String logoGoogle = 'assets/icons/register_login_icons/logo_google.png';
+static const String memberLogin = 'assets/icons/register_login_icons/Member Login.png';
+static const String register = 'assets/icons/register_login_icons/Register.png';
+static const String resetPassword = 'assets/icons/register_login_icons/Reset-password.png';
+static const String sortDown= 'assets/icons/register_login_icons/Sort Down.png';
 
 }
