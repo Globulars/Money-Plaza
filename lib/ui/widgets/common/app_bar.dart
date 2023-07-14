@@ -4,10 +4,13 @@ import 'package:money_plaza/ui/common/app_icons.dart';
 
 AppBar appBar(menuFunction, settingFunction) {
   return AppBar(
-    title: Image.asset(myIcons.moneyPlaza1),
+    title: Image.asset(
+      myIcons.appbarTitle,
+    ),
+    centerTitle: true,
     actions: <Widget>[
       IconButton(
-        icon: Image.asset(myIcons.moneyPlaza1),
+        icon: Image.asset(myIcons.appbarSetting),
         tooltip: 'Setting Icon',
         onPressed: () {},
       ), //IconButton
@@ -16,7 +19,7 @@ AppBar appBar(menuFunction, settingFunction) {
     bottomOpacity: 0.0,
     elevation: 0.0,
     leading: IconButton(
-      icon: const Icon(Icons.menu),
+      icon: Image.asset(myIcons.appbarHome),
       tooltip: 'Menu Icon',
       onPressed: () {},
     ),
