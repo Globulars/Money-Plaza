@@ -37,6 +37,7 @@ dependencies:
   
   stacked: ^3.2.7
   stacked_services: ^1.0.0
+  google_fonts: ^5.1.0
 
 dev_dependencies:
   flutter_test:
