@@ -5,6 +5,7 @@ import 'package:money_plaza/ui/common/ui_helpers.dart';
 
 import '../../common/app_icons.dart';
 import '../../widgets/common/icon_box_btn/sub_bar.dart';
+import '../../widgets/common/my_tab_bar/my_tab_bar.dart';
 import 'home_viewmodel.dart';
 
 class HomeView extends StackedView<HomeViewModel> {
@@ -32,6 +33,7 @@ class HomeView extends StackedView<HomeViewModel> {
                   image: myIcons.loans,
                   imgwidth: 30,
                 ),
+                const SizedBox(height: 300, child: MyTabBar()),
                 verticalSpaceSmall,
                 Column(
                   children: [
