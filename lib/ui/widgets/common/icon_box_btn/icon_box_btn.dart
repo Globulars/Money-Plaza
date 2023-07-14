@@ -18,7 +18,16 @@ class IconBoxBtn extends StackedView<IconBoxBtnModel> {
   FontWeight? fontWeight;
   String? image;
 
-  IconBoxBtn({super.key, this.color, this.height, this.text, this.width,this.fontSize,this.fontWeight,this.image,this.imgwidth});
+  IconBoxBtn(
+      {super.key,
+      this.color,
+      this.height,
+      this.text,
+      this.width,
+      this.fontSize,
+      this.fontWeight,
+      this.image,
+      this.imgwidth});
 
   @override
   Widget builder(
@@ -35,19 +44,24 @@ class IconBoxBtn extends StackedView<IconBoxBtnModel> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(text ?? "",
-              style: GoogleFonts.ibmPlexSans(
-                  color: color ?? Colors.black,
-                  fontSize: fontSize ?? 12,
-                  fontWeight: fontWeight ?? FontWeight.w400
-                  
-                  ),),
-                 image != null? Column(
-                    children: [
-                      verticalSpaceTiny,
-                  Image.asset(image??"",width: imgwidth,)
-                    ],
-                  ):Container(),
+          Text(
+            text ?? "",
+            style: GoogleFonts.ibmPlexSans(
+                color: color ?? Colors.black,
+                fontSize: fontSize ?? 12,
+                fontWeight: fontWeight ?? FontWeight.w400),
+          ),
+          image != null
+              ? Column(
+                  children: [
+                    verticalSpaceTiny,
+                    Image.asset(
+                      image ?? "",
+                      width: imgwidth,
+                    )
+                  ],
+                )
+              : Container(),
         ],
       ),
     );

@@ -50,6 +50,7 @@ class SubBar extends StackedView<IconBoxBtnModel> {
               borderRadius:BorderRadius.circular(8)
              
                   ),
+
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
