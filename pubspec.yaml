@@ -69,7 +69,13 @@ flutter:
   assets:
     # - assets/icons/
     - assets/icons/Landing_icons/
-    - assets/images/
+    - assets/icons/loans-icons
+    - assets/icons/member-icons
+    - assets/icons/Morgages
+    - assets/icons/register-login-icons
+
+
+    # - assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
