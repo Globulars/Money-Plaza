@@ -42,6 +42,8 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
 
   String? titleText;
 
+  String? validationText;
+
   Widget? prefix;
 
   BoxConstraints? prefixConstraints;
@@ -80,6 +82,7 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
     this.maxLines,
     this.hintText,
     this.titleText,
+    this.validationText,
     this.prefix,
     this.prefixConstraints,
     this.suffix,
@@ -146,7 +149,7 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
             initialValue: initialValue,
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Please enter some text';
+                return validationText ?? 'Please enter some text';
               }
               return null;
             },
@@ -196,7 +199,7 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
         10.00,
       ),
       borderSide:
-          BorderSide(color: darkGreenLight.withOpacity(0.7), width: 1.0),
+          BorderSide(color: darkGreenLight.withOpacity(0.8), width: 1.0),
     );
   }
 
