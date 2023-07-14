@@ -5,7 +5,6 @@ import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:stacked/stacked.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../common/app_colors.dart';
-import '../../../common/app_icons.dart';
 import 'icon_box_btn_model.dart';
 
 class IconBoxBtn extends StackedView<IconBoxBtnModel> {
@@ -44,7 +43,7 @@ class IconBoxBtn extends StackedView<IconBoxBtnModel> {
                   
                   ),),
                   verticalSpaceTiny,
-                  Image.asset(loans,width: imgwidth,)
+                  // Image.asset(loans,width: imgwidth,)
         ],
       ),
     );

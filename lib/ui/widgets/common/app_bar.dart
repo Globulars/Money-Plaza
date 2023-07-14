@@ -1,23 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:money_plaza/ui/common/app_icons.dart';
 
-AppBar appBar() {
+AppBar appBar(menuFunction, settingFunction) {
   return AppBar(
-    title: const Text("GeeksforGeeks"),
+    title: Image.asset(myIcons.moneyPlaza1),
     actions: <Widget>[
       IconButton(
-        icon: const Icon(Icons.comment),
-        tooltip: 'Comment Icon',
-        onPressed: () {},
-      ), //IconButton
-      IconButton(
-        icon: const Icon(Icons.settings),
+        icon: Image.asset(myIcons.moneyPlaza1),
         tooltip: 'Setting Icon',
         onPressed: () {},
       ), //IconButton
     ], //<Widget>[]
-    backgroundColor: Colors.greenAccent[400],
-    elevation: 50.0,
+    backgroundColor: Colors.transparent,
+    bottomOpacity: 0.0,
+    elevation: 0.0,
     leading: IconButton(
       icon: const Icon(Icons.menu),
       tooltip: 'Menu Icon',

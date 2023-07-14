@@ -18,7 +18,7 @@ class HomeView extends StackedView<HomeViewModel> {
     Widget? child,
   ) {
     return Scaffold(
-      appBar: appBar(),
+      appBar: appBar( () {}, () {}),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -28,12 +28,12 @@ class HomeView extends StackedView<HomeViewModel> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 verticalSpaceSmall,
-                IconBoxBtn(
-                  height: 100,
-                  width: 90,
-                  text: 'Loans',
-                  image: loans,
-                ),
+                // IconBoxBtn(
+                //   height: 100,
+                //   width: 90,
+                //   text: 'Loans',
+                //   image: loans,
+                // ),
                 verticalSpaceSmall,
                 Column(
                   children: [
