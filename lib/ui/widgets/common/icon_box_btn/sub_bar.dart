@@ -45,12 +45,11 @@ class SubBar extends StackedView<IconBoxBtnModel> {
         Container(
           height: height,
           width: width ?? MediaQuery.of(context).size.width - 0,
-          decoration:  BoxDecoration(
-              color: darkGreenHeigh,
-              borderRadius:BorderRadius.circular(8)
-             
-                  ),
-
+          decoration: BoxDecoration(
+              color: darkGreenHeigh, borderRadius: BorderRadius.circular(8)
+              //  BorderRadius.only(
+              //     topLeft: Radius.circular(8), topRight: Radius.circular(8))
+              ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,

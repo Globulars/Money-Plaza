@@ -7,8 +7,8 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:flutter/material.dart' as _i5;
 import 'package:flutter/material.dart';
-import 'package:money_plaza/ui/views/auth_tab/auth_tab_view.dart' as _i4;
 import 'package:money_plaza/ui/views/home/home_view.dart' as _i2;
+import 'package:money_plaza/ui/views/landing/landing_view.dart' as _i4;
 import 'package:money_plaza/ui/views/startup/startup_view.dart' as _i3;
 import 'package:stacked/stacked.dart' as _i1;
 import 'package:stacked_services/stacked_services.dart' as _i6;
@@ -18,12 +18,12 @@ class Routes {
 
   static const startupView = '/startup-view';
 
-  static const authTabView = '/auth-tab-view';
+  static const landingView = '/landing-view';
 
   static const all = <String>{
     homeView,
     startupView,
-    authTabView,
+    landingView,
   };
 }
 
@@ -38,8 +38,8 @@ class StackedRouter extends _i1.RouterBase {
       page: _i3.StartupView,
     ),
     _i1.RouteDef(
-      Routes.authTabView,
-      page: _i4.AuthTabView,
+      Routes.landingView,
+      page: _i4.LandingView,
     ),
   ];
 
@@ -56,9 +56,9 @@ class StackedRouter extends _i1.RouterBase {
         settings: data,
       );
     },
-    _i4.AuthTabView: (data) {
+    _i4.LandingView: (data) {
       return _i5.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i4.AuthTabView(),
+        builder: (context) => const _i4.LandingView(),
         settings: data,
       );
     },
@@ -99,14 +99,14 @@ extension NavigatorStateExtension on _i6.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> navigateToAuthTabView([
+  Future<dynamic> navigateToLandingView([
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
   ]) async {
-    return navigateTo<dynamic>(Routes.authTabView,
+    return navigateTo<dynamic>(Routes.landingView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -141,14 +141,14 @@ extension NavigatorStateExtension on _i6.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> replaceWithAuthTabView([
+  Future<dynamic> replaceWithLandingView([
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
   ]) async {
-    return replaceWith<dynamic>(Routes.authTabView,
+    return replaceWith<dynamic>(Routes.landingView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
