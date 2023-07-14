@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:stacked/stacked.dart';
 
+import '../../../common/app_colors.dart';
 import 'custom_text_field_model.dart';
 
 class CustomTextField extends StackedView<CustomTextFieldModel> {
@@ -188,7 +189,7 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
         10.00,
       ),
       borderSide: BorderSide(
-          color: const Color(0xff4873a6).withOpacity(0.7), width: 1.0),
+          color:  darkGreenLight.withOpacity(0.7), width: 1.0),
     );
   }
 
