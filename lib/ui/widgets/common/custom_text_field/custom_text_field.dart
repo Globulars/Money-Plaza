@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:stacked/stacked.dart';
 
 import '../../../common/app_colors.dart';
@@ -113,9 +115,14 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
       CustomTextFieldModel();
   _buildTextFormFieldWidget() {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(titleText.toString()),
+        Text(
+          titleText.toString(),
+          style: GoogleFonts.ibmPlexSans(
+              fontSize: 17, fontWeight: FontWeight.w500),
+        ),
+        verticalSpaceTiny,
         Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5),
@@ -188,8 +195,8 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
       borderRadius: BorderRadius.circular(
         10.00,
       ),
-      borderSide: BorderSide(
-          color:  darkGreenLight.withOpacity(0.7), width: 1.0),
+      borderSide:
+          BorderSide(color: darkGreenLight.withOpacity(0.7), width: 1.0),
     );
   }
 
