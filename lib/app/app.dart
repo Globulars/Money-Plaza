@@ -4,13 +4,15 @@ import 'package:money_plaza/ui/views/home/home_view.dart';
 import 'package:money_plaza/ui/views/startup/startup_view.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
+import 'package:money_plaza/ui/views/landing/landing_view.dart';
 // @stacked-import
 
 @StackedApp(
   routes: [
     MaterialRoute(page: HomeView),
     MaterialRoute(page: StartupView),
-    // @stacked-route
+    MaterialRoute(page: LandingView),
+// @stacked-route
   ],
   dependencies: [
     LazySingleton(classType: BottomSheetService),
