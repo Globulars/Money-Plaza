@@ -13,6 +13,7 @@ class LoanView extends StackedView<LoanViewModel> {
     LoanViewModel viewModel,
     Widget? child,
   ) {
+    final width = MediaQuery.of(context).size.width;
     return Stack(
       children: [
           Container(
@@ -27,11 +28,20 @@ class LoanView extends StackedView<LoanViewModel> {
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: appBar((){},(){}),
-          body: Container(
-            padding: const EdgeInsets.only(left: 25.0, right: 25.0),
-            height: 40,
-            width: 50,
-            color: Colors.black,
+          body: SingleChildScrollView(
+            child: Column(
+              children: [
+                Container(
+                
+                  height: 100,
+                  width: width*1,
+                 decoration: const BoxDecoration(
+                  image: DecorationImage(image: AssetImage('assets/images/best_deals.jpg'),fit:BoxFit.fitWidth ),
+                 ),
+                 
+                ),
+              ],
+            ),
           ),
         ),
       ],
