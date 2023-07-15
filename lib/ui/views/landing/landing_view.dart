@@ -106,6 +106,18 @@ class LandingView extends StackedView<LandingViewModel> {
           ),
         ]),
       ),
+      bottomNavigationBar: Theme(
+        data: Theme.of(context).copyWith(
+            // sets the background color of the `BottomNavigationBar`
+            canvasColor: Colors.green,
+            // sets the active color of the `BottomNavigationBar` if `Brightness` is light
+            primaryColor: Colors.red,
+            textTheme: Theme.of(context).textTheme.copyWith(
+                caption: const TextStyle(
+                    color: Colors
+                        .yellow))), // sets the inactive color of the `BottomNavigationBar`
+        child: 
+      ),
     );
   }
 
