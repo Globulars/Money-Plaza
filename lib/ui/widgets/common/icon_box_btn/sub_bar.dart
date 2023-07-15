@@ -19,7 +19,10 @@ class SubBar extends StackedView<IconBoxBtnModel> {
   FontWeight? fontWeight;
   String? image;
   bool divider;
-  double? radius;
+  double? topLeftRadius;
+  double? topRightRadius;
+  double? btmLeftRadius;
+  double? btmRightRadius;
 
   SubBar(
       {super.key,
@@ -31,7 +34,10 @@ class SubBar extends StackedView<IconBoxBtnModel> {
       this.fontWeight,
       this.image,
       this.imgwidth,
-      this.radius,
+      this.topLeftRadius,
+      this.topRightRadius,
+      this.btmLeftRadius,
+      this.btmRightRadius,
       this.divider = false});
 
   @override
@@ -46,14 +52,18 @@ class SubBar extends StackedView<IconBoxBtnModel> {
           height: height,
           width: width ?? MediaQuery.of(context).size.width - 0,
           decoration: BoxDecoration(
-              color: darkGreenHeigh, borderRadius: BorderRadius.circular(radius??8)
-              //  BorderRadius.only(
-              //     topLeft: Radius.circular(8), topRight: Radius.circular(8))
-              ),
+            color: darkGreenHeigh,
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(topLeftRadius ?? 10),
+                topRight: Radius.circular(topRightRadius ?? 10),
+                bottomLeft: Radius.circular(btmLeftRadius ?? 10),
+                bottomRight: Radius.circular(btmRightRadius ?? 10)),
+          ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+
               image != null
                   ? Row(
                       children: [
@@ -73,7 +83,7 @@ class SubBar extends StackedView<IconBoxBtnModel> {
                     fontSize: fontSize ?? 15,
                     fontWeight: fontWeight ?? FontWeight.w400),
               ),
-
+              // Icon(Icons.)
             ],
           ),
         ),

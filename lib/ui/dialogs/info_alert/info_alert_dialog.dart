@@ -25,7 +25,7 @@ class InfoAlertDialog extends StackedView<InfoAlertDialogModel> {
     InfoAlertDialogModel viewModel,
     Widget? child,
   ) {
-    final width=MediaQuery.of(context).size.width;
+    final width = MediaQuery.of(context).size.width;
     return Dialog(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       backgroundColor: Colors.white,
@@ -33,7 +33,17 @@ class InfoAlertDialog extends StackedView<InfoAlertDialogModel> {
         padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
         child: Column(
           children: [
-            SubBar(height: 40,color: Colors.white,width:width*1 ,image:myIcons.filter ,text: 'Filter',fontSize: 16,fontWeight: FontWeight.w500,radius: 0,)
+            SubBar(
+              height: 40,
+              color: Colors.white,
+              width: width * 1,
+              image: myIcons.filter,
+              text: 'Filter',
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+              btmLeftRadius: 0,
+              btmRightRadius: 0,
+            )
           ],
         ),
       ),
