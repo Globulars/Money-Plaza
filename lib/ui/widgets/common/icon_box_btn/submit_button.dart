@@ -18,6 +18,7 @@ class SubmitButton extends StackedView<IconBoxBtnModel> {
   double? fontSize;
   FontWeight? fontWeight;
   String? image;
+  Color? boxColor;
 
   SubmitButton({
     super.key,
@@ -29,6 +30,7 @@ class SubmitButton extends StackedView<IconBoxBtnModel> {
     this.fontWeight,
     this.image,
     this.imgwidth,
+    this.boxColor,
   });
 
   @override
@@ -43,7 +45,8 @@ class SubmitButton extends StackedView<IconBoxBtnModel> {
           height: height,
           width: width,
           decoration: BoxDecoration(
-              color: darkGreenLight, borderRadius: BorderRadius.circular(5)),
+              color: boxColor ?? darkGreenLight,
+              borderRadius: BorderRadius.circular(5)),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,

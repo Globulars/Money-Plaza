@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
-
 import '../../common/app_icons.dart';
 import '../../widgets/common/icon_box_btn/return_button.dart';
 import '../../widgets/common/icon_box_btn/sub_bar.dart';
@@ -34,9 +33,8 @@ class HomeView extends StackedView<HomeViewModel> {
                   text: 'Return',
                   imageLeft: myIcons.returnIcon1,
                   imgwidth: 15,
-             
                 ),
-                                const SizedBox(height: 300, child: MyTabBar()),
+                const SizedBox(height: 300, child: MyTabBar()),
                 verticalSpaceSmall,
                 Column(
                   children: [
