@@ -21,7 +21,7 @@ class LoanView extends StackedView<LoanViewModel> {
     return Stack(
       children: [
         Container(
-          width: MediaQuery.of(context).size.width * 1,
+          width: width * 1,
           height: MediaQuery.of(context).size.height * 1,
           decoration: const BoxDecoration(
             image: DecorationImage(
