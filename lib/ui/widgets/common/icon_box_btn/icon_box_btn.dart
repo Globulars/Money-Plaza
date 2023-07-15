@@ -16,18 +16,23 @@ class IconBoxBtn extends StackedView<IconBoxBtnModel> {
   Color? color;
   double? fontSize;
   FontWeight? fontWeight;
-  String? image;
+  String? topimage;
+  String? btmimage;
+ Color? boxcolor;
 
   IconBoxBtn(
       {super.key,
       this.color,
+
       this.height,
       this.text,
       this.width,
       this.fontSize,
       this.fontWeight,
-      this.image,
-      this.imgwidth});
+      this.topimage,
+      this.imgwidth,
+      this.btmimage,
+      this.boxcolor});
 
   @override
   Widget builder(
@@ -39,24 +44,36 @@ class IconBoxBtn extends StackedView<IconBoxBtnModel> {
       height: height,
       width: width,
       decoration: BoxDecoration(
-          color: lightGreenHeigh, borderRadius: BorderRadius.circular(8)),
+          color:boxcolor??lightGreenHeigh, borderRadius: BorderRadius.circular(8)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(
-            text ?? "",
-            style: GoogleFonts.ibmPlexSans(
-                color: color ?? Colors.black,
-                fontSize: fontSize ?? 12,
-                fontWeight: fontWeight ?? FontWeight.w400),
-          ),
-          image != null
+          topimage != null
               ? Column(
                   children: [
                     verticalSpaceTiny,
                     Image.asset(
-                      image ?? "",
+                      topimage ?? "",
+                      width: imgwidth,
+                    )
+                  ],
+                )
+              : Container(),
+              verticalSpaceTiny,
+          Text(
+            text ?? "",
+            style: GoogleFonts.ibmPlexSans(
+                color: color ?? Colors.black,
+                fontSize: fontSize ?? 14,
+                fontWeight: fontWeight ?? FontWeight.w400),
+          ),
+          btmimage != null
+              ? Column(
+                  children: [
+                    verticalSpaceTiny,
+                    Image.asset(
+                      btmimage ?? "",
                       width: imgwidth,
                     )
                   ],

@@ -1,8 +1,6 @@
 class myIcons {
-
- //background image
- static const String backgroundimage =
-      "assets/screens/mainbg.png";
+  //background image
+  static const String backgroundimage = "assets/screens/mainbg.png";
 
 // Credit Card Frames
   static const String creditCardFrame =
