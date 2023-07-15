@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:money_plaza/ui/views/loan/screen1widgets/loan_card.dart';
 import 'package:money_plaza/ui/views/loan/screen1widgets/pic_container.dart';
 import 'package:stacked/stacked.dart';
@@ -30,15 +31,21 @@ class LoanView extends StackedView<LoanViewModel> {
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: appBar(() {}, () {}),
-          body: SingleChildScrollView(
+          body: const SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-               PicContainer(),
-               ContainerListView(),
-               LoanCard(),
+                PicContainer(),
+                ContainerListView(),
+                LoanCard(),
+                verticalSpaceLarge
               ],
             ),
+          ),
+          floatingActionButton: Row(
+            children: [
+              SizedBox(width: 500, child: Image.asset(myIcons.contacts))
+            ],
           ),
         ),
       ],

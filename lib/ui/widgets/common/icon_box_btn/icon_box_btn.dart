@@ -18,12 +18,11 @@ class IconBoxBtn extends StackedView<IconBoxBtnModel> {
   FontWeight? fontWeight;
   String? topimage;
   String? btmimage;
- Color? boxcolor;
+  Color? boxcolor;
 
   IconBoxBtn(
       {super.key,
       this.color,
-
       this.height,
       this.text,
       this.width,
@@ -44,7 +43,8 @@ class IconBoxBtn extends StackedView<IconBoxBtnModel> {
       height: height,
       width: width,
       decoration: BoxDecoration(
-          color:boxcolor??lightGreenHeigh, borderRadius: BorderRadius.circular(8)),
+          color: boxcolor ?? lightGreenHeigh,
+          borderRadius: BorderRadius.circular(8)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -60,7 +60,7 @@ class IconBoxBtn extends StackedView<IconBoxBtnModel> {
                   ],
                 )
               : Container(),
-              verticalSpaceTiny,
+          verticalSpaceTiny,
           Text(
             text ?? "",
             style: GoogleFonts.ibmPlexSans(

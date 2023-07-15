@@ -124,7 +124,7 @@ class ContainerListView extends ViewModelWidget<LoanViewModel> {
               height: 2.0,
               thickness: 1,
             ),
-            verticalSpaceMedium
+            verticalSpaceTiny,
           ],
         )
       ],
