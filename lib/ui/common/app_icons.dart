@@ -8,16 +8,16 @@ class myIcons {
 
 //Landing Icons/Contact_Icons
   static const String callLog =
-      'assets/icons/Landing_icons/contacts_icon/call log.png';
+      'assets/icons/Landing_icons/call log.png';
   static const String cancel =
-      'assets/icons/Landing_icons/contacts_icon/cancel.png';
+      'assets/icons/Landing_icons/cancel.png';
   static const String contacts =
-      'assets/icons/Landing_icons/contacts_icon/Contact.png';
+      'assets/icons/Landing_icons/Contact.png';
   static const String mail =
-      'assets/icons/Landing_icons/contacts_icon/mail.png';
+      'assets/icons/Landing_icons/mail.png';
   static const String tele =
-      'assets/icons/Landing_icons/contacts_icon/tele.png';
-  static const String wts = 'assets/icons/Landing_icons/contacts_icon/wts.png';
+      'assets/icons/Landing_icons/tele.png';
+  static const String wts = 'assets/icons/Landing_icons/wts.png';
 
 //Landing Icons
   static const String appbarHome = 'assets/icons/Landing_icons/appbar-home.png';

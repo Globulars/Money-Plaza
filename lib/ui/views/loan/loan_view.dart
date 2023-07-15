@@ -42,11 +42,13 @@ class LoanView extends StackedView<LoanViewModel> {
               ],
             ),
           ),
-          floatingActionButton: Row(
-            children: [
-              SizedBox(width: 500, child: Image.asset(myIcons.contacts))
-            ],
-          ),
+          // bottomNavigationBar: Row(
+          //   children: [
+          //    SizedBox(width: 500, child: Image.asset(myIcons.tele))
+          //    ],
+          //  ),
+       
+          
         ),
       ],
     );
