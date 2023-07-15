@@ -7,16 +7,11 @@ class myIcons {
       'assets/icons/credit_cards/Frame 230.png';
 
 //Landing Icons/Contact_Icons
-  static const String callLog =
-      'assets/icons/Landing_icons/call_log.png';
-  static const String cancel =
-      'assets/icons/Landing_icons/cancel.png';
-  static const String contacts =
-      'assets/icons/Landing_icons/contacts.png';
-  static const String mail =
-      'assets/icons/Landing_icons/mail.png';
-  static const String tele =
-      'assets/icons/Landing_icons/tele.png';
+  static const String callLog = 'assets/icons/Landing_icons/call_log.png';
+  static const String cancel = 'assets/icons/Landing_icons/cancel.png';
+  static const String contacts = 'assets/icons/Landing_icons/contacts.png';
+  static const String mail = 'assets/icons/Landing_icons/mail.png';
+  static const String tele = 'assets/icons/Landing_icons/tele.png';
   static const String wts = 'assets/icons/Landing_icons/wts.png';
 
 //Landing Icons
@@ -25,8 +20,7 @@ class myIcons {
       'assets/icons/Landing_icons/appbar-setting.png';
   static const String appbarTitle =
       'assets/icons/Landing_icons/appbar-title.png';
-      static const String creditCard =
-      'assets/icons/Landing_icons/credit_card.png';
+  static const String creditCard = 'assets/icons/Landing_icons/credit_card.png';
   static const String regularUser =
       'assets/icons/Landing_icons/fa-regular_user.png';
   static const String loader = 'assets/icons/Landing_icons/loader.png';

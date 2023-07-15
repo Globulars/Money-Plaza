@@ -1,4 +1,4 @@
- // Filter Dialog code
+// Filter Dialog code
 
 // Padding(
 //         padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
@@ -77,8 +77,7 @@
 //         ),
 //       ),
 
-
-// calculator dialog 
+// calculator dialog
 
 //  SingleChildScrollView(
 //         child: Padding(
@@ -116,11 +115,9 @@
 //                       ],
 //                     ),
 //                     verticalSpace(5),
-                     
-                    
+
 //                       ReturnButton(height: 40,text: 'Prepaaid Interest(Commerical Loans)',width: width*1,),
-                      
-                     
+
 //                      verticalSpaceTiny,
 //                      CustomText(text: 'Calculation Items',fontWeight: FontWeight.w600,),
 //                     verticalSpaceTiny,
@@ -133,18 +130,15 @@
 //                     ),
 //                     verticalSpace(5),
 //                      ReturnButton(height: 40,text: 'Monthly Repayment Amount',width: width*1,),
-                     
+
 //                     verticalSpaceTiny,
 //                      verticalSpaceTiny,CustomText(text: 'MonthlyRepayment Amount',fontWeight: FontWeight.w600,),
 //                       CustomTextField(hintText:'HK\$',height: 40,),
-                    
+
 //                      verticalSpaceTiny,
-//                      CustomText(text: 'Interest Rate',fontWeight: FontWeight.w500,),                   
+//                      CustomText(text: 'Interest Rate',fontWeight: FontWeight.w500,),
 //                      CustomTextField(hintText:'%',height: 40,),
-                  
-                    
-      
-      
+
 //                     verticalSpaceSmall,
 //                     Row(
 //                       mainAxisAlignment: MainAxisAlignment.spaceBetween,

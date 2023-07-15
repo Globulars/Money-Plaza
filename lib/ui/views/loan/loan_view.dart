@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
-import 'package:money_plaza/ui/views/loan/screen1widgets/loan_card.dart';
-import 'package:money_plaza/ui/views/loan/screen1widgets/pic_container.dart';
+import 'package:money_plaza/ui/views/loan/widgets_loan/loan_card.dart';
+import 'package:money_plaza/ui/views/loan/widgets_loan/pic_container.dart';
 import 'package:stacked/stacked.dart';
 import '../../common/app_icons.dart';
 import '../../widgets/app_bar.dart';
 import 'loan_viewmodel.dart';
-import 'screen1widgets/horizental_view.dart';
+import 'widgets_loan/horizental_view.dart';
 
 class LoanView extends StackedView<LoanViewModel> {
   const LoanView({Key? key}) : super(key: key);
@@ -43,14 +43,12 @@ class LoanView extends StackedView<LoanViewModel> {
             ),
           ),
           bottomNavigationBar: Container(
-            height: 60,
-            width: width*1,
-            child:
-               SizedBox(child: Image.asset(myIcons.contacts,))
-              
-          ),
-       
-          
+              height: 60,
+              width: width * 1,
+              child: SizedBox(
+                  child: Image.asset(
+                myIcons.contacts,
+              ))),
         ),
       ],
     );

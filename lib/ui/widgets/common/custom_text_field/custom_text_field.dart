@@ -123,11 +123,13 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-      titleText != null?  Text(
-          titleText.toString(),
-          style: GoogleFonts.ibmPlexSans(
-              fontSize: 17, fontWeight: FontWeight.w500),
-        ):Container(),
+        titleText != null
+            ? Text(
+                titleText.toString(),
+                style: GoogleFonts.ibmPlexSans(
+                    fontSize: 17, fontWeight: FontWeight.w500),
+              )
+            : Container(),
         verticalSpaceTiny,
         Container(
           decoration: BoxDecoration(
@@ -135,10 +137,9 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
             color: Colors.white,
           ),
           width: double.infinity,
-          height: height??40,
+          height: height ?? 40,
           margin: margin,
           child: TextFormField(
-            
             onTap: onTap,
             autovalidateMode: AutovalidateMode.onUserInteraction,
             controller: controller,

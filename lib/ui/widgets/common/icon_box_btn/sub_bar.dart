@@ -62,13 +62,13 @@ class SubBar extends StackedView<IconBoxBtnModel> {
                 bottomLeft: Radius.circular(btmLeftRadius ?? 10),
                 bottomRight: Radius.circular(btmRightRadius ?? 10)),
           ),
-          child: Row(mainAxisAlignment: MainAxisAlignment.center,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-
                   image != null
                       ? Row(
                           children: [
@@ -88,7 +88,6 @@ class SubBar extends StackedView<IconBoxBtnModel> {
                         fontSize: fontSize ?? 15,
                         fontWeight: fontWeight ?? FontWeight.w400),
                   ),
-                
                 ],
               ),
               //  Align(
