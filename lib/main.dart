@@ -6,6 +6,7 @@ import 'package:money_plaza/app/app.router.dart';
 import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:stacked_services/stacked_services.dart';
 
+
 void main() {
   setupLocator();
   setupDialogUi();
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
               bodyColor: Colors.black,
             ),
       ),
-      initialRoute: Routes.loanView,
+      initialRoute: Routes.homeView,
       onGenerateRoute: StackedRouter().onGenerateRoute,
       navigatorKey: StackedService.navigatorKey,
       navigatorObservers: [

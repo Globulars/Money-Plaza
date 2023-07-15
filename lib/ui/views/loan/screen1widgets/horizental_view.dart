@@ -43,14 +43,19 @@ class ContainerListView extends ViewModelWidget<LoanViewModel> {
                   topimage: myIcons.filter,
                   text: 'Filter',
                 ),
-                IconBoxBtn(
-                  height: 80,
-                  width: width * 0.24,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w500,
-                  boxcolor: darkGreenHeigh,
-                  topimage: myIcons.calculator,
-                  text: 'Calculator',
+                InkWell(
+                  onTap: () {
+                    // viewModel.navigateCalculatorDialog();
+                  },
+                  child: IconBoxBtn(
+                    height: 80,
+                    width: width * 0.24,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w500,
+                    boxcolor: darkGreenHeigh,
+                    topimage: myIcons.calculator,
+                    text: 'Calculator',
+                  ),
                 ),
                 IconBoxBtn(
                   height: 80,

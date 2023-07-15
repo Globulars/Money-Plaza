@@ -11,14 +11,19 @@ import 'icon_box_btn_model.dart';
 class SubBar extends StackedView<IconBoxBtnModel> {
   double? height;
   double? width;
-  // double? imgheight;
+  double? topimgwidth;
   double? imgwidth;
   String? text;
   Color? color;
   double? fontSize;
   FontWeight? fontWeight;
   String? image;
+  String? topimage;
   bool divider;
+  double? topLeftRadius;
+  double? topRightRadius;
+  double? btmLeftRadius;
+  double? btmRightRadius;
 
   SubBar(
       {super.key,
@@ -30,6 +35,12 @@ class SubBar extends StackedView<IconBoxBtnModel> {
       this.fontWeight,
       this.image,
       this.imgwidth,
+      this.topLeftRadius,
+      this.topRightRadius,
+      this.btmLeftRadius,
+      this.btmRightRadius,
+      this.topimage,
+      this.topimgwidth,
       this.divider = false});
 
   @override
@@ -44,33 +55,56 @@ class SubBar extends StackedView<IconBoxBtnModel> {
           height: height,
           width: width ?? MediaQuery.of(context).size.width - 0,
           decoration: BoxDecoration(
-              color: darkGreenHeigh, borderRadius: BorderRadius.circular(8)
-              //  BorderRadius.only(
-              //     topLeft: Radius.circular(8), topRight: Radius.circular(8))
-              ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
+            color: darkGreenHeigh,
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(topLeftRadius ?? 10),
+                topRight: Radius.circular(topRightRadius ?? 10),
+                bottomLeft: Radius.circular(btmLeftRadius ?? 10),
+                bottomRight: Radius.circular(btmRightRadius ?? 10)),
+          ),
+          child: Row(mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              image != null
-                  ? Row(
-                      children: [
-                        verticalSpaceSmall,
-                        Image.asset(
-                          image ?? "",
-                          width: imgwidth,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+
+                  image != null
+                      ? Row(
+                          children: [
+                            verticalSpaceSmall,
+                            Image.asset(
+                              image ?? "",
+                              width: imgwidth,
+                            )
+                          ],
                         )
-                      ],
-                    )
-                  : Container(),
-              horizontalSpaceTiny,
-              Text(
-                text ?? "",
-                style: GoogleFonts.ibmPlexSans(
-                    color: color ?? Colors.white,
-                    fontSize: fontSize ?? 15,
-                    fontWeight: fontWeight ?? FontWeight.w400),
+                      : Container(),
+                  horizontalSpaceTiny,
+                  Text(
+                    text ?? "",
+                    style: GoogleFonts.ibmPlexSans(
+                        color: color ?? Colors.white,
+                        fontSize: fontSize ?? 15,
+                        fontWeight: fontWeight ?? FontWeight.w400),
+                  ),
+                
+                ],
               ),
+              //  Align(
+              //              alignment: Alignment.topRight,
+              //  child: topimage != null
+              //       ? Row(
+              //           children: [
+              //             verticalSpaceSmall,
+              //             Image.asset(
+              //               topimage ?? "",
+              //               width: topimgwidth,
+              //             )
+              //           ],
+              //         )
+              //       : Container(),
+              //             ),
             ],
           ),
         ),
