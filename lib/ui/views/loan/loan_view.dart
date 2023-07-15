@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
-import 'package:money_plaza/ui/views/loan/widgets_loan/loan_card.dart';
-import 'package:money_plaza/ui/views/loan/widgets_loan/pic_container.dart';
+import 'package:money_plaza/ui/views/loan/loan_view_widgets/loan_card.dart';
+import 'package:money_plaza/ui/views/loan/loan_view_widgets/pic_container.dart';
 import 'package:stacked/stacked.dart';
 import '../../common/app_icons.dart';
 import '../../widgets/app_bar.dart';
 import 'loan_viewmodel.dart';
-import 'widgets_loan/horizental_view.dart';
+import 'loan_view_widgets/horizental_view.dart';
 
 class LoanView extends StackedView<LoanViewModel> {
   const LoanView({Key? key}) : super(key: key);

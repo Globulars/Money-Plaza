@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
-
+import 'package:money_plaza/ui/common/app_icons.dart';
+import '../../../common/ui_helpers.dart';
+import '../../../widgets/app_bar.dart';
+import '../../../widgets/common/icon_box_btn/text.dart';
+import 'calculator_widgets/btn_listview.dart';
 import 'calculator_result_viewmodel.dart';
+import 'calculator_widgets/calculator_card.dart';
 
 class CalculatorResultView extends StackedView<CalculatorResultViewModel> {
   const CalculatorResultView({Key? key}) : super(key: key);
@@ -12,11 +17,58 @@ class CalculatorResultView extends StackedView<CalculatorResultViewModel> {
     CalculatorResultViewModel viewModel,
     Widget? child,
   ) {
-    return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
-      body: Container(
-        padding: const EdgeInsets.only(left: 25.0, right: 25.0),
-      ),
+    final width = MediaQuery.of(context).size.width;
+    return Stack(
+      children: [
+        Container(
+          width: width * 1,
+          height: MediaQuery.of(context).size.height * 1,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage(myIcons.backgroundimage), fit: BoxFit.fill),
+          ),
+        ),
+        Scaffold(
+          backgroundColor: Colors.transparent,
+          appBar: appBar(() {}, () {}),
+          body: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const BtnListView(),
+                verticalSpaceTiny,
+                CustomText(
+                  text: 'Our Recommendation',
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700,
+                ),
+                verticalSpaceTiny,
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: CustomText(
+                    text:
+                        '*This calculation is based on our experience for experience only.The final offer depends on the insltitution and the credit situation of borrower.',
+                    color: Colors.black,
+                    textAlign: TextAlign.center,
+                    fontSize: 10,
+                  ),
+                ),
+                const CalculatorCard()
+                // LoanCard(),
+                // verticalSpaceLarge
+              ],
+            ),
+          ),
+          bottomNavigationBar: Container(
+              height: 60,
+              width: width * 1,
+              child: SizedBox(
+                  child: Image.asset(
+                myIcons.contacts,
+              ))),
+        ),
+      ],
     );
   }
 

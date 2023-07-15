@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
               bodyColor: Colors.black,
             ),
       ),
-      initialRoute: Routes.homeView,
+      initialRoute: Routes.loanView,
       onGenerateRoute: StackedRouter().onGenerateRoute,
       navigatorKey: StackedService.navigatorKey,
       navigatorObservers: [
@@ -37,3 +37,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
+// import 'package:money_plaza/ui/common/app_icons.dart';

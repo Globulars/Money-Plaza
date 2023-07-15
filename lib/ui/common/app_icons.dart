@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 class myIcons {
   //background image
   static const String backgroundimage = "assets/screens/mainbg.png";
