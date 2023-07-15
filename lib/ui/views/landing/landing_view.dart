@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
+import 'package:money_plaza/ui/widgets/bottom_bar.dart';
+import 'package:money_plaza/ui/widgets/common/icon_box_btn/return_button.dart';
 import 'package:stacked/stacked.dart';
 
 import '../../widgets/app_bar.dart';
@@ -106,18 +108,7 @@ class LandingView extends StackedView<LandingViewModel> {
           ),
         ]),
       ),
-      bottomNavigationBar: Theme(
-        data: Theme.of(context).copyWith(
-            // sets the background color of the `BottomNavigationBar`
-            canvasColor: Colors.green,
-            // sets the active color of the `BottomNavigationBar` if `Brightness` is light
-            primaryColor: Colors.red,
-            textTheme: Theme.of(context).textTheme.copyWith(
-                caption: const TextStyle(
-                    color: Colors
-                        .yellow))), // sets the inactive color of the `BottomNavigationBar`
-        child: 
-      ),
+      bottomNavigationBar: bottomBar(ReturnButton(text: "Return",imageLeft: myIcons.returnIcon1,))
     );
   }
 
