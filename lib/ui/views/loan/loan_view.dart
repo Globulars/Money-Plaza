@@ -43,12 +43,11 @@ class LoanView extends StackedView<LoanViewModel> {
             ),
           ),
           bottomNavigationBar: Container(
+            height: 60,
             width: width*1,
-            child: Row(
-              children: [
+            child:
                SizedBox(child: Image.asset(myIcons.contacts,))
-               ],
-             ),
+              
           ),
        
           
