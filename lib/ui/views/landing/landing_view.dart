@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:money_plaza/ui/common/app_colors.dart';
+import 'package:money_plaza/ui/common/app_icons.dart';
+import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:stacked/stacked.dart';
 
 import '../../widgets/app_bar.dart';
+import '../../widgets/common/icon_box_btn/icon_box_btn.dart';
 import 'landing_viewmodel.dart';
 
 class LandingView extends StackedView<LandingViewModel> {
@@ -25,7 +29,80 @@ class LandingView extends StackedView<LandingViewModel> {
           Image.asset(
             "assets/screens/landing/cover_image.png",
             fit: BoxFit.fill,
-            height: 150,
+            height: 180,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(30.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    IconBoxBtn(
+                      height: 110,
+                      width: 120,
+                      color: kcDarkGreyColor,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      text: "Loans",
+                      image: myIcons.loans,
+                      imgwidth: 50,
+                    ),
+                    horizontalSpaceSmall,
+                    IconBoxBtn(
+                      height: 110,
+                      width: 120,
+                      color: kcDarkGreyColor,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      text: "Morgages",
+                      image: myIcons.morgages,
+                      imgwidth: 50,
+                    ),
+                  ],
+                ),
+                verticalSpaceSmall,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    IconBoxBtn(
+                      height: 110,
+                      width: 120,
+                      color: kcDarkGreyColor,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      text: "Insurances",
+                      image: myIcons.svg,
+                      imgwidth: 50,
+                    ),
+                    horizontalSpaceSmall,
+                    IconBoxBtn(
+                      height: 110,
+                      width: 120,
+                      color: kcDarkGreyColor,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      text: "Credit Cards",
+                      image: myIcons.creditCard,
+                      imgwidth: 50,
+                    ),
+                  ],
+                ),
+                verticalSpaceSmall,
+                IconBoxBtn(
+                  height: 110,
+                  width: 120,
+                  color: kcDarkGreyColor,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  text: "Sign Up/Login",
+                  image: myIcons.regularUser,
+                  imgwidth: 50,
+                ),
+              ],
+            ),
           ),
         ]),
       ),

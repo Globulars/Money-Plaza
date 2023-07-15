@@ -25,6 +25,8 @@ class myIcons {
       'assets/icons/Landing_icons/appbar-setting.png';
   static const String appbarTitle =
       'assets/icons/Landing_icons/appbar-title.png';
+      static const String creditCard =
+      'assets/icons/Landing_icons/credit_card.png';
   static const String regularUser =
       'assets/icons/Landing_icons/fa-regular_user.png';
   static const String loader = 'assets/icons/Landing_icons/loader.png';
