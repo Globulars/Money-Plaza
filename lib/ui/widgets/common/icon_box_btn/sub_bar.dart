@@ -11,13 +11,14 @@ import 'icon_box_btn_model.dart';
 class SubBar extends StackedView<IconBoxBtnModel> {
   double? height;
   double? width;
-  // double? imgheight;
+  double? topimgwidth;
   double? imgwidth;
   String? text;
   Color? color;
   double? fontSize;
   FontWeight? fontWeight;
   String? image;
+  String? topimage;
   bool divider;
   double? topLeftRadius;
   double? topRightRadius;
@@ -38,6 +39,8 @@ class SubBar extends StackedView<IconBoxBtnModel> {
       this.topRightRadius,
       this.btmLeftRadius,
       this.btmRightRadius,
+      this.topimage,
+      this.topimgwidth,
       this.divider = false});
 
   @override
@@ -59,31 +62,49 @@ class SubBar extends StackedView<IconBoxBtnModel> {
                 bottomLeft: Radius.circular(btmLeftRadius ?? 10),
                 bottomRight: Radius.circular(btmRightRadius ?? 10)),
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
+          child: Row(mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
 
-              image != null
-                  ? Row(
-                      children: [
-                        verticalSpaceSmall,
-                        Image.asset(
-                          image ?? "",
-                          width: imgwidth,
+                  image != null
+                      ? Row(
+                          children: [
+                            verticalSpaceSmall,
+                            Image.asset(
+                              image ?? "",
+                              width: imgwidth,
+                            )
+                          ],
                         )
-                      ],
-                    )
-                  : Container(),
-              horizontalSpaceTiny,
-              Text(
-                text ?? "",
-                style: GoogleFonts.ibmPlexSans(
-                    color: color ?? Colors.white,
-                    fontSize: fontSize ?? 15,
-                    fontWeight: fontWeight ?? FontWeight.w400),
+                      : Container(),
+                  horizontalSpaceTiny,
+                  Text(
+                    text ?? "",
+                    style: GoogleFonts.ibmPlexSans(
+                        color: color ?? Colors.white,
+                        fontSize: fontSize ?? 15,
+                        fontWeight: fontWeight ?? FontWeight.w400),
+                  ),
+                
+                ],
               ),
-              // Icon(Icons.)
+              //  Align(
+              //              alignment: Alignment.topRight,
+              //  child: topimage != null
+              //       ? Row(
+              //           children: [
+              //             verticalSpaceSmall,
+              //             Image.asset(
+              //               topimage ?? "",
+              //               width: topimgwidth,
+              //             )
+              //           ],
+              //         )
+              //       : Container(),
+              //             ),
             ],
           ),
         ),

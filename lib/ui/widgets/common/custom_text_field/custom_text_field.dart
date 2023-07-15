@@ -24,6 +24,8 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
 
   double? width;
 
+  double? height;
+
   EdgeInsetsGeometry? margin;
 
   TextEditingController? controller;
@@ -73,6 +75,7 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
     // this.fontStyle,
     this.alignment,
     this.width,
+    this.height,
     this.margin,
     this.controller,
     this.focusNode,
@@ -120,11 +123,11 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
+      titleText != null?  Text(
           titleText.toString(),
           style: GoogleFonts.ibmPlexSans(
               fontSize: 17, fontWeight: FontWeight.w500),
-        ),
+        ):Container(),
         verticalSpaceTiny,
         Container(
           decoration: BoxDecoration(
@@ -132,8 +135,10 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
             color: Colors.white,
           ),
           width: double.infinity,
+          height: height??40,
           margin: margin,
           child: TextFormField(
+            
             onTap: onTap,
             autovalidateMode: AutovalidateMode.onUserInteraction,
             controller: controller,
@@ -189,14 +194,14 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
   // ignore: unused_element
   _setOutlineBorderRadius() {
     return BorderRadius.circular(
-      10.00,
+      5.00,
     );
   }
 
   _setBorderStyle() {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(
-        10.00,
+        5.00,
       ),
       borderSide:
           BorderSide(color: darkGreenLight.withOpacity(0.8), width: 1.0),
