@@ -8,6 +8,7 @@ import 'calculator_widgets/btn_listview.dart';
 import 'calculator_result_viewmodel.dart';
 import 'calculator_widgets/calc_items.dart';
 import 'calculator_widgets/calculator_card.dart';
+import 'calculator_widgets/data_table.dart';
 
 class CalculatorResultView extends StackedView<CalculatorResultViewModel> {
   const CalculatorResultView({Key? key}) : super(key: key);
@@ -58,7 +59,7 @@ class CalculatorResultView extends StackedView<CalculatorResultViewModel> {
                 const CalculatorCard(),
                 verticalSpaceTiny,
                 const CalculatorItems(),
-                // LoanCard(),
+                const CalDataTable(),
                 verticalSpaceLarge
               ],
             ),
