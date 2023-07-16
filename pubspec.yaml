@@ -70,6 +70,7 @@ flutter:
     # - assets/icons/
     - assets/screens/
     - assets/icons/Landing_icons/
+    - assets/icons/Landing_icons/contacts_icon/
     - assets/icons/loans_icons/
     - assets/icons/member_icons/
     - assets/icons/Morgages/
