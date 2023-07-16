@@ -44,7 +44,7 @@ class DropdownTextfield extends StackedView<DropdownTextfieldModel> {
         Text(
           titleText.toString(),
           style: GoogleFonts.ibmPlexSans(
-              fontSize: 17, fontWeight: FontWeight.w500),
+              fontSize: 14, fontWeight: FontWeight.w500),
         ),
         verticalSpaceTiny,
         FormField<String>(
@@ -88,7 +88,7 @@ class DropdownTextfield extends StackedView<DropdownTextfieldModel> {
   _setBorderStyle() {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(
-        10.00,
+        5.00,
       ),
       borderSide:
           BorderSide(color: darkGreenLight.withOpacity(0.8), width: 1.0),
