@@ -13,7 +13,6 @@ class CalDataTable extends ViewModelWidget<CalculatorResultViewModel> {
     BuildContext context,
     CalculatorResultViewModel viewModel,
   ) {
-    final width = MediaQuery.of(context).size.width;
     return SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: DataTable(
