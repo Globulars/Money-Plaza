@@ -39,6 +39,8 @@ class myIcons {
   static const String aiMatching = 'assets/icons/loans_icons/A-I-matching.png';
   static const String apply = 'assets/icons/loans_icons/apply.png';
   static const String calculator = 'assets/icons/loans_icons/calculator.png';
+  static const String greenCalculator =
+      'assets/icons/loans_icons/green_calculator.png';
   static const String cilSortDecending =
       'assets/icons/loans_icons/cil_sort-descending.png';
   static const String commericalLoan =

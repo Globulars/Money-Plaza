@@ -6,6 +6,7 @@ import '../../../widgets/app_bar.dart';
 import '../../../widgets/common/icon_box_btn/text.dart';
 import 'calculator_widgets/btn_listview.dart';
 import 'calculator_result_viewmodel.dart';
+import 'calculator_widgets/calc_items.dart';
 import 'calculator_widgets/calculator_card.dart';
 
 class CalculatorResultView extends StackedView<CalculatorResultViewModel> {
@@ -54,9 +55,11 @@ class CalculatorResultView extends StackedView<CalculatorResultViewModel> {
                     fontSize: 10,
                   ),
                 ),
-                const CalculatorCard()
+                const CalculatorCard(),
+                verticalSpaceTiny,
+                const CalculatorItems(),
                 // LoanCard(),
-                // verticalSpaceLarge
+                verticalSpaceLarge
               ],
             ),
           ),
