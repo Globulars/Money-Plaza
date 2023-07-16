@@ -127,7 +127,7 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
             ? Text(
                 titleText.toString(),
                 style: GoogleFonts.ibmPlexSans(
-                    fontSize: 17, fontWeight: FontWeight.w500),
+                    fontSize: 14, fontWeight: FontWeight.w500),
               )
             : Container(),
         verticalSpaceTiny,

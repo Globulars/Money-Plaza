@@ -47,7 +47,8 @@ class MyTabBar extends StackedView<MyTabBarModel> {
             // Icon(Icons.directions_boat, size: 350),
           ],
         ),
-      )),
+      )
+      ),
     );
   }
 

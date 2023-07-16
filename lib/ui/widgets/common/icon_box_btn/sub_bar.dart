@@ -24,6 +24,7 @@ class SubBar extends StackedView<IconBoxBtnModel> {
   double? topRightRadius;
   double? btmLeftRadius;
   double? btmRightRadius;
+  double? scale;
 
   SubBar(
       {super.key,
@@ -41,7 +42,8 @@ class SubBar extends StackedView<IconBoxBtnModel> {
       this.btmRightRadius,
       this.topimage,
       this.topimgwidth,
-      this.divider = false});
+      this.divider = false,
+      this.scale});
 
   @override
   Widget builder(
@@ -53,7 +55,7 @@ class SubBar extends StackedView<IconBoxBtnModel> {
       children: [
         Container(
           height: height,
-          width: width ?? MediaQuery.of(context).size.width - 0,
+          width: width ?? MediaQuery.of(context).size.width * 1 - 10,
           decoration: BoxDecoration(
             color: darkGreenHeigh,
             borderRadius: BorderRadius.only(
@@ -76,6 +78,7 @@ class SubBar extends StackedView<IconBoxBtnModel> {
                             Image.asset(
                               image ?? "",
                               width: imgwidth,
+                              scale: scale,
                             )
                           ],
                         )

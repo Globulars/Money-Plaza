@@ -37,10 +37,10 @@ class LoancompareView extends StackedView<LoancompareViewModel> {
               topBar(context),
               verticalSpaceTiny,
               const PromiseLand(),
-              Expanded(
+              const Expanded(
                 child: SingleChildScrollView(
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                    padding: EdgeInsets.symmetric(horizontal: 8),
                     child: Column(
                       children: [
                         HeadBtmText(),
@@ -49,9 +49,6 @@ class LoancompareView extends StackedView<LoancompareViewModel> {
                   ),
                 ),
               ),
-              // PicContainer(),
-              // ContainerListView(),
-              // LoanCard(),
               verticalSpaceLarge
             ],
           ),
