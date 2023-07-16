@@ -5,18 +5,21 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:flutter/material.dart' as _i9;
+import 'package:flutter/material.dart' as _i10;
 import 'package:flutter/material.dart';
+import 'package:money_plaza/ui/views/loan/applyconfirm/applyconfirm_view.dart'
+    as _i9;
 import 'package:money_plaza/ui/views/auth_tab/auth_tab_view.dart' as _i5;
 import 'package:money_plaza/ui/views/home/home_view.dart' as _i2;
 import 'package:money_plaza/ui/views/landing/landing_view.dart' as _i4;
 import 'package:money_plaza/ui/views/loan/calculator_result/calculator_result_view.dart'
     as _i7;
 import 'package:money_plaza/ui/views/loan/loan_view.dart' as _i6;
-import 'package:money_plaza/ui/views/loan/loancompare/loancompare_view.dart' as _i8;
+import 'package:money_plaza/ui/views/loan/loancompare/loancompare_view.dart'
+    as _i8;
 import 'package:money_plaza/ui/views/startup/startup_view.dart' as _i3;
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i10;
+import 'package:stacked_services/stacked_services.dart' as _i11;
 
 class Routes {
   static const homeView = '/home-view';
@@ -33,6 +36,8 @@ class Routes {
 
   static const loancompareView = '/loancompare-view';
 
+  static const applyconfirmView = '/applyconfirm-view';
+
   static const all = <String>{
     homeView,
     startupView,
@@ -41,6 +46,7 @@ class Routes {
     loanView,
     calculatorResultView,
     loancompareView,
+    applyconfirmView,
   };
 }
 
@@ -74,48 +80,58 @@ class StackedRouter extends _i1.RouterBase {
       Routes.loancompareView,
       page: _i8.LoancompareView,
     ),
+    _i1.RouteDef(
+      Routes.applyconfirmView,
+      page: _i9.ApplyconfirmView,
+    ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
     _i2.HomeView: (data) {
-      return _i9.MaterialPageRoute<dynamic>(
+      return _i10.MaterialPageRoute<dynamic>(
         builder: (context) => const _i2.HomeView(),
         settings: data,
       );
     },
     _i3.StartupView: (data) {
-      return _i9.MaterialPageRoute<dynamic>(
+      return _i10.MaterialPageRoute<dynamic>(
         builder: (context) => const _i3.StartupView(),
         settings: data,
       );
     },
     _i4.LandingView: (data) {
-      return _i9.MaterialPageRoute<dynamic>(
+      return _i10.MaterialPageRoute<dynamic>(
         builder: (context) => const _i4.LandingView(),
         settings: data,
       );
     },
     _i5.AuthTabView: (data) {
-      return _i9.MaterialPageRoute<dynamic>(
+      return _i10.MaterialPageRoute<dynamic>(
         builder: (context) => const _i5.AuthTabView(),
         settings: data,
       );
     },
     _i6.LoanView: (data) {
-      return _i9.MaterialPageRoute<dynamic>(
+      return _i10.MaterialPageRoute<dynamic>(
         builder: (context) => const _i6.LoanView(),
         settings: data,
       );
     },
     _i7.CalculatorResultView: (data) {
-      return _i9.MaterialPageRoute<dynamic>(
+      return _i10.MaterialPageRoute<dynamic>(
         builder: (context) => const _i7.CalculatorResultView(),
         settings: data,
       );
     },
     _i8.LoancompareView: (data) {
-      return _i9.MaterialPageRoute<dynamic>(
+      return _i10.MaterialPageRoute<dynamic>(
         builder: (context) => const _i8.LoancompareView(),
+        settings: data,
+      );
+    },
+    _i9.ApplyconfirmView: (data) {
+      return _i10.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i9.ApplyconfirmView(),
         settings: data,
       );
     },
@@ -127,7 +143,7 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-extension NavigatorStateExtension on _i10.NavigationService {
+extension NavigatorStateExtension on _i11.NavigationService {
   Future<dynamic> navigateToHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -226,6 +242,20 @@ extension NavigatorStateExtension on _i10.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> navigateToApplyconfirmView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.applyconfirmView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
   Future<dynamic> replaceWithHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -318,6 +348,20 @@ extension NavigatorStateExtension on _i10.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.loancompareView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithApplyconfirmView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.applyconfirmView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

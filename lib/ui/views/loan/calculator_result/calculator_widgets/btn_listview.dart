@@ -4,7 +4,7 @@ import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
 import 'package:stacked/stacked.dart';
 import '../../../../common/app_colors.dart';
-import '../../../../widgets/common/icon_box_btn/icon_box_btn.dart';
+import '../../../../widgets/top_bar2.dart';
 import '../calculator_result_viewmodel.dart';
 
 class BtnListView extends ViewModelWidget<CalculatorResultViewModel> {
@@ -22,52 +22,7 @@ class BtnListView extends ViewModelWidget<CalculatorResultViewModel> {
         Column(
           // crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                IconBoxBtn(
-                  height: 80,
-                  width: width * 0.24,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w500,
-                  boxcolor: darkGreenHeigh,
-                  topimage: myIcons.aiMatching,
-                  text: 'A.I.Matching',
-                ),
-                IconBoxBtn(
-                  height: 80,
-                  width: width * 0.24,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w500,
-                  boxcolor: darkGreenHeigh,
-                  topimage: myIcons.filter,
-                  text: 'Filter',
-                ),
-                InkWell(
-                  onTap: () {
-                    // viewModel.navigateCalculatorDialog();
-                  },
-                  child: IconBoxBtn(
-                    height: 80,
-                    width: width * 0.24,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w500,
-                    boxcolor: darkGreenHeigh,
-                    topimage: myIcons.calculator,
-                    text: 'Calculator',
-                  ),
-                ),
-                IconBoxBtn(
-                  height: 80,
-                  width: width * 0.24,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w500,
-                  boxcolor: darkGreenHeigh,
-                  topimage: myIcons.compare1,
-                  text: 'Compare',
-                ),
-              ],
-            ),
+            topBar(context),
             const Divider(
               color: darkGreenHeigh,
               height: 5.0,

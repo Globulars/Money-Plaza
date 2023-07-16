@@ -9,6 +9,7 @@ import 'package:money_plaza/ui/views/auth_tab/auth_tab_view.dart';
 import 'package:money_plaza/ui/views/loan/loan_view.dart';
 import 'package:money_plaza/ui/views/loan/calculator_result/calculator_result_view.dart';
 import 'package:money_plaza/ui/views/loan/loancompare/loancompare_view.dart';
+import 'package:money_plaza/ui/views/loan/applyconfirm/applyconfirm_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -20,6 +21,7 @@ import 'package:money_plaza/ui/views/loan/loancompare/loancompare_view.dart';
     MaterialRoute(page: LoanView),
     MaterialRoute(page: CalculatorResultView),
     MaterialRoute(page: LoancompareView),
+    MaterialRoute(page: ApplyconfirmView),
 // @stacked-route
   ],
   dependencies: [

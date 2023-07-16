@@ -3,6 +3,9 @@ import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import '../../../common/ui_helpers.dart';
 import '../../../widgets/app_bar.dart';
+import '../../../widgets/top_bar2.dart';
+import 'compare_widgets/head_btm_text.dart';
+import 'compare_widgets/prom_land.dart';
 import 'loancompare_viewmodel.dart';
 
 class LoancompareView extends StackedView<LoancompareViewModel> {
@@ -14,7 +17,7 @@ class LoancompareView extends StackedView<LoancompareViewModel> {
     LoancompareViewModel viewModel,
     Widget? child,
   ) {
-     final width = MediaQuery.of(context).size.width;
+    final width = MediaQuery.of(context).size.width;
     return Stack(
       children: [
         Container(
@@ -28,28 +31,40 @@ class LoancompareView extends StackedView<LoancompareViewModel> {
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: appBar(() {}, () {}),
-          body:  SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                // PicContainer(),
-                // ContainerListView(),
-                // LoanCard(),
-                verticalSpaceLarge
-              ],
-            ),
+          body: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              topBar(context),
+              verticalSpaceTiny,
+              const PromiseLand(),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                    child: Column(
+                      children: [
+                        HeadBtmText(),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              // PicContainer(),
+              // ContainerListView(),
+              // LoanCard(),
+              verticalSpaceLarge
+            ],
           ),
-          bottomNavigationBar: Container(
-              height: 60,
-              width: width * 1,
-              child: SizedBox(
-                  child: Image.asset(
-                myIcons.contacts,
-              ))),
+          // bottomNavigationBar: Container(
+          //     height: 60,
+          //     width: width * 1,
+          //     child: SizedBox(
+          //         child: Image.asset(
+          //       myIcons.contacts,
+          //     ))),
         ),
       ],
     );
-  
   }
 
   @override
