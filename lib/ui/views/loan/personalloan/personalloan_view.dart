@@ -15,7 +15,7 @@ class PersonalloanView extends StackedView<PersonalloanViewModel> {
     PersonalloanViewModel viewModel,
     Widget? child,
   ) {
-     final width = MediaQuery.of(context).size.width;
+    final width = MediaQuery.of(context).size.width;
     return Stack(
       children: [
         Container(
@@ -27,70 +27,71 @@ class PersonalloanView extends StackedView<PersonalloanViewModel> {
           ),
         ),
         DefaultTabController(
-
           length: 2,
           child: Scaffold(
-            backgroundColor: Colors.transparent,
-            appBar: appBar(() {}, () {}),
-            body:   NestedScrollView(
-          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-            return <Widget>[
-              SliverAppBar(
-                // collapsedHeight: 0,
-                toolbarHeight:0 ,
-                backgroundColor: Colors.transparent,
-                pinned: true,
-                floating: false,
-                bottom: TabBar(
-                  dividerColor: Colors.black,
-                  isScrollable: true,
-                  unselectedLabelColor: darkGreenLight,
-                  indicatorSize: TabBarIndicatorSize.tab,
-                  padding: EdgeInsets.all(0),
-                  
-                  indicator: BoxDecoration(
-                      borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(10)), // Creates border
-                      color: darkGreenHeigh),
-                  tabs:  [
-                    Tab(child: Text('Flight')),
-                    Tab(child: Text('Train')),
-                    // Tab(child: Text('Car')),
-                    // Tab(child: Text('Cycle')),
-                    // Tab(child: Text('Boat')),
+              backgroundColor: Colors.transparent,
+              appBar: appBar(() {}, () {}),
+              body: NestedScrollView(
+                headerSliverBuilder:
+                    (BuildContext context, bool innerBoxIsScrolled) {
+                  return <Widget>[
+                    SliverAppBar(
+                      // collapsedHeight: 0,
+                      toolbarHeight: 0,
+                      backgroundColor: Colors.transparent,
+                      pinned: true,
+                      floating: false,
+                      bottom: TabBar(
+                        dividerColor: Colors.black,
+                        isScrollable: true,
+                        unselectedLabelColor: darkGreenLight,
+                        indicatorSize: TabBarIndicatorSize.tab,
+                        padding: EdgeInsets.all(0),
+                        indicator: BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(10),
+                                topRight:
+                                    Radius.circular(10)), // Creates border
+                            color: darkGreenHeigh),
+                        tabs: [
+                          Tab(child: Text('Flight')),
+                          Tab(child: Text('Train')),
+                          // Tab(child: Text('Car')),
+                          // Tab(child: Text('Cycle')),
+                          // Tab(child: Text('Boat')),
+                        ],
+                      ),
+                    ),
+                  ];
+                },
+                body: const TabBarView(
+                  children: <Widget>[
+                    SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          Icon(Icons.flight, size: 350),
+                          Icon(Icons.flight, size: 350),
+                        ],
+                      ),
+                    ),
+                    Icon(Icons.directions_transit, size: 350),
+                    // Icon(Icons.directions_car, size: 350),
+                    // Icon(Icons.directions_bike, size: 350),
+                    // Icon(Icons.directions_boat, size: 350),
                   ],
                 ),
-              ),
-            ];
-          },
-          body: const TabBarView(
-            children: <Widget>[
-              SingleChildScrollView(
-                child: Column(
-                  children: [
-                    Icon(Icons.flight, size: 350),
-                    Icon(Icons.flight, size: 350),
-                  ],
-                ),
-              ),
-              Icon(Icons.directions_transit, size: 350),
-              // Icon(Icons.directions_car, size: 350),
-              // Icon(Icons.directions_bike, size: 350),
-              // Icon(Icons.directions_boat, size: 350),
-            ],
-          ),
               )
-            // bottomNavigationBar: Container(
-            //     height: 60,
-            //     width: width * 1,
-            //     child: SizedBox(
-            //         child: Image.asset(
-            //       myIcons.contacts,
-            //     ))),
-          ),
+              // bottomNavigationBar: Container(
+              //     height: 60,
+              //     width: width * 1,
+              //     child: SizedBox(
+              //         child: Image.asset(
+              //       myIcons.contacts,
+              //     ))),
+              ),
         ),
       ],
     );
-  
   }
 
   @override
