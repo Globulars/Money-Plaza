@@ -38,6 +38,7 @@ dependencies:
   stacked: ^3.2.7
   stacked_services: ^1.0.0
   google_fonts: ^5.1.0
+  flutter_switch: ^0.3.2
 
 dev_dependencies:
   flutter_test:
@@ -70,7 +71,6 @@ flutter:
     # - assets/icons/
     - assets/screens/
     - assets/icons/Landing_icons/
-    - assets/icons/Landing_icons/contacts_icon/
     - assets/icons/loans_icons/
     - assets/icons/member_icons/
     - assets/icons/Morgages/
