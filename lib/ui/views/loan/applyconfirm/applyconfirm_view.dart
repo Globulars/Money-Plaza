@@ -79,7 +79,6 @@ class ApplyconfirmView extends StackedView<ApplyconfirmViewModel> {
           ),
         ),
         bottomBar(
-          // Container()
           Row(
             children: [
               ReturnButton(
