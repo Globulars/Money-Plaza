@@ -1,34 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:money_plaza/ui/common/app_colors.dart';
-import 'package:money_plaza/ui/views/loan/personalloan/personal_widgets/tabbarview3.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
-import '../../../widgets/app_bar.dart';
-import 'personal_widgets/tabbarview2.dart';
-import 'personal_widgets/tabbarview1.dart';
-import 'personalloan_viewmodel.dart';
+import '../../common/app_colors.dart';
+import '../../widgets/app_bar.dart';
+import '../../widgets/common/background_image.dart';
+import 'ownerloan_viewmodel.dart';
+import 'ownerloan_widgets/owner_tab_bar1.dart';
+import 'ownerloan_widgets/owner_tab_bar2.dart';
+import 'ownerloan_widgets/owner_tab_tab3.dart';
 
-class PersonalloanView extends StackedView<PersonalloanViewModel> {
-  const PersonalloanView({Key? key}) : super(key: key);
+class OwnerloanView extends StackedView<OwnerloanViewModel> {
+  const OwnerloanView({Key? key}) : super(key: key);
 
   @override
   Widget builder(
     BuildContext context,
-    PersonalloanViewModel viewModel,
+    OwnerloanViewModel viewModel,
     Widget? child,
   ) {
     final width = MediaQuery.of(context).size.width;
     return Stack(
       children: [
-        Container(
-          width: width * 1,
-          height: MediaQuery.of(context).size.height * 1,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage(myIcons.backgroundimage), fit: BoxFit.fill),
-          ),
-        ),
+        const BackgroundImage(),
         DefaultTabController(
           length: 3,
           child: Scaffold(
@@ -76,9 +70,9 @@ class PersonalloanView extends StackedView<PersonalloanViewModel> {
               },
               body: const TabBarView(
                 children: <Widget>[
-                  SingleChildScrollView(child: TabBarView1()),
-                  TabBarView2(),
-                  TabBarView3()
+                  SingleChildScrollView(child: OwnerTabBar1()),
+                  SingleChildScrollView(child: OwnerTabBar2()),
+                  SingleChildScrollView(child: OwnerTabBar3())
                 ],
               ),
             ),
@@ -96,8 +90,8 @@ class PersonalloanView extends StackedView<PersonalloanViewModel> {
   }
 
   @override
-  PersonalloanViewModel viewModelBuilder(
+  OwnerloanViewModel viewModelBuilder(
     BuildContext context,
   ) =>
-      PersonalloanViewModel();
+      OwnerloanViewModel();
 }

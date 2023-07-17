@@ -3,7 +3,7 @@ import 'package:flutter/scheduler.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:stacked/stacked.dart';
 
-import '../../common/app_colors.dart';
+import '../../../common/app_colors.dart';
 import 'startup_viewmodel.dart';
 
 class StartupView extends StackedView<StartupViewModel> {

@@ -1,8 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:money_plaza/app/app.router.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
+import 'package:stacked_services/stacked_services.dart';
 
-AppBar appBar(menuFunction, settingFunction) {
+import '../../app/app.locator.dart';
+
+AppBar appBar() {
+  final _navigationService = locator<NavigationService>();
+  navigateToSettings() async {
+    _navigationService.navigateToSettingsView();
+  }
+
+  navigateToLanding() async {
+    _navigationService.navigateToLandingView();
+  }
+
   return AppBar(
     title: Image.asset(
       myIcons.appbarTitle,
@@ -12,7 +25,7 @@ AppBar appBar(menuFunction, settingFunction) {
       IconButton(
         icon: Image.asset(myIcons.appbarSetting),
         tooltip: 'Setting Icon',
-        onPressed: () {},
+        onPressed: navigateToSettings,
       ), //IconButton
     ], //<Widget>[]
     backgroundColor: Colors.transparent,
@@ -21,7 +34,7 @@ AppBar appBar(menuFunction, settingFunction) {
     leading: IconButton(
       icon: Image.asset(myIcons.appbarHome),
       tooltip: 'Menu Icon',
-      onPressed: () {},
+      onPressed: navigateToLanding,
     ),
     systemOverlayStyle: SystemUiOverlayStyle.light,
   );

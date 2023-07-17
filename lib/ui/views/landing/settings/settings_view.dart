@@ -7,7 +7,7 @@ import 'package:money_plaza/ui/widgets/common/icon_box_btn/sub_bar.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
 import 'package:stacked/stacked.dart';
 
-import '../../widgets/app_bar.dart';
+import '../../../widgets/app_bar.dart';
 import 'settings_viewmodel.dart';
 
 class SettingsView extends StackedView<SettingsViewModel> {
@@ -21,7 +21,7 @@ class SettingsView extends StackedView<SettingsViewModel> {
   ) {
     bool isToggled = true;
     return Scaffold(
-      appBar: appBar(() {}, () {}),
+      appBar: appBar(),
       body: Container(
         width: MediaQuery.of(context).size.width,
         decoration: const BoxDecoration(
