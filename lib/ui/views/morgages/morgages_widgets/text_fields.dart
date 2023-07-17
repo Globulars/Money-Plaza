@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_types_as_parameter_names, non_constant_identifier_names, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import '../../../common/ui_helpers.dart';
@@ -14,7 +16,6 @@ class MorgTextFields extends ViewModelWidget<MorgagesViewModel> {
     BuildContext context,
     MorgagesViewModel viewModel,
   ) {
-    final width = MediaQuery.of(context).size.width;
     return Expanded(
       child: SingleChildScrollView(
         child: Padding(
