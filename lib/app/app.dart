@@ -11,6 +11,9 @@ import 'package:money_plaza/ui/views/loan/calculator_result/calculator_result_vi
 import 'package:money_plaza/ui/views/loan/loancompare/loancompare_view.dart';
 import 'package:money_plaza/ui/views/loan/applyconfirm/applyconfirm_view.dart';
 import 'package:money_plaza/ui/views/loan/personalloan/personalloan_view.dart';
+import 'package:money_plaza/ui/views/loan/personalloan/ploanreslut/ploanreslut_view.dart';
+import 'package:money_plaza/ui/views/ownerloan/ownerloan_view.dart';
+import 'package:money_plaza/ui/views/ownerloan/ownerloanresult/ownerloanresult_view.dart';
 import 'package:money_plaza/ui/views/landing/settings/settings_view.dart';
 import 'package:money_plaza/ui/views/member_login/member_login_view.dart';
 // @stacked-import
@@ -26,6 +29,9 @@ import 'package:money_plaza/ui/views/member_login/member_login_view.dart';
     MaterialRoute(page: LoancompareView),
     MaterialRoute(page: ApplyconfirmView),
     MaterialRoute(page: PersonalloanView),
+    MaterialRoute(page: PloanreslutView),
+    MaterialRoute(page: OwnerloanView),
+    MaterialRoute(page: OwnerloanresultView),
     MaterialRoute(page: SettingsView),
     MaterialRoute(page: MemberLoginView),
 // @stacked-route
