@@ -6,7 +6,6 @@ import 'package:stacked/stacked.dart';
 
 import '../../common/app_colors.dart';
 import '../../widgets/app_bar.dart';
-import '../../widgets/common/icon_box_btn/sub_bar.dart';
 import 'member_login_viewmodel.dart';
 
 class MemberLoginView extends StackedView<MemberLoginViewModel> {
@@ -31,94 +30,161 @@ class MemberLoginView extends StackedView<MemberLoginViewModel> {
         ),
         DefaultTabController(
           length: 2,
-          child: Scaffold(
-            backgroundColor: Colors.transparent,
-            appBar: appBar(),
-            body: NestedScrollView(
-              headerSliverBuilder:
-                  (BuildContext context, bool innerBoxIsScrolled) {
-                return <Widget>[
-                  SliverAppBar(
-                    toolbarHeight: 0,
-                    backgroundColor: lightGreenHeigh,
-                    pinned: true,
-                    floating: false,
-                    bottom: TabBar(
-                      unselectedLabelColor: darkGreenHeigh,
-                      labelColor: Colors.white,
-                      labelStyle: GoogleFonts.ibmPlexSans(fontSize: 10),
-                      indicator: const BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(10),
-                              topRight: Radius.circular(10)), // Creates border
-                          color: darkGreenHeigh),
-                      tabs: [
-                        Tab(
-                          child: Row(
-                            children: [
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 5),
-                                child: Image.asset(
-                                  myIcons.memberLogin,
-                                  height: 30,
-                                  width: 30,
-                                ),
-                              ),
-                              CustomText(
-                                text: "Member Login",
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                              )
-                            ],
-                          ),
-                        ),
-                        Tab(
-                          child: Center(
+          child: Container(
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            child: Scaffold(
+              backgroundColor: Colors.transparent,
+              appBar: appBar(),
+              body: NestedScrollView(
+                headerSliverBuilder:
+                    (BuildContext context, bool innerBoxIsScrolled) {
+                  return <Widget>[
+                    SliverAppBar(
+                      toolbarHeight: 0,
+                      backgroundColor: lightGreenHeigh,
+                      pinned: true,
+                      floating: false,
+                      bottom: TabBar(
+                        unselectedLabelColor: darkGreenHeigh,
+                        labelColor: Colors.white,
+                        labelStyle: GoogleFonts.ibmPlexSans(fontSize: 10),
+                        indicator: const BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(10),
+                                topRight:
+                                    Radius.circular(10)), // Creates border
+                            color: darkGreenHeigh),
+                        tabs: [
+                          Tab(
                             child: Row(
                               children: [
                                 Padding(
                                   padding:
                                       const EdgeInsets.symmetric(horizontal: 5),
                                   child: Image.asset(
-                                    myIcons.register,
+                                    myIcons.memberLogin,
                                     height: 30,
                                     width: 30,
                                   ),
                                 ),
                                 CustomText(
-                                  text: "Register",
+                                  text: "Member Login",
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
                                 )
                               ],
                             ),
                           ),
-                        ),
-                      ],
+                          Tab(
+                            child: Center(
+                              child: Row(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 5),
+                                    child: Image.asset(
+                                      myIcons.register,
+                                      height: 30,
+                                      width: 30,
+                                    ),
+                                  ),
+                                  CustomText(
+                                    text: "Register",
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
+                  ];
+                },
+                body: Padding(
+                  padding: EdgeInsets.all(15.0),
+                  child: TabBarView(
+                    children: <Widget>[
+                      //SUB Tab Bar
+
+                      DefaultTabController(
+                        length: 2,
+                        child: Container(
+                          height: MediaQuery.of(context).size.height,
+                          width: MediaQuery.of(context).size.width,
+                          child: Scaffold(
+                            backgroundColor: Colors.transparent,
+                            body: NestedScrollView(
+                              headerSliverBuilder: (BuildContext context,
+                                  bool innerBoxIsScrolled) {
+                                return <Widget>[
+                                  SliverAppBar(
+                                    toolbarHeight: 0,
+                                    backgroundColor: Colors.transparent,
+                                    pinned: true,
+                                    floating: false,
+                                    shape: RoundedRectangleBorder(
+                                      side: BorderSide(width: 1),
+                                    ),
+                                    bottom: TabBar(
+                                      unselectedLabelColor: Colors.orange,
+                                      labelColor: Colors.red,
+                                      labelStyle:
+                                          GoogleFonts.ibmPlexSans(fontSize: 10),
+                                      indicator: const BoxDecoration(
+                                          // Creates border
+                                          color: darkGreenHeigh),
+                                      tabs: [
+                                        Tab(
+                                          child: CustomText(
+                                            text: "Login with Email",
+                                            fontSize: 16,
+                                          ),
+                                        ),
+                                        Tab(
+                                          child: CustomText(
+                                            text: "Login with Mobile",
+                                            fontSize: 16,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ];
+                              },
+                              body: const Padding(
+                                padding: EdgeInsets.all(15.0),
+                                child: TabBarView(
+                                  children: <Widget>[
+                                    //SUB Tab Bar
+                                    Text("Tab Bar 1"),
+                                    Text("Tab Bar 2"),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Text("Tab Bar 2"),
+                    ],
                   ),
-                ];
-              },
-              body: const TabBarView(
-                children: <Widget>[
-                  Text("Tab Bar 1"),
-                  Text("Tab Bar 2"),
-                ],
+                ),
               ),
+              bottomNavigationBar: Container(
+                  height: 60,
+                  width: width * 1,
+                  child: SizedBox(
+                      child: Image.asset(
+                    myIcons.contacts,
+                  ))),
             ),
-            bottomNavigationBar: Container(
-                height: 60,
-                width: width * 1,
-                child: SizedBox(
-                    child: Image.asset(
-                  myIcons.contacts,
-                ))),
           ),
         ),
       ],
     );
-    ;
   }
 
   @override

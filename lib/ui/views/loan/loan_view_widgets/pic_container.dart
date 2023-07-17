@@ -50,6 +50,7 @@ class PicContainer extends ViewModelWidget<LoanViewModel> {
                   fontWeight: FontWeight.w500,
                   topimage: myIcons.ownerLoan,
                   text: "Property Owner's Loan",
+                  onPress: viewModel.navigateToOwnerloan,
                 ),
               ],
             ),
@@ -64,6 +65,7 @@ class PicContainer extends ViewModelWidget<LoanViewModel> {
                   fontWeight: FontWeight.w500,
                   topimage: myIcons.balanceTrans,
                   text: 'Loan Balance Transfer',
+                  onPress: viewModel.navigateToBlnstransfer,
                 ),
                 horizontalSpaceSmall,
                 IconBoxBtn(
@@ -73,6 +75,7 @@ class PicContainer extends ViewModelWidget<LoanViewModel> {
                   fontWeight: FontWeight.w500,
                   topimage: myIcons.commericalLoan,
                   text: 'Commerical Loans',
+                  onPress: viewModel.navigateToCommerical,
                 ),
               ],
             ),

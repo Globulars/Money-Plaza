@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
               bodyColor: Colors.black,
             ),
       ),
-      initialRoute: Routes.commericalResultView,
+      initialRoute: Routes.startupView,
       onGenerateRoute: StackedRouter().onGenerateRoute,
       navigatorKey: StackedService.navigatorKey,
       navigatorObservers: [

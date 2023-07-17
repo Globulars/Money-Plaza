@@ -4,7 +4,6 @@ import 'package:money_plaza/ui/views/loan/personal_loan/ploanreslut/ploan_widget
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import '../../../../widgets/app_bar.dart';
-import '../../../../widgets/top_bar2.dart';
 import 'ploan_widgets/top_widget.dart';
 import 'ploanreslut_viewmodel.dart';
 
