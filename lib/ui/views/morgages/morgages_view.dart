@@ -5,7 +5,7 @@ import '../../widgets/app_bar.dart';
 import '../../widgets/bottom_bar.dart';
 import '../../widgets/common/icon_box_btn/return_button.dart';
 import 'morgages_viewmodel.dart';
-import 'morgages_widgets/Pic_text.dart';
+import 'morgages_widgets/pic_text.dart';
 import 'morgages_widgets/text_fields.dart';
 
 class MorgagesView extends StackedView<MorgagesViewModel> {
