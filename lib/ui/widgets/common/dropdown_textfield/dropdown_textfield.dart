@@ -52,19 +52,18 @@ class DropdownTextfield extends StackedView<DropdownTextfieldModel> {
         ),
         verticalSpaceTiny,
         Container(
-           decoration: BoxDecoration(
+          decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5),
             color: Colors.white,
           ),
           width: double.infinity,
           height: height ?? 40,
-        
           child: FormField<String>(
             builder: (FormFieldState<String> state) {
               return InputDecorator(
                 decoration: InputDecoration(
-                  contentPadding:
-                      const EdgeInsets.symmetric(horizontal: 10.0, vertical: 0.0),
+                  contentPadding: const EdgeInsets.symmetric(
+                      horizontal: 10.0, vertical: 0.0),
                   labelText: hintText,
                   border: _setBorderStyle(),
                   enabledBorder: _setBorderStyle(),

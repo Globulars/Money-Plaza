@@ -59,13 +59,17 @@ class MemberLoginView extends StackedView<MemberLoginViewModel> {
                               Padding(
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 5),
-                                child: Image.asset(myIcons.memberLogin,
-                                    height: 30,
-                                    width: 30,
-                                    ),
+                                child: Image.asset(
+                                  myIcons.memberLogin,
+                                  height: 30,
+                                  width: 30,
+                                ),
                               ),
-                              CustomText(text: "Member Login", fontSize: 16, fontWeight: FontWeight.bold,)
-                              
+                              CustomText(
+                                text: "Member Login",
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              )
                             ],
                           ),
                         ),
@@ -76,12 +80,17 @@ class MemberLoginView extends StackedView<MemberLoginViewModel> {
                                 Padding(
                                   padding:
                                       const EdgeInsets.symmetric(horizontal: 5),
-                                  child: Image.asset(myIcons.register,
-                                      height: 30,
-                                      width: 30,
-                                      ),
+                                  child: Image.asset(
+                                    myIcons.register,
+                                    height: 30,
+                                    width: 30,
+                                  ),
                                 ),
-                                CustomText(text: "Register", fontSize: 16, fontWeight: FontWeight.bold,)
+                                CustomText(
+                                  text: "Register",
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                )
                               ],
                             ),
                           ),

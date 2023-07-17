@@ -32,11 +32,11 @@ class CommericalResultView extends StackedView<CommericalResultViewModel> {
           child: Scaffold(
             backgroundColor: Colors.transparent,
             appBar: appBar(),
-            body:  Column(
+            body: Column(
               children: [
                 resultLoanTop(context),
                 verticalSpaceSmall,
-              Expanded(
+                Expanded(
                     child: SingleChildScrollView(
                         child: ListView.builder(
                   itemCount: 3,
