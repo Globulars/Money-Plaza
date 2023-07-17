@@ -90,6 +90,7 @@ class PersonalloanView extends StackedView<PersonalloanViewModel> {
                   myIcons.contacts,
                 ))),
           ),
+
         ),
       ],
     );

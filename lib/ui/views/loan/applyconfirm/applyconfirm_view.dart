@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:money_plaza/ui/widgets/common/icon_box_btn/return_button.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import '../../../common/ui_helpers.dart';
 import '../../../widgets/app_bar.dart';
+import '../../../widgets/bottom_bar.dart';
 import '../../../widgets/common/custom_text_field/custom_text_field.dart';
 import '../../../widgets/common/icon_box_btn/sub_bar.dart';
+import '../../../widgets/common/icon_box_btn/submit_button.dart';
 import 'applyconfirm_viewmodel.dart';
 
 class ApplyconfirmView extends StackedView<ApplyconfirmViewModel> {
@@ -74,13 +77,27 @@ class ApplyconfirmView extends StackedView<ApplyconfirmViewModel> {
               verticalSpaceLarge
             ],
           ),
-          // bottomNavigationBar: Container(
-          //     height: 60,
-          //     width: width * 1,
-          //     child: SizedBox(
-          //         child: Image.asset(
-          //       myIcons.contacts,
-          //     ))),
+        ),
+        bottomBar(
+          Row(
+            children: [
+              ReturnButton(
+                imageLeft: myIcons.returnIcon1,
+                imgwidth: 18,
+                text: 'Retrue',
+                height: 40,
+                width: 70,
+              ),
+              horizontalSpaceTiny,
+              SubmitButton(
+                image: myIcons.done,
+                imgwidth: 18,
+                text: 'Done',
+                height: 40,
+                width: 70,
+              ),
+            ],
+          ),
         ),
       ],
     );
