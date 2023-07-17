@@ -43,6 +43,7 @@ class SubmitButton extends StackedView<IconBoxBtnModel> {
     IconBoxBtnModel viewModel,
     Widget? child,
   ) {
+
     final _navigationService = locator<NavigationService>();
     return GestureDetector(
       onTap: () {
