@@ -83,17 +83,17 @@ class ApplyconfirmView extends StackedView<ApplyconfirmViewModel> {
             children: [
               ReturnButton(
                 imageLeft: myIcons.returnIcon1,
-                imgwidth: 18,
-                fontSize: 18,
-                text: 'Retrue',
+                imgwidth: 12,
+             
+                text: 'Return',
                 height: 40,
                 width: 80,
               ),
               horizontalSpaceTiny,
               SubmitButton(
                 image: myIcons.done,
-                imgwidth: 18,
-                fontSize: 18,
+                imgwidth: 16,
+               
                 text: 'Done',
                 height: 40,
                 width: 80,

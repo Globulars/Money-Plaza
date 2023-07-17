@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:money_plaza/app/app.router.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:stacked_services/stacked_services.dart';
 import '../../app/app.dialogs.dart';
@@ -8,6 +9,7 @@ import 'common/icon_box_btn/icon_box_btn.dart';
 
 Widget topBar(context) {
   final _dialogService = locator<DialogService>();
+  final _navigationService = locator<NavigationService>();
   void showCalculator() {
     _dialogService.showCustomDialog(
       variant: DialogType.calculator,
@@ -20,17 +22,22 @@ Widget topBar(context) {
     );
   }
 
+  void compareScreen(){
+    _navigationService.navigateToLoancompareView();
+  }
+
   return Column(
     children: [
       Padding(
-        padding: const EdgeInsets.all(0),
+        padding: const EdgeInsets.symmetric(horizontal: 8),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             IconBoxBtn(
-              height: 70,
-              width: MediaQuery.of(context).size.width * 0.24,
+              height: 65,
+              width: MediaQuery.of(context).size.width * 0.22,
               color: Colors.white,
+              fontSize: 12,
               fontWeight: FontWeight.w500,
               boxcolor: darkGreenHeigh,
               topimage: myIcons.aiMatching,
@@ -38,8 +45,9 @@ Widget topBar(context) {
             ),
             IconBoxBtn(
               height: 70,
-              width: MediaQuery.of(context).size.width * 0.24,
+              width: MediaQuery.of(context).size.width * 0.22,
               color: Colors.white,
+              fontSize: 12,
               fontWeight: FontWeight.w500,
               boxcolor: darkGreenHeigh,
               topimage: myIcons.filter,
@@ -52,8 +60,9 @@ Widget topBar(context) {
               },
               child: IconBoxBtn(
                 height: 70,
-                width: MediaQuery.of(context).size.width * 0.24,
+                width: MediaQuery.of(context).size.width * 0.22,
                 color: Colors.white,
+                 fontSize: 12,
                 fontWeight: FontWeight.w500,
                 boxcolor: darkGreenHeigh,
                 topimage: myIcons.calculator,
@@ -63,20 +72,22 @@ Widget topBar(context) {
             ),
             IconBoxBtn(
               height: 70,
-              width: MediaQuery.of(context).size.width * 0.24,
+              width: MediaQuery.of(context).size.width * 0.22,
               color: Colors.white,
+               fontSize: 12,
               fontWeight: FontWeight.w500,
               boxcolor: darkGreenHeigh,
               topimage: myIcons.compare1,
               text: 'Compare',
+              onPress: compareScreen,
             ),
           ],
         ),
       ),
       const Divider(
         color: darkGreenHeigh,
-        height: 5.0,
-        thickness: 8,
+        height: 1.0,
+        thickness: 6,
       ),
     ],
   );

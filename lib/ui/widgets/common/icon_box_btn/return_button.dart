@@ -68,10 +68,11 @@ class ReturnButton extends StackedView<IconBoxBtnModel> {
                         imageLeft ?? "",
                         width: imgwidth,
                       ),
-                      verticalSpaceSmall,
+                      horizontalSpaceTiny,
                     ],
                   )
                 : Container(),
+              
             Text(
               text ?? "",
               style: GoogleFonts.ibmPlexSans(
@@ -83,7 +84,7 @@ class ReturnButton extends StackedView<IconBoxBtnModel> {
             imageRight != null
                 ? Row(
                     children: [
-                      verticalSpaceSmall,
+                      horizontalSpaceTiny,
                       Image.asset(
                         imageRight ?? "",
                         width: imgwidth,

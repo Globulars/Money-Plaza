@@ -30,12 +30,13 @@ class FilterDialog extends StackedView<FilterDialogModel> {
     Widget? child,
   ) {
     final width = MediaQuery.of(context).size.width;
+     final height = MediaQuery.of(context).size.height;
 
     return Dialog(
+      insetPadding: EdgeInsets.symmetric(vertical: height*0.13,horizontal: 40),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       backgroundColor: Colors.white,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+      child: SingleChildScrollView(
         child: Column(
           children: [
             SubBar(
@@ -153,8 +154,11 @@ class FilterDialog extends StackedView<FilterDialogModel> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       SubmitButton(
+                         height: 40,
+                        width: 80,
                         boxColor: Colors.transparent,
                         image: myIcons.iconPowerReset,
+                        imgwidth: 15,
                         text: 'Reset all',
                         color: darkGreenLight,
                       ),
