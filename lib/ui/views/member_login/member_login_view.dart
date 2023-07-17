@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
+import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
 import 'package:stacked/stacked.dart';
 
+import '../../common/app_colors.dart';
 import '../../widgets/app_bar.dart';
 import '../../widgets/common/icon_box_btn/sub_bar.dart';
 import 'member_login_viewmodel.dart';
@@ -15,72 +18,98 @@ class MemberLoginView extends StackedView<MemberLoginViewModel> {
     MemberLoginViewModel viewModel,
     Widget? child,
   ) {
-    return Scaffold(
-      appBar: appBar(),
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage("assets/screens/mainbg.png"), fit: BoxFit.fill),
+    final width = MediaQuery.of(context).size.width;
+    return Stack(
+      children: [
+        Container(
+          width: width * 1,
+          height: MediaQuery.of(context).size.height * 1,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage(myIcons.backgroundimage), fit: BoxFit.fill),
+          ),
         ),
-        child: Column(
-          children: [
-            DefaultTabController(
-              length: 2,
-              child: SizedBox(
-                height: MediaQuery.of(context).size.height - 100,
-                width: MediaQuery.of(context).size.width,
-                child: Scaffold(
-                  backgroundColor: Colors.transparent,
-                  appBar: TabBar(
-                    unselectedLabelColor: Colors.red,
-                    unselectedLabelStyle: TextStyle(
-                        backgroundColor: Colors.redAccent,
-                        color: Colors.red,
-                        decorationColor: Colors.red),
-                    indicatorWeight: 0.1,
-                    tabs: [
-                      Tab(
-                        height: 50,
-                        icon: SubBar(
-                          text: "Member Login",
-                          fontWeight: FontWeight.bold,
-                          image: myIcons.memberLogin,
-                          height: 50,
-                          divider: true,
-                          btmLeftRadius: 0,
-                          btmRightRadius: 0,
+        DefaultTabController(
+          length: 2,
+          child: Scaffold(
+            backgroundColor: Colors.transparent,
+            appBar: appBar(),
+            body: NestedScrollView(
+              headerSliverBuilder:
+                  (BuildContext context, bool innerBoxIsScrolled) {
+                return <Widget>[
+                  SliverAppBar(
+                    toolbarHeight: 0,
+                    backgroundColor: lightGreenHeigh,
+                    pinned: true,
+                    floating: false,
+                    bottom: TabBar(
+                      unselectedLabelColor: darkGreenHeigh,
+                      labelColor: Colors.white,
+                      labelStyle: GoogleFonts.ibmPlexSans(fontSize: 10),
+                      indicator: const BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(10),
+                              topRight: Radius.circular(10)), // Creates border
+                          color: darkGreenHeigh),
+                      tabs: [
+                        Tab(
+                          child: Row(
+                            children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 5),
+                                child: Image.asset(myIcons.memberLogin,
+                                    height: 30,
+                                    width: 30,
+                                    ),
+                              ),
+                              CustomText(text: "Member Login", fontSize: 16, fontWeight: FontWeight.bold,)
+                              
+                            ],
+                          ),
                         ),
-                      ),
-                      Tab(
-                        height: 50,
-                        icon: SubBar(
-                          text: "Register",
-                          fontWeight: FontWeight.bold,
-                          image: myIcons.register,
-                          height: 50,
-                          divider: true,
-                          btmLeftRadius: 0,
-                          btmRightRadius: 0,
+                        Tab(
+                          child: Center(
+                            child: Row(
+                              children: [
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 5),
+                                  child: Image.asset(myIcons.register,
+                                      height: 30,
+                                      width: 30,
+                                      ),
+                                ),
+                                CustomText(text: "Register", fontSize: 16, fontWeight: FontWeight.bold,)
+                              ],
+                            ),
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                  //title: const Text('Tabs Demo'),
-
-                  body: const TabBarView(
-                    children: [
-                      Icon(Icons.directions_car),
-                      Icon(Icons.directions_transit),
-                    ],
-                  ),
-                ),
+                ];
+              },
+              body: const TabBarView(
+                children: <Widget>[
+                  Text("Tab Bar 1"),
+                  Text("Tab Bar 2"),
+                ],
               ),
             ),
-          ],
+            bottomNavigationBar: Container(
+                height: 60,
+                width: width * 1,
+                child: SizedBox(
+                    child: Image.asset(
+                  myIcons.contacts,
+                ))),
+          ),
         ),
-      ),
+      ],
     );
+    ;
   }
 
   @override
