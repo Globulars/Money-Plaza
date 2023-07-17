@@ -53,6 +53,8 @@ class SubmitButton extends StackedView<IconBoxBtnModel> {
             children: [
               image != null
                   ? Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         verticalSpaceSmall,
                         Image.asset(
