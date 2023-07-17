@@ -16,6 +16,7 @@ import 'package:money_plaza/ui/views/ownerloan/ownerloan_view.dart';
 import 'package:money_plaza/ui/views/ownerloan/ownerloanresult/ownerloanresult_view.dart';
 import 'package:money_plaza/ui/views/landing/settings/settings_view.dart';
 import 'package:money_plaza/ui/views/member_login/member_login_view.dart';
+import 'package:money_plaza/ui/views/blnstransfer/blnstransfer_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -34,6 +35,7 @@ import 'package:money_plaza/ui/views/member_login/member_login_view.dart';
     MaterialRoute(page: OwnerloanresultView),
     MaterialRoute(page: SettingsView),
     MaterialRoute(page: MemberLoginView),
+    MaterialRoute(page: BlnstransferView),
 // @stacked-route
   ],
   dependencies: [
