@@ -64,8 +64,8 @@ class MorgagesResultView extends StackedView<MorgagesResultViewModel> {
                 height: 1,
               ),
               verticalSpaceSmall,
-              const MorgagesResultCard()
-
+              const MorgagesResultCard(),
+              verticalSpaceLarge
               // Picture(),
               // MorgTextFields(),
             ],
