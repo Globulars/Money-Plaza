@@ -21,13 +21,10 @@ class MemberLoginView extends StackedView<MemberLoginViewModel> {
           image: DecorationImage(
               image: AssetImage("assets/screens/mainbg.png"), fit: BoxFit.fill),
         ),
-        child: Column(children: [
-          
-        ]),
+        child: Column(children: []),
       ),
     );
   }
-
 
   @override
   MemberLoginViewModel viewModelBuilder(

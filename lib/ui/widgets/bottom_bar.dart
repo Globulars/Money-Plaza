@@ -22,6 +22,3 @@ Widget bottomBar(widget) {
     ),
   );
 }
-
-
-
