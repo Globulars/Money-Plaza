@@ -55,6 +55,7 @@ class LandingView extends StackedView<LandingViewModel> {
                             text: "Loans",
                             btmimage: myIcons.loans,
                             imgwidth: 50,
+                            onPress: viewModel.navigateToLoan,
                           ),
                           horizontalSpaceSmall,
                           IconBoxBtn(
@@ -106,6 +107,7 @@ class LandingView extends StackedView<LandingViewModel> {
                         text: "Sign Up/Login",
                         btmimage: myIcons.regularUser,
                         imgwidth: 50,
+                        onPress: viewModel.navigateToLanding,
                       ),
                     ],
                   ),

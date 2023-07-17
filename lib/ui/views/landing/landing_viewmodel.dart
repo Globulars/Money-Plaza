@@ -7,8 +7,23 @@ import '../../../app/app.locator.dart';
 class LandingViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
 
-  Future navigateToSettings() async {
-    await Future.delayed(const Duration(seconds: 3));
-    _navigationService.navigateToSettingsView();
+  navigateToLoan() {
+    _navigationService.navigateToLoanView();
+  }
+
+  // navigateToSettings() {
+  //   _navigationService.navigateTomo();
+  // }
+
+  // navigateToSettings() {
+  //   _navigationService.navigateToin();
+  // }
+
+  // navigateToSettings() {
+  //   _navigationService.navigateTo();
+  // }
+
+  navigateToLanding() {
+    _navigationService.navigateToLandingView();
   }
 }
