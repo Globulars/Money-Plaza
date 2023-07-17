@@ -7,8 +7,6 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:flutter/material.dart' as _i19;
 import 'package:flutter/material.dart';
-import 'package:money_plaza/ui/views/loan/commerical_loan/commerical_result/commerical_result_view.dart'
-    as _i18;
 import 'package:money_plaza/ui/views/home/home_view.dart' as _i2;
 import 'package:money_plaza/ui/views/landing/landing_view.dart' as _i4;
 import 'package:money_plaza/ui/views/landing/settings/settings_view.dart'
@@ -24,6 +22,8 @@ import 'package:money_plaza/ui/views/loan/calculator_result/calculator_result_vi
     as _i6;
 import 'package:money_plaza/ui/views/loan/commerical_loan/commerical_loan_view.dart'
     as _i17;
+import 'package:money_plaza/ui/views/loan/commerical_loan/commerical_result/commerical_result_view.dart'
+    as _i18;
 import 'package:money_plaza/ui/views/loan/loan_view.dart' as _i5;
 import 'package:money_plaza/ui/views/loan/loancompare/loancompare_view.dart'
     as _i7;

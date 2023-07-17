@@ -19,6 +19,8 @@ import 'package:money_plaza/ui/views/loan/blnstransfer/blnstransfer_view.dart';
 import 'package:money_plaza/ui/views/loan/blnstransfer/transfer_result/transfer_result_view.dart';
 import 'package:money_plaza/ui/views/loan/commerical_loan/commerical_loan_view.dart';
 import 'package:money_plaza/ui/views/loan/commerical_loan/commerical_result/commerical_result_view.dart';
+import 'package:money_plaza/ui/dialogs/filter/filter_dialog.dart';
+import 'package:money_plaza/ui/dialogs/calculator/calculator_dialog.dart';
 // @stacked-import
 
 @StackedApp(
@@ -54,7 +56,9 @@ import 'package:money_plaza/ui/views/loan/commerical_loan/commerical_result/comm
   ],
   dialogs: [
     StackedDialog(classType: InfoAlertDialog),
-    // @stacked-dialog
+    StackedDialog(classType: FilterDialog),
+    StackedDialog(classType: CalculatorDialog),
+// @stacked-dialog
   ],
 )
 class App {}
