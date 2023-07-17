@@ -19,19 +19,22 @@ class IconBoxBtn extends StackedView<IconBoxBtnModel> {
   String? topimage;
   String? btmimage;
   Color? boxcolor;
+  Function? onPress;
 
-  IconBoxBtn(
-      {super.key,
-      this.color,
-      this.height,
-      this.text,
-      this.width,
-      this.fontSize,
-      this.fontWeight,
-      this.topimage,
-      this.imgwidth,
-      this.btmimage,
-      this.boxcolor});
+  IconBoxBtn({
+    super.key,
+    this.color,
+    this.height,
+    this.text,
+    this.width,
+    this.fontSize,
+    this.fontWeight,
+    this.topimage,
+    this.imgwidth,
+    this.btmimage,
+    this.boxcolor,
+    this.onPress,
+  });
 
   @override
   Widget builder(
@@ -39,47 +42,54 @@ class IconBoxBtn extends StackedView<IconBoxBtnModel> {
     IconBoxBtnModel viewModel,
     Widget? child,
   ) {
-    return Container(
-      height: height,
-      width: width,
-      decoration: BoxDecoration(
-          color: boxcolor ?? lightGreenHeigh,
-          borderRadius: BorderRadius.circular(8)),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          topimage != null
-              ? Column(
-                  children: [
-                    verticalSpaceTiny,
-                    Image.asset(
-                      topimage ?? "",
-                      width: imgwidth,
-                    )
-                  ],
-                )
-              : Container(),
-          verticalSpaceTiny,
-          Text(
-            text ?? "",
-            style: GoogleFonts.ibmPlexSans(
-                color: color ?? Colors.black,
-                fontSize: fontSize ?? 14,
-                fontWeight: fontWeight ?? FontWeight.w400),
-          ),
-          btmimage != null
-              ? Column(
-                  children: [
-                    verticalSpaceTiny,
-                    Image.asset(
-                      btmimage ?? "",
-                      width: imgwidth,
-                    )
-                  ],
-                )
-              : Container(),
-        ],
+    return GestureDetector(
+      onTap: () {
+        if (onPress != null) {
+          onPress!();
+        }
+      },
+      child: Container(
+        height: height,
+        width: width,
+        decoration: BoxDecoration(
+            color: boxcolor ?? lightGreenHeigh,
+            borderRadius: BorderRadius.circular(8)),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            topimage != null
+                ? Column(
+                    children: [
+                      verticalSpaceTiny,
+                      Image.asset(
+                        topimage ?? "",
+                        width: imgwidth,
+                      )
+                    ],
+                  )
+                : Container(),
+            verticalSpaceTiny,
+            Text(
+              text ?? "",
+              style: GoogleFonts.ibmPlexSans(
+                  color: color ?? Colors.black,
+                  fontSize: fontSize ?? 14,
+                  fontWeight: fontWeight ?? FontWeight.w400),
+            ),
+            btmimage != null
+                ? Column(
+                    children: [
+                      verticalSpaceTiny,
+                      Image.asset(
+                        btmimage ?? "",
+                        width: imgwidth,
+                      )
+                    ],
+                  )
+                : Container(),
+          ],
+        ),
       ),
     );
   }

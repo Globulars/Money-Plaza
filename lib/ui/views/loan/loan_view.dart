@@ -5,6 +5,8 @@ import 'package:money_plaza/ui/views/loan/loan_view_widgets/pic_container.dart';
 import 'package:stacked/stacked.dart';
 import '../../common/app_icons.dart';
 import '../../widgets/app_bar.dart';
+import '../../widgets/bottom_bar.dart';
+import '../../widgets/common/icon_box_btn/return_button.dart';
 import 'loan_viewmodel.dart';
 import 'loan_view_widgets/horizental_view.dart';
 
@@ -42,13 +44,16 @@ class LoanView extends StackedView<LoanViewModel> {
               ],
             ),
           ),
-          bottomNavigationBar: Container(
-              height: 60,
-              width: width * 1,
-              child: SizedBox(
-                  child: Image.asset(
-                myIcons.contacts,
-              ))),
+        ),
+        bottomBar(
+          ReturnButton(
+            imageLeft: myIcons.returnIcon1,
+            imgwidth: 18,
+            fontSize: 18,
+            text: 'Retrue',
+            height: 40,
+            width: 80,
+          ),
         ),
       ],
     );

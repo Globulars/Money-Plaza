@@ -4,7 +4,6 @@ import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
 import 'package:stacked/stacked.dart';
 import '../../../common/app_colors.dart';
-import '../../../widgets/common/icon_box_btn/icon_box_btn.dart';
 import '../../../widgets/top_bar2.dart';
 import '../loan_viewmodel.dart';
 
