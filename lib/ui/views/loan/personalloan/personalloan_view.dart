@@ -5,7 +5,7 @@ import 'package:money_plaza/ui/views/loan/personalloan/personal_widgets/tabbarvi
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import '../../../widgets/app_bar.dart';
-import 'personal_widgets/tabbariew2.dart';
+import 'personal_widgets/tabbarview2.dart';
 import 'personal_widgets/tabbarview1.dart';
 import 'personalloan_viewmodel.dart';
 
@@ -82,14 +82,14 @@ class PersonalloanView extends StackedView<PersonalloanViewModel> {
                     TabBarView3()
                   ],
                 ),
-              )
-              // bottomNavigationBar: Container(
-              //     height: 60,
-              //     width: width * 1,
-              //     child: SizedBox(
-              //         child: Image.asset(
-              //       myIcons.contacts,
-              //     ))),
+              ),
+              bottomNavigationBar: Container(
+                  height: 60,
+                  width: width * 1,
+                  child: SizedBox(
+                      child: Image.asset(
+                    myIcons.contacts,
+                  ))),
               ),
         ),
       ],
