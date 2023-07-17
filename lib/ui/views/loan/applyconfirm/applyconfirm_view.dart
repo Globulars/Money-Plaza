@@ -97,6 +97,7 @@ class ApplyconfirmView extends StackedView<ApplyconfirmViewModel> {
                 text: 'Done',
                 height: 40,
                 width: 80,
+                onPress: viewModel.navigateToPloanreslut,
               ),
             ],
           ),
