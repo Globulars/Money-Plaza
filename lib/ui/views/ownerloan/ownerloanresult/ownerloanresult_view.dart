@@ -31,7 +31,7 @@ class OwnerloanresultView extends StackedView<OwnerloanresultViewModel> {
           length: 3,
           child: Scaffold(
             backgroundColor: Colors.transparent,
-            appBar: appBar(() {}, () {}),
+            appBar: appBar(),
             body: const Column(
               children: [
                 OwnerTopWidget(),

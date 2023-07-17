@@ -33,7 +33,7 @@ class ApplyconfirmView extends StackedView<ApplyconfirmViewModel> {
         ),
         Scaffold(
           backgroundColor: Colors.transparent,
-          appBar: appBar(() {}, () {}),
+          appBar: appBar(),
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [

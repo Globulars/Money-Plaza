@@ -30,7 +30,7 @@ class LoancompareView extends StackedView<LoancompareViewModel> {
         ),
         Scaffold(
           backgroundColor: Colors.transparent,
-          appBar: appBar(() {}, () {}),
+          appBar: appBar(),
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [

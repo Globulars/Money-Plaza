@@ -14,7 +14,7 @@ class MemberLoginView extends StackedView<MemberLoginViewModel> {
     Widget? child,
   ) {
     return Scaffold(
-      appBar: appBar(() {}, () {}),
+      appBar: appBar(),
       body: Container(
         width: MediaQuery.of(context).size.width,
         decoration: const BoxDecoration(

@@ -27,7 +27,7 @@ class OwnerloanView extends StackedView<OwnerloanViewModel> {
           length: 3,
           child: Scaffold(
             backgroundColor: Colors.transparent,
-            appBar: appBar(() {}, () {}),
+            appBar: appBar(),
             body: NestedScrollView(
               headerSliverBuilder:
                   (BuildContext context, bool innerBoxIsScrolled) {

@@ -32,7 +32,7 @@ class CalculatorResultView extends StackedView<CalculatorResultViewModel> {
         ),
         Scaffold(
           backgroundColor: Colors.transparent,
-          appBar: appBar(() {}, () {}),
+          appBar: appBar(),
           body: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,

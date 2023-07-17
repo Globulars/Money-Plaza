@@ -22,7 +22,7 @@ class LandingView extends StackedView<LandingViewModel> {
     return Stack(
       children: [
         Scaffold(
-          appBar: appBar(() {}, () {}),
+          appBar: appBar(),
           body: Container(
             width: MediaQuery.of(context).size.width,
             height: height,
