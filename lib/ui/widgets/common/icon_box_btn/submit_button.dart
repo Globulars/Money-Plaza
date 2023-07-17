@@ -66,6 +66,7 @@ class SubmitButton extends StackedView<IconBoxBtnModel> {
               Text(
                 text ?? "",
                 style: GoogleFonts.ibmPlexSans(
+                    decoration: TextDecoration.none,
                     color: color ?? Colors.white,
                     fontSize: fontSize ?? 14,
                     fontWeight: fontWeight ?? FontWeight.w400),
