@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
-import 'package:money_plaza/ui/views/loan/personalloan/personal_widgets/tabbarview3.dart';
+import 'package:money_plaza/ui/views/loan/personal_loan/personal_widgets/tabbarview3.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import '../../../widgets/app_bar.dart';

@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:money_plaza/ui/common/ui_helpers.dart';
-import 'package:money_plaza/ui/views/loan/personalloan/ploanreslut/ploan_widgets/ploan_viebuilder.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
+import '../../../../common/ui_helpers.dart';
 import '../../../../widgets/app_bar.dart';
-import 'ploan_widgets/top_widget.dart';
-import 'ploanreslut_viewmodel.dart';
+import '../../../../widgets/common/result_card.dart';
+import '../../../../widgets/common/topbar_loan_result.dart';
+import 'commerical_result_viewmodel.dart';
 
-class PloanreslutView extends StackedView<PloanreslutViewModel> {
-  const PloanreslutView({Key? key}) : super(key: key);
+class CommericalResultView extends StackedView<CommericalResultViewModel> {
+  const CommericalResultView({Key? key}) : super(key: key);
 
   @override
   Widget builder(
     BuildContext context,
-    PloanreslutViewModel viewModel,
+    CommericalResultViewModel viewModel,
     Widget? child,
   ) {
     final width = MediaQuery.of(context).size.width;
@@ -32,12 +32,20 @@ class PloanreslutView extends StackedView<PloanreslutViewModel> {
           child: Scaffold(
             backgroundColor: Colors.transparent,
             appBar: appBar(),
-            body: const Column(
+            body:  Column(
               children: [
-                TopWidget(),
+                resultLoanTop(context),
                 verticalSpaceSmall,
-                Expanded(
-                    child: SingleChildScrollView(child: PersonalResultCard())),
+              Expanded(
+                    child: SingleChildScrollView(
+                        child: ListView.builder(
+                  itemCount: 3,
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemBuilder: (BuildContext context, int index) {
+                    return resultCard(context);
+                  },
+                ))),
               ],
             ),
             // bottomNavigationBar: Container(
@@ -54,8 +62,8 @@ class PloanreslutView extends StackedView<PloanreslutViewModel> {
   }
 
   @override
-  PloanreslutViewModel viewModelBuilder(
+  CommericalResultViewModel viewModelBuilder(
     BuildContext context,
   ) =>
-      PloanreslutViewModel();
+      CommericalResultViewModel();
 }
