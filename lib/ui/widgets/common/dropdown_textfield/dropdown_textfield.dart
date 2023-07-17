@@ -73,6 +73,9 @@ class DropdownTextfield extends StackedView<DropdownTextfieldModel> {
                 isEmpty: value == null || value == '',
                 child: DropdownButtonHideUnderline(
                   child: DropdownButton<String>(
+                    iconEnabledColor: Colors.black,
+                    iconDisabledColor: Colors.black,
+                    iconSize: 32,
                     value: value,
                     isDense: true,
                     onChanged: onChanged,
