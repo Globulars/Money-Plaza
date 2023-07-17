@@ -10,4 +10,20 @@ class LoanViewModel extends BaseViewModel {
   navigateToPersonalloan() {
     _navigationService.navigateToPersonalloanView();
   }
+
+  navigateToOwnerloan() {
+    _navigationService.navigateToOwnerloanView();
+  }
+
+  navigateToBlnstransfer() {
+    _navigationService.navigateToBlnstransferView();
+  }
+
+  navigateToApplyconfirm() {
+    _navigationService.navigateToApplyconfirmView();
+  }
+
+  navigateToCommerical() {
+    _navigationService.navigateToCommericalLoanView();
+  }
 }
