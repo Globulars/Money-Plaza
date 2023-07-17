@@ -6,6 +6,7 @@ import 'package:stacked/stacked.dart';
 import '../../common/app_colors.dart';
 import '../../common/ui_helpers.dart';
 import '../../widgets/common/custom_text_field/custom_text_field.dart';
+import '../../widgets/common/dropdown_textfield/dropdown_textfield.dart';
 import '../../widgets/common/icon_box_btn/submit_button.dart';
 import 'member_login_viewmodel.dart';
 
@@ -71,6 +72,12 @@ class SignUpWithEmail extends StackedView<MemberLoginViewModel> {
             ),
           ],
         ),
+        DropdownTextfield(
+            options: const ["Option 1", "Option 2", "Option 3"],
+            onChanged: (onChanged) {}),
+        DropdownTextfield(
+            options: const ["Option 1", "Option 2", "Option 3"],
+            onChanged: (onChanged) {}),
         verticalSpaceSmall,
         Row(
           children: [
@@ -91,7 +98,6 @@ class SignUpWithEmail extends StackedView<MemberLoginViewModel> {
             ),
           ],
         ),
-
         verticalSpaceSmall,
         SubmitButton(
           height: 40,
