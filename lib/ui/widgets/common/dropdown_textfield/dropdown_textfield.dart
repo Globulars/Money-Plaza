@@ -22,11 +22,15 @@ class DropdownTextfield extends StackedView<DropdownTextfieldModel> {
   final List<String> options;
   String? value;
   String? titleText;
+  double? height;
+  double? margin;
   void Function(String?) onChanged;
   DropdownTextfield({
     super.key,
     this.hintText = '',
     required this.options,
+    this.height,
+    this.margin,
     this.value,
     this.titleText = "",
     required this.onChanged,
@@ -47,34 +51,43 @@ class DropdownTextfield extends StackedView<DropdownTextfieldModel> {
               fontSize: 14, fontWeight: FontWeight.w500),
         ),
         verticalSpaceTiny,
-        FormField<String>(
-          builder: (FormFieldState<String> state) {
-            return InputDecorator(
-              decoration: InputDecoration(
-                contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 10.0, vertical: 0.0),
-                labelText: hintText,
-                border: _setBorderStyle(),
-                enabledBorder: _setBorderStyle(),
-                focusedBorder: _setBorderStyle(),
-                disabledBorder: _setBorderStyle(),
-              ),
-              isEmpty: value == null || value == '',
-              child: DropdownButtonHideUnderline(
-                child: DropdownButton<String>(
-                  value: value,
-                  isDense: true,
-                  onChanged: onChanged,
-                  items: options.map((String value) {
-                    return DropdownMenuItem<String>(
-                      value: value,
-                      child: Text(value.toString()),
-                    );
-                  }).toList(),
+        Container(
+           decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(5),
+            color: Colors.white,
+          ),
+          width: double.infinity,
+          height: height ?? 40,
+        
+          child: FormField<String>(
+            builder: (FormFieldState<String> state) {
+              return InputDecorator(
+                decoration: InputDecoration(
+                  contentPadding:
+                      const EdgeInsets.symmetric(horizontal: 10.0, vertical: 0.0),
+                  labelText: hintText,
+                  border: _setBorderStyle(),
+                  enabledBorder: _setBorderStyle(),
+                  focusedBorder: _setBorderStyle(),
+                  disabledBorder: _setBorderStyle(),
                 ),
-              ),
-            );
-          },
+                isEmpty: value == null || value == '',
+                child: DropdownButtonHideUnderline(
+                  child: DropdownButton<String>(
+                    value: value,
+                    isDense: true,
+                    onChanged: onChanged,
+                    items: options.map((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value.toString()),
+                      );
+                    }).toList(),
+                  ),
+                ),
+              );
+            },
+          ),
         ),
       ],
     );

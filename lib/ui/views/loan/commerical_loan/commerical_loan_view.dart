@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:money_plaza/ui/common/app_colors.dart';
-import 'package:money_plaza/ui/views/loan/personalloan/personal_widgets/tabbarview3.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
+import '../../../common/app_colors.dart';
 import '../../../widgets/app_bar.dart';
 import '../../../widgets/bottom_bar.dart';
 import '../../../widgets/common/icon_box_btn/return_button.dart';
-import 'personal_widgets/tabbarview2.dart';
-import 'personal_widgets/tabbarview1.dart';
-import 'personalloan_viewmodel.dart';
+import 'commeriacal_widgets/commerical_view1.dart';
+import 'commeriacal_widgets/commerical_view2.dart';
+import 'commeriacal_widgets/commerical_view3.dart';
+import 'commerical_loan_viewmodel.dart';
 
-class PersonalloanView extends StackedView<PersonalloanViewModel> {
-  const PersonalloanView({Key? key}) : super(key: key);
+class CommericalLoanView extends StackedView<CommericalLoanViewModel> {
+  const CommericalLoanView({Key? key}) : super(key: key);
 
   @override
   Widget builder(
     BuildContext context,
-    PersonalloanViewModel viewModel,
+    CommericalLoanViewModel viewModel,
     Widget? child,
   ) {
     final width = MediaQuery.of(context).size.width;
@@ -77,11 +77,7 @@ class PersonalloanView extends StackedView<PersonalloanViewModel> {
                 ];
               },
               body: const TabBarView(
-                children: <Widget>[
-                  SingleChildScrollView(child: TabBarView1()),
-                  TabBarView2(),
-                  TabBarView3()
-                ],
+                children: <Widget>[CommTabBar1(), CommTabBar2(), CommTabBar3()],
               ),
             ),
           ),
@@ -105,8 +101,8 @@ class PersonalloanView extends StackedView<PersonalloanViewModel> {
   }
 
   @override
-  PersonalloanViewModel viewModelBuilder(
+  CommericalLoanViewModel viewModelBuilder(
     BuildContext context,
   ) =>
-      PersonalloanViewModel();
+      CommericalLoanViewModel();
 }

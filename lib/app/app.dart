@@ -9,15 +9,16 @@ import 'package:money_plaza/ui/views/loan/loan_view.dart';
 import 'package:money_plaza/ui/views/loan/calculator_result/calculator_result_view.dart';
 import 'package:money_plaza/ui/views/loan/loancompare/loancompare_view.dart';
 import 'package:money_plaza/ui/views/loan/applyconfirm/applyconfirm_view.dart';
-import 'package:money_plaza/ui/views/loan/personalloan/personalloan_view.dart';
-import 'package:money_plaza/ui/views/loan/personalloan/ploanreslut/ploanreslut_view.dart';
+import 'package:money_plaza/ui/views/loan/personal_loan/personalloan_view.dart';
+import 'package:money_plaza/ui/views/loan/personal_loan/ploanreslut/ploanreslut_view.dart';
 import 'package:money_plaza/ui/views/ownerloan/ownerloan_view.dart';
 import 'package:money_plaza/ui/views/ownerloan/ownerloanresult/ownerloanresult_view.dart';
 import 'package:money_plaza/ui/views/landing/settings/settings_view.dart';
 import 'package:money_plaza/ui/views/member_login/member_login_view.dart';
 import 'package:money_plaza/ui/views/loan/blnstransfer/blnstransfer_view.dart';
 import 'package:money_plaza/ui/views/loan/blnstransfer/transfer_result/transfer_result_view.dart';
-import 'package:money_plaza/ui/views/commerical_loan/commerical_loan_view.dart';
+import 'package:money_plaza/ui/views/loan/commerical_loan/commerical_loan_view.dart';
+import 'package:money_plaza/ui/views/loan/commerical_loan/commerical_result/commerical_result_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -38,6 +39,7 @@ import 'package:money_plaza/ui/views/commerical_loan/commerical_loan_view.dart';
     MaterialRoute(page: BlnstransferView),
     MaterialRoute(page: TransferResultView),
     MaterialRoute(page: CommericalLoanView),
+    MaterialRoute(page: CommericalResultView),
 // @stacked-route
   ],
   dependencies: [
