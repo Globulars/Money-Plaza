@@ -7,7 +7,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:flutter/material.dart' as _i18;
 import 'package:flutter/material.dart';
-import 'package:money_plaza/ui/views/commerical_loan/commerical_loan_view.dart'
+import 'package:money_plaza/ui/views/loan/commerical_loan/commerical_loan_view.dart'
     as _i17;
 import 'package:money_plaza/ui/views/home/home_view.dart' as _i2;
 import 'package:money_plaza/ui/views/landing/landing_view.dart' as _i4;
