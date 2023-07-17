@@ -16,19 +16,17 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
     return Expanded(
         child: SingleChildScrollView(
             child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-                child: Card(
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Image.asset(myIcons.hSBC)
-                        ],
-                      )
-                    ],
-                  ),
-                ),
-                )));
+      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+      child: Card(
+        child: Column(
+          children: [
+            Row(
+              children: [Image.asset(myIcons.hSBC)],
+            )
+          ],
+        ),
+      ),
+    )));
   }
 
   @override

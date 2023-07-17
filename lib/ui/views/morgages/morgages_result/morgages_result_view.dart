@@ -23,11 +23,11 @@ class MorgagesResultView extends StackedView<MorgagesResultViewModel> {
     final width = MediaQuery.of(context).size.width;
     return Stack(
       children: [
-       const BackgroundImage(),
+        const BackgroundImage(),
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: appBar(),
-          body:  Column(
+          body: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
@@ -35,15 +35,36 @@ class MorgagesResultView extends StackedView<MorgagesResultViewModel> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    SubBar(width: width*0.44,height: 50,btmLeftRadius: 0,btmRightRadius: 0,divider: true,text: 'Filter',image: myIcons.setting,imgwidth: 22,),
-                     SubBar(width: width*0.44,height: 50,btmLeftRadius: 0,btmRightRadius: 0,divider: true,text: 'Select all',image: myIcons.compare1,imgwidth: 22,),  
-                     const MorgagesResultCard()            
+                    SubBar(
+                      width: width * 0.44,
+                      height: 50,
+                      btmLeftRadius: 0,
+                      btmRightRadius: 0,
+                      divider: true,
+                      text: 'Filter',
+                      image: myIcons.setting,
+                      imgwidth: 22,
+                    ),
+                    SubBar(
+                      width: width * 0.44,
+                      height: 50,
+                      btmLeftRadius: 0,
+                      btmRightRadius: 0,
+                      divider: true,
+                      text: 'Select all',
+                      image: myIcons.compare1,
+                      imgwidth: 22,
+                    ),
+                    const MorgagesResultCard()
                   ],
                 ),
               ),
-              const Divider(color: darkGreenHeigh,thickness: 4,height: 1,),
+              const Divider(
+                color: darkGreenHeigh,
+                thickness: 4,
+                height: 1,
+              ),
               verticalSpaceSmall,
-
 
               // Picture(),
               // MorgTextFields(),
