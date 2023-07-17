@@ -26,65 +26,64 @@ class OwnerloanView extends StackedView<OwnerloanViewModel> {
         DefaultTabController(
           length: 3,
           child: Scaffold(
-              backgroundColor: Colors.transparent,
-              appBar: appBar(() {}, () {}),
-              body: NestedScrollView(
-                headerSliverBuilder:
-                    (BuildContext context, bool innerBoxIsScrolled) {
-                  return <Widget>[
-                    SliverAppBar(
-                      toolbarHeight: 0,
-                      backgroundColor: lightGreenHeigh,
-                      pinned: true,
-                      floating: false,
-                      bottom: TabBar(
-                        unselectedLabelColor: darkGreenHeigh,
-                        labelColor: Colors.white,
-                        labelStyle: GoogleFonts.ibmPlexSans(fontSize: 10),
-                        indicator: const BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(10),
-                                topRight:
-                                    Radius.circular(10)), // Creates border
-                            color: darkGreenHeigh),
-                        tabs: const [
-                          Tab(
-                            child: Text(
-                              '1)Early Payback Penalty',
-                              textAlign: TextAlign.center,
-                            ),
+            backgroundColor: Colors.transparent,
+            appBar: appBar(() {}, () {}),
+            body: NestedScrollView(
+              headerSliverBuilder:
+                  (BuildContext context, bool innerBoxIsScrolled) {
+                return <Widget>[
+                  SliverAppBar(
+                    toolbarHeight: 0,
+                    backgroundColor: lightGreenHeigh,
+                    pinned: true,
+                    floating: false,
+                    bottom: TabBar(
+                      unselectedLabelColor: darkGreenHeigh,
+                      labelColor: Colors.white,
+                      labelStyle: GoogleFonts.ibmPlexSans(fontSize: 10),
+                      indicator: const BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(10),
+                              topRight: Radius.circular(10)), // Creates border
+                          color: darkGreenHeigh),
+                      tabs: const [
+                        Tab(
+                          child: Text(
+                            '1)Early Payback Penalty',
+                            textAlign: TextAlign.center,
                           ),
-                          Tab(
-                              child: Text(
-                            '2)Source of \nincome',
-                            textAlign: TextAlign.center,
-                          )),
-                          Tab(
-                              child: Text(
-                            '3)Outstanding \nLoan',
-                            textAlign: TextAlign.center,
-                          )),
-                        ],
-                      ),
+                        ),
+                        Tab(
+                            child: Text(
+                          '2)Source of \nincome',
+                          textAlign: TextAlign.center,
+                        )),
+                        Tab(
+                            child: Text(
+                          '3)Outstanding \nLoan',
+                          textAlign: TextAlign.center,
+                        )),
+                      ],
                     ),
-                  ];
-                },
-                body:  const TabBarView(
-                  children: <Widget>[
-                    SingleChildScrollView(child: OwnerTabBar1()),
-                    SingleChildScrollView(child: OwnerTabBar2()),
-                    SingleChildScrollView(child: OwnerTabBar3())
-                  ],
-                ),
+                  ),
+                ];
+              },
+              body: const TabBarView(
+                children: <Widget>[
+                  SingleChildScrollView(child: OwnerTabBar1()),
+                  SingleChildScrollView(child: OwnerTabBar2()),
+                  SingleChildScrollView(child: OwnerTabBar3())
+                ],
               ),
-              bottomNavigationBar: Container(
-                  height: 60,
-                  width: width * 1,
-                  child: SizedBox(
-                      child: Image.asset(
-                    myIcons.contacts,
-                  ))),
-              ),
+            ),
+            bottomNavigationBar: Container(
+                height: 60,
+                width: width * 1,
+                child: SizedBox(
+                    child: Image.asset(
+                  myIcons.contacts,
+                ))),
+          ),
         ),
       ],
     );

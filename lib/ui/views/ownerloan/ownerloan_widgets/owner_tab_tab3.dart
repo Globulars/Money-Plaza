@@ -45,7 +45,6 @@ class OwnerTabBar3 extends ViewModelWidget<OwnerloanViewModel> {
               ),
             ],
           ),
-        
           verticalSpaceSmall,
           CustomTextField(
             titleText: 'Number of Loans',
@@ -61,12 +60,12 @@ class OwnerTabBar3 extends ViewModelWidget<OwnerloanViewModel> {
             options: [],
             titleText: 'Monthly Repayment',
           ),
-           verticalSpaceSmall,
+          verticalSpaceSmall,
           CustomTextField(
             hintText: 'HK\$',
             titleText: 'Property Valuation',
           ),
-             verticalSpaceSmall,
+          verticalSpaceSmall,
           CustomTextField(
             titleText: 'Current Mortgage Ratio',
           ),

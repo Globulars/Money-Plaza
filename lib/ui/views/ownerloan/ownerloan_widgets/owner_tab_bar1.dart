@@ -90,7 +90,6 @@ class OwnerTabBar1 extends ViewModelWidget<OwnerloanViewModel> {
             options: [],
             titleText: 'Loan Reason',
           ),
-         
         ],
       ),
     );
