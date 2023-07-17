@@ -20,6 +20,7 @@ import 'package:money_plaza/ui/views/loan/blnstransfer/transfer_result/transfer_
 import 'package:money_plaza/ui/views/loan/commerical_loan/commerical_loan_view.dart';
 import 'package:money_plaza/ui/views/loan/commerical_loan/commerical_result/commerical_result_view.dart';
 import 'package:money_plaza/ui/views/morgages/morgages_view.dart';
+import 'package:money_plaza/ui/views/morgages/morgages_result/morgages_result_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -42,6 +43,7 @@ import 'package:money_plaza/ui/views/morgages/morgages_view.dart';
     MaterialRoute(page: CommericalLoanView),
     MaterialRoute(page: CommericalResultView),
     MaterialRoute(page: MorgagesView),
+    MaterialRoute(page: MorgagesResultView),
 // @stacked-route
   ],
   dependencies: [

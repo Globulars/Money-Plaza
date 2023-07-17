@@ -5,7 +5,7 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:flutter/material.dart' as _i20;
+import 'package:flutter/material.dart' as _i21;
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/views/home/home_view.dart' as _i2;
 import 'package:money_plaza/ui/views/landing/landing_view.dart' as _i4;
@@ -34,11 +34,13 @@ import 'package:money_plaza/ui/views/loan/personal_loan/ploanreslut/ploanreslut_
 import 'package:money_plaza/ui/views/member_login/member_login_view.dart'
     as _i14;
 import 'package:money_plaza/ui/views/morgages/morgages_view.dart' as _i19;
+import 'package:money_plaza/ui/views/morgages/morgages_result/morgages_result_view.dart'
+    as _i20;
 import 'package:money_plaza/ui/views/ownerloan/ownerloan_view.dart' as _i11;
 import 'package:money_plaza/ui/views/ownerloan/ownerloanresult/ownerloanresult_view.dart'
     as _i12;
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i21;
+import 'package:stacked_services/stacked_services.dart' as _i22;
 
 class Routes {
   static const homeView = '/home-view';
@@ -77,6 +79,8 @@ class Routes {
 
   static const morgagesView = '/morgages-view';
 
+  static const morgagesResultView = '/morgages-result-view';
+
   static const all = <String>{
     homeView,
     startupView,
@@ -96,6 +100,7 @@ class Routes {
     commericalLoanView,
     commericalResultView,
     morgagesView,
+    morgagesResultView,
   };
 }
 
@@ -173,114 +178,124 @@ class StackedRouter extends _i1.RouterBase {
       Routes.morgagesView,
       page: _i19.MorgagesView,
     ),
+    _i1.RouteDef(
+      Routes.morgagesResultView,
+      page: _i20.MorgagesResultView,
+    ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
     _i2.HomeView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i2.HomeView(),
         settings: data,
       );
     },
     _i3.StartupView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i3.StartupView(),
         settings: data,
       );
     },
     _i4.LandingView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i4.LandingView(),
         settings: data,
       );
     },
     _i5.LoanView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i5.LoanView(),
         settings: data,
       );
     },
     _i6.CalculatorResultView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i6.CalculatorResultView(),
         settings: data,
       );
     },
     _i7.LoancompareView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i7.LoancompareView(),
         settings: data,
       );
     },
     _i8.ApplyconfirmView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i8.ApplyconfirmView(),
         settings: data,
       );
     },
     _i9.PersonalloanView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i9.PersonalloanView(),
         settings: data,
       );
     },
     _i10.PloanreslutView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i10.PloanreslutView(),
         settings: data,
       );
     },
     _i11.OwnerloanView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i11.OwnerloanView(),
         settings: data,
       );
     },
     _i12.OwnerloanresultView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i12.OwnerloanresultView(),
         settings: data,
       );
     },
     _i13.SettingsView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i13.SettingsView(),
         settings: data,
       );
     },
     _i14.MemberLoginView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i14.MemberLoginView(),
         settings: data,
       );
     },
     _i15.BlnstransferView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i15.BlnstransferView(),
         settings: data,
       );
     },
     _i16.TransferResultView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i16.TransferResultView(),
         settings: data,
       );
     },
     _i17.CommericalLoanView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i17.CommericalLoanView(),
         settings: data,
       );
     },
     _i18.CommericalResultView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i18.CommericalResultView(),
         settings: data,
       );
     },
     _i19.MorgagesView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i19.MorgagesView(),
+        settings: data,
+      );
+    },
+    _i20.MorgagesResultView: (data) {
+      return _i21.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i20.MorgagesResultView(),
         settings: data,
       );
     },
@@ -292,7 +307,7 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-extension NavigatorStateExtension on _i21.NavigationService {
+extension NavigatorStateExtension on _i22.NavigationService {
   Future<dynamic> navigateToHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -545,6 +560,20 @@ extension NavigatorStateExtension on _i21.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> navigateToMorgagesResultView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.morgagesResultView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
   Future<dynamic> replaceWithHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -791,6 +820,20 @@ extension NavigatorStateExtension on _i21.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.morgagesView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithMorgagesResultView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.morgagesResultView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
