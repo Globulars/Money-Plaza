@@ -34,16 +34,17 @@ class PicContainer extends ViewModelWidget<LoanViewModel> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 IconBoxBtn(
-                  height: 80,
+                  height: 70,
                   width: width * 0.45,
                   color: Colors.black,
                   fontWeight: FontWeight.w500,
                   topimage: myIcons.personalLoans,
                   text: 'Personal Loans',
+                  onPress: viewModel.navigateToPersonalloan,
                 ),
                 horizontalSpaceSmall,
                 IconBoxBtn(
-                  height: 80,
+                  height: 70,
                   width: width * 0.45,
                   color: Colors.black,
                   fontWeight: FontWeight.w500,
@@ -57,7 +58,7 @@ class PicContainer extends ViewModelWidget<LoanViewModel> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 IconBoxBtn(
-                  height: 80,
+                  height: 70,
                   width: width * 0.45,
                   color: Colors.black,
                   fontWeight: FontWeight.w500,
@@ -66,7 +67,7 @@ class PicContainer extends ViewModelWidget<LoanViewModel> {
                 ),
                 horizontalSpaceSmall,
                 IconBoxBtn(
-                  height: 80,
+                  height: 70,
                   width: width * 0.45,
                   color: Colors.black,
                   fontWeight: FontWeight.w500,

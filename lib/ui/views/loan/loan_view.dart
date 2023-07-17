@@ -46,17 +46,13 @@ class LoanView extends StackedView<LoanViewModel> {
           ),
         ),
         bottomBar(
-          Row(
-            children: [
-              ReturnButton(
-                imageLeft: myIcons.returnIcon1,
-                imgwidth: 18,
-                fontSize: 18,
-                text: 'Retrue',
-                height: 40,
-                width: 80,
-              ),
-            ],
+          ReturnButton(
+            imageLeft: myIcons.returnIcon1,
+            imgwidth: 18,
+            fontSize: 18,
+            text: 'Retrue',
+            height: 40,
+            width: 80,
           ),
         ),
       ],
