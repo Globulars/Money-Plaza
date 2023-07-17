@@ -3,11 +3,9 @@ import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:stacked/stacked.dart';
-
 import '../../widgets/app_bar.dart';
 import '../../widgets/bottom_bar.dart';
 import '../../widgets/common/icon_box_btn/icon_box_btn.dart';
-import '../../widgets/common/icon_box_btn/submit_button.dart';
 import 'landing_viewmodel.dart';
 
 class LandingView extends StackedView<LandingViewModel> {
@@ -20,26 +18,19 @@ class LandingView extends StackedView<LandingViewModel> {
     Widget? child,
   ) {
     final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
     return Stack(
       children: [
-        // Container(
-        //   width: width * 1,
-        //   height: 800,
-        //   decoration: const BoxDecoration(
-        //     image: DecorationImage(
-        //         image: AssetImage(myIcons.backgroundimage), fit: BoxFit.fill),
-        //   ),
-        // ),
         Scaffold(
           appBar: appBar(() {}, () {}),
-          body: SingleChildScrollView(
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage("assets/screens/mainbg.png"),
-                    fit: BoxFit.fill),
-              ),
+          body: Container(
+            width: MediaQuery.of(context).size.width,
+            height: height,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage(myIcons.backgroundimage), fit: BoxFit.fill),
+            ),
+            child: SingleChildScrollView(
               child: Column(children: [
                 Image.asset(
                   "assets/screens/landing/cover_image.png",
@@ -123,15 +114,7 @@ class LandingView extends StackedView<LandingViewModel> {
             ),
           ),
         ),
-        // bottomBar(
-        //   // Container()
-        //   SubmitButton(
-        //     image: myIcons.apply,
-        //     text: 'Apply',
-        //     fontSize: 18,
-        //     height: 40,
-        //   ),
-        // ),
+        bottomBar(Container()),
       ],
     );
   }
