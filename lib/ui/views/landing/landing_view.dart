@@ -107,7 +107,7 @@ class LandingView extends StackedView<LandingViewModel> {
                         text: "Sign Up/Login",
                         btmimage: myIcons.regularUser,
                         imgwidth: 50,
-                        onPress: viewModel.navigateToLanding,
+                        onPress: viewModel.navigateToMemberLogin,
                       ),
                     ],
                   ),

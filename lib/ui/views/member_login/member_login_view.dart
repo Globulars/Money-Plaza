@@ -6,6 +6,8 @@ import 'package:stacked/stacked.dart';
 
 import '../../common/app_colors.dart';
 import '../../widgets/app_bar.dart';
+import 'RegisterTab.dart';
+import 'memberLoginTab.dart';
 import 'member_login_viewmodel.dart';
 
 class MemberLoginView extends StackedView<MemberLoginViewModel> {
@@ -18,11 +20,12 @@ class MemberLoginView extends StackedView<MemberLoginViewModel> {
     Widget? child,
   ) {
     final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
     return Stack(
       children: [
         Container(
           width: width * 1,
-          height: MediaQuery.of(context).size.height * 1,
+          height: height * 1,
           decoration: const BoxDecoration(
             image: DecorationImage(
                 image: AssetImage(myIcons.backgroundimage), fit: BoxFit.fill),
@@ -31,8 +34,8 @@ class MemberLoginView extends StackedView<MemberLoginViewModel> {
         DefaultTabController(
           length: 2,
           child: Container(
-            height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
+            height: height,
+            width: width,
             child: Scaffold(
               backgroundColor: Colors.transparent,
               appBar: appBar(),
@@ -103,72 +106,12 @@ class MemberLoginView extends StackedView<MemberLoginViewModel> {
                     ),
                   ];
                 },
-                body: Padding(
+                body: const Padding(
                   padding: EdgeInsets.all(15.0),
                   child: TabBarView(
                     children: <Widget>[
-                      //SUB Tab Bar
-
-                      DefaultTabController(
-                        length: 2,
-                        child: Container(
-                          height: MediaQuery.of(context).size.height,
-                          width: MediaQuery.of(context).size.width,
-                          child: Scaffold(
-                            backgroundColor: Colors.transparent,
-                            body: NestedScrollView(
-                              headerSliverBuilder: (BuildContext context,
-                                  bool innerBoxIsScrolled) {
-                                return <Widget>[
-                                  SliverAppBar(
-                                    toolbarHeight: 0,
-                                    backgroundColor: Colors.transparent,
-                                    pinned: true,
-                                    floating: false,
-                                    shape: RoundedRectangleBorder(
-                                      side: BorderSide(width: 1),
-                                    ),
-                                    bottom: TabBar(
-                                      unselectedLabelColor: Colors.orange,
-                                      labelColor: Colors.red,
-                                      labelStyle:
-                                          GoogleFonts.ibmPlexSans(fontSize: 10),
-                                      indicator: const BoxDecoration(
-                                          // Creates border
-                                          color: darkGreenHeigh),
-                                      tabs: [
-                                        Tab(
-                                          child: CustomText(
-                                            text: "Login with Email",
-                                            fontSize: 16,
-                                          ),
-                                        ),
-                                        Tab(
-                                          child: CustomText(
-                                            text: "Login with Mobile",
-                                            fontSize: 16,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ];
-                              },
-                              body: const Padding(
-                                padding: EdgeInsets.all(15.0),
-                                child: TabBarView(
-                                  children: <Widget>[
-                                    //SUB Tab Bar
-                                    Text("Tab Bar 1"),
-                                    Text("Tab Bar 2"),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Text("Tab Bar 2"),
+                      MemberLoginTab(),
+                      RegisterTab(),
                     ],
                   ),
                 ),
