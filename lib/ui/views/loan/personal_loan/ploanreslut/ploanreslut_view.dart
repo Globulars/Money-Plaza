@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
-import 'package:money_plaza/ui/views/loan/personalloan/ploanreslut/ploan_widgets/ploan_viebuilder.dart';
+import 'package:money_plaza/ui/views/loan/personal_loan/ploanreslut/ploan_widgets/ploan_viebuilder.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import '../../../../widgets/app_bar.dart';
