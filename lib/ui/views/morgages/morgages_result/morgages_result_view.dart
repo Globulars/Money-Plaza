@@ -36,7 +36,7 @@ class MorgagesResultView extends StackedView<MorgagesResultViewModel> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     SubBar(
-                      width: width * 0.44,
+                      width: width * 0.45,
                       height: 50,
                       btmLeftRadius: 0,
                       btmRightRadius: 0,
@@ -46,7 +46,7 @@ class MorgagesResultView extends StackedView<MorgagesResultViewModel> {
                       imgwidth: 22,
                     ),
                     SubBar(
-                      width: width * 0.44,
+                      width: width * 0.45,
                       height: 50,
                       btmLeftRadius: 0,
                       btmRightRadius: 0,
@@ -55,7 +55,6 @@ class MorgagesResultView extends StackedView<MorgagesResultViewModel> {
                       image: myIcons.compare1,
                       imgwidth: 22,
                     ),
-                    const MorgagesResultCard()
                   ],
                 ),
               ),
@@ -65,6 +64,7 @@ class MorgagesResultView extends StackedView<MorgagesResultViewModel> {
                 height: 1,
               ),
               verticalSpaceSmall,
+              const MorgagesResultCard()
 
               // Picture(),
               // MorgTextFields(),
