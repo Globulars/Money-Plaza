@@ -34,7 +34,10 @@ class MemberLoginView extends StackedView<MemberLoginViewModel> {
                   backgroundColor: Colors.transparent,
                   appBar: TabBar(
                     unselectedLabelColor: Colors.red,
-                    unselectedLabelStyle: TextStyle(backgroundColor: Colors.redAccent, color: Colors.red,decorationColor: Colors.red),
+                    unselectedLabelStyle: TextStyle(
+                        backgroundColor: Colors.redAccent,
+                        color: Colors.red,
+                        decorationColor: Colors.red),
                     indicatorWeight: 0.1,
                     tabs: [
                       Tab(
