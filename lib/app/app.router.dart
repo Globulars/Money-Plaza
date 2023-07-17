@@ -21,8 +21,8 @@ import 'package:money_plaza/ui/views/loan/personalloan/personalloan_view.dart'
     as _i10;
 import 'package:money_plaza/ui/views/member_login/member_login_view.dart'
     as _i12;
-import 'package:money_plaza/ui/views/settings/settings_view.dart' as _i11;
-import 'package:money_plaza/ui/views/startup/startup_view.dart' as _i3;
+import 'package:money_plaza/ui/views/landing/settings/settings_view.dart' as _i11;
+import 'package:money_plaza/ui/views/landing/startup/startup_view.dart' as _i3;
 import 'package:stacked/stacked.dart' as _i1;
 import 'package:stacked_services/stacked_services.dart' as _i14;
 
