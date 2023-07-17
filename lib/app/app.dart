@@ -23,6 +23,9 @@ import 'package:money_plaza/ui/dialogs/filter/filter_dialog.dart';
 import 'package:money_plaza/ui/dialogs/calculator/calculator_dialog.dart';
 import 'package:money_plaza/ui/views/morgages/morgages_view.dart';
 import 'package:money_plaza/ui/views/morgages/morgages_result/morgages_result_view.dart';
+import 'package:money_plaza/ui/dialogs/reset_password/reset_password_dialog.dart';
+import 'package:money_plaza/ui/dialogs/contact_us/contact_us_dialog.dart';
+import 'package:money_plaza/ui/dialogs/morgages_filter/morgages_filter_dialog.dart';
 // @stacked-import
 
 @StackedApp(
@@ -62,6 +65,9 @@ import 'package:money_plaza/ui/views/morgages/morgages_result/morgages_result_vi
     StackedDialog(classType: InfoAlertDialog),
     StackedDialog(classType: FilterDialog),
     StackedDialog(classType: CalculatorDialog),
+    StackedDialog(classType: ResetPasswordDialog),
+    StackedDialog(classType: ContactUsDialog),
+    StackedDialog(classType: MorgagesFilterDialog),
 // @stacked-dialog
   ],
 )

@@ -1,9 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
+import 'package:stacked_services/stacked_services.dart';
+import '../../app/app.dialogs.dart';
+import '../../app/app.locator.dart';
 import '../common/app_colors.dart';
 import 'common/icon_box_btn/icon_box_btn.dart';
 
 Widget topBar(context) {
+  final _dialogService = locator<DialogService>();
+  void showCalculator() {
+    _dialogService.showCustomDialog(
+      variant: DialogType.calculator,
+    );
+  }
+
+  void showFilter() {
+    _dialogService.showCustomDialog(
+      variant: DialogType.filter,
+    );
+  }
+
   return Column(
     children: [
       Padding(
@@ -28,6 +44,7 @@ Widget topBar(context) {
               boxcolor: darkGreenHeigh,
               topimage: myIcons.filter,
               text: 'Filter',
+              onPress: showFilter,
             ),
             InkWell(
               onTap: () {
@@ -41,6 +58,7 @@ Widget topBar(context) {
                 boxcolor: darkGreenHeigh,
                 topimage: myIcons.calculator,
                 text: 'Calculator',
+                onPress: showCalculator,
               ),
             ),
             IconBoxBtn(

@@ -33,9 +33,9 @@ import 'package:money_plaza/ui/views/loan/personal_loan/ploanreslut/ploanreslut_
     as _i10;
 import 'package:money_plaza/ui/views/member_login/member_login_view.dart'
     as _i14;
-import 'package:money_plaza/ui/views/morgages/morgages_view.dart' as _i19;
 import 'package:money_plaza/ui/views/morgages/morgages_result/morgages_result_view.dart'
     as _i20;
+import 'package:money_plaza/ui/views/morgages/morgages_view.dart' as _i19;
 import 'package:money_plaza/ui/views/ownerloan/ownerloan_view.dart' as _i11;
 import 'package:money_plaza/ui/views/ownerloan/ownerloanresult/ownerloanresult_view.dart'
     as _i12;

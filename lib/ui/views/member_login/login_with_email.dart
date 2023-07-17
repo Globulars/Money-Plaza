@@ -18,7 +18,6 @@ class LoginWithEmail extends StackedView<MemberLoginViewModel> {
     MemberLoginViewModel viewModel,
     Widget? child,
   ) {
-  
     return Column(
       children: [
         CustomTextField(
@@ -55,10 +54,13 @@ class LoginWithEmail extends StackedView<MemberLoginViewModel> {
           ],
         ),
         verticalSpaceSmall,
-        CustomText(
-          text: "Forget Password?",
-          color: kcDarkGreyColor,
-          fontSize: 16,
+        GestureDetector(
+          onTap: viewModel.showResetPassword,
+          child: CustomText(
+            text: "Forget Password?",
+            color: kcDarkGreyColor,
+            fontSize: 16,
+          ),
         )
       ],
     );
