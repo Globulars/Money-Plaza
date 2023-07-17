@@ -8,13 +8,11 @@ import '../../app/app.locator.dart';
 
 AppBar appBar() {
   final _navigationService = locator<NavigationService>();
-  Future navigateToSettings() async {
-    await Future.delayed(const Duration(seconds: 3));
+  navigateToSettings() async {
     _navigationService.navigateToSettingsView();
   }
 
-  Future navigateToLanding() async {
-    await Future.delayed(const Duration(seconds: 3));
+  navigateToLanding() async {
     _navigationService.navigateToLandingView();
   }
 
