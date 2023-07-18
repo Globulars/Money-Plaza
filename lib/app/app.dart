@@ -31,8 +31,8 @@ import 'package:money_plaza/ui/views/morgages/morgages_contact_info/morgages_con
 import 'package:money_plaza/ui/views/credit_card/credit_card_view.dart';
 import 'package:money_plaza/ui/views/credit_card/credit_result/credit_result_view.dart';
 import 'package:money_plaza/ui/dialogs/credit_card_filter/credit_card_filter_dialog.dart';
-import 'package:money_plaza/ui/views/member_setting/member_setting_view.dart';
-import 'package:money_plaza/ui/views/personal_info/personal_info_view.dart';
+import 'package:money_plaza/ui/views/member/member_setting/member_setting_view.dart';
+import 'package:money_plaza/ui/views/member/personal_info/personal_info_view.dart';
 // @stacked-import
 
 @StackedApp(

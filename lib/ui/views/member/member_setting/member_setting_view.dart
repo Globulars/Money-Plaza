@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:stacked/stacked.dart';
 
-import '../../widgets/app_bar.dart';
-import '../../widgets/bottom_bar.dart';
-import '../../widgets/common/icon_box_btn/return_button.dart';
+import '../../../widgets/app_bar.dart';
+import '../../../widgets/bottom_bar.dart';
+import '../../../widgets/common/icon_box_btn/return_button.dart';
 import 'member_setting_viewmodel.dart';
 
 class MemberSettingView extends StackedView<MemberSettingViewModel> {

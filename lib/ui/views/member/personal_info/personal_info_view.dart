@@ -3,11 +3,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:stacked/stacked.dart';
 
-import '../../common/app_colors.dart';
-import '../../common/ui_helpers.dart';
-import '../../widgets/app_bar.dart';
-import '../../widgets/bottom_bar.dart';
-import '../../widgets/common/icon_box_btn/return_button.dart';
+import '../../../common/app_colors.dart';
+import '../../../common/ui_helpers.dart';
+import '../../../widgets/app_bar.dart';
+import '../../../widgets/bottom_bar.dart';
+import '../../../widgets/common/icon_box_btn/return_button.dart';
 import 'personal_info_viewmodel.dart';
 
 class PersonalInfoView extends StackedView<PersonalInfoViewModel> {

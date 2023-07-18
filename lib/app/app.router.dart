@@ -40,7 +40,7 @@ import 'package:money_plaza/ui/views/loan/personal_loan/ploanreslut/ploanreslut_
     as _i10;
 import 'package:money_plaza/ui/views/member_login/member_login_view.dart'
     as _i14;
-import 'package:money_plaza/ui/views/member_setting/member_setting_view.dart'
+import 'package:money_plaza/ui/views/member/member_setting/member_setting_view.dart'
     as _i25;
 import 'package:money_plaza/ui/views/morgages/morgages_contact_info/morgages_contact_info_view.dart'
     as _i22;
@@ -49,7 +49,7 @@ import 'package:money_plaza/ui/views/morgages/morgages_result/morgages_result_vi
 import 'package:money_plaza/ui/views/morgages/morgages_splash/morgages_splash_view.dart'
     as _i21;
 import 'package:money_plaza/ui/views/morgages/morgages_view.dart' as _i19;
-import 'package:money_plaza/ui/views/personal_info/personal_info_view.dart'
+import 'package:money_plaza/ui/views/member/personal_info/personal_info_view.dart'
     as _i26;
 import 'package:stacked/stacked.dart' as _i1;
 import 'package:stacked_services/stacked_services.dart' as _i28;
