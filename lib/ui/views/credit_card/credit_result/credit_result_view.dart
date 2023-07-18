@@ -51,7 +51,7 @@ class CreditResultView extends StackedView<CreditResultViewModel> {
               const Divider(color:darkGreenHeigh, height: 1.0,thickness: 3,),
               verticalSpaceSmall,
               const CreditCardWiget(),
-             
+             verticalSpaceMedium
             ],
           ),
         ),
