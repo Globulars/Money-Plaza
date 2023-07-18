@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
-import 'package:money_plaza/ui/views/loan/loan_view_widgets/loan_card.dart';
 import 'package:money_plaza/ui/views/loan/loan_view_widgets/pic_container.dart';
 import 'package:stacked/stacked.dart';
 import '../../common/app_icons.dart';
 import '../../widgets/app_bar.dart';
 import '../../widgets/bottom_bar.dart';
 import '../../widgets/common/icon_box_btn/return_button.dart';
+import '../../widgets/common/result_card.dart';
 import 'loan_viewmodel.dart';
 import 'loan_view_widgets/horizental_view.dart';
 
@@ -33,13 +33,20 @@ class LoanView extends StackedView<LoanViewModel> {
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: appBar(),
-          body: const SingleChildScrollView(
+          body: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                PicContainer(),
-                ContainerListView(),
-                LoanCard(),
+                const PicContainer(),
+                const ContainerListView(),
+                ListView.builder(
+                  itemCount: 3,
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemBuilder: (BuildContext context, int index) {
+                    return resultCard(context);
+                  },
+                ),
                 verticalSpaceLarge
               ],
             ),

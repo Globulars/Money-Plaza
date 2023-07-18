@@ -21,7 +21,7 @@ Widget resultCard(context) {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Image.asset(myIcons.weLend),
+                  Image.asset(myIcons.weLend,width: 90,),
                   verticalSpaceTiny,
                   CustomText(
                     text: "WeLend",
@@ -32,7 +32,7 @@ Widget resultCard(context) {
                   verticalSpaceTiny,
                   CustomText(
                       text:
-                          "Borrowing Amonnt \$10,000 - \$700,000 Tenor 12 - 60 Months",
+                          "Borrowing Amount \$10,000 - \$700,000 Tenor 12 - 60 Months",
                       color: Colors.black87,
                       fontSize: 15),
                   verticalSpaceTiny,
@@ -70,7 +70,8 @@ Widget resultCard(context) {
                   ),
                   verticalSpaceSmall,
                   SubmitButton(
-                    image: myIcons.compare2,
+                    
+                    image: myIcons.compare2,imgwidth: 16,
                     boxColor: Colors.transparent,
                     text: 'Compare',
                     color: Colors.black87,
@@ -78,15 +79,15 @@ Widget resultCard(context) {
                   ),
                   verticalSpaceSmall,
                   SubmitButton(
-                    image: myIcons.apply,
+                    image: myIcons.apply,imgwidth: 16,
                     text: 'Apply',
                     fontSize: 18,
                     height: 40,
                   ),
                   verticalSpaceSmall,
                   SubmitButton(
-                    image: myIcons.detail,
-                    boxColor: Colors.transparent,
+                   image: myIcons.detail,imgwidth: 30,
+                   boxColor: Colors.transparent,
                     text: 'Details',
                     color: Colors.black,
                     fontSize: 18,

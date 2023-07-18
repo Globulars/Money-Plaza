@@ -21,6 +21,7 @@ class SubmitButton extends StackedView<IconBoxBtnModel> {
   String? image;
   Color? boxColor;
   Function? onPress;
+  double? scale;
 
   SubmitButton({
     super.key,
@@ -34,6 +35,7 @@ class SubmitButton extends StackedView<IconBoxBtnModel> {
     this.imgwidth,
     this.boxColor,
     this.onPress,
+    this.scale
   });
 
   @override
@@ -66,10 +68,11 @@ class SubmitButton extends StackedView<IconBoxBtnModel> {
                 image != null
                     ? Row(
                         children: [
-                          verticalSpaceSmall,
+                          verticalSpaceTiny,
                           Image.asset(
                             image ?? "",
                             width: imgwidth,
+                            // scale: scale??1,
                           )
                         ],
                       )

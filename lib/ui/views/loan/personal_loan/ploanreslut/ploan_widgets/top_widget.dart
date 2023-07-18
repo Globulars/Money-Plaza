@@ -20,13 +20,13 @@ class TopWidget extends ViewModelWidget<PloanreslutViewModel> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Column(
-          // crossAxisAlignment: CrossAxisAlignment.center,
+         
           children: [
             topBar(context),
             const Divider(
               color: darkGreenHeigh,
-              height: 5.0,
-              thickness: 8,
+              height: 1.0,
+              thickness: 1,
             ),
             // verticalSpaceSmall,
             Row(

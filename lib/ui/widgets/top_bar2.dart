@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:money_plaza/app/app.router.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
+import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:stacked_services/stacked_services.dart';
 import '../../app/app.dialogs.dart';
 import '../../app/app.locator.dart';
@@ -34,20 +35,20 @@ Widget topBar(context) {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             IconBoxBtn(
-              height: 70,
-              width: MediaQuery.of(context).size.width * 0.22,
+              height: 60,
+              width: MediaQuery.of(context).size.width * 0.23,
               color: Colors.white,
               fontSize: 12,
               fontWeight: FontWeight.w500,
               boxcolor: darkGreenHeigh,
               topimage: myIcons.aiMatching,
               text: 'A.I.Matching',
-              imgwidth: 25,
+              imgwidth: 22,
             ),
             IconBoxBtn(
-              height: 70,
-               imgwidth: 25,
-              width: MediaQuery.of(context).size.width * 0.22,
+              height: 60,
+               imgwidth: 22,
+              width: MediaQuery.of(context).size.width * 0.23,
               color: Colors.white,
               fontSize: 12,
               fontWeight: FontWeight.w500,
@@ -61,9 +62,9 @@ Widget topBar(context) {
                 // viewModel.navigateCalculatorDialog();
               },
               child: IconBoxBtn(
-                height: 70,
-                 imgwidth: 20,
-                width: MediaQuery.of(context).size.width * 0.22,
+                height: 60,
+                 imgwidth: 17,
+                width: MediaQuery.of(context).size.width * 0.23,
                 color: Colors.white,
                 fontSize: 12,
                 fontWeight: FontWeight.w500,
@@ -74,9 +75,9 @@ Widget topBar(context) {
               ),
             ),
             IconBoxBtn(
-              height: 70,
-               imgwidth: 20,
-              width: MediaQuery.of(context).size.width * 0.22,
+              height: 60,
+               imgwidth: 18,
+              width: MediaQuery.of(context).size.width * 0.23,
               color: Colors.white,
               fontSize: 12,
               fontWeight: FontWeight.w500,
@@ -93,6 +94,8 @@ Widget topBar(context) {
         height: 1.0,
         thickness: 6,
       ),
+      verticalSpaceTiny,
+      
     ],
   );
 }

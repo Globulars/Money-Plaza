@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
-import 'package:money_plaza/ui/views/loan/personal_loan/ploanreslut/ploan_widgets/ploan_viebuilder.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import '../../../../widgets/app_bar.dart';
+import '../../../../widgets/common/result_card.dart';
 import 'ploan_widgets/top_widget.dart';
 import 'ploanreslut_viewmodel.dart';
 
@@ -32,12 +32,19 @@ class PloanreslutView extends StackedView<PloanreslutViewModel> {
           child: Scaffold(
             backgroundColor: Colors.transparent,
             appBar: appBar(),
-            body: const Column(
+            body:  Column(
               children: [
-                TopWidget(),
+                const TopWidget(),
                 verticalSpaceSmall,
                 Expanded(
-                    child: SingleChildScrollView(child: PersonalResultCard())),
+                    child: ListView.builder(
+                  itemCount: 3,
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemBuilder: (BuildContext context, int index) {
+                    return resultCard(context);
+                  },
+                ),),
               ],
             ),
             // bottomNavigationBar: Container(

@@ -50,7 +50,8 @@ class CalculatorDialog extends StackedView<CalculatorDialogModel> {
                 fontWeight: FontWeight.w500,
                 btmLeftRadius: 0,
                 btmRightRadius: 0,
-                topimage: myIcons.cancel,
+               imgwidth: 15,
+               close: true,
               ),
               verticalSpaceTiny,
               Padding(
