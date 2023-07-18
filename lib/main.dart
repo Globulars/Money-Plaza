@@ -5,13 +5,22 @@ import 'package:money_plaza/app/app.locator.dart';
 import 'package:money_plaza/app/app.router.dart';
 import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:stacked_services/stacked_services.dart';
+import 'package:easy_localization/easy_localization.dart';
 
-void main() {
+Future<void> main() async {
   setupLocator();
   setupDialogUi();
   setupBottomSheetUi();
+  WidgetsFlutterBinding.ensureInitialized();
 
-  runApp(const MyApp());
+  await EasyLocalization.ensureInitialized();
+  runApp(
+    EasyLocalization(
+        supportedLocales: const [Locale('en'), Locale('ar')],
+        path: 'assets/translations',
+        fallbackLocale: const Locale('en'),
+        child: const MyApp()),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -20,7 +29,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Money Plaza',
       theme: Theme.of(context).copyWith(
         primaryColor: kcBackgroundColor,
         focusColor: kcPrimaryColor,
@@ -28,7 +37,10 @@ class MyApp extends StatelessWidget {
               bodyColor: Colors.black,
             ),
       ),
-      initialRoute: Routes.memberLoginView,
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
+      initialRoute: Routes.startupView,
       onGenerateRoute: StackedRouter().onGenerateRoute,
       navigatorKey: StackedService.navigatorKey,
       navigatorObservers: [

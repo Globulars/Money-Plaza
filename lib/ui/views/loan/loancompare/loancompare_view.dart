@@ -3,6 +3,8 @@ import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import '../../../common/ui_helpers.dart';
 import '../../../widgets/app_bar.dart';
+import '../../../widgets/bottom_bar.dart';
+import '../../../widgets/common/icon_box_btn/return_button.dart';
 import '../../../widgets/top_bar2.dart';
 import 'compare_widgets/head_btm_text.dart';
 import 'compare_widgets/prom_land.dart';
@@ -59,6 +61,15 @@ class LoancompareView extends StackedView<LoancompareViewModel> {
           //         child: Image.asset(
           //       myIcons.contacts,
           //     ))),
+        ),
+        bottomBar(
+          ReturnButton(
+            imageLeft: myIcons.returnIcon1,
+            imgwidth: 12,
+            text: 'Back to list',
+            height: 40,
+            width: 120,
+          ),
         ),
       ],
     );

@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:stacked/stacked.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:stacked_services/stacked_services.dart';
-import '../../../../app/app.locator.dart';
 import '../../../common/app_colors.dart';
 
 import 'icon_box_btn_model.dart';
@@ -43,14 +41,13 @@ class SubmitButton extends StackedView<IconBoxBtnModel> {
     IconBoxBtnModel viewModel,
     Widget? child,
   ) {
-
-    final _navigationService = locator<NavigationService>();
+    // final _navigationService = locator<NavigationService>();
     return GestureDetector(
       onTap: () {
         if (onPress != null) {
           onPress!();
         } else {
-          _navigationService.back();
+          // _navigationService.back();
         }
       },
       child: Column(

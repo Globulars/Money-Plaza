@@ -6,6 +6,7 @@ import 'package:stacked/stacked.dart';
 
 import '../../common/app_colors.dart';
 import '../../widgets/app_bar.dart';
+import '../../widgets/bottom_bar.dart';
 import 'RegisterTab.dart';
 import 'memberLoginTab.dart';
 import 'member_login_viewmodel.dart';
@@ -116,16 +117,10 @@ class MemberLoginView extends StackedView<MemberLoginViewModel> {
                   ),
                 ),
               ),
-              bottomNavigationBar: Container(
-                  height: 60,
-                  width: width * 1,
-                  child: SizedBox(
-                      child: Image.asset(
-                    myIcons.contacts,
-                  ))),
             ),
           ),
         ),
+        bottomBar(Container()),
       ],
     );
   }

@@ -11,8 +11,8 @@ import 'package:money_plaza/ui/views/loan/loancompare/loancompare_view.dart';
 import 'package:money_plaza/ui/views/loan/applyconfirm/applyconfirm_view.dart';
 import 'package:money_plaza/ui/views/loan/personal_loan/personalloan_view.dart';
 import 'package:money_plaza/ui/views/loan/personal_loan/ploanreslut/ploanreslut_view.dart';
-import 'package:money_plaza/ui/views/ownerloan/ownerloan_view.dart';
-import 'package:money_plaza/ui/views/ownerloan/ownerloanresult/ownerloanresult_view.dart';
+import 'package:money_plaza/ui/views/loan/ownerloan/ownerloan_view.dart';
+import 'package:money_plaza/ui/views/loan/ownerloan/ownerloanresult/ownerloanresult_view.dart';
 import 'package:money_plaza/ui/views/landing/settings/settings_view.dart';
 import 'package:money_plaza/ui/views/member_login/member_login_view.dart';
 import 'package:money_plaza/ui/views/loan/blnstransfer/blnstransfer_view.dart';
@@ -26,6 +26,9 @@ import 'package:money_plaza/ui/views/morgages/morgages_result/morgages_result_vi
 import 'package:money_plaza/ui/dialogs/reset_password/reset_password_dialog.dart';
 import 'package:money_plaza/ui/dialogs/contact_us/contact_us_dialog.dart';
 import 'package:money_plaza/ui/dialogs/morgages_filter/morgages_filter_dialog.dart';
+import 'package:money_plaza/ui/views/morgages/morgages_splash/morgages_splash_view.dart';
+import 'package:money_plaza/ui/views/morgages/morgages_contact_info/morgages_contact_info_view.dart';
+import 'package:money_plaza/ui/views/credit_card/credit_card_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -49,6 +52,9 @@ import 'package:money_plaza/ui/dialogs/morgages_filter/morgages_filter_dialog.da
     MaterialRoute(page: CommericalResultView),
     MaterialRoute(page: MorgagesView),
     MaterialRoute(page: MorgagesResultView),
+    MaterialRoute(page: MorgagesSplashView),
+    MaterialRoute(page: MorgagesContactInfoView),
+    MaterialRoute(page: CreditCardView),
 // @stacked-route
   ],
   dependencies: [

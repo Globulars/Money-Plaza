@@ -20,7 +20,7 @@ class MemberLoginTab extends StackedView<MemberLoginViewModel> {
     final height = MediaQuery.of(context).size.height;
     return DefaultTabController(
       length: 2,
-      child: Container(
+      child: SizedBox(
         height: height,
         width: width,
         child: Scaffold(
@@ -34,7 +34,7 @@ class MemberLoginTab extends StackedView<MemberLoginViewModel> {
                   backgroundColor: Colors.transparent,
                   pinned: true,
                   floating: false,
-                  shape: RoundedRectangleBorder(
+                  shape: const RoundedRectangleBorder(
                     side: BorderSide(width: 1),
                   ),
                   bottom: TabBar(

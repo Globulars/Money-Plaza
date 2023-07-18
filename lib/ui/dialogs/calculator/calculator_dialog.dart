@@ -144,15 +144,18 @@ class CalculatorDialog extends StackedView<CalculatorDialogModel> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         SubmitButton(
+                          height: 40,
+                          width: 80,
                           boxColor: Colors.transparent,
                           image: myIcons.iconPowerReset,
+                          imgwidth: 15,
                           text: 'Reset all',
                           color: darkGreenLight,
                         ),
                         SubmitButton(
-                          text: 'Calculate Now',
+                          text: 'Apply',
                           height: 40,
-                          width: 120,
+                          width: 80,
                         ),
                       ],
                     )

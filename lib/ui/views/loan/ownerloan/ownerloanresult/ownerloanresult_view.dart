@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
-import '../../../common/ui_helpers.dart';
-import '../../../widgets/app_bar.dart';
+import '../../../../common/ui_helpers.dart';
+import '../../../../widgets/app_bar.dart';
 import 'owner_result_widgets/owner_card_result.dart';
 import 'owner_result_widgets/result_top_widget.dart';
 import 'ownerloanresult_viewmodel.dart';
