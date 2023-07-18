@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
+import 'package:money_plaza/ui/views/member/personal_info/personal_tabbar/personal_tabbar1.dart';
+import 'package:money_plaza/ui/views/member/personal_info/personal_tabbar/personal_tabbar2.dart';
+import 'package:money_plaza/ui/views/member/personal_info/personal_tabbar/personal_tabbar3.dart';
+import 'package:money_plaza/ui/views/member/personal_info/personal_tabbar/personal_tabbar4.dart';
 import 'package:stacked/stacked.dart';
 
 import '../../../common/app_colors.dart';
@@ -21,7 +25,7 @@ class PersonalInfoView extends StackedView<PersonalInfoViewModel> {
   ) {
     final width = MediaQuery.of(context).size.width;
     return DefaultTabController(
-      length: 3,
+      length: 4,
       child: Builder(// Add this
           builder: (context) {
         return Stack(
@@ -60,18 +64,23 @@ class PersonalInfoView extends StackedView<PersonalInfoViewModel> {
                           tabs: const [
                             Tab(
                               child: Text(
-                                '1)Early Payback Penalty',
+                                'Private\nInfo',
                                 textAlign: TextAlign.center,
                               ),
                             ),
                             Tab(
                                 child: Text(
-                              '2)Source of \nincome',
+                              'Contact\nInfo',
                               textAlign: TextAlign.center,
                             )),
                             Tab(
                                 child: Text(
-                              '3)Outstanding \nLoan',
+                              'Interested\nproducts',
+                              textAlign: TextAlign.center,
+                            )),
+                            Tab(
+                                child: Text(
+                              'Loan\nStatus',
                               textAlign: TextAlign.center,
                             )),
                           ],
@@ -79,12 +88,12 @@ class PersonalInfoView extends StackedView<PersonalInfoViewModel> {
                       ),
                     ];
                   },
-                  body: TabBarView(
+                  body: const TabBarView(
                     children: <Widget>[
-                      Container(),
-                      Container(),
-                      Container(),
-                      // SingleChildScrollView(child: TabBarView1()),
+                     PersonalTabBar1(),
+                     PersonalTabBar2(),
+                     PersonalTabBar3(),
+                      PersonalTabBar4(),
                       // TabBarView2(),
                       // TabBarView3()
                     ],
