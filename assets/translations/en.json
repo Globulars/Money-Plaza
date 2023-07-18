@@ -19,5 +19,6 @@
   "changePassword": "Change Password",
   "enterCurrentPassword": "Enter the current password",
   "enterNewPassword": "Enter new password \n (8-15 digits)",
-  "confirmNewPassword": "Confirm new password"
+  "confirmNewPassword": "Confirm new password",
+  "previous":"Previous"
 }

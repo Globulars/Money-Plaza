@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:money_plaza/ui/common/app_colors.dart';
@@ -94,32 +96,48 @@ class PersonalloanView extends StackedView<PersonalloanViewModel> {
             bottomBar(
               Row(
                 children: [
-                  ReturnButton(
-                    imageLeft: myIcons.returnIcon1,
-                    imgwidth: 12,
-                    text: 'Return',
-                    height: 40,
-                    width: 80,
-                  ),
+                  DefaultTabController.of(context).index == 0
+                      ? ReturnButton(
+                          imageLeft: myIcons.returnIcon1,
+                          imgwidth: 12,
+                          text: 'Return',
+                          height: 40,
+                          width: 80,
+                          onPress: () {
+                            log(DefaultTabController.of(context)
+                                .index
+                                .toString());
+                          },
+                        )
+                      : ReturnButton(
+                          imageLeft: myIcons.previous,
+                          imgwidth: 12,
+                          text: "previous",
+                          height: 40,
+                          width: 80,
+                          onPress: () {
+                            var index = DefaultTabController.of(context).index;
+                            DefaultTabController.of(context)
+                                .animateTo(index - 1);
+                            viewModel.setInitialIndex();
+                          },
+                        ),
                   horizontalSpaceTiny,
                   ReturnButton(
                     imageRight: myIcons.next,
                     imgwidth: 16,
-                    // index==
-                    text: 'Next',
+                    text: 'next',
                     height: 40,
                     width: 80,
                     onPress: () {
                       var index = DefaultTabController.of(context).index;
                       var length = DefaultTabController.of(context).length;
-//                       if(index==1){
-//  imagel: myIcons.next;
-//                       }else{}
                       if (index < length - 1) {
                         DefaultTabController.of(context).animateTo(index + 1);
                       } else {
                         viewModel.navigateToApplyconfirm();
                       }
+                      viewModel.setInitialIndex();
                     },
                   ),
                 ],
