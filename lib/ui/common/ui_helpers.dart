@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:money_plaza/ui/common/app_colors.dart';
 
 const double _tinySize = 5.0;
 const double _smallSize = 10.0;
@@ -22,7 +23,11 @@ const Widget verticalSpaceMassive = SizedBox(height: _massiveSize);
 Widget spacedDivider = const Column(
   children: <Widget>[
     verticalSpaceMedium,
-    Divider(color: Colors.blueGrey, height: 5.0),
+    Divider(
+      color: darkGreenHeigh,
+      height: 1.0,
+      thickness: 3,
+    ),
     verticalSpaceMedium,
   ],
 );

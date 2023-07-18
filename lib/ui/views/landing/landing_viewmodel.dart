@@ -15,9 +15,9 @@ class LandingViewModel extends BaseViewModel {
     _navigationService.navigateToMorgagesView();
   }
 
-  // navigateToSettings() {
-  //   _navigationService.navigateToin();
-  // }
+  navigateToCreditCard() {
+    _navigationService.navigateToCreditCardView();
+  }
 
   // navigateToSettings() {
   //   _navigationService.navigateTo();
