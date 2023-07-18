@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
-import '../../../../common/app_colors.dart';
-import '../../../../common/ui_helpers.dart';
-import '../../../../widgets/common/icon_box_btn/text.dart';
-import '../../../../widgets/top_bar2.dart';
+import '../../../../../common/app_colors.dart';
+import '../../../../../common/ui_helpers.dart';
+import '../../../../../widgets/common/icon_box_btn/text.dart';
+import '../../../../../widgets/top_bar2.dart';
 import '../ownerloanresult_viewmodel.dart';
 
 class OwnerTopWidget extends ViewModelWidget<OwnerloanresultViewModel> {

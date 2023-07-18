@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
-import '../../../../common/ui_helpers.dart';
-import '../../../../widgets/common/icon_box_btn/submit_button.dart';
-import '../../../../widgets/common/icon_box_btn/text.dart';
+import '../../../../../common/ui_helpers.dart';
+import '../../../../../widgets/common/icon_box_btn/submit_button.dart';
+import '../../../../../widgets/common/icon_box_btn/text.dart';
 import '../ownerloanresult_viewmodel.dart';
 
 class OwnerResultCard extends ViewModelWidget<OwnerloanresultViewModel> {

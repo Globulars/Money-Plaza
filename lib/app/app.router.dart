@@ -40,8 +40,8 @@ import 'package:money_plaza/ui/views/morgages/morgages_splash/morgages_splash_vi
 import 'package:money_plaza/ui/views/morgages/morgages_view.dart' as _i19;
 import 'package:money_plaza/ui/views/morgages/morgages_contact_info/morgages_contact_info_view.dart'
     as _i22;
-import 'package:money_plaza/ui/views/ownerloan/ownerloan_view.dart' as _i11;
-import 'package:money_plaza/ui/views/ownerloan/ownerloanresult/ownerloanresult_view.dart'
+import 'package:money_plaza/ui/views/loan/ownerloan/ownerloan_view.dart' as _i11;
+import 'package:money_plaza/ui/views/loan/ownerloan/ownerloanresult/ownerloanresult_view.dart'
     as _i12;
 import 'package:stacked/stacked.dart' as _i1;
 import 'package:stacked_services/stacked_services.dart' as _i24;

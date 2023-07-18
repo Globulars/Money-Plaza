@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
-import '../../../common/ui_helpers.dart';
-import '../../../widgets/common/custom_text_field/custom_text_field.dart';
-import '../../../widgets/common/dropdown_textfield/dropdown_textfield.dart';
+import '../../../../common/ui_helpers.dart';
+import '../../../../widgets/common/custom_text_field/custom_text_field.dart';
+import '../../../../widgets/common/dropdown_textfield/dropdown_textfield.dart';
 import '../ownerloan_viewmodel.dart';
 
 class OwnerTabBar2 extends ViewModelWidget<OwnerloanViewModel> {
