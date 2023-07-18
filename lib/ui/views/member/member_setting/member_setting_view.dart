@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:stacked/stacked.dart';
 
 import '../../../widgets/app_bar.dart';
 import '../../../widgets/bottom_bar.dart';
+import '../../../widgets/common/icon_box_btn/icon_box_btn.dart';
 import '../../../widgets/common/icon_box_btn/return_button.dart';
+import '../../../widgets/common/icon_box_btn/text.dart';
 import 'member_setting_viewmodel.dart';
 
 class MemberSettingView extends StackedView<MemberSettingViewModel> {
@@ -34,13 +37,91 @@ class MemberSettingView extends StackedView<MemberSettingViewModel> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Container(
-                  height: 170,
-                  width: width * 1,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage('assets/images/best_deals.jpg'),
-                        fit: BoxFit.fitWidth),
+                Stack(
+                  alignment: AlignmentDirectional.center,
+                  children: [
+                    Container(
+                      height: 170,
+                      width: width * 1,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage('assets/images/best_deals.jpg'),
+                            fit: BoxFit.fitWidth),
+                      ),
+                    ),
+                    CustomText(
+                      text: "Member Zone",
+                      color: kcPureWhite,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    )
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        decoration: const BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                              offset: Offset(0, 6),
+                              blurRadius: 12,
+                              spreadRadius: -15,
+                              color: kcMediumGrey,
+                            ),
+                          ],
+                        ),
+                        child: IconBoxBtn(
+                          boxcolor: lightGreenHeigh,
+                          text: "Personal Information",
+                          height: 80,
+                          fontSize: 20,
+                          color: darkGreenHeigh,
+                          margin: width * 0.02,
+                        ),
+                      ),
+                      Container(
+                        decoration: const BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                              offset: Offset(0, 6),
+                              blurRadius: 12,
+                              spreadRadius: -15,
+                              color: kcMediumGrey,
+                            ),
+                          ],
+                        ),
+                        child: IconBoxBtn(
+                          boxcolor: lightGreenHeigh,
+                          text: "Money Plaza Reward",
+                          height: 80,
+                          fontSize: 20,
+                          color: darkGreenHeigh,
+                          margin: width * 0.02,
+                        ),
+                      ),
+                      Container(
+                        decoration: const BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                              offset: Offset(0, 6),
+                              blurRadius: 12,
+                              spreadRadius: -15,
+                              color: kcMediumGrey,
+                            ),
+                          ],
+                        ),
+                        child: IconBoxBtn(
+                          boxcolor: lightGreenHeigh,
+                          text: "Change Password",
+                          height: 80,
+                          fontSize: 20,
+                          color: darkGreenHeigh,
+                          margin: width * 0.02,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
