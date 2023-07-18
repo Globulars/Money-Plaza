@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
+import '../../../common/ui_helpers.dart';
+import '../../../widgets/common/icon_box_btn/text.dart';
 import 'credit_result_viewmodel.dart';
 
 class CreditCardWiget extends ViewModelWidget<CreditResultViewModel> {
@@ -29,7 +31,14 @@ class CreditCardWiget extends ViewModelWidget<CreditResultViewModel> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Image.asset(myIcons.creditCardFrame,width: 25,)
+                      Image.asset(myIcons.creditCardFrame,width: 80,),
+                      horizontalSpaceTiny,
+                      Container(
+                        width: width*0.45,
+                      
+                        child: CustomText(text: 'DBs Eminent Visa Platinum Card',fontSize: 18,fontWeight: FontWeight.w700,maxLines: 2,textOverflow: TextOverflow.ellipsis,),
+                      )
+                      
                     ],
                   )
                 ],

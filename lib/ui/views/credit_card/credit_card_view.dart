@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import '../../common/ui_helpers.dart';
@@ -48,9 +49,21 @@ class CreditCardView extends StackedView<CreditCardViewModel> {
               Expanded(
                 child: SingleChildScrollView(
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 6),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 15, vertical: 10),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        CustomText(
+                          text: 'We need to know more about you',
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                        CustomText(
+                          text: '*Mandatory Field',
+                          fontSize: 10,
+                        ),
+                        verticalSpaceSmall,
                         DropdownTextfield(
                           onChanged: (String) {},
                           options: [],
@@ -89,7 +102,7 @@ class CreditCardView extends StackedView<CreditCardViewModel> {
               SubmitButton(
                 image: myIcons.search,
                 imgwidth: 12,
-               onPress: viewModel.navigateToCreditCardResult,
+                onPress: viewModel.navigateToCreditCardResult,
                 text: 'Search',
                 height: 40,
                 width: 80,

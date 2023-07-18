@@ -6,7 +6,7 @@ class myIcons {
 
 // Credit Card Frames
   static const String creditCardFrame =
-      'assets/icons/credit_cards/Frame 230.png';
+      'assets/icons/credit_cards/frame_230.png';
 
 //Landing Icons/Contact_Icons
   static const String callLog = 'assets/icons/Landing_icons/call_log.png';

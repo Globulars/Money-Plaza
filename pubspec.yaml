@@ -74,6 +74,7 @@ flutter:
     - assets/screens/
     - assets/icons/Landing_icons/
     - assets/icons/loans_icons/
+    - assets/icons/credit_cards/
     - assets/icons/member_icons/
     - assets/icons/Morgages/
     - assets/icons/register_login_icons/
