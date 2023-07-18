@@ -30,6 +30,5 @@ class LandingViewModel extends BaseViewModel {
   navigateToMemberLogin() {
     _navigationService.navigateToMemberLoginView();
   }
-    //  context.setLocale(const Locale('en'));
-
+  //  context.setLocale(const Locale('en'));
 }

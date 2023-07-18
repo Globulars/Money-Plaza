@@ -28,6 +28,7 @@ import 'package:money_plaza/ui/dialogs/contact_us/contact_us_dialog.dart';
 import 'package:money_plaza/ui/dialogs/morgages_filter/morgages_filter_dialog.dart';
 import 'package:money_plaza/ui/views/morgages/morgages_splash/morgages_splash_view.dart';
 import 'package:money_plaza/ui/views/morgages/morgages_contact_info/morgages_contact_info_view.dart';
+import 'package:money_plaza/ui/views/credit_card/credit_card_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -53,6 +54,7 @@ import 'package:money_plaza/ui/views/morgages/morgages_contact_info/morgages_con
     MaterialRoute(page: MorgagesResultView),
     MaterialRoute(page: MorgagesSplashView),
     MaterialRoute(page: MorgagesContactInfoView),
+    MaterialRoute(page: CreditCardView),
 // @stacked-route
   ],
   dependencies: [
