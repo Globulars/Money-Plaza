@@ -39,6 +39,8 @@ dependencies:
   stacked_services: ^1.0.0
   google_fonts: ^5.1.0
   flutter_switch: ^0.3.2
+  localization: ^2.1.0
+  easy_localization: ^3.0.2
 
 dev_dependencies:
   flutter_test:
@@ -77,6 +79,7 @@ flutter:
     - assets/icons/register_login_icons/
     - assets/screens/landing/
     - assets/images/
+    - assets/translations/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
