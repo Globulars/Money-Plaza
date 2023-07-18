@@ -1,5 +1,6 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -45,10 +46,9 @@ class CustomText extends StackedView<IconBoxBtnModel> {
         wordSpacing: wordspacing ?? 0,
       ),
       textAlign: textAlign,
-      textDirection: textDirection,
       overflow: textOverflow,
       maxLines: maxLines,
-    );
+    ).tr();
   }
 
   @override

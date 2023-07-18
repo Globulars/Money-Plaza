@@ -6,7 +6,6 @@ import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/sub_bar.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
 import 'package:stacked/stacked.dart';
-
 import '../../../widgets/app_bar.dart';
 import '../../../widgets/bottom_bar.dart';
 import '../../../widgets/common/icon_box_btn/return_button.dart';
@@ -35,9 +34,10 @@ class SettingsView extends StackedView<SettingsViewModel> {
             ),
             child: Column(children: [
               SubBar(
-                text: "Settings",
+                text: "settings",
                 image: myIcons.setting,
                 height: 50,
+                imgwidth: 30,
                 divider: true,
               ),
               Padding(
@@ -50,7 +50,7 @@ class SettingsView extends StackedView<SettingsViewModel> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         CustomText(
-                          text: "繁 / English",
+                          text: "中国人English",
                           fontSize: 18,
                           color: kcDarkGreyColor,
                         ),
@@ -61,11 +61,9 @@ class SettingsView extends StackedView<SettingsViewModel> {
                           toggleSize: 15.0,
                           borderRadius: 10.0,
                           activeColor: darkGreenHeigh,
-                          value: isToggled,
+                          value: viewModel.englishLanguage,
                           onToggle: (value) {
-                            //   setState(() {
-                            //     isToggled = value;
-                            //   });
+                            viewModel.setEnglishLanguage(context);
                           },
                         ),
                       ],
@@ -75,7 +73,7 @@ class SettingsView extends StackedView<SettingsViewModel> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         CustomText(
-                          text: "Push Notifications",
+                          text: "pushNotifications",
                           fontSize: 18,
                           color: kcDarkGreyColor,
                         ),
@@ -97,13 +95,13 @@ class SettingsView extends StackedView<SettingsViewModel> {
                     ),
                     verticalSpaceSmall,
                     CustomText(
-                      text: "Privacy Policy",
+                      text: "privacyPolicy",
                       fontSize: 18,
                       color: kcDarkGreyColor,
                     ),
                     verticalSpaceSmall,
                     CustomText(
-                      text: "Terms and Conditions",
+                      text: "termsConditions",
                       fontSize: 18,
                       color: kcDarkGreyColor,
                     ),
@@ -120,7 +118,7 @@ class SettingsView extends StackedView<SettingsViewModel> {
                 imageLeft: myIcons.returnIcon1,
                 imgwidth: 18,
                 fontSize: 18,
-                text: 'Retrue',
+                text: 'return',
                 height: 40,
                 width: 80,
               ),
