@@ -11,9 +11,16 @@ Future<void> main() async {
   setupLocator();
   setupDialogUi();
   setupBottomSheetUi();
-  await EasyLocalization.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
 
-  runApp(const MyApp());
+  await EasyLocalization.ensureInitialized();
+  runApp(
+    EasyLocalization(
+        supportedLocales: const [Locale('en'), Locale('ar')],
+        path: 'assets/translations',
+        fallbackLocale: const Locale('en'),
+        child: const MyApp()),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -22,7 +29,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Money Plaza',
       theme: Theme.of(context).copyWith(
         primaryColor: kcBackgroundColor,
         focusColor: kcPrimaryColor,
@@ -30,20 +37,15 @@ class MyApp extends StatelessWidget {
               bodyColor: Colors.black,
             ),
       ),
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
       initialRoute: Routes.startupView,
       onGenerateRoute: StackedRouter().onGenerateRoute,
       navigatorKey: StackedService.navigatorKey,
       navigatorObservers: [
         StackedService.routeObserver,
       ],
-    home:  EasyLocalization(
-          supportedLocales: [Locale('en'), Locale('ar')],
-          path: 'assets/translations',
-          fallbackLocale: Locale('en'),
-          saveLocale: true,
-          useOnlyLangCode: true,
-          useFallbackTranslations: true, child: Container(),
-        ),
     );
   }
 }
