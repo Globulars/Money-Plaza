@@ -13,6 +13,11 @@
   "typeOfProduct": "Type of Product",
   "institution": "Institution",
   "rewardDetails": "Reward details",
-  "referenceNumber":"Reference Number (if any)",
-  "search":"Search"
+  "referenceNumber": "Reference Number (if any)",
+  "search": "Search",
+  "save": "save",
+  "changePassword": "Change Password",
+  "enterCurrentPassword": "Enter the current password",
+  "enterNewPassword": "Enter new password \n (8-15 digits)",
+  "confirmNewPassword": "Confirm new password"
 }
