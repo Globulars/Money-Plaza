@@ -10,7 +10,6 @@ const Color kcBackgroundColor = kcDarkGreyColor;
 const Color kcPureBlack = Color(0xFF000000);
 const Color kcPureWhite = Color(0xFFFFFFFF);
 
-
 const Color darkGreenHeigh = Color(0xFF2C5B4D);
 const Color darkGreenLight = Color(0xFF3D8D77);
 const Color lightGreenHeigh = Color(0xFFD4ECE5);

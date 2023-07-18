@@ -33,6 +33,9 @@ import 'package:money_plaza/ui/views/credit_card/credit_result/credit_result_vie
 import 'package:money_plaza/ui/dialogs/credit_card_filter/credit_card_filter_dialog.dart';
 import 'package:money_plaza/ui/views/member/member_setting/member_setting_view.dart';
 import 'package:money_plaza/ui/views/member/personal_info/personal_info_view.dart';
+import 'package:money_plaza/ui/views/member/reward/reward_view.dart';
+import 'package:money_plaza/ui/views/member/reward_application/reward_application_view.dart';
+import 'package:money_plaza/ui/views/member/change_password/change_password_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -62,6 +65,9 @@ import 'package:money_plaza/ui/views/member/personal_info/personal_info_view.dar
     MaterialRoute(page: CreditResultView),
     MaterialRoute(page: MemberSettingView),
     MaterialRoute(page: PersonalInfoView),
+    MaterialRoute(page: RewardView),
+    MaterialRoute(page: RewardApplicationView),
+    MaterialRoute(page: ChangePasswordView),
 // @stacked-route
   ],
   dependencies: [

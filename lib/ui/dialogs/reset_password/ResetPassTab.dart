@@ -22,7 +22,7 @@ class ResetPassTab extends StackedView<ResetPasswordDialogModel> {
       child: Padding(
         padding: const EdgeInsets.all(10.0),
         child: SizedBox(
-          height: height*0.35,
+          height: height * 0.35,
           width: width,
           child: Scaffold(
             backgroundColor: Colors.transparent,
