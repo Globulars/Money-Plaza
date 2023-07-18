@@ -24,7 +24,8 @@ class CreditCardWiget extends ViewModelWidget<CreditResultViewModel> {
             padding: const EdgeInsets.symmetric(horizontal: 5),
             child: Card(
               child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 6),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 6, vertical: 6),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -67,44 +68,87 @@ class CreditCardWiget extends ViewModelWidget<CreditResultViewModel> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           SizedBox(
-                          
-                            width: width*0.28,
+                            width: width * 0.28,
                             child: Column(
-      
                               children: [
-                                CustomText(text: "Minimum Annual\nSalary",color: Colors.black.withOpacity(0.6),textAlign: TextAlign.center,fontSize: 12,fontWeight: FontWeight.bold,),
-                                CustomText(text: "\$150,000",textAlign: TextAlign.center,fontSize: 15,fontWeight: FontWeight.bold,),
+                                CustomText(
+                                  text: "Minimum Annual\nSalary",
+                                  color: Colors.black.withOpacity(0.6),
+                                  textAlign: TextAlign.center,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                CustomText(
+                                  text: "\$150,000",
+                                  textAlign: TextAlign.center,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ],
                             ),
                           ),
-                           SizedBox(
-                            
-                            width: width*0.28,    
-                               child: Column(
-      
+                          SizedBox(
+                            width: width * 0.28,
+                            child: Column(
                               children: [
-                                CustomText(text: "4 designated\nspending\ncategories rebate",color: Colors.black.withOpacity(0.6),textAlign: TextAlign.center,fontSize: 12,fontWeight: FontWeight.bold,),
-                                CustomText(text: "5%",textAlign: TextAlign.center,fontSize: 15,fontWeight: FontWeight.bold,),
+                                CustomText(
+                                  text:
+                                      "4 designated\nspending\ncategories rebate",
+                                  color: Colors.black.withOpacity(0.6),
+                                  textAlign: TextAlign.center,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                CustomText(
+                                  text: "5%",
+                                  textAlign: TextAlign.center,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ],
                             ),
                           ),
-                           SizedBox(
-                          
-                            width: width*0.28,    
-                             child: Column(
-      
+                          SizedBox(
+                            width: width * 0.28,
+                            child: Column(
                               children: [
-                                CustomText(text: "Other retail spending\nrebate",color: Colors.black.withOpacity(0.6),textAlign: TextAlign.center,fontSize: 12,fontWeight: FontWeight.bold,),
-                                CustomText(text: "1%",textAlign: TextAlign.center,fontSize: 15,fontWeight: FontWeight.bold,),
+                                CustomText(
+                                  text: "Other retail spending\nrebate",
+                                  color: Colors.black.withOpacity(0.6),
+                                  textAlign: TextAlign.center,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                CustomText(
+                                  text: "1%",
+                                  textAlign: TextAlign.center,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ],
                             ),
                           ),
                         ],
                       ),
-      CustomText(text: "Up to 5% rebate for the Designated Spending Categories when Successfully applied",color: Colors.black,textAlign: TextAlign.start,fontWeight: FontWeight.w400),
-        CustomText(text: "[Exclusive offer] Successfully issue a card through MONEY PLAZA,and get an extra HK\$500 cash coupon",color: Colors.black.withOpacity(0.6),textAlign: TextAlign.start,fontWeight: FontWeight.w400),
-         verticalSpaceTiny,
-           CustomText(text: "Note:Money Plaza has the final decision on all offers",color: Colors.black,textAlign: TextAlign.start,fontWeight: FontWeight.w400),
+                      CustomText(
+                          text:
+                              "Up to 5% rebate for the Designated Spending Categories when Successfully applied",
+                          color: Colors.black,
+                          textAlign: TextAlign.start,
+                          fontWeight: FontWeight.w400),
+                      CustomText(
+                          text:
+                              "[Exclusive offer] Successfully issue a card through MONEY PLAZA,and get an extra HK\$500 cash coupon",
+                          color: Colors.black.withOpacity(0.6),
+                          textAlign: TextAlign.start,
+                          fontWeight: FontWeight.w400),
+                      verticalSpaceTiny,
+                      CustomText(
+                          text:
+                              "Note:Money Plaza has the final decision on all offers",
+                          color: Colors.black,
+                          textAlign: TextAlign.start,
+                          fontWeight: FontWeight.w400),
                     ],
                   )),
             ),
