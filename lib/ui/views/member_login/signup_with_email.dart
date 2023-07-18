@@ -36,6 +36,7 @@ class SignUpWithEmail extends StackedView<MemberLoginViewModel> {
               text: "Send",
               height: 40,
               width: width * 0.2,
+              fontSize: 16,
             ),
             CustomTextField(
               width: width * 0.64,
@@ -103,6 +104,7 @@ class SignUpWithEmail extends StackedView<MemberLoginViewModel> {
           height: 40,
           width: MediaQuery.of(context).size.width * 0.3,
           text: "Register",
+          fontSize: 16,
         ),
       ],
     );
