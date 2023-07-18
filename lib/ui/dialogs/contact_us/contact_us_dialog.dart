@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:money_plaza/ui/common/app_colors.dart';
+import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
+import 'package:money_plaza/ui/widgets/common/icon_box_btn/icon_box_btn.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
+import '../../widgets/common/icon_box_btn/sub_bar.dart';
 import 'contact_us_dialog_model.dart';
-
-const double _graphicSize = 60;
 
 class ContactUsDialog extends StackedView<ContactUsDialogModel> {
   final DialogRequest request;
@@ -25,77 +25,68 @@ class ContactUsDialog extends StackedView<ContactUsDialogModel> {
     Widget? child,
   ) {
     return Dialog(
+      insetPadding: EdgeInsets.all(MediaQuery.of(context).size.width / 4),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       backgroundColor: Colors.white,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      child: SizedBox(
+        height: 190,
         child: Column(
-          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        request.title ?? 'Hello Stacked Dialog!!',
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w900,
-                        ),
-                      ),
-                      if (request.description != null) ...[
-                        verticalSpaceTiny,
-                        Text(
-                          request.description!,
-                          style: const TextStyle(
-                            fontSize: 14,
-                            color: kcMediumGrey,
-                          ),
-                          maxLines: 3,
-                          softWrap: true,
-                        ),
-                      ],
-                    ],
-                  ),
-                ),
-                Container(
-                  width: _graphicSize,
-                  height: _graphicSize,
-                  decoration: const BoxDecoration(
-                    color: Color(0xFFF6E7B0),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(_graphicSize / 2),
-                    ),
-                  ),
-                  alignment: Alignment.center,
-                  child: const Text('⭐️', style: TextStyle(fontSize: 30)),
-                )
-              ],
+            SubBar(
+              height: 40,
+              color: Colors.white,
+              text: 'Contact Us',
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+              btmLeftRadius: 0,
+              btmRightRadius: 0,
+              topimage: myIcons.cancel,
+              close: true,
             ),
-            verticalSpaceMedium,
-            GestureDetector(
-              onTap: () => completer(DialogResponse(confirmed: true)),
-              child: Container(
-                height: 50,
-                width: double.infinity,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.circular(10),
+            verticalSpaceTiny,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    IconBoxBtn(
+                      topimage: myIcons.wts,
+                      imgwidth: 60,
+                      boxcolor: Colors.transparent,
+                      margin: 5,
+                    ),
+                    IconBoxBtn(
+                      topimage: myIcons.tele,
+                      imgwidth: 60,
+                      boxcolor: Colors.transparent,
+                      margin: 5,
+                    ),
+                  ],
                 ),
-                child: const Text(
-                  'Got it',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    IconBoxBtn(
+                      topimage: myIcons.mail,
+                      imgwidth: 50,
+                      boxcolor: Colors.transparent,
+                      margin: 5,
+                    ),
+                    IconBoxBtn(
+                      topimage: myIcons.callLog,
+                      imgwidth: 50,
+                      boxcolor: Colors.transparent,
+                      margin: 5,
+                    ),
+                  ],
                 ),
-              ),
+              ],
             ),
           ],
         ),
