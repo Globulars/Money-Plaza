@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_colors.dart';
+import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
+import '../../views/member_login/login_with_email.dart';
 import 'reset_password_dialog_model.dart';
 
 const double _graphicSize = 60;
@@ -32,51 +34,60 @@ class ResetPasswordDialog extends StackedView<ResetPasswordDialogModel> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        request.title ?? 'Hello Stacked Dialog!!',
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w900,
+            Container(
+              decoration: BoxDecoration(color: darkGreenHeigh),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Image.asset(myIcons.resetPassword, height: 30, width: 30,),
+                            Text(
+                              request.title ?? 'Reset Password',
+                              style: const TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w900,
+                              ),
+                            ),
+                          ],
                         ),
-                      ),
-                      if (request.description != null) ...[
-                        verticalSpaceTiny,
-                        Text(
-                          request.description!,
-                          style: const TextStyle(
-                            fontSize: 14,
-                            color: kcMediumGrey,
+                        if (request.description != null) ...[
+                          verticalSpaceTiny,
+                          Text(
+                            request.description!,
+                            style: const TextStyle(
+                              fontSize: 14,
+                              color: kcMediumGrey,
+                            ),
+                            maxLines: 3,
+                            softWrap: true,
                           ),
-                          maxLines: 3,
-                          softWrap: true,
-                        ),
+                        ],
                       ],
-                    ],
-                  ),
-                ),
-                Container(
-                  width: _graphicSize,
-                  height: _graphicSize,
-                  decoration: const BoxDecoration(
-                    color: Color(0xFFF6E7B0),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(_graphicSize / 2),
                     ),
                   ),
-                  alignment: Alignment.center,
-                  child: const Text('⭐️', style: TextStyle(fontSize: 30)),
-                )
-              ],
+                  Container(
+                    width: _graphicSize,
+                    height: _graphicSize,
+                    decoration: const BoxDecoration(
+                      color: Color(0xFFF6E7B0),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(_graphicSize / 2),
+                      ),
+                    ),
+                    alignment: Alignment.center,
+                    child: Image.asset(myIcons.cancel, height: 25, width: 25,)
+                  ),
+                ],
+              ),
             ),
             verticalSpaceMedium,
+            const LoginWithEmail(),
             GestureDetector(
               onTap: () => completer(DialogResponse(confirmed: true)),
               child: Container(
