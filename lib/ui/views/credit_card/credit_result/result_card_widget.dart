@@ -27,6 +27,7 @@ class CreditCardWiget extends ViewModelWidget<CreditResultViewModel> {
 
                 children: [
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Image.asset(myIcons.creditCardFrame,width: 25,)
                     ],

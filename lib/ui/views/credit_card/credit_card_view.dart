@@ -47,25 +47,28 @@ class CreditCardView extends StackedView<CreditCardViewModel> {
               ),
               Expanded(
                 child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      DropdownTextfield(
-                        onChanged: (String) {},
-                        options: [],
-                        titleText: 'Card Providers',
-                      ),
-                      verticalSpaceSmall,
-                      DropdownTextfield(
-                        onChanged: (String) {},
-                        options: [],
-                        titleText: 'Card',
-                      ),
-                      verticalSpaceSmall,
-                      CustomTextField(
-                        hintText: 'HK\$',
-                        titleText: 'Annual Income',
-                      ),
-                    ],
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 6),
+                    child: Column(
+                      children: [
+                        DropdownTextfield(
+                          onChanged: (String) {},
+                          options: [],
+                          titleText: 'Card Providers',
+                        ),
+                        verticalSpaceSmall,
+                        DropdownTextfield(
+                          onChanged: (String) {},
+                          options: [],
+                          titleText: 'Card',
+                        ),
+                        verticalSpaceSmall,
+                        CustomTextField(
+                          hintText: 'HK\$',
+                          titleText: 'Annual Income',
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
