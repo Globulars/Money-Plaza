@@ -30,6 +30,7 @@ import 'package:money_plaza/ui/views/morgages/morgages_splash/morgages_splash_vi
 import 'package:money_plaza/ui/views/morgages/morgages_contact_info/morgages_contact_info_view.dart';
 import 'package:money_plaza/ui/views/credit_card/credit_card_view.dart';
 import 'package:money_plaza/ui/views/credit_card/credit_result/credit_result_view.dart';
+import 'package:money_plaza/ui/dialogs/credit_card_filter/credit_card_filter_dialog.dart';
 // @stacked-import
 
 @StackedApp(
@@ -76,6 +77,7 @@ import 'package:money_plaza/ui/views/credit_card/credit_result/credit_result_vie
     StackedDialog(classType: ResetPasswordDialog),
     StackedDialog(classType: ContactUsDialog),
     StackedDialog(classType: MorgagesFilterDialog),
+    StackedDialog(classType: CreditCardFilterDialog),
 // @stacked-dialog
   ],
 )

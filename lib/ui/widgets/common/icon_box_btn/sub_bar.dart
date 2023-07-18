@@ -69,7 +69,7 @@ class SubBar extends StackedView<IconBoxBtnModel> {
                 }
               },
               child: Container(
-                height: height??50,
+                height: height ?? 50,
                 width: width ?? MediaQuery.of(context).size.width * 1 - 10,
                 decoration: BoxDecoration(
                   color: darkGreenHeigh,
@@ -89,7 +89,7 @@ class SubBar extends StackedView<IconBoxBtnModel> {
                               verticalSpaceSmall,
                               Image.asset(
                                 image ?? "",
-                                width: imgwidth??25,
+                                width: imgwidth ?? 25,
                                 scale: scale,
                               )
                             ],

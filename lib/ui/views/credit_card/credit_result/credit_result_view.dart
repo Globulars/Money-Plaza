@@ -19,7 +19,7 @@ class CreditResultView extends StackedView<CreditResultViewModel> {
     CreditResultViewModel viewModel,
     Widget? child,
   ) {
-   final width = MediaQuery.of(context).size.width;
+    final width = MediaQuery.of(context).size.width;
     return Stack(
       children: [
         Container(
@@ -36,22 +36,25 @@ class CreditResultView extends StackedView<CreditResultViewModel> {
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-             
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 6),
                 child: SubBar(
                   btmLeftRadius: 0,
                   btmRightRadius: 0,
                   image: myIcons.setting,
-              
                   text: 'Filter',
                   fontSize: 18,
+                  onPress: viewModel.showCreditFilter,
                 ),
               ),
-              const Divider(color:darkGreenHeigh, height: 1.0,thickness: 3,),
+              const Divider(
+                color: darkGreenHeigh,
+                height: 1.0,
+                thickness: 3,
+              ),
               verticalSpaceSmall,
               const CreditCardWiget(),
-             verticalSpaceMedium
+              verticalSpaceMedium
             ],
           ),
         ),
@@ -65,7 +68,6 @@ class CreditResultView extends StackedView<CreditResultViewModel> {
                 height: 40,
                 width: 80,
               ),
-           
             ],
           ),
         ),

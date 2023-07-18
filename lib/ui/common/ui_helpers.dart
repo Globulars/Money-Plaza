@@ -23,7 +23,11 @@ const Widget verticalSpaceMassive = SizedBox(height: _massiveSize);
 Widget spacedDivider = const Column(
   children: <Widget>[
     verticalSpaceMedium,
-    Divider(color:darkGreenHeigh, height: 1.0,thickness: 3,),
+    Divider(
+      color: darkGreenHeigh,
+      height: 1.0,
+      thickness: 3,
+    ),
     verticalSpaceMedium,
   ],
 );
