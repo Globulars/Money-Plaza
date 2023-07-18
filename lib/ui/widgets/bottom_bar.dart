@@ -6,7 +6,7 @@ import '../../app/app.dialogs.dart';
 import '../../app/app.locator.dart';
 
 Widget bottomBar(widget) {
-    final _dialogService = locator<DialogService>();
+  final _dialogService = locator<DialogService>();
   void showContactUs() {
     _dialogService.showCustomDialog(
       variant: DialogType.contactUs,
