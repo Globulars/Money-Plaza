@@ -8,6 +8,7 @@ import '../../../widgets/bottom_bar.dart';
 import '../../../widgets/common/background_image.dart';
 import '../../../widgets/common/icon_box_btn/return_button.dart';
 import '../../../widgets/common/icon_box_btn/sub_bar.dart';
+import '../../../widgets/common/icon_box_btn/submit_button.dart';
 import 'morg_result_card.dart';
 import 'morgages_result_viewmodel.dart';
 
@@ -44,6 +45,7 @@ class MorgagesResultView extends StackedView<MorgagesResultViewModel> {
                       text: 'Filter',
                       image: myIcons.setting,
                       imgwidth: 22,
+                      onPress: viewModel.showMorgagesFilter,
                     ),
                     SubBar(
                       width: width * 0.45,
@@ -70,13 +72,26 @@ class MorgagesResultView extends StackedView<MorgagesResultViewModel> {
           ),
         ),
         bottomBar(
-          ReturnButton(
-            imageLeft: myIcons.returnIcon1,
-            imgwidth: 18,
-            fontSize: 18,
-            text: 'Retrue',
-            height: 40,
-            width: 80,
+           Row(
+            children: [
+              ReturnButton(
+                imageLeft: myIcons.returnIcon1,
+                imgwidth: 12,
+               
+                text: 'Return',
+                height: 40,
+                width: 80,
+              ),
+              horizontalSpaceTiny,
+               SubmitButton(
+                image: myIcons.apply,
+                imgwidth: 12,
+              //  onPress: viewModel.navigateToMorgagesResult,
+                text: 'Apply',
+                height: 40,
+                width: 80,
+              ),
+            ],
           ),
         ),
       ],

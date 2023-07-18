@@ -67,6 +67,7 @@ class LandingView extends StackedView<LandingViewModel> {
                             text: "Morgages",
                             btmimage: myIcons.morgages,
                             imgwidth: 50,
+                            onPress: viewModel.navigateToMorgages,
                           ),
                         ],
                       ),

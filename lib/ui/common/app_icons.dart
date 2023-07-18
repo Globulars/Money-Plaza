@@ -72,6 +72,7 @@ class myIcons {
   static const String groupPenc = 'assets/icons/Morgages/Group-penc.png';
   static const String group = 'assets/icons/Morgages/Group.png';
   static const String hSBC = 'assets/icons/Morgages/HSBC.png';
+  static const String search = 'assets/icons/Morgages/search.png';
 
 //Register Logins Icons
   static const String charmSquareTick =

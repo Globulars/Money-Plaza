@@ -11,9 +11,9 @@ class LandingViewModel extends BaseViewModel {
     _navigationService.navigateToLoanView();
   }
 
-  // navigateToSettings() {
-  //   _navigationService.navigateTomo();
-  // }
+  navigateToMorgages() {
+    _navigationService.navigateToMorgagesView();
+  }
 
   // navigateToSettings() {
   //   _navigationService.navigateToin();
