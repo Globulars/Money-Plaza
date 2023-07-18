@@ -55,10 +55,11 @@ class CreditCardWiget extends ViewModelWidget<CreditResultViewModel> {
                           SubmitButton(
                             image: myIcons.apply,
                             imgwidth: 12,
-                            // onPress: viewModel.navigateToMorgagesSplash,
+                            onPress: viewModel.navigateToSplashCreditCard,
                             text: 'Apply',
                             height: 40,
                             width: 80,
+                            // onPress: ,
                           ),
                         ],
                       ),
