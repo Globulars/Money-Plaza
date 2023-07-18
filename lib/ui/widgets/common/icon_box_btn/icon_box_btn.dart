@@ -20,6 +20,7 @@ class IconBoxBtn extends StackedView<IconBoxBtnModel> {
   String? btmimage;
   Color? boxcolor;
   Function? onPress;
+  double margin;
 
   IconBoxBtn({
     super.key,
@@ -34,6 +35,7 @@ class IconBoxBtn extends StackedView<IconBoxBtnModel> {
     this.btmimage,
     this.boxcolor,
     this.onPress,
+    this.margin = 0.0,
   });
 
   @override
@@ -51,6 +53,7 @@ class IconBoxBtn extends StackedView<IconBoxBtnModel> {
       child: Container(
         height: height,
         width: width,
+        margin: EdgeInsets.all(margin),
         decoration: BoxDecoration(
             color: boxcolor ?? lightGreenHeigh,
             borderRadius: BorderRadius.circular(8)),
@@ -69,14 +72,20 @@ class IconBoxBtn extends StackedView<IconBoxBtnModel> {
                     ],
                   )
                 : Container(),
-            verticalSpaceTiny,
-            Text(
-              text ?? "",
-              style: GoogleFonts.ibmPlexSans(
-                  color: color ?? Colors.black,
-                  fontSize: fontSize ?? 14,
-                  fontWeight: fontWeight ?? FontWeight.w400),
-            ),
+            text != null
+                ? Column(
+                    children: [
+                      verticalSpaceTiny,
+                      Text(
+                        text ?? "",
+                        style: GoogleFonts.ibmPlexSans(
+                            color: color ?? Colors.black,
+                            fontSize: fontSize ?? 14,
+                            fontWeight: fontWeight ?? FontWeight.w400),
+                      ),
+                    ],
+                  )
+                : Container(),
             btmimage != null
                 ? Column(
                     children: [
