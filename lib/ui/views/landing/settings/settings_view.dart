@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:money_plaza/ui/common/app_colors.dart';
@@ -37,10 +36,10 @@ class SettingsView extends StackedView<SettingsViewModel> {
               SubBar(
                 text: "settings",
                 image: myIcons.setting,
-                height: 40,
+                height: 50,
+                imgwidth: 30,
                 divider: true,
               ),
-              // Text("setting").tr(),
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Column(
@@ -51,7 +50,7 @@ class SettingsView extends StackedView<SettingsViewModel> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         CustomText(
-                          text: "中国人 / English",
+                          text: "中国人English",
                           fontSize: 18,
                           color: kcDarkGreyColor,
                         ),
@@ -64,11 +63,6 @@ class SettingsView extends StackedView<SettingsViewModel> {
                           activeColor: darkGreenHeigh,
                           value: viewModel.englishLanguage,
                           onToggle: (value) {
-                            // if (viewModel.englishLanguage == true) {
-                            //   context.setLocale(const Locale('chi'));
-                            // } else {
-                            //   context.setLocale(const Locale('en'));
-                            // }
                             viewModel.setEnglishLanguage(context);
                           },
                         ),
@@ -79,7 +73,7 @@ class SettingsView extends StackedView<SettingsViewModel> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         CustomText(
-                          text: "Push Notifications",
+                          text: "pushNotifications",
                           fontSize: 18,
                           color: kcDarkGreyColor,
                         ),
@@ -101,13 +95,13 @@ class SettingsView extends StackedView<SettingsViewModel> {
                     ),
                     verticalSpaceSmall,
                     CustomText(
-                      text: "Privacy Policy",
+                      text: "privacyPolicy",
                       fontSize: 18,
                       color: kcDarkGreyColor,
                     ),
                     verticalSpaceSmall,
                     CustomText(
-                      text: "Terms and Conditions",
+                      text: "termsConditions",
                       fontSize: 18,
                       color: kcDarkGreyColor,
                     ),
@@ -124,7 +118,7 @@ class SettingsView extends StackedView<SettingsViewModel> {
                 imageLeft: myIcons.returnIcon1,
                 imgwidth: 18,
                 fontSize: 18,
-                text: 'Retrue',
+                text: 'return',
                 height: 40,
                 width: 80,
               ),

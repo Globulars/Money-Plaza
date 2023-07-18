@@ -1,4 +1,9 @@
 {
   "appName": "Money Plaza",
-  "settings": "Settings"
+  "settings": "Settings",
+  "中国人English":"中国人 / English",
+  "pushNotifications": "Push Notifications",
+  "privacyPolicy": "Privacy Policy",
+  "termsConditions": "Terms and Conditions",
+  "return": "Return"
 }

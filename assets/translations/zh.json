@@ -1,4 +1,9 @@
 {
     "appName": "金钱广场",
-    "settings": "设置"
+    "settings": "设置",
+    "中国人English":"中国人 / English",
+    "pushNotifications": "推送通知",
+    "privacyPolicy": "隐私政策",
+    "termsConditions": "条款和条件",
+    "return": "返回"
 }

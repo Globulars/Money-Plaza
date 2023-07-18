@@ -1,5 +1,6 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:stacked/stacked.dart';
@@ -79,7 +80,7 @@ class ReturnButton extends StackedView<IconBoxBtnModel> {
                   color: color ?? darkGreenLight,
                   fontSize: fontSize ?? 14,
                   fontWeight: fontWeight ?? FontWeight.w500),
-            ),
+            ).tr(),
             imageRight != null
                 ? Row(
                     children: [
