@@ -5,11 +5,13 @@ import 'package:money_plaza/app/app.locator.dart';
 import 'package:money_plaza/app/app.router.dart';
 import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:stacked_services/stacked_services.dart';
+import 'package:easy_localization/easy_localization.dart';
 
-void main() {
+Future<void> main() async {
   setupLocator();
   setupDialogUi();
   setupBottomSheetUi();
+  await EasyLocalization.ensureInitialized();
 
   runApp(const MyApp());
 }
@@ -34,6 +36,14 @@ class MyApp extends StatelessWidget {
       navigatorObservers: [
         StackedService.routeObserver,
       ],
+    home:  EasyLocalization(
+          supportedLocales: [Locale('en'), Locale('ar')],
+          path: 'assets/translations',
+          fallbackLocale: Locale('en'),
+          saveLocale: true,
+          useOnlyLangCode: true,
+          useFallbackTranslations: true, child: Container(),
+        ),
     );
   }
 }
