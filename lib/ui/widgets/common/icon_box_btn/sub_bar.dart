@@ -69,7 +69,7 @@ class SubBar extends StackedView<IconBoxBtnModel> {
                 }
               },
               child: Container(
-                height: height,
+                height: height??50,
                 width: width ?? MediaQuery.of(context).size.width * 1 - 10,
                 decoration: BoxDecoration(
                   color: darkGreenHeigh,
@@ -89,7 +89,7 @@ class SubBar extends StackedView<IconBoxBtnModel> {
                               verticalSpaceSmall,
                               Image.asset(
                                 image ?? "",
-                                width: imgwidth,
+                                width: imgwidth??25,
                                 scale: scale,
                               )
                             ],
@@ -101,7 +101,7 @@ class SubBar extends StackedView<IconBoxBtnModel> {
                       style: GoogleFonts.ibmPlexSans(
                           color: color ?? Colors.white,
                           fontSize: fontSize ?? 15,
-                          fontWeight: fontWeight ?? FontWeight.w400),
+                          fontWeight: fontWeight ?? FontWeight.w500),
                     ),
                   ],
                 ),
