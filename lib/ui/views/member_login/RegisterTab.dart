@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:money_plaza/ui/views/member_login/signup_with_email.dart';
-import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
 import 'package:stacked/stacked.dart';
 
 import '../../common/app_colors.dart';
@@ -32,30 +31,30 @@ class RegisterTab extends StackedView<MemberLoginViewModel> {
                 SliverAppBar(
                   toolbarHeight: 0,
                   backgroundColor: Colors.transparent,
-                  pinned: true,
+                  pinned: false,
                   floating: false,
                   shape: const RoundedRectangleBorder(
                     side: BorderSide(width: 1),
                   ),
                   bottom: TabBar(
-                    //unselectedLabelColor: Colors.orange,
-                    //labelColor: Colors.red,
+                    unselectedLabelColor: kcPureBlack,
+                    labelColor: kcPureWhite,
                     labelStyle: GoogleFonts.ibmPlexSans(fontSize: 10),
                     indicator: const BoxDecoration(
                         // Creates border
                         color: darkGreenHeigh),
                     tabs: [
                       Tab(
-                        child: CustomText(
-                          text: "Login with Email",
-                          fontSize: 16,
-                        ),
+                        child: Text(
+                              "Login with Email",
+                              style: GoogleFonts.ibmPlexSans(fontSize: 16),
+                            ),
                       ),
                       Tab(
-                        child: CustomText(
-                          text: "Login with Mobile",
-                          fontSize: 16,
-                        ),
+                        child: Text(
+                              "Login with Mobile",
+                              style: GoogleFonts.ibmPlexSans(fontSize: 16),
+                            ),
                       ),
                     ],
                   ),

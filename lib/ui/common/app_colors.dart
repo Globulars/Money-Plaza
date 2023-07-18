@@ -7,6 +7,9 @@ const Color kcMediumGrey = Color(0xFF474A54);
 const Color kcLightGrey = Color.fromARGB(255, 187, 187, 187);
 const Color kcVeryLightGrey = Color(0xFFE3E3E3);
 const Color kcBackgroundColor = kcDarkGreyColor;
+const Color kcPureBlack = Color(0xFF000000);
+const Color kcPureWhite = Color(0xFFFFFFFF);
+
 
 const Color darkGreenHeigh = Color(0xFF2C5B4D);
 const Color darkGreenLight = Color(0xFF3D8D77);
