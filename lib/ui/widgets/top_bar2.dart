@@ -22,7 +22,7 @@ Widget topBar(context) {
     );
   }
 
-  void compareScreen(){
+  void compareScreen() {
     _navigationService.navigateToLoancompareView();
   }
 
@@ -62,7 +62,7 @@ Widget topBar(context) {
                 height: 70,
                 width: MediaQuery.of(context).size.width * 0.22,
                 color: Colors.white,
-                 fontSize: 12,
+                fontSize: 12,
                 fontWeight: FontWeight.w500,
                 boxcolor: darkGreenHeigh,
                 topimage: myIcons.calculator,
@@ -74,7 +74,7 @@ Widget topBar(context) {
               height: 70,
               width: MediaQuery.of(context).size.width * 0.22,
               color: Colors.white,
-               fontSize: 12,
+              fontSize: 12,
               fontWeight: FontWeight.w500,
               boxcolor: darkGreenHeigh,
               topimage: myIcons.compare1,

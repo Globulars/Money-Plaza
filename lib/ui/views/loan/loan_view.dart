@@ -49,7 +49,6 @@ class LoanView extends StackedView<LoanViewModel> {
           ReturnButton(
             imageLeft: myIcons.returnIcon1,
             imgwidth: 12,
-            
             text: 'Retrue',
             height: 40,
             width: 80,

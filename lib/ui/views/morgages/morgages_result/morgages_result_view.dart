@@ -72,21 +72,20 @@ class MorgagesResultView extends StackedView<MorgagesResultViewModel> {
           ),
         ),
         bottomBar(
-           Row(
+          Row(
             children: [
               ReturnButton(
                 imageLeft: myIcons.returnIcon1,
                 imgwidth: 12,
-               
                 text: 'Return',
                 height: 40,
                 width: 80,
               ),
               horizontalSpaceTiny,
-               SubmitButton(
+              SubmitButton(
                 image: myIcons.apply,
                 imgwidth: 12,
-              //  onPress: viewModel.navigateToMorgagesResult,
+                onPress: viewModel.navigateToMorgagesSplash,
                 text: 'Apply',
                 height: 40,
                 width: 80,

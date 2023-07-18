@@ -84,7 +84,6 @@ class ApplyconfirmView extends StackedView<ApplyconfirmViewModel> {
               ReturnButton(
                 imageLeft: myIcons.returnIcon1,
                 imgwidth: 12,
-             
                 text: 'Return',
                 height: 40,
                 width: 80,
@@ -93,7 +92,6 @@ class ApplyconfirmView extends StackedView<ApplyconfirmViewModel> {
               SubmitButton(
                 image: myIcons.done,
                 imgwidth: 16,
-               
                 text: 'Done',
                 height: 40,
                 width: 80,

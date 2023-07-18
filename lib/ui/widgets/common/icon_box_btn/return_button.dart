@@ -72,7 +72,6 @@ class ReturnButton extends StackedView<IconBoxBtnModel> {
                     ],
                   )
                 : Container(),
-              
             Text(
               text ?? "",
               style: GoogleFonts.ibmPlexSans(

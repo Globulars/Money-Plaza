@@ -81,7 +81,7 @@ class MorgagesFilterDialog extends StackedView<MorgagesFilterDialogModel> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       SubmitButton(
-                         height: 40,
+                        height: 40,
                         width: 80,
                         boxColor: Colors.transparent,
                         image: myIcons.iconPowerReset,
@@ -97,7 +97,6 @@ class MorgagesFilterDialog extends StackedView<MorgagesFilterDialogModel> {
                     ],
                   )
                 ],
-                
               ),
             ),
           ],

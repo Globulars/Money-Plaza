@@ -47,16 +47,15 @@ class MorgagesView extends StackedView<MorgagesViewModel> {
               ReturnButton(
                 imageLeft: myIcons.returnIcon1,
                 imgwidth: 12,
-               
                 text: 'Return',
                 height: 40,
                 width: 80,
               ),
               horizontalSpaceTiny,
-               SubmitButton(
+              SubmitButton(
                 image: myIcons.search,
                 imgwidth: 12,
-               onPress: viewModel.navigateToMorgagesResult,
+                onPress: viewModel.navigateToMorgagesResult,
                 text: 'Search',
                 height: 40,
                 width: 80,

@@ -17,7 +17,8 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
   ) {
     final width = MediaQuery.of(context).size.width;
     return Expanded(
-      child: SingleChildScrollView(child: ListView.builder(
+      child: SingleChildScrollView(
+          child: ListView.builder(
         shrinkWrap: true,
         itemCount: 6,
         physics: const NeverScrollableScrollPhysics(),
@@ -50,7 +51,6 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                       children: [
                         SizedBox(
                           width: width * 0.3,
-                          
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [

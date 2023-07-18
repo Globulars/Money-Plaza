@@ -5,8 +5,7 @@ import 'package:stacked_services/stacked_services.dart';
 import '../../../app/app.locator.dart';
 
 class MorgagesViewModel extends BaseViewModel {
-
-   final _navigationService = locator<NavigationService>();
+  final _navigationService = locator<NavigationService>();
 
   navigateToMorgagesResult() {
     _navigationService.navigateToMorgagesResultView();

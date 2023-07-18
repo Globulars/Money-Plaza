@@ -5,9 +5,9 @@ import '../../../app/app.dialogs.dart';
 import '../../../app/app.locator.dart';
 
 class MemberLoginViewModel extends BaseViewModel {
-    final _dialogService = locator<DialogService>();
+  final _dialogService = locator<DialogService>();
 
-    void showResetPassword() {
+  void showResetPassword() {
     _dialogService.showCustomDialog(
       variant: DialogType.resetPassword,
     );

@@ -25,7 +25,7 @@ class SubBar extends StackedView<IconBoxBtnModel> {
   double? btmLeftRadius;
   double? btmRightRadius;
   double? scale;
-   Function? onPress;
+  Function? onPress;
 
   SubBar(
       {super.key,
@@ -56,13 +56,13 @@ class SubBar extends StackedView<IconBoxBtnModel> {
     return Column(
       children: [
         GestureDetector(
-            onTap: () {
-        if (onPress != null) {
-          onPress!();
-        } else {
-          // _navigationService.back();
-        }
-      },
+          onTap: () {
+            if (onPress != null) {
+              onPress!();
+            } else {
+              // _navigationService.back();
+            }
+          },
           child: Container(
             height: height,
             width: width ?? MediaQuery.of(context).size.width * 1 - 10,

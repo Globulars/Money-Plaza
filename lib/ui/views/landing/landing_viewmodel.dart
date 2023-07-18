@@ -26,6 +26,7 @@ class LandingViewModel extends BaseViewModel {
   navigateToLanding() {
     _navigationService.navigateToLandingView();
   }
+
   navigateToMemberLogin() {
     _navigationService.navigateToMemberLoginView();
   }
