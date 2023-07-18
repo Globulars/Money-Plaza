@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:money_plaza/ui/common/ui_helpers.dart';
+import 'package:money_plaza/ui/widgets/common/icon_box_btn/submit_button.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import '../../widgets/app_bar.dart';
@@ -40,13 +42,25 @@ class MorgagesView extends StackedView<MorgagesViewModel> {
           ),
         ),
         bottomBar(
-          ReturnButton(
-            imageLeft: myIcons.returnIcon1,
-            imgwidth: 18,
-            fontSize: 18,
-            text: 'Retrue',
-            height: 40,
-            width: 80,
+          Row(
+            children: [
+              ReturnButton(
+                imageLeft: myIcons.returnIcon1,
+                imgwidth: 12,
+                text: 'Return',
+                height: 40,
+                width: 80,
+              ),
+              horizontalSpaceTiny,
+              SubmitButton(
+                image: myIcons.search,
+                imgwidth: 12,
+                onPress: viewModel.navigateToMorgagesResult,
+                text: 'Search',
+                height: 40,
+                width: 80,
+              ),
+            ],
           ),
         ),
       ],

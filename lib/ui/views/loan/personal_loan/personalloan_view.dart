@@ -96,23 +96,25 @@ class PersonalloanView extends StackedView<PersonalloanViewModel> {
                 children: [
                   ReturnButton(
                     imageLeft: myIcons.returnIcon1,
-                    imgwidth: 14,
-                    fontSize: 18,
-                    text: 'Retrue',
+                    imgwidth: 12,
+                    text: 'Return',
                     height: 40,
                     width: 80,
                   ),
                   horizontalSpaceTiny,
                   ReturnButton(
                     imageRight: myIcons.next,
-                    imgwidth: 18,
-                    fontSize: 18,
+                    imgwidth: 16,
+                    // index==
                     text: 'Next',
                     height: 40,
                     width: 80,
                     onPress: () {
                       var index = DefaultTabController.of(context).index;
                       var length = DefaultTabController.of(context).length;
+//                       if(index==1){
+//  imagel: myIcons.next;
+//                       }else{}
                       if (index < length - 1) {
                         DefaultTabController.of(context).animateTo(index + 1);
                       } else {

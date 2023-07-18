@@ -68,7 +68,7 @@ class ReturnButton extends StackedView<IconBoxBtnModel> {
                         imageLeft ?? "",
                         width: imgwidth,
                       ),
-                      verticalSpaceSmall,
+                      horizontalSpaceTiny,
                     ],
                   )
                 : Container(),
@@ -83,7 +83,7 @@ class ReturnButton extends StackedView<IconBoxBtnModel> {
             imageRight != null
                 ? Row(
                     children: [
-                      verticalSpaceSmall,
+                      horizontalSpaceTiny,
                       Image.asset(
                         imageRight ?? "",
                         width: imgwidth,
