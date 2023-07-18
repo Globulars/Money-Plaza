@@ -34,7 +34,7 @@ Widget topBar(context) {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             IconBoxBtn(
-              height: 65,
+              height: 70,
               width: MediaQuery.of(context).size.width * 0.22,
               color: Colors.white,
               fontSize: 12,
@@ -42,9 +42,11 @@ Widget topBar(context) {
               boxcolor: darkGreenHeigh,
               topimage: myIcons.aiMatching,
               text: 'A.I.Matching',
+              imgwidth: 25,
             ),
             IconBoxBtn(
               height: 70,
+               imgwidth: 25,
               width: MediaQuery.of(context).size.width * 0.22,
               color: Colors.white,
               fontSize: 12,
@@ -60,6 +62,7 @@ Widget topBar(context) {
               },
               child: IconBoxBtn(
                 height: 70,
+                 imgwidth: 20,
                 width: MediaQuery.of(context).size.width * 0.22,
                 color: Colors.white,
                 fontSize: 12,
@@ -72,6 +75,7 @@ Widget topBar(context) {
             ),
             IconBoxBtn(
               height: 70,
+               imgwidth: 20,
               width: MediaQuery.of(context).size.width * 0.22,
               color: Colors.white,
               fontSize: 12,

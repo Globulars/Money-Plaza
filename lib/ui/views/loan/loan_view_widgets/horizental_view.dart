@@ -23,13 +23,14 @@ class ContainerListView extends ViewModelWidget<LoanViewModel> {
           // crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             topBar(context),
-            // verticalSpaceSmall,
+             verticalSpaceSmall,
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
+                horizontalSpaceTiny,
                 Image.asset(
                   myIcons.cilSortDecending,
-                  width: 50,
+                  width: 30,
                 ),
                 horizontalSpaceTiny,
                 SizedBox(
