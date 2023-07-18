@@ -17,6 +17,7 @@ class SubBar extends StackedView<IconBoxBtnModel> {
   double? imgwidth;
   String? text;
   Color? color;
+  Color? boxColor;
   double? fontSize;
   FontWeight? fontWeight;
   String? image;
@@ -33,6 +34,7 @@ class SubBar extends StackedView<IconBoxBtnModel> {
   SubBar(
       {super.key,
       this.color,
+      this.boxColor,
       this.height,
       this.text,
       this.width,
@@ -73,7 +75,7 @@ class SubBar extends StackedView<IconBoxBtnModel> {
                 height: height ?? 50,
                 width: width ?? MediaQuery.of(context).size.width * 1 - 10,
                 decoration: BoxDecoration(
-                  color: darkGreenHeigh,
+                  color:boxColor?? darkGreenHeigh,
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(topLeftRadius ?? 10),
                       topRight: Radius.circular(topRightRadius ?? 10),

@@ -1,5 +1,6 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:stacked/stacked.dart';
@@ -49,7 +50,7 @@ class DropdownTextfield extends StackedView<DropdownTextfieldModel> {
           titleText.toString(),
           style: GoogleFonts.ibmPlexSans(
               fontSize: 14, fontWeight: FontWeight.w500),
-        ),
+        ).tr(),
         verticalSpaceTiny,
         Container(
           decoration: BoxDecoration(
@@ -64,7 +65,7 @@ class DropdownTextfield extends StackedView<DropdownTextfieldModel> {
                 decoration: InputDecoration(
                   contentPadding: const EdgeInsets.symmetric(
                       horizontal: 10.0, vertical: 0.0),
-                  labelText: hintText,
+                  labelText: hintText.tr(),
                   border: _setBorderStyle(),
                   enabledBorder: _setBorderStyle(),
                   focusedBorder: _setBorderStyle(),
@@ -82,7 +83,7 @@ class DropdownTextfield extends StackedView<DropdownTextfieldModel> {
                     items: options.map((String value) {
                       return DropdownMenuItem<String>(
                         value: value,
-                        child: Text(value.toString()),
+                        child: Text(value.toString()).tr(),
                       );
                     }).toList(),
                   ),

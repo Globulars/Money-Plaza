@@ -7,5 +7,12 @@
   "termsConditions": "Terms and Conditions",
   "return": "Return",
   "submitRewardClaim": "Submit Reward Claim Application",
-  "uploadApplicatioRecord": "Please upload your application record with our reward application link specialists will arrange to redeem rewards in 30 days after the reward approval."
+  "uploadApplicatioRecord": "Please upload your application record with our reward application link specialists will arrange to redeem rewards in 30 days after the reward approval.",
+  "enterFollowingInformation": "Please enter the following information",
+  "upload": "Upload",
+  "typeOfProduct": "Type of Product",
+  "institution": "Institution",
+  "rewardDetails": "Reward details",
+  "referenceNumber":"Reference Number (if any)",
+  "search":"Search"
 }
