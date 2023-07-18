@@ -1,5 +1,6 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:stacked/stacked.dart';
@@ -81,7 +82,7 @@ class SubmitButton extends StackedView<IconBoxBtnModel> {
                       color: color ?? Colors.white,
                       fontSize: fontSize ?? 14,
                       fontWeight: fontWeight ?? FontWeight.w400),
-                ),
+                ).tr(),
               ],
             ),
           ),

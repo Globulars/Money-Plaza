@@ -1,9 +1,11 @@
 {
   "appName": "Money Plaza",
   "settings": "Settings",
-  "中国人English":"中国人 / English",
+  "中国人English": "中国人 / English",
   "pushNotifications": "Push Notifications",
   "privacyPolicy": "Privacy Policy",
   "termsConditions": "Terms and Conditions",
-  "return": "Return"
+  "return": "Return",
+  "submitRewardClaim": "Submit Reward Claim Application",
+  "uploadApplicatioRecord": "Please upload your application record with our reward application link specialists will arrange to redeem rewards in 30 days after the reward approval."
 }
