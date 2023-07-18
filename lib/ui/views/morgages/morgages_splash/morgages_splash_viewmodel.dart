@@ -1,3 +1,4 @@
+import 'package:money_plaza/app/app.router.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
@@ -10,6 +11,6 @@ class MorgagesSplashViewModel extends BaseViewModel {
   Future runStartupMorgaesInfo() async {
     await Future.delayed(const Duration(seconds: 2));
 
-    // _navigationService.replaceWithLandingView();
+    _navigationService.replaceWithMorgagesContactInfoView();
   }
 }

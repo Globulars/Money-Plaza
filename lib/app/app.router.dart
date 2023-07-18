@@ -38,7 +38,7 @@ import 'package:money_plaza/ui/views/morgages/morgages_result/morgages_result_vi
 import 'package:money_plaza/ui/views/morgages/morgages_splash/morgages_splash_view.dart'
     as _i21;
 import 'package:money_plaza/ui/views/morgages/morgages_view.dart' as _i19;
-import 'package:money_plaza/ui/views/morgages_contact_info/morgages_contact_info_view.dart'
+import 'package:money_plaza/ui/views/morgages/morgages_contact_info/morgages_contact_info_view.dart'
     as _i22;
 import 'package:money_plaza/ui/views/ownerloan/ownerloan_view.dart' as _i11;
 import 'package:money_plaza/ui/views/ownerloan/ownerloanresult/ownerloanresult_view.dart'
