@@ -22,7 +22,7 @@ class MorgagesContactInfoView
     MorgagesContactInfoViewModel viewModel,
     Widget? child,
   ) {
- final width = MediaQuery.of(context).size.width;
+    final width = MediaQuery.of(context).size.width;
     return Stack(
       children: [
         Container(
@@ -36,7 +36,7 @@ class MorgagesContactInfoView
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: appBar(),
-          body:  Column(
+          body: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SubBar(
@@ -68,10 +68,12 @@ class MorgagesContactInfoView
                           titleText: 'Reference Number (if any)',
                         ),
                         verticalSpaceTiny,
-                        DropdownTextfield(titleText: 'Contact Method', onChanged: (String) {  }, options: [],),
-                        CustomTextField(
-                         
+                        DropdownTextfield(
+                          titleText: 'Contact Method',
+                          onChanged: (String) {},
+                          options: [],
                         ),
+                        CustomTextField(),
                       ],
                     ),
                   ),
@@ -95,7 +97,7 @@ class MorgagesContactInfoView
               SubmitButton(
                 image: myIcons.done,
                 imgwidth: 18,
-               onPress: viewModel.navigateToMorgagesResult,
+                onPress: viewModel.navigateToMorgagesResult,
                 text: 'Done',
                 height: 40,
                 width: 80,

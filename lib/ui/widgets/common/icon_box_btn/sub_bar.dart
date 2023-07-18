@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:stacked/stacked.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -26,6 +27,7 @@ class SubBar extends StackedView<IconBoxBtnModel> {
   double? btmRightRadius;
   double? scale;
   Function? onPress;
+  bool close;
 
   SubBar(
       {super.key,
@@ -45,7 +47,8 @@ class SubBar extends StackedView<IconBoxBtnModel> {
       this.topimgwidth,
       this.divider = false,
       this.scale,
-      this.onPress});
+      this.onPress,
+      this.close = false});
 
   @override
   Widget builder(
@@ -53,31 +56,30 @@ class SubBar extends StackedView<IconBoxBtnModel> {
     IconBoxBtnModel viewModel,
     Widget? child,
   ) {
-    return Column(
+    return Stack(
       children: [
-        GestureDetector(
-          onTap: () {
-            if (onPress != null) {
-              onPress!();
-            } else {
-              // _navigationService.back();
-            }
-          },
-          child: Container(
-            height: height,
-            width: width ?? MediaQuery.of(context).size.width * 1 - 10,
-            decoration: BoxDecoration(
-              color: darkGreenHeigh,
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(topLeftRadius ?? 10),
-                  topRight: Radius.circular(topRightRadius ?? 10),
-                  bottomLeft: Radius.circular(btmLeftRadius ?? 10),
-                  bottomRight: Radius.circular(btmRightRadius ?? 10)),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Row(
+        Column(
+          children: [
+            GestureDetector(
+              onTap: () {
+                if (onPress != null) {
+                  onPress!();
+                } else {
+                  // _navigationService.back();
+                }
+              },
+              child: Container(
+                height: height,
+                width: width ?? MediaQuery.of(context).size.width * 1 - 10,
+                decoration: BoxDecoration(
+                  color: darkGreenHeigh,
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(topLeftRadius ?? 10),
+                      topRight: Radius.circular(topRightRadius ?? 10),
+                      bottomLeft: Radius.circular(btmLeftRadius ?? 10),
+                      bottomRight: Radius.circular(btmRightRadius ?? 10)),
+                ),
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
@@ -103,31 +105,32 @@ class SubBar extends StackedView<IconBoxBtnModel> {
                     ),
                   ],
                 ),
-                //  Align(
-                //              alignment: Alignment.topRight,
-                //  child: topimage != null
-                //       ? Row(
-                //           children: [
-                //             verticalSpaceSmall,
-                //             Image.asset(
-                //               topimage ?? "",
-                //               width: topimgwidth,
-                //             )
-                //           ],
-                //         )
-                //       : Container(),
-                //             ),
-              ],
+              ),
             ),
-          ),
+            divider
+                ? const Divider(
+                    color: darkGreenHeigh,
+                    height: 0,
+                    thickness: 6,
+                  )
+                : Container(),
+          ],
         ),
-        divider
-            ? const Divider(
-                color: darkGreenHeigh,
-                height: 0,
-                thickness: 6,
+        close
+            ? Positioned(
+                top: 5,
+                right: 5,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Image.asset(
+                    myIcons.cancel,
+                    width: 17,
+                  ),
+                ),
               )
-            : Container(),
+            : Container()
       ],
     );
   }
