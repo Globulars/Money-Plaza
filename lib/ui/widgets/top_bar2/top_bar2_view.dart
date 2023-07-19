@@ -23,22 +23,17 @@ class TopBar2View extends StackedView<TopBar2ViewModel> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Column(
-                children: [
-                  IconBoxBtn(
-                    height: 60,
-                    width: MediaQuery.of(context).size.width * 0.23,
-                    color: Colors.white,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w500,
-                    boxcolor: darkGreenHeigh,
-                    topimage: myIcons.aiMatching,
-                    text: 'A.I.Matching',
-                    imgwidth: 22,
-                    
-                  ),
-                  loanCont(context)
-                ],
+              IconBoxBtn(
+                height: 60,
+                width: MediaQuery.of(context).size.width * 0.23,
+                color: Colors.white,
+                fontSize: 12,
+                fontWeight: FontWeight.w500,
+                boxcolor: darkGreenHeigh,
+                topimage: myIcons.aiMatching,
+                text: 'A.I.Matching',
+                imgwidth: 22,
+                onPress:viewModel. showHide,
               ),
               IconBoxBtn(
                 height: 60,
@@ -85,6 +80,7 @@ class TopBar2View extends StackedView<TopBar2ViewModel> {
           thickness: 6,
         ),
         verticalSpaceTiny,
+       viewModel.showcard? loanCont(context):Container(),
       ],
     );
   }
