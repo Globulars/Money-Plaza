@@ -3,15 +3,23 @@ import 'package:money_plaza/app/app.router.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:stacked_services/stacked_services.dart';
 
+import '../../../app/app.dialogs.dart';
 import '../../../app/app.locator.dart';
 import '../../common/ui_helpers.dart';
 import 'icon_box_btn/submit_button.dart';
 import 'icon_box_btn/text.dart';
 
-Widget resultCard(context) {
+Widget resultCard(context, {detailPage = 0}) {
   final _navigationService = locator<NavigationService>();
   void applyConfirm() {
     _navigationService.navigateToApplyconfirmView();
+  }
+
+  final _dialogService = locator<DialogService>();
+  void showDetail() {
+    _dialogService.showCustomDialog(
+      variant: DialogType.detailFilte,
+    );
   }
 
   return Padding(
@@ -24,7 +32,7 @@ Widget resultCard(context) {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              width: MediaQuery.of(context).size.width * 0.6,
+              width: MediaQuery.of(context).size.width * (0.57 - detailPage),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -105,6 +113,7 @@ Widget resultCard(context) {
                     text: 'Details',
                     color: Colors.black,
                     fontSize: 18,
+                    onPress: showDetail,
                   ),
                 ],
               ),
