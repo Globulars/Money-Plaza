@@ -310,8 +310,12 @@ class StackedRouter extends _i1.RouterBase {
       );
     },
     _i8.ApplyconfirmView: (data) {
+      final args = data.getArgs<ApplyconfirmViewArguments>(
+        orElse: () => const ApplyconfirmViewArguments(),
+      );
       return _i31.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i8.ApplyconfirmView(),
+        builder: (context) =>
+            _i8.ApplyconfirmView(key: args.key, match: args.match),
         settings: data,
       );
     },
@@ -455,6 +459,33 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
+class ApplyconfirmViewArguments {
+  const ApplyconfirmViewArguments({
+    this.key,
+    this.match = false,
+  });
+
+  final _i31.Key? key;
+
+  final bool match;
+
+  @override
+  String toString() {
+    return '{"key": "$key", "match": "$match"}';
+  }
+
+  @override
+  bool operator ==(covariant ApplyconfirmViewArguments other) {
+    if (identical(this, other)) return true;
+    return other.key == key && other.match == match;
+  }
+
+  @override
+  int get hashCode {
+    return key.hashCode ^ match.hashCode;
+  }
+}
+
 extension NavigatorStateExtension on _i32.NavigationService {
   Future<dynamic> navigateToHomeView([
     int? routerId,
@@ -540,14 +571,17 @@ extension NavigatorStateExtension on _i32.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> navigateToApplyconfirmView([
+  Future<dynamic> navigateToApplyconfirmView({
+    _i31.Key? key,
+    bool match = false,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return navigateTo<dynamic>(Routes.applyconfirmView,
+        arguments: ApplyconfirmViewArguments(key: key, match: match),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -946,14 +980,17 @@ extension NavigatorStateExtension on _i32.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> replaceWithApplyconfirmView([
+  Future<dynamic> replaceWithApplyconfirmView({
+    _i31.Key? key,
+    bool match = false,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return replaceWith<dynamic>(Routes.applyconfirmView,
+        arguments: ApplyconfirmViewArguments(key: key, match: match),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

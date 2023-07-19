@@ -7,6 +7,7 @@ import '../../widgets/app_bar.dart';
 import '../../widgets/bottom_bar.dart';
 import '../../widgets/common/icon_box_btn/return_button.dart';
 import '../../widgets/common/result_card.dart';
+import '../../widgets/loan_containers.dart';
 import 'loan_viewmodel.dart';
 import 'loan_view_widgets/horizental_view.dart';
 
@@ -37,7 +38,18 @@ class LoanView extends StackedView<LoanViewModel> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const PicContainer(),
+                Container(
+                  height: 170,
+                  width: width * 1,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage('assets/images/best_deals.jpg'),
+                        fit: BoxFit.fitWidth),
+                  ),
+                ),
+                verticalSpaceMedium,
+                loanCont(context),
+                verticalSpaceTiny,
                 const ContainerListView(),
                 ListView.builder(
                   itemCount: 3,
@@ -56,7 +68,7 @@ class LoanView extends StackedView<LoanViewModel> {
           ReturnButton(
             imageLeft: myIcons.returnIcon1,
             imgwidth: 12,
-            text: 'Retrue',
+            text: 'Return',
             height: 40,
             width: 80,
           ),

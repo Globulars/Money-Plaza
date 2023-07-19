@@ -1,33 +1,36 @@
+// ignore_for_file: unused_element
+
 import 'package:flutter/material.dart';
+import 'package:money_plaza/app/app.router.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
-import 'package:money_plaza/ui/common/ui_helpers.dart';
-import 'package:stacked/stacked.dart';
-import '../../../widgets/common/icon_box_btn/icon_box_btn.dart';
-import '../loan_viewmodel.dart';
+import 'package:stacked_services/stacked_services.dart';
 
-class PicContainer extends ViewModelWidget<LoanViewModel> {
-  const PicContainer({Key? key}) : super(key: key);
+import '../../app/app.locator.dart';
+import '../common/ui_helpers.dart';
+import 'common/icon_box_btn/icon_box_btn.dart';
+Widget loanCont(context) {
+   final _navigationService = locator<NavigationService>();
 
-  @override
-  Widget build(
-    BuildContext context,
-    LoanViewModel viewModel,
-  ) {
-    final width = MediaQuery.of(context).size.width;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Container(
-          height: 170,
-          width: width * 1,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage('assets/images/best_deals.jpg'),
-                fit: BoxFit.fitWidth),
-          ),
-        ),
-        verticalSpaceMedium,
-        Column(
+  navigateToPersonalloan() {
+    _navigationService.navigateToPersonalloanView();
+  }
+
+  navigateToOwnerloan() {
+    _navigationService.navigateToOwnerloanView();
+  }
+
+  navigateToBlnstransfer() {
+    _navigationService.navigateToBlnstransferView();
+  }
+
+  navigateToApplyconfirm() {
+    _navigationService.navigateToApplyconfirmView();
+  }
+
+  navigateToCommerical() {
+    _navigationService.navigateToCommericalLoanView();
+  }
+  return Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Row(
@@ -35,22 +38,22 @@ class PicContainer extends ViewModelWidget<LoanViewModel> {
               children: [
                 IconBoxBtn(
                   height: 70,
-                  width: width * 0.45,
+                  width: MediaQuery.of(context).size.width * 0.45,
                   color: Colors.black,
                   fontWeight: FontWeight.w500,
                   topimage: myIcons.personalLoans,
                   text: 'Personal Loans',
-                  onPress: viewModel.navigateToPersonalloan,
+                  onPress: navigateToPersonalloan,
                 ),
                 horizontalSpaceSmall,
                 IconBoxBtn(
                   height: 70,
-                  width: width * 0.45,
+                  width:  MediaQuery.of(context).size.width * 0.45,
                   color: Colors.black,
                   fontWeight: FontWeight.w500,
                   topimage: myIcons.ownerLoan,
                   text: "Property Owner's Loan",
-                  onPress: viewModel.navigateToOwnerloan,
+                  onPress: navigateToOwnerloan,
                 ),
               ],
             ),
@@ -60,29 +63,26 @@ class PicContainer extends ViewModelWidget<LoanViewModel> {
               children: [
                 IconBoxBtn(
                   height: 70,
-                  width: width * 0.45,
+                  width:  MediaQuery.of(context).size.width * 0.45,
                   color: Colors.black,
                   fontWeight: FontWeight.w500,
                   topimage: myIcons.balanceTrans,
                   text: 'Loan Balance Transfer',
-                  onPress: viewModel.navigateToBlnstransfer,
+                  onPress:navigateToBlnstransfer,
                 ),
                 horizontalSpaceSmall,
                 IconBoxBtn(
                   height: 70,
-                  width: width * 0.45,
+                  width:  MediaQuery.of(context).size.width * 0.45,
                   color: Colors.black,
                   fontWeight: FontWeight.w500,
                   topimage: myIcons.commericalLoan,
                   text: 'Commerical Loans',
-                  onPress: viewModel.navigateToCommerical,
+                  onPress:navigateToCommerical,
                 ),
               ],
             ),
             verticalSpaceSmall,
           ],
-        )
-      ],
-    );
-  }
+        );
 }
