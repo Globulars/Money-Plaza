@@ -4,6 +4,7 @@ import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import '../../common/app_colors.dart';
 import '../common/icon_box_btn/icon_box_btn.dart';
+import '../loan_containers.dart';
 import 'top_bar2_viewmodel.dart';
 
 class TopBar2View extends StackedView<TopBar2ViewModel> {
@@ -22,16 +23,22 @@ class TopBar2View extends StackedView<TopBar2ViewModel> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              IconBoxBtn(
-                height: 60,
-                width: MediaQuery.of(context).size.width * 0.23,
-                color: Colors.white,
-                fontSize: 12,
-                fontWeight: FontWeight.w500,
-                boxcolor: darkGreenHeigh,
-                topimage: myIcons.aiMatching,
-                text: 'A.I.Matching',
-                imgwidth: 22,
+              Column(
+                children: [
+                  IconBoxBtn(
+                    height: 60,
+                    width: MediaQuery.of(context).size.width * 0.23,
+                    color: Colors.white,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500,
+                    boxcolor: darkGreenHeigh,
+                    topimage: myIcons.aiMatching,
+                    text: 'A.I.Matching',
+                    imgwidth: 22,
+                    
+                  ),
+                  loanCont(context)
+                ],
               ),
               IconBoxBtn(
                 height: 60,

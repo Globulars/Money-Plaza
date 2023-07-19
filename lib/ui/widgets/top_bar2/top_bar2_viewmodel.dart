@@ -8,6 +8,7 @@ import '../../../app/app.locator.dart';
 class TopBar2ViewModel extends BaseViewModel {
     final _dialogService = locator<DialogService>();
   final _navigationService = locator<NavigationService>();
+  var showcard=false;
   void showCalculator() {
     _dialogService.showCustomDialog(
       variant: DialogType.calculator,
@@ -22,5 +23,9 @@ class TopBar2ViewModel extends BaseViewModel {
 
   void compareScreen() {
     _navigationService.navigateToLoancompareView();
+  }
+
+   void showHide() {
+   showcard!=showcard;
   }
 }
