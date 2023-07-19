@@ -4,7 +4,7 @@ import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:stacked/stacked.dart';
 
 import '../../../widgets/common/icon_box_btn/text.dart';
-import 'data_table.dart';
+import 'card_1_table.dart';
 import '../detail_filte_dialog_model.dart';
 
 class DetailCard1 extends ViewModelWidget<DetailFilteDialogModel> {
@@ -37,8 +37,8 @@ class DetailCard1 extends ViewModelWidget<DetailFilteDialogModel> {
               ],
             ),
           ),
-          CustomText(text: 'pleaseTurnOffAdBlocker'),
-          const DetailDataTable()
+          CustomText(text: 'for3monthsSuccessfully'),
+          const Card1Table()
         ],
       ),
     );

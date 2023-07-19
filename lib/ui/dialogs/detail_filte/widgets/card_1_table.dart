@@ -5,8 +5,8 @@ import 'package:stacked/stacked.dart';
 import '../../../widgets/common/icon_box_btn/text.dart';
 import '../detail_filte_dialog_model.dart';
 
-class DetailDataTable extends ViewModelWidget<DetailFilteDialogModel> {
-  const DetailDataTable({Key? key}) : super(key: key);
+class Card1Table extends ViewModelWidget<DetailFilteDialogModel> {
+  const Card1Table({Key? key}) : super(key: key);
 
   @override
   Widget build(

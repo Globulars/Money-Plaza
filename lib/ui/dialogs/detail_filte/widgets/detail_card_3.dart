@@ -5,9 +5,10 @@ import 'package:stacked/stacked.dart';
 
 import '../../../widgets/common/icon_box_btn/text.dart';
 import '../detail_filte_dialog_model.dart';
+import 'card_3_table.dart';
 
-class DetailCard2 extends ViewModelWidget<DetailFilteDialogModel> {
-  const DetailCard2({Key? key}) : super(key: key);
+class DetailCard3 extends ViewModelWidget<DetailFilteDialogModel> {
+  const DetailCard3({Key? key}) : super(key: key);
 
   @override
   Widget build(
@@ -31,12 +32,14 @@ class DetailCard2 extends ViewModelWidget<DetailFilteDialogModel> {
             child: Row(
               children: [
                 Image.asset(
-                  myIcons.appbarTitle,
+                  myIcons.weLend,
                 ),
               ],
             ),
           ),
-          CustomText(text: 'pleaseTurnOffAdBlocker'),
+          CustomText(text: 'thePromotionValid'),
+          const Card3Table(),
+          CustomText(text: 'termsConditionsApply'),
         ],
       ),
     );
