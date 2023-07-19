@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
+import 'package:money_plaza/ui/dialogs/detail_filte/detail_card_1.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import '../../widgets/common/icon_box_btn/sub_bar.dart';
@@ -41,7 +42,7 @@ class DetailFilteDialog extends StackedView<DetailFilteDialogModel> {
                 color: Colors.white,
                 width: width * 1,
                 image: myIcons.search,
-                text: 'Interest Calculator',
+                text: 'details',
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
                 btmLeftRadius: 0,
@@ -56,6 +57,7 @@ class DetailFilteDialog extends StackedView<DetailFilteDialogModel> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     resultCard(context, detailPage: 0.17),
+                    const DetailCard1()
                   ],
                 ),
               ),

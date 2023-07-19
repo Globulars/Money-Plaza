@@ -20,5 +20,11 @@
   "enterCurrentPassword": "Enter the current password",
   "enterNewPassword": "Enter new password \n (8-15 digits)",
   "confirmNewPassword": "Confirm new password",
-  "previous":"Previous"
+  "previous": "Previous",
+  "details": "Details",
+  "loanAmount": "Loan amount",
+  "repaymentPeriod": "Repayment\nPeriod",
+  "weLendCashRebate": "WeLend\nCash rebate",
+  "exclusiveRebate": "MoneyPlaza Exclusive rebate",
+  "extraRebate": "MoneyPlaza Extra rebate"
 }
