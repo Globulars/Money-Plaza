@@ -24,7 +24,7 @@ class SignUpWithEmail extends StackedView<MemberLoginViewModel> {
       children: [
         CustomTextField(
           hintText: "Email",
-          hintStyle: TextStyle(fontSize: 16),
+          hintStyle: const TextStyle(fontSize: 16),
           textAlign: TextAlign.center,
         ),
         verticalSpaceTiny,
@@ -39,21 +39,22 @@ class SignUpWithEmail extends StackedView<MemberLoginViewModel> {
               fontSize: 16,
             ),
             CustomTextField(
+              height: 40,
               width: width * 0.64,
               hintText: "Verification Code",
-              hintStyle: TextStyle(fontSize: 16),
+              hintStyle: const TextStyle(fontSize: 16),
               textAlign: TextAlign.center,
             ),
           ],
         ),
         CustomTextField(
           hintText: "Enter Password (8-15 digits)",
-          hintStyle: TextStyle(fontSize: 16),
+          hintStyle: const TextStyle(fontSize: 16),
           textAlign: TextAlign.center,
         ),
         CustomTextField(
           hintText: "Confirm Password",
-          hintStyle: TextStyle(fontSize: 16),
+          hintStyle: const TextStyle(fontSize: 16),
           textAlign: TextAlign.center,
         ),
         Row(
@@ -62,13 +63,13 @@ class SignUpWithEmail extends StackedView<MemberLoginViewModel> {
             CustomTextField(
               width: width * 0.42,
               hintText: "First Name",
-              hintStyle: TextStyle(fontSize: 16),
+              hintStyle: const TextStyle(fontSize: 16),
               textAlign: TextAlign.center,
             ),
             CustomTextField(
               width: width * 0.42,
               hintText: "Last Name",
-              hintStyle: TextStyle(fontSize: 16),
+              hintStyle: const TextStyle(fontSize: 16),
               textAlign: TextAlign.center,
             ),
           ],
@@ -88,7 +89,7 @@ class SignUpWithEmail extends StackedView<MemberLoginViewModel> {
               width: 30,
             ),
             horizontalSpaceTiny,
-            Container(
+            SizedBox(
               width: width * 0.75,
               child: CustomText(
                 text:

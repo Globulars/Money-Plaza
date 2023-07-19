@@ -35,7 +35,7 @@ class MemberLoginView extends StackedView<MemberLoginViewModel> {
         DefaultTabController(
           length: 2,
           child: Container(
-            height: height-10,
+            height: height,
             width: width,
             child: Scaffold(
               backgroundColor: Colors.transparent,
