@@ -105,6 +105,15 @@ class SettingsView extends StackedView<SettingsViewModel> {
                       fontSize: 18,
                       color: kcDarkGreyColor,
                     ),
+                    verticalSpaceSmall,
+                    InkWell(
+                      onTap: viewModel.navigateToMemberSetting,
+                      child: CustomText(
+                        text: "Member Setting",
+                        fontSize: 18,
+                        color: kcDarkGreyColor,
+                      ),
+                    ),
                   ],
                 ),
               )
