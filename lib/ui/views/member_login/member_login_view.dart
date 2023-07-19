@@ -35,7 +35,7 @@ class MemberLoginView extends StackedView<MemberLoginViewModel> {
         DefaultTabController(
           length: 2,
           child: Container(
-            height: height,
+            height: height-10,
             width: width,
             child: Scaffold(
               backgroundColor: Colors.transparent,
@@ -50,7 +50,7 @@ class MemberLoginView extends StackedView<MemberLoginViewModel> {
                       pinned: true,
                       floating: false,
                       bottom: TabBar(
-                        unselectedLabelColor: darkGreenHeigh,
+                       unselectedLabelColor: darkGreenHeigh,
                         labelColor: Colors.white,
                         labelStyle: GoogleFonts.ibmPlexSans(fontSize: 10),
                         indicator: const BoxDecoration(
@@ -61,6 +61,7 @@ class MemberLoginView extends StackedView<MemberLoginViewModel> {
                             color: darkGreenHeigh),
                         tabs: [
                           Tab(
+                            
                             child: Row(
                               children: [
                                 Padding(
@@ -69,14 +70,14 @@ class MemberLoginView extends StackedView<MemberLoginViewModel> {
                                   child: Image.asset(
                                     myIcons.memberLogin,
                                     height: 30,
-                                    width: 30,
+                                    width: 30,color:DefaultTabController.of(context).index==0? Colors.white:Colors.red,
                                   ),
                                 ),
-                                CustomText(
-                                  text: "Member Login",
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold,
-                                )
+                                 Text(
+                              'Member Login',
+                              textAlign: TextAlign.center,style: GoogleFonts.ibmPlexSans(fontSize: 16),
+                            ),
+                              
                               ],
                             ),
                           ),

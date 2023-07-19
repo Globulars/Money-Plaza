@@ -31,17 +31,19 @@ class MemberLoginTab extends StackedView<MemberLoginViewModel> {
                 SliverAppBar(
                   toolbarHeight: 0,
                   backgroundColor: Colors.transparent,
-                  pinned: false,
+                  pinned: true,
                   floating: false,
                   shape: const RoundedRectangleBorder(
                     side: BorderSide(width: 1),
                   ),
                   bottom: TabBar(
-                    unselectedLabelColor: kcPureBlack,
-                    labelColor: kcPureWhite,
+                    unselectedLabelColor: darkGreenHeigh,
+                    labelColor: Colors.white,
                     labelStyle: GoogleFonts.ibmPlexSans(fontSize: 10),
                     indicator: const BoxDecoration(
-                        // Creates border
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(0),
+                            topRight: Radius.circular(0)), // Creates border
                         color: darkGreenHeigh),
                     tabs: [
                       Tab(
@@ -62,7 +64,7 @@ class MemberLoginTab extends StackedView<MemberLoginViewModel> {
               ];
             },
             body: const Padding(
-              padding: EdgeInsets.all(15.0),
+              padding: EdgeInsets.symmetric(vertical: 15),
               child: TabBarView(
                 children: <Widget>[
                   LoginWithEmail(),
