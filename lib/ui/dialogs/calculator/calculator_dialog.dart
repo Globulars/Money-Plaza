@@ -12,7 +12,6 @@ import '../../widgets/common/icon_box_btn/submit_button.dart';
 import '../../widgets/common/icon_box_btn/text.dart';
 import 'calculator_dialog_model.dart';
 
-
 class CalculatorDialog extends StackedView<CalculatorDialogModel> {
   final DialogRequest request;
   final Function(DialogResponse) completer;

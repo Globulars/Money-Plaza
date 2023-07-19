@@ -22,7 +22,7 @@ class TranTopWidget extends ViewModelWidget<TransferResultViewModel> {
         Column(
           // crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-             TopBar2View(),
+            TopBar2View(),
             const Divider(
               color: darkGreenHeigh,
               height: 5.0,

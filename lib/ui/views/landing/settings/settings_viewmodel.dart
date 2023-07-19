@@ -7,7 +7,7 @@ import 'package:stacked_services/stacked_services.dart';
 import '../../../../app/app.locator.dart';
 
 class SettingsViewModel extends BaseViewModel {
-    final _navigationService = locator<NavigationService>();
+  final _navigationService = locator<NavigationService>();
   bool englishLanguage = true;
 
   navigateToMemberSetting() {

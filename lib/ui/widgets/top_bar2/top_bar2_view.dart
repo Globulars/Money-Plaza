@@ -33,7 +33,7 @@ class TopBar2View extends StackedView<TopBar2ViewModel> {
                 topimage: myIcons.aiMatching,
                 text: 'A.I.Matching',
                 imgwidth: 22,
-                onPress:viewModel. showHide,
+                onPress: viewModel.showHide,
               ),
               IconBoxBtn(
                 height: 60,
@@ -80,7 +80,7 @@ class TopBar2View extends StackedView<TopBar2ViewModel> {
           thickness: 6,
         ),
         verticalSpaceTiny,
-       viewModel.showcard? loanCont(context):Container(),
+        viewModel.showcard ? loanCont(context) : Container(),
       ],
     );
   }
