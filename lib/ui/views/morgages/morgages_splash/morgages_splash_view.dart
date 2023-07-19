@@ -52,11 +52,11 @@ class MorgagesSplashView extends StackedView<MorgagesSplashViewModel> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(
-                    myIcons.group,
+                    myIcons.group,width: 100,
                   ),
-                  horizontalSpaceSmall,
+                  // horizontalSpaceSmall,
                   Image.asset(
-                    myIcons.groupPenc,
+                    myIcons.groupPenc,width: 40,
                   ),
                 ],
               )

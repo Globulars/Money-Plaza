@@ -26,6 +26,7 @@ class PromiseLand extends ViewModelWidget<LoancompareViewModel> {
                 children: [
                   Image.asset(
                     myIcons.promise,
+                    width: 90,
                   ),
                   verticalSpaceTiny,
                   CustomText(
@@ -39,6 +40,7 @@ class PromiseLand extends ViewModelWidget<LoancompareViewModel> {
                     height: 40,
                     width: 80,
                     text: 'Apply',
+                    imgwidth: 12,
                   )
                 ],
               ),
@@ -47,6 +49,7 @@ class PromiseLand extends ViewModelWidget<LoancompareViewModel> {
                 children: [
                   Image.asset(
                     myIcons.weLend,
+                    width: 90,
                   ),
                   verticalSpaceTiny,
                   CustomText(
@@ -60,6 +63,7 @@ class PromiseLand extends ViewModelWidget<LoancompareViewModel> {
                     height: 40,
                     width: 80,
                     text: 'Apply',
+                    imgwidth: 12,
                   )
                 ],
               ),

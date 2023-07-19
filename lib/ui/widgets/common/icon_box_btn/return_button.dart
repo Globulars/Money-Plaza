@@ -17,6 +17,7 @@ class ReturnButton extends StackedView<IconBoxBtnModel> {
   double? imgwidth;
   String? text;
   Color? color;
+  Color? boxcolor;
   double? fontSize;
   FontWeight? fontWeight;
   String? imageLeft;
@@ -25,6 +26,7 @@ class ReturnButton extends StackedView<IconBoxBtnModel> {
   ReturnButton({
     super.key,
     this.color,
+    this.boxcolor,
     this.height,
     this.text,
     this.width,
@@ -56,7 +58,7 @@ class ReturnButton extends StackedView<IconBoxBtnModel> {
         width: width,
         decoration: BoxDecoration(
             border: Border.all(color: darkGreenLight, width: 2.0),
-            color: Colors.white,
+            color:boxcolor?? Colors.white,
             borderRadius: BorderRadius.circular(5)),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,

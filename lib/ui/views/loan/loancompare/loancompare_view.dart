@@ -54,13 +54,7 @@ class LoancompareView extends StackedView<LoancompareViewModel> {
               verticalSpaceLarge
             ],
           ),
-          // bottomNavigationBar: Container(
-          //     height: 60,
-          //     width: width * 1,
-          //     child: SizedBox(
-          //         child: Image.asset(
-          //       myIcons.contacts,
-          //     ))),
+         
         ),
         bottomBar(
           ReturnButton(

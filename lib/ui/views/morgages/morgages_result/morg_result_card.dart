@@ -35,10 +35,11 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Image.asset(myIcons.hSBC),
+                        Image.asset(myIcons.hSBC,width: 80,),
                         SubmitButton(
                           boxColor: Colors.transparent,
                           image: myIcons.compare2,
+                          imgwidth: 12,
                           text: 'Select',
                           color: Colors.black,
                           fontSize: 16,
