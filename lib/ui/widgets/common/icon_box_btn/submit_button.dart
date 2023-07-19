@@ -23,20 +23,19 @@ class SubmitButton extends StackedView<IconBoxBtnModel> {
   Function? onPress;
   double? scale;
 
-  SubmitButton({
-    super.key,
-    this.color,
-    this.height,
-    this.text,
-    this.width,
-    this.fontSize,
-    this.fontWeight,
-    this.image,
-    this.imgwidth,
-    this.boxColor,
-    this.onPress,
-    this.scale
-  });
+  SubmitButton(
+      {super.key,
+      this.color,
+      this.height,
+      this.text,
+      this.width,
+      this.fontSize,
+      this.fontWeight,
+      this.image,
+      this.imgwidth,
+      this.boxColor,
+      this.onPress,
+      this.scale});
 
   @override
   Widget builder(

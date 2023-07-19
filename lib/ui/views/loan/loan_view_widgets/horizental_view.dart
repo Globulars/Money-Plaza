@@ -20,7 +20,7 @@ class ContainerListView extends ViewModelWidget<LoanViewModel> {
       // crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         topBar(context),
-         verticalSpaceSmall,
+        verticalSpaceSmall,
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -43,14 +43,14 @@ class ContainerListView extends ViewModelWidget<LoanViewModel> {
                   child: Container(
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(5),
-                          border:
-                              Border.all(color: darkGreenHeigh, width: 1)),
+                          border: Border.all(color: darkGreenHeigh, width: 1)),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 4),
                         child: Center(
                             child: CustomText(
                           text: 'Loan Amount',
-                          color: darkGreenHeigh,fontSize: 12,
+                          color: darkGreenHeigh,
+                          fontSize: 12,
                         )),
                       )),
                 ),
@@ -58,7 +58,7 @@ class ContainerListView extends ViewModelWidget<LoanViewModel> {
             ),
           ],
         ),
-         verticalSpaceTiny,
+        verticalSpaceTiny,
         Padding(
           padding: const EdgeInsets.only(right: 8),
           child: Align(

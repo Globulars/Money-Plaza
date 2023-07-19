@@ -14,7 +14,6 @@ class PersonalTabBar2 extends ViewModelWidget<PersonalInfoViewModel> {
     BuildContext context,
     PersonalInfoViewModel viewModel,
   ) {
-   
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -28,7 +27,6 @@ class PersonalTabBar2 extends ViewModelWidget<PersonalInfoViewModel> {
             CustomTextField(
               titleText: 'Contact Number',
             ),
-           
             verticalSpaceLarge
           ],
         ),

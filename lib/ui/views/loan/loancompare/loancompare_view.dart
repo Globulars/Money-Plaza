@@ -54,7 +54,6 @@ class LoancompareView extends StackedView<LoancompareViewModel> {
               verticalSpaceLarge
             ],
           ),
-         
         ),
         bottomBar(
           ReturnButton(

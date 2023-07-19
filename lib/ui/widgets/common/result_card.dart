@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:money_plaza/app/app.router.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
+import 'package:stacked_services/stacked_services.dart';
 
+import '../../../app/app.locator.dart';
 import '../../common/ui_helpers.dart';
 import 'icon_box_btn/submit_button.dart';
 import 'icon_box_btn/text.dart';
 
 Widget resultCard(context) {
+  final _navigationService = locator<NavigationService>();
+  void applyConfirm() {
+    _navigationService.navigateToApplyconfirmView();
+  }
+
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 5),
     child: Card(
@@ -21,7 +29,10 @@ Widget resultCard(context) {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Image.asset(myIcons.weLend,width: 90,),
+                  Image.asset(
+                    myIcons.weLend,
+                    width: 90,
+                  ),
                   verticalSpaceTiny,
                   CustomText(
                     text: "WeLend",
@@ -70,8 +81,8 @@ Widget resultCard(context) {
                   ),
                   verticalSpaceSmall,
                   SubmitButton(
-                    
-                    image: myIcons.compare2,imgwidth: 16,
+                    image: myIcons.compare2,
+                    imgwidth: 16,
                     boxColor: Colors.transparent,
                     text: 'Compare',
                     color: Colors.black87,
@@ -79,15 +90,18 @@ Widget resultCard(context) {
                   ),
                   verticalSpaceSmall,
                   SubmitButton(
-                    image: myIcons.apply,imgwidth: 16,
+                    image: myIcons.apply,
+                    imgwidth: 16,
                     text: 'Apply',
                     fontSize: 18,
                     height: 40,
+                    onPress: applyConfirm,
                   ),
                   verticalSpaceSmall,
                   SubmitButton(
-                   image: myIcons.detail,imgwidth: 30,
-                   boxColor: Colors.transparent,
+                    image: myIcons.detail,
+                    imgwidth: 30,
+                    boxColor: Colors.transparent,
                     text: 'Details',
                     color: Colors.black,
                     fontSize: 18,

@@ -116,8 +116,7 @@ class SettingsView extends StackedView<SettingsViewModel> {
             children: [
               ReturnButton(
                 imageLeft: myIcons.returnIcon1,
-                imgwidth: 18,
-                fontSize: 18,
+                imgwidth: 12,
                 text: 'return',
                 height: 40,
                 width: 80,

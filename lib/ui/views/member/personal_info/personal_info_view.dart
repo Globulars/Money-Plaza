@@ -90,9 +90,9 @@ class PersonalInfoView extends StackedView<PersonalInfoViewModel> {
                   },
                   body: const TabBarView(
                     children: <Widget>[
-                     PersonalTabBar1(),
-                     PersonalTabBar2(),
-                     PersonalTabBar3(),
+                      PersonalTabBar1(),
+                      PersonalTabBar2(),
+                      PersonalTabBar3(),
                       PersonalTabBar4(),
                       // TabBarView2(),
                       // TabBarView3()

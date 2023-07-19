@@ -20,68 +20,68 @@ class TopWidget extends ViewModelWidget<PloanreslutViewModel> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Column(
-         
           children: [
             topBar(context),
-           
+
             verticalSpaceTiny,
-         Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            horizontalSpaceSmall,
-            Image.asset(
-              myIcons.cilSortDecending,
-              width: 25,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                horizontalSpaceSmall,
+                Image.asset(
+                  myIcons.cilSortDecending,
+                  width: 25,
+                ),
+                horizontalSpaceTiny,
+                SizedBox(
+                  height: 30.0,
+                  width: width * 0.84,
+                  child: ListView.builder(
+                    physics: const ClampingScrollPhysics(),
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 15,
+                    itemBuilder: (BuildContext context, int index) => Padding(
+                      padding: const EdgeInsets.only(right: 5),
+                      child: Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5),
+                              border:
+                                  Border.all(color: darkGreenHeigh, width: 1)),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 4),
+                            child: Center(
+                                child: CustomText(
+                              text: 'Loan Amount',
+                              color: darkGreenHeigh,
+                              fontSize: 12,
+                            )),
+                          )),
+                    ),
+                  ),
+                ),
+              ],
             ),
-            horizontalSpaceTiny,
-            SizedBox(
-              height: 30.0,
-              width: width * 0.84,
-              child: ListView.builder(
-                physics: const ClampingScrollPhysics(),
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-                itemCount: 15,
-                itemBuilder: (BuildContext context, int index) => Padding(
-                  padding: const EdgeInsets.only(right: 5),
-                  child: Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          border:
-                              Border.all(color: darkGreenHeigh, width: 1)),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 4),
-                        child: Center(
-                            child: CustomText(
-                          text: 'Loan Amount',
-                          color: darkGreenHeigh,fontSize: 12,
-                        )),
-                      )),
+            verticalSpaceTiny,
+            Padding(
+              padding: const EdgeInsets.only(right: 8),
+              child: Align(
+                alignment: Alignment.centerRight,
+                child: CustomText(
+                  text: '88 Results',
+                  color: Colors.black,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w400,
                 ),
               ),
             ),
-          ],
-        ),
-         verticalSpaceTiny,
-        Padding(
-          padding: const EdgeInsets.only(right: 8),
-          child: Align(
-            alignment: Alignment.centerRight,
-            child: CustomText(
-              text: '88 Results',
+            // verticalSpaceTiny,
+            const Divider(
               color: Colors.black,
-              fontSize: 15,
-              fontWeight: FontWeight.w400,
+              height: 0,
+              thickness: 1,
             ),
-          ),
-        ),
-        // verticalSpaceTiny,
-        const Divider(
-          color: Colors.black,
-          height: 0,
-          thickness: 1,
-        ),
-        verticalSpaceTiny,
+            verticalSpaceTiny,
           ],
         )
       ],
