@@ -24,15 +24,15 @@ class PersonalTabBar1 extends ViewModelWidget<PersonalInfoViewModel> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomTextField(
-              titleText: 'First Name',
+              titleText: 'firstName',
             ),
             verticalSpaceSmall,
             CustomTextField(
-              titleText: 'Last Name',
+              titleText: 'lastName',
             ),
             verticalSpaceSmall,
             CustomText(
-              text: 'Sex',
+              text: 'sex',
               fontWeight: FontWeight.w600,
             ),
             verticalSpaceTiny,
@@ -41,12 +41,12 @@ class PersonalTabBar1 extends ViewModelWidget<PersonalInfoViewModel> {
               children: [
                 ReturnButton(
                   height: 40,
-                  text: 'M',
+                  text: 'm',
                   width: width * 0.43,
                 ),
                 ReturnButton(
                   height: 40,
-                  text: 'F',
+                  text: 'f',
                   width: width * 0.43,
                 ),
               ],
@@ -55,19 +55,19 @@ class PersonalTabBar1 extends ViewModelWidget<PersonalInfoViewModel> {
             DropdownTextfield(
               onChanged: (String) {},
               options: [],
-              titleText: 'Birth date',
+              titleText: 'birthDate',
             ),
             verticalSpaceSmall,
             DropdownTextfield(
               onChanged: (String) {},
               options: [],
-              titleText: 'Nationality',
+              titleText: 'nationality',
             ),
             verticalSpaceSmall,
             DropdownTextfield(
               onChanged: (String) {},
               options: [],
-              titleText: 'How do you know MoneyPlaza.com?',
+              titleText: 'doyouknowMoneyPlaza',
             ),
             verticalSpaceLarge
           ],

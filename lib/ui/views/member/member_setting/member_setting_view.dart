@@ -50,7 +50,7 @@ class MemberSettingView extends StackedView<MemberSettingViewModel> {
                       ),
                     ),
                     CustomText(
-                      text: "Member Zone",
+                      text: "memberZone",
                       color: kcPureWhite,
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
@@ -61,65 +61,32 @@ class MemberSettingView extends StackedView<MemberSettingViewModel> {
                   padding: const EdgeInsets.all(15.0),
                   child: Column(
                     children: [
-                      Container(
-                        decoration: const BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                              offset: Offset(0, 6),
-                              blurRadius: 12,
-                              spreadRadius: -15,
-                              color: kcMediumGrey,
-                            ),
-                          ],
-                        ),
-                        child: IconBoxBtn(
-                          boxcolor: lightGreenHeigh,
-                          text: "Personal Information",
-                          height: 80,
-                          fontSize: 20,
-                          color: darkGreenHeigh,
-                          margin: width * 0.02,
-                        ),
+                      IconBoxBtn(
+                        boxcolor: lightGreenHeigh,
+                        text: "personalInfo",
+                        height: 80,
+                        fontSize: 20,
+                        color: darkGreenHeigh,
+                        margin: width * 0.02,
+                        onPress: viewModel.navigateToPersonalInfoView,
                       ),
-                      Container(
-                        decoration: const BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                              offset: Offset(0, 6),
-                              blurRadius: 12,
-                              spreadRadius: -15,
-                              color: kcMediumGrey,
-                            ),
-                          ],
-                        ),
-                        child: IconBoxBtn(
-                          boxcolor: lightGreenHeigh,
-                          text: "Money Plaza Reward",
-                          height: 80,
-                          fontSize: 20,
-                          color: darkGreenHeigh,
-                          margin: width * 0.02,
-                        ),
+                      IconBoxBtn(
+                        boxcolor: lightGreenHeigh,
+                        text: "moneyPlazaReward",
+                        height: 80,
+                        fontSize: 20,
+                        color: darkGreenHeigh,
+                        margin: width * 0.02,
+                        onPress: viewModel.navigateToReward,
                       ),
-                      Container(
-                        decoration: const BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                              offset: Offset(0, 6),
-                              blurRadius: 12,
-                              spreadRadius: -15,
-                              color: kcMediumGrey,
-                            ),
-                          ],
-                        ),
-                        child: IconBoxBtn(
-                          boxcolor: lightGreenHeigh,
-                          text: "Change Password",
-                          height: 80,
-                          fontSize: 20,
-                          color: darkGreenHeigh,
-                          margin: width * 0.02,
-                        ),
+                      IconBoxBtn(
+                        boxcolor: lightGreenHeigh,
+                        text: "changePassword",
+                        height: 80,
+                        fontSize: 20,
+                        color: darkGreenHeigh,
+                        margin: width * 0.02,
+                        onPress: viewModel.navigateToChangePassword,
                       ),
                     ],
                   ),
