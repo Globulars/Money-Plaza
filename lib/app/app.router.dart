@@ -5,8 +5,8 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:flutter/material.dart' as _i31;
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' as _i32;
 import 'package:money_plaza/ui/views/credit_card/credit_card_view.dart' as _i23;
 import 'package:money_plaza/ui/views/credit_card/credit_result/credit_result_view.dart'
     as _i24;
@@ -57,8 +57,9 @@ import 'package:money_plaza/ui/views/morgages/morgages_result/morgages_result_vi
 import 'package:money_plaza/ui/views/morgages/morgages_splash/morgages_splash_view.dart'
     as _i21;
 import 'package:money_plaza/ui/views/morgages/morgages_view.dart' as _i19;
+import 'package:money_plaza/ui/widgets/top_bar2/top_bar2_view.dart' as _i31;
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i32;
+import 'package:stacked_services/stacked_services.dart' as _i33;
 
 class Routes {
   static const homeView = '/home-view';
@@ -119,6 +120,8 @@ class Routes {
 
   static const detailPageView = '/detail-page-view';
 
+  static const topBar2View = '/top-bar2-view';
+
   static const all = <String>{
     homeView,
     startupView,
@@ -149,6 +152,7 @@ class Routes {
     rewardApplicationView,
     changePasswordView,
     detailPageView,
+    topBar2View,
   };
 }
 
@@ -270,41 +274,45 @@ class StackedRouter extends _i1.RouterBase {
       Routes.detailPageView,
       page: _i30.DetailPageView,
     ),
+    _i1.RouteDef(
+      Routes.topBar2View,
+      page: _i31.TopBar2View,
+    ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
     _i2.HomeView: (data) {
-      return _i31.MaterialPageRoute<dynamic>(
+      return _i32.MaterialPageRoute<dynamic>(
         builder: (context) => const _i2.HomeView(),
         settings: data,
       );
     },
     _i3.StartupView: (data) {
-      return _i31.MaterialPageRoute<dynamic>(
+      return _i32.MaterialPageRoute<dynamic>(
         builder: (context) => const _i3.StartupView(),
         settings: data,
       );
     },
     _i4.LandingView: (data) {
-      return _i31.MaterialPageRoute<dynamic>(
+      return _i32.MaterialPageRoute<dynamic>(
         builder: (context) => const _i4.LandingView(),
         settings: data,
       );
     },
     _i5.LoanView: (data) {
-      return _i31.MaterialPageRoute<dynamic>(
+      return _i32.MaterialPageRoute<dynamic>(
         builder: (context) => const _i5.LoanView(),
         settings: data,
       );
     },
     _i6.CalculatorResultView: (data) {
-      return _i31.MaterialPageRoute<dynamic>(
+      return _i32.MaterialPageRoute<dynamic>(
         builder: (context) => const _i6.CalculatorResultView(),
         settings: data,
       );
     },
     _i7.LoancompareView: (data) {
-      return _i31.MaterialPageRoute<dynamic>(
+      return _i32.MaterialPageRoute<dynamic>(
         builder: (context) => const _i7.LoancompareView(),
         settings: data,
       );
@@ -313,141 +321,147 @@ class StackedRouter extends _i1.RouterBase {
       final args = data.getArgs<ApplyconfirmViewArguments>(
         orElse: () => const ApplyconfirmViewArguments(),
       );
-      return _i31.MaterialPageRoute<dynamic>(
+      return _i32.MaterialPageRoute<dynamic>(
         builder: (context) =>
             _i8.ApplyconfirmView(key: args.key, match: args.match),
         settings: data,
       );
     },
     _i9.PersonalloanView: (data) {
-      return _i31.MaterialPageRoute<dynamic>(
+      return _i32.MaterialPageRoute<dynamic>(
         builder: (context) => const _i9.PersonalloanView(),
         settings: data,
       );
     },
     _i10.PloanreslutView: (data) {
-      return _i31.MaterialPageRoute<dynamic>(
+      return _i32.MaterialPageRoute<dynamic>(
         builder: (context) => const _i10.PloanreslutView(),
         settings: data,
       );
     },
     _i11.OwnerloanView: (data) {
-      return _i31.MaterialPageRoute<dynamic>(
+      return _i32.MaterialPageRoute<dynamic>(
         builder: (context) => const _i11.OwnerloanView(),
         settings: data,
       );
     },
     _i12.OwnerloanresultView: (data) {
-      return _i31.MaterialPageRoute<dynamic>(
+      return _i32.MaterialPageRoute<dynamic>(
         builder: (context) => const _i12.OwnerloanresultView(),
         settings: data,
       );
     },
     _i13.SettingsView: (data) {
-      return _i31.MaterialPageRoute<dynamic>(
+      return _i32.MaterialPageRoute<dynamic>(
         builder: (context) => const _i13.SettingsView(),
         settings: data,
       );
     },
     _i14.MemberLoginView: (data) {
-      return _i31.MaterialPageRoute<dynamic>(
+      return _i32.MaterialPageRoute<dynamic>(
         builder: (context) => const _i14.MemberLoginView(),
         settings: data,
       );
     },
     _i15.BlnstransferView: (data) {
-      return _i31.MaterialPageRoute<dynamic>(
+      return _i32.MaterialPageRoute<dynamic>(
         builder: (context) => const _i15.BlnstransferView(),
         settings: data,
       );
     },
     _i16.TransferResultView: (data) {
-      return _i31.MaterialPageRoute<dynamic>(
+      return _i32.MaterialPageRoute<dynamic>(
         builder: (context) => const _i16.TransferResultView(),
         settings: data,
       );
     },
     _i17.CommericalLoanView: (data) {
-      return _i31.MaterialPageRoute<dynamic>(
+      return _i32.MaterialPageRoute<dynamic>(
         builder: (context) => const _i17.CommericalLoanView(),
         settings: data,
       );
     },
     _i18.CommericalResultView: (data) {
-      return _i31.MaterialPageRoute<dynamic>(
+      return _i32.MaterialPageRoute<dynamic>(
         builder: (context) => const _i18.CommericalResultView(),
         settings: data,
       );
     },
     _i19.MorgagesView: (data) {
-      return _i31.MaterialPageRoute<dynamic>(
+      return _i32.MaterialPageRoute<dynamic>(
         builder: (context) => const _i19.MorgagesView(),
         settings: data,
       );
     },
     _i20.MorgagesResultView: (data) {
-      return _i31.MaterialPageRoute<dynamic>(
+      return _i32.MaterialPageRoute<dynamic>(
         builder: (context) => const _i20.MorgagesResultView(),
         settings: data,
       );
     },
     _i21.MorgagesSplashView: (data) {
-      return _i31.MaterialPageRoute<dynamic>(
+      return _i32.MaterialPageRoute<dynamic>(
         builder: (context) => const _i21.MorgagesSplashView(),
         settings: data,
       );
     },
     _i22.MorgagesContactInfoView: (data) {
-      return _i31.MaterialPageRoute<dynamic>(
+      return _i32.MaterialPageRoute<dynamic>(
         builder: (context) => const _i22.MorgagesContactInfoView(),
         settings: data,
       );
     },
     _i23.CreditCardView: (data) {
-      return _i31.MaterialPageRoute<dynamic>(
+      return _i32.MaterialPageRoute<dynamic>(
         builder: (context) => const _i23.CreditCardView(),
         settings: data,
       );
     },
     _i24.CreditResultView: (data) {
-      return _i31.MaterialPageRoute<dynamic>(
+      return _i32.MaterialPageRoute<dynamic>(
         builder: (context) => const _i24.CreditResultView(),
         settings: data,
       );
     },
     _i25.MemberSettingView: (data) {
-      return _i31.MaterialPageRoute<dynamic>(
+      return _i32.MaterialPageRoute<dynamic>(
         builder: (context) => const _i25.MemberSettingView(),
         settings: data,
       );
     },
     _i26.PersonalInfoView: (data) {
-      return _i31.MaterialPageRoute<dynamic>(
+      return _i32.MaterialPageRoute<dynamic>(
         builder: (context) => const _i26.PersonalInfoView(),
         settings: data,
       );
     },
     _i27.RewardView: (data) {
-      return _i31.MaterialPageRoute<dynamic>(
+      return _i32.MaterialPageRoute<dynamic>(
         builder: (context) => const _i27.RewardView(),
         settings: data,
       );
     },
     _i28.RewardApplicationView: (data) {
-      return _i31.MaterialPageRoute<dynamic>(
+      return _i32.MaterialPageRoute<dynamic>(
         builder: (context) => const _i28.RewardApplicationView(),
         settings: data,
       );
     },
     _i29.ChangePasswordView: (data) {
-      return _i31.MaterialPageRoute<dynamic>(
+      return _i32.MaterialPageRoute<dynamic>(
         builder: (context) => const _i29.ChangePasswordView(),
         settings: data,
       );
     },
     _i30.DetailPageView: (data) {
-      return _i31.MaterialPageRoute<dynamic>(
+      return _i32.MaterialPageRoute<dynamic>(
         builder: (context) => const _i30.DetailPageView(),
+        settings: data,
+      );
+    },
+    _i31.TopBar2View: (data) {
+      return _i32.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i31.TopBar2View(),
         settings: data,
       );
     },
@@ -465,7 +479,7 @@ class ApplyconfirmViewArguments {
     this.match = false,
   });
 
-  final _i31.Key? key;
+  final _i32.Key? key;
 
   final bool match;
 
@@ -486,7 +500,7 @@ class ApplyconfirmViewArguments {
   }
 }
 
-extension NavigatorStateExtension on _i32.NavigationService {
+extension NavigatorStateExtension on _i33.NavigationService {
   Future<dynamic> navigateToHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -572,7 +586,7 @@ extension NavigatorStateExtension on _i32.NavigationService {
   }
 
   Future<dynamic> navigateToApplyconfirmView({
-    _i31.Key? key,
+    _i32.Key? key,
     bool match = false,
     int? routerId,
     bool preventDuplicates = true,
@@ -896,6 +910,20 @@ extension NavigatorStateExtension on _i32.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> navigateToTopBar2View([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.topBar2View,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
   Future<dynamic> replaceWithHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -981,7 +1009,7 @@ extension NavigatorStateExtension on _i32.NavigationService {
   }
 
   Future<dynamic> replaceWithApplyconfirmView({
-    _i31.Key? key,
+    _i32.Key? key,
     bool match = false,
     int? routerId,
     bool preventDuplicates = true,
@@ -1299,6 +1327,20 @@ extension NavigatorStateExtension on _i32.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.detailPageView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithTopBar2View([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.topBar2View,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

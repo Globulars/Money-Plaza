@@ -8,8 +8,9 @@ import 'package:stacked_services/stacked_services.dart';
 import '../../app/app.locator.dart';
 import '../common/ui_helpers.dart';
 import 'common/icon_box_btn/icon_box_btn.dart';
+
 Widget loanCont(context) {
-   final _navigationService = locator<NavigationService>();
+  final _navigationService = locator<NavigationService>();
 
   navigateToPersonalloan() {
     _navigationService.navigateToPersonalloanView();
@@ -30,59 +31,60 @@ Widget loanCont(context) {
   navigateToCommerical() {
     _navigationService.navigateToCommericalLoanView();
   }
+
   return Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                IconBoxBtn(
-                  height: 70,
-                  width: MediaQuery.of(context).size.width * 0.45,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w500,
-                  topimage: myIcons.personalLoans,
-                  text: 'Personal Loans',
-                  onPress: navigateToPersonalloan,
-                ),
-                horizontalSpaceSmall,
-                IconBoxBtn(
-                  height: 70,
-                  width:  MediaQuery.of(context).size.width * 0.45,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w500,
-                  topimage: myIcons.ownerLoan,
-                  text: "Property Owner's Loan",
-                  onPress: navigateToOwnerloan,
-                ),
-              ],
-            ),
-            verticalSpaceSmall,
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                IconBoxBtn(
-                  height: 70,
-                  width:  MediaQuery.of(context).size.width * 0.45,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w500,
-                  topimage: myIcons.balanceTrans,
-                  text: 'Loan Balance Transfer',
-                  onPress:navigateToBlnstransfer,
-                ),
-                horizontalSpaceSmall,
-                IconBoxBtn(
-                  height: 70,
-                  width:  MediaQuery.of(context).size.width * 0.45,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w500,
-                  topimage: myIcons.commericalLoan,
-                  text: 'Commerical Loans',
-                  onPress:navigateToCommerical,
-                ),
-              ],
-            ),
-            verticalSpaceSmall,
-          ],
-        );
+    crossAxisAlignment: CrossAxisAlignment.center,
+    children: [
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          IconBoxBtn(
+            height: 70,
+            width: MediaQuery.of(context).size.width * 0.45,
+            color: Colors.black,
+            fontWeight: FontWeight.w500,
+            topimage: myIcons.personalLoans,
+            text: 'Personal Loans',
+            onPress: navigateToPersonalloan,
+          ),
+          horizontalSpaceSmall,
+          IconBoxBtn(
+            height: 70,
+            width: MediaQuery.of(context).size.width * 0.45,
+            color: Colors.black,
+            fontWeight: FontWeight.w500,
+            topimage: myIcons.ownerLoan,
+            text: "Property Owner's Loan",
+            onPress: navigateToOwnerloan,
+          ),
+        ],
+      ),
+      verticalSpaceSmall,
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          IconBoxBtn(
+            height: 70,
+            width: MediaQuery.of(context).size.width * 0.45,
+            color: Colors.black,
+            fontWeight: FontWeight.w500,
+            topimage: myIcons.balanceTrans,
+            text: 'Loan Balance Transfer',
+            onPress: navigateToBlnstransfer,
+          ),
+          horizontalSpaceSmall,
+          IconBoxBtn(
+            height: 70,
+            width: MediaQuery.of(context).size.width * 0.45,
+            color: Colors.black,
+            fontWeight: FontWeight.w500,
+            topimage: myIcons.commericalLoan,
+            text: 'Commerical Loans',
+            onPress: navigateToCommerical,
+          ),
+        ],
+      ),
+      verticalSpaceSmall,
+    ],
+  );
 }

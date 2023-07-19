@@ -6,14 +6,14 @@ import '../../../../app/app.locator.dart';
 
 class OwnerloanViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
-  
+
   var initialIndex = 0;
   setInitialIndex() {
     initialIndex++;
     notifyListeners();
   }
 
-    navigateToApplyconfirm() {
+  navigateToApplyconfirm() {
     _navigationService.navigateToApplyconfirmView(match: true);
   }
 }

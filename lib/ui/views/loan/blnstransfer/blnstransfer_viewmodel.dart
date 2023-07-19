@@ -5,8 +5,7 @@ import 'package:stacked_services/stacked_services.dart';
 import '../../../../app/app.locator.dart';
 
 class BlnstransferViewModel extends BaseViewModel {
-
-   final _navigationService = locator<NavigationService>();
+  final _navigationService = locator<NavigationService>();
 
   var initialIndex = 0;
   setInitialIndex() {

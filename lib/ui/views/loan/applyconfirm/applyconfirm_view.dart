@@ -16,9 +16,9 @@ import 'applyconfirm_viewmodel.dart';
 class ApplyconfirmView extends StackedView<ApplyconfirmViewModel> {
   bool match;
 
-   ApplyconfirmView({super.key,
-  this.match=false,
-  
+  ApplyconfirmView({
+    super.key,
+    this.match = false,
   });
 
   @override
@@ -89,17 +89,17 @@ class ApplyconfirmView extends StackedView<ApplyconfirmViewModel> {
           Row(
             children: [
               ReturnButton(
-                imageLeft:match? myIcons.previous: myIcons.returnIcon1,
+                imageLeft: match ? myIcons.previous : myIcons.returnIcon1,
                 imgwidth: 12,
-                text:match? 'Previous': 'Return',
+                text: match ? 'Previous' : 'Return',
                 height: 40,
                 width: 80,
               ),
               horizontalSpaceTiny,
               SubmitButton(
-                image:match? myIcons.match: myIcons.done,
+                image: match ? myIcons.match : myIcons.done,
                 imgwidth: 16,
-                text:match? 'Match': 'Done',
+                text: match ? 'Match' : 'Done',
                 height: 40,
                 width: 80,
                 onPress: viewModel.navigateToPloanreslut,

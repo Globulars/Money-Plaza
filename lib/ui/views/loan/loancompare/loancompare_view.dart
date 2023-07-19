@@ -5,7 +5,7 @@ import '../../../common/ui_helpers.dart';
 import '../../../widgets/app_bar.dart';
 import '../../../widgets/bottom_bar.dart';
 import '../../../widgets/common/icon_box_btn/return_button.dart';
-import '../../../widgets/top_bar2.dart';
+import '../../../widgets/top_bar2/top_bar2_view.dart';
 import 'compare_widgets/head_btm_text.dart';
 import 'compare_widgets/prom_land.dart';
 import 'loancompare_viewmodel.dart';
@@ -33,13 +33,13 @@ class LoancompareView extends StackedView<LoancompareViewModel> {
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: appBar(),
-          body: Column(
+          body: const Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              topBar(context),
+              TopBar2View(),
               verticalSpaceTiny,
-              const PromiseLand(),
-              const Expanded(
+              PromiseLand(),
+              Expanded(
                 child: SingleChildScrollView(
                   child: Padding(
                     padding: EdgeInsets.symmetric(horizontal: 8),
