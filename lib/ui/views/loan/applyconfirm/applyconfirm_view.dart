@@ -58,8 +58,7 @@ class ApplyconfirmView extends StackedView<ApplyconfirmViewModel> {
                     padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: Column(
                       children: [
-                        CustomText(
-                            text: 'enterFollowingInformation'),
+                        CustomText(text: 'enterFollowingInformation'),
                         verticalSpaceTiny,
                         CustomTextField(
                           titleText: 'fullName',

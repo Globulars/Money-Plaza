@@ -3,12 +3,15 @@
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:stacked/stacked.dart';
+import '../../../common/app_colors.dart';
 import '../../../common/ui_helpers.dart';
 import '../../../widgets/app_bar.dart';
 import '../../../widgets/bottom_bar.dart';
+import '../../../widgets/common/background_image.dart';
 import '../../../widgets/common/custom_text_field/custom_text_field.dart';
 import '../../../widgets/common/dropdown_textfield/dropdown_textfield.dart';
 import '../../../widgets/common/icon_box_btn/return_button.dart';
+import '../../../widgets/common/icon_box_btn/sub_bar.dart';
 import '../../../widgets/common/icon_box_btn/submit_button.dart';
 import '../../../widgets/common/icon_box_btn/text.dart';
 import 'reward_application_viewmodel.dart';
@@ -25,62 +28,74 @@ class RewardApplicationView extends StackedView<RewardApplicationViewModel> {
     var width = MediaQuery.of(context).size.width;
     return Stack(
       children: [
-        Container(
-          width: width * 1,
-          height: MediaQuery.of(context).size.height * 1,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage(myIcons.backgroundimage), fit: BoxFit.fill),
-          ),
-        ),
+        const BackgroundImage(),
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: appBar(),
-          body: SingleChildScrollView(
-            child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  CustomText(
-                    text: "enterFollowingInformation",
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  verticalSpaceTiny,
-                  DropdownTextfield(
-                    titleText: 'typeOfProduct',
-                    onChanged: (String) {},
-                    options: [],
-                  ),
-                  verticalSpaceTiny,
-                  DropdownTextfield(
-                    titleText: 'institution',
-                    onChanged: (String) {},
-                    options: [],
-                  ),
-                  verticalSpaceTiny,
-                  DropdownTextfield(
-                    titleText: 'rewardDetails',
-                    onChanged: (String) {},
-                    options: [],
-                  ),
-                  verticalSpaceTiny,
-                  CustomTextField(
-                    titleText: 'referenceNumber',
-                  ),
-                  verticalSpaceTiny,
-                  ReturnButton(
-                    imgwidth: 12,
-                    text: 'upload',
-                    height: 40,
-                    width: width * 0.9,
-                  ),
-                ],
+          body: Column(
+            children: [
+              SubBar(
+                width: width * 0.95,
+                height: 50,
+                text: "moneyPlazaReward",
+                btmLeftRadius: 0,
+                btmRightRadius: 0,
+                fontSize: 16,
               ),
-            ),
+              const Divider(
+                color: darkGreenHeigh,
+                height: 1.0,
+                thickness: 3,
+              ),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20.0, vertical: 10.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        CustomText(
+                          text: "enterFollowingInformation",
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                        ),
+                        verticalSpaceTiny,
+                        DropdownTextfield(
+                          titleText: 'typeOfProduct',
+                          onChanged: (String) {},
+                          options: [],
+                        ),
+                        verticalSpaceTiny,
+                        DropdownTextfield(
+                          titleText: 'institution',
+                          onChanged: (String) {},
+                          options: [],
+                        ),
+                        verticalSpaceTiny,
+                        DropdownTextfield(
+                          titleText: 'rewardDetails',
+                          onChanged: (String) {},
+                          options: [],
+                        ),
+                        verticalSpaceTiny,
+                        CustomTextField(
+                          titleText: 'referenceNumber',
+                        ),
+                        verticalSpaceTiny,
+                        ReturnButton(
+                          imgwidth: 12,
+                          text: 'upload',
+                          height: 40,
+                          width: width * 0.9,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
         bottomBar(
@@ -95,10 +110,10 @@ class RewardApplicationView extends StackedView<RewardApplicationViewModel> {
               ),
               horizontalSpaceTiny,
               SubmitButton(
-                image: myIcons.search,
+                image: myIcons.done,
                 imgwidth: 12,
                 // onPress: viewModel.navigateToCreditCardResult,
-                text: 'search',
+                text: 'Submit',
                 height: 40,
                 width: 80,
               ),

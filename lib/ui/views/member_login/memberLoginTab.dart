@@ -16,10 +16,10 @@ class MemberLoginTab extends StackedView<MemberLoginViewModel> {
     Widget? child,
   ) {
     final width = MediaQuery.of(context).size.width;
-     final height = MediaQuery.of(context).size.height;
+    final height = MediaQuery.of(context).size.height;
     return DefaultTabController(
-      length: 2,
-      child:  SizedBox(
+        length: 2,
+        child: SizedBox(
           height: height,
           width: width,
           child: Scaffold(
@@ -63,7 +63,7 @@ class MemberLoginTab extends StackedView<MemberLoginViewModel> {
                   ),
                 ];
               },
-              body:  TabBarView(
+              body: const TabBarView(
                 children: <Widget>[
                   LoginWithEmail(),
                   Text("Member Login With Mobile Container"),
@@ -71,9 +71,7 @@ class MemberLoginTab extends StackedView<MemberLoginViewModel> {
               ),
             ),
           ),
-        )
-      );
-    
+        ));
   }
 
   @override

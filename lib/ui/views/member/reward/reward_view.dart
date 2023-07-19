@@ -3,8 +3,10 @@ import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
 import 'package:stacked/stacked.dart';
+import '../../../common/app_colors.dart';
 import '../../../widgets/app_bar.dart';
 import '../../../widgets/bottom_bar.dart';
+import '../../../widgets/common/background_image.dart';
 import '../../../widgets/common/icon_box_btn/return_button.dart';
 import '../../../widgets/common/icon_box_btn/sub_bar.dart';
 import 'reward_viewmodel.dart';
@@ -18,39 +20,53 @@ class RewardView extends StackedView<RewardViewModel> {
     RewardViewModel viewModel,
     Widget? child,
   ) {
-    var width = MediaQuery.of(context).size.width;
+    final width = MediaQuery.of(context).size.width;
     return Stack(
       children: [
-        Container(
-          width: width * 1,
-          height: MediaQuery.of(context).size.height * 1,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage(myIcons.backgroundimage), fit: BoxFit.fill),
-          ),
-        ),
+        const BackgroundImage(),
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: appBar(),
-          body: SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.all(18.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  verticalSpaceMedium,
-                  CustomText(text: "uploadApplicatioRecord"),
-                  verticalSpaceMedium,
-                  SubBar(
-                    height: 40,
-                    text: 'submitRewardClaim',
-                    color: Colors.white,
-                    onPress: viewModel.navigateToRewardApplication,
-                  ),
-                ],
+          body: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SubBar(
+                width: width * 0.95,
+                height: 50,
+                text: "moneyPlazaReward",
+                btmLeftRadius: 0,
+                btmRightRadius: 0,
+                fontSize: 16,
               ),
-            ),
+              const Divider(
+                color: darkGreenHeigh,
+                height: 1.0,
+                thickness: 3,
+              ),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.all(18.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        verticalSpaceMedium,
+                        CustomText(text: "uploadApplicatioRecord"),
+                        verticalSpaceMedium,
+                        SubBar(
+                          height: 40,
+                          text: 'submitRewardClaim',
+                          color: Colors.white,
+                          fontWeight: FontWeight.w300,
+                          onPress: viewModel.navigateToRewardApplication,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
         bottomBar(

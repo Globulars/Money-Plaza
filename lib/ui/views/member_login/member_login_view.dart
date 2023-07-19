@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
-import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
 import 'package:stacked/stacked.dart';
 
 import '../../common/app_colors.dart';
@@ -34,7 +33,7 @@ class MemberLoginView extends StackedView<MemberLoginViewModel> {
         ),
         DefaultTabController(
           length: 2,
-          child: Container(
+          child: SizedBox(
             height: height,
             width: width,
             child: Scaffold(
@@ -50,7 +49,7 @@ class MemberLoginView extends StackedView<MemberLoginViewModel> {
                       pinned: true,
                       floating: false,
                       bottom: TabBar(
-                       unselectedLabelColor: darkGreenHeigh,
+                        unselectedLabelColor: darkGreenHeigh,
                         labelColor: Colors.white,
                         labelStyle: GoogleFonts.ibmPlexSans(fontSize: 10),
                         indicator: const BoxDecoration(
@@ -61,7 +60,6 @@ class MemberLoginView extends StackedView<MemberLoginViewModel> {
                             color: darkGreenHeigh),
                         tabs: [
                           Tab(
-                            
                             child: Row(
                               children: [
                                 Padding(
@@ -70,14 +68,19 @@ class MemberLoginView extends StackedView<MemberLoginViewModel> {
                                   child: Image.asset(
                                     myIcons.memberLogin,
                                     height: 30,
-                                    width: 30,color:DefaultTabController.of(context).index==0? Colors.white:Colors.red,
+                                    width: 30,
+                                    color: DefaultTabController.of(context)
+                                                .index ==
+                                            0
+                                        ? Colors.white
+                                        : Colors.red,
                                   ),
                                 ),
-                                 Text(
-                              'Member Login',
-                              textAlign: TextAlign.center,style: GoogleFonts.ibmPlexSans(fontSize: 16),
-                            ),
-                              
+                                Text(
+                                  'Member Login',
+                                  textAlign: TextAlign.center,
+                                  style: GoogleFonts.ibmPlexSans(fontSize: 16),
+                                ),
                               ],
                             ),
                           ),
@@ -94,11 +97,12 @@ class MemberLoginView extends StackedView<MemberLoginViewModel> {
                                       width: 30,
                                     ),
                                   ),
-                                  CustomText(
-                                    text: "Register",
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                  )
+                                  Text(
+                                    'Register',
+                                    textAlign: TextAlign.center,
+                                    style:
+                                        GoogleFonts.ibmPlexSans(fontSize: 16),
+                                  ),
                                 ],
                               ),
                             ),
