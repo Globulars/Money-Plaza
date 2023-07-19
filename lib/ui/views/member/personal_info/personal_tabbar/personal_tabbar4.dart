@@ -23,8 +23,8 @@ class PersonalTabBar4 extends ViewModelWidget<PersonalInfoViewModel> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomTextField(
-              titleText: 'Loan Status',
-              hintText: 'No Loan record, please add here',
+              titleText: 'loanStatus2',
+              hintText: 'noLoanRecord',
             ),
             verticalSpaceSmall,
             Row(
@@ -42,7 +42,7 @@ class PersonalTabBar4 extends ViewModelWidget<PersonalInfoViewModel> {
                               topRight: Radius.circular(10))),
                       child: Center(
                           child: CustomText(
-                        text: 'Total Monthly \nRepayment Amount',
+                        text: 'totalMonthlyAmount',
                         textAlign: TextAlign.center,
                         fontSize: 12,
                       )),
@@ -69,7 +69,7 @@ class PersonalTabBar4 extends ViewModelWidget<PersonalInfoViewModel> {
                               topRight: Radius.circular(10))),
                       child: Center(
                           child: CustomText(
-                        text: 'Total Outstanding \nDebts',
+                        text: 'totalOutstandingDebts',
                         textAlign: TextAlign.center,
                         fontSize: 12,
                       )),

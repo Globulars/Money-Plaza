@@ -48,5 +48,12 @@
   "f": "F",
   "birthDate": "Birth date",
   "nationality": "Nationality",
-  "doyouknowMoneyPlaza":"How do you know MoneyPlaza.com?"
+  "doyouknowMoneyPlaza": "How do you know MoneyPlaza.com?",
+  "email": "Email",
+  "contactNumber": "Contact Number",
+  "interestedProducts2":"Interested Products",
+  "loanStatus2":"Loan Status",
+  "noLoanRecord":"No Loan record, please add here",
+  "totalMonthlyAmount":"Total Monthly\nRepayment Amount",
+  "totalOutstandingDebts":"Total Outstanding\nDebts"
 }

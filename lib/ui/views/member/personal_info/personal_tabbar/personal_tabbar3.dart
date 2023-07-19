@@ -24,7 +24,7 @@ class PersonalTabBar3 extends ViewModelWidget<PersonalInfoViewModel> {
             DropdownTextfield(
               onChanged: (String) {},
               options: [],
-              titleText: 'Interested Products',
+              titleText: 'interestedProducts2',
             ),
             verticalSpaceLarge
           ],
