@@ -10,9 +10,9 @@ class MemberSettingViewModel extends BaseViewModel {
   navigateToPersonalInfoView() {
     _navigationService.navigateToPersonalInfoView();
   }  
-  // navigateToPersonalInfoView() {
-  //   _navigationService.navigateToPersonalInfoView();
-  // } 
+  navigateToReward() {
+    _navigationService.navigateToRewardView();
+  } 
    navigateToChangePassword() {
     _navigationService.navigateToChangePasswordView();
   }

@@ -50,7 +50,7 @@ class MemberSettingView extends StackedView<MemberSettingViewModel> {
                       ),
                     ),
                     CustomText(
-                      text: "Member Zone",
+                      text: "memberZone",
                       color: kcPureWhite,
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
@@ -63,7 +63,7 @@ class MemberSettingView extends StackedView<MemberSettingViewModel> {
                     children: [
                       IconBoxBtn(
                         boxcolor: lightGreenHeigh,
-                        text: "Personal Information",
+                        text: "personalInfo",
                         height: 80,
                         fontSize: 20,
                         color: darkGreenHeigh,
@@ -72,15 +72,16 @@ class MemberSettingView extends StackedView<MemberSettingViewModel> {
                       ),
                       IconBoxBtn(
                         boxcolor: lightGreenHeigh,
-                        text: "Money Plaza Reward",
+                        text: "moneyPlazaReward",
                         height: 80,
                         fontSize: 20,
                         color: darkGreenHeigh,
                         margin: width * 0.02,
+                        onPress: viewModel.navigateToReward,
                       ),
                       IconBoxBtn(
                         boxcolor: lightGreenHeigh,
-                        text: "Change Password",
+                        text: "changePassword",
                         height: 80,
                         fontSize: 20,
                         color: darkGreenHeigh,

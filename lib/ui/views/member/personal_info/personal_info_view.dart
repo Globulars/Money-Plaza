@@ -64,23 +64,23 @@ class PersonalInfoView extends StackedView<PersonalInfoViewModel> {
                           tabs: const [
                             Tab(
                               child: Text(
-                                'Private\nInfo',
+                                'privateInfo',
                                 textAlign: TextAlign.center,
                               ),
                             ),
                             Tab(
                                 child: Text(
-                              'Contact\nInfo',
+                              'contactInfo',
                               textAlign: TextAlign.center,
                             )),
                             Tab(
                                 child: Text(
-                              'Interested\nproducts',
+                              'interestedProducts',
                               textAlign: TextAlign.center,
                             )),
                             Tab(
                                 child: Text(
-                              'Loan\nStatus',
+                              'loanStatus',
                               textAlign: TextAlign.center,
                             )),
                           ],
@@ -107,7 +107,7 @@ class PersonalInfoView extends StackedView<PersonalInfoViewModel> {
                   ReturnButton(
                     imageLeft: myIcons.returnIcon1,
                     imgwidth: 12,
-                    text: 'Return',
+                    text: 'return',
                     height: 40,
                     width: 80,
                   ),
@@ -116,7 +116,7 @@ class PersonalInfoView extends StackedView<PersonalInfoViewModel> {
                     imageRight: myIcons.next,
                     imgwidth: 16,
                     // index==
-                    text: 'Next',
+                    text: 'next',
                     height: 40,
                     width: 80,
                     onPress: () {
