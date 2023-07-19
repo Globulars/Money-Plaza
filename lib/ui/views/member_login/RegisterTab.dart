@@ -25,6 +25,7 @@ class RegisterTab extends StackedView<MemberLoginViewModel> {
         child: Scaffold(
           backgroundColor: Colors.transparent,
           body: NestedScrollView(
+            scrollDirection: Axis.vertical,
             headerSliverBuilder:
                 (BuildContext context, bool innerBoxIsScrolled) {
               return <Widget>[
@@ -61,14 +62,11 @@ class RegisterTab extends StackedView<MemberLoginViewModel> {
                 ),
               ];
             },
-            body: const Padding(
-              padding: EdgeInsets.all(15.0),
-              child: TabBarView(
-                children: <Widget>[
-                  SignUpWithEmail(),
-                  Text("Register With Mobile Container"),
-                ],
-              ),
+            body: TabBarView(
+              children: <Widget>[
+                SignUpWithEmail(),
+                Text("Register With Mobile Container"),
+              ],
             ),
           ),
         ),
