@@ -33,7 +33,7 @@ class CalculatorItems extends ViewModelWidget<CalculatorResultViewModel> {
               ),
               horizontalSpaceTiny,
               CustomText(
-                text: 'Interest Calculator',
+                text: 'interestCalculator',
                 color: darkGreenHeigh,
                 fontSize: 18,
               ),
@@ -41,7 +41,7 @@ class CalculatorItems extends ViewModelWidget<CalculatorResultViewModel> {
           ),
           verticalSpaceSmall,
           CustomText(
-            text: 'Calculation items',
+            text: 'calculationItems',
           ),
           verticalSpaceTiny,
           Row(
@@ -49,17 +49,17 @@ class CalculatorItems extends ViewModelWidget<CalculatorResultViewModel> {
             children: [
               ReturnButton(
                 height: 40,
-                text: 'Tenor',
+                text: 'tenor',
                 width: width * 0.16,
               ),
               SubmitButton(
                 height: 40,
-                text: 'APR',
+                text: 'apr',
                 width: width * 0.16,
               ),
               ReturnButton(
                 height: 40,
-                text: 'Monthly Repayment Amount',
+                text: 'monthlyRepaymentAmount',
                 width: width * 0.56,
               ),
             ],
@@ -73,7 +73,7 @@ class CalculatorItems extends ViewModelWidget<CalculatorResultViewModel> {
                 child: Column(
                   children: [
                     CustomText(
-                        text: 'Borrowing Amount',
+                        text: 'borrowingAmount',
                         fontSize: 12,
                         fontWeight: FontWeight.w500),
                     CustomTextField(
@@ -83,7 +83,7 @@ class CalculatorItems extends ViewModelWidget<CalculatorResultViewModel> {
                     ),
                     verticalSpaceTiny,
                     CustomText(
-                        text: 'Tenor',
+                        text: 'tenor',
                         fontSize: 12,
                         fontWeight: FontWeight.w500),
                     CustomTextField(
@@ -93,7 +93,7 @@ class CalculatorItems extends ViewModelWidget<CalculatorResultViewModel> {
                     ),
                     verticalSpaceTiny,
                     CustomText(
-                      text: 'Total Repayment Amount',
+                      text: 'totalRepaymentAmount',
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
                     ),
@@ -110,7 +110,7 @@ class CalculatorItems extends ViewModelWidget<CalculatorResultViewModel> {
                 child: Column(
                   children: [
                     CustomText(
-                        text: 'APR', fontSize: 12, fontWeight: FontWeight.w500),
+                        text: 'apr', fontSize: 12, fontWeight: FontWeight.w500),
                     CustomTextField(
                       hintText: '1.38%',
                       height: 40,
@@ -118,7 +118,7 @@ class CalculatorItems extends ViewModelWidget<CalculatorResultViewModel> {
                     ),
                     verticalSpaceTiny,
                     CustomText(
-                        text: 'Monthly Repayment Amount',
+                        text: 'monthlyRepaymentAmount',
                         fontSize: 12,
                         fontWeight: FontWeight.w500),
                     CustomTextField(
@@ -128,7 +128,7 @@ class CalculatorItems extends ViewModelWidget<CalculatorResultViewModel> {
                     ),
                     verticalSpaceTiny,
                     CustomText(
-                      text: 'Total interest',
+                      text: 'totalInterest',
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
                     ),

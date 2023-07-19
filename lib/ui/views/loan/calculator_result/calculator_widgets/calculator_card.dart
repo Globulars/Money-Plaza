@@ -38,7 +38,7 @@ class CalculatorCard extends ViewModelWidget<CalculatorResultViewModel> {
                         Image.asset(myIcons.weLend),
                         verticalSpaceTiny,
                         CustomText(
-                          text: "WeLend",
+                          text: "weLend",
                           color: Colors.black,
                           fontSize: 20,
                           fontWeight: FontWeight.w600,

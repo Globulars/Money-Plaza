@@ -80,5 +80,17 @@
   "numberOfLoans": "Number of Loans",
   "totalOutstandingLoan": "Total Outstanding Loan Amount",
   "monthlyRepayment": "Monthly Repayment",
-  "88results": "88 Results"
+  "88results": "88 Results",
+  "ourRecommendation": "Our Recommendation",
+  "calculationIsBased": "*This calculation is based on our experience for experience only.The final offer depends on the insltitution and the credit situation of borrower.",
+  "interestCalculator": "Interest Calculator",
+  "calculationItems": "Calculation items",
+  "tenor": "Tenor",
+  "apr": "APR",
+  "50000": "50,000",
+  "monthlyRepaymentAmount": "Monthly Repayment Amount",
+  "totalRepaymentAmount": "Total Repayment Amount",
+  "totalInterest": "Total interest",
+  "Recalculate": "pecalculate",
+  "weLend":"WeLend"
 }

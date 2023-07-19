@@ -40,7 +40,7 @@ class CalculatorResultView extends StackedView<CalculatorResultViewModel> {
                 const BtnListView(),
                 verticalSpaceTiny,
                 CustomText(
-                  text: 'Our Recommendation',
+                  text: 'ourRecommendation',
                   color: Colors.black,
                   fontSize: 20,
                   fontWeight: FontWeight.w700,
@@ -49,8 +49,7 @@ class CalculatorResultView extends StackedView<CalculatorResultViewModel> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: CustomText(
-                    text:
-                        '*This calculation is based on our experience for experience only.The final offer depends on the insltitution and the credit situation of borrower.',
+                    text: 'calculationIsBased',
                     color: Colors.black,
                     textAlign: TextAlign.center,
                     fontSize: 10,
