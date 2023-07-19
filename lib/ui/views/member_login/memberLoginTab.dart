@@ -16,56 +16,54 @@ class MemberLoginTab extends StackedView<MemberLoginViewModel> {
     Widget? child,
   ) {
     final width = MediaQuery.of(context).size.width;
-    final height = MediaQuery.of(context).size.height;
+     final height = MediaQuery.of(context).size.height;
     return DefaultTabController(
       length: 2,
-      child: SizedBox(
-        height: height,
-        width: width,
-        child: Scaffold(
-          backgroundColor: Colors.transparent,
-          body: NestedScrollView(
-            headerSliverBuilder:
-                (BuildContext context, bool innerBoxIsScrolled) {
-              return <Widget>[
-                SliverAppBar(
-                  toolbarHeight: 0,
-                  backgroundColor: Colors.transparent,
-                  pinned: true,
-                  floating: false,
-                  shape: const RoundedRectangleBorder(
-                    side: BorderSide(width: 1),
-                  ),
-                  bottom: TabBar(
-                    unselectedLabelColor: darkGreenHeigh,
-                    labelColor: Colors.white,
-                    labelStyle: GoogleFonts.ibmPlexSans(fontSize: 10),
-                    indicator: const BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(0),
-                            topRight: Radius.circular(0)), // Creates border
-                        color: darkGreenHeigh),
-                    tabs: [
-                      Tab(
-                        child: Text(
-                          "Login with Email",
-                          style: GoogleFonts.ibmPlexSans(fontSize: 16),
+      child:  SizedBox(
+          height: height,
+          width: width,
+          child: Scaffold(
+            backgroundColor: Colors.transparent,
+            body: NestedScrollView(
+              headerSliverBuilder:
+                  (BuildContext context, bool innerBoxIsScrolled) {
+                return <Widget>[
+                  SliverAppBar(
+                    toolbarHeight: 0,
+                    backgroundColor: Colors.transparent,
+                    pinned: true,
+                    floating: false,
+                    shape: const RoundedRectangleBorder(
+                      side: BorderSide(width: 1),
+                    ),
+                    bottom: TabBar(
+                      unselectedLabelColor: darkGreenHeigh,
+                      labelColor: Colors.white,
+                      labelStyle: GoogleFonts.ibmPlexSans(fontSize: 10),
+                      indicator: const BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(0),
+                              topRight: Radius.circular(0)), // Creates border
+                          color: darkGreenHeigh),
+                      tabs: [
+                        Tab(
+                          child: Text(
+                            "Login with Email",
+                            style: GoogleFonts.ibmPlexSans(fontSize: 16),
+                          ),
                         ),
-                      ),
-                      Tab(
-                        child: Text(
-                          "Login with Mobile",
-                          style: GoogleFonts.ibmPlexSans(fontSize: 16),
+                        Tab(
+                          child: Text(
+                            "Login with Mobile",
+                            style: GoogleFonts.ibmPlexSans(fontSize: 16),
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-              ];
-            },
-            body: const Padding(
-              padding: EdgeInsets.symmetric(vertical: 15),
-              child: TabBarView(
+                ];
+              },
+              body:  TabBarView(
                 children: <Widget>[
                   LoginWithEmail(),
                   Text("Member Login With Mobile Container"),
@@ -73,9 +71,9 @@ class MemberLoginTab extends StackedView<MemberLoginViewModel> {
               ),
             ),
           ),
-        ),
-      ),
-    );
+        )
+      );
+    
   }
 
   @override
