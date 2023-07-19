@@ -47,7 +47,7 @@ class ApplyconfirmView extends StackedView<ApplyconfirmViewModel> {
               SubBar(
                 divider: true,
                 image: myIcons.contactInfo,
-                text: 'Contact Information',
+                text: 'contactInformation',
                 height: 50,
                 scale: 1.4,
               ),
@@ -59,22 +59,22 @@ class ApplyconfirmView extends StackedView<ApplyconfirmViewModel> {
                     child: Column(
                       children: [
                         CustomText(
-                            text: 'Please enter the following information.'),
+                            text: 'enterFollowingInformation'),
                         verticalSpaceTiny,
                         CustomTextField(
-                          titleText: 'Full Name',
+                          titleText: 'fullName',
                         ),
                         verticalSpaceTiny,
                         CustomTextField(
-                          titleText: 'Phone Number',
+                          titleText: 'phoneNumber',
                         ),
                         verticalSpaceTiny,
                         CustomTextField(
-                          titleText: 'Email',
+                          titleText: 'email',
                         ),
                         verticalSpaceTiny,
                         CustomTextField(
-                          titleText: 'HKID',
+                          titleText: 'hkid',
                         ),
                       ],
                     ),
@@ -91,7 +91,7 @@ class ApplyconfirmView extends StackedView<ApplyconfirmViewModel> {
               ReturnButton(
                 imageLeft: match ? myIcons.previous : myIcons.returnIcon1,
                 imgwidth: 12,
-                text: match ? 'Previous' : 'Return',
+                text: match ? 'previous' : 'return',
                 height: 40,
                 width: 80,
               ),
@@ -99,7 +99,7 @@ class ApplyconfirmView extends StackedView<ApplyconfirmViewModel> {
               SubmitButton(
                 image: match ? myIcons.match : myIcons.done,
                 imgwidth: 16,
-                text: match ? 'Match' : 'Done',
+                text: match ? 'match' : 'done',
                 height: 40,
                 width: 80,
                 onPress: viewModel.navigateToPloanreslut,

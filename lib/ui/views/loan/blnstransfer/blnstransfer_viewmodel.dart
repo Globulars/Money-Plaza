@@ -8,8 +8,14 @@ class BlnstransferViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
 
   var initialIndex = 0;
+  var loanTenors = 6;
   setInitialIndex() {
     initialIndex++;
+    notifyListeners();
+  }
+
+  setLoanTenors(value) {
+    loanTenors = value;
     notifyListeners();
   }
 

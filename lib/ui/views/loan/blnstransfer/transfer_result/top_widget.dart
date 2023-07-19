@@ -22,7 +22,7 @@ class TranTopWidget extends ViewModelWidget<TransferResultViewModel> {
         Column(
           // crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            TopBar2View(),
+            const TopBar2View(),
             const Divider(
               color: darkGreenHeigh,
               height: 5.0,
@@ -56,7 +56,7 @@ class TranTopWidget extends ViewModelWidget<TransferResultViewModel> {
                             padding: const EdgeInsets.symmetric(horizontal: 4),
                             child: Center(
                                 child: CustomText(
-                              text: 'Loan Amount',
+                              text: 'loanAmount',
                               color: darkGreenHeigh,
                             )),
                           )),
@@ -71,7 +71,7 @@ class TranTopWidget extends ViewModelWidget<TransferResultViewModel> {
               child: Align(
                 alignment: Alignment.centerRight,
                 child: CustomText(
-                  text: '88 Results',
+                  text: '88results',
                   color: Colors.black,
                   fontSize: 15,
                   fontWeight: FontWeight.w400,

@@ -25,7 +25,7 @@ class TransferTabBar3 extends ViewModelWidget<BlnstransferViewModel> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomText(
-            text: 'Outstanding Loan',
+            text: 'outstandingLoan2',
             fontWeight: FontWeight.w600,
           ),
           verticalSpaceTiny,
@@ -34,12 +34,12 @@ class TransferTabBar3 extends ViewModelWidget<BlnstransferViewModel> {
             children: [
               ReturnButton(
                 height: 40,
-                text: 'Yes',
+                text: 'yes',
                 width: width * 0.43,
               ),
               SubmitButton(
                 height: 40,
-                text: 'No',
+                text: 'no',
                 width: width * 0.43,
                 boxColor: darkGreenLight,
               ),
@@ -48,18 +48,18 @@ class TransferTabBar3 extends ViewModelWidget<BlnstransferViewModel> {
           verticalSpaceSmall,
           verticalSpaceSmall,
           CustomTextField(
-            titleText: 'Number of Loans',
+            titleText: 'numberOfLoans',
           ),
           verticalSpaceSmall,
           CustomTextField(
             hintText: 'HK\$',
-            titleText: 'Total Outstanding Loan Amount',
+            titleText: 'totalOutstandingLoan',
           ),
           verticalSpaceSmall,
           DropdownTextfield(
             onChanged: (String) {},
             options: [],
-            titleText: 'Monthly Repayment',
+            titleText: 'monthlyRepayment',
           ),
         ],
       ),

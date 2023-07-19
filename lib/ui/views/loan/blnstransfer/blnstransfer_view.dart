@@ -64,18 +64,18 @@ class BlnstransferView extends StackedView<BlnstransferViewModel> {
                         tabs: const [
                           Tab(
                             child: Text(
-                              '1)Early Payback Penalty',
+                              'earlyPaybackPenalty',
                               textAlign: TextAlign.center,
                             ),
                           ),
                           Tab(
                               child: Text(
-                            '2)Source of \nincome',
+                            'sourceOfIncome',
                             textAlign: TextAlign.center,
                           )),
                           Tab(
                               child: Text(
-                            '3)Outstanding \nLoan',
+                            'outstandingLoan',
                             textAlign: TextAlign.center,
                           )),
                         ],
@@ -99,7 +99,7 @@ class BlnstransferView extends StackedView<BlnstransferViewModel> {
                       ? ReturnButton(
                           imageLeft: myIcons.returnIcon1,
                           imgwidth: 12,
-                          text: 'Return',
+                          text: 'return',
                           height: 40,
                           width: 80,
                           onPress: () {
