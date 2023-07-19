@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
-import 'package:money_plaza/ui/dialogs/detail_filte/detail_card_1.dart';
+import 'package:money_plaza/ui/dialogs/detail_filte/widgets/detail_card_1.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import '../../widgets/common/icon_box_btn/sub_bar.dart';
 import '../../widgets/common/result_card.dart';
 import 'detail_filte_dialog_model.dart';
-
-const double _graphicSize = 60;
+import 'widgets/detail_card_2.dart';
 
 class DetailFilteDialog extends StackedView<DetailFilteDialogModel> {
   final DialogRequest request;
@@ -57,7 +56,8 @@ class DetailFilteDialog extends StackedView<DetailFilteDialogModel> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     resultCard(context, detailPage: 0.17),
-                    const DetailCard1()
+                    const DetailCard1(),
+                    const DetailCard2(),
                   ],
                 ),
               ),

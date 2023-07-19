@@ -3,12 +3,12 @@ import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:stacked/stacked.dart';
 
-import '../../widgets/common/icon_box_btn/text.dart';
+import '../../../widgets/common/icon_box_btn/text.dart';
 import 'data_table.dart';
-import 'detail_filte_dialog_model.dart';
+import '../detail_filte_dialog_model.dart';
 
-class DetailCard1 extends ViewModelWidget<DetailFilteDialogModel> {
-  const DetailCard1({Key? key}) : super(key: key);
+class DetailCard2 extends ViewModelWidget<DetailFilteDialogModel> {
+  const DetailCard2({Key? key}) : super(key: key);
 
   @override
   Widget build(
