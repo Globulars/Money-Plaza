@@ -20,25 +20,21 @@ class TopWidget extends ViewModelWidget<PloanreslutViewModel> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Column(
-         
           children: [
             topBar(context),
-            const Divider(
-              color: darkGreenHeigh,
-              height: 1.0,
-              thickness: 1,
-            ),
-            // verticalSpaceSmall,
+
+            verticalSpaceTiny,
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
+                horizontalSpaceSmall,
                 Image.asset(
                   myIcons.cilSortDecending,
-                  width: 50,
+                  width: 25,
                 ),
                 horizontalSpaceTiny,
                 SizedBox(
-                  height: 40.0,
+                  height: 30.0,
                   width: width * 0.84,
                   child: ListView.builder(
                     physics: const ClampingScrollPhysics(),
@@ -58,6 +54,7 @@ class TopWidget extends ViewModelWidget<PloanreslutViewModel> {
                                 child: CustomText(
                               text: 'Loan Amount',
                               color: darkGreenHeigh,
+                              fontSize: 12,
                             )),
                           )),
                     ),
@@ -65,7 +62,7 @@ class TopWidget extends ViewModelWidget<PloanreslutViewModel> {
                 ),
               ],
             ),
-            // verticalSpaceTiny,
+            verticalSpaceTiny,
             Padding(
               padding: const EdgeInsets.only(right: 8),
               child: Align(
@@ -78,12 +75,13 @@ class TopWidget extends ViewModelWidget<PloanreslutViewModel> {
                 ),
               ),
             ),
-            verticalSpaceTiny,
+            // verticalSpaceTiny,
             const Divider(
               color: Colors.black,
-              height: 2.0,
+              height: 0,
               thickness: 1,
             ),
+            verticalSpaceTiny,
           ],
         )
       ],

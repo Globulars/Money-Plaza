@@ -53,10 +53,12 @@ class MorgagesSplashView extends StackedView<MorgagesSplashViewModel> {
                 children: [
                   Image.asset(
                     myIcons.group,
+                    width: 100,
                   ),
-                  horizontalSpaceSmall,
+                  // horizontalSpaceSmall,
                   Image.asset(
                     myIcons.groupPenc,
+                    width: 40,
                   ),
                 ],
               )

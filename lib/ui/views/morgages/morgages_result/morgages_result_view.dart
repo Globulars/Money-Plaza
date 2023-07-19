@@ -55,7 +55,7 @@ class MorgagesResultView extends StackedView<MorgagesResultViewModel> {
                       divider: true,
                       text: 'Select all',
                       image: myIcons.compare1,
-                      imgwidth: 22,
+                      imgwidth: 18,
                     ),
                   ],
                 ),

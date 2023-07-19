@@ -48,6 +48,7 @@ class MorgagesFilterDialog extends StackedView<MorgagesFilterDialogModel> {
               btmLeftRadius: 0,
               btmRightRadius: 0,
               topimage: myIcons.cancel,
+              close: true,
             ),
             verticalSpaceTiny,
             Padding(

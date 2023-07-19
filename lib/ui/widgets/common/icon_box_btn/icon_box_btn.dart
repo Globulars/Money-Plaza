@@ -67,7 +67,7 @@ class IconBoxBtn extends StackedView<IconBoxBtnModel> {
                       verticalSpaceTiny,
                       Image.asset(
                         topimage ?? "",
-                        width: imgwidth??30,
+                        width: imgwidth ?? 30,
                       )
                     ],
                   )

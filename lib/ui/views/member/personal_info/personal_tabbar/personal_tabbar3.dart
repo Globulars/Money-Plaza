@@ -20,7 +20,6 @@ class PersonalTabBar3 extends ViewModelWidget<PersonalInfoViewModel> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-           
             verticalSpaceSmall,
             DropdownTextfield(
               onChanged: (String) {},

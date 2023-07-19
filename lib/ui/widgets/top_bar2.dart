@@ -47,7 +47,7 @@ Widget topBar(context) {
             ),
             IconBoxBtn(
               height: 60,
-               imgwidth: 22,
+              imgwidth: 22,
               width: MediaQuery.of(context).size.width * 0.23,
               color: Colors.white,
               fontSize: 12,
@@ -63,7 +63,7 @@ Widget topBar(context) {
               },
               child: IconBoxBtn(
                 height: 60,
-                 imgwidth: 17,
+                imgwidth: 17,
                 width: MediaQuery.of(context).size.width * 0.23,
                 color: Colors.white,
                 fontSize: 12,
@@ -76,7 +76,7 @@ Widget topBar(context) {
             ),
             IconBoxBtn(
               height: 60,
-               imgwidth: 18,
+              imgwidth: 18,
               width: MediaQuery.of(context).size.width * 0.23,
               color: Colors.white,
               fontSize: 12,
@@ -95,7 +95,6 @@ Widget topBar(context) {
         thickness: 6,
       ),
       verticalSpaceTiny,
-      
     ],
   );
 }
