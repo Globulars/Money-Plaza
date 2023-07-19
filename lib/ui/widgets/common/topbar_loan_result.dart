@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import '../../common/app_colors.dart';
 import '../../common/ui_helpers.dart';
-import '../top_bar2.dart';
+import '../top_bar2/top_bar2_view.dart';
 import 'icon_box_btn/text.dart';
 
 Widget resultLoanTop(context) {
@@ -12,7 +12,7 @@ Widget resultLoanTop(context) {
       Column(
         // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          topBar(context),
+          const TopBar2View(),
           const Divider(
             color: darkGreenHeigh,
             height: 5.0,

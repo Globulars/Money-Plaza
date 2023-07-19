@@ -4,7 +4,7 @@ import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
 import 'package:stacked/stacked.dart';
 import '../../../common/app_colors.dart';
-import '../../../widgets/top_bar2.dart';
+import '../../../widgets/top_bar2/top_bar2_view.dart';
 import '../loan_viewmodel.dart';
 
 class ContainerListView extends ViewModelWidget<LoanViewModel> {
@@ -19,7 +19,7 @@ class ContainerListView extends ViewModelWidget<LoanViewModel> {
     return Column(
       // crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        topBar(context),
+        const TopBar2View(),
         verticalSpaceSmall,
         Row(
           mainAxisAlignment: MainAxisAlignment.start,

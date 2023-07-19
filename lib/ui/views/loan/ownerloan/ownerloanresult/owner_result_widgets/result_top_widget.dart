@@ -4,7 +4,7 @@ import 'package:money_plaza/ui/common/app_icons.dart';
 import '../../../../../common/app_colors.dart';
 import '../../../../../common/ui_helpers.dart';
 import '../../../../../widgets/common/icon_box_btn/text.dart';
-import '../../../../../widgets/top_bar2.dart';
+import '../../../../../widgets/top_bar2/top_bar2_view.dart';
 import '../ownerloanresult_viewmodel.dart';
 
 class OwnerTopWidget extends ViewModelWidget<OwnerloanresultViewModel> {
@@ -22,7 +22,7 @@ class OwnerTopWidget extends ViewModelWidget<OwnerloanresultViewModel> {
         Column(
           // crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            topBar(context),
+            const TopBar2View(),
             const Divider(
               color: darkGreenHeigh,
               height: 5.0,

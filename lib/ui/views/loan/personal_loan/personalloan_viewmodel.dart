@@ -14,6 +14,6 @@ class PersonalloanViewModel extends BaseViewModel {
   }
 
   navigateToApplyconfirm() {
-    _navigationService.navigateToApplyconfirmView();
+    _navigationService.navigateToApplyconfirmView(match: true);
   }
 }

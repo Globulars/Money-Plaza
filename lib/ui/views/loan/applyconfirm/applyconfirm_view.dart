@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/return_button.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
@@ -12,7 +14,12 @@ import '../../../widgets/common/icon_box_btn/submit_button.dart';
 import 'applyconfirm_viewmodel.dart';
 
 class ApplyconfirmView extends StackedView<ApplyconfirmViewModel> {
-  const ApplyconfirmView({Key? key}) : super(key: key);
+  bool match;
+
+  ApplyconfirmView({
+    super.key,
+    this.match = false,
+  });
 
   @override
   Widget builder(
@@ -82,17 +89,17 @@ class ApplyconfirmView extends StackedView<ApplyconfirmViewModel> {
           Row(
             children: [
               ReturnButton(
-                imageLeft: myIcons.returnIcon1,
+                imageLeft: match ? myIcons.previous : myIcons.returnIcon1,
                 imgwidth: 12,
-                text: 'Return',
+                text: match ? 'Previous' : 'Return',
                 height: 40,
                 width: 80,
               ),
               horizontalSpaceTiny,
               SubmitButton(
-                image: myIcons.done,
+                image: match ? myIcons.match : myIcons.done,
                 imgwidth: 16,
-                text: 'Done',
+                text: match ? 'Match' : 'Done',
                 height: 40,
                 width: 80,
                 onPress: viewModel.navigateToPloanreslut,
