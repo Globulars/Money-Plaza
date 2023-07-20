@@ -123,5 +123,12 @@
   "otherRetail": "Other retail spending\nrebate",
   "upTo5%Rebate": "Up to {}% rebate for the Designated Spending Categories when Successfully applied",
   "exclusiveOffer": "[Exclusive offer] Successfully issue a card through MONEY PLAZA,and get an extra HK ${} cash coupon",
-  "noteMoney": "Note:Money Plaza has the final decision on all offers"
+  "noteMoney": "Note:Money Plaza has the final decision on all offers",
+  "HelloStacked": "Hello, STACKED!",
+  "paymentTable": "Payment Table",
+  "period": "Period",
+  "monthlyRepaymentnAmount": "Monthly\nRepayment\nAmount\n(HKD)",
+  "interestAmount":"Interest\namount\n(HKD)",
+  "principalAmount":"Principal\nAmount\n(HKD)",
+  "remainingAmount":"Remaining\nAmount\n(HKD)"
 }
