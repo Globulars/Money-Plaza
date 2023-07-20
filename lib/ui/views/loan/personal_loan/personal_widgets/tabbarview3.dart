@@ -5,7 +5,6 @@ import '../../../../common/ui_helpers.dart';
 import '../../../../widgets/common/custom_text_field/custom_text_field.dart';
 import '../../../../widgets/common/dropdown_textfield/dropdown_textfield.dart';
 import '../../../../widgets/common/icon_box_btn/return_button.dart';
-import '../../../../widgets/common/icon_box_btn/submit_button.dart';
 import '../../../../widgets/common/icon_box_btn/text.dart';
 import '../personalloan_viewmodel.dart';
 
@@ -24,7 +23,7 @@ class TabBarView3 extends ViewModelWidget<PersonalloanViewModel> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomText(
-            text: 'Outstanding Loan',
+            text: 'outstandingLoan2',
             fontWeight: FontWeight.w600,
           ),
           verticalSpaceTiny,
@@ -33,7 +32,7 @@ class TabBarView3 extends ViewModelWidget<PersonalloanViewModel> {
             children: [
               ReturnButton(
                 height: 40,
-                text: 'Yes',
+                text: 'yes',
                 width: width * 0.43,
                 boxcolor:
                     viewModel.outStanding == 0 ? darkGreenHeigh : Colors.white,
@@ -45,7 +44,7 @@ class TabBarView3 extends ViewModelWidget<PersonalloanViewModel> {
               ),
               ReturnButton(
                 height: 40,
-                text: 'No',
+                text: 'no',
                 width: width * 0.43,
                 boxcolor:
                     viewModel.outStanding == 1 ? darkGreenHeigh : Colors.white,
@@ -60,18 +59,18 @@ class TabBarView3 extends ViewModelWidget<PersonalloanViewModel> {
           verticalSpaceSmall,
           verticalSpaceSmall,
           CustomTextField(
-            titleText: 'Number of Loans',
+            titleText: 'numberOfLoans',
           ),
           verticalSpaceSmall,
           CustomTextField(
             hintText: 'hk',
-            titleText: 'Total Outstanding Loan Amount',
+            titleText: 'totalOutstandingLoan',
           ),
           verticalSpaceSmall,
           DropdownTextfield(
             onChanged: (String) {},
             options: [],
-            titleText: 'Monthly Repayment',
+            titleText: 'monthlyRepayment',
           ),
         ],
       ),

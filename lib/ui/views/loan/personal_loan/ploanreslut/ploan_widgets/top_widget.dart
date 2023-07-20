@@ -52,7 +52,7 @@ class TopWidget extends ViewModelWidget<PloanreslutViewModel> {
                             padding: const EdgeInsets.symmetric(horizontal: 4),
                             child: Center(
                                 child: CustomText(
-                              text: 'Loan Amount',
+                              text: 'loanAmount',
                               color: darkGreenHeigh,
                               fontSize: 12,
                             )),
@@ -68,7 +68,7 @@ class TopWidget extends ViewModelWidget<PloanreslutViewModel> {
               child: Align(
                 alignment: Alignment.centerRight,
                 child: CustomText(
-                  text: '88 Results',
+                  text: '88results',
                   color: Colors.black,
                   fontSize: 15,
                   fontWeight: FontWeight.w400,

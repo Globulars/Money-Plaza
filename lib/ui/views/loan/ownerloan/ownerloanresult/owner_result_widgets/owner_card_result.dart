@@ -86,14 +86,14 @@ class OwnerResultCard extends ViewModelWidget<OwnerloanresultViewModel> {
                         SubmitButton(
                           image: myIcons.compare2,
                           boxColor: Colors.transparent,
-                          text: 'Compare',
+                          text: 'compare',
                           color: Colors.black87,
                           fontSize: 18,
                         ),
                         verticalSpaceSmall,
                         SubmitButton(
                           image: myIcons.apply,
-                          text: 'Apply',
+                          text: 'apply',
                           fontSize: 18,
                           height: 40,
                         ),
@@ -101,7 +101,7 @@ class OwnerResultCard extends ViewModelWidget<OwnerloanresultViewModel> {
                         SubmitButton(
                           image: myIcons.detail,
                           boxColor: Colors.transparent,
-                          text: 'Details',
+                          text: 'details',
                           color: Colors.black,
                           fontSize: 18,
                         ),
