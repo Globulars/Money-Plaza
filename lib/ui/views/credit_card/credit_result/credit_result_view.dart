@@ -42,7 +42,7 @@ class CreditResultView extends StackedView<CreditResultViewModel> {
                   btmLeftRadius: 0,
                   btmRightRadius: 0,
                   image: myIcons.setting,
-                  text: 'Filter',
+                  text: 'filter',
                   fontSize: 18,
                   onPress: viewModel.showCreditFilter,
                 ),
@@ -64,7 +64,7 @@ class CreditResultView extends StackedView<CreditResultViewModel> {
               ReturnButton(
                 imageLeft: myIcons.returnIcon1,
                 imgwidth: 12,
-                text: 'Return',
+                text: 'return',
                 height: 40,
                 width: 80,
               ),

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/submit_button.dart';
 import 'package:stacked/stacked.dart';
@@ -44,7 +45,7 @@ class CreditCardWiget extends ViewModelWidget<CreditResultViewModel> {
                               SizedBox(
                                 width: width * 0.45,
                                 child: CustomText(
-                                  text: 'DBs Eminent Visa Platinum Card',
+                                  text: 'dbsEminentVisa',
                                   fontSize: 18,
                                   maxLines: 2,
                                   textOverflow: TextOverflow.ellipsis,
@@ -56,7 +57,7 @@ class CreditCardWiget extends ViewModelWidget<CreditResultViewModel> {
                             image: myIcons.apply,
                             imgwidth: 12,
                             onPress: viewModel.navigateToSplashCreditCard,
-                            text: 'Apply',
+                            text: 'apply',
                             height: 40,
                             width: 80,
                             // onPress: ,
@@ -73,7 +74,7 @@ class CreditCardWiget extends ViewModelWidget<CreditResultViewModel> {
                             child: Column(
                               children: [
                                 CustomText(
-                                  text: "Minimum Annual\nSalary",
+                                  text: "minimumAnnualSalary",
                                   color: Colors.black.withOpacity(0.6),
                                   textAlign: TextAlign.center,
                                   fontSize: 12,
@@ -93,8 +94,7 @@ class CreditCardWiget extends ViewModelWidget<CreditResultViewModel> {
                             child: Column(
                               children: [
                                 CustomText(
-                                  text:
-                                      "4 designated\nspending\ncategories rebate",
+                                  text: "4designated",
                                   color: Colors.black.withOpacity(0.6),
                                   textAlign: TextAlign.center,
                                   fontSize: 12,
@@ -114,7 +114,7 @@ class CreditCardWiget extends ViewModelWidget<CreditResultViewModel> {
                             child: Column(
                               children: [
                                 CustomText(
-                                  text: "Other retail spending\nrebate",
+                                  text: "otherRetail",
                                   color: Colors.black.withOpacity(0.6),
                                   textAlign: TextAlign.center,
                                   fontSize: 12,
@@ -132,21 +132,18 @@ class CreditCardWiget extends ViewModelWidget<CreditResultViewModel> {
                         ],
                       ),
                       CustomText(
-                          text:
-                              "Up to 5% rebate for the Designated Spending Categories when Successfully applied",
+                          text: "upTo5%Rebate".tr(args: ['5']),
                           color: Colors.black,
                           textAlign: TextAlign.start,
                           fontWeight: FontWeight.w400),
                       CustomText(
-                          text:
-                              "[Exclusive offer] Successfully issue a card through MONEY PLAZA,and get an extra HK\$500 cash coupon",
+                          text: "exclusiveOffer".tr(args: ["304"]),
                           color: Colors.black.withOpacity(0.6),
                           textAlign: TextAlign.start,
                           fontWeight: FontWeight.w400),
                       verticalSpaceTiny,
                       CustomText(
-                          text:
-                              "Note:Money Plaza has the final decision on all offers",
+                          text: "noteMoney",
                           color: Colors.black,
                           textAlign: TextAlign.start,
                           fontWeight: FontWeight.w400),

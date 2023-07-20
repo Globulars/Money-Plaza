@@ -28,7 +28,7 @@ class CalDataTable extends ViewModelWidget<CalculatorResultViewModel> {
                         topLeft: Radius.circular(4),
                         topRight: Radius.circular(4))),
                 child: CustomText(
-                  text: 'Payment Table',
+                  text: 'paymentTable',
                   textAlign: TextAlign.center,
                 )),
             SingleChildScrollView(
@@ -44,7 +44,7 @@ class CalDataTable extends ViewModelWidget<CalculatorResultViewModel> {
                       label: SizedBox(
                           width: 40,
                           child: CustomText(
-                            text: 'Period',
+                            text: 'period',
                             textAlign: TextAlign.start,
                             color: darkGreenHeigh,
                             fontSize: 10,
@@ -56,7 +56,7 @@ class CalDataTable extends ViewModelWidget<CalculatorResultViewModel> {
                           // height: 200,
 
                           child: CustomText(
-                            text: 'Monthly\nRepayment\nAmount\n(HKD)',
+                            text: 'monthlyRepaymentnAmount',
                             textAlign: TextAlign.center,
                             color: darkGreenHeigh,
                             fontSize: 10,
@@ -66,7 +66,7 @@ class CalDataTable extends ViewModelWidget<CalculatorResultViewModel> {
                       label: SizedBox(
                           width: 60,
                           child: CustomText(
-                            text: 'Interest\namount\n(HKD)',
+                            text: 'interestAmount',
                             textAlign: TextAlign.center,
                             color: darkGreenHeigh,
                             fontSize: 10,
@@ -76,7 +76,7 @@ class CalDataTable extends ViewModelWidget<CalculatorResultViewModel> {
                       label: SizedBox(
                           width: 60,
                           child: CustomText(
-                            text: 'Principal\nAmount\n(HKD)',
+                            text: 'principalAmount',
                             textAlign: TextAlign.center,
                             color: darkGreenHeigh,
                             fontSize: 10,
@@ -86,7 +86,7 @@ class CalDataTable extends ViewModelWidget<CalculatorResultViewModel> {
                       label: SizedBox(
                           width: 60,
                           child: CustomText(
-                            text: 'Remaining\nAmount\n(HKD)',
+                            text: 'remainingAmount',
                             textAlign: TextAlign.center,
                             color: darkGreenHeigh,
                             fontSize: 10,

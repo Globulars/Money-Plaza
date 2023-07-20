@@ -36,7 +36,6 @@ import 'package:money_plaza/ui/views/member/personal_info/personal_info_view.dar
 import 'package:money_plaza/ui/views/member/reward/reward_view.dart';
 import 'package:money_plaza/ui/views/member/reward_application/reward_application_view.dart';
 import 'package:money_plaza/ui/views/member/change_password/change_password_view.dart';
-import 'package:money_plaza/ui/views/detail_page/detail_page_view.dart';
 import 'package:money_plaza/ui/dialogs/detail_filte/detail_filte_dialog.dart';
 import 'package:money_plaza/ui/widgets/top_bar2/top_bar2_view.dart';
 // @stacked-import
@@ -71,7 +70,6 @@ import 'package:money_plaza/ui/widgets/top_bar2/top_bar2_view.dart';
     MaterialRoute(page: RewardView),
     MaterialRoute(page: RewardApplicationView),
     MaterialRoute(page: ChangePasswordView),
-    MaterialRoute(page: DetailPageView),
     MaterialRoute(page: TopBar2View),
 // @stacked-route
   ],
