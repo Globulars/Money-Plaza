@@ -22,7 +22,7 @@ class ResetPassTab extends StackedView<ResetPasswordDialogModel> {
       child: Padding(
         padding: const EdgeInsets.all(10.0),
         child: SizedBox(
-          height: height * 0.35,
+          height: height -300,
           width: width,
           child: Scaffold(
             backgroundColor: Colors.transparent,
@@ -34,7 +34,7 @@ class ResetPassTab extends StackedView<ResetPasswordDialogModel> {
                     toolbarHeight: 0,
                     backgroundColor: Colors.transparent,
                     pinned: false,
-                    floating: false,
+                    floating: true,
                     shape: const RoundedRectangleBorder(
                       side: BorderSide(width: 1),
                     ),

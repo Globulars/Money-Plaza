@@ -6,7 +6,6 @@ import '../../widgets/common/icon_box_btn/sub_bar.dart';
 import 'ResetPassTab.dart';
 import 'reset_password_dialog_model.dart';
 
-const double _graphicSize = 60;
 
 class ResetPasswordDialog extends StackedView<ResetPasswordDialogModel> {
   final DialogRequest request;
@@ -26,14 +25,14 @@ class ResetPasswordDialog extends StackedView<ResetPasswordDialogModel> {
   ) {
     final width = MediaQuery.of(context).size.width;
     return Dialog(
-      insetPadding: EdgeInsets.symmetric(horizontal: 40, vertical: 60),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+      insetPadding: const EdgeInsets.symmetric(horizontal:40, vertical: 100),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       backgroundColor: Colors.white,
       child: Column(
-        mainAxisSize: MainAxisSize.min,
+      
         children: [
           SubBar(
-            height: 40,
+            height: 50,
             color: Colors.white,
             width: width * 1,
             image: myIcons.filter,
