@@ -203,5 +203,7 @@
   "repaymentPeriod(Monthly)": "Repayment Period(Monthly)",
   "resetPassword": "Reset Password",
   "restByEmail": "Rest by Email",
-  "restByMobile": "Rest by Mobile"
+  "restByMobile": "Rest by Mobile",
+  "loanBalanceTransfer":"Loan Balance Transfer",
+  "commericalLoans":"Commerical Loans"
 }

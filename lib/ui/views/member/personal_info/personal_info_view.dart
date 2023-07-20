@@ -65,23 +65,23 @@ class PersonalInfoView extends StackedView<PersonalInfoViewModel> {
                               color: darkGreenHeigh),
                           tabs:  [
                             Tab(
-                              child: Text(
+                              child: const Text(
                                 'privateInfo',
                                 textAlign: TextAlign.center,
                               ).tr(),
                             ),
                             Tab(
-                                child: Text(
+                                child: const Text(
                               'contactInfo',
                               textAlign: TextAlign.center,
                             ).tr(),),
                             Tab(
-                                child: Text(
+                                child: const Text(
                               'interestedProducts',
                               textAlign: TextAlign.center,
                             ).tr(),),
                             Tab(
-                                child: Text(
+                                child: const Text(
                               'loanStatus',
                               textAlign: TextAlign.center,
                             ).tr(),),

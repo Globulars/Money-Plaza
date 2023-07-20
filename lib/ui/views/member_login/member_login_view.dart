@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
@@ -80,7 +81,7 @@ class MemberLoginView extends StackedView<MemberLoginViewModel> {
                                   'memberLogin',
                                   textAlign: TextAlign.center,
                                   style: GoogleFonts.ibmPlexSans(fontSize: 16),
-                                ),
+                                ).tr(),
                               ],
                             ),
                           ),
@@ -102,7 +103,7 @@ class MemberLoginView extends StackedView<MemberLoginViewModel> {
                                     textAlign: TextAlign.center,
                                     style:
                                         GoogleFonts.ibmPlexSans(fontSize: 16),
-                                  ),
+                                  ).tr(),
                                 ],
                               ),
                             ),

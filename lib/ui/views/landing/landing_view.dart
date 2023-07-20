@@ -34,8 +34,8 @@ class LandingView extends StackedView<LandingViewModel> {
               child: Column(children: [
                 Image.asset(
                   "assets/screens/landing/cover_image.png",
-                  fit: BoxFit.fill,
-                  height: 180,
+                  fit: BoxFit.fitWidth,
+                  width: width,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 30.0),

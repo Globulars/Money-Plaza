@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:money_plaza/ui/views/member_login/login_with_email.dart';
@@ -50,13 +51,13 @@ class MemberLoginTab extends StackedView<MemberLoginViewModel> {
                           child: Text(
                             "loginWithEmail",
                             style: GoogleFonts.ibmPlexSans(fontSize: 16),
-                          ),
+                          ).tr(),
                         ),
                         Tab(
                           child: Text(
                             "loginWithMobile",
                             style: GoogleFonts.ibmPlexSans(fontSize: 16),
-                          ),
+                          ).tr(),
                         ),
                       ],
                     ),
