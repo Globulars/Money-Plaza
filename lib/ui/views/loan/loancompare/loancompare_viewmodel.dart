@@ -5,8 +5,7 @@ import 'package:stacked_services/stacked_services.dart';
 import '../../../../app/app.locator.dart';
 
 class LoancompareViewModel extends BaseViewModel {
-
-    final _navigationService = locator<NavigationService>();
+  final _navigationService = locator<NavigationService>();
 
   navigateToApplyconfirm() {
     _navigationService.navigateToApplyconfirmView();

@@ -67,14 +67,10 @@ class HeadBtmText extends ViewModelWidget<LoancompareViewModel> {
                 children: [
                   SizedBox(
                       width: width * 0.42,
-                      child: CustomText(
-                          text:
-                              'successfullyApply')),
+                      child: CustomText(text: 'successfullyApply')),
                   SizedBox(
                       width: width * 0.42,
-                      child: CustomText(
-                          text:
-                              'limitedTimeOfferUntil')),
+                      child: CustomText(text: 'limitedTimeOfferUntil')),
                 ],
               ),
             ),
