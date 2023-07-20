@@ -91,6 +91,7 @@
   "monthlyRepaymentAmount": "Monthly Repayment Amount",
   "totalRepaymentAmount": "Total Repayment Amount",
   "totalInterest": "Total interest",
-  "Recalculate": "pecalculate",
-  "weLend":"WeLend"
+  "recalculate": "Recalculate",
+  "weLend":"WeLend",
+  "validation":"Please enter some text"
 }

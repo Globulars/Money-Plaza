@@ -156,7 +156,7 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
             initialValue: initialValue,
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return validationText ?? 'Please enter some text';
+                return validationText?.tr() ?? 'validation'.tr();
               }
               return null;
             },
