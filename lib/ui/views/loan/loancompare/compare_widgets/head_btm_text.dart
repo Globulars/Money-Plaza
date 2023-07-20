@@ -28,7 +28,7 @@ class HeadBtmText extends ViewModelWidget<LoancompareViewModel> {
                     topLeft: Radius.circular(4), topRight: Radius.circular(4))),
             child: Center(
                 child: CustomText(
-              text: 'APR',
+              text: 'apr',
             )),
           ),
           Container(
@@ -55,7 +55,7 @@ class HeadBtmText extends ViewModelWidget<LoancompareViewModel> {
                     topLeft: Radius.circular(4), topRight: Radius.circular(4))),
             child: Center(
                 child: CustomText(
-              text: 'Money Plaza Exclusive Offer',
+              text: 'moneyPlazaExclusive',
             )),
           ),
           Container(
@@ -69,12 +69,12 @@ class HeadBtmText extends ViewModelWidget<LoancompareViewModel> {
                       width: width * 0.42,
                       child: CustomText(
                           text:
-                              'Successfully apply for MONEY PLAZA and you will receive HKD 100 cash*')),
+                              'successfullyApply')),
                   SizedBox(
                       width: width * 0.42,
                       child: CustomText(
                           text:
-                              '[Limited Time Offer Until December 31th] Successfully withdraw the specified loan amount and enjoy up to HK\$14,200 reward!')),
+                              'limitedTimeOfferUntil')),
                 ],
               ),
             ),

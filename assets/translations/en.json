@@ -128,7 +128,16 @@
   "paymentTable": "Payment Table",
   "period": "Period",
   "monthlyRepaymentnAmount": "Monthly\nRepayment\nAmount\n(HKD)",
-  "interestAmount":"Interest\namount\n(HKD)",
-  "principalAmount":"Principal\nAmount\n(HKD)",
-  "remainingAmount":"Remaining\nAmount\n(HKD)"
-}
+  "interestAmount": "Interest\namount\n(HKD)",
+  "principalAmount": "Principal\nAmount\n(HKD)",
+  "remainingAmount": "Remaining\nAmount\n(HKD)",
+  "annualTurnover": "Annual Turnover",
+  "industory": "Industory",
+  "companyName": "Company Name",
+  "audioReport": "Audio Report",
+  "operationYear": "Operation Year",
+  "outstandingLoan1": "Outstanding Loan",
+  "backToList": "Back to list",
+  "moneyPlazaExclusive":"Money Plaza Exclusive Offer",
+  "successfullyApply":"Successfully apply for MONEY PLAZA and you will receive HKD 100 cash*"
+,"limitedTimeOfferUntil":"[Limited Time Offer Until December 31th] Successfully withdraw the specified loan amount and enjoy up to HK $14,200 reward!"}
