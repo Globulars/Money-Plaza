@@ -16,6 +16,7 @@
   "referenceNumber": "Reference Number (if any)",
   "search": "Search",
   "save": "save",
+  "password": "Password",
   "changePassword": "Change Password",
   "enterCurrentPassword": "Enter the current password",
   "enterNewPassword": "Enter new password \n (8-15 digits)",
@@ -46,6 +47,7 @@
   "sex": "Sex",
   "m": "M",
   "f": "F",
+  "login": "Login",
   "birthDate": "Birth date",
   "nationality": "Nationality",
   "doyouknowMoneyPlaza": "How do you know MoneyPlaza.com?",
@@ -160,7 +162,8 @@
   "moneyRepaymentDetails": "Money Repayment Details",
   "earlyPaybackPenalty1": "Early Payback Penalty",
   "promise": "Promise",
-  "6": "6",
+  "forgetPassword?": "Forget Password?",
+   "6": "6",
   "12": "12",
   "24": "24",
   "36": "36",
@@ -169,5 +172,18 @@
   "72": "72",
   "84": "84",
   "propertyValuation":"Property Valuation",
-  "currentMortgageRatio":"Current Mortgage Ratio"
+  "currentMortgageRatio":"Current Mortgage Ratio",
+ 
+  "memberLogin": "Member Login",
+  "register": "Register",
+  "loginWithEmail": "Login with Email",
+  "loginWithMobile": "Login with Mobile",
+  "memberLoginWithMobile": "Member Login With Mobile Container",
+  "registerWithMobile": "Register With Mobile Container",
+  "send": "Send",
+  "verificationCode":"Verification Code",
+  "enterPassword":"Enter Password (8-15 digits)",
+  "confirmPassword":"Confirm Password",
+  "subscribeGetLatest":"Subscribe to get latest exclusive offer and financial information"
+
 }

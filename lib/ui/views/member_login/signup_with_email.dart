@@ -23,7 +23,7 @@ class SignUpWithEmail extends StackedView<MemberLoginViewModel> {
     return Column(
       children: [
         CustomTextField(
-          hintText: "Email",
+          hintText: "email",
           hintStyle: const TextStyle(fontSize: 16),
           textAlign: TextAlign.center,
         ),
@@ -33,7 +33,7 @@ class SignUpWithEmail extends StackedView<MemberLoginViewModel> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SubmitButton(
-              text: "Send",
+              text: "send",
               height: 40,
               width: width * 0.2,
               fontSize: 16,
@@ -41,19 +41,19 @@ class SignUpWithEmail extends StackedView<MemberLoginViewModel> {
             CustomTextField(
               height: 40,
               width: width * 0.64,
-              hintText: "Verification Code",
+              hintText: "verificationCode",
               hintStyle: const TextStyle(fontSize: 16),
               textAlign: TextAlign.center,
             ),
           ],
         ),
         CustomTextField(
-          hintText: "Enter Password (8-15 digits)",
+          hintText: "enterPassword",
           hintStyle: const TextStyle(fontSize: 16),
           textAlign: TextAlign.center,
         ),
         CustomTextField(
-          hintText: "Confirm Password",
+          hintText: "confirmPassword",
           hintStyle: const TextStyle(fontSize: 16),
           textAlign: TextAlign.center,
         ),
@@ -62,13 +62,13 @@ class SignUpWithEmail extends StackedView<MemberLoginViewModel> {
           children: [
             CustomTextField(
               width: width * 0.42,
-              hintText: "First Name",
+              hintText: "firstName",
               hintStyle: const TextStyle(fontSize: 16),
               textAlign: TextAlign.center,
             ),
             CustomTextField(
               width: width * 0.42,
-              hintText: "Last Name",
+              hintText: "lastName",
               hintStyle: const TextStyle(fontSize: 16),
               textAlign: TextAlign.center,
             ),
@@ -93,7 +93,7 @@ class SignUpWithEmail extends StackedView<MemberLoginViewModel> {
               width: width * 0.75,
               child: CustomText(
                 text:
-                    "Subscribe to get latest exclusive offer and financial information",
+                    "subscribeGetLatest",
                 color: kcDarkGreyColor,
                 fontSize: 16,
               ),
@@ -104,7 +104,7 @@ class SignUpWithEmail extends StackedView<MemberLoginViewModel> {
         SubmitButton(
           height: 40,
           width: MediaQuery.of(context).size.width * 0.3,
-          text: "Register",
+          text: "register",
           fontSize: 16,
         ),
       ],
