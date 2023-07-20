@@ -63,7 +63,7 @@ class PersonalInfoView extends StackedView<PersonalInfoViewModel> {
                                   topRight:
                                       Radius.circular(10)), // Creates border
                               color: darkGreenHeigh),
-                          tabs:  [
+                          tabs: [
                             Tab(
                               child: const Text(
                                 'privateInfo',
@@ -71,20 +71,23 @@ class PersonalInfoView extends StackedView<PersonalInfoViewModel> {
                               ).tr(),
                             ),
                             Tab(
-                                child: const Text(
-                              'contactInfo',
-                              textAlign: TextAlign.center,
-                            ).tr(),),
+                              child: const Text(
+                                'contactInfo',
+                                textAlign: TextAlign.center,
+                              ).tr(),
+                            ),
                             Tab(
-                                child: const Text(
-                              'interestedProducts',
-                              textAlign: TextAlign.center,
-                            ).tr(),),
+                              child: const Text(
+                                'interestedProducts',
+                                textAlign: TextAlign.center,
+                              ).tr(),
+                            ),
                             Tab(
-                                child: const Text(
-                              'loanStatus',
-                              textAlign: TextAlign.center,
-                            ).tr(),),
+                              child: const Text(
+                                'loanStatus',
+                                textAlign: TextAlign.center,
+                              ).tr(),
+                            ),
                           ],
                         ),
                       ),

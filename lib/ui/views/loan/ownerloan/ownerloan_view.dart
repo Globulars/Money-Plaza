@@ -52,7 +52,7 @@ class OwnerloanView extends StackedView<OwnerloanViewModel> {
                                 topRight:
                                     Radius.circular(10)), // Creates border
                             color: darkGreenHeigh),
-                        tabs:  [
+                        tabs: [
                           Tab(
                             child: const Text(
                               'earlyPaybackPenalty',
@@ -60,15 +60,17 @@ class OwnerloanView extends StackedView<OwnerloanViewModel> {
                             ).tr(),
                           ),
                           Tab(
-                              child: const Text(
-                            'sourceOfIncome',
-                            textAlign: TextAlign.center,
-                          ).tr(),),
+                            child: const Text(
+                              'sourceOfIncome',
+                              textAlign: TextAlign.center,
+                            ).tr(),
+                          ),
                           Tab(
-                              child: const Text(
-                            'outstandingLoan',
-                            textAlign: TextAlign.center,
-                          ).tr(),),
+                            child: const Text(
+                              'outstandingLoan',
+                              textAlign: TextAlign.center,
+                            ).tr(),
+                          ),
                         ],
                       ),
                     ),

@@ -63,7 +63,7 @@ class RegisterTab extends StackedView<MemberLoginViewModel> {
                 ),
               ];
             },
-            body: TabBarView(
+            body: const TabBarView(
               children: <Widget>[
                 SignUpWithEmail(),
                 Text("registerWithMobile"),

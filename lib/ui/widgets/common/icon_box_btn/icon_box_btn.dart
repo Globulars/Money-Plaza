@@ -24,26 +24,25 @@ class IconBoxBtn extends StackedView<IconBoxBtnModel> {
   double margin;
   double? padding;
   double? horizental;
-  double? vertical=0.0;
+  double? vertical = 0.0;
 
-  IconBoxBtn({
-    super.key,
-    this.color,
-    this.height,
-    this.text,
-    this.width,
-    this.fontSize,
-    this.fontWeight,
-    this.topimage,
-    this.imgwidth,
-    this.btmimage,
-    this.boxcolor,
-    this.onPress,
-    this.margin = 0.0,
-    this.padding,
-    this.horizental,
-    this.vertical
-  });
+  IconBoxBtn(
+      {super.key,
+      this.color,
+      this.height,
+      this.text,
+      this.width,
+      this.fontSize,
+      this.fontWeight,
+      this.topimage,
+      this.imgwidth,
+      this.btmimage,
+      this.boxcolor,
+      this.onPress,
+      this.margin = 0.0,
+      this.padding,
+      this.horizental,
+      this.vertical});
 
   @override
   Widget builder(
@@ -61,7 +60,8 @@ class IconBoxBtn extends StackedView<IconBoxBtnModel> {
         height: height,
         width: width,
         margin: EdgeInsets.all(margin),
-        padding: EdgeInsets.symmetric(horizontal:horizental??00,vertical: vertical??00 ),
+        padding: EdgeInsets.symmetric(
+            horizontal: horizental ?? 00, vertical: vertical ?? 00),
         decoration: BoxDecoration(
             color: boxcolor ?? lightGreenHeigh,
             borderRadius: BorderRadius.circular(8)),
