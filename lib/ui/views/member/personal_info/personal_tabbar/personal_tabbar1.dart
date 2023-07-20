@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
+import '../../../../common/app_colors.dart';
 import '../../../../common/ui_helpers.dart';
 import '../../../../widgets/common/custom_text_field/custom_text_field.dart';
 import '../../../../widgets/common/dropdown_textfield/dropdown_textfield.dart';
@@ -43,11 +44,29 @@ class PersonalTabBar1 extends ViewModelWidget<PersonalInfoViewModel> {
                   height: 40,
                   text: 'm',
                   width: width * 0.43,
+                  boxcolor: viewModel.loanTenors == 'm'
+                      ? darkGreenHeigh
+                      : Colors.white,
+                  color: viewModel.loanTenors != "m"
+                      ? darkGreenHeigh
+                      : Colors.white,
+                  onPress: () {
+                    viewModel.setLoanTenors('m');
+                  },
                 ),
                 ReturnButton(
                   height: 40,
                   text: 'f',
                   width: width * 0.43,
+                  boxcolor: viewModel.loanTenors == "f"
+                      ? darkGreenHeigh
+                      : Colors.white,
+                  color: viewModel.loanTenors != "f"
+                      ? darkGreenHeigh
+                      : Colors.white,
+                  onPress: () {
+                    viewModel.setLoanTenors('f');
+                  },
                 ),
               ],
             ),

@@ -168,7 +168,7 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
 
   _buildDecoration() {
     return InputDecoration(
-      hintText: hintText ?? "",
+      hintText: hintText?.tr() ?? "",
       hintStyle: hintStyle ?? _setFontStyle(),
       border: border ?? _setBorderStyle(),
       enabledBorder: enabledBorder ?? _setBorderStyle(),

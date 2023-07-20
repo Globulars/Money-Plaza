@@ -35,6 +35,7 @@ class LoginWithEmail extends StackedView<MemberLoginViewModel> {
           width: MediaQuery.of(context).size.width * 0.3,
           text: "Login",
           fontSize: 16,
+          onPress: viewModel.navigateToMemberSetting,
         ),
         verticalSpaceMedium,
         Row(

@@ -12,6 +12,7 @@ import '../../../common/ui_helpers.dart';
 import '../../../widgets/app_bar.dart';
 import '../../../widgets/bottom_bar.dart';
 import '../../../widgets/common/icon_box_btn/return_button.dart';
+import '../../../widgets/common/icon_box_btn/submit_button.dart';
 import 'personal_info_viewmodel.dart';
 
 class PersonalInfoView extends StackedView<PersonalInfoViewModel> {
@@ -94,8 +95,6 @@ class PersonalInfoView extends StackedView<PersonalInfoViewModel> {
                       PersonalTabBar2(),
                       PersonalTabBar3(),
                       PersonalTabBar4(),
-                      // TabBarView2(),
-                      // TabBarView3()
                     ],
                   ),
                 ),
@@ -112,25 +111,12 @@ class PersonalInfoView extends StackedView<PersonalInfoViewModel> {
                     width: 80,
                   ),
                   horizontalSpaceTiny,
-                  ReturnButton(
-                    imageRight: myIcons.next,
+                  SubmitButton(
+                    image: myIcons.done,
                     imgwidth: 16,
-                    // index==
-                    text: 'next',
+                    text: 'Save',
                     height: 40,
                     width: 80,
-                    onPress: () {
-                      var index = DefaultTabController.of(context).index;
-                      var length = DefaultTabController.of(context).length;
-//                       if(index==1){
-//  imagel: myIcons.next;
-//                       }else{}
-                      if (index < length - 1) {
-                        DefaultTabController.of(context).animateTo(index + 1);
-                      } else {
-                        // viewModel.navigateToApplyconfirm();
-                      }
-                    },
                   ),
                 ],
               ),

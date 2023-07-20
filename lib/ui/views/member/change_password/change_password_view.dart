@@ -88,7 +88,6 @@ class ChangePasswordView extends StackedView<ChangePasswordViewModel> {
               SubmitButton(
                 image: myIcons.save,
                 imgwidth: 12,
-                // onPress: viewModel.navigateToCreditCardResult,
                 text: 'save',
                 height: 40,
                 width: 80,

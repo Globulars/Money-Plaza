@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:money_plaza/ui/dialogs/reset_password/reset_password_dialog_model.dart';
-import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
 import 'package:stacked/stacked.dart';
 
 import '../../common/app_colors.dart';
@@ -34,11 +33,11 @@ class ResetWithEmail extends StackedView<ResetPasswordDialogModel> {
             SubmitButton(
               text: "Send",
               height: 40,
-              width: width * 0.2,
+              width: width * 0.17,
               fontSize: 16,
             ),
             CustomTextField(
-              width: width * 0.53,
+              width: width * 0.5,
               hintText: "Verification Code",
               hintStyle: const TextStyle(fontSize: 16),
               textAlign: TextAlign.center,
@@ -57,26 +56,20 @@ class ResetWithEmail extends StackedView<ResetPasswordDialogModel> {
         ),
         verticalSpaceSmall,
         Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Row(
-              children: [
-                Image.asset(
-                  myIcons.iconPowerReset,
-                  height: 25,
-                  width: 25,
-                ),
-                horizontalSpaceTiny,
-                CustomText(
-                  text: "Reset All",
-                  color: darkGreenLight,
-                  fontSize: 20,
-                )
-              ],
+            SubmitButton(
+              color: darkGreenHeigh,
+              image: myIcons.iconPowerReset,
+             imgwidth: 16,
+              text: "Reset All",
+              boxColor: Colors.transparent,
             ),
+          
             SubmitButton(
               height: 40,
-              width: MediaQuery.of(context).size.width * 0.3,
+              width: 80,
               text: "Submit",
               fontSize: 16,
             ),
