@@ -64,6 +64,7 @@ class PromiseLand extends ViewModelWidget<LoancompareViewModel> {
                     width: 80,
                     text: 'Apply',
                     imgwidth: 12,
+                    onPress: viewModel.navigateToApplyconfirm,
                   )
                 ],
               ),
