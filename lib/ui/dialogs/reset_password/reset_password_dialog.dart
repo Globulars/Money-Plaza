@@ -23,27 +23,33 @@ class ResetPasswordDialog extends StackedView<ResetPasswordDialogModel> {
     Widget? child,
   ) {
     final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
+
     return Dialog(
-      insetPadding: const EdgeInsets.symmetric(horizontal: 40, vertical: 100),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-      backgroundColor: Colors.white,
-      child: Column(
-        children: [
-          SubBar(
-            height: 50,
-            color: Colors.white,
-            width: width * 1,
-            image: myIcons.filter,
-            text: 'Reset Password',
-            fontSize: 16,
-            fontWeight: FontWeight.w500,
-            btmLeftRadius: 0,
-            btmRightRadius: 0,
-            topimage: myIcons.cancel,
-            close: true,
-          ),
-          const ResetPassTab(),
-        ],
+      elevation: 0,
+      clipBehavior: Clip.hardEdge,
+      backgroundColor: Colors.transparent,
+      child: Container(
+        height: height*0.47,
+        child: Column(
+          children: [
+            SubBar(
+              height: 50,
+              color: Colors.white,
+              width: width * 1,
+              image: myIcons.filter,
+              text: 'Reset Password',
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+              btmLeftRadius: 0,
+              btmRightRadius: 0,
+              topimage: myIcons.cancel,
+              close: true,
+            ),
+            const ResetPassTab(),
+          ],
+        ),
       ),
     );
   }
