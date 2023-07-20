@@ -47,7 +47,7 @@ class MorgagesView extends StackedView<MorgagesViewModel> {
               ReturnButton(
                 imageLeft: myIcons.returnIcon1,
                 imgwidth: 12,
-                text: 'Return',
+                text: 'return',
                 height: 40,
                 width: 80,
               ),
@@ -56,7 +56,7 @@ class MorgagesView extends StackedView<MorgagesViewModel> {
                 image: myIcons.search,
                 imgwidth: 12,
                 onPress: viewModel.navigateToMorgagesResult,
-                text: 'Search',
+                text: 'search',
                 height: 40,
                 width: 80,
               ),

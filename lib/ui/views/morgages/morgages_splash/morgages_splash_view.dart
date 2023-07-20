@@ -32,7 +32,7 @@ class MorgagesSplashView extends StackedView<MorgagesSplashViewModel> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CustomText(
-                text: 'For follow up and offer matching purposes,',
+                text: 'followUpandOffer',
                 color: darkGreenHeigh,
                 fontSize: 22,
                 fontWeight: FontWeight.w700,
@@ -40,7 +40,7 @@ class MorgagesSplashView extends StackedView<MorgagesSplashViewModel> {
               ),
               verticalSpaceMedium,
               CustomText(
-                text: 'Please leave your information,thank you!,',
+                text: 'leaveyourInformation',
                 color: darkGreenHeigh,
                 fontSize: 22,
                 fontWeight: FontWeight.w700,
