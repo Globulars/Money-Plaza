@@ -78,11 +78,29 @@ class CalculatorDialog extends StackedView<CalculatorDialogModel> {
                           height: 40,
                           text: 'Fixed Rate Term Loans',
                           width: width * 0.42,
+                          boxcolor: viewModel.repayment == 0
+                              ? darkGreenHeigh
+                              : Colors.white,
+                          color: viewModel.repayment != 0
+                              ? darkGreenHeigh
+                              : Colors.white,
+                          onPress: () {
+                            viewModel.setRepayment(0);
+                          },
                         ),
-                        SubmitButton(
+                        ReturnButton(
                           height: 40,
                           text: 'Resolving Loans',
                           width: width * 0.32,
+                          boxcolor: viewModel.repayment == 1
+                              ? darkGreenHeigh
+                              : Colors.white,
+                          color: viewModel.repayment != 1
+                              ? darkGreenHeigh
+                              : Colors.white,
+                          onPress: () {
+                            viewModel.setRepayment(1);
+                          },
                         )
                       ],
                     ),
@@ -91,6 +109,15 @@ class CalculatorDialog extends StackedView<CalculatorDialogModel> {
                       height: 40,
                       text: 'Prepaaid Interest(Commerical Loans)',
                       width: width * 1,
+                      boxcolor: viewModel.repayment == 2
+                          ? darkGreenHeigh
+                          : Colors.white,
+                      color: viewModel.repayment != 2
+                          ? darkGreenHeigh
+                          : Colors.white,
+                      onPress: () {
+                        viewModel.setRepayment(2);
+                      },
                     ),
                     verticalSpaceTiny,
                     CustomText(
@@ -105,11 +132,29 @@ class CalculatorDialog extends StackedView<CalculatorDialogModel> {
                           height: 40,
                           text: 'Tenor',
                           width: width * 0.36,
+                          boxcolor: viewModel.calculation == 0
+                              ? darkGreenHeigh
+                              : Colors.white,
+                          color: viewModel.calculation != 0
+                              ? darkGreenHeigh
+                              : Colors.white,
+                          onPress: () {
+                            viewModel.setCalculation(0);
+                          },
                         ),
-                        SubmitButton(
+                        ReturnButton(
                           height: 40,
                           text: 'APR',
                           width: width * 0.36,
+                          boxcolor: viewModel.calculation == 1
+                              ? darkGreenHeigh
+                              : Colors.white,
+                          color: viewModel.calculation != 1
+                              ? darkGreenHeigh
+                              : Colors.white,
+                          onPress: () {
+                            viewModel.setCalculation(1);
+                          },
                         )
                       ],
                     ),
@@ -118,6 +163,15 @@ class CalculatorDialog extends StackedView<CalculatorDialogModel> {
                       height: 40,
                       text: 'Monthly Repayment Amount',
                       width: width * 1,
+                      boxcolor: viewModel.calculation == 2
+                          ? darkGreenHeigh
+                          : Colors.white,
+                      color: viewModel.calculation != 2
+                          ? darkGreenHeigh
+                          : Colors.white,
+                      onPress: () {
+                        viewModel.setCalculation(2);
+                      },
                     ),
                     verticalSpaceTiny,
                     verticalSpaceTiny,
@@ -152,9 +206,10 @@ class CalculatorDialog extends StackedView<CalculatorDialogModel> {
                           color: darkGreenLight,
                         ),
                         SubmitButton(
-                          text: 'Apply',
+                          text: 'Calculate Now',
                           height: 40,
-                          width: 80,
+                          width: 120,
+                          onPress: viewModel.navigateToCalculatorResult,
                         ),
                       ],
                     )
