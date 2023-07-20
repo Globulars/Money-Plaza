@@ -24,7 +24,7 @@ class TransferTabBar1 extends ViewModelWidget<BlnstransferViewModel> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomTextField(
-            hintText: 'hk\$',
+            hintText: 'hk',
             titleText: 'borrowingAmount',
           ),
           verticalSpaceSmall,

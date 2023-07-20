@@ -24,7 +24,7 @@ class CommTabBar1 extends ViewModelWidget<CommericalLoanViewModel> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomTextField(
-              hintText: 'hk\$',
+              hintText: 'hk',
               titleText: 'borrowingAmount',
             ),
             verticalSpaceSmall,

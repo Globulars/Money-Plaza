@@ -20,7 +20,7 @@ class TransferTabBar2 extends ViewModelWidget<BlnstransferViewModel> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomTextField(
-            hintText: 'hk\$',
+            hintText: 'hk',
             titleText: 'monthlyIncome',
           ),
           verticalSpaceSmall,

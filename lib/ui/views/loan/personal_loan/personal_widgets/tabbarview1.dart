@@ -24,7 +24,7 @@ class TabBarView1 extends ViewModelWidget<PersonalloanViewModel> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomTextField(
-              hintText: 'HK\$',
+              hintText: 'hk',
               titleText: 'Borrowing Amount',
             ),
             verticalSpaceSmall,

@@ -65,7 +65,7 @@ class CreditCardFilterDialog extends StackedView<CreditCardFilterDialogModel> {
                   verticalSpaceSmall,
                   CustomTextField(
                     titleText: 'Mortgage Load Amount',
-                    hintText: 'HK\$',
+                    hintText: 'hk',
                   ),
                   verticalSpaceSmall,
                   CustomTextField(

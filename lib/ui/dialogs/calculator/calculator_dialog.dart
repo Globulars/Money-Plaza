@@ -62,7 +62,7 @@ class CalculatorDialog extends StackedView<CalculatorDialogModel> {
                       fontWeight: FontWeight.w600,
                     ),
                     CustomTextField(
-                      hintText: 'HK\$',
+                      hintText: 'hk',
                       height: 40,
                     ),
                     verticalSpaceTiny,
@@ -180,7 +180,7 @@ class CalculatorDialog extends StackedView<CalculatorDialogModel> {
                       fontWeight: FontWeight.w600,
                     ),
                     CustomTextField(
-                      hintText: 'HK\$',
+                      hintText: 'hk',
                       height: 40,
                     ),
                     verticalSpaceTiny,

@@ -20,7 +20,7 @@ class OwnerTabBar2 extends ViewModelWidget<OwnerloanViewModel> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomTextField(
-            hintText: 'hk\$',
+            hintText: 'hk',
             titleText: 'monthlyIncome',
           ),
           verticalSpaceSmall,

@@ -77,7 +77,7 @@ class CreditCardView extends StackedView<CreditCardViewModel> {
                         ),
                         verticalSpaceSmall,
                         CustomTextField(
-                          hintText: 'hk\$',
+                          hintText: 'hk',
                           titleText: 'annualIncome',
                         ),
                       ],

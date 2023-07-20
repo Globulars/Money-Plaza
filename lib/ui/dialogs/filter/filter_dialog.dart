@@ -64,7 +64,7 @@ class FilterDialog extends StackedView<FilterDialogModel> {
                     fontWeight: FontWeight.w600,
                   ),
                   CustomTextField(
-                    hintText: 'HK\$',
+                    hintText: 'hk',
                     height: 40,
                   ),
                   verticalSpaceTiny,

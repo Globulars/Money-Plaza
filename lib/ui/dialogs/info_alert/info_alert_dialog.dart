@@ -59,7 +59,7 @@ class InfoAlertDialog extends StackedView<InfoAlertDialogModel> {
                       fontWeight: FontWeight.w600,
                     ),
                     CustomTextField(
-                      hintText: 'HK\$',
+                      hintText: 'hk',
                       height: 40,
                     ),
                     verticalSpaceTiny,
@@ -123,7 +123,7 @@ class InfoAlertDialog extends StackedView<InfoAlertDialogModel> {
                       fontWeight: FontWeight.w600,
                     ),
                     CustomTextField(
-                      hintText: 'HK\$',
+                      hintText: 'hk',
                       height: 40,
                     ),
                     verticalSpaceTiny,

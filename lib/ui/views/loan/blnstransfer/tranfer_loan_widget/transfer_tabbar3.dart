@@ -63,7 +63,7 @@ class TransferTabBar3 extends ViewModelWidget<BlnstransferViewModel> {
           ),
           verticalSpaceSmall,
           CustomTextField(
-            hintText: 'HK\$',
+            hintText: 'hk',
             titleText: 'totalOutstandingLoan',
           ),
           verticalSpaceSmall,

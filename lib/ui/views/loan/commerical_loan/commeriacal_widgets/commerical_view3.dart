@@ -62,7 +62,7 @@ class CommTabBar3 extends ViewModelWidget<CommericalLoanViewModel> {
           ),
           verticalSpaceSmall,
           CustomTextField(
-            hintText: 'hk\$',
+            hintText: 'hk',
             titleText: 'totalOutstandingLoan',
           ),
           verticalSpaceSmall,

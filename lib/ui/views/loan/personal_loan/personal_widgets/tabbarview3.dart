@@ -64,7 +64,7 @@ class TabBarView3 extends ViewModelWidget<PersonalloanViewModel> {
           ),
           verticalSpaceSmall,
           CustomTextField(
-            hintText: 'HK\$',
+            hintText: 'hk',
             titleText: 'Total Outstanding Loan Amount',
           ),
           verticalSpaceSmall,

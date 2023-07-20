@@ -62,7 +62,7 @@ class OwnerTabBar3 extends ViewModelWidget<OwnerloanViewModel> {
           ),
           verticalSpaceSmall,
           CustomTextField(
-            hintText: 'hk\$',
+            hintText: 'hk',
             titleText: 'totalOutstandingLoan',
           ),
           verticalSpaceSmall,
@@ -73,7 +73,7 @@ class OwnerTabBar3 extends ViewModelWidget<OwnerloanViewModel> {
           ),
           verticalSpaceSmall,
           CustomTextField(
-            hintText: 'hk\$',
+            hintText: 'hk',
             titleText: 'propertyValuation',
           ),
           verticalSpaceSmall,
