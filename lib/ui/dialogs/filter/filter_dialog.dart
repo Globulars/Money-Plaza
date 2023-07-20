@@ -80,11 +80,25 @@ class FilterDialog extends StackedView<FilterDialogModel> {
                         height: 40,
                         text: 'Term Loan',
                         width: width * 0.36,
+                        boxcolor:
+                      viewModel.repaymentType == 0 ? darkGreenHeigh : Colors.white,
+                  color:
+                      viewModel.repaymentType != 0 ? darkGreenHeigh : Colors.white,
+                  onPress: () {
+                    viewModel.setRepaymentType(0);
+                  },
                       ),
-                      SubmitButton(
+                      ReturnButton(
                         height: 40,
                         text: 'min-pay',
                         width: width * 0.36,
+                         boxcolor:
+                      viewModel.repaymentType == 1 ? darkGreenHeigh : Colors.white,
+                  color:
+                      viewModel.repaymentType != 1 ? darkGreenHeigh : Colors.white,
+                  onPress: () {
+                    viewModel.setRepaymentType(1);
+                  }
                       )
                     ],
                   ),
@@ -96,11 +110,25 @@ class FilterDialog extends StackedView<FilterDialogModel> {
                         height: 40,
                         text: 'Interest only',
                         width: width * 0.36,
+                         boxcolor:
+                      viewModel.repaymentType == 2 ? darkGreenHeigh : Colors.white,
+                  color:
+                      viewModel.repaymentType != 2 ? darkGreenHeigh : Colors.white,
+                  onPress: () {
+                    viewModel.setRepaymentType(2);
+                  }
                       ),
                       ReturnButton(
                         height: 40,
                         text: 'Prepaid interest',
                         width: width * 0.36,
+                         boxcolor:
+                      viewModel.repaymentType == 3 ? darkGreenHeigh : Colors.white,
+                  color:
+                      viewModel.repaymentType != 3 ? darkGreenHeigh : Colors.white,
+                  onPress: () {
+                    viewModel.setRepaymentType(3);
+                  },
                       )
                     ],
                   ),
@@ -117,16 +145,37 @@ class FilterDialog extends StackedView<FilterDialogModel> {
                         height: 40,
                         text: '6',
                         width: width * 0.23,
+                         boxcolor:
+                      viewModel.repaymentPeriod == 6 ? darkGreenHeigh : Colors.white,
+                  color:
+                      viewModel.repaymentPeriod != 6 ? darkGreenHeigh : Colors.white,
+                  onPress: () {
+                    viewModel.setRepaymentPeriod(6);
+                  },
                       ),
                       ReturnButton(
                         height: 40,
                         text: '12',
                         width: width * 0.23,
+                          boxcolor:
+                      viewModel.repaymentPeriod == 12 ? darkGreenHeigh : Colors.white,
+                  color:
+                      viewModel.repaymentPeriod != 12 ? darkGreenHeigh : Colors.white,
+                  onPress: () {
+                    viewModel.setRepaymentPeriod(12);
+                  },
                       ),
-                      SubmitButton(
+                      ReturnButton(
                         height: 40,
                         text: '24',
                         width: width * 0.23,
+                          boxcolor:
+                      viewModel.repaymentPeriod == 24 ? darkGreenHeigh : Colors.white,
+                  color:
+                      viewModel.repaymentPeriod != 24 ? darkGreenHeigh : Colors.white,
+                  onPress: () {
+                    viewModel.setRepaymentPeriod(24);
+                  },
                       )
                     ],
                   ),
@@ -138,16 +187,37 @@ class FilterDialog extends StackedView<FilterDialogModel> {
                         height: 40,
                         text: '36',
                         width: width * 0.23,
+                          boxcolor:
+                      viewModel.repaymentPeriod == 36 ? darkGreenHeigh : Colors.white,
+                  color:
+                      viewModel.repaymentPeriod != 36 ? darkGreenHeigh : Colors.white,
+                  onPress: () {
+                    viewModel.setRepaymentPeriod(36);
+                  },
                       ),
                       ReturnButton(
                         height: 40,
                         text: '48',
                         width: width * 0.23,
+                          boxcolor:
+                      viewModel.repaymentPeriod == 48 ? darkGreenHeigh : Colors.white,
+                  color:
+                      viewModel.repaymentPeriod != 48 ? darkGreenHeigh : Colors.white,
+                  onPress: () {
+                    viewModel.setRepaymentPeriod(48);
+                  },
                       ),
                       ReturnButton(
                         height: 40,
                         text: '60',
                         width: width * 0.23,
+                          boxcolor:
+                      viewModel.repaymentPeriod == 60 ? darkGreenHeigh : Colors.white,
+                  color:
+                      viewModel.repaymentPeriod != 60 ? darkGreenHeigh : Colors.white,
+                  onPress: () {
+                    viewModel.setRepaymentPeriod(60);
+                  },
                       )
                     ],
                   ),

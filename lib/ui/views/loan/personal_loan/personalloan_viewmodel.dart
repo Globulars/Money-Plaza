@@ -9,6 +9,7 @@ class PersonalloanViewModel extends BaseViewModel {
 
   var initialIndex = 0;
   var loanTenors = 6;
+  
   setInitialIndex() {
     initialIndex++;
     notifyListeners();
