@@ -22,53 +22,36 @@ class ResetPassTab extends StackedView<ResetPasswordDialogModel> {
       child: Padding(
         padding: const EdgeInsets.all(10.0),
         child: SizedBox(
-          height: height - 300,
+          height: height * 0.38,
           width: width,
           child: Scaffold(
-            backgroundColor: Colors.transparent,
-            body: NestedScrollView(
-              headerSliverBuilder:
-                  (BuildContext context, bool innerBoxIsScrolled) {
-                return <Widget>[
-                  SliverAppBar(
-                    toolbarHeight: 0,
-                    backgroundColor: Colors.transparent,
-                    pinned: false,
-                    floating: true,
-                    shape: const RoundedRectangleBorder(
-                      side: BorderSide(width: 1),
-                    ),
-                    bottom: TabBar(
-                      unselectedLabelColor: kcPureBlack,
-                      labelColor: kcPureWhite,
-                      labelStyle: GoogleFonts.ibmPlexSans(fontSize: 10),
-                      indicator: const BoxDecoration(
-                          // Creates border
-                          color: darkGreenHeigh),
-                      tabs: [
-                        Tab(
-                          child: Text(
-                            "Rest by Email",
-                            style: GoogleFonts.ibmPlexSans(fontSize: 14),
-                          ),
-                        ),
-                        Tab(
-                          child: Text(
-                            "Rest by Mobile",
-                            style: GoogleFonts.ibmPlexSans(fontSize: 14),
-                          ),
-                        ),
-                      ],
-                    ),
+            appBar: TabBar(
+              unselectedLabelColor: kcPureBlack,
+              labelColor: kcPureWhite,
+              labelStyle: GoogleFonts.ibmPlexSans(fontSize: 10),
+              indicator: const BoxDecoration(
+                  // Creates border
+                  color: darkGreenHeigh),
+              tabs: [
+                Tab(
+                  child: Text(
+                    "Reset by Email",
+                    style: GoogleFonts.ibmPlexSans(fontSize: 14),
                   ),
-                ];
-              },
-              body: const TabBarView(
-                children: <Widget>[
-                  ResetWithEmail(),
-                  Text("Register With Mobile Container"),
-                ],
-              ),
+                ),
+                Tab(
+                  child: Text(
+                    "Reset by Mobile",
+                    style: GoogleFonts.ibmPlexSans(fontSize: 14),
+                  ),
+                ),
+              ],
+            ),
+            body: const TabBarView(
+              children: <Widget>[
+                ResetWithEmail(),
+                Text("Register With Mobile Container"),
+              ],
             ),
           ),
         ),
