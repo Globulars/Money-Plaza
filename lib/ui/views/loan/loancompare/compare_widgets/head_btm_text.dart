@@ -85,7 +85,7 @@ class HeadBtmText extends ViewModelWidget<LoancompareViewModel> {
                     topLeft: Radius.circular(4), topRight: Radius.circular(4))),
             child: Center(
                 child: CustomText(
-              text: 'Repayment Type',
+              text: 'repaymentType',
             )),
           ),
           Container(
@@ -112,7 +112,7 @@ class HeadBtmText extends ViewModelWidget<LoancompareViewModel> {
                     topLeft: Radius.circular(4), topRight: Radius.circular(4))),
             child: Center(
                 child: CustomText(
-              text: 'Money Repayment Details',
+              text: 'moneyRepaymentDetails',
             )),
           ),
           Container(
@@ -150,7 +150,7 @@ class HeadBtmText extends ViewModelWidget<LoancompareViewModel> {
                     topLeft: Radius.circular(4), topRight: Radius.circular(4))),
             child: Center(
                 child: CustomText(
-              text: 'Total Payment Amount',
+              text: 'moneyRepaymentDetails',
             )),
           ),
           Container(
@@ -177,7 +177,7 @@ class HeadBtmText extends ViewModelWidget<LoancompareViewModel> {
                     topLeft: Radius.circular(4), topRight: Radius.circular(4))),
             child: Center(
                 child: CustomText(
-              text: 'Total Interest',
+              text: 'totalInterest',
             )),
           ),
           Container(
@@ -204,7 +204,7 @@ class HeadBtmText extends ViewModelWidget<LoancompareViewModel> {
                     topLeft: Radius.circular(4), topRight: Radius.circular(4))),
             child: Center(
                 child: CustomText(
-              text: 'Early Payback Penalty',
+              text: 'earlyPaybackPenalty1',
             )),
           ),
           Container(
@@ -215,8 +215,8 @@ class HeadBtmText extends ViewModelWidget<LoancompareViewModel> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CustomText(text: 'No'),
-                  CustomText(text: 'No'),
+                  CustomText(text: 'no'),
+                  CustomText(text: 'no'),
                 ],
               ),
             ),

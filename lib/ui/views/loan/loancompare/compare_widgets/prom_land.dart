@@ -30,7 +30,7 @@ class PromiseLand extends ViewModelWidget<LoancompareViewModel> {
                   ),
                   verticalSpaceTiny,
                   CustomText(
-                    text: 'Promise',
+                    text: 'promise',
                     fontWeight: FontWeight.w500,
                     fontSize: 20,
                   ),
@@ -39,7 +39,7 @@ class PromiseLand extends ViewModelWidget<LoancompareViewModel> {
                     image: myIcons.apply,
                     height: 40,
                     width: 80,
-                    text: 'Apply',
+                    text: 'apply',
                     imgwidth: 12,
                   )
                 ],
@@ -53,7 +53,7 @@ class PromiseLand extends ViewModelWidget<LoancompareViewModel> {
                   ),
                   verticalSpaceTiny,
                   CustomText(
-                    text: 'WeLand',
+                    text: 'weLand',
                     fontWeight: FontWeight.w500,
                     fontSize: 20,
                   ),
@@ -62,7 +62,7 @@ class PromiseLand extends ViewModelWidget<LoancompareViewModel> {
                     image: myIcons.apply,
                     height: 40,
                     width: 80,
-                    text: 'Apply',
+                    text: 'apply',
                     imgwidth: 12,
                     onPress: viewModel.navigateToApplyconfirm,
                   )

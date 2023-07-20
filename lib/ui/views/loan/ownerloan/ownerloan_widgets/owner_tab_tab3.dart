@@ -1,13 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
-
 import '../../../../common/app_colors.dart';
 import '../../../../common/ui_helpers.dart';
 import '../../../../widgets/common/custom_text_field/custom_text_field.dart';
 import '../../../../widgets/common/dropdown_textfield/dropdown_textfield.dart';
 import '../../../../widgets/common/icon_box_btn/return_button.dart';
-import '../../../../widgets/common/icon_box_btn/submit_button.dart';
 import '../../../../widgets/common/icon_box_btn/text.dart';
 import '../ownerloan_viewmodel.dart';
 
@@ -26,7 +23,7 @@ class OwnerTabBar3 extends ViewModelWidget<OwnerloanViewModel> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomText(
-            text: 'Outstanding Loan',
+            text: 'outstandingLoan2',
             fontWeight: FontWeight.w600,
           ),
           verticalSpaceTiny,
@@ -35,7 +32,7 @@ class OwnerTabBar3 extends ViewModelWidget<OwnerloanViewModel> {
             children: [
               ReturnButton(
                 height: 40,
-                text: 'Yes',
+                text: 'yes',
                 width: width * 0.43,
                 boxcolor:
                     viewModel.outStanding == 1 ? darkGreenHeigh : Colors.white,
@@ -47,7 +44,7 @@ class OwnerTabBar3 extends ViewModelWidget<OwnerloanViewModel> {
               ),
               ReturnButton(
                 height: 40,
-                text: 'No',
+                text: 'no',
                 width: width * 0.43,
                 boxcolor:
                     viewModel.outStanding == 2 ? darkGreenHeigh : Colors.white,
@@ -61,27 +58,27 @@ class OwnerTabBar3 extends ViewModelWidget<OwnerloanViewModel> {
           ),
           verticalSpaceSmall,
           CustomTextField(
-            titleText: 'Number of Loans',
+            titleText: 'numberOfLoans',
           ),
           verticalSpaceSmall,
           CustomTextField(
-            hintText: 'HK\$',
-            titleText: 'Total Outstanding Loan Amount',
+            hintText: 'hk\$',
+            titleText: 'totalOutstandingLoan',
           ),
           verticalSpaceSmall,
           DropdownTextfield(
             onChanged: (String) {},
             options: [],
-            titleText: 'Monthly Repayment',
+            titleText: 'monthlyRepayment',
           ),
           verticalSpaceSmall,
           CustomTextField(
-            hintText: 'HK\$',
-            titleText: 'Property Valuation',
+            hintText: 'hk\$',
+            titleText: 'propertyValuation',
           ),
           verticalSpaceSmall,
           CustomTextField(
-            titleText: 'Current Mortgage Ratio',
+            titleText: '',
           ),
         ],
       ),

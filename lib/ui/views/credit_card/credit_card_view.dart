@@ -60,7 +60,7 @@ class CreditCardView extends StackedView<CreditCardViewModel> {
                           fontWeight: FontWeight.w600,
                         ),
                         CustomText(
-                          text: 'nandatoryField',
+                          text: 'mandatoryField',
                           fontSize: 10,
                         ),
                         verticalSpaceSmall,
