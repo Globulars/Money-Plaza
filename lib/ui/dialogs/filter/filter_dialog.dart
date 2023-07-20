@@ -45,7 +45,7 @@ class FilterDialog extends StackedView<FilterDialogModel> {
               color: Colors.white,
               width: width * 1,
               image: myIcons.filter,
-              text: 'Filter',
+              text: 'filter',
               fontSize: 16,
               fontWeight: FontWeight.w500,
               btmLeftRadius: 0,
@@ -60,7 +60,7 @@ class FilterDialog extends StackedView<FilterDialogModel> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   CustomText(
-                    text: 'Borrowing Amount',
+                    text: 'borrowingAmount',
                     fontWeight: FontWeight.w600,
                   ),
                   CustomTextField(
@@ -69,7 +69,7 @@ class FilterDialog extends StackedView<FilterDialogModel> {
                   ),
                   verticalSpaceTiny,
                   CustomText(
-                    text: 'Repayment Type',
+                    text: 'repaymentType',
                     fontWeight: FontWeight.w600,
                   ),
                   verticalSpaceTiny,
@@ -78,7 +78,7 @@ class FilterDialog extends StackedView<FilterDialogModel> {
                     children: [
                       ReturnButton(
                         height: 40,
-                        text: 'Term Loan',
+                        text: 'termLoan',
                         width: width * 0.36,
                         boxcolor: viewModel.repaymentType == 0
                             ? darkGreenHeigh
@@ -111,7 +111,7 @@ class FilterDialog extends StackedView<FilterDialogModel> {
                     children: [
                       ReturnButton(
                           height: 40,
-                          text: 'Interest only',
+                          text: 'interestOnly',
                           width: width * 0.36,
                           boxcolor: viewModel.repaymentType == 2
                               ? darkGreenHeigh
@@ -124,7 +124,7 @@ class FilterDialog extends StackedView<FilterDialogModel> {
                           }),
                       ReturnButton(
                         height: 40,
-                        text: 'Prepaid interest',
+                        text: 'prepaidInterest',
                         width: width * 0.36,
                         boxcolor: viewModel.repaymentType == 3
                             ? darkGreenHeigh
@@ -140,7 +140,7 @@ class FilterDialog extends StackedView<FilterDialogModel> {
                   ),
                   verticalSpaceTiny,
                   CustomText(
-                    text: 'Repayment Period(Monthly)',
+                    text: 'repaymentPeriod(Monthly)',
                     fontWeight: FontWeight.w600,
                   ),
                   verticalSpaceTiny,
@@ -249,11 +249,11 @@ class FilterDialog extends StackedView<FilterDialogModel> {
                         boxColor: Colors.transparent,
                         image: myIcons.iconPowerReset,
                         imgwidth: 15,
-                        text: 'Reset all',
+                        text: 'resetAll',
                         color: darkGreenLight,
                       ),
                       SubmitButton(
-                        text: 'Apply',
+                        text: 'apply',
                         height: 40,
                         width: 80,
                       ),

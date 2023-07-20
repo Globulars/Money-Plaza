@@ -117,15 +117,13 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                     ),
                     verticalSpaceTiny,
                     CustomText(
-                      text:
-                          'moneyPlazaExclusiveOffer',
+                      text: 'moneyPlazaExclusiveOffer',
                       fontSize: 12,
                       color: Colors.black54,
                     ),
                     verticalSpaceSmall,
                     CustomText(
-                      text:
-                          'noteMoney',
+                      text: 'noteMoney',
                       fontSize: 12,
                     ),
                   ],

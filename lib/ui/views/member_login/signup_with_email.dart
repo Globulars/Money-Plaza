@@ -92,8 +92,7 @@ class SignUpWithEmail extends StackedView<MemberLoginViewModel> {
             SizedBox(
               width: width * 0.75,
               child: CustomText(
-                text:
-                    "subscribeGetLatest",
+                text: "subscribeGetLatest",
                 color: kcDarkGreyColor,
                 fontSize: 16,
               ),
