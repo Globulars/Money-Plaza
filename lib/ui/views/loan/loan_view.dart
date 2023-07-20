@@ -4,6 +4,7 @@ import 'package:stacked/stacked.dart';
 import '../../common/app_icons.dart';
 import '../../widgets/app_bar.dart';
 import '../../widgets/bottom_bar.dart';
+import '../../widgets/common/background_image.dart';
 import '../../widgets/common/icon_box_btn/return_button.dart';
 import '../../widgets/common/result_card.dart';
 import '../../widgets/loan_containers.dart';
@@ -22,14 +23,7 @@ class LoanView extends StackedView<LoanViewModel> {
     final width = MediaQuery.of(context).size.width;
     return Stack(
       children: [
-        Container(
-          width: width * 1,
-          height: MediaQuery.of(context).size.height * 1,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage(myIcons.backgroundimage), fit: BoxFit.fill),
-          ),
-        ),
+       const BackgroundImage(),
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: appBar(),
