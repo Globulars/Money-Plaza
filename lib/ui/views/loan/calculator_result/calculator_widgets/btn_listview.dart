@@ -17,76 +17,67 @@ class BtnListView extends ViewModelWidget<CalculatorResultViewModel> {
   ) {
     final width = MediaQuery.of(context).size.width;
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
+      // crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Column(
-          // crossAxisAlignment: CrossAxisAlignment.center,
+        const TopBar2View(),
+        verticalSpaceSmall,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            const TopBar2View(),
-            const Divider(
-              color: darkGreenHeigh,
-              height: 5.0,
-              thickness: 8,
+            horizontalSpaceSmall,
+            Image.asset(
+              myIcons.cilSortDecending,
+              width: 25,
             ),
-            // verticalSpaceSmall,
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Image.asset(
-                  myIcons.cilSortDecending,
-                  width: 50,
-                ),
-                horizontalSpaceTiny,
-                SizedBox(
-                  height: 40.0,
-                  width: width * 0.84,
-                  child: ListView.builder(
-                    physics: const ClampingScrollPhysics(),
-                    shrinkWrap: true,
-                    scrollDirection: Axis.horizontal,
-                    itemCount: 15,
-                    itemBuilder: (BuildContext context, int index) => Padding(
-                      padding: const EdgeInsets.only(right: 5),
-                      child: Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
-                              border:
-                                  Border.all(color: darkGreenHeigh, width: 1)),
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 4),
-                            child: Center(
-                                child: CustomText(
-                              text: 'loanAmount',
-                              color: darkGreenHeigh,
-                            )),
-                          )),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            // verticalSpaceTiny,
-            Padding(
-              padding: const EdgeInsets.only(right: 8),
-              child: Align(
-                alignment: Alignment.centerRight,
-                child: CustomText(
-                  text: '88results',
-                  color: Colors.black,
-                  fontSize: 15,
-                  fontWeight: FontWeight.w400,
+            horizontalSpaceTiny,
+            SizedBox(
+              height: 30.0,
+              width: width * 0.84,
+              child: ListView.builder(
+                physics: const ClampingScrollPhysics(),
+                shrinkWrap: true,
+                scrollDirection: Axis.horizontal,
+                itemCount: 15,
+                itemBuilder: (BuildContext context, int index) => Padding(
+                  padding: const EdgeInsets.only(right: 5),
+                  child: Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          border: Border.all(color: darkGreenHeigh, width: 1)),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 4),
+                        child: Center(
+                            child: CustomText(
+                          text: 'loanAmount',
+                          color: darkGreenHeigh,
+                          fontSize: 12,
+                        )),
+                      )),
                 ),
               ),
             ),
-            verticalSpaceTiny,
-            const Divider(
-              color: Colors.black,
-              height: 2.0,
-              thickness: 1,
-            ),
-            verticalSpaceTiny,
           ],
-        )
+        ),
+        verticalSpaceTiny,
+        Padding(
+          padding: const EdgeInsets.only(right: 8),
+          child: Align(
+            alignment: Alignment.centerRight,
+            child: CustomText(
+              text: '88results',
+              color: Colors.black,
+              fontSize: 15,
+              fontWeight: FontWeight.w400,
+            ),
+          ),
+        ),
+        // verticalSpaceTiny,
+        const Divider(
+          color: Colors.black,
+          height: 0,
+          thickness: 1,
+        ),
+        verticalSpaceTiny,
       ],
     );
   }

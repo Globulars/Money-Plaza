@@ -42,7 +42,7 @@ class MorgagesContactInfoView
               SubBar(
                 divider: true,
                 image: myIcons.contactInfo,
-                text: 'Contact Information',
+                text: 'contactInformation',
                 height: 50,
                 scale: 1.4,
               ),
@@ -53,23 +53,22 @@ class MorgagesContactInfoView
                     padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: Column(
                       children: [
-                        CustomText(
-                            text: 'Please enter the following information.'),
+                        CustomText(text: 'enterFollowingInformation.'),
                         verticalSpaceTiny,
                         CustomTextField(
-                          titleText: 'Email',
+                          titleText: 'email',
                         ),
                         verticalSpaceTiny,
                         CustomTextField(
-                          titleText: 'Full Name',
+                          titleText: 'fullName',
                         ),
                         verticalSpaceTiny,
                         CustomTextField(
-                          titleText: 'Reference Number (if any)',
+                          titleText: 'referenceNumber',
                         ),
                         verticalSpaceTiny,
                         DropdownTextfield(
-                          titleText: 'Contact Method',
+                          titleText: 'contactMethod',
                           onChanged: (String) {},
                           options: [],
                         ),
@@ -89,7 +88,7 @@ class MorgagesContactInfoView
               ReturnButton(
                 imageLeft: myIcons.returnIcon1,
                 imgwidth: 12,
-                text: 'Return',
+                text: 'return',
                 height: 40,
                 width: 80,
               ),
@@ -98,7 +97,7 @@ class MorgagesContactInfoView
                 image: myIcons.done,
                 imgwidth: 18,
                 onPress: viewModel.navigateToMorgagesResult,
-                text: 'Done',
+                text: 'done',
                 height: 40,
                 width: 80,
               ),

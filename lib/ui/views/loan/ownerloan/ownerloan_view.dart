@@ -54,18 +54,18 @@ class OwnerloanView extends StackedView<OwnerloanViewModel> {
                         tabs: const [
                           Tab(
                             child: Text(
-                              '1)Early Payback Penalty',
+                              'earlyPaybackPenalty',
                               textAlign: TextAlign.center,
                             ),
                           ),
                           Tab(
                               child: Text(
-                            '2)Source of \nincome',
+                            'sourceOfIncome',
                             textAlign: TextAlign.center,
                           )),
                           Tab(
                               child: Text(
-                            '3)Outstanding \nLoan',
+                            'outstandingLoan',
                             textAlign: TextAlign.center,
                           )),
                         ],
@@ -89,7 +89,7 @@ class OwnerloanView extends StackedView<OwnerloanViewModel> {
                       ? ReturnButton(
                           imageLeft: myIcons.returnIcon1,
                           imgwidth: 12,
-                          text: 'Return',
+                          text: 'return',
                           height: 40,
                           width: 80,
                           onPress: () {

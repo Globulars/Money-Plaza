@@ -109,7 +109,7 @@ class SettingsView extends StackedView<SettingsViewModel> {
                     InkWell(
                       onTap: viewModel.navigateToMemberSetting,
                       child: CustomText(
-                        text: "Member Setting",
+                        text: "memberSetting",
                         fontSize: 18,
                         color: kcDarkGreyColor,
                       ),

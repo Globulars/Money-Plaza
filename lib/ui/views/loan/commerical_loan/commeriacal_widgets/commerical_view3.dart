@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
-
 import '../../../../common/app_colors.dart';
 import '../../../../common/ui_helpers.dart';
 import '../../../../widgets/common/custom_text_field/custom_text_field.dart';
 import '../../../../widgets/common/dropdown_textfield/dropdown_textfield.dart';
 import '../../../../widgets/common/icon_box_btn/return_button.dart';
-import '../../../../widgets/common/icon_box_btn/submit_button.dart';
 import '../../../../widgets/common/icon_box_btn/text.dart';
 import '../commerical_loan_viewmodel.dart';
 
@@ -25,7 +23,7 @@ class CommTabBar3 extends ViewModelWidget<CommericalLoanViewModel> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomText(
-            text: 'Outstanding Loan',
+            text: 'outstandingLoan1',
             fontWeight: FontWeight.w600,
           ),
           verticalSpaceTiny,
@@ -34,31 +32,44 @@ class CommTabBar3 extends ViewModelWidget<CommericalLoanViewModel> {
             children: [
               ReturnButton(
                 height: 40,
-                text: 'Yes',
+                text: 'yes',
                 width: width * 0.43,
+                boxcolor:
+                    viewModel.outStanding == 1 ? darkGreenHeigh : Colors.white,
+                color:
+                    viewModel.outStanding != 1 ? darkGreenHeigh : Colors.white,
+                onPress: () {
+                  viewModel.setOutstandingLoan(1);
+                },
               ),
-              SubmitButton(
+              ReturnButton(
                 height: 40,
-                text: 'No',
+                text: 'no',
                 width: width * 0.43,
-                boxColor: darkGreenLight,
+                boxcolor:
+                    viewModel.outStanding == 2 ? darkGreenHeigh : Colors.white,
+                color:
+                    viewModel.outStanding != 2 ? darkGreenHeigh : Colors.white,
+                onPress: () {
+                  viewModel.setOutstandingLoan(2);
+                },
               ),
             ],
           ),
           verticalSpaceSmall,
           CustomTextField(
-            titleText: 'Number of Loans',
+            titleText: 'numberOfLoans',
           ),
           verticalSpaceSmall,
           CustomTextField(
-            hintText: 'HK\$',
-            titleText: 'Total Outstanding Loan Amount',
+            hintText: 'hk',
+            titleText: 'totalOutstandingLoan',
           ),
           verticalSpaceSmall,
           DropdownTextfield(
             onChanged: (String) {},
             options: [],
-            titleText: 'Monthly Repayment',
+            titleText: 'monthlyRepayment',
           ),
         ],
       ),

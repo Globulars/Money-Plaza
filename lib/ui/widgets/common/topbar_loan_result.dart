@@ -46,7 +46,7 @@ Widget resultLoanTop(context) {
                           padding: const EdgeInsets.symmetric(horizontal: 4),
                           child: Center(
                               child: CustomText(
-                            text: 'Loan Amount',
+                            text: 'loanAmount',
                             color: darkGreenHeigh,
                           )),
                         )),
@@ -61,7 +61,7 @@ Widget resultLoanTop(context) {
             child: Align(
               alignment: Alignment.centerRight,
               child: CustomText(
-                text: '88 Results',
+                text: '88results',
                 color: Colors.black,
                 fontSize: 15,
                 fontWeight: FontWeight.w400,

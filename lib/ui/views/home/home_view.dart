@@ -28,7 +28,7 @@ class HomeView extends StackedView<HomeViewModel> {
                 ReturnButton(
                   height: 30,
                   width: 85,
-                  text: 'Return',
+                  text: 'return',
                   imageLeft: myIcons.returnIcon1,
                   imgwidth: 15,
                 ),

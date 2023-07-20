@@ -11,7 +11,6 @@ import '../../widgets/common/icon_box_btn/submit_button.dart';
 import '../../widgets/common/icon_box_btn/text.dart';
 import 'info_alert_dialog_model.dart';
 
-
 class InfoAlertDialog extends StackedView<InfoAlertDialogModel> {
   final DialogRequest request;
   final Function(DialogResponse) completer;
@@ -60,7 +59,7 @@ class InfoAlertDialog extends StackedView<InfoAlertDialogModel> {
                       fontWeight: FontWeight.w600,
                     ),
                     CustomTextField(
-                      hintText: 'HK\$',
+                      hintText: 'hk',
                       height: 40,
                     ),
                     verticalSpaceTiny,
@@ -124,7 +123,7 @@ class InfoAlertDialog extends StackedView<InfoAlertDialogModel> {
                       fontWeight: FontWeight.w600,
                     ),
                     CustomTextField(
-                      hintText: 'HK\$',
+                      hintText: 'hk',
                       height: 40,
                     ),
                     verticalSpaceTiny,

@@ -24,35 +24,35 @@ class MorgTextFields extends ViewModelWidget<MorgagesViewModel> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomText(
-                text: 'We need to know more about you',
+                text: 'knowMoreAboutYou',
                 fontSize: 18,
                 fontWeight: FontWeight.w600,
               ),
               CustomText(
-                text: '*Mandatory Field',
+                text: 'mandatoryField',
                 fontSize: 10,
               ),
               verticalSpaceSmall,
               DropdownTextfield(
                 onChanged: (String) {},
                 options: [],
-                titleText: 'Mortgages',
+                titleText: 'mortgages',
               ),
               verticalSpaceSmall,
               DropdownTextfield(
                 onChanged: (String) {},
                 options: [],
-                titleText: 'Type of Property',
+                titleText: 'typeOfProperty',
               ),
               verticalSpaceSmall,
               CustomTextField(
-                hintText: 'HK\$',
-                titleText: 'Property Valuation',
+                hintText: 'hk',
+                titleText: 'propertyValuation',
               ),
               verticalSpaceSmall,
               CustomTextField(
                 hintText: '%',
-                titleText: 'Loan-to-Value Ratio(LTV)',
+                titleText: 'ratio(LTV)',
               ),
               verticalSpaceSmall,
               CustomTextField(
@@ -61,8 +61,8 @@ class MorgTextFields extends ViewModelWidget<MorgagesViewModel> {
               ),
               verticalSpaceSmall,
               CustomTextField(
-                hintText: 'year(s)',
-                titleText: 'Monthly Income',
+                hintText: 'year',
+                titleText: 'monthlyIncome',
               ),
               verticalSpaceLarge,
               verticalSpaceTiny

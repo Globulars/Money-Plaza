@@ -20,28 +20,28 @@ class CommTabBar2 extends ViewModelWidget<CommericalLoanViewModel> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomTextField(
-            hintText: 'HK\$',
-            titleText: 'Annual Turnover',
+            hintText: 'hk',
+            titleText: 'annualTurnover',
           ),
           verticalSpaceSmall,
           DropdownTextfield(
             onChanged: (String) {},
             options: [],
-            titleText: 'Industory',
+            titleText: 'industory',
           ),
           verticalSpaceSmall,
           CustomTextField(
-            titleText: 'Company Name',
+            titleText: 'companyName',
           ),
           verticalSpaceSmall,
           DropdownTextfield(
             onChanged: (String) {},
             options: [],
-            titleText: 'Audio Report',
+            titleText: 'audioReport',
           ),
           verticalSpaceSmall,
           CustomTextField(
-            titleText: 'Operation Year',
+            titleText: 'operationYear',
           ),
         ],
       ),

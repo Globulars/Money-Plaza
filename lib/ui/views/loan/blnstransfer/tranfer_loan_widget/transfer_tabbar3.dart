@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
-
 import '../../../../common/app_colors.dart';
 import '../../../../common/ui_helpers.dart';
 import '../../../../widgets/common/custom_text_field/custom_text_field.dart';
 import '../../../../widgets/common/dropdown_textfield/dropdown_textfield.dart';
 import '../../../../widgets/common/icon_box_btn/return_button.dart';
-import '../../../../widgets/common/icon_box_btn/submit_button.dart';
 import '../../../../widgets/common/icon_box_btn/text.dart';
 import '../blnstransfer_viewmodel.dart';
 
@@ -34,14 +32,27 @@ class TransferTabBar3 extends ViewModelWidget<BlnstransferViewModel> {
             children: [
               ReturnButton(
                 height: 40,
-                text: 'yes',
+                text: 'Yes',
                 width: width * 0.43,
+                boxcolor:
+                    viewModel.outStanding == 1 ? darkGreenHeigh : Colors.white,
+                color:
+                    viewModel.outStanding != 1 ? darkGreenHeigh : Colors.white,
+                onPress: () {
+                  viewModel.setOutstandingLoan(1);
+                },
               ),
-              SubmitButton(
+              ReturnButton(
                 height: 40,
-                text: 'no',
+                text: 'No',
                 width: width * 0.43,
-                boxColor: darkGreenLight,
+                boxcolor:
+                    viewModel.outStanding == 2 ? darkGreenHeigh : Colors.white,
+                color:
+                    viewModel.outStanding != 2 ? darkGreenHeigh : Colors.white,
+                onPress: () {
+                  viewModel.setOutstandingLoan(2);
+                },
               ),
             ],
           ),
@@ -52,7 +63,7 @@ class TransferTabBar3 extends ViewModelWidget<BlnstransferViewModel> {
           ),
           verticalSpaceSmall,
           CustomTextField(
-            hintText: 'HK\$',
+            hintText: 'hk',
             titleText: 'totalOutstandingLoan',
           ),
           verticalSpaceSmall,

@@ -43,7 +43,7 @@ class CalculatorDialog extends StackedView<CalculatorDialogModel> {
                 color: Colors.white,
                 width: width * 1,
                 image: myIcons.calculator,
-                text: 'Interest Calculator',
+                text: 'interestCalculator',
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
                 btmLeftRadius: 0,
@@ -58,16 +58,16 @@ class CalculatorDialog extends StackedView<CalculatorDialogModel> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CustomText(
-                      text: 'Borrowing Amount',
+                      text: 'borrowingAmount',
                       fontWeight: FontWeight.w600,
                     ),
                     CustomTextField(
-                      hintText: 'HK\$',
+                      hintText: 'hk',
                       height: 40,
                     ),
                     verticalSpaceTiny,
                     CustomText(
-                      text: 'Repayment Method',
+                      text: 'repaymentMethod',
                       fontWeight: FontWeight.w600,
                     ),
                     verticalSpaceTiny,
@@ -76,25 +76,52 @@ class CalculatorDialog extends StackedView<CalculatorDialogModel> {
                       children: [
                         ReturnButton(
                           height: 40,
-                          text: 'Fixed Rate Term Loans',
+                          text: 'fixedRateTermLoans',
                           width: width * 0.42,
+                          boxcolor: viewModel.repayment == 0
+                              ? darkGreenHeigh
+                              : Colors.white,
+                          color: viewModel.repayment != 0
+                              ? darkGreenHeigh
+                              : Colors.white,
+                          onPress: () {
+                            viewModel.setRepayment(0);
+                          },
                         ),
-                        SubmitButton(
+                        ReturnButton(
                           height: 40,
-                          text: 'Resolving Loans',
+                          text: 'resolvingLoans',
                           width: width * 0.32,
+                          boxcolor: viewModel.repayment == 1
+                              ? darkGreenHeigh
+                              : Colors.white,
+                          color: viewModel.repayment != 1
+                              ? darkGreenHeigh
+                              : Colors.white,
+                          onPress: () {
+                            viewModel.setRepayment(1);
+                          },
                         )
                       ],
                     ),
                     verticalSpace(5),
                     ReturnButton(
                       height: 40,
-                      text: 'Prepaaid Interest(Commerical Loans)',
+                      text: 'prepaaidInterest',
                       width: width * 1,
+                      boxcolor: viewModel.repayment == 2
+                          ? darkGreenHeigh
+                          : Colors.white,
+                      color: viewModel.repayment != 2
+                          ? darkGreenHeigh
+                          : Colors.white,
+                      onPress: () {
+                        viewModel.setRepayment(2);
+                      },
                     ),
                     verticalSpaceTiny,
                     CustomText(
-                      text: 'Calculation Items',
+                      text: 'calculationItems',
                       fontWeight: FontWeight.w600,
                     ),
                     verticalSpaceTiny,
@@ -103,35 +130,62 @@ class CalculatorDialog extends StackedView<CalculatorDialogModel> {
                       children: [
                         ReturnButton(
                           height: 40,
-                          text: 'Tenor',
+                          text: 'tenor',
                           width: width * 0.36,
+                          boxcolor: viewModel.calculation == 0
+                              ? darkGreenHeigh
+                              : Colors.white,
+                          color: viewModel.calculation != 0
+                              ? darkGreenHeigh
+                              : Colors.white,
+                          onPress: () {
+                            viewModel.setCalculation(0);
+                          },
                         ),
-                        SubmitButton(
+                        ReturnButton(
                           height: 40,
-                          text: 'APR',
+                          text: 'apr',
                           width: width * 0.36,
+                          boxcolor: viewModel.calculation == 1
+                              ? darkGreenHeigh
+                              : Colors.white,
+                          color: viewModel.calculation != 1
+                              ? darkGreenHeigh
+                              : Colors.white,
+                          onPress: () {
+                            viewModel.setCalculation(1);
+                          },
                         )
                       ],
                     ),
                     verticalSpace(5),
                     ReturnButton(
                       height: 40,
-                      text: 'Monthly Repayment Amount',
+                      text: 'monthlyRepaymentAmount',
                       width: width * 1,
+                      boxcolor: viewModel.calculation == 2
+                          ? darkGreenHeigh
+                          : Colors.white,
+                      color: viewModel.calculation != 2
+                          ? darkGreenHeigh
+                          : Colors.white,
+                      onPress: () {
+                        viewModel.setCalculation(2);
+                      },
                     ),
                     verticalSpaceTiny,
                     verticalSpaceTiny,
                     CustomText(
-                      text: 'MonthlyRepayment Amount',
+                      text: 'totalRepaymentAmount',
                       fontWeight: FontWeight.w600,
                     ),
                     CustomTextField(
-                      hintText: 'HK\$',
+                      hintText: 'hk',
                       height: 40,
                     ),
                     verticalSpaceTiny,
                     CustomText(
-                      text: 'Interest Rate',
+                      text: 'interestRate',
                       fontWeight: FontWeight.w500,
                     ),
                     CustomTextField(
@@ -148,13 +202,14 @@ class CalculatorDialog extends StackedView<CalculatorDialogModel> {
                           boxColor: Colors.transparent,
                           image: myIcons.iconPowerReset,
                           imgwidth: 15,
-                          text: 'Reset all',
+                          text: 'resetAll',
                           color: darkGreenLight,
                         ),
                         SubmitButton(
-                          text: 'Apply',
+                          text: 'calculateNow',
                           height: 40,
-                          width: 80,
+                          width: 120,
+                          onPress: viewModel.navigateToCalculatorResult,
                         ),
                       ],
                     )

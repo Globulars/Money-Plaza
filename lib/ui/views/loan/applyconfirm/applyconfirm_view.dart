@@ -98,7 +98,7 @@ class ApplyconfirmView extends StackedView<ApplyconfirmViewModel> {
               SubmitButton(
                 image: match ? myIcons.match : myIcons.done,
                 imgwidth: 16,
-                text: match ? 'match' : 'done',
+                text: match ? 'match' : 'Done',
                 height: 40,
                 width: 80,
                 onPress: viewModel.navigateToPloanreslut,
