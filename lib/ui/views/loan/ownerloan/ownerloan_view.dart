@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:stacked/stacked.dart';
@@ -51,23 +52,23 @@ class OwnerloanView extends StackedView<OwnerloanViewModel> {
                                 topRight:
                                     Radius.circular(10)), // Creates border
                             color: darkGreenHeigh),
-                        tabs: const [
+                        tabs:  [
                           Tab(
-                            child: Text(
+                            child: const Text(
                               'earlyPaybackPenalty',
                               textAlign: TextAlign.center,
-                            ),
+                            ).tr(),
                           ),
                           Tab(
-                              child: Text(
+                              child: const Text(
                             'sourceOfIncome',
                             textAlign: TextAlign.center,
-                          )),
+                          ).tr(),),
                           Tab(
-                              child: Text(
+                              child: const Text(
                             'outstandingLoan',
                             textAlign: TextAlign.center,
-                          )),
+                          ).tr(),),
                         ],
                       ),
                     ),

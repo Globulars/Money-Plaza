@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
@@ -62,28 +63,28 @@ class PersonalInfoView extends StackedView<PersonalInfoViewModel> {
                                   topRight:
                                       Radius.circular(10)), // Creates border
                               color: darkGreenHeigh),
-                          tabs: const [
+                          tabs:  [
                             Tab(
                               child: Text(
                                 'privateInfo',
                                 textAlign: TextAlign.center,
-                              ),
+                              ).tr(),
                             ),
                             Tab(
                                 child: Text(
                               'contactInfo',
                               textAlign: TextAlign.center,
-                            )),
+                            ).tr(),),
                             Tab(
                                 child: Text(
                               'interestedProducts',
                               textAlign: TextAlign.center,
-                            )),
+                            ).tr(),),
                             Tab(
                                 child: Text(
                               'loanStatus',
                               textAlign: TextAlign.center,
-                            )),
+                            ).tr(),),
                           ],
                         ),
                       ),

@@ -22,6 +22,9 @@ class IconBoxBtn extends StackedView<IconBoxBtnModel> {
   Color? boxcolor;
   Function? onPress;
   double margin;
+  double? padding;
+  double? horizental;
+  double? vertical=0.0;
 
   IconBoxBtn({
     super.key,
@@ -37,6 +40,9 @@ class IconBoxBtn extends StackedView<IconBoxBtnModel> {
     this.boxcolor,
     this.onPress,
     this.margin = 0.0,
+    this.padding,
+    this.horizental,
+    this.vertical
   });
 
   @override
@@ -55,6 +61,7 @@ class IconBoxBtn extends StackedView<IconBoxBtnModel> {
         height: height,
         width: width,
         margin: EdgeInsets.all(margin),
+        padding: EdgeInsets.symmetric(horizontal:horizental??00,vertical: vertical??00 ),
         decoration: BoxDecoration(
             color: boxcolor ?? lightGreenHeigh,
             borderRadius: BorderRadius.circular(8)),
