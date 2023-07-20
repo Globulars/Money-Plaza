@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
 import '../../../../common/app_colors.dart';
@@ -36,12 +37,25 @@ class OwnerTabBar3 extends ViewModelWidget<OwnerloanViewModel> {
                 height: 40,
                 text: 'Yes',
                 width: width * 0.43,
+                  boxcolor:
+                      viewModel.outStanding == 1 ? darkGreenHeigh : Colors.white,
+                  color:
+                      viewModel.outStanding != 1 ? darkGreenHeigh : Colors.white,
+                  onPress: () {
+                    viewModel.setOutstandingLoan(1);
+                  },
               ),
-              SubmitButton(
+              ReturnButton(
                 height: 40,
                 text: 'No',
                 width: width * 0.43,
-                boxColor: darkGreenLight,
+                 boxcolor:
+                      viewModel.outStanding == 2 ? darkGreenHeigh : Colors.white,
+                  color:
+                      viewModel.outStanding != 2 ? darkGreenHeigh : Colors.white,
+                  onPress: () {
+                    viewModel.setOutstandingLoan(2);
+                  },
               ),
             ],
           ),
