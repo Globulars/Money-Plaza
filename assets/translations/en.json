@@ -92,6 +92,13 @@
   "totalRepaymentAmount": "Total Repayment Amount",
   "totalInterest": "Total interest",
   "recalculate": "Recalculate",
-  "weLend":"WeLend",
-  "validation":"Please enter some text"
+  "weLend": "WeLend",
+  "validation": "Please enter some text",
+  "borrowingAmountTenor": "Borrowing Amount ${} - ${} Tenor {} Months",
+  "limitedTimeOffer": "[Limited Time Offer! Until 7 March 2023] Succss withdraw the specified loan amount and enjoy up to HK $14,200 reward!",
+  "moneyLender": "Money Lender's Licence No.{}",
+  "valueChange": "{}",
+  "lowestAnnualInterest": "*This is the lowest annual interest rate",
+  "compare": "Compare",
+  "apply":"Apply",
 }
