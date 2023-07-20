@@ -111,6 +111,7 @@ class LandingView extends StackedView<LandingViewModel> {
                         imgwidth: 50,
                         onPress: viewModel.navigateToMemberLogin,
                       ),
+                      verticalSpaceMedium
                     ],
                   ),
                 ),

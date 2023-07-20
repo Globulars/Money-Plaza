@@ -23,7 +23,7 @@ class LoanView extends StackedView<LoanViewModel> {
     final width = MediaQuery.of(context).size.width;
     return Stack(
       children: [
-       const BackgroundImage(),
+        const BackgroundImage(),
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: appBar(),

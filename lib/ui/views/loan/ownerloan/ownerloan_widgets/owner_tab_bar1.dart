@@ -41,49 +41,49 @@ class OwnerTabBar1 extends ViewModelWidget<OwnerloanViewModel> {
                 height: 40,
                 text: '6',
                 width: width * 0.21,
-                  boxcolor:
-                      viewModel.loanTenors == 6 ? darkGreenHeigh : Colors.white,
-                  color:
-                      viewModel.loanTenors != 6 ? darkGreenHeigh : Colors.white,
-                  onPress: () {
-                    viewModel.setLoanTenors(6);
-                  },
+                boxcolor:
+                    viewModel.loanTenors == 6 ? darkGreenHeigh : Colors.white,
+                color:
+                    viewModel.loanTenors != 6 ? darkGreenHeigh : Colors.white,
+                onPress: () {
+                  viewModel.setLoanTenors(6);
+                },
               ),
               ReturnButton(
                 height: 40,
                 text: '12',
                 width: width * 0.21,
-                  boxcolor:
-                      viewModel.loanTenors == 12 ? darkGreenHeigh : Colors.white,
-                  color:
-                      viewModel.loanTenors != 12 ? darkGreenHeigh : Colors.white,
-                  onPress: () {
-                    viewModel.setLoanTenors(12);
-                  },
+                boxcolor:
+                    viewModel.loanTenors == 12 ? darkGreenHeigh : Colors.white,
+                color:
+                    viewModel.loanTenors != 12 ? darkGreenHeigh : Colors.white,
+                onPress: () {
+                  viewModel.setLoanTenors(12);
+                },
               ),
               ReturnButton(
                 height: 40,
                 text: '24',
                 width: width * 0.21,
-                  boxcolor:
-                      viewModel.loanTenors == 24 ? darkGreenHeigh : Colors.white,
-                  color:
-                      viewModel.loanTenors != 24 ? darkGreenHeigh : Colors.white,
-                  onPress: () {
-                    viewModel.setLoanTenors(24);
-                  },
+                boxcolor:
+                    viewModel.loanTenors == 24 ? darkGreenHeigh : Colors.white,
+                color:
+                    viewModel.loanTenors != 24 ? darkGreenHeigh : Colors.white,
+                onPress: () {
+                  viewModel.setLoanTenors(24);
+                },
               ),
               ReturnButton(
                 height: 40,
                 text: '12',
                 width: width * 0.21,
-                  boxcolor:
-                      viewModel.loanTenors == 36 ? darkGreenHeigh : Colors.white,
-                  color:
-                      viewModel.loanTenors != 36 ? darkGreenHeigh : Colors.white,
-                  onPress: () {
-                    viewModel.setLoanTenors(36);
-                  },
+                boxcolor:
+                    viewModel.loanTenors == 36 ? darkGreenHeigh : Colors.white,
+                color:
+                    viewModel.loanTenors != 36 ? darkGreenHeigh : Colors.white,
+                onPress: () {
+                  viewModel.setLoanTenors(36);
+                },
               ),
             ],
           ),
@@ -95,49 +95,49 @@ class OwnerTabBar1 extends ViewModelWidget<OwnerloanViewModel> {
                 height: 40,
                 text: '36',
                 width: width * 0.21,
-                  boxcolor:
-                      viewModel.loanTenors == 48 ? darkGreenHeigh : Colors.white,
-                  color:
-                      viewModel.loanTenors != 48 ? darkGreenHeigh : Colors.white,
-                  onPress: () {
-                    viewModel.setLoanTenors(48);
-                  },
+                boxcolor:
+                    viewModel.loanTenors == 48 ? darkGreenHeigh : Colors.white,
+                color:
+                    viewModel.loanTenors != 48 ? darkGreenHeigh : Colors.white,
+                onPress: () {
+                  viewModel.setLoanTenors(48);
+                },
               ),
               ReturnButton(
                 height: 40,
                 text: '48',
                 width: width * 0.21,
-                  boxcolor:
-                      viewModel.loanTenors == 60 ? darkGreenHeigh : Colors.white,
-                  color:
-                      viewModel.loanTenors != 60 ? darkGreenHeigh : Colors.white,
-                  onPress: () {
-                    viewModel.setLoanTenors(60);
-                  },
+                boxcolor:
+                    viewModel.loanTenors == 60 ? darkGreenHeigh : Colors.white,
+                color:
+                    viewModel.loanTenors != 60 ? darkGreenHeigh : Colors.white,
+                onPress: () {
+                  viewModel.setLoanTenors(60);
+                },
               ),
               ReturnButton(
                 height: 40,
                 text: '60',
                 width: width * 0.21,
-                  boxcolor:
-                      viewModel.loanTenors == 72 ? darkGreenHeigh : Colors.white,
-                  color:
-                      viewModel.loanTenors != 72 ? darkGreenHeigh : Colors.white,
-                  onPress: () {
-                    viewModel.setLoanTenors(72);
-                  },
+                boxcolor:
+                    viewModel.loanTenors == 72 ? darkGreenHeigh : Colors.white,
+                color:
+                    viewModel.loanTenors != 72 ? darkGreenHeigh : Colors.white,
+                onPress: () {
+                  viewModel.setLoanTenors(72);
+                },
               ),
               ReturnButton(
                 height: 40,
                 text: '12',
                 width: width * 0.21,
-                  boxcolor:
-                      viewModel.loanTenors == 84 ? darkGreenHeigh : Colors.white,
-                  color:
-                      viewModel.loanTenors != 84 ? darkGreenHeigh : Colors.white,
-                  onPress: () {
-                    viewModel.setLoanTenors(84);
-                  },
+                boxcolor:
+                    viewModel.loanTenors == 84 ? darkGreenHeigh : Colors.white,
+                color:
+                    viewModel.loanTenors != 84 ? darkGreenHeigh : Colors.white,
+                onPress: () {
+                  viewModel.setLoanTenors(84);
+                },
               ),
             ],
           ),

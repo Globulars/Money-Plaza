@@ -18,16 +18,19 @@ class CalDataTable extends ViewModelWidget<CalculatorResultViewModel> {
       child: Card(
         child: Column(
           children: [
-             Container(
-              height: 30,
-              padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 3),
-              width: double.infinity,
-              decoration: const BoxDecoration(
-                  color: lightGreenHeigh,
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(4), topRight: Radius.circular(4))),
-              child: CustomText(text: 'Payment Table',textAlign: TextAlign.center,)
-            ),
+            Container(
+                height: 30,
+                padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 3),
+                width: double.infinity,
+                decoration: const BoxDecoration(
+                    color: lightGreenHeigh,
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(4),
+                        topRight: Radius.circular(4))),
+                child: CustomText(
+                  text: 'Payment Table',
+                  textAlign: TextAlign.center,
+                )),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: DataTable(
@@ -51,7 +54,7 @@ class CalDataTable extends ViewModelWidget<CalculatorResultViewModel> {
                       label: SizedBox(
                           width: 60,
                           // height: 200,
-              
+
                           child: CustomText(
                             text: 'Monthly\nRepayment\nAmount\n(HKD)',
                             textAlign: TextAlign.center,

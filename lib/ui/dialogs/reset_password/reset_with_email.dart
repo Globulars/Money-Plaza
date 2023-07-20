@@ -62,11 +62,10 @@ class ResetWithEmail extends StackedView<ResetPasswordDialogModel> {
             SubmitButton(
               color: darkGreenHeigh,
               image: myIcons.iconPowerReset,
-             imgwidth: 16,
+              imgwidth: 16,
               text: "Reset All",
               boxColor: Colors.transparent,
             ),
-          
             SubmitButton(
               height: 40,
               width: 80,
