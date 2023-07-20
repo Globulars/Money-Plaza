@@ -59,11 +59,11 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               CustomText(
-                                text: 'Minimum Mortgages',
+                                text: 'minimumMortgages',
                                 fontSize: 10,
                               ),
                               CustomText(
-                                text: 'Interest Rate',
+                                text: 'interestRate',
                                 fontSize: 10,
                               ),
                               CustomText(
@@ -83,7 +83,7 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                                 fontSize: 10,
                               ),
                               CustomText(
-                                text: 'Cash Rebate',
+                                text: 'cashRebate',
                                 fontSize: 10,
                               ),
                               CustomText(
@@ -99,11 +99,11 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               CustomText(
-                                text: 'min.Monthly',
+                                text: 'minMonthly',
                                 fontSize: 10,
                               ),
                               CustomText(
-                                text: 'Repayment',
+                                text: 'repayment',
                                 fontSize: 10,
                               ),
                               CustomText(
@@ -117,15 +117,13 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                     ),
                     verticalSpaceTiny,
                     CustomText(
-                      text:
-                          'Money Plaza Exclusive Offer: Exclusive HK\$500 cash coupon for every HK\$1 million mortgage amount (maximum HK\$8000 cash coupon)',
+                      text: 'moneyPlazaExclusiveOffer',
                       fontSize: 12,
                       color: Colors.black54,
                     ),
                     verticalSpaceSmall,
                     CustomText(
-                      text:
-                          'Note:Money Plaza has the final decision on all offers',
+                      text: 'noteMoney',
                       fontSize: 12,
                     ),
                   ],

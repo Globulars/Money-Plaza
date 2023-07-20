@@ -19,11 +19,15 @@ AppBar appBar() {
   return AppBar(
     title: Image.asset(
       myIcons.appbarTitle,
+      height: 40,
     ),
     centerTitle: true,
     actions: <Widget>[
       IconButton(
-        icon: Image.asset(myIcons.appbarSetting),
+        icon: Image.asset(
+          myIcons.appbarSetting,
+          height: 30,
+        ),
         tooltip: 'Setting Icon',
         onPressed: navigateToSettings,
       ), //IconButton
@@ -32,7 +36,10 @@ AppBar appBar() {
     bottomOpacity: 0.0,
     elevation: 0.0,
     leading: IconButton(
-      icon: Image.asset(myIcons.appbarHome),
+      icon: Image.asset(
+        myIcons.appbarHome,
+        height: 30,
+      ),
       tooltip: 'Menu Icon',
       onPressed: navigateToLanding,
     ),

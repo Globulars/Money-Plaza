@@ -20,12 +20,12 @@ class LoginWithEmail extends StackedView<MemberLoginViewModel> {
     return Column(
       children: [
         CustomTextField(
-          hintText: "Email",
+          hintText: "email",
           hintStyle: const TextStyle(fontSize: 16),
           textAlign: TextAlign.center,
         ),
         CustomTextField(
-          hintText: "Password",
+          hintText: "password",
           hintStyle: const TextStyle(fontSize: 16),
           textAlign: TextAlign.center,
         ),
@@ -33,7 +33,7 @@ class LoginWithEmail extends StackedView<MemberLoginViewModel> {
         SubmitButton(
           height: 40,
           width: MediaQuery.of(context).size.width * 0.3,
-          text: "Login",
+          text: "login",
           fontSize: 16,
           onPress: viewModel.navigateToMemberSetting,
         ),

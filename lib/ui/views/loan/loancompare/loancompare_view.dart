@@ -59,7 +59,7 @@ class LoancompareView extends StackedView<LoancompareViewModel> {
           ReturnButton(
             imageLeft: myIcons.returnIcon1,
             imgwidth: 12,
-            text: 'Back to list',
+            text: 'backToList',
             height: 40,
             width: 120,
           ),

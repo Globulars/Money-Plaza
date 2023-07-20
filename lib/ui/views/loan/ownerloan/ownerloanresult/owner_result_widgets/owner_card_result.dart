@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
@@ -38,26 +39,25 @@ class OwnerResultCard extends ViewModelWidget<OwnerloanresultViewModel> {
                         Image.asset(myIcons.weLend),
                         verticalSpaceTiny,
                         CustomText(
-                          text: "WeLend",
+                          text: "weLend",
                           color: Colors.black,
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
                         ),
                         verticalSpaceTiny,
                         CustomText(
-                            text:
-                                "Borrowing Amonnt \$10,000 - \$700,000 Tenor 12 - 60 Months",
+                            text: "borrowingAmountTenor"
+                                .tr(args: ["1000", "7000", "12 - 32"]),
                             color: Colors.black87,
                             fontSize: 15),
                         verticalSpaceTiny,
                         CustomText(
-                            text:
-                                "[Limited Time Offer! Until 7 March 2023] Succss withdraw the specified loan amount and enjoy up to HK\$14,200 reward!",
+                            text: "limitedTimeOffer",
                             color: Colors.black54,
                             fontSize: 14),
                         verticalSpaceTiny,
                         CustomText(
-                          text: "Money Lender's Licence No.#1193/2022",
+                          text: "moneyLender".tr(args: ["3232"]),
                           color: Colors.black,
                           fontSize: 12,
                           fontWeight: FontWeight.w500,
@@ -78,7 +78,7 @@ class OwnerResultCard extends ViewModelWidget<OwnerloanresultViewModel> {
                         ),
                         verticalSpaceTiny,
                         CustomText(
-                          text: "*This is the lowest annual interest rate",
+                          text: "lowestAnnualInterest",
                           color: Colors.black,
                           fontSize: 12,
                         ),
@@ -86,14 +86,14 @@ class OwnerResultCard extends ViewModelWidget<OwnerloanresultViewModel> {
                         SubmitButton(
                           image: myIcons.compare2,
                           boxColor: Colors.transparent,
-                          text: 'Compare',
+                          text: 'compare',
                           color: Colors.black87,
                           fontSize: 18,
                         ),
                         verticalSpaceSmall,
                         SubmitButton(
                           image: myIcons.apply,
-                          text: 'Apply',
+                          text: 'apply',
                           fontSize: 18,
                           height: 40,
                         ),
@@ -101,7 +101,7 @@ class OwnerResultCard extends ViewModelWidget<OwnerloanresultViewModel> {
                         SubmitButton(
                           image: myIcons.detail,
                           boxColor: Colors.transparent,
-                          text: 'Details',
+                          text: 'details',
                           color: Colors.black,
                           fontSize: 18,
                         ),

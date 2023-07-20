@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:money_plaza/app/app.router.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
@@ -43,26 +44,25 @@ Widget resultCard(context, {detailPage = 0}) {
                   ),
                   verticalSpaceTiny,
                   CustomText(
-                    text: "WeLend",
+                    text: "weLend",
                     color: Colors.black,
                     fontSize: 20,
                     fontWeight: FontWeight.w600,
                   ),
                   verticalSpaceTiny,
                   CustomText(
-                      text:
-                          "Borrowing Amount \$10,000 - \$700,000 Tenor 12 - 60 Months",
+                      text: "borrowingAmountTenor"
+                          .tr(args: ["10,000", "70,000", "12 - 60"]),
                       color: Colors.black87,
                       fontSize: 15),
                   verticalSpaceTiny,
                   CustomText(
-                      text:
-                          "[Limited Time Offer! Until 7 March 2023] Succss withdraw the specified loan amount and enjoy up to HK\$14,200 reward!",
+                      text: "limitedTimeOffer",
                       color: Colors.black54,
                       fontSize: 14),
                   verticalSpaceTiny,
                   CustomText(
-                    text: "Money Lender's Licence No.#1193/2022",
+                    text: "moneyLender".tr(args: ["#00093/2022"]),
                     color: Colors.black,
                     fontSize: 12,
                     fontWeight: FontWeight.w500,
@@ -76,14 +76,14 @@ Widget resultCard(context, {detailPage = 0}) {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   CustomText(
-                    text: "2.75%",
+                    text: "valueChange".tr(args: ["2.75%"]),
                     color: Colors.black,
                     fontSize: 22,
                     fontWeight: FontWeight.w500,
                   ),
                   verticalSpaceTiny,
                   CustomText(
-                    text: "*This is the lowest annual interest rate",
+                    text: "lowestAnnualInterest",
                     color: Colors.black,
                     fontSize: 12,
                   ),
@@ -92,7 +92,7 @@ Widget resultCard(context, {detailPage = 0}) {
                     image: myIcons.compare2,
                     imgwidth: 16,
                     boxColor: Colors.transparent,
-                    text: 'Compare',
+                    text: 'compare',
                     color: Colors.black87,
                     fontSize: 18,
                   ),
@@ -100,7 +100,7 @@ Widget resultCard(context, {detailPage = 0}) {
                   SubmitButton(
                     image: myIcons.apply,
                     imgwidth: 16,
-                    text: 'Apply',
+                    text: 'apply',
                     fontSize: 18,
                     height: 40,
                     onPress: applyConfirm,
@@ -110,7 +110,7 @@ Widget resultCard(context, {detailPage = 0}) {
                     image: myIcons.detail,
                     imgwidth: 30,
                     boxColor: Colors.transparent,
-                    text: 'Details',
+                    text: 'details',
                     color: Colors.black,
                     fontSize: 18,
                     onPress: showDetail,

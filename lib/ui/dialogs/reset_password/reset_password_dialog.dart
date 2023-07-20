@@ -6,7 +6,6 @@ import '../../widgets/common/icon_box_btn/sub_bar.dart';
 import 'ResetPassTab.dart';
 import 'reset_password_dialog_model.dart';
 
-
 class ResetPasswordDialog extends StackedView<ResetPasswordDialogModel> {
   final DialogRequest request;
   final Function(DialogResponse) completer;

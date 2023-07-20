@@ -28,7 +28,7 @@ class HeadBtmText extends ViewModelWidget<LoancompareViewModel> {
                     topLeft: Radius.circular(4), topRight: Radius.circular(4))),
             child: Center(
                 child: CustomText(
-              text: 'APR',
+              text: 'apr',
             )),
           ),
           Container(
@@ -55,7 +55,7 @@ class HeadBtmText extends ViewModelWidget<LoancompareViewModel> {
                     topLeft: Radius.circular(4), topRight: Radius.circular(4))),
             child: Center(
                 child: CustomText(
-              text: 'Money Plaza Exclusive Offer',
+              text: 'moneyPlazaExclusive',
             )),
           ),
           Container(
@@ -67,14 +67,10 @@ class HeadBtmText extends ViewModelWidget<LoancompareViewModel> {
                 children: [
                   SizedBox(
                       width: width * 0.42,
-                      child: CustomText(
-                          text:
-                              'Successfully apply for MONEY PLAZA and you will receive HKD 100 cash*')),
+                      child: CustomText(text: 'successfullyApply')),
                   SizedBox(
                       width: width * 0.42,
-                      child: CustomText(
-                          text:
-                              '[Limited Time Offer Until December 31th] Successfully withdraw the specified loan amount and enjoy up to HK\$14,200 reward!')),
+                      child: CustomText(text: 'limitedTimeOfferUntil')),
                 ],
               ),
             ),
@@ -89,7 +85,7 @@ class HeadBtmText extends ViewModelWidget<LoancompareViewModel> {
                     topLeft: Radius.circular(4), topRight: Radius.circular(4))),
             child: Center(
                 child: CustomText(
-              text: 'Repayment Type',
+              text: 'repaymentType',
             )),
           ),
           Container(
@@ -116,7 +112,7 @@ class HeadBtmText extends ViewModelWidget<LoancompareViewModel> {
                     topLeft: Radius.circular(4), topRight: Radius.circular(4))),
             child: Center(
                 child: CustomText(
-              text: 'Money Repayment Details',
+              text: 'moneyRepaymentDetails',
             )),
           ),
           Container(
@@ -154,7 +150,7 @@ class HeadBtmText extends ViewModelWidget<LoancompareViewModel> {
                     topLeft: Radius.circular(4), topRight: Radius.circular(4))),
             child: Center(
                 child: CustomText(
-              text: 'Total Payment Amount',
+              text: 'moneyRepaymentDetails',
             )),
           ),
           Container(
@@ -181,7 +177,7 @@ class HeadBtmText extends ViewModelWidget<LoancompareViewModel> {
                     topLeft: Radius.circular(4), topRight: Radius.circular(4))),
             child: Center(
                 child: CustomText(
-              text: 'Total Interest',
+              text: 'totalInterest',
             )),
           ),
           Container(
@@ -208,7 +204,7 @@ class HeadBtmText extends ViewModelWidget<LoancompareViewModel> {
                     topLeft: Radius.circular(4), topRight: Radius.circular(4))),
             child: Center(
                 child: CustomText(
-              text: 'Early Payback Penalty',
+              text: 'earlyPaybackPenalty1',
             )),
           ),
           Container(
@@ -219,8 +215,8 @@ class HeadBtmText extends ViewModelWidget<LoancompareViewModel> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CustomText(text: 'No'),
-                  CustomText(text: 'No'),
+                  CustomText(text: 'no'),
+                  CustomText(text: 'no'),
                 ],
               ),
             ),

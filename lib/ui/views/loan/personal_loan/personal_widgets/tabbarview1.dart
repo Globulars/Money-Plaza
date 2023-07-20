@@ -24,12 +24,12 @@ class TabBarView1 extends ViewModelWidget<PersonalloanViewModel> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomTextField(
-              hintText: 'HK\$',
-              titleText: 'Borrowing Amount',
+              hintText: 'hk',
+              titleText: 'borrowingAmount',
             ),
             verticalSpaceSmall,
             CustomText(
-              text: 'Loan Tenors(Monthly)',
+              text: 'loanTenors',
               fontWeight: FontWeight.w600,
             ),
             verticalSpaceTiny,
@@ -158,13 +158,13 @@ class TabBarView1 extends ViewModelWidget<PersonalloanViewModel> {
             DropdownTextfield(
               onChanged: (String) {},
               options: [],
-              titleText: 'Loan Reason',
+              titleText: 'loanReason',
             ),
             verticalSpaceSmall,
             DropdownTextfield(
               onChanged: (String) {},
               options: [],
-              titleText: 'Property Owner?',
+              titleText: 'propertyOwner',
             ),
           ],
         ),

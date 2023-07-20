@@ -77,7 +77,7 @@ class MemberLoginView extends StackedView<MemberLoginViewModel> {
                                   ),
                                 ),
                                 Text(
-                                  'Member Login',
+                                  'memberLogin',
                                   textAlign: TextAlign.center,
                                   style: GoogleFonts.ibmPlexSans(fontSize: 16),
                                 ),
@@ -98,7 +98,7 @@ class MemberLoginView extends StackedView<MemberLoginViewModel> {
                                     ),
                                   ),
                                   Text(
-                                    'Register',
+                                    'register',
                                     textAlign: TextAlign.center,
                                     style:
                                         GoogleFonts.ibmPlexSans(fontSize: 16),

@@ -48,13 +48,13 @@ class MemberLoginTab extends StackedView<MemberLoginViewModel> {
                       tabs: [
                         Tab(
                           child: Text(
-                            "Login with Email",
+                            "loginWithEmail",
                             style: GoogleFonts.ibmPlexSans(fontSize: 16),
                           ),
                         ),
                         Tab(
                           child: Text(
-                            "Login with Mobile",
+                            "loginWithMobile",
                             style: GoogleFonts.ibmPlexSans(fontSize: 16),
                           ),
                         ),
@@ -66,7 +66,7 @@ class MemberLoginTab extends StackedView<MemberLoginViewModel> {
               body: const TabBarView(
                 children: <Widget>[
                   LoginWithEmail(),
-                  Text("Member Login With Mobile Container"),
+                  Text("memberLoginWithMobile"),
                 ],
               ),
             ),

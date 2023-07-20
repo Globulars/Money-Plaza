@@ -47,13 +47,13 @@ class RegisterTab extends StackedView<MemberLoginViewModel> {
                     tabs: [
                       Tab(
                         child: Text(
-                          "Login with Email",
+                          "loginWithEmail",
                           style: GoogleFonts.ibmPlexSans(fontSize: 16),
                         ),
                       ),
                       Tab(
                         child: Text(
-                          "Login with Mobile",
+                          "loginWithMobile",
                           style: GoogleFonts.ibmPlexSans(fontSize: 16),
                         ),
                       ),
@@ -65,7 +65,7 @@ class RegisterTab extends StackedView<MemberLoginViewModel> {
             body: const TabBarView(
               children: <Widget>[
                 SignUpWithEmail(),
-                Text("Register With Mobile Container"),
+                Text("registerWithMobile"),
               ],
             ),
           ),
