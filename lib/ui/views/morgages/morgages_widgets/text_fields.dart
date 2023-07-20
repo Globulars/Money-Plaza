@@ -57,7 +57,7 @@ class MorgTextFields extends ViewModelWidget<MorgagesViewModel> {
               verticalSpaceSmall,
               CustomTextField(
                 hintText: 'year',
-                titleText: 'Mortgages Tenor',
+                titleText: 'mortgagesTenor',
               ),
               verticalSpaceSmall,
               CustomTextField(

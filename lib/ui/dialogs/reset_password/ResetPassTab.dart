@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:money_plaza/ui/dialogs/reset_password/reset_password_dialog_model.dart';
@@ -35,22 +36,22 @@ class ResetPassTab extends StackedView<ResetPasswordDialogModel> {
               tabs: [
                 Tab(
                   child: Text(
-                    "Reset by Email",
+                    "resetByEmail",
                     style: GoogleFonts.ibmPlexSans(fontSize: 14),
                   ),
                 ),
                 Tab(
                   child: Text(
-                    "Reset by Mobile",
+                    "resetByMobile",
                     style: GoogleFonts.ibmPlexSans(fontSize: 14),
                   ),
                 ),
               ],
             ),
-            body: const TabBarView(
+            body: TabBarView(
               children: <Widget>[
-                ResetWithEmail(),
-                Text("Register With Mobile Container"),
+                const ResetWithEmail(),
+                const Text("registerWithMobile").tr(),
               ],
             ),
           ),

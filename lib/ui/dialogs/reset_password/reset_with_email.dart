@@ -22,7 +22,7 @@ class ResetWithEmail extends StackedView<ResetPasswordDialogModel> {
       children: [
         verticalSpaceSmall,
         CustomTextField(
-          hintText: "Email",
+          hintText: "email",
           hintStyle: const TextStyle(fontSize: 16),
           textAlign: TextAlign.center,
         ),
@@ -32,26 +32,26 @@ class ResetWithEmail extends StackedView<ResetPasswordDialogModel> {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             SubmitButton(
-              text: "Send",
+              text: "send",
               height: 40,
               width: width * 0.17,
               fontSize: 16,
             ),
             CustomTextField(
               width: width * 0.5,
-              hintText: "Verification Code",
+              hintText: "verificationCode",
               hintStyle: const TextStyle(fontSize: 16),
               textAlign: TextAlign.center,
             ),
           ],
         ),
         CustomTextField(
-          hintText: "Enter Password (8-15 digits)",
+          hintText: "enterPassword",
           hintStyle: const TextStyle(fontSize: 16),
           textAlign: TextAlign.center,
         ),
         CustomTextField(
-          hintText: "Confirm Password",
+          hintText: "confirmPassword",
           hintStyle: const TextStyle(fontSize: 16),
           textAlign: TextAlign.center,
         ),
@@ -64,13 +64,13 @@ class ResetWithEmail extends StackedView<ResetPasswordDialogModel> {
               color: darkGreenHeigh,
               image: myIcons.iconPowerReset,
               imgwidth: 16,
-              text: "Reset All",
+              text: "resetAll",
               boxColor: Colors.transparent,
             ),
             SubmitButton(
               height: 40,
               width: 80,
-              text: "Submit",
+              text: "submit",
               fontSize: 16,
             ),
           ],

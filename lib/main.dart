@@ -37,6 +37,7 @@ class MyApp extends StatelessWidget {
               bodyColor: Colors.black,
             ),
       ),
+      debugShowCheckedModeBanner: false,
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,

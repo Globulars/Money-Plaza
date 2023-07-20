@@ -31,7 +31,7 @@ class ResetPasswordDialog extends StackedView<ResetPasswordDialogModel> {
       clipBehavior: Clip.hardEdge,
       backgroundColor: Colors.transparent,
       child: Container(
-        height: height*0.47,
+        height: height * 0.47,
         child: Column(
           children: [
             SubBar(
@@ -39,7 +39,7 @@ class ResetPasswordDialog extends StackedView<ResetPasswordDialogModel> {
               color: Colors.white,
               width: width * 1,
               image: myIcons.filter,
-              text: 'Reset Password',
+              text: 'resetPassword',
               fontSize: 16,
               fontWeight: FontWeight.w500,
               btmLeftRadius: 0,

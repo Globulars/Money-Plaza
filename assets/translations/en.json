@@ -205,5 +205,7 @@
   "restByMobile": "Rest by Mobile",
   "loanBalanceTransfer":"Loan Balance Transfer",
   "commericalLoans":"Commerical Loans",
-  "mortgagesTenor":"Mortgages Tenor"
+  "mortgagesTenor":"Mortgages Tenor",
+  "resetByEmail":"Reset by Email",
+  "resetByMobile":"Reset by Mobile"
 }
