@@ -108,7 +108,20 @@
   "propertyOwnerLoan": "Property Owner's Loan",
   "loans": "Loans",
   "morgages": "Morgages",
-  "insurances":"Insurances",
-  "creditCards":"Credit Cards",
-  "signUpLogin":"Sign Up/Login"
+  "insurances": "Insurances",
+  "creditCards": "Credit Cards",
+  "signUpLogin": "Sign Up/Login",
+  "memberSetting": "Member Setting",
+  "knowMoreAboutYou": "We need to know more about you",
+  "nandatoryField": "*Mandatory Field",
+  "cardProviders": "Card Providers",
+  "card": "Card",
+  "annualIncome": "Annual Income",
+  "dbsEminentVisa": "DBs Eminent Visa Platinum Card",
+  "minimumAnnualSalary": "Minimum Annual\nSalary",
+  "4designated": "4 designated\nspending\ncategories rebate",
+  "otherRetail": "Other retail spending\nrebate",
+  "upTo5%Rebate": "Up to {}% rebate for the Designated Spending Categories when Successfully applied",
+  "exclusiveOffer": "[Exclusive offer] Successfully issue a card through MONEY PLAZA,and get an extra HK ${} cash coupon",
+  "noteMoney": "Note:Money Plaza has the final decision on all offers"
 }
