@@ -35,25 +35,25 @@ class TabBarView3 extends ViewModelWidget<PersonalloanViewModel> {
                 height: 40,
                 text: 'Yes',
                 width: width * 0.43,
-                  boxcolor:
-                      viewModel.outStanding == 0 ? darkGreenHeigh : Colors.white,
-                  color:
-                      viewModel.outStanding != 0 ? darkGreenHeigh : Colors.white,
-                  onPress: () {
-                    viewModel.setOutstandingLoan(0);
-                  },
+                boxcolor:
+                    viewModel.outStanding == 0 ? darkGreenHeigh : Colors.white,
+                color:
+                    viewModel.outStanding != 0 ? darkGreenHeigh : Colors.white,
+                onPress: () {
+                  viewModel.setOutstandingLoan(0);
+                },
               ),
               ReturnButton(
                 height: 40,
                 text: 'No',
                 width: width * 0.43,
                 boxcolor:
-                      viewModel.outStanding == 1 ? darkGreenHeigh : Colors.white,
-                  color:
-                      viewModel.outStanding != 1 ? darkGreenHeigh : Colors.white,
-                  onPress: () {
-                    viewModel.setOutstandingLoan(1);
-                  },
+                    viewModel.outStanding == 1 ? darkGreenHeigh : Colors.white,
+                color:
+                    viewModel.outStanding != 1 ? darkGreenHeigh : Colors.white,
+                onPress: () {
+                  viewModel.setOutstandingLoan(1);
+                },
               ),
             ],
           ),

@@ -100,10 +100,15 @@
   "valueChange": "{}",
   "lowestAnnualInterest": "*This is the lowest annual interest rate",
   "compare": "Compare",
-  "apply":"Apply",
-  "a.I.Matching":"A.I.Matching",
-  "filter":"Filter",
-  "calculator":"Calculator",
-  "personalLoans":"Personal Loans",
-  "propertyOwnerLoan":"Property Owner's Loan"
+  "apply": "Apply",
+  "a.I.Matching": "A.I.Matching",
+  "filter": "Filter",
+  "calculator": "Calculator",
+  "personalLoans": "Personal Loans",
+  "propertyOwnerLoan": "Property Owner's Loan",
+  "loans": "Loans",
+  "morgages": "Morgages",
+  "insurances":"Insurances",
+  "creditCards":"Credit Cards",
+  "signUpLogin":"Sign Up/Login"
 }

@@ -20,7 +20,7 @@ class BlnstransferViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-   setOutstandingLoan(value) {
+  setOutstandingLoan(value) {
     outStanding = value;
     notifyListeners();
   }

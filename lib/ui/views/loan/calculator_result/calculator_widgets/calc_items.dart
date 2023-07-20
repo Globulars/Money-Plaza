@@ -29,7 +29,8 @@ class CalculatorItems extends ViewModelWidget<CalculatorResultViewModel> {
             children: [
               Image.asset(
                 myIcons.greenCalculator,
-                scale: 2,width: 18,
+                scale: 2,
+                width: 18,
               ),
               horizontalSpaceTiny,
               CustomText(
@@ -51,37 +52,43 @@ class CalculatorItems extends ViewModelWidget<CalculatorResultViewModel> {
                 height: 40,
                 text: 'tenor',
                 width: width * 0.16,
-                  boxcolor:
-                      viewModel.calculationitem == 0 ? darkGreenHeigh : Colors.white,
-                  color:
-                      viewModel.calculationitem != 0 ? darkGreenHeigh : Colors.white,
-                  onPress: () {
-                    viewModel.setCalculationItems(0);
-                  },
+                boxcolor: viewModel.calculationitem == 0
+                    ? darkGreenHeigh
+                    : Colors.white,
+                color: viewModel.calculationitem != 0
+                    ? darkGreenHeigh
+                    : Colors.white,
+                onPress: () {
+                  viewModel.setCalculationItems(0);
+                },
               ),
               ReturnButton(
                 height: 40,
                 text: 'apr',
                 width: width * 0.16,
-                boxcolor:
-                      viewModel.calculationitem == 1 ? darkGreenHeigh : Colors.white,
-                  color:
-                      viewModel.calculationitem != 1 ? darkGreenHeigh : Colors.white,
-                  onPress: () {
-                    viewModel.setCalculationItems(1);
-                  },
+                boxcolor: viewModel.calculationitem == 1
+                    ? darkGreenHeigh
+                    : Colors.white,
+                color: viewModel.calculationitem != 1
+                    ? darkGreenHeigh
+                    : Colors.white,
+                onPress: () {
+                  viewModel.setCalculationItems(1);
+                },
               ),
               ReturnButton(
                 height: 40,
                 text: 'monthlyRepaymentAmount',
                 width: width * 0.56,
-                boxcolor:
-                      viewModel.calculationitem == 2 ? darkGreenHeigh : Colors.white,
-                  color:
-                      viewModel.calculationitem != 2 ? darkGreenHeigh : Colors.white,
-                  onPress: () {
-                    viewModel.setCalculationItems(2);
-                  },
+                boxcolor: viewModel.calculationitem == 2
+                    ? darkGreenHeigh
+                    : Colors.white,
+                color: viewModel.calculationitem != 2
+                    ? darkGreenHeigh
+                    : Colors.white,
+                onPress: () {
+                  viewModel.setCalculationItems(2);
+                },
               ),
             ],
           ),

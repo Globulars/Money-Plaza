@@ -11,7 +11,6 @@ import '../../widgets/common/icon_box_btn/submit_button.dart';
 import '../../widgets/common/icon_box_btn/text.dart';
 import 'info_alert_dialog_model.dart';
 
-
 class InfoAlertDialog extends StackedView<InfoAlertDialogModel> {
   final DialogRequest request;
   final Function(DialogResponse) completer;

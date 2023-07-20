@@ -6,7 +6,7 @@ import '../../../../app/app.locator.dart';
 
 class CommericalLoanViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
-var loanTenors = 6;
+  var loanTenors = 6;
   var outStanding = 10;
   var initialIndex = 0;
   setInitialIndex() {
@@ -14,7 +14,7 @@ var loanTenors = 6;
     notifyListeners();
   }
 
-   setLoanTenors(value) {
+  setLoanTenors(value) {
     loanTenors = value;
     notifyListeners();
   }

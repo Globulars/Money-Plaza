@@ -27,32 +27,32 @@ class TransferTabBar3 extends ViewModelWidget<BlnstransferViewModel> {
             fontWeight: FontWeight.w600,
           ),
           verticalSpaceTiny,
-            Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               ReturnButton(
                 height: 40,
                 text: 'Yes',
                 width: width * 0.43,
-                  boxcolor:
-                      viewModel.outStanding == 1 ? darkGreenHeigh : Colors.white,
-                  color:
-                      viewModel.outStanding != 1 ? darkGreenHeigh : Colors.white,
-                  onPress: () {
-                    viewModel.setOutstandingLoan(1);
-                  },
+                boxcolor:
+                    viewModel.outStanding == 1 ? darkGreenHeigh : Colors.white,
+                color:
+                    viewModel.outStanding != 1 ? darkGreenHeigh : Colors.white,
+                onPress: () {
+                  viewModel.setOutstandingLoan(1);
+                },
               ),
               ReturnButton(
                 height: 40,
                 text: 'No',
                 width: width * 0.43,
-                 boxcolor:
-                      viewModel.outStanding == 2 ? darkGreenHeigh : Colors.white,
-                  color:
-                      viewModel.outStanding != 2 ? darkGreenHeigh : Colors.white,
-                  onPress: () {
-                    viewModel.setOutstandingLoan(2);
-                  },
+                boxcolor:
+                    viewModel.outStanding == 2 ? darkGreenHeigh : Colors.white,
+                color:
+                    viewModel.outStanding != 2 ? darkGreenHeigh : Colors.white,
+                onPress: () {
+                  viewModel.setOutstandingLoan(2);
+                },
               ),
             ],
           ),
