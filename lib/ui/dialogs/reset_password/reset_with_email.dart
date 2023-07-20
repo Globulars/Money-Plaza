@@ -20,6 +20,7 @@ class ResetWithEmail extends StackedView<ResetPasswordDialogModel> {
     final width = MediaQuery.of(context).size.width;
     return Column(
       children: [
+        verticalSpaceSmall,
         CustomTextField(
           hintText: "Email",
           hintStyle: const TextStyle(fontSize: 16),
