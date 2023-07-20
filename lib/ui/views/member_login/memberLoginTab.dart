@@ -32,7 +32,7 @@ class MemberLoginTab extends StackedView<MemberLoginViewModel> {
                     toolbarHeight: 0,
                     backgroundColor: Colors.transparent,
                     pinned: true,
-                    floating: false,
+                    floating: true,
                     shape: const RoundedRectangleBorder(
                       side: BorderSide(width: 1),
                     ),
