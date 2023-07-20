@@ -38,13 +38,13 @@ class ResetPassTab extends StackedView<ResetPasswordDialogModel> {
                   child: Text(
                     "resetByEmail",
                     style: GoogleFonts.ibmPlexSans(fontSize: 14),
-                  ),
+                  ).tr(),
                 ),
                 Tab(
                   child: Text(
                     "resetByMobile",
                     style: GoogleFonts.ibmPlexSans(fontSize: 14),
-                  ),
+                  ).tr(),
                 ),
               ],
             ),
