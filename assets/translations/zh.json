@@ -193,7 +193,6 @@
     "calculateNow": "",
     "mortgageLoadAmount": "",
     "mortgageTenors": "",
-    "years": "",
     "bankFinancialInstitutes": "",
     "matching": "",
     "termLoan": "",
@@ -203,5 +202,8 @@
     "repaymentPeriod(Monthly)": "",
     "resetPassword": "",
     "restByEmail": "",
-    "restByMobile": ""
+    "restByMobile": "",
+    "loanBalanceTransfer": "",
+    "commericalLoans": "",
+    "mortgagesTenor":""
 }

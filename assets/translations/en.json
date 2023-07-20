@@ -193,7 +193,6 @@
   "calculateNow": "Calculate Now",
   "mortgageLoadAmount": "Mortgage Load Amount",
   "mortgageTenors": "Mortgage Tenors",
-  "years": "year(s)",
   "bankFinancialInstitutes": "Banks and Financial Institutes",
   "matching": "Matching",
   "termLoan": "Term Loan",
@@ -205,5 +204,6 @@
   "restByEmail": "Rest by Email",
   "restByMobile": "Rest by Mobile",
   "loanBalanceTransfer":"Loan Balance Transfer",
-  "commericalLoans":"Commerical Loans"
+  "commericalLoans":"Commerical Loans",
+  "mortgagesTenor":"Mortgages Tenor"
 }

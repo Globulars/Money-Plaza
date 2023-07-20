@@ -70,7 +70,7 @@ class CreditCardFilterDialog extends StackedView<CreditCardFilterDialogModel> {
                   verticalSpaceSmall,
                   CustomTextField(
                     titleText: 'mortgageTenors',
-                    hintText: 'years',
+                    hintText: 'year',
                   ),
                   verticalSpaceSmall,
                   DropdownTextfield(
