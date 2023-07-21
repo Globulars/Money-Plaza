@@ -15,6 +15,7 @@ class StartupView extends StackedView<StartupViewModel> {
     StartupViewModel viewModel,
     Widget? child,
   ) {
+    final height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -26,9 +27,13 @@ class StartupView extends StackedView<StartupViewModel> {
             mainAxisSize: MainAxisSize.min,
             children: [
               Image.asset(myIcons.moneyPlaza1),
+              SizedBox(
+                height: height * 0.08,
+                
+              ),
               const SizedBox(
-                width: 16,
-                height: 16,
+                width: 22,
+                height: 22,
                 child: CircularProgressIndicator(
                   color: darkGreenLight,
                   strokeWidth: 6,
