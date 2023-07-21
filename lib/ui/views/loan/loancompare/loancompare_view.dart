@@ -27,27 +27,29 @@ class LoancompareView extends StackedView<LoancompareViewModel> {
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: appBar(),
-          body: const Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+          body: Stack(
             children: [
-              TopBar2View(),
-              verticalSpaceTiny,
-              
-              Expanded(
-                child: SingleChildScrollView(
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 8),
-                    child: Column(
-                      
-                      children: [
-                        PromiseLand(),
-                        HeadBtmText(),
-                      ],
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  verticalSpace(70),
+                  const Expanded(
+                    child: SingleChildScrollView(
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 8),
+                        child: Column(
+                          children: [
+                            PromiseLand(),
+                            HeadBtmText(),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
-                ),
+                  verticalSpaceLarge
+                ],
               ),
-              verticalSpaceLarge
+              const TopBar2View(),
             ],
           ),
         ),

@@ -5,8 +5,10 @@ import 'package:money_plaza/ui/common/app_icons.dart';
 import '../../../../widgets/app_bar.dart';
 import '../../../../widgets/bottom_bar.dart';
 import '../../../../widgets/common/background_image.dart';
+import '../../../../widgets/common/horizental_list_view/horizental_list_view_view.dart';
 import '../../../../widgets/common/icon_box_btn/return_button.dart';
 import '../../../../widgets/common/result_card.dart';
+import '../../../../widgets/top_bar2/top_bar2_view.dart';
 import 'ploan_widgets/top_widget.dart';
 import 'ploanreslut_viewmodel.dart';
 
@@ -28,7 +30,10 @@ class PloanreslutView extends StackedView<PloanreslutViewModel> {
           appBar: appBar(),
           body: Column(
             children: [
-              const TopWidget(),
+              const TopBar2View(),
+              verticalSpaceTiny,
+              const HorizentalListViewView(),
+              verticalSpaceTiny,
               verticalSpaceSmall,
               Expanded(
                 child: ListView.builder(

@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:money_plaza/ui/common/app_icons.dart';
-import 'package:money_plaza/ui/common/ui_helpers.dart';
-import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
 import 'package:stacked/stacked.dart';
-import '../../../common/app_colors.dart';
-import '../../../widgets/top_bar2/top_bar2_view.dart';
-import '../loan_viewmodel.dart';
 
-class ContainerListView extends ViewModelWidget<LoanViewModel> {
-  const ContainerListView({Key? key}) : super(key: key);
+import '../../../common/app_colors.dart';
+import '../../../common/ui_helpers.dart';
+import '../icon_box_btn/text.dart';
+import 'horizental_list_view_viewmodel.dart';
+import 'package:money_plaza/ui/common/app_icons.dart';
+class HorizentalListViewView extends StackedView<HorizentalListViewViewModel> {
+  const HorizentalListViewView({Key? key}) : super(key: key);
 
   @override
-  Widget build(
+  Widget builder(
     BuildContext context,
-    LoanViewModel viewModel,
+    HorizentalListViewViewModel viewModel,
+    Widget? child,
   ) {
-    final width = MediaQuery.of(context).size.width;
+  final width = MediaQuery.of(context).size.width;
     return Column(
-      // crossAxisAlignment: CrossAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -41,7 +41,8 @@ class ContainerListView extends ViewModelWidget<LoanViewModel> {
                   child: Container(
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(5),
-                          border: Border.all(color: darkGreenHeigh, width: 1)),
+                          border:
+                              Border.all(color: darkGreenHeigh, width: 1)),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 4),
                         child: Center(
@@ -75,8 +76,14 @@ class ContainerListView extends ViewModelWidget<LoanViewModel> {
           height: 0,
           thickness: 1,
         ),
-        verticalSpaceTiny,
+        verticalSpaceTiny
       ],
     );
   }
+
+  @override
+  HorizentalListViewViewModel viewModelBuilder(
+    BuildContext context,
+  ) =>
+      HorizentalListViewViewModel();
 }

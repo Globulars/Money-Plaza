@@ -44,29 +44,26 @@ class LoanView extends StackedView<LoanViewModel> {
                 verticalSpaceMedium,
                 loanCont(context),
                 verticalSpaceTiny,
-               
-        verticalSpaceSmall,
+                verticalSpaceSmall,
                 Stack(
                   children: [
                     Column(
                       children: [
-                         verticalSpace(70.0),
+                        verticalSpace(70.0),
                         const ContainerListView(),
-                           ListView.builder(
-                  itemCount: 3,
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemBuilder: (BuildContext context, int index) {
-                    return resultCard(context);
-                  },
-                ),
+                        ListView.builder(
+                          itemCount: 3,
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemBuilder: (BuildContext context, int index) {
+                            return resultCard(context);
+                          },
+                        ),
                       ],
                     ),
-                       const TopBar2View(),
+                    const TopBar2View(),
                   ],
                 ),
-
-             
                 verticalSpaceLarge
               ],
             ),

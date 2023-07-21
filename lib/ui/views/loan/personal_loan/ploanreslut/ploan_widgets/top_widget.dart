@@ -3,6 +3,7 @@ import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import '../../../../../common/app_colors.dart';
 import '../../../../../common/ui_helpers.dart';
+import '../../../../../widgets/common/horizental_list_view/horizental_list_view_view.dart';
 import '../../../../../widgets/common/icon_box_btn/text.dart';
 import '../../../../../widgets/top_bar2/top_bar2_view.dart';
 import '../ploanreslut_viewmodel.dart';
@@ -21,67 +22,7 @@ class TopWidget extends ViewModelWidget<PloanreslutViewModel> {
       children: [
         Column(
           children: [
-            const TopBar2View(),
-
-            verticalSpaceTiny,
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                horizontalSpaceSmall,
-                Image.asset(
-                  myIcons.cilSortDecending,
-                  width: 25,
-                ),
-                horizontalSpaceTiny,
-                SizedBox(
-                  height: 30.0,
-                  width: width * 0.84,
-                  child: ListView.builder(
-                    physics: const ClampingScrollPhysics(),
-                    shrinkWrap: true,
-                    scrollDirection: Axis.horizontal,
-                    itemCount: 15,
-                    itemBuilder: (BuildContext context, int index) => Padding(
-                      padding: const EdgeInsets.only(right: 5),
-                      child: Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
-                              border:
-                                  Border.all(color: darkGreenHeigh, width: 1)),
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 4),
-                            child: Center(
-                                child: CustomText(
-                              text: 'loanAmount',
-                              color: darkGreenHeigh,
-                              fontSize: 12,
-                            )),
-                          )),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            verticalSpaceTiny,
-            Padding(
-              padding: const EdgeInsets.only(right: 8),
-              child: Align(
-                alignment: Alignment.centerRight,
-                child: CustomText(
-                  text: '88results',
-                  color: Colors.black,
-                  fontSize: 15,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-            ),
-            // verticalSpaceTiny,
-            const Divider(
-              color: Colors.black,
-              height: 0,
-              thickness: 1,
-            ),
-            verticalSpaceTiny,
+           
           ],
         )
       ],
