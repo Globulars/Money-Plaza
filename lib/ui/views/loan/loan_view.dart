@@ -6,11 +6,11 @@ import '../../common/app_icons.dart';
 import '../../widgets/app_bar.dart';
 import '../../widgets/bottom_bar.dart';
 import '../../widgets/common/background_image.dart';
+import '../../widgets/common/horizental_list_view/horizental_list_view_view.dart';
 import '../../widgets/common/icon_box_btn/return_button.dart';
 import '../../widgets/common/result_card.dart';
 import '../../widgets/loan_containers.dart';
 import 'loan_viewmodel.dart';
-import 'loan_view_widgets/horizental_view.dart';
 
 class LoanView extends StackedView<LoanViewModel> {
   const LoanView({Key? key}) : super(key: key);
@@ -49,8 +49,8 @@ class LoanView extends StackedView<LoanViewModel> {
                   children: [
                     Column(
                       children: [
-                        verticalSpace(70.0),
-                        const ContainerListView(),
+                        verticalSpace(75.0),
+                        const HorizentalListViewView(),
                         ListView.builder(
                           itemCount: 3,
                           shrinkWrap: true,
