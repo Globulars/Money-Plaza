@@ -6,6 +6,7 @@ import '../../../common/ui_helpers.dart';
 import '../icon_box_btn/text.dart';
 import 'horizental_list_view_viewmodel.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
+
 class HorizentalListViewView extends StackedView<HorizentalListViewViewModel> {
   const HorizentalListViewView({Key? key}) : super(key: key);
 
@@ -15,7 +16,7 @@ class HorizentalListViewView extends StackedView<HorizentalListViewViewModel> {
     HorizentalListViewViewModel viewModel,
     Widget? child,
   ) {
-  final width = MediaQuery.of(context).size.width;
+    final width = MediaQuery.of(context).size.width;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
@@ -41,8 +42,7 @@ class HorizentalListViewView extends StackedView<HorizentalListViewViewModel> {
                   child: Container(
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(5),
-                          border:
-                              Border.all(color: darkGreenHeigh, width: 1)),
+                          border: Border.all(color: darkGreenHeigh, width: 1)),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 4),
                         child: Center(

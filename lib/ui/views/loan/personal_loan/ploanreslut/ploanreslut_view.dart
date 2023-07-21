@@ -28,24 +28,28 @@ class PloanreslutView extends StackedView<PloanreslutViewModel> {
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: appBar(),
-          body: Column(
+          body: Stack(
             children: [
-              const TopBar2View(),
-              verticalSpaceTiny,
-              const HorizentalListViewView(),
-              verticalSpaceTiny,
-              verticalSpaceSmall,
-              Expanded(
-                child: ListView.builder(
-                  itemCount: 3,
-                  shrinkWrap: true,
-                  // physics: const NeverScrollableScrollPhysics(),
-                  itemBuilder: (BuildContext context, int index) {
-                    return resultCard(context);
-                  },
-                ),
+              Column(
+                children: [
+                  verticalSpaceTiny,
+                  const HorizentalListViewView(),
+                  verticalSpaceTiny,
+                  verticalSpaceSmall,
+                  Expanded(
+                    child: ListView.builder(
+                      itemCount: 3,
+                      shrinkWrap: true,
+                      // physics: const NeverScrollableScrollPhysics(),
+                      itemBuilder: (BuildContext context, int index) {
+                        return resultCard(context);
+                      },
+                    ),
+                  ),
+                  verticalSpaceLarge,
+                ],
               ),
-              verticalSpaceLarge,
+              const TopBar2View(),
             ],
           ),
         ),

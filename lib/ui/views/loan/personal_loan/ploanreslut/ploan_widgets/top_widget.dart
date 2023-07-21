@@ -21,9 +21,7 @@ class TopWidget extends ViewModelWidget<PloanreslutViewModel> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Column(
-          children: [
-           
-          ],
+          children: [],
         )
       ],
     );
