@@ -95,11 +95,7 @@ class OwnerloanView extends StackedView<OwnerloanViewModel> {
                           text: 'return',
                           height: 40,
                           width: 80,
-                          onPress: () {
-                            log(DefaultTabController.of(context)
-                                .index
-                                .toString());
-                          },
+                          onPress: viewModel.navigateToBackScreen,
                         )
                       : ReturnButton(
                           imageLeft: myIcons.previous,

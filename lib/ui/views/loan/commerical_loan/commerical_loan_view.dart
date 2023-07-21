@@ -96,11 +96,7 @@ class CommericalLoanView extends StackedView<CommericalLoanViewModel> {
                           text: 'return',
                           height: 40,
                           width: 80,
-                          onPress: () {
-                            log(DefaultTabController.of(context)
-                                .index
-                                .toString());
-                          },
+                          onPress: viewModel.navigateToBackScreen,
                         )
                       : ReturnButton(
                           imageLeft: myIcons.previous,

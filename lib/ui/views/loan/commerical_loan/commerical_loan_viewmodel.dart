@@ -27,4 +27,8 @@ class CommericalLoanViewModel extends BaseViewModel {
   navigateToApplyconfirm() {
     _navigationService.navigateToApplyconfirmView(match: true);
   }
+
+  navigateToBackScreen() {
+    _navigationService.back();
+  }
 }
