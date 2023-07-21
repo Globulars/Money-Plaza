@@ -41,7 +41,6 @@ class CommericalResultView extends StackedView<CommericalResultViewModel> {
                 ))),
               ],
             ),
-            
           ),
         ),
       ],

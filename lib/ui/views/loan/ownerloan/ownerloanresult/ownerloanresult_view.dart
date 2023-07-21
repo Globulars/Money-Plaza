@@ -33,7 +33,6 @@ class OwnerloanresultView extends StackedView<OwnerloanresultViewModel> {
                     child: SingleChildScrollView(child: OwnerResultCard())),
               ],
             ),
-           
           ),
         ),
       ],

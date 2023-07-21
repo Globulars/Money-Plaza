@@ -49,7 +49,7 @@ class PloanreslutView extends StackedView<PloanreslutViewModel> {
           ReturnButton(
             imageLeft: myIcons.returnIcon1,
             imgwidth: 12,
-            text: 'retrue',
+            text: 'r',
             height: 40,
             width: 80,
           ),
