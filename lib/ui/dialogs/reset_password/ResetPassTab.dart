@@ -37,6 +37,7 @@ class ResetPassTab extends StackedView<ResetPasswordDialogModel> {
                     btmLeftRadius: 0,
                     topLeftRadius: 0,
                     topRightRadius: 0,
+                    borderWidth: 0,
                     boxcolor: viewModel.initialIndex == 0
                         ? darkGreenHeigh
                         : Colors.white,
@@ -56,6 +57,7 @@ class ResetPassTab extends StackedView<ResetPasswordDialogModel> {
                     btmLeftRadius: 0,
                     topLeftRadius: 0,
                     topRightRadius: 0,
+                    borderWidth: 0,
                     // onPress: ,
                     boxcolor: viewModel.initialIndex == 1
                         ? darkGreenHeigh
