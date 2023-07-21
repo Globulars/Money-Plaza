@@ -10,6 +10,15 @@ class BlnstransferViewModel extends BaseViewModel {
   var initialIndex = 0;
   var loanTenors = 6;
   var outStanding = 10;
+   int currentIndex = 0;
+
+     indexing(int index){
+    currentIndex = index;
+    notifyListeners();
+    print(currentIndex);
+  }
+
+
   setInitialIndex() {
     initialIndex++;
     notifyListeners();

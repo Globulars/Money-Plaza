@@ -9,6 +9,14 @@ class CommericalLoanViewModel extends BaseViewModel {
   var loanTenors = 6;
   var outStanding = 10;
   var initialIndex = 0;
+  int currentIndex = 0;
+
+    indexing(int index){
+    currentIndex = index;
+    notifyListeners();
+    print(currentIndex);
+  }
+
   setInitialIndex() {
     initialIndex++;
     notifyListeners();
