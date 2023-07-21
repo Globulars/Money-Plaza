@@ -19,8 +19,7 @@ class ContainerListView extends ViewModelWidget<LoanViewModel> {
     return Column(
       // crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        const TopBar2View(),
-        verticalSpaceSmall,
+      
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [

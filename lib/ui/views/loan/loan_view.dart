@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
+import 'package:money_plaza/ui/widgets/top_bar2/top_bar2_view.dart';
 import 'package:stacked/stacked.dart';
 import '../../common/app_icons.dart';
 import '../../widgets/app_bar.dart';
@@ -43,8 +44,15 @@ class LoanView extends StackedView<LoanViewModel> {
                 verticalSpaceMedium,
                 loanCont(context),
                 verticalSpaceTiny,
-                const ContainerListView(),
-                ListView.builder(
+               
+        verticalSpaceSmall,
+                Stack(
+                  children: [
+                    Column(
+                      children: [
+                         verticalSpace(70.0),
+                        const ContainerListView(),
+                           ListView.builder(
                   itemCount: 3,
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
@@ -52,6 +60,13 @@ class LoanView extends StackedView<LoanViewModel> {
                     return resultCard(context);
                   },
                 ),
+                      ],
+                    ),
+                       const TopBar2View(),
+                  ],
+                ),
+
+             
                 verticalSpaceLarge
               ],
             ),
