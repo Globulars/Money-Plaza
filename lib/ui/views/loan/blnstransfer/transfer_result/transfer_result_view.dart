@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/views/loan/blnstransfer/transfer_result/top_widget.dart';
 import 'package:stacked/stacked.dart';
-import 'package:money_plaza/ui/common/app_icons.dart';
 import '../../../../common/ui_helpers.dart';
 import '../../../../widgets/app_bar.dart';
 import '../../../../widgets/common/background_image.dart';

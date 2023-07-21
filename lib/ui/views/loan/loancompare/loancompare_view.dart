@@ -20,7 +20,7 @@ class LoancompareView extends StackedView<LoancompareViewModel> {
     LoancompareViewModel viewModel,
     Widget? child,
   ) {
-    final width = MediaQuery.of(context).size.width;
+    // final width = MediaQuery.of(context).size.width;
     return Stack(
       children: [
         const BackgroundImage(),

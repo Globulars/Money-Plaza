@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
-import 'package:money_plaza/ui/common/app_icons.dart';
 import '../../../../common/ui_helpers.dart';
 import '../../../../widgets/app_bar.dart';
 import '../../../../widgets/common/background_image.dart';
@@ -42,13 +41,7 @@ class CommericalResultView extends StackedView<CommericalResultViewModel> {
                 ))),
               ],
             ),
-            // bottomNavigationBar: Container(
-            //     height: 60,
-            //     width: width * 1,
-            //     child: SizedBox(
-            //         child: Image.asset(
-            //       myIcons.contacts,
-            //     ))),
+            
           ),
         ),
       ],
