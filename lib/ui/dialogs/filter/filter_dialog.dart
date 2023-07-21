@@ -39,27 +39,27 @@ class FilterDialog extends StackedView<FilterDialogModel> {
       backgroundColor: Colors.white,
       child: Column(
         children: [
-           SubBar(
-                    height: 50,
-                    color: Colors.white,
-                    width: width * 1,
-                    image: myIcons.filter,
-                    text: 'filter',
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                    btmLeftRadius: 0,
-                    btmRightRadius: 0,
-                    topimage: myIcons.cancel,
-                    close: true,
-                  ),
-                  verticalSpaceTiny,
+          SubBar(
+            height: 50,
+            color: Colors.white,
+            width: width * 1,
+            image: myIcons.filter,
+            text: 'filter',
+            fontSize: 16,
+            fontWeight: FontWeight.w500,
+            btmLeftRadius: 0,
+            btmRightRadius: 0,
+            topimage: myIcons.cancel,
+            close: true,
+          ),
+          verticalSpaceTiny,
           Expanded(
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                 
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 6),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 6, vertical: 6),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [

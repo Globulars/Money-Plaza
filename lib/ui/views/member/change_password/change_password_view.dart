@@ -5,6 +5,7 @@ import 'package:stacked/stacked.dart';
 import '../../../common/ui_helpers.dart';
 import '../../../widgets/app_bar.dart';
 import '../../../widgets/bottom_bar.dart';
+import '../../../widgets/common/background_image.dart';
 import '../../../widgets/common/custom_text_field/custom_text_field.dart';
 import '../../../widgets/common/icon_box_btn/return_button.dart';
 import '../../../widgets/common/icon_box_btn/sub_bar.dart';
@@ -20,17 +21,10 @@ class ChangePasswordView extends StackedView<ChangePasswordViewModel> {
     ChangePasswordViewModel viewModel,
     Widget? child,
   ) {
-    var width = MediaQuery.of(context).size.width;
+    // var width = MediaQuery.of(context).size.width;
     return Stack(
       children: [
-        Container(
-          width: width * 1,
-          height: MediaQuery.of(context).size.height * 1,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage(myIcons.backgroundimage), fit: BoxFit.fill),
-          ),
-        ),
+        const BackgroundImage(),
         Scaffold(
           backgroundColor: const Color.fromARGB(0, 92, 53, 53),
           appBar: appBar(),

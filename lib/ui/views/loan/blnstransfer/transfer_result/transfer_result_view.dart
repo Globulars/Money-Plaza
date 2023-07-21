@@ -4,6 +4,7 @@ import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import '../../../../common/ui_helpers.dart';
 import '../../../../widgets/app_bar.dart';
+import '../../../../widgets/common/background_image.dart';
 import '../../../../widgets/common/result_card.dart';
 import 'transfer_result_viewmodel.dart';
 
@@ -16,17 +17,10 @@ class TransferResultView extends StackedView<TransferResultViewModel> {
     TransferResultViewModel viewModel,
     Widget? child,
   ) {
-    final width = MediaQuery.of(context).size.width;
+    // final width = MediaQuery.of(context).size.width;
     return Stack(
       children: [
-        Container(
-          width: width * 1,
-          height: MediaQuery.of(context).size.height * 1,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage(myIcons.backgroundimage), fit: BoxFit.fill),
-          ),
-        ),
+        const BackgroundImage(),
         DefaultTabController(
           length: 3,
           child: Scaffold(

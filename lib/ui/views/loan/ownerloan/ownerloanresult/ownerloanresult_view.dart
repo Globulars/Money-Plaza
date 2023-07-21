@@ -3,6 +3,7 @@ import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import '../../../../common/ui_helpers.dart';
 import '../../../../widgets/app_bar.dart';
+import '../../../../widgets/common/background_image.dart';
 import 'owner_result_widgets/owner_card_result.dart';
 import 'owner_result_widgets/result_top_widget.dart';
 import 'ownerloanresult_viewmodel.dart';
@@ -19,14 +20,7 @@ class OwnerloanresultView extends StackedView<OwnerloanresultViewModel> {
     final width = MediaQuery.of(context).size.width;
     return Stack(
       children: [
-        Container(
-          width: width * 1,
-          height: MediaQuery.of(context).size.height * 1,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage(myIcons.backgroundimage), fit: BoxFit.fill),
-          ),
-        ),
+        const BackgroundImage(),
         DefaultTabController(
           length: 3,
           child: Scaffold(

@@ -27,47 +27,51 @@ class ResetPassTab extends StackedView<ResetPasswordDialogModel> {
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   ReturnButton(
-                    width:width*0.35,
+                    width: width * 0.35,
                     height: 35,
                     text: 'resetByEmail',
                     btmRightRadius: 0,
                     btmLeftRadius: 0,
                     topLeftRadius: 0,
                     topRightRadius: 0,
-                       boxcolor:
-                    viewModel.initialIndex == 0 ? darkGreenHeigh : Colors.white,
-                color:
-                    viewModel.initialIndex != 0 ? darkGreenHeigh : Colors.white,
-                onPress: () {
-                  viewModel.setInitialIndex(0);
-                },
+                    boxcolor: viewModel.initialIndex == 0
+                        ? darkGreenHeigh
+                        : Colors.white,
+                    color: viewModel.initialIndex != 0
+                        ? darkGreenHeigh
+                        : Colors.white,
+                    onPress: () {
+                      viewModel.setInitialIndex(0);
+                    },
                     // onPress: ,
                   ),
-                   ReturnButton(
-                     height: 35,
-                    width: width*0.35,
+                  ReturnButton(
+                    height: 35,
+                    width: width * 0.35,
                     text: 'resetByMobile',
                     btmRightRadius: 0,
                     btmLeftRadius: 0,
                     topLeftRadius: 0,
                     topRightRadius: 0,
                     // onPress: ,
-                     boxcolor:
-                    viewModel.initialIndex == 1 ? darkGreenHeigh : Colors.white,
-                color:
-                    viewModel.initialIndex != 1 ? darkGreenHeigh : Colors.white,
-                onPress: () {
-                  viewModel.setInitialIndex(1);
-                },
+                    boxcolor: viewModel.initialIndex == 1
+                        ? darkGreenHeigh
+                        : Colors.white,
+                    color: viewModel.initialIndex != 1
+                        ? darkGreenHeigh
+                        : Colors.white,
+                    onPress: () {
+                      viewModel.setInitialIndex(1);
+                    },
                   ),
                 ],
               ),
-              
-              viewModel.initialIndex == 0? ResetWithEmail():Text("Reset by mobile tab"),
-              
+              viewModel.initialIndex == 0
+                  ? ResetWithEmail()
+                  : Text("Reset by mobile tab"),
             ],
           ),
         ),

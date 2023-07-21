@@ -11,6 +11,7 @@ import '../../../common/app_colors.dart';
 import '../../../common/ui_helpers.dart';
 import '../../../widgets/app_bar.dart';
 import '../../../widgets/bottom_bar.dart';
+import '../../../widgets/common/background_image.dart';
 import '../../../widgets/common/icon_box_btn/return_button.dart';
 import 'blnstransfer_viewmodel.dart';
 import 'tranfer_loan_widget/transfer_tabbar1.dart';
@@ -24,22 +25,14 @@ class BlnstransferView extends StackedView<BlnstransferViewModel> {
     BlnstransferViewModel viewModel,
     Widget? child,
   ) {
-    final width = MediaQuery.of(context).size.width;
+    // final width = MediaQuery.of(context).size.width;
 
     return DefaultTabController(
       length: 3,
       child: Builder(builder: (context) {
         return Stack(
           children: [
-            Container(
-              width: width * 1,
-              height: MediaQuery.of(context).size.height * 1,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage(myIcons.backgroundimage),
-                    fit: BoxFit.fill),
-              ),
-            ),
+            const BackgroundImage(),
             Scaffold(
               backgroundColor: Colors.transparent,
               appBar: appBar(),

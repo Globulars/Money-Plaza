@@ -4,6 +4,7 @@ import 'package:money_plaza/ui/common/app_icons.dart';
 import '../../../common/ui_helpers.dart';
 import '../../../widgets/app_bar.dart';
 import '../../../widgets/bottom_bar.dart';
+import '../../../widgets/common/background_image.dart';
 import '../../../widgets/common/icon_box_btn/return_button.dart';
 import '../../../widgets/top_bar2/top_bar2_view.dart';
 import 'compare_widgets/head_btm_text.dart';
@@ -22,14 +23,7 @@ class LoancompareView extends StackedView<LoancompareViewModel> {
     final width = MediaQuery.of(context).size.width;
     return Stack(
       children: [
-        Container(
-          width: width * 1,
-          height: MediaQuery.of(context).size.height * 1,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage(myIcons.backgroundimage), fit: BoxFit.fill),
-          ),
-        ),
+        const BackgroundImage(),
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: appBar(),

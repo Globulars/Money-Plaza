@@ -7,6 +7,7 @@ import 'package:stacked/stacked.dart';
 import '../../common/app_colors.dart';
 import '../../widgets/app_bar.dart';
 import '../../widgets/bottom_bar.dart';
+import '../../widgets/common/background_image.dart';
 import 'RegisterTab.dart';
 import 'memberLoginTab.dart';
 import 'member_login_viewmodel.dart';
@@ -24,14 +25,7 @@ class MemberLoginView extends StackedView<MemberLoginViewModel> {
     final height = MediaQuery.of(context).size.height;
     return Stack(
       children: [
-        Container(
-          width: width * 1,
-          height: height * 1,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage(myIcons.backgroundimage), fit: BoxFit.fill),
-          ),
-        ),
+        const BackgroundImage(),
         DefaultTabController(
           length: 2,
           child: SizedBox(
