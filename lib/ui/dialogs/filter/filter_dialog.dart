@@ -37,7 +37,7 @@ class FilterDialog extends StackedView<FilterDialogModel> {
       backgroundColor: Colors.white,
       child: SizedBox(
         height: height * 0.51,
-        width: width * 0.8,
+        width: width * 0.76,
         child: Column(
           children: [
             SubBar(
