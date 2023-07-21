@@ -13,7 +13,11 @@ class MemberLoginViewModel extends BaseViewModel {
       variant: DialogType.resetPassword,
     );
   }
-
+  var changeTab= 0;
+  setChangeTab(value){
+    changeTab =value;
+    notifyListeners();
+  }
   navigateToMemberSetting() {
     _navigationService.navigateToMemberSettingView();
   }

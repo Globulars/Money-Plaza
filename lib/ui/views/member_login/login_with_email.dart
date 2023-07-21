@@ -19,6 +19,7 @@ class LoginWithEmail extends StackedView<MemberLoginViewModel> {
   ) {
     return Column(
       children: [
+        verticalSpaceSmall,
         CustomTextField(
           hintText: "email",
           hintStyle: const TextStyle(fontSize: 16),

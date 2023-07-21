@@ -32,8 +32,8 @@ class MemberLoginTab extends StackedView<MemberLoginViewModel> {
                   SliverAppBar(
                     toolbarHeight: 0,
                     backgroundColor: Colors.transparent,
-                    pinned: true,
-                    floating: true,
+                    pinned: false,
+                    floating: false,
                     shape: const RoundedRectangleBorder(
                       side: BorderSide(width: 1),
                     ),
