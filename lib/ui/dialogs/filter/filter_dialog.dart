@@ -34,7 +34,7 @@ class FilterDialog extends StackedView<FilterDialogModel> {
 
     return Dialog(
       insetPadding:
-          EdgeInsets.symmetric(vertical: height * 0.13, horizontal: 40),
+          EdgeInsets.symmetric(vertical: height * 0.10, horizontal: width * 0.13),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       backgroundColor: Colors.white,
       child: Column(
