@@ -6,6 +6,7 @@ import 'package:money_plaza/ui/dialogs/reset_password/reset_with_email.dart';
 import 'package:stacked/stacked.dart';
 
 import '../../common/app_colors.dart';
+import '../../widgets/common/icon_box_btn/return_button.dart';
 
 class ResetPassTab extends StackedView<ResetPasswordDialogModel> {
   const ResetPassTab({Key? key}) : super(key: key);
@@ -18,42 +19,60 @@ class ResetPassTab extends StackedView<ResetPasswordDialogModel> {
   ) {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
-    return DefaultTabController(
-      length: 2,
-      child: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: SizedBox(
-          height: height * 0.38,
-          width: width,
-          child: Scaffold(
-            appBar: TabBar(
-              unselectedLabelColor: kcPureBlack,
-              labelColor: kcPureWhite,
-              labelStyle: GoogleFonts.ibmPlexSans(fontSize: 10),
-              indicator: const BoxDecoration(
-                  // Creates border
-                  color: darkGreenHeigh),
-              tabs: [
-                Tab(
-                  child: Text(
-                    "resetByEmail",
-                    style: GoogleFonts.ibmPlexSans(fontSize: 14),
-                  ).tr(),
-                ),
-                Tab(
-                  child: Text(
-                    "resetByMobile",
-                    style: GoogleFonts.ibmPlexSans(fontSize: 14),
-                  ).tr(),
-                ),
-              ],
-            ),
-            body: TabBarView(
-              children: <Widget>[
-                const ResetWithEmail(),
-                const Text("registerWithMobile").tr(),
-              ],
-            ),
+    return Expanded(
+      child: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  ReturnButton(
+                    width: width * 0.35,
+                    height: 35,
+                    text: 'resetByEmail',
+                    btmRightRadius: 0,
+                    btmLeftRadius: 0,
+                    topLeftRadius: 0,
+                    topRightRadius: 0,
+                    boxcolor: viewModel.initialIndex == 0
+                        ? darkGreenHeigh
+                        : Colors.white,
+                    color: viewModel.initialIndex != 0
+                        ? darkGreenHeigh
+                        : Colors.white,
+                    onPress: () {
+                      viewModel.setInitialIndex(0);
+                    },
+                    // onPress: ,
+                  ),
+                  ReturnButton(
+                    height: 35,
+                    width: width * 0.35,
+                    text: 'resetByMobile',
+                    btmRightRadius: 0,
+                    btmLeftRadius: 0,
+                    topLeftRadius: 0,
+                    topRightRadius: 0,
+                    // onPress: ,
+                    boxcolor: viewModel.initialIndex == 1
+                        ? darkGreenHeigh
+                        : Colors.white,
+                    color: viewModel.initialIndex != 1
+                        ? darkGreenHeigh
+                        : Colors.white,
+                    onPress: () {
+                      viewModel.setInitialIndex(1);
+                    },
+                  ),
+                ],
+              ),
+              viewModel.initialIndex == 0
+                  ? ResetWithEmail()
+                  : Text("Reset by mobile tab"),
+            ],
           ),
         ),
       ),
@@ -66,3 +85,4 @@ class ResetPassTab extends StackedView<ResetPasswordDialogModel> {
   ) =>
       ResetPasswordDialogModel();
 }
+//  "", "",

@@ -1,4 +1,4 @@
-import 'dart:developer';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -95,11 +95,7 @@ class OwnerloanView extends StackedView<OwnerloanViewModel> {
                           text: 'return',
                           height: 40,
                           width: 80,
-                          onPress: () {
-                            log(DefaultTabController.of(context)
-                                .index
-                                .toString());
-                          },
+                          onPress: viewModel.navigateToBackScreen,
                         )
                       : ReturnButton(
                           imageLeft: myIcons.previous,

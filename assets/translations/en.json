@@ -203,9 +203,10 @@
   "resetPassword": "Reset Password",
   "restByEmail": "Rest by Email",
   "restByMobile": "Rest by Mobile",
-  "loanBalanceTransfer":"Loan Balance Transfer",
-  "commericalLoans":"Commerical Loans",
-  "mortgagesTenor":"Mortgages Tenor",
-  "resetByEmail":"Reset by Email",
-  "resetByMobile":"Reset by Mobile"
+  "loanBalanceTransfer": "Loan Balance Transfer",
+  "commericalLoans": "Commerical Loans",
+  "mortgagesTenor": "Mortgages Tenor",
+  "resetByEmail": "Reset by Email",
+  "resetByMobile": "Reset by Mobile",
+  "weLand": "We Land"
 }

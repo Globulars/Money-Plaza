@@ -5,6 +5,7 @@ import 'package:money_plaza/ui/common/app_icons.dart';
 import '../../common/ui_helpers.dart';
 import '../../widgets/app_bar.dart';
 import '../../widgets/bottom_bar.dart';
+import '../../widgets/common/background_image.dart';
 import '../../widgets/common/custom_text_field/custom_text_field.dart';
 import '../../widgets/common/dropdown_textfield/dropdown_textfield.dart';
 import '../../widgets/common/icon_box_btn/return_button.dart';
@@ -23,14 +24,7 @@ class CreditCardView extends StackedView<CreditCardViewModel> {
     final width = MediaQuery.of(context).size.width;
     return Stack(
       children: [
-        Container(
-          width: width * 1,
-          height: MediaQuery.of(context).size.height * 1,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage(myIcons.backgroundimage), fit: BoxFit.fill),
-          ),
-        ),
+        const BackgroundImage(),
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: appBar(),

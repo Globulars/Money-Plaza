@@ -4,6 +4,7 @@ import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import '../../../../widgets/app_bar.dart';
 import '../../../../widgets/bottom_bar.dart';
+import '../../../../widgets/common/background_image.dart';
 import '../../../../widgets/common/icon_box_btn/return_button.dart';
 import '../../../../widgets/common/result_card.dart';
 import 'ploan_widgets/top_widget.dart';
@@ -18,20 +19,10 @@ class PloanreslutView extends StackedView<PloanreslutViewModel> {
     PloanreslutViewModel viewModel,
     Widget? child,
   ) {
-    final width = MediaQuery.of(context).size.width;
+    // final width = MediaQuery.of(context).size.width;
     return Stack(
       children: [
-        Container(
-          width: width * 1,
-          height: MediaQuery.of(context).size.height * 1,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage(myIcons.backgroundimage), fit: BoxFit.fill),
-          ),
-        ),
-        // DefaultTabController(
-        //   length: 3,
-        //   child:
+        const BackgroundImage(),
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: appBar(),

@@ -96,8 +96,8 @@ class HeadBtmText extends ViewModelWidget<LoancompareViewModel> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CustomText(text: 'Term Loan'),
-                  CustomText(text: 'Term Loan'),
+                  CustomText(text: 'termLoan'),
+                  CustomText(text: 'termLoan'),
                 ],
               ),
             ),
