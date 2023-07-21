@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:money_plaza/app/app.router.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
@@ -13,11 +15,14 @@ class MemberLoginViewModel extends BaseViewModel {
       variant: DialogType.resetPassword,
     );
   }
-  var changeTab= 0;
-  setChangeTab(value){
-    changeTab =value;
+
+  var changeTab = 0;
+  setChangeTab(value) {
+    log(value.toString());
+    changeTab = value;
     notifyListeners();
   }
+
   navigateToMemberSetting() {
     _navigationService.navigateToMemberSettingView();
   }
