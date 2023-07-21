@@ -69,7 +69,7 @@ class MorgagesFilterDialog extends StackedView<MorgagesFilterDialogModel> {
                   verticalSpaceSmall,
                   CustomTextField(
                     titleText: 'mortgageTenors',
-                    hintText: 'year(s)',
+                    hintText: 'year',
                   ),
                   verticalSpaceSmall,
                   DropdownTextfield(

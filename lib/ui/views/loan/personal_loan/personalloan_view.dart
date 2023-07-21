@@ -88,8 +88,8 @@ class PersonalloanView extends StackedView<PersonalloanViewModel> {
                   body: const TabBarView(
                     children: <Widget>[
                       SingleChildScrollView(child: TabBarView1()),
-                      TabBarView2(),
-                      TabBarView3()
+                      SingleChildScrollView(child: TabBarView2()),
+                      SingleChildScrollView(child: TabBarView3())
                     ],
                   ),
                 ),

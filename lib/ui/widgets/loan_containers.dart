@@ -47,7 +47,7 @@ Widget loanCont(context) {
             text: 'personalLoans',
             onPress: navigateToPersonalloan,
           ),
-          horizontalSpaceSmall,
+          horizontalSpaceTiny,
           IconBoxBtn(
             height: 70,
             width: MediaQuery.of(context).size.width * 0.45,
@@ -59,7 +59,7 @@ Widget loanCont(context) {
           ),
         ],
       ),
-      verticalSpaceSmall,
+      verticalSpaceTiny,
       Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -72,7 +72,7 @@ Widget loanCont(context) {
             text: 'loanBalanceTransfer',
             onPress: navigateToBlnstransfer,
           ),
-          horizontalSpaceSmall,
+          horizontalSpaceTiny,
           IconBoxBtn(
             height: 70,
             width: MediaQuery.of(context).size.width * 0.45,

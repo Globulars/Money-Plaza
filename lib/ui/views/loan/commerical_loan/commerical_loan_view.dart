@@ -80,9 +80,9 @@ class CommericalLoanView extends StackedView<CommericalLoanViewModel> {
                 },
                 body: const TabBarView(
                   children: <Widget>[
-                    CommTabBar1(),
-                    CommTabBar2(),
-                    CommTabBar3()
+                    SingleChildScrollView(child: CommTabBar1()),
+                    SingleChildScrollView(child: CommTabBar2()),
+                    SingleChildScrollView(child: CommTabBar3())
                   ],
                 ),
               ),

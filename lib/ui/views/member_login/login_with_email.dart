@@ -59,7 +59,7 @@ class LoginWithEmail extends StackedView<MemberLoginViewModel> {
         GestureDetector(
           onTap: viewModel.showResetPassword,
           child: CustomText(
-            text: "Forget Password?",
+            text: "forgetPassword?",
             color: kcDarkGreyColor,
             fontSize: 16,
           ),

@@ -43,7 +43,7 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                           boxColor: Colors.transparent,
                           image: myIcons.compare2,
                           imgwidth: 12,
-                          text: 'Select',
+                          text: 'select',
                           color: Colors.black,
                           fontSize: 16,
                         )
@@ -79,7 +79,7 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               CustomText(
-                                text: 'Highest',
+                                text: 'highest',
                                 fontSize: 10,
                               ),
                               CustomText(
