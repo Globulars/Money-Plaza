@@ -32,13 +32,15 @@ class LoancompareView extends StackedView<LoancompareViewModel> {
             children: [
               TopBar2View(),
               verticalSpaceTiny,
-              PromiseLand(),
+              
               Expanded(
                 child: SingleChildScrollView(
                   child: Padding(
                     padding: EdgeInsets.symmetric(horizontal: 8),
                     child: Column(
+                      
                       children: [
+                        PromiseLand(),
                         HeadBtmText(),
                       ],
                     ),
