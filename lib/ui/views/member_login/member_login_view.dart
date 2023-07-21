@@ -44,6 +44,7 @@ class MemberLoginView extends StackedView<MemberLoginViewModel> {
                       pinned: true,
                       floating: false,
                       bottom: TabBar(
+                        onTap: viewModel.setChangeTab,
                         unselectedLabelColor: darkGreenHeigh,
                         labelColor: Colors.white,
                         labelStyle: GoogleFonts.ibmPlexSans(fontSize: 10),
@@ -64,11 +65,9 @@ class MemberLoginView extends StackedView<MemberLoginViewModel> {
                                     myIcons.memberLogin,
                                     height: 30,
                                     width: 30,
-                                    color: DefaultTabController.of(context)
-                                                .index ==
-                                            0
+                                    color: viewModel.changeTab == 0
                                         ? Colors.white
-                                        : Colors.red,
+                                        : darkGreenHeigh,
                                   ),
                                 ),
                                 Text(
@@ -90,6 +89,9 @@ class MemberLoginView extends StackedView<MemberLoginViewModel> {
                                       myIcons.register,
                                       height: 30,
                                       width: 30,
+                                      color: viewModel.changeTab == 1
+                                          ? Colors.white
+                                          : darkGreenHeigh,
                                     ),
                                   ),
                                   Text(
