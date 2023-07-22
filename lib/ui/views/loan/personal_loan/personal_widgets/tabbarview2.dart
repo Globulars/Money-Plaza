@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, avoid_types_as_parameter_names, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import '../../../../common/ui_helpers.dart';

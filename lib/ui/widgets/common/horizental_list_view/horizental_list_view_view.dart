@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
-
 import '../../../common/app_colors.dart';
 import '../../../common/ui_helpers.dart';
 import '../icon_box_btn/text.dart';
@@ -16,7 +15,6 @@ class HorizentalListViewView extends StackedView<HorizentalListViewViewModel> {
     HorizentalListViewViewModel viewModel,
     Widget? child,
   ) {
-    final width = MediaQuery.of(context).size.width;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
