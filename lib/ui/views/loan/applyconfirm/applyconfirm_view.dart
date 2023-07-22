@@ -28,7 +28,7 @@ class ApplyconfirmView extends StackedView<ApplyconfirmViewModel> {
     ApplyconfirmViewModel viewModel,
     Widget? child,
   ) {
-    // final width = MediaQuery.of(context).size.width;
+
     return Stack(
       children: [
         const BackgroundImage(),

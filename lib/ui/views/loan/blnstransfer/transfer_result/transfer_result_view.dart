@@ -4,7 +4,9 @@ import 'package:stacked/stacked.dart';
 import '../../../../common/ui_helpers.dart';
 import '../../../../widgets/app_bar.dart';
 import '../../../../widgets/common/background_image.dart';
+import '../../../../widgets/common/horizental_list_view/horizental_list_view_view.dart';
 import '../../../../widgets/common/result_card.dart';
+import '../../../../widgets/top_bar2/top_bar2_view.dart';
 import 'transfer_result_viewmodel.dart';
 
 class TransferResultView extends StackedView<TransferResultViewModel> {
@@ -27,8 +29,10 @@ class TransferResultView extends StackedView<TransferResultViewModel> {
             appBar: appBar(),
             body: Column(
               children: [
-                const TranTopWidget(),
-                verticalSpaceSmall,
+                TopBar2View(),
+               
+                verticalSpaceLarge,
+                HorizentalListViewView(),
                 Expanded(
                     child: SingleChildScrollView(
                         child: ListView.builder(
