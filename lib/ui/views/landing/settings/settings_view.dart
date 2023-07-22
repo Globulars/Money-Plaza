@@ -21,6 +21,7 @@ class SettingsView extends StackedView<SettingsViewModel> {
     Widget? child,
   ) {
     bool isToggled = true;
+    
     return Stack(
       children: [
         Scaffold(

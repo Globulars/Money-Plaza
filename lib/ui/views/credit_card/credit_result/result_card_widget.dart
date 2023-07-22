@@ -16,6 +16,7 @@ class CreditCardWiget extends ViewModelWidget<CreditResultViewModel> {
     CreditResultViewModel viewModel,
   ) {
     final width = MediaQuery.of(context).size.width;
+    
     return Expanded(
       child: ListView.builder(
         itemCount: 3,

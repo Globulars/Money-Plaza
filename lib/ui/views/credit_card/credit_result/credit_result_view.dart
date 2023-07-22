@@ -20,7 +20,6 @@ class CreditResultView extends StackedView<CreditResultViewModel> {
     CreditResultViewModel viewModel,
     Widget? child,
   ) {
-    final width = MediaQuery.of(context).size.width;
     return Stack(
       children: [
         const BackgroundImage(),

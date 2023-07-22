@@ -1,7 +1,6 @@
 import 'package:money_plaza/app/app.router.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
-
 import '../../../app/app.locator.dart';
 
 class LandingViewModel extends BaseViewModel {
@@ -19,9 +18,6 @@ class LandingViewModel extends BaseViewModel {
     _navigationService.navigateToCreditCardView();
   }
 
-  // navigateToSettings() {
-  //   _navigationService.navigateTo();
-  // }
 
   navigateToLanding() {
     _navigationService.navigateToLandingView();
