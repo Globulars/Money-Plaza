@@ -17,6 +17,7 @@ class LoginWithEmail extends StackedView<MemberLoginViewModel> {
     MemberLoginViewModel viewModel,
     Widget? child,
   ) {
+    
     return Column(
       children: [
         verticalSpaceSmall,
