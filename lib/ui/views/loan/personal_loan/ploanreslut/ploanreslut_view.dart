@@ -9,7 +9,6 @@ import '../../../../widgets/common/horizental_list_view/horizental_list_view_vie
 import '../../../../widgets/common/icon_box_btn/return_button.dart';
 import '../../../../widgets/common/result_card.dart';
 import '../../../../widgets/top_bar2/top_bar2_view.dart';
-import 'ploan_widgets/top_widget.dart';
 import 'ploanreslut_viewmodel.dart';
 
 class PloanreslutView extends StackedView<PloanreslutViewModel> {
@@ -21,7 +20,7 @@ class PloanreslutView extends StackedView<PloanreslutViewModel> {
     PloanreslutViewModel viewModel,
     Widget? child,
   ) {
-    // final width = MediaQuery.of(context).size.width;
+
     return Stack(
       children: [
         const BackgroundImage(),
@@ -33,14 +32,12 @@ class PloanreslutView extends StackedView<PloanreslutViewModel> {
               Column(
                 children: [
                   verticalSpace(70),
-                  const HorizentalListViewView(),
-                
-                
+                  const HorizentalListViewView(),            
                   Expanded(
                     child: ListView.builder(
                       itemCount: 3,
                       shrinkWrap: true,
-                      // physics: const NeverScrollableScrollPhysics(),
+
                       itemBuilder: (BuildContext context, int index) {
                         return resultCard(context);
                       },
@@ -53,7 +50,6 @@ class PloanreslutView extends StackedView<PloanreslutViewModel> {
             ],
           ),
         ),
-        // ),
         bottomBar(
           ReturnButton(
             imageLeft: myIcons.returnIcon1,

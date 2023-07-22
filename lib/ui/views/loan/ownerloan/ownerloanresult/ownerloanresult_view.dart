@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import '../../../../common/ui_helpers.dart';
 import '../../../../widgets/app_bar.dart';
+import '../../../../widgets/bottom_bar.dart';
 import '../../../../widgets/common/background_image.dart';
-import 'owner_result_widgets/owner_card_result.dart';
-import 'owner_result_widgets/result_top_widget.dart';
+import '../../../../widgets/common/horizental_list_view/horizental_list_view_view.dart';
+import '../../../../widgets/common/icon_box_btn/return_button.dart';
+import '../../../../widgets/common/result_card.dart';
+import '../../../../widgets/top_bar2/top_bar2_view.dart';
+import 'package:money_plaza/ui/common/app_icons.dart';
 import 'ownerloanresult_viewmodel.dart';
 
 class OwnerloanresultView extends StackedView<OwnerloanresultViewModel> {
@@ -16,23 +20,43 @@ class OwnerloanresultView extends StackedView<OwnerloanresultViewModel> {
     OwnerloanresultViewModel viewModel,
     Widget? child,
   ) {
-    // final width = MediaQuery.of(context).size.width;
-    return Stack(
+   return Stack(
       children: [
         const BackgroundImage(),
-        DefaultTabController(
-          length: 3,
-          child: Scaffold(
+         Scaffold(
             backgroundColor: Colors.transparent,
             appBar: appBar(),
-            body: const Column(
+            body: Stack(
               children: [
-                OwnerTopWidget(),
-                verticalSpaceSmall,
-                Expanded(
-                    child: SingleChildScrollView(child: OwnerResultCard())),
+                Column(
+                  children: [
+                    verticalSpace(70),
+                    const HorizentalListViewView(),
+                    Expanded(
+                      child: ListView.builder(
+                        itemCount: 3,
+                        shrinkWrap: true,
+                        itemBuilder: (BuildContext context, int index) {
+                          return resultCard(context);
+                        },
+                      ),
+                    ),
+                    verticalSpaceLarge,
+                  ],
+                ),
+                const TopBar2View(),
               ],
             ),
+           
+          ),
+       
+        bottomBar(
+          ReturnButton(
+            imageLeft: myIcons.returnIcon1,
+            imgwidth: 12,
+            text: 'return',
+            height: 40,
+            width: 80,
           ),
         ),
       ],
