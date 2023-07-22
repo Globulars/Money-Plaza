@@ -27,22 +27,26 @@ class TransferResultView extends StackedView<TransferResultViewModel> {
           child: Scaffold(
             backgroundColor: Colors.transparent,
             appBar: appBar(),
-            body: Column(
+            body: Stack(
               children: [
-                TopBar2View(),
-               
-                verticalSpaceLarge,
-                HorizentalListViewView(),
-                Expanded(
-                    child: SingleChildScrollView(
-                        child: ListView.builder(
-                  itemCount: 3,
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemBuilder: (BuildContext context, int index) {
-                    return resultCard(context);
-                  },
-                ))),
+                Column(
+                  children: [
+                    TopBar2View(),
+                   
+                    verticalSpaceLarge,
+                    HorizentalListViewView(),
+                    Expanded(
+                        child: SingleChildScrollView(
+                            child: ListView.builder(
+                      itemCount: 3,
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemBuilder: (BuildContext context, int index) {
+                        return resultCard(context);
+                      },
+                    ))),
+                  ],
+                ),
               ],
             ),
             // bottomNavigationBar: Container(

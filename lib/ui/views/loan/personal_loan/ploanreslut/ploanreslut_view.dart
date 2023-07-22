@@ -32,10 +32,10 @@ class PloanreslutView extends StackedView<PloanreslutViewModel> {
             children: [
               Column(
                 children: [
-                  verticalSpaceTiny,
+                  verticalSpace(70),
                   const HorizentalListViewView(),
-                  verticalSpaceTiny,
-                  verticalSpaceSmall,
+                
+                
                   Expanded(
                     child: ListView.builder(
                       itemCount: 3,
