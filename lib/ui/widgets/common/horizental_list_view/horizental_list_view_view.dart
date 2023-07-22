@@ -29,29 +29,31 @@ class HorizentalListViewView extends StackedView<HorizentalListViewViewModel> {
               width: 25,
             ),
             horizontalSpaceTiny,
-            SizedBox(
-              height: 30.0,
-              width: width * 0.84,
-              child: ListView.builder(
-                physics: const ClampingScrollPhysics(),
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-                itemCount: 15,
-                itemBuilder: (BuildContext context, int index) => Padding(
-                  padding: const EdgeInsets.only(right: 5),
-                  child: Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          border: Border.all(color: darkGreenHeigh, width: 1)),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 4),
-                        child: Center(
-                            child: CustomText(
-                          text: 'loanAmount',
-                          color: darkGreenHeigh,
-                          fontSize: 12,
+            Expanded(
+              child: SizedBox(
+                height: 30.0,
+              
+                child: ListView.builder(
+                  physics: const ClampingScrollPhysics(),
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 15,
+                  itemBuilder: (BuildContext context, int index) => Padding(
+                    padding: const EdgeInsets.only(right: 5),
+                    child: Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            border: Border.all(color: darkGreenHeigh, width: 1)),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 4),
+                          child: Center(
+                              child: CustomText(
+                            text: 'loanAmount',
+                            color: darkGreenHeigh,
+                            fontSize: 12,
+                          )),
                         )),
-                      )),
+                  ),
                 ),
               ),
             ),
