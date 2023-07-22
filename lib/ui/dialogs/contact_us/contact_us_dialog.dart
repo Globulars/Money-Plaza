@@ -4,7 +4,6 @@ import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/icon_box_btn.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
-
 import '../../widgets/common/icon_box_btn/sub_bar.dart';
 import 'contact_us_dialog_model.dart';
 

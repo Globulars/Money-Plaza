@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables, non_constant_identifier_names, avoid_types_as_parameter_names
+
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';

@@ -17,6 +17,7 @@ class ResetWithEmail extends StackedView<ResetPasswordDialogModel> {
     ResetPasswordDialogModel viewModel,
     Widget? child,
   ) {
+    
     final width = MediaQuery.of(context).size.width;
     return Column(
       children: [

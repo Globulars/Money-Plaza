@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:stacked/stacked.dart';
-
 import '../../../widgets/common/icon_box_btn/text.dart';
 import '../detail_filte_dialog_model.dart';
 

@@ -15,8 +15,6 @@ class DetailCard1 extends ViewModelWidget<DetailFilteDialogModel> {
     BuildContext context,
     DetailFilteDialogModel viewModel,
   ) {
-    // final width = MediaQuery.of(context).size.width;
-
     return Card(
       margin: const EdgeInsets.all(5),
       child: Column(

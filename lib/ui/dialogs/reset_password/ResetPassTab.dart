@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:money_plaza/ui/dialogs/reset_password/reset_password_dialog_model.dart';
 import 'package:money_plaza/ui/dialogs/reset_password/reset_with_email.dart';
 import 'package:stacked/stacked.dart';
-
 import '../../common/app_colors.dart';
 import '../../widgets/common/icon_box_btn/return_button.dart';
 
@@ -18,7 +17,6 @@ class ResetPassTab extends StackedView<ResetPasswordDialogModel> {
     Widget? child,
   ) {
     final width = MediaQuery.of(context).size.width;
-    final height = MediaQuery.of(context).size.height;
     return Expanded(
       child: SingleChildScrollView(
         child: Padding(
@@ -72,8 +70,8 @@ class ResetPassTab extends StackedView<ResetPasswordDialogModel> {
                 ],
               ),
               viewModel.initialIndex == 0
-                  ? ResetWithEmail()
-                  : Text("Reset by mobile tab"),
+                  ? const ResetWithEmail()
+                  : const Text("Reset by mobile tab"),
             ],
           ),
         ),

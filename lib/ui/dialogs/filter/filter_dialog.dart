@@ -11,8 +11,6 @@ import '../../widgets/common/icon_box_btn/submit_button.dart';
 import '../../widgets/common/icon_box_btn/text.dart';
 import 'filter_dialog_model.dart';
 
-const double _graphicSize = 60;
-
 class FilterDialog extends StackedView<FilterDialogModel> {
   final DialogRequest request;
   final Function(DialogResponse) completer;

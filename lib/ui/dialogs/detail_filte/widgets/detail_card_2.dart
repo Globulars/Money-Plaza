@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:stacked/stacked.dart';
-
 import '../../../widgets/common/icon_box_btn/text.dart';
 import '../detail_filte_dialog_model.dart';
 
@@ -14,8 +13,6 @@ class DetailCard2 extends ViewModelWidget<DetailFilteDialogModel> {
     BuildContext context,
     DetailFilteDialogModel viewModel,
   ) {
-    // final width = MediaQuery.of(context).size.width;
-
     return Card(
       margin: const EdgeInsets.all(5),
       child: Column(
