@@ -1,6 +1,7 @@
-import 'package:easy_localization/easy_localization.dart';
+
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:money_plaza/ui/dialogs/reset_password/reset_password_dialog_model.dart';
 import 'package:money_plaza/ui/dialogs/reset_password/reset_with_email.dart';
 import 'package:stacked/stacked.dart';
@@ -85,4 +86,3 @@ class ResetPassTab extends StackedView<ResetPasswordDialogModel> {
   ) =>
       ResetPasswordDialogModel();
 }
-//  "", "",
