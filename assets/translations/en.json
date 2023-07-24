@@ -209,7 +209,7 @@
   "resetByEmail": "Reset by Email",
   "resetByMobile": "Reset by Mobile",
   "weLand": "We Land",
-  "firstMonth": "First Month",
-  "secondMonth": "Second Month",
-  "thirdMonth": "Third Month"
+  "firstMonth": "First month",
+  "secondMonth": "Second month",
+  "lastMonth": "Last month"
 }

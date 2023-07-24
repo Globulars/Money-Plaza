@@ -126,14 +126,14 @@ class HeadBtmText extends ViewModelWidget<LoancompareViewModel> {
                       width: width * 0.42,
                       child: CustomText(
                         text:
-                            'First month\n\$4.281.29\nSecond month\n\$4.281.29\nLast month\n\$4.281.29',
+                            'firstMonth\n\$4.281.29\nsecondMonth\n\$4.281.29\lastMonth\n\$4.281.29',
                         textAlign: TextAlign.center,
                       )),
                   SizedBox(
                       width: width * 0.42,
                       child: CustomText(
                         text:
-                            'First month\n\$4.281.29\nSecond month\n\$4.281.29\nLast month\n\$4.281.29',
+                            'firstMonth\n\$4.281.29\nsecondMonth\n\$4.281.29\nlastMonth\n\$4.281.29',
                         textAlign: TextAlign.center,
                       )),
                 ],
