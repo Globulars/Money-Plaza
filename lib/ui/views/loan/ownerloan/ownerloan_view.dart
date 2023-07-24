@@ -52,6 +52,7 @@ class OwnerloanView extends StackedView<OwnerloanViewModel> {
                                 topRight:
                                     Radius.circular(10)), // Creates border
                             color: darkGreenHeigh),
+                            
                         tabs: [
                           Tab(
                             child: const Text(
