@@ -66,7 +66,7 @@ class ReturnButton extends StackedView<IconBoxBtnModel> {
         height: height,
         width: width,
         decoration: BoxDecoration(
-          border: Border.all(color: darkGreenLight, width: borderWidth ?? 2.0),
+          border: Border.all(color: darkGreenLight, width: borderWidth ?? 1.0),
           color: boxcolor ?? Colors.white,
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(topLeftRadius ?? 5),
