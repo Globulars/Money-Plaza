@@ -33,6 +33,7 @@ class MyApp extends StatelessWidget {
       theme: Theme.of(context).copyWith(
         primaryColor: kcBackgroundColor,
         focusColor: kcPrimaryColor,
+        colorScheme: ColorScheme.fromSwatch().copyWith(secondary: darkGreenLight),
         textTheme: Theme.of(context).textTheme.apply(
               bodyColor: Colors.black,
             ),
