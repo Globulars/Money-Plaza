@@ -9,18 +9,24 @@ class TopBar2ViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
   var showcard = false;
   void showCalculator() {
+    showcard = false;
+    notifyListeners();
     _dialogService.showCustomDialog(
       variant: DialogType.calculator,
     );
   }
 
   void showFilter() {
+    showcard = false;
+    notifyListeners();
     _dialogService.showCustomDialog(
       variant: DialogType.filter,
     );
   }
 
   void compareScreen() {
+    showcard = false;
+    notifyListeners();
     _navigationService.navigateToLoancompareView();
   }
 
