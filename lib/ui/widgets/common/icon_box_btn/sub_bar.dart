@@ -72,7 +72,12 @@ class SubBar extends StackedView<IconBoxBtnModel> {
             height: height ?? 50,
             width: width ?? MediaQuery.of(context).size.width * 1 - 10,
             decoration: BoxDecoration(
-              color: boxColor ?? darkGreenHeigh,
+              // color: boxColor ?? darkGreenHeigh,
+              gradient: const LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [darkGreenHeigh, darkGreenLight2,darkGreenHeigh],
+              ),
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(topLeftRadius ?? 10),
                   topRight: Radius.circular(topRightRadius ?? 10),
