@@ -36,7 +36,7 @@ class ContactUsDialog extends StackedView<ContactUsDialogModel> {
             SubBar(
               height: 50,
               color: Colors.white,
-              text: 'Contact Us',
+              text: 'contactUs',
               fontSize: 16,
               fontWeight: FontWeight.w500,
               btmLeftRadius: 0,
