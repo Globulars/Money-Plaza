@@ -77,6 +77,7 @@ class OwnerloanView extends StackedView<OwnerloanViewModel> {
                   ];
                 },
                 body: const TabBarView(
+                   physics: NeverScrollableScrollPhysics(),
                   children: <Widget>[
                     SingleChildScrollView(child: OwnerTabBar1()),
                     SingleChildScrollView(child: OwnerTabBar2()),

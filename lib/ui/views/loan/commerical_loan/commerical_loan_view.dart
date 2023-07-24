@@ -46,6 +46,7 @@ class CommericalLoanView extends StackedView<CommericalLoanViewModel> {
                       bottom: TabBar(
                         onTap: (index) => viewModel.indexing(index),
                         unselectedLabelColor: darkGreenHeigh,
+                     
                         labelColor: Colors.white,
                         labelStyle: GoogleFonts.ibmPlexSans(fontSize: 10),
                         indicator: const BoxDecoration(
@@ -79,6 +80,7 @@ class CommericalLoanView extends StackedView<CommericalLoanViewModel> {
                   ];
                 },
                 body: const TabBarView(
+                   physics: NeverScrollableScrollPhysics(),
                   children: <Widget>[
                     SingleChildScrollView(child: CommTabBar1()),
                     SingleChildScrollView(child: CommTabBar2()),

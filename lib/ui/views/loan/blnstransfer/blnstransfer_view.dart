@@ -79,6 +79,7 @@ class BlnstransferView extends StackedView<BlnstransferViewModel> {
                   ];
                 },
                 body: const TabBarView(
+                   physics: NeverScrollableScrollPhysics(),
                   children: <Widget>[
                     SingleChildScrollView(child: TransferTabBar1()),
                     SingleChildScrollView(child: TransferTabBar2()),
