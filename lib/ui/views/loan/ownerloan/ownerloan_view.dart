@@ -103,7 +103,7 @@ class OwnerloanView extends StackedView<OwnerloanViewModel> {
                           imgwidth: 12,
                           text: "previous",
                           height: 40,
-                          width: 80,
+                          width: 90,
                           onPress: () {
                             var index = viewModel.currentIndex;
                             DefaultTabController.of(context)

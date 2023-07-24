@@ -85,7 +85,7 @@ class ApplyconfirmView extends StackedView<ApplyconfirmViewModel> {
                 imgwidth: 12,
                 text: match ? 'previous' : 'return',
                 height: 40,
-                width: 80,
+                width: 90,
               ),
               horizontalSpaceTiny,
               SubmitButton(

@@ -113,7 +113,7 @@ class PersonalloanView extends StackedView<PersonalloanViewModel> {
                           imgwidth: 12,
                           text: "previous",
                           height: 40,
-                          width: 80,
+                          width: 90,
                           onPress: () {
                             var index = viewModel.currentIndex;
                             DefaultTabController.of(context)
@@ -125,7 +125,7 @@ class PersonalloanView extends StackedView<PersonalloanViewModel> {
                   horizontalSpaceTiny,
                   ReturnButton(
                     imageRight: myIcons.next,
-                    imgwidth: 16,
+                    imgwidth: 12,
                     text: 'next',
                     height: 40,
                     width: 80,
