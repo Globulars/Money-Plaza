@@ -23,14 +23,15 @@ class ResetPasswordDialog extends StackedView<ResetPasswordDialogModel> {
     Widget? child,
   ) {
     final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
 
     return Dialog(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       backgroundColor: Colors.white,
       elevation: 0,
       child: SizedBox(
-        width: width - 40,
-        height: width,
+        height: height * 0.47,
+        width: width * 0.76,
         child: Column(
           children: [
             SubBar(
