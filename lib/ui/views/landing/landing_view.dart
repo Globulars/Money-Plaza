@@ -19,7 +19,7 @@ class LandingView extends StackedView<LandingViewModel> {
   ) {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
-    
+
     return Stack(
       children: [
         Scaffold(

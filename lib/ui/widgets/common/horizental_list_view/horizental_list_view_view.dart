@@ -30,7 +30,6 @@ class HorizentalListViewView extends StackedView<HorizentalListViewViewModel> {
             Expanded(
               child: SizedBox(
                 height: 30.0,
-              
                 child: ListView.builder(
                   physics: const ClampingScrollPhysics(),
                   shrinkWrap: true,
@@ -41,7 +40,8 @@ class HorizentalListViewView extends StackedView<HorizentalListViewViewModel> {
                     child: Container(
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5),
-                            border: Border.all(color: darkGreenHeigh, width: 1)),
+                            border:
+                                Border.all(color: darkGreenHeigh, width: 1)),
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 4),
                           child: Center(

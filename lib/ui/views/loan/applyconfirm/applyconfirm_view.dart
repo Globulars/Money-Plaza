@@ -28,7 +28,6 @@ class ApplyconfirmView extends StackedView<ApplyconfirmViewModel> {
     ApplyconfirmViewModel viewModel,
     Widget? child,
   ) {
-
     return Stack(
       children: [
         const BackgroundImage(),

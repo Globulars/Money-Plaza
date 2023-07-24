@@ -20,7 +20,6 @@ class PloanreslutView extends StackedView<PloanreslutViewModel> {
     PloanreslutViewModel viewModel,
     Widget? child,
   ) {
-
     return Stack(
       children: [
         const BackgroundImage(),
@@ -32,12 +31,11 @@ class PloanreslutView extends StackedView<PloanreslutViewModel> {
               Column(
                 children: [
                   verticalSpace(70),
-                  const HorizentalListViewView(),            
+                  const HorizentalListViewView(),
                   Expanded(
                     child: ListView.builder(
                       itemCount: 3,
                       shrinkWrap: true,
-
                       itemBuilder: (BuildContext context, int index) {
                         return resultCard(context);
                       },

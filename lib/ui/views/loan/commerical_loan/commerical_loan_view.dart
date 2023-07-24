@@ -44,7 +44,7 @@ class CommericalLoanView extends StackedView<CommericalLoanViewModel> {
                       pinned: true,
                       floating: false,
                       bottom: TabBar(
-                        onTap:(index)=> viewModel.indexing(index),
+                        onTap: (index) => viewModel.indexing(index),
                         unselectedLabelColor: darkGreenHeigh,
                         labelColor: Colors.white,
                         labelStyle: GoogleFonts.ibmPlexSans(fontSize: 10),
@@ -106,10 +106,10 @@ class CommericalLoanView extends StackedView<CommericalLoanViewModel> {
                           height: 40,
                           width: 80,
                           onPress: () {
-                            var index =  viewModel.currentIndex;
+                            var index = viewModel.currentIndex;
                             DefaultTabController.of(context)
                                 .animateTo(index - 1);
-                                viewModel.currentIndex = viewModel.currentIndex-1;
+                            viewModel.currentIndex = viewModel.currentIndex - 1;
                             viewModel.setInitialIndex();
                           },
                         ),
@@ -121,10 +121,10 @@ class CommericalLoanView extends StackedView<CommericalLoanViewModel> {
                     height: 40,
                     width: 80,
                     onPress: () {
-                      var index =  viewModel.currentIndex;
+                      var index = viewModel.currentIndex;
                       var length = DefaultTabController.of(context).length;
                       if (index < length - 1) {
-                        viewModel.currentIndex = viewModel.currentIndex+1;
+                        viewModel.currentIndex = viewModel.currentIndex + 1;
                         DefaultTabController.of(context).animateTo(index + 1);
                       } else {
                         viewModel.navigateToApplyconfirm();

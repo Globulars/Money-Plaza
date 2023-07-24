@@ -50,7 +50,7 @@ class LoanView extends StackedView<LoanViewModel> {
                     Column(
                       children: [
                         verticalSpace(70.0),
-                         const HorizentalListViewView(),
+                        const HorizentalListViewView(),
                         ListView.builder(
                           itemCount: 3,
                           shrinkWrap: true,

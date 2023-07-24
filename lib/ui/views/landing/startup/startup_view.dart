@@ -28,7 +28,6 @@ class StartupView extends StackedView<StartupViewModel> {
               Image.asset(myIcons.moneyPlaza1),
               SizedBox(
                 height: height * 0.08,
-                
               ),
               const SizedBox(
                 width: 22,

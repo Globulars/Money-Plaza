@@ -14,7 +14,7 @@ class PersonalloanViewModel extends BaseViewModel {
   var outStanding = 10;
   int currentIndex = 0;
 
-   indexing(int index){
+  indexing(int index) {
     currentIndex = index;
     notifyListeners();
     print(currentIndex);

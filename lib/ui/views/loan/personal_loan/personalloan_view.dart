@@ -50,7 +50,7 @@ class PersonalloanView extends StackedView<PersonalloanViewModel> {
                         pinned: true,
                         floating: false,
                         bottom: TabBar(
-                          onTap:(index)=> viewModel.indexing(index),
+                          onTap: (index) => viewModel.indexing(index),
                           unselectedLabelColor: darkGreenHeigh,
                           controller: DefaultTabController.of(context),
                           labelColor: Colors.white,
@@ -114,10 +114,10 @@ class PersonalloanView extends StackedView<PersonalloanViewModel> {
                           height: 40,
                           width: 80,
                           onPress: () {
-                            var index =  viewModel.currentIndex;
+                            var index = viewModel.currentIndex;
                             DefaultTabController.of(context)
                                 .animateTo(index - 1);
-                                viewModel.currentIndex = viewModel.currentIndex-1;
+                            viewModel.currentIndex = viewModel.currentIndex - 1;
                             viewModel.setInitialIndex();
                           },
                         ),
@@ -132,10 +132,10 @@ class PersonalloanView extends StackedView<PersonalloanViewModel> {
                       // if(viewModel.currentIndex  == 0){
 
                       // }
-                      var index =  viewModel.currentIndex;
+                      var index = viewModel.currentIndex;
                       var length = DefaultTabController.of(context).length;
                       if (index < length - 1) {
-                        viewModel.currentIndex = viewModel.currentIndex+1;
+                        viewModel.currentIndex = viewModel.currentIndex + 1;
                         DefaultTabController.of(context).animateTo(index + 1);
                       } else {
                         viewModel.navigateToApplyconfirm();

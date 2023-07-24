@@ -11,7 +11,7 @@ class CommericalLoanViewModel extends BaseViewModel {
   var initialIndex = 0;
   int currentIndex = 0;
 
-    indexing(int index){
+  indexing(int index) {
     currentIndex = index;
     notifyListeners();
     print(currentIndex);

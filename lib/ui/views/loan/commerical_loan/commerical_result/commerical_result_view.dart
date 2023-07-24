@@ -20,36 +20,34 @@ class CommericalResultView extends StackedView<CommericalResultViewModel> {
     CommericalResultViewModel viewModel,
     Widget? child,
   ) {
-   return Stack(
+    return Stack(
       children: [
         const BackgroundImage(),
-         Scaffold(
-            backgroundColor: Colors.transparent,
-            appBar: appBar(),
-            body: Stack(
-              children: [
-                Column(
-                  children: [
-                    verticalSpace(70),
-                    const HorizentalListViewView(),
-                    Expanded(
-                      child: ListView.builder(
-                        itemCount: 3,
-                        shrinkWrap: true,
-                        itemBuilder: (BuildContext context, int index) {
-                          return resultCard(context);
-                        },
-                      ),
+        Scaffold(
+          backgroundColor: Colors.transparent,
+          appBar: appBar(),
+          body: Stack(
+            children: [
+              Column(
+                children: [
+                  verticalSpace(70),
+                  const HorizentalListViewView(),
+                  Expanded(
+                    child: ListView.builder(
+                      itemCount: 3,
+                      shrinkWrap: true,
+                      itemBuilder: (BuildContext context, int index) {
+                        return resultCard(context);
+                      },
                     ),
-                    verticalSpaceLarge,
-                  ],
-                ),
-                const TopBar2View(),
-              ],
-            ),
-           
+                  ),
+                  verticalSpaceLarge,
+                ],
+              ),
+              const TopBar2View(),
+            ],
           ),
-       
+        ),
         bottomBar(
           ReturnButton(
             imageLeft: myIcons.returnIcon1,

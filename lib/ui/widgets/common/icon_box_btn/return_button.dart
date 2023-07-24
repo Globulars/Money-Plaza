@@ -28,25 +28,24 @@ class ReturnButton extends StackedView<IconBoxBtnModel> {
   double? btmLeftRadius;
   double? btmRightRadius;
   double? borderWidth;
-  ReturnButton({
-    super.key,
-    this.color,
-    this.boxcolor,
-    this.height,
-    this.text,
-    this.width,
-    this.fontSize,
-    this.fontWeight,
-    this.imageLeft,
-    this.imageRight,
-    this.imgwidth,
-    this.onPress,
-    this.topLeftRadius,
-    this.topRightRadius,
-    this.btmLeftRadius,
-    this.btmRightRadius,
-    this.borderWidth
-  });
+  ReturnButton(
+      {super.key,
+      this.color,
+      this.boxcolor,
+      this.height,
+      this.text,
+      this.width,
+      this.fontSize,
+      this.fontWeight,
+      this.imageLeft,
+      this.imageRight,
+      this.imgwidth,
+      this.onPress,
+      this.topLeftRadius,
+      this.topRightRadius,
+      this.btmLeftRadius,
+      this.btmRightRadius,
+      this.borderWidth});
 
   @override
   Widget builder(
@@ -67,7 +66,7 @@ class ReturnButton extends StackedView<IconBoxBtnModel> {
         height: height,
         width: width,
         decoration: BoxDecoration(
-          border: Border.all(color: darkGreenLight, width:borderWidth?? 2.0),
+          border: Border.all(color: darkGreenLight, width: borderWidth ?? 2.0),
           color: boxcolor ?? Colors.white,
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(topLeftRadius ?? 5),
