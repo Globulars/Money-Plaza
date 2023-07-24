@@ -79,7 +79,7 @@ class CalculatorDialog extends StackedView<CalculatorDialogModel> {
                           ReturnButton(
                             height: 40,
                             text: 'fixedRateTermLoans',
-                            width: width * 0.42,
+                            width: width * 0.41,
                             boxcolor: viewModel.repayment == 0
                                 ? darkGreenHeigh
                                 : Colors.white,
@@ -93,7 +93,7 @@ class CalculatorDialog extends StackedView<CalculatorDialogModel> {
                           ReturnButton(
                             height: 40,
                             text: 'resolvingLoans',
-                            width: width * 0.32,
+                            width: width * 0.31,
                             boxcolor: viewModel.repayment == 1
                                 ? darkGreenHeigh
                                 : Colors.white,
