@@ -160,7 +160,7 @@
     "ratio(LTV)": "比率(LTV)",
     "year": "年",
     "repaymentType": "還款類型",
-    "moneyRepaymentDetails": "money Repayment Details",
+    "moneyRepaymentDetails": "Money Repayment Details",
     "earlyPaybackPenalty1": "early Payback Penalty1",
     "promise": "承諾",
     "forgetPassword?": "忘記密碼?",
@@ -209,4 +209,5 @@
     "resetByEmail": "郵件重置",
     "resetByMobile": "reset By Mobile",
     "weLand": "weLand"
+    
 }

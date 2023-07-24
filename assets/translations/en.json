@@ -208,5 +208,8 @@
   "mortgagesTenor": "Mortgages Tenor",
   "resetByEmail": "Reset by Email",
   "resetByMobile": "Reset by Mobile",
-  "weLand": "We Land"
+  "weLand": "We Land",
+  "firstMonth": "First Month",
+  "secondMonth": "Second Month",
+  "thirdMonth": "Third Month"
 }
