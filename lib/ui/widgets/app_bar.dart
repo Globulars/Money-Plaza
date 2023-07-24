@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:money_plaza/app/app.router.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:stacked_services/stacked_services.dart';
-
 import '../../app/app.locator.dart';
 
 AppBar appBar() {
