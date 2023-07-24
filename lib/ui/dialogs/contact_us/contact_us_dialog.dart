@@ -73,13 +73,13 @@ class ContactUsDialog extends StackedView<ContactUsDialogModel> {
                   children: [
                     IconBoxBtn(
                       topimage: myIcons.mail,
-                      imgwidth: 50,
+                      imgwidth: 60,
                       boxcolor: Colors.transparent,
                       margin: 5,
                     ),
                     IconBoxBtn(
                       topimage: myIcons.callLog,
-                      imgwidth: 50,
+                      imgwidth: 60,
                       boxcolor: Colors.transparent,
                       margin: 5,
                     ),
