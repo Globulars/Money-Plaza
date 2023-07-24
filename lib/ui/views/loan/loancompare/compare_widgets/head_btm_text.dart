@@ -4,6 +4,7 @@ import 'package:stacked/stacked.dart';
 import '../../../../common/ui_helpers.dart';
 import '../../../../widgets/common/icon_box_btn/text.dart';
 import '../loancompare_viewmodel.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class HeadBtmText extends ViewModelWidget<LoancompareViewModel> {
   const HeadBtmText({Key? key}) : super(key: key);
@@ -126,14 +127,14 @@ class HeadBtmText extends ViewModelWidget<LoancompareViewModel> {
                       width: width * 0.42,
                       child: CustomText(
                         text:
-                            'firstMonth\n\$4.281.29\nsecondMonth\n\$4.281.29\lastMonth\n\$4.281.29',
+                            "firstMonth".tr(args: ["4,281.29", "4,281.29", "4,281.20"]),
                         textAlign: TextAlign.center,
                       )),
                   SizedBox(
                       width: width * 0.42,
                       child: CustomText(
                         text:
-                            'firstMonth\n\$4.281.29\nsecondMonth\n\$4.281.29\nlastMonth\n\$4.281.29',
+                           "firstMonth".tr(args: ["4,281.29", "4,281.29", "4,281.20"]),
                         textAlign: TextAlign.center,
                       )),
                 ],

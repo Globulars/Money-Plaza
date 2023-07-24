@@ -209,7 +209,5 @@
   "resetByEmail": "Reset by Email",
   "resetByMobile": "Reset by Mobile",
   "weLand": "We Land",
-  "firstMonth": "First month",
-  "secondMonth": "Second month",
-  "lastMonth": "Last month"
+  "firstMonth": "First month\n${}\nSecond month\n${}\nLast month\n${}"
 }
