@@ -174,7 +174,6 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
       enabledBorder: enabledBorder ?? _setBorderStyle(),
       focusedBorder: focusedBorder ?? _setBorderStyle(),
       disabledBorder: disabledBorder ?? _setBorderStyle(),
-      errorBorder: focusedBorder ?? _errorBorderStyle(),
       prefixIcon: prefix,
       prefixIconConstraints: prefixConstraints,
       suffixIcon: suffix,
@@ -202,15 +201,6 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
   }
 
   _setBorderStyle() {
-    return OutlineInputBorder(
-      borderRadius: BorderRadius.circular(
-        5.00,
-      ),
-      borderSide: BorderSide(color: Colors.red.withOpacity(0.8), width: 1.0),
-    );
-  }
-
-  _errorBorderStyle() {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(
         5.00,
