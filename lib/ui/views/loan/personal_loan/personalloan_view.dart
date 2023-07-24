@@ -51,24 +51,28 @@ class PersonalloanView extends StackedView<PersonalloanViewModel> {
                         backgroundColor: lightGreenHeigh,
                         pinned: true,
                         floating: false,
+                        
                         bottom: TabBar(
+                         
                           onTap: (index) => viewModel.indexing(index),
                           unselectedLabelColor: darkGreenHeigh,
                           controller: DefaultTabController.of(context),
                           labelColor: Colors.white,
                           labelStyle: GoogleFonts.ibmPlexSans(fontSize: 10),
-                          indicator: const BoxDecoration(
+                          indicator:  BoxDecoration(
                               borderRadius: BorderRadius.only(
                                   topLeft: Radius.circular(10),
                                   topRight:
                                       Radius.circular(10)), // Creates border
-                              color: darkGreenHeigh),
-                          padding: EdgeInsets.all(0),
+                              color: darkGreenHeigh.withOpacity(0.8)),
+                          padding: EdgeInsets.symmetric(horizontal: 10),
                           tabs: [
                             Tab(
                               child: const Text(
                                 'earlyPaybackPenalty',
                                 textAlign: TextAlign.center,
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
                                     fontSize: 14, fontWeight: FontWeight.w600),
                               ).tr(),
@@ -77,6 +81,8 @@ class PersonalloanView extends StackedView<PersonalloanViewModel> {
                               child: const Text(
                                 'sourceOfIncome',
                                 textAlign: TextAlign.center,
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
                                     fontSize: 14, fontWeight: FontWeight.w600),
                               ).tr(),
@@ -85,6 +91,8 @@ class PersonalloanView extends StackedView<PersonalloanViewModel> {
                               child: const Text(
                                 'outstandingLoan',
                                 textAlign: TextAlign.center,
+                               maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
                                     fontSize: 14, fontWeight: FontWeight.w600),
                               ).tr(),

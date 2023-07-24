@@ -54,23 +54,36 @@ class BlnstransferView extends StackedView<BlnstransferViewModel> {
                                 topRight:
                                     Radius.circular(10)), // Creates border
                             color: darkGreenHeigh),
+                             padding: const EdgeInsets.symmetric(horizontal: 10),
                         tabs: [
                           Tab(
                             child: const Text(
                               'earlyPaybackPenalty',
                               textAlign: TextAlign.center,
+                              maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                    fontSize: 14, fontWeight: FontWeight.w600),
                             ).tr(),
                           ),
                           Tab(
                             child: const Text(
                               'sourceOfIncome',
                               textAlign: TextAlign.center,
+                              maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                    fontSize: 14, fontWeight: FontWeight.w600),
                             ).tr(),
                           ),
                           Tab(
                             child: const Text(
                               'outstandingLoan',
                               textAlign: TextAlign.center,
+                              maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                    fontSize: 14, fontWeight: FontWeight.w600),
                             ).tr(),
                           ),
                         ],

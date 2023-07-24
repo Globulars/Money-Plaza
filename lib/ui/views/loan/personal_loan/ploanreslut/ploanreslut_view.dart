@@ -36,12 +36,13 @@ class PloanreslutView extends StackedView<PloanreslutViewModel> {
                     child: ListView.builder(
                       itemCount: 3,
                       shrinkWrap: true,
+                      padding: const EdgeInsets.only(bottom: 60),
                       itemBuilder: (BuildContext context, int index) {
                         return resultCard(context);
                       },
                     ),
                   ),
-                  verticalSpaceLarge,
+                  // verticalSpaceLarge,
                 ],
               ),
               const TopBar2View(),
@@ -52,9 +53,9 @@ class PloanreslutView extends StackedView<PloanreslutViewModel> {
           ReturnButton(
             imageLeft: myIcons.returnIcon1,
             imgwidth: 12,
-            text: 'return',
+            text: 'backToList',
             height: 40,
-            width: 80,
+            width: 120,
           ),
         ),
       ],

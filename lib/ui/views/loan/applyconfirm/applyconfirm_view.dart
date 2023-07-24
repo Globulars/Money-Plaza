@@ -43,6 +43,8 @@ class ApplyconfirmView extends StackedView<ApplyconfirmViewModel> {
                 text: 'contactInformation',
                 height: 50,
                 scale: 1.4,
+                btmLeftRadius: 0,
+                btmRightRadius: 0,
               ),
               verticalSpaceSmall,
               Expanded(

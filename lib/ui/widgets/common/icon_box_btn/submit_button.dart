@@ -61,7 +61,7 @@ class SubmitButton extends StackedView<IconBoxBtnModel> {
             width: width,
             decoration: BoxDecoration(
                 color: boxColor ?? darkGreenLight,
-                borderRadius: BorderRadius.circular(5)),
+                borderRadius: BorderRadius.circular(10)),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,

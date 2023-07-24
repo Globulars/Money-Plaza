@@ -27,8 +27,8 @@ class ContactUsDialog extends StackedView<ContactUsDialogModel> {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       backgroundColor: Colors.white,
       child: SizedBox(
-        height: 200,
-        width: 220,
+        height: 220,
+        width: 200,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
