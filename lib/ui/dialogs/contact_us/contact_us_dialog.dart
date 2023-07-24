@@ -24,11 +24,11 @@ class ContactUsDialog extends StackedView<ContactUsDialogModel> {
     Widget? child,
   ) {
     return Dialog(
-      insetPadding: EdgeInsets.all(MediaQuery.of(context).size.width / 4),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       backgroundColor: Colors.white,
       child: SizedBox(
-        height: 190,
+        height: 200,
+        width: 220,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,

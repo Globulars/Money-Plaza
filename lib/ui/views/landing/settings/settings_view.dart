@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:money_plaza/ui/common/app_colors.dart';
@@ -14,12 +16,19 @@ import 'settings_viewmodel.dart';
 class SettingsView extends StackedView<SettingsViewModel> {
   const SettingsView({Key? key}) : super(key: key);
   @override
+    void onModelReady(SettingsViewModel viewModel) {
+      // viewModel.inState(context);
+      log("===================");
+      // ignore: deprecated_member_use
+      super.onModelReady(viewModel);
+    }
   @override
   Widget builder(
     BuildContext context,
     SettingsViewModel viewModel,
     Widget? child,
   ) {
+
     bool isToggled = true;
 
     return Stack(
