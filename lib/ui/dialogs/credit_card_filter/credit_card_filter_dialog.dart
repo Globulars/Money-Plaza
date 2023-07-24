@@ -40,7 +40,7 @@ class CreditCardFilterDialog extends StackedView<CreditCardFilterDialogModel> {
         child: Column(
           children: [
             SubBar(
-              height: 40,
+              height: 50,
               color: Colors.white,
               width: width * 1,
               image: myIcons.filter,

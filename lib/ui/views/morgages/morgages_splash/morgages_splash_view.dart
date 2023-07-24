@@ -31,7 +31,7 @@ class MorgagesSplashView extends StackedView<MorgagesSplashViewModel> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CustomText(
-                text: '[[[[[[[ ]]]]]]]',
+                text: 'followUpandOffer',
                 color: darkGreenHeigh,
                 fontSize: 22,
                 fontWeight: FontWeight.w700,

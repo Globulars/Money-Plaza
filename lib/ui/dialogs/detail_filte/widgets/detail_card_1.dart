@@ -20,7 +20,7 @@ class DetailCard1 extends ViewModelWidget<DetailFilteDialogModel> {
       child: Column(
         children: [
           Container(
-            height: 40,
+            height: 50,
             padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 3),
             width: double.infinity,
             decoration: const BoxDecoration(

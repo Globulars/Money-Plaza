@@ -38,7 +38,7 @@ class DetailFilteDialog extends StackedView<DetailFilteDialogModel> {
           child: Column(
             children: [
               SubBar(
-                height: 40,
+                height: 50,
                 color: Colors.white,
                 width: width * 1,
                 image: myIcons.search,

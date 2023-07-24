@@ -34,7 +34,7 @@ class ContactUsDialog extends StackedView<ContactUsDialogModel> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             SubBar(
-              height: 40,
+              height: 50,
               color: Colors.white,
               text: 'Contact Us',
               fontSize: 16,
