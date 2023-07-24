@@ -135,10 +135,10 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
         Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5),
-            color: Colors.white,
+            // color: Colors.white,
           ),
           width: width ?? double.infinity,
-          height: height ?? 40,
+          // height: height ?? 40,
           margin: margin,
           child: TextFormField(
             onTap: onTap,
@@ -179,7 +179,7 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
       suffixIcon: suffix,
       suffixIconConstraints: suffixConstraints,
       fillColor: _setFillColor(),
-      // filled: _setFilled(),
+      filled: true,
       isDense: true,
       contentPadding: _setPadding(),
     );
@@ -214,5 +214,7 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
     return Colors.white;
   }
 
-  _setPadding() {}
+  _setPadding() {
+    return const EdgeInsets.symmetric(vertical: 10);
+  }
 }

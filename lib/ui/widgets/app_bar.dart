@@ -4,6 +4,7 @@ import 'package:money_plaza/app/app.router.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:stacked_services/stacked_services.dart';
 import '../../app/app.locator.dart';
+import '../views/landing/landing_view.dart';
 
 AppBar appBar(BuildContext context) {
   final _navigationService = locator<NavigationService>();
@@ -12,7 +13,7 @@ AppBar appBar(BuildContext context) {
   }
 
   navigateToLanding() async {
-    _navigationService.navigateToLandingView();
+    _navigationService.clearStackAndShowView(const LandingView());
   }
 
   return AppBar(

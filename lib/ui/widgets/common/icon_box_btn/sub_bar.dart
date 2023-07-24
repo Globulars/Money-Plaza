@@ -7,7 +7,6 @@ import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:stacked/stacked.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../common/app_colors.dart';
-
 import 'icon_box_btn_model.dart';
 
 class SubBar extends StackedView<IconBoxBtnModel> {
@@ -59,30 +58,32 @@ class SubBar extends StackedView<IconBoxBtnModel> {
     IconBoxBtnModel viewModel,
     Widget? child,
   ) {
-    return Stack(
+    return Column(
       children: [
-        Column(
-          children: [
-            GestureDetector(
-              onTap: () {
-                if (onPress != null) {
-                  onPress!();
-                } else {
-                  // _navigationService.back();
-                }
-              },
-              child: Container(
-                height: height ?? 50,
-                width: width ?? MediaQuery.of(context).size.width * 1 - 10,
-                decoration: BoxDecoration(
-                  color: boxColor ?? darkGreenHeigh,
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(topLeftRadius ?? 10),
-                      topRight: Radius.circular(topRightRadius ?? 10),
-                      bottomLeft: Radius.circular(btmLeftRadius ?? 10),
-                      bottomRight: Radius.circular(btmRightRadius ?? 10)),
-                ),
-                child: Row(
+        GestureDetector(
+          onTap: () {
+            if (onPress != null) {
+              onPress!();
+            } else {
+              // _navigationService.back();
+            }
+          },
+          child: Container(
+            height: height ?? 50,
+            width: width ?? MediaQuery.of(context).size.width * 1 - 10,
+            decoration: BoxDecoration(
+              color: boxColor ?? darkGreenHeigh,
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(topLeftRadius ?? 10),
+                  topRight: Radius.circular(topRightRadius ?? 10),
+                  bottomLeft: Radius.circular(btmLeftRadius ?? 10),
+                  bottomRight: Radius.circular(btmRightRadius ?? 10)),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(),
+                Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
@@ -108,32 +109,31 @@ class SubBar extends StackedView<IconBoxBtnModel> {
                     ).tr(),
                   ],
                 ),
-              ),
+                close
+                    ? Padding(
+                        padding: const EdgeInsets.only(right: 8),
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          child: Image.asset(
+                            myIcons.cancel,
+                            width: 17,
+                          ),
+                        ),
+                      )
+                    : Container()
+              ],
             ),
-            divider
-                ? const Divider(
-                    color: darkGreenHeigh,
-                    height: 0,
-                    thickness: 6,
-                  )
-                : Container(),
-          ],
+          ),
         ),
-        close
-            ? Positioned(
-                top: 5,
-                right: 5,
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                  child: Image.asset(
-                    myIcons.cancel,
-                    width: 17,
-                  ),
-                ),
+        divider
+            ? const Divider(
+                color: darkGreenHeigh,
+                height: 0,
+                thickness: 6,
               )
-            : Container()
+            : Container(),
       ],
     );
   }
