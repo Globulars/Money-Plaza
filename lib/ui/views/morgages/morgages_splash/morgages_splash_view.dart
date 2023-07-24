@@ -3,7 +3,6 @@ import 'package:flutter/scheduler.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
 import 'package:stacked/stacked.dart';
-
 import '../../../common/app_colors.dart';
 import 'morgages_splash_viewmodel.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
