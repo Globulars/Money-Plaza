@@ -126,15 +126,15 @@ class HeadBtmText extends ViewModelWidget<LoancompareViewModel> {
                   SizedBox(
                       width: width * 0.42,
                       child: CustomText(
-                        text:
-                            "firstMonth".tr(args: ["4,281.29", "4,281.29", "4,281.20"]),
+                        text: "firstMonth"
+                            .tr(args: ["4,281.29", "4,281.29", "4,281.20"]),
                         textAlign: TextAlign.center,
                       )),
                   SizedBox(
                       width: width * 0.42,
                       child: CustomText(
-                        text:
-                           "firstMonth".tr(args: ["4,281.29", "4,281.29", "4,281.20"]),
+                        text: "firstMonth"
+                            .tr(args: ["4,281.29", "4,281.29", "4,281.20"]),
                         textAlign: TextAlign.center,
                       )),
                 ],
