@@ -26,7 +26,7 @@ class TransferResultView extends StackedView<TransferResultViewModel> {
         const BackgroundImage(),
         Scaffold(
           backgroundColor: Colors.transparent,
-          appBar: appBar(),
+          appBar: appBar(context),
           body: Stack(
             children: [
               Column(

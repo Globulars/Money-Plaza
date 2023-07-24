@@ -27,7 +27,7 @@ class CalculatorResultView extends StackedView<CalculatorResultViewModel> {
         const BackgroundImage(),
         Scaffold(
           backgroundColor: Colors.transparent,
-          appBar: appBar(),
+          appBar: appBar(context),
           body: Column(
             children: [
               const BtnListView(),

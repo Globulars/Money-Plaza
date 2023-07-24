@@ -27,7 +27,7 @@ class LoanView extends StackedView<LoanViewModel> {
         const BackgroundImage(),
         Scaffold(
           backgroundColor: Colors.transparent,
-          appBar: appBar(),
+          appBar: appBar(context),
           body: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,

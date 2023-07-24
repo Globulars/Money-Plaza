@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
@@ -14,27 +13,26 @@ import '../../../widgets/common/icon_box_btn/return_button.dart';
 import 'settings_viewmodel.dart';
 
 class SettingsView extends StackedView<SettingsViewModel> {
-  const SettingsView({Key? key}) : super(key: key);
+  final BuildContext context;
+  const SettingsView(this.context, {Key? key}) : super(key: key);
   @override
-    void onModelReady(SettingsViewModel viewModel) {
-      // viewModel.inState(context);
-      log("===================");
-      // ignore: deprecated_member_use
-      super.onModelReady(viewModel);
-    }
+  void onViewModelReady(SettingsViewModel viewModel) {
+    viewModel.inState(context);
+    super.onViewModelReady(viewModel);
+  }
+
   @override
   Widget builder(
     BuildContext context,
     SettingsViewModel viewModel,
     Widget? child,
   ) {
-
     bool isToggled = true;
 
     return Stack(
       children: [
         Scaffold(
-          appBar: appBar(),
+          appBar: appBar(context),
           body: Container(
             width: MediaQuery.of(context).size.width,
             decoration: const BoxDecoration(

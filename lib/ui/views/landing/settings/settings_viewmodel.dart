@@ -16,6 +16,7 @@ class SettingsViewModel extends BaseViewModel {
   }
 
   inState(BuildContext context) {
+    log("=================================");
     if (context.locale.toString() == 'zh') {
       englishLanguage = false;
       notifyListeners();

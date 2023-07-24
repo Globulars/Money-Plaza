@@ -11,8 +11,6 @@ import 'package:money_plaza/ui/views/credit_card/credit_card_view.dart' as _i23;
 import 'package:money_plaza/ui/views/credit_card/credit_result/credit_result_view.dart'
     as _i24;
 import 'package:money_plaza/ui/views/home/home_view.dart' as _i2;
-import 'package:money_plaza/ui/widgets/common/horizental_list_view/horizental_list_view_view.dart'
-    as _i31;
 import 'package:money_plaza/ui/views/landing/landing_view.dart' as _i4;
 import 'package:money_plaza/ui/views/landing/settings/settings_view.dart'
     as _i13;
@@ -58,6 +56,8 @@ import 'package:money_plaza/ui/views/morgages/morgages_result/morgages_result_vi
 import 'package:money_plaza/ui/views/morgages/morgages_splash/morgages_splash_view.dart'
     as _i21;
 import 'package:money_plaza/ui/views/morgages/morgages_view.dart' as _i19;
+import 'package:money_plaza/ui/widgets/common/horizental_list_view/horizental_list_view_view.dart'
+    as _i31;
 import 'package:money_plaza/ui/widgets/top_bar2/top_bar2_view.dart' as _i30;
 import 'package:stacked/stacked.dart' as _i1;
 import 'package:stacked_services/stacked_services.dart' as _i33;
@@ -353,8 +353,9 @@ class StackedRouter extends _i1.RouterBase {
       );
     },
     _i13.SettingsView: (data) {
+      final args = data.getArgs<SettingsViewArguments>(nullOk: false);
       return _i32.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i13.SettingsView(),
+        builder: (context) => _i13.SettingsView(args.context, key: args.key),
         settings: data,
       );
     },
@@ -498,6 +499,33 @@ class ApplyconfirmViewArguments {
   @override
   int get hashCode {
     return key.hashCode ^ match.hashCode;
+  }
+}
+
+class SettingsViewArguments {
+  const SettingsViewArguments({
+    required this.context,
+    this.key,
+  });
+
+  final _i32.BuildContext context;
+
+  final _i32.Key? key;
+
+  @override
+  String toString() {
+    return '{"context": "$context", "key": "$key"}';
+  }
+
+  @override
+  bool operator ==(covariant SettingsViewArguments other) {
+    if (identical(this, other)) return true;
+    return other.context == context && other.key == key;
+  }
+
+  @override
+  int get hashCode {
+    return context.hashCode ^ key.hashCode;
   }
 }
 
@@ -659,14 +687,17 @@ extension NavigatorStateExtension on _i33.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> navigateToSettingsView([
+  Future<dynamic> navigateToSettingsView({
+    required _i32.BuildContext context,
+    _i32.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return navigateTo<dynamic>(Routes.settingsView,
+        arguments: SettingsViewArguments(context: context, key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -1082,14 +1113,17 @@ extension NavigatorStateExtension on _i33.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> replaceWithSettingsView([
+  Future<dynamic> replaceWithSettingsView({
+    required _i32.BuildContext context,
+    _i32.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return replaceWith<dynamic>(Routes.settingsView,
+        arguments: SettingsViewArguments(context: context, key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

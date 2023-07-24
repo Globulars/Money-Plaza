@@ -6,10 +6,10 @@ import 'package:stacked_services/stacked_services.dart';
 
 import '../../app/app.locator.dart';
 
-AppBar appBar() {
+AppBar appBar(BuildContext context) {
   final _navigationService = locator<NavigationService>();
   navigateToSettings() async {
-    _navigationService.navigateToSettingsView();
+    _navigationService.navigateToSettingsView(context: context);
   }
 
   navigateToLanding() async {

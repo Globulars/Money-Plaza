@@ -26,7 +26,7 @@ class MemberSettingView extends StackedView<MemberSettingViewModel> {
         const BackgroundImage(),
         Scaffold(
           backgroundColor: Colors.transparent,
-          appBar: appBar(),
+          appBar: appBar(context),
           body: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,

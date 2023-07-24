@@ -26,7 +26,7 @@ class MorgagesView extends StackedView<MorgagesViewModel> {
         const BackgroundImage(),
         Scaffold(
           backgroundColor: Colors.transparent,
-          appBar: appBar(),
+          appBar: appBar(context),
           body: const Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [

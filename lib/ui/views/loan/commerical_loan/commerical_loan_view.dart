@@ -33,7 +33,7 @@ class CommericalLoanView extends StackedView<CommericalLoanViewModel> {
             const BackgroundImage(),
             Scaffold(
               backgroundColor: Colors.transparent,
-              appBar: appBar(),
+              appBar: appBar(context),
               body: NestedScrollView(
                 headerSliverBuilder:
                     (BuildContext context, bool innerBoxIsScrolled) {

@@ -25,7 +25,7 @@ class CommericalResultView extends StackedView<CommericalResultViewModel> {
         const BackgroundImage(),
         Scaffold(
           backgroundColor: Colors.transparent,
-          appBar: appBar(),
+          appBar: appBar(context),
           body: Stack(
             children: [
               Column(

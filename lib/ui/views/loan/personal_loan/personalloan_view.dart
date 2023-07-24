@@ -39,7 +39,7 @@ class PersonalloanView extends StackedView<PersonalloanViewModel> {
               ),
               child: Scaffold(
                 backgroundColor: Colors.transparent,
-                appBar: appBar(),
+                appBar: appBar(context),
                 body: NestedScrollView(
                   headerSliverBuilder:
                       (BuildContext context, bool innerBoxIsScrolled) {

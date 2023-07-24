@@ -27,7 +27,7 @@ class ChangePasswordView extends StackedView<ChangePasswordViewModel> {
         const BackgroundImage(),
         Scaffold(
           backgroundColor: const Color.fromARGB(0, 92, 53, 53),
-          appBar: appBar(),
+          appBar: appBar(context),
           body: Column(
             children: [
               SubBar(

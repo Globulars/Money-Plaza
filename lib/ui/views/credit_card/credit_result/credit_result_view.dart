@@ -25,7 +25,7 @@ class CreditResultView extends StackedView<CreditResultViewModel> {
         const BackgroundImage(),
         Scaffold(
           backgroundColor: Colors.transparent,
-          appBar: appBar(),
+          appBar: appBar(context),
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
