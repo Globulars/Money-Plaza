@@ -205,7 +205,7 @@ class HeadBtmText extends ViewModelWidget<LoancompareViewModel> {
                     topLeft: Radius.circular(4), topRight: Radius.circular(4))),
             child: Center(
                 child: CustomText(
-              text: 'earlyPaybackPenalty',
+              text: 'earlyPaybackPenalty1',
             )),
           ),
           Container(

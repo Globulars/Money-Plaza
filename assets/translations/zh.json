@@ -208,6 +208,7 @@
     "mortgagesTenor": "mortgages Tenor",
     "resetByEmail": "郵件重置",
     "resetByMobile": "reset By Mobile",
-    "weLand": "weLand"
+    "weLand": "weLand",
+    "firstMonth": "第一個月\n${}\n第二個月\n${}\n上個月\n${}"
     
 }
