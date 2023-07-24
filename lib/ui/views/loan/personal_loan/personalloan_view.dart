@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -61,23 +63,30 @@ class PersonalloanView extends StackedView<PersonalloanViewModel> {
                                   topRight:
                                       Radius.circular(10)), // Creates border
                               color: darkGreenHeigh),
+                          padding: EdgeInsets.all(0),
                           tabs: [
                             Tab(
                               child: const Text(
                                 'earlyPaybackPenalty',
                                 textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    fontSize: 14, fontWeight: FontWeight.w600),
                               ).tr(),
                             ),
                             Tab(
                               child: const Text(
                                 'sourceOfIncome',
                                 textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    fontSize: 14, fontWeight: FontWeight.w600),
                               ).tr(),
                             ),
                             Tab(
                               child: const Text(
                                 'outstandingLoan',
                                 textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    fontSize: 14, fontWeight: FontWeight.w600),
                               ).tr(),
                             ),
                           ],

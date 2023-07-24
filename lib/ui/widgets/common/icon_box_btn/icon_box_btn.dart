@@ -64,7 +64,7 @@ class IconBoxBtn extends StackedView<IconBoxBtnModel> {
             horizontal: horizental ?? 00, vertical: vertical ?? 00),
         decoration: BoxDecoration(
             color: boxcolor ?? lightGreenHeigh,
-            borderRadius: BorderRadius.circular(8)),
+            borderRadius: BorderRadius.circular(15)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,

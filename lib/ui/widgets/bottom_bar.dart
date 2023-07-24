@@ -26,7 +26,7 @@ Widget bottomBar(widget) {
             onTap: showContactUs,
             child: Image.asset(
               myIcons.contacts,
-              height: 50,
+              height: 60,
             ),
           ),
           widget
