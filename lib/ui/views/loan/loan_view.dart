@@ -8,6 +8,7 @@ import '../../widgets/bottom_bar.dart';
 import '../../widgets/common/background_image.dart';
 import '../../widgets/common/horizental_list_view/horizental_list_view_view.dart';
 import '../../widgets/common/icon_box_btn/return_button.dart';
+import '../../widgets/common/icon_box_btn/text.dart';
 import '../../widgets/common/result_card.dart';
 import '../../widgets/loan_containers.dart';
 import 'loan_viewmodel.dart';
@@ -40,6 +41,7 @@ class LoanView extends StackedView<LoanViewModel> {
                         image: AssetImage('assets/images/best_deals.jpg'),
                         fit: BoxFit.fitWidth),
                   ),
+                  child:Center(child: CustomText(text: 'compareAndApply',fontSize: 16,color: Colors.white,textAlign: TextAlign.center,fontWeight: FontWeight.bold,)) ,
                 ),
                 verticalSpaceMedium,
                 loanCont(context),

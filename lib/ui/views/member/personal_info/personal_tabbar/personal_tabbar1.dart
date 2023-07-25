@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
-
 import '../../../../common/app_colors.dart';
 import '../../../../common/ui_helpers.dart';
 import '../../../../widgets/common/custom_text_field/custom_text_field.dart';
@@ -41,7 +40,7 @@ class PersonalTabBar1 extends ViewModelWidget<PersonalInfoViewModel> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 ReturnButton(
-                  height: 40,
+                  height: 41.5,
                   text: 'm',
                   width: width * 0.43,
                   boxcolor: viewModel.loanTenors == 'm'
@@ -55,7 +54,7 @@ class PersonalTabBar1 extends ViewModelWidget<PersonalInfoViewModel> {
                   },
                 ),
                 ReturnButton(
-                  height: 40,
+                  height: 41.5,
                   text: 'f',
                   width: width * 0.43,
                   boxcolor: viewModel.loanTenors == "f"

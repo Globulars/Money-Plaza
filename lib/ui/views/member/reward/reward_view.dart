@@ -53,9 +53,9 @@ class RewardView extends StackedView<RewardViewModel> {
                       children: [
                         verticalSpaceMedium,
                         CustomText(text: "uploadApplicatioRecord"),
-                        verticalSpaceMedium,
+                        verticalSpace(35),
                         SubBar(
-                          height: 40,
+                          height: 50,
                           text: 'submitRewardClaim',
                           color: Colors.white,
                           fontWeight: FontWeight.w300,

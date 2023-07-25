@@ -5,6 +5,7 @@ import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:stacked_services/stacked_services.dart';
 import '../../../app/app.dialogs.dart';
 import '../../../app/app.locator.dart';
+import '../../common/app_colors.dart';
 import '../../common/ui_helpers.dart';
 import 'icon_box_btn/submit_button.dart';
 import 'icon_box_btn/text.dart';
@@ -57,7 +58,7 @@ Widget resultCard(context, {detailPage = 0}) {
                   verticalSpaceTiny,
                   CustomText(
                       text: "limitedTimeOffer",
-                      color: Colors.black54,
+                      color: darkGreenLight,
                       fontSize: 14),
                   verticalSpaceTiny,
                   CustomText(
@@ -72,7 +73,7 @@ Widget resultCard(context, {detailPage = 0}) {
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.3,
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   CustomText(
                     text: "valueChange".tr(args: ["2.75%"]),

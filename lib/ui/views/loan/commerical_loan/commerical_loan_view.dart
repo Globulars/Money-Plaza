@@ -63,7 +63,7 @@ class CommericalLoanView extends StackedView<CommericalLoanViewModel> {
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.w600),
+                                  fontSize: 12, fontWeight: FontWeight.w600),
                             ).tr(),
                           ),
                           Tab(
@@ -73,7 +73,7 @@ class CommericalLoanView extends StackedView<CommericalLoanViewModel> {
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.w600),
+                                  fontSize: 12, fontWeight: FontWeight.w600),
                             ).tr(),
                           ),
                           Tab(
@@ -83,7 +83,7 @@ class CommericalLoanView extends StackedView<CommericalLoanViewModel> {
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.w600),
+                                  fontSize: 12, fontWeight: FontWeight.w600),
                             ).tr(),
                           ),
                         ],

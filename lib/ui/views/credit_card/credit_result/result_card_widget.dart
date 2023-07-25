@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/submit_button.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
+import '../../../common/app_colors.dart';
 import '../../../common/ui_helpers.dart';
 import '../../../widgets/common/icon_box_btn/text.dart';
 import 'credit_result_viewmodel.dart';
@@ -139,7 +140,7 @@ class CreditCardWiget extends ViewModelWidget<CreditResultViewModel> {
                           fontWeight: FontWeight.w400),
                       CustomText(
                           text: "exclusiveOffer".tr(args: ["304"]),
-                          color: Colors.black.withOpacity(0.6),
+                          color: darkGreenLight,
                           textAlign: TextAlign.start,
                           fontWeight: FontWeight.w400),
                       verticalSpaceTiny,
@@ -147,7 +148,7 @@ class CreditCardWiget extends ViewModelWidget<CreditResultViewModel> {
                           text: "noteMoney",
                           color: Colors.black,
                           textAlign: TextAlign.start,
-                          fontWeight: FontWeight.w400),
+                          fontWeight: FontWeight.w300),
                     ],
                   )),
             ),

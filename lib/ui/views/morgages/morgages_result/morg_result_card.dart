@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/submit_button.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
+import '../../../common/app_colors.dart';
 import '../../../common/ui_helpers.dart';
 import '../../../widgets/common/icon_box_btn/text.dart';
 import 'morgages_result_viewmodel.dart';
@@ -27,7 +28,7 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
             child: Card(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
+                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 8),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -45,7 +46,7 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                           imgwidth: 12,
                           text: 'select',
                           color: Colors.black,
-                          fontSize: 16,
+                          fontSize: 12,
                         )
                       ],
                     ),
@@ -61,10 +62,13 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                               CustomText(
                                 text: 'minimumMortgages',
                                 fontSize: 10,
+                                 fontWeight: FontWeight.w600,color: Colors.black.withOpacity(0.6),
                               ),
                               CustomText(
+                                
                                 text: 'interestRate',
                                 fontSize: 10,
+                                  fontWeight: FontWeight.w600,color: Colors.black.withOpacity(0.6),
                               ),
                               CustomText(
                                 text: '1.3%',
@@ -81,10 +85,12 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                               CustomText(
                                 text: 'highest',
                                 fontSize: 10,
+                                  fontWeight: FontWeight.w600,color: Colors.black.withOpacity(0.6),
                               ),
                               CustomText(
                                 text: 'cashRebate',
                                 fontSize: 10,
+                                 fontWeight: FontWeight.w600,color: Colors.black.withOpacity(0.6),
                               ),
                               CustomText(
                                 text: '\$6,000',
@@ -101,10 +107,12 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                               CustomText(
                                 text: 'minMonthly',
                                 fontSize: 10,
+                                  fontWeight: FontWeight.w600,color: Colors.black.withOpacity(0.6),
                               ),
                               CustomText(
                                 text: 'repayment',
-                                fontSize: 10,
+                               fontSize: 10,
+                                 fontWeight: FontWeight.w600,color: Colors.black.withOpacity(0.6),
                               ),
                               CustomText(
                                 text: '\$6713.5',
@@ -119,7 +127,7 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                     CustomText(
                       text: 'moneyPlazaExclusiveOffer',
                       fontSize: 12,
-                      color: Colors.black54,
+                      color: darkGreenLight,
                     ),
                     verticalSpaceSmall,
                     CustomText(

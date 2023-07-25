@@ -72,7 +72,7 @@ class PersonalloanView extends StackedView<PersonalloanViewModel> {
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
-                                    fontSize: 14, fontWeight: FontWeight.w600),
+                                    fontSize: 12, fontWeight: FontWeight.w600),
                               ).tr(),
                             ),
                             Tab(
@@ -82,7 +82,7 @@ class PersonalloanView extends StackedView<PersonalloanViewModel> {
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
-                                    fontSize: 14, fontWeight: FontWeight.w600),
+                                    fontSize: 12, fontWeight: FontWeight.w600),
                               ).tr(),
                             ),
                             Tab(
@@ -92,7 +92,7 @@ class PersonalloanView extends StackedView<PersonalloanViewModel> {
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
-                                    fontSize: 14, fontWeight: FontWeight.w600),
+                                    fontSize: 12, fontWeight: FontWeight.w600),
                               ).tr(),
                             ),
                           ],

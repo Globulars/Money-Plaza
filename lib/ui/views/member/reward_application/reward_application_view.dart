@@ -84,12 +84,12 @@ class RewardApplicationView extends StackedView<RewardApplicationViewModel> {
                           titleText: 'referenceNumber',
                         ),
                         verticalSpaceTiny,
-                        ReturnButton(
-                          imgwidth: 12,
-                          text: 'upload',
-                          height: 40,
-                          width: width * 0.9,
+                        CustomTextField(
+                          titleText: 'referenceNumber',
+                          hintText: 'upload',
+                          textAlign: TextAlign.center,
                         ),
+                        verticalSpaceLarge
                       ],
                     ),
                   ),

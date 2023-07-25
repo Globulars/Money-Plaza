@@ -56,7 +56,7 @@ class PersonalInfoView extends StackedView<PersonalInfoViewModel> {
                           unselectedLabelColor: darkGreenHeigh,
                           controller: DefaultTabController.of(context),
                           labelColor: Colors.white,
-                          labelStyle: GoogleFonts.ibmPlexSans(fontSize: 10),
+                          labelStyle: GoogleFonts.ibmPlexSans(fontSize: 11,fontWeight: FontWeight.w600),
                           indicator: const BoxDecoration(
                               borderRadius: BorderRadius.only(
                                   topLeft: Radius.circular(10),
