@@ -6,6 +6,7 @@ import 'package:stacked/stacked.dart';
 import '../../common/app_colors.dart';
 import '../../common/ui_helpers.dart';
 import '../../widgets/common/custom_text_field/custom_text_field.dart';
+import '../../widgets/common/icon_box_btn/return_button.dart';
 import '../../widgets/common/icon_box_btn/submit_button.dart';
 
 class ResetWithEmail extends StackedView<ResetPasswordDialogModel> {
@@ -27,29 +28,33 @@ class ResetWithEmail extends StackedView<ResetPasswordDialogModel> {
           textAlign: TextAlign.center,
         ),
         verticalSpaceTiny,
-        Row(
+         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            SubmitButton(
+            ReturnButton(
               text: "send",
-              height: 40,
-              width: width * 0.17,
-              fontSize: 16,
+              height:41.5,
+              width: width * 0.19,
+              boxcolor: darkGreenLight,
+              color: Colors.white,
+              fontSize: 14,             
             ),
             CustomTextField(
-              width: width * 0.5,
+              width: width * 0.52,
               hintText: "verificationCode",
-              hintStyle: const TextStyle(fontSize: 16),
+              hintStyle: const TextStyle(),
               textAlign: TextAlign.center,
             ),
           ],
         ),
+        verticalSpaceTiny,
         CustomTextField(
           hintText: "enterPassword",
           hintStyle: const TextStyle(fontSize: 16),
           textAlign: TextAlign.center,
         ),
+        verticalSpaceTiny,
         CustomTextField(
           hintText: "confirmPassword",
           hintStyle: const TextStyle(fontSize: 16),

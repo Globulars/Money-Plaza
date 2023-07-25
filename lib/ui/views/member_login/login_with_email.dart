@@ -20,17 +20,19 @@ class LoginWithEmail extends StackedView<MemberLoginViewModel> {
     return Column(
       children: [
         verticalSpaceSmall,
+        verticalSpaceTiny,
         CustomTextField(
           hintText: "email",
           hintStyle: const TextStyle(fontSize: 14),
           textAlign: TextAlign.center,
         ),
+        verticalSpaceTiny,
         CustomTextField(
           hintText: "password",
           hintStyle: const TextStyle(fontSize: 14),
           textAlign: TextAlign.center,
         ),
-        verticalSpaceSmall,
+        verticalSpaceMedium,
         SubmitButton(
           height: 40,
           width: MediaQuery.of(context).size.width * 0.3,
@@ -55,7 +57,7 @@ class LoginWithEmail extends StackedView<MemberLoginViewModel> {
             ),
           ],
         ),
-        verticalSpaceSmall,
+        verticalSpaceMedium,
         GestureDetector(
           onTap: viewModel.showResetPassword,
           child: CustomText(

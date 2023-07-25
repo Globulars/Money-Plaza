@@ -34,7 +34,7 @@ class MemberLoginView extends StackedView<MemberLoginViewModel> {
               backgroundColor: Colors.transparent,
               appBar: appBar(context),
               body: NestedScrollView(
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 headerSliverBuilder:
                     (BuildContext context, bool innerBoxIsScrolled) {
                   return <Widget>[

@@ -45,12 +45,17 @@ class DropdownTextfield extends StackedView<DropdownTextfieldModel> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          titleText.toString(),
-          style: GoogleFonts.ibmPlexSans(
-              fontSize: 12, fontWeight: FontWeight.w500),
-        ).tr(),
-        verticalSpaceTiny,
+      titleText!=""?  Column(
+          children: [
+            Text(
+              titleText.toString(),
+              style: GoogleFonts.ibmPlexSans(
+                        fontSize: 14, fontWeight: FontWeight.w500),
+            ).tr(),
+            verticalSpaceTiny,
+          ],
+        ):Container(),
+        
         Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5),
