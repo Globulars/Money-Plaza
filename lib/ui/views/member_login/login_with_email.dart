@@ -22,12 +22,12 @@ class LoginWithEmail extends StackedView<MemberLoginViewModel> {
         verticalSpaceSmall,
         CustomTextField(
           hintText: "email",
-          hintStyle: const TextStyle(fontSize: 16),
+          hintStyle: const TextStyle(fontSize: 14),
           textAlign: TextAlign.center,
         ),
         CustomTextField(
           hintText: "password",
-          hintStyle: const TextStyle(fontSize: 16),
+          hintStyle: const TextStyle(fontSize: 14),
           textAlign: TextAlign.center,
         ),
         verticalSpaceSmall,

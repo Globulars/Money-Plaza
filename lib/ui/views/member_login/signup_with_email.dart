@@ -29,31 +29,32 @@ class SignUpWithEmail extends StackedView<MemberLoginViewModel> {
         verticalSpaceTiny,
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             SubmitButton(
               text: "send",
-              height: 40,
+              height: 37,
               width: width * 0.2,
-              fontSize: 16,
+              fontSize: 14,
+              
             ),
             CustomTextField(
-              height: 40,
+              // height: 40,
               width: width * 0.64,
               hintText: "verificationCode",
-              hintStyle: const TextStyle(fontSize: 16),
+              hintStyle: const TextStyle(fontSize: 14),
               textAlign: TextAlign.center,
             ),
           ],
         ),
         CustomTextField(
           hintText: "enterPassword",
-          hintStyle: const TextStyle(fontSize: 16),
+          hintStyle: const TextStyle(fontSize: 14),
           textAlign: TextAlign.center,
         ),
         CustomTextField(
           hintText: "confirmPassword",
-          hintStyle: const TextStyle(fontSize: 16),
+          hintStyle: const TextStyle(fontSize: 14),
           textAlign: TextAlign.center,
         ),
         Row(
@@ -62,13 +63,13 @@ class SignUpWithEmail extends StackedView<MemberLoginViewModel> {
             CustomTextField(
               width: width * 0.42,
               hintText: "firstName",
-              hintStyle: const TextStyle(fontSize: 16),
+              hintStyle: const TextStyle(fontSize: 14),
               textAlign: TextAlign.center,
             ),
             CustomTextField(
               width: width * 0.42,
               hintText: "lastName",
-              hintStyle: const TextStyle(fontSize: 16),
+              hintStyle: const TextStyle(fontSize: 14),
               textAlign: TextAlign.center,
             ),
           ],
