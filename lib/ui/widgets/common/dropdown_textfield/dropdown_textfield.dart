@@ -4,7 +4,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:stacked/stacked.dart';
-
 import '../../../common/app_colors.dart';
 import '../../../common/ui_helpers.dart';
 import 'dropdown_textfield_model.dart';
@@ -49,7 +48,7 @@ class DropdownTextfield extends StackedView<DropdownTextfieldModel> {
         Text(
           titleText.toString(),
           style: GoogleFonts.ibmPlexSans(
-              fontSize: 14, fontWeight: FontWeight.w500),
+              fontSize: 12, fontWeight: FontWeight.w500),
         ).tr(),
         verticalSpaceTiny,
         Container(
@@ -58,13 +57,13 @@ class DropdownTextfield extends StackedView<DropdownTextfieldModel> {
             color: Colors.white,
           ),
           width: double.infinity,
-          height: height ?? 35,
+           height: height ?? 45,
           child: FormField<String>(
             builder: (FormFieldState<String> state) {
               return InputDecorator(
                 decoration: InputDecoration(
                   contentPadding: const EdgeInsets.symmetric(
-                      horizontal: 10.0, vertical: 0.0),
+                      horizontal: 10.0, vertical: 0),
                   labelText: hintText.tr(),
                   border: _setBorderStyle(),
                   enabledBorder: _setBorderStyle(),

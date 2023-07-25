@@ -25,38 +25,43 @@ class RegisterTab extends StackedView<MemberLoginViewModel> {
         height: height,
         width: width,
         child: Scaffold(
-          appBar: TabBar(
-                    unselectedLabelColor: kcPureBlack,
-                    labelColor: kcPureWhite,
-                    labelStyle: GoogleFonts.ibmPlexSans(fontSize: 10),
-                    indicator: const BoxDecoration(
-                        // Creates border
-                        color: darkGreenHeigh),
-                    tabs: [
-                      Tab(
-                        child: Text(
-                          "loginWithEmail",
-                          style: GoogleFonts.ibmPlexSans(fontSize: 16),
-                        ).tr(),
-                      ),
-                      Tab(
-                        child: Text(
-                          "loginWithMobile",
-                          style: GoogleFonts.ibmPlexSans(fontSize: 16),
-                        ).tr(),
-                      ),
-                    ],
+          appBar: PreferredSize(
+            preferredSize: Size.fromHeight(height),
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.black, width: 1),
+              ),
+              child: TabBar(
+                unselectedLabelColor: kcPureBlack,
+                labelColor: kcPureWhite,
+                labelStyle: GoogleFonts.ibmPlexSans(fontSize: 10),
+                indicator: const BoxDecoration(
+                    // Creates border
+                    color: darkGreenHeigh),
+                tabs: [
+                  Tab(
+                    child: Text(
+                      "loginWithEmail",
+                      style: GoogleFonts.ibmPlexSans(fontSize: 16),
+                    ).tr(),
                   ),
+                  Tab(
+                    child: Text(
+                      "loginWithMobile",
+                      style: GoogleFonts.ibmPlexSans(fontSize: 16),
+                    ).tr(),
+                  ),
+                ],
+              ),
+            ),
+          ),
           backgroundColor: Colors.transparent,
           body: const TabBarView(
-              children: <Widget>[
-                SingleChildScrollView(child: SignUpWithEmail()),
-                SingleChildScrollView(child: Text("registerWithMobile")),
-              ],
-            ),
-          
-          
-         
+            children: <Widget>[
+              SingleChildScrollView(child: SignUpWithEmail()),
+              SingleChildScrollView(child: Text("registerWithMobile")),
+            ],
+          ),
         ),
       ),
     );

@@ -8,6 +8,8 @@ import '../../../app/app.locator.dart';
 class MemberLoginViewModel extends BaseViewModel {
   final _dialogService = locator<DialogService>();
   final _navigationService = locator<NavigationService>();
+  final registerDropDown=["Option 1", "Option 2", "Option 3"];
+
   void showResetPassword() {
     _dialogService.showCustomDialog(
       variant: DialogType.resetPassword,
@@ -18,6 +20,13 @@ class MemberLoginViewModel extends BaseViewModel {
   setChangeTab(value) {
     log(value.toString());
     changeTab = value;
+    notifyListeners();
+  }
+
+    var registerDropdown= "Option 1";
+  setRegisterDropDown(value) {
+    log(value.toString());
+    registerDropdown = value;
     notifyListeners();
   }
 

@@ -35,26 +35,24 @@ class SignUpWithEmail extends StackedView<MemberLoginViewModel> {
               text: "send",
               height: 37,
               width: width * 0.2,
-              fontSize: 14,
-              
+              fontSize: 14,             
             ),
             CustomTextField(
-              // height: 40,
               width: width * 0.64,
               hintText: "verificationCode",
-              hintStyle: const TextStyle(fontSize: 14),
+              hintStyle: const TextStyle(),
               textAlign: TextAlign.center,
             ),
           ],
         ),
         CustomTextField(
           hintText: "enterPassword",
-          hintStyle: const TextStyle(fontSize: 14),
+          hintStyle: const TextStyle(),
           textAlign: TextAlign.center,
         ),
         CustomTextField(
           hintText: "confirmPassword",
-          hintStyle: const TextStyle(fontSize: 14),
+          hintStyle: const TextStyle(),
           textAlign: TextAlign.center,
         ),
         Row(
@@ -63,23 +61,28 @@ class SignUpWithEmail extends StackedView<MemberLoginViewModel> {
             CustomTextField(
               width: width * 0.42,
               hintText: "firstName",
-              hintStyle: const TextStyle(fontSize: 14),
+              hintStyle: const TextStyle(),
               textAlign: TextAlign.center,
             ),
             CustomTextField(
               width: width * 0.42,
               hintText: "lastName",
-              hintStyle: const TextStyle(fontSize: 14),
+              hintStyle: const TextStyle(),
               textAlign: TextAlign.center,
             ),
           ],
         ),
         DropdownTextfield(
-            options: const ["Option 1", "Option 2", "Option 3"],
-            onChanged: (onChanged) {}),
+            options: viewModel.registerDropDown,
+            value: viewModel.registerDropdown,
+            onChanged: (onChanged) {
+
+            }),
         DropdownTextfield(
-            options: const ["Option 1", "Option 2", "Option 3"],
-            onChanged: (onChanged) {}),
+                onChanged: (String) {},
+                options: [],
+             
+              ),
         verticalSpaceSmall,
         Row(
           children: [

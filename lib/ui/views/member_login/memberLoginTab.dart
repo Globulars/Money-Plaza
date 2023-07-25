@@ -27,37 +27,44 @@ class MemberLoginTab extends StackedView<MemberLoginViewModel> {
           width: width,
           child: Scaffold(
             backgroundColor: Colors.transparent,
-            appBar: TabBar(
-                      unselectedLabelColor: darkGreenHeigh,
-                      labelColor: Colors.white,
-                      labelStyle: GoogleFonts.ibmPlexSans(fontSize: 10),
-                      indicator: const BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(0),
-                              topRight: Radius.circular(0)), // Creates border
-                          color: darkGreenHeigh),
-                      tabs: [
-                        Tab(
-                          child: Text(
-                            "loginWithEmail",
-                            style: GoogleFonts.ibmPlexSans(fontSize: 16),
-                          ).tr(),
-                        ),
-                        Tab(
-                          child: Text(
-                            "loginWithMobile",
-                            style: GoogleFonts.ibmPlexSans(fontSize: 16),
-                          ).tr(),
-                        ),
-                      ],
+            appBar: PreferredSize(
+              preferredSize: Size.fromHeight(height),
+              child: Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.black, width: 1),
+                ),
+                child: TabBar(
+                  unselectedLabelColor: darkGreenHeigh,
+                  labelColor: Colors.white,
+                  labelStyle: GoogleFonts.ibmPlexSans(fontSize: 10),
+                  indicator: const BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(0),
+                          topRight: Radius.circular(0)), // Creates border
+                      color: darkGreenHeigh),
+                  tabs: [
+                    Tab(
+                      child: Text(
+                        "loginWithEmail",
+                        style: GoogleFonts.ibmPlexSans(fontSize: 16),
+                      ).tr(),
                     ),
-             body: const TabBarView(
-                children: <Widget>[
-                  SingleChildScrollView(child: LoginWithEmail()),
-                  SingleChildScrollView(child: Text("memberLoginWithMobile")),
-                ],
+                    Tab(
+                      child: Text(
+                        "loginWithMobile",
+                        style: GoogleFonts.ibmPlexSans(fontSize: 16),
+                      ).tr(),
+                    ),
+                  ],
+                ),
               ),
-           
+            ),
+            body: const TabBarView(
+              children: <Widget>[
+                SingleChildScrollView(child: LoginWithEmail()),
+                SingleChildScrollView(child: Text("memberLoginWithMobile")),
+              ],
+            ),
           ),
         ));
   }
