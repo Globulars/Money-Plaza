@@ -210,5 +210,8 @@
     "resetByMobile": "reset By Mobile",
     "weLand": "weLand",
     "firstMonth": "第一個月\n${}\n第二個月\n${}\n上個月\n${}",
-    "contactUs": "Contact us"
+    "contactUs": "Contact us",
+    "compareAndApply": "比較和應用\n最優惠的價格",
+  "compareAvailableMortagages":"比較可用的抵押貸款",
+  "compareCreditCard":"比較可用\n信用卡"
 }

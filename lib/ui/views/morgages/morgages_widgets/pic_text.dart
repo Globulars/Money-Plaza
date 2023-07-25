@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import '../../../widgets/common/icon_box_btn/text.dart';
 import '../morgages_viewmodel.dart';
 
 class Picture extends ViewModelWidget<MorgagesViewModel> {
@@ -24,6 +25,7 @@ class Picture extends ViewModelWidget<MorgagesViewModel> {
                 image: AssetImage('assets/images/best_deals.jpg'),
                 fit: BoxFit.fitWidth),
           ),
+          child:Center(child: CustomText(text: 'compareAvailableMortagages',fontSize: 24,color: Colors.white,textAlign: TextAlign.center,fontWeight: FontWeight.bold,)) ,
         ),
       ],
     );

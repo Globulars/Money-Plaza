@@ -211,5 +211,7 @@
   "weLand": "We Land",
   "firstMonth": "First month\n${}\nSecond month\n${}\nLast month\n${}",
   "contactUs": "Contact us",
-  "compareAndApply": "Compare And Apply\nFor Best Deal"
+  "compareAndApply": "Compare And Apply\nFor Best Deal",
+  "compareAvailableMortagages":"Compare Available Mortagages",
+  "compareCreditCard":"Compare Available\nCredit Cards"
 }
