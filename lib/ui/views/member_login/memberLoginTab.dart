@@ -27,19 +27,7 @@ class MemberLoginTab extends StackedView<MemberLoginViewModel> {
           width: width,
           child: Scaffold(
             backgroundColor: Colors.transparent,
-            body: NestedScrollView(
-              headerSliverBuilder:
-                  (BuildContext context, bool innerBoxIsScrolled) {
-                return <Widget>[
-                  SliverAppBar(
-                    toolbarHeight: 0,
-                    backgroundColor: Colors.transparent,
-                    pinned: false,
-                    floating: false,
-                    shape: const RoundedRectangleBorder(
-                      side: BorderSide(width: 1),
-                    ),
-                    bottom: TabBar(
+            appBar: TabBar(
                       unselectedLabelColor: darkGreenHeigh,
                       labelColor: Colors.white,
                       labelStyle: GoogleFonts.ibmPlexSans(fontSize: 10),
@@ -63,16 +51,13 @@ class MemberLoginTab extends StackedView<MemberLoginViewModel> {
                         ),
                       ],
                     ),
-                  ),
-                ];
-              },
-              body: const TabBarView(
+             body: const TabBarView(
                 children: <Widget>[
-                  LoginWithEmail(),
-                  Text("memberLoginWithMobile"),
+                  SingleChildScrollView(child: LoginWithEmail()),
+                  SingleChildScrollView(child: Text("memberLoginWithMobile")),
                 ],
               ),
-            ),
+           
           ),
         ));
   }

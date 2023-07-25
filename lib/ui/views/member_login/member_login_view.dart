@@ -112,8 +112,8 @@ class MemberLoginView extends StackedView<MemberLoginViewModel> {
                   padding: EdgeInsets.all(15.0),
                   child: TabBarView(
                     children: <Widget>[
-                      SingleChildScrollView(child: MemberLoginTab()),
-                      SingleChildScrollView(child: RegisterTab()),
+                      MemberLoginTab(),
+                      RegisterTab(),
                     ],
                   ),
                 ),

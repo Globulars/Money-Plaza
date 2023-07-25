@@ -50,8 +50,8 @@ class RegisterTab extends StackedView<MemberLoginViewModel> {
           backgroundColor: Colors.transparent,
           body: const TabBarView(
               children: <Widget>[
-                SignUpWithEmail(),
-                Text("registerWithMobile"),
+                SingleChildScrollView(child: SignUpWithEmail()),
+                SingleChildScrollView(child: Text("registerWithMobile")),
               ],
             ),
           
