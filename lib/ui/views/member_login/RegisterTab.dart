@@ -25,21 +25,7 @@ class RegisterTab extends StackedView<MemberLoginViewModel> {
         height: height,
         width: width,
         child: Scaffold(
-          backgroundColor: Colors.transparent,
-          body: NestedScrollView(
-            scrollDirection: Axis.vertical,
-            headerSliverBuilder:
-                (BuildContext context, bool innerBoxIsScrolled) {
-              return <Widget>[
-                SliverAppBar(
-                  toolbarHeight: 0,
-                  backgroundColor: Colors.transparent,
-                  pinned: false,
-                  floating: false,
-                  shape: const RoundedRectangleBorder(
-                    side: BorderSide(width: 1),
-                  ),
-                  bottom: TabBar(
+          appBar: TabBar(
                     unselectedLabelColor: kcPureBlack,
                     labelColor: kcPureWhite,
                     labelStyle: GoogleFonts.ibmPlexSans(fontSize: 10),
@@ -61,16 +47,16 @@ class RegisterTab extends StackedView<MemberLoginViewModel> {
                       ),
                     ],
                   ),
-                ),
-              ];
-            },
-            body: const TabBarView(
+          backgroundColor: Colors.transparent,
+          body: const TabBarView(
               children: <Widget>[
                 SignUpWithEmail(),
                 Text("registerWithMobile"),
               ],
             ),
-          ),
+          
+          
+         
         ),
       ),
     );
