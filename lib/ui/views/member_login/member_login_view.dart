@@ -34,6 +34,7 @@ class MemberLoginView extends StackedView<MemberLoginViewModel> {
               backgroundColor: Colors.transparent,
               appBar: appBar(context),
               body: NestedScrollView(
+                physics: NeverScrollableScrollPhysics(),
                 headerSliverBuilder:
                     (BuildContext context, bool innerBoxIsScrolled) {
                   return <Widget>[
@@ -111,6 +112,7 @@ class MemberLoginView extends StackedView<MemberLoginViewModel> {
                 body: const Padding(
                   padding: EdgeInsets.all(15.0),
                   child: TabBarView(
+                    physics: NeverScrollableScrollPhysics(),
                     children: <Widget>[
                       MemberLoginTab(),
                       RegisterTab(),

@@ -58,7 +58,7 @@ class DropdownTextfield extends StackedView<DropdownTextfieldModel> {
             color: Colors.white,
           ),
           width: double.infinity,
-          height: height ?? 40,
+          height: height ?? 42,
           child: FormField<String>(
             builder: (FormFieldState<String> state) {
               return InputDecorator(
@@ -70,6 +70,7 @@ class DropdownTextfield extends StackedView<DropdownTextfieldModel> {
                   enabledBorder: _setBorderStyle(),
                   focusedBorder: _setBorderStyle(),
                   disabledBorder: _setBorderStyle(),
+                 
                 ),
                 isEmpty: value == null || value == '',
                 child: DropdownButtonHideUnderline(
