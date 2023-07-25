@@ -51,15 +51,13 @@ class PersonalloanView extends StackedView<PersonalloanViewModel> {
                         backgroundColor: lightGreenHeigh,
                         pinned: true,
                         floating: false,
-                        
                         bottom: TabBar(
-                         
                           onTap: (index) => viewModel.indexing(index),
                           unselectedLabelColor: darkGreenHeigh,
                           controller: DefaultTabController.of(context),
                           labelColor: Colors.white,
                           labelStyle: GoogleFonts.ibmPlexSans(fontSize: 10),
-                          indicator:  BoxDecoration(
+                          indicator: BoxDecoration(
                               borderRadius: BorderRadius.only(
                                   topLeft: Radius.circular(10),
                                   topRight:
@@ -91,7 +89,7 @@ class PersonalloanView extends StackedView<PersonalloanViewModel> {
                               child: const Text(
                                 'outstandingLoan',
                                 textAlign: TextAlign.center,
-                               maxLines: 2,
+                                maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
                                     fontSize: 14, fontWeight: FontWeight.w600),

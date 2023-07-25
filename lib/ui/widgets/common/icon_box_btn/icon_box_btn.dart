@@ -25,7 +25,7 @@ class IconBoxBtn extends StackedView<IconBoxBtnModel> {
   double? padding;
   double? horizental;
   double? vertical = 0.0;
-   double? topLeftRadius;
+  double? topLeftRadius;
   double? topRightRadius;
   double? btmLeftRadius;
   double? btmRightRadius;
@@ -71,12 +71,13 @@ class IconBoxBtn extends StackedView<IconBoxBtnModel> {
         padding: EdgeInsets.symmetric(
             horizontal: horizental ?? 00, vertical: vertical ?? 00),
         decoration: BoxDecoration(
-            color: boxcolor ?? lightGreenHeigh,
-             borderRadius: BorderRadius.only(
+          color: boxcolor ?? lightGreenHeigh,
+          borderRadius: BorderRadius.only(
               topLeft: Radius.circular(topLeftRadius ?? 10),
               topRight: Radius.circular(topRightRadius ?? 10),
-              bottomLeft: Radius.circular(btmLeftRadius ??10),
-              bottomRight: Radius.circular(btmRightRadius ?? 10)),),
+              bottomLeft: Radius.circular(btmLeftRadius ?? 10),
+              bottomRight: Radius.circular(btmRightRadius ?? 10)),
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,

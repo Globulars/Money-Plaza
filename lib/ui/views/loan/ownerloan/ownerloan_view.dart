@@ -52,17 +52,16 @@ class OwnerloanView extends StackedView<OwnerloanViewModel> {
                                 topRight:
                                     Radius.circular(10)), // Creates border
                             color: darkGreenHeigh),
-                             padding: const EdgeInsets.symmetric(horizontal: 10),
-                            
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
                         tabs: [
                           Tab(
                             child: const Text(
                               'earlyPaybackPenalty',
                               textAlign: TextAlign.center,
                               maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                                style: TextStyle(
-                                    fontSize: 14, fontWeight: FontWeight.w600),
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                  fontSize: 14, fontWeight: FontWeight.w600),
                             ).tr(),
                           ),
                           Tab(
@@ -70,9 +69,9 @@ class OwnerloanView extends StackedView<OwnerloanViewModel> {
                               'sourceOfIncome',
                               textAlign: TextAlign.center,
                               maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                                style: TextStyle(
-                                    fontSize: 14, fontWeight: FontWeight.w600),
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                  fontSize: 14, fontWeight: FontWeight.w600),
                             ).tr(),
                           ),
                           Tab(
@@ -80,9 +79,9 @@ class OwnerloanView extends StackedView<OwnerloanViewModel> {
                               'outstandingLoan',
                               textAlign: TextAlign.center,
                               maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                                style: TextStyle(
-                                    fontSize: 14, fontWeight: FontWeight.w600),
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                  fontSize: 14, fontWeight: FontWeight.w600),
                             ).tr(),
                           ),
                         ],
@@ -91,7 +90,7 @@ class OwnerloanView extends StackedView<OwnerloanViewModel> {
                   ];
                 },
                 body: const TabBarView(
-                   physics: NeverScrollableScrollPhysics(),
+                  physics: NeverScrollableScrollPhysics(),
                   children: <Widget>[
                     SingleChildScrollView(child: OwnerTabBar1()),
                     SingleChildScrollView(child: OwnerTabBar2()),

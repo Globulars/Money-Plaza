@@ -29,14 +29,13 @@ class TopBar2View extends StackedView<TopBar2ViewModel> {
                 color: Colors.white,
                 fontSize: 12,
                 fontWeight: FontWeight.w500,
-                 boxcolor: darkGreenHeigh.withOpacity(0.8),
+                boxcolor: darkGreenHeigh.withOpacity(0.8),
                 topimage: myIcons.aiMatching,
                 text: 'a.I.Matching',
                 imgwidth: 22,
                 onPress: viewModel.showHide,
                 btmLeftRadius: 0,
                 btmRightRadius: 0,
-                
               ),
               IconBoxBtn(
                 height: 60,

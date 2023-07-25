@@ -46,7 +46,6 @@ class CommericalLoanView extends StackedView<CommericalLoanViewModel> {
                       bottom: TabBar(
                         onTap: (index) => viewModel.indexing(index),
                         unselectedLabelColor: darkGreenHeigh,
-                     
                         labelColor: Colors.white,
                         labelStyle: GoogleFonts.ibmPlexSans(fontSize: 10),
                         indicator: const BoxDecoration(
@@ -55,16 +54,16 @@ class CommericalLoanView extends StackedView<CommericalLoanViewModel> {
                                 topRight:
                                     Radius.circular(10)), // Creates border
                             color: darkGreenHeigh),
-                             padding: const EdgeInsets.symmetric(horizontal: 10),
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
                         tabs: [
                           Tab(
                             child: const Text(
                               'earlyPaybackPenalty',
                               textAlign: TextAlign.center,
                               maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                                style: TextStyle(
-                                    fontSize: 14, fontWeight: FontWeight.w600),
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                  fontSize: 14, fontWeight: FontWeight.w600),
                             ).tr(),
                           ),
                           Tab(
@@ -72,9 +71,9 @@ class CommericalLoanView extends StackedView<CommericalLoanViewModel> {
                               'sourceOfIncome',
                               textAlign: TextAlign.center,
                               maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                                style: TextStyle(
-                                    fontSize: 14, fontWeight: FontWeight.w600),
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                  fontSize: 14, fontWeight: FontWeight.w600),
                             ).tr(),
                           ),
                           Tab(
@@ -82,9 +81,9 @@ class CommericalLoanView extends StackedView<CommericalLoanViewModel> {
                               'outstandingLoan',
                               textAlign: TextAlign.center,
                               maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                                style: TextStyle(
-                                    fontSize: 14, fontWeight: FontWeight.w600),
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                  fontSize: 14, fontWeight: FontWeight.w600),
                             ).tr(),
                           ),
                         ],
@@ -93,7 +92,7 @@ class CommericalLoanView extends StackedView<CommericalLoanViewModel> {
                   ];
                 },
                 body: const TabBarView(
-                   physics: NeverScrollableScrollPhysics(),
+                  physics: NeverScrollableScrollPhysics(),
                   children: <Widget>[
                     SingleChildScrollView(child: CommTabBar1()),
                     SingleChildScrollView(child: CommTabBar2()),
