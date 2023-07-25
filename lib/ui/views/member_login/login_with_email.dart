@@ -64,6 +64,7 @@ class LoginWithEmail extends StackedView<MemberLoginViewModel> {
             text: "forgetPassword?",
             color: kcDarkGreyColor,
             fontSize: 16,
+            fontWeight: FontWeight.w400,
           ),
         )
       ],

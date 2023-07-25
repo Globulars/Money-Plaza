@@ -46,7 +46,7 @@ class MemberLoginTab extends StackedView<MemberLoginViewModel> {
                     Tab(
                       child: Text(
                         "loginWithEmail",
-                        style: GoogleFonts.ibmPlexSans(fontSize: 16),
+                        style: GoogleFonts.ibmPlexSans(fontSize: 16,fontWeight: FontWeight.w400),
                       ).tr(),
                     ),
                     Tab(

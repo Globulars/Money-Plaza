@@ -213,5 +213,7 @@
   "contactUs": "Contact us",
   "compareAndApply": "Compare And Apply\nFor Best Deal",
   "compareAvailableMortagages":"Compare Available Mortagages",
-  "compareCreditCard":"Compare Available\nCredit Cards"
+  "compareCreditCard":"Compare Available\nCredit Cards",
+  "signUpByEmail":"Sign-up by Email",
+  "signUpByMobile":"Sign-up by Mobile"
 }

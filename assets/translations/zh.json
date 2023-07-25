@@ -213,5 +213,7 @@
     "contactUs": "Contact us",
     "compareAndApply": "比較和應用\n最優惠的價格",
   "compareAvailableMortagages":"比較可用的抵押貸款",
-  "compareCreditCard":"比較可用\n信用卡"
+  "compareCreditCard":"比較可用\n信用卡",
+  "signUpByEmail":"通過電子郵件註冊",
+  "signUpByMobile":"通過手機註冊"
 }

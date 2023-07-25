@@ -82,6 +82,7 @@ class SignUpWithEmail extends StackedView<MemberLoginViewModel> {
         ),
          verticalSpaceSmall,
         DropdownTextfield(
+          height: 44,
             options: viewModel.registerDropDown,
             value: viewModel.registerDropdown,
             onChanged: (onChanged) {
@@ -90,6 +91,7 @@ class SignUpWithEmail extends StackedView<MemberLoginViewModel> {
              verticalSpaceSmall,
            
         DropdownTextfield(
+          height: 44,
                 onChanged: (String) {},
                 options: [],
              
