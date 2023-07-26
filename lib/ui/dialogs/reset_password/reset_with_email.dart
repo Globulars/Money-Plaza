@@ -28,17 +28,17 @@ class ResetWithEmail extends StackedView<ResetPasswordDialogModel> {
           textAlign: TextAlign.center,
         ),
         verticalSpaceTiny,
-         Row(
+        Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             ReturnButton(
               text: "send",
-              height:41.5,
+              height: 41.5,
               width: width * 0.19,
               boxcolor: darkGreenLight,
               color: Colors.white,
-              fontSize: 14,             
+              fontSize: 14,
             ),
             CustomTextField(
               width: width * 0.52,

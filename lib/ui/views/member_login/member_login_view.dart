@@ -47,7 +47,8 @@ class MemberLoginView extends StackedView<MemberLoginViewModel> {
                         onTap: viewModel.setChangeTab,
                         unselectedLabelColor: darkGreenHeigh,
                         labelColor: Colors.white,
-                        labelStyle: GoogleFonts.ibmPlexSans(fontSize: 10,fontWeight: FontWeight.w600),
+                        labelStyle: GoogleFonts.ibmPlexSans(
+                            fontSize: 10, fontWeight: FontWeight.w600),
                         indicator: const BoxDecoration(
                             borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(10),

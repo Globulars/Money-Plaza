@@ -41,7 +41,14 @@ class CreditCardView extends StackedView<CreditCardViewModel> {
                       image: AssetImage('assets/images/best_deals.jpg'),
                       fit: BoxFit.fitWidth),
                 ),
-                child:Center(child: CustomText(text: 'compareCreditCard',fontSize: 24,color: Colors.white,textAlign: TextAlign.center,fontWeight: FontWeight.bold,)) ,
+                child: Center(
+                    child: CustomText(
+                  text: 'compareCreditCard',
+                  fontSize: 24,
+                  color: Colors.white,
+                  textAlign: TextAlign.center,
+                  fontWeight: FontWeight.bold,
+                )),
               ),
               Expanded(
                 child: SingleChildScrollView(

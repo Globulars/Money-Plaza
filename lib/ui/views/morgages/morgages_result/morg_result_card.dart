@@ -62,13 +62,14 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                               CustomText(
                                 text: 'minimumMortgages',
                                 fontSize: 10,
-                                 fontWeight: FontWeight.w600,color: Colors.black.withOpacity(0.6),
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black.withOpacity(0.6),
                               ),
                               CustomText(
-                                
                                 text: 'interestRate',
                                 fontSize: 10,
-                                  fontWeight: FontWeight.w600,color: Colors.black.withOpacity(0.6),
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black.withOpacity(0.6),
                               ),
                               CustomText(
                                 text: '1.3%',
@@ -85,12 +86,14 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                               CustomText(
                                 text: 'highest',
                                 fontSize: 10,
-                                  fontWeight: FontWeight.w600,color: Colors.black.withOpacity(0.6),
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black.withOpacity(0.6),
                               ),
                               CustomText(
                                 text: 'cashRebate',
                                 fontSize: 10,
-                                 fontWeight: FontWeight.w600,color: Colors.black.withOpacity(0.6),
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black.withOpacity(0.6),
                               ),
                               CustomText(
                                 text: '\$6,000',
@@ -107,12 +110,14 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                               CustomText(
                                 text: 'minMonthly',
                                 fontSize: 10,
-                                  fontWeight: FontWeight.w600,color: Colors.black.withOpacity(0.6),
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black.withOpacity(0.6),
                               ),
                               CustomText(
                                 text: 'repayment',
-                               fontSize: 10,
-                                 fontWeight: FontWeight.w600,color: Colors.black.withOpacity(0.6),
+                                fontSize: 10,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black.withOpacity(0.6),
                               ),
                               CustomText(
                                 text: '\$6713.5',

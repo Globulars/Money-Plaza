@@ -25,7 +25,14 @@ class Picture extends ViewModelWidget<MorgagesViewModel> {
                 image: AssetImage('assets/images/best_deals.jpg'),
                 fit: BoxFit.fitWidth),
           ),
-          child:Center(child: CustomText(text: 'compareAvailableMortagages',fontSize: 24,color: Colors.white,textAlign: TextAlign.center,fontWeight: FontWeight.bold,)) ,
+          child: Center(
+              child: CustomText(
+            text: 'compareAvailableMortagages',
+            fontSize: 24,
+            color: Colors.white,
+            textAlign: TextAlign.center,
+            fontWeight: FontWeight.bold,
+          )),
         ),
       ],
     );

@@ -215,6 +215,6 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
   }
 
   _setPadding() {
-    return const EdgeInsets.symmetric(horizontal: 10,vertical: 12.5);
+    return const EdgeInsets.symmetric(horizontal: 10, vertical: 12.5);
   }
 }

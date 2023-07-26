@@ -8,7 +8,7 @@ import '../../../app/app.locator.dart';
 class MemberLoginViewModel extends BaseViewModel {
   final _dialogService = locator<DialogService>();
   final _navigationService = locator<NavigationService>();
-  final registerDropDown=["Option 1", "Option 2", "Option 3"];
+  final registerDropDown = ["Option 1", "Option 2", "Option 3"];
 
   void showResetPassword() {
     _dialogService.showCustomDialog(
@@ -23,7 +23,7 @@ class MemberLoginViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-    var registerDropdown= "Option 1";
+  var registerDropdown = "Option 1";
   setRegisterDropDown(value) {
     log(value.toString());
     registerDropdown = value;
@@ -33,8 +33,4 @@ class MemberLoginViewModel extends BaseViewModel {
   navigateToMemberSetting() {
     _navigationService.navigateToMemberSettingView();
   }
-
-
 }
-
-

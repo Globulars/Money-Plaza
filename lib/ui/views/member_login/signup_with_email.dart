@@ -36,11 +36,11 @@ class SignUpWithEmail extends StackedView<MemberLoginViewModel> {
           children: [
             ReturnButton(
               text: "send",
-              height:41.5,
+              height: 41.5,
               width: width * 0.22,
               boxcolor: darkGreenLight,
               color: Colors.white,
-              fontSize: 14,             
+              fontSize: 14,
             ),
             CustomTextField(
               width: width * 0.68,
@@ -50,7 +50,7 @@ class SignUpWithEmail extends StackedView<MemberLoginViewModel> {
             ),
           ],
         ),
-         verticalSpaceTiny,
+        verticalSpaceTiny,
         CustomTextField(
           hintText: "enterPassword",
           hintStyle: const TextStyle(),
@@ -80,24 +80,20 @@ class SignUpWithEmail extends StackedView<MemberLoginViewModel> {
             ),
           ],
         ),
-         verticalSpaceSmall,
+        verticalSpaceSmall,
         DropdownTextfield(
-          height: 44,
+            height: 44,
             options: viewModel.registerDropDown,
             value: viewModel.registerDropdown,
-            onChanged: (onChanged) {
-
-            }),
-             verticalSpaceSmall,
-           
+            onChanged: (onChanged) {}),
+        verticalSpaceSmall,
         DropdownTextfield(
           height: 44,
-                onChanged: (String) {},
-                options: [],
-             
-              ),
+          onChanged: (String) {},
+          options: [],
+        ),
         verticalSpaceSmall,
-         verticalSpaceSmall,
+        verticalSpaceSmall,
         Row(
           children: [
             Image.asset(
@@ -117,7 +113,7 @@ class SignUpWithEmail extends StackedView<MemberLoginViewModel> {
           ],
         ),
         verticalSpaceSmall,
-         verticalSpaceSmall,
+        verticalSpaceSmall,
         SubmitButton(
           height: 40,
           width: MediaQuery.of(context).size.width * 0.3,

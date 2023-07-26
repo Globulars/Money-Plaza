@@ -45,36 +45,36 @@ class DropdownTextfield extends StackedView<DropdownTextfieldModel> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-      titleText!=""?  Column(
-          children: [
-            Text(
-              titleText.toString(),
-              style: GoogleFonts.ibmPlexSans(
+        titleText != ""
+            ? Column(
+                children: [
+                  Text(
+                    titleText.toString(),
+                    style: GoogleFonts.ibmPlexSans(
                         fontSize: 14, fontWeight: FontWeight.w500),
-            ).tr(),
-            verticalSpaceTiny,
-          ],
-        ):Container(),
-        
+                  ).tr(),
+                  verticalSpaceTiny,
+                ],
+              )
+            : Container(),
         Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5),
             color: Colors.white,
           ),
           width: double.infinity,
-           height: height ?? 40,
+          height: height ?? 40,
           child: FormField<String>(
             builder: (FormFieldState<String> state) {
               return InputDecorator(
                 decoration: InputDecoration(
-                  contentPadding: const EdgeInsets.symmetric(
-                      horizontal: 10.0, vertical: 0),
+                  contentPadding:
+                      const EdgeInsets.symmetric(horizontal: 10.0, vertical: 0),
                   labelText: hintText.tr(),
                   border: _setBorderStyle(),
                   enabledBorder: _setBorderStyle(),
                   focusedBorder: _setBorderStyle(),
                   disabledBorder: _setBorderStyle(),
-                 
                 ),
                 isEmpty: value == null || value == '',
                 child: DropdownButtonHideUnderline(

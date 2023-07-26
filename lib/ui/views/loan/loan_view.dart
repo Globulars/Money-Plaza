@@ -41,7 +41,14 @@ class LoanView extends StackedView<LoanViewModel> {
                         image: AssetImage('assets/images/best_deals.jpg'),
                         fit: BoxFit.fitWidth),
                   ),
-                  child:Center(child: CustomText(text: 'compareAndApply',fontSize: 24,color: Colors.white,textAlign: TextAlign.center,fontWeight: FontWeight.bold,)) ,
+                  child: Center(
+                      child: CustomText(
+                    text: 'compareAndApply',
+                    fontSize: 24,
+                    color: Colors.white,
+                    textAlign: TextAlign.center,
+                    fontWeight: FontWeight.bold,
+                  )),
                 ),
                 verticalSpaceMedium,
                 loanCont(context),
