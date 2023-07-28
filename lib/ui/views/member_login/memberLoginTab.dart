@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:money_plaza/ui/views/member_login/login_with_email.dart';
 import 'package:stacked/stacked.dart';
 import '../../common/app_colors.dart';
+import 'login_with_phone.dart';
 import 'member_login_viewmodel.dart';
 
 class MemberLoginTab extends StackedView<MemberLoginViewModel> {
@@ -63,7 +64,7 @@ class MemberLoginTab extends StackedView<MemberLoginViewModel> {
             body: const TabBarView(
               children: <Widget>[
                 SingleChildScrollView(child: LoginWithEmail()),
-                SingleChildScrollView(child: Text("memberLoginWithMobile")),
+                SingleChildScrollView(child: LoginWithPhone()),
               ],
             ),
           ),
