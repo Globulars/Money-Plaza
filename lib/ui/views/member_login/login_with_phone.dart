@@ -22,17 +22,37 @@ class LoginWithPhone extends StackedView<MemberLoginViewModel> {
       children: [
         verticalSpaceSmall,
         verticalSpaceTiny,
+        Container(
+          height: 40,
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: Colors.white,
+           border: Border.all(color: darkGreenLight.withOpacity(0.8),width: 1),
+           borderRadius: BorderRadius.circular(5)
+          ),
+          child: Row(
+            children: [
+                SizedBox(width: 40,child: TextField(
+                  decoration: InputDecoration(border: InputBorder.none)
+                ),),
+                horizontalSpaceTiny,
+                 Expanded(child: TextField(
+                                  decoration: InputDecoration(border: InputBorder.none)
         
-
-
-
-
-        CustomTextField(
-          textInputType: TextInputType.number,
-          hintText: "phone No",
-          hintStyle: const TextStyle(fontSize: 14),
-          textAlign: TextAlign.center,
+                 ),),
+            ],
+          ),
         ),
+
+
+
+
+        // CustomTextField(
+        //   textInputType: TextInputType.number,
+        //   hintText: "phone No",
+        //   hintStyle: const TextStyle(fontSize: 14),
+        //   textAlign: TextAlign.center,
+        // ),
         verticalSpaceTiny,
         CustomTextField(
           hintText: "password",
