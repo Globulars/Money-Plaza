@@ -45,11 +45,11 @@ class LoginWithPhone extends StackedView<MemberLoginViewModel> {
                 width: 40,
                 child: TextField(
                   controller:viewModel.countryCode,
-                    decoration: InputDecoration(border: InputBorder.none)),
+                    decoration: const InputDecoration(border: InputBorder.none)),
               ),
               horizontalSpaceTiny,
               VerticalDivider(color: darkGreenLight.withOpacity(0.8)),
-              Expanded(
+              const Expanded(
                 child: TextField(
                     decoration: InputDecoration(
                         border: InputBorder.none, hintText: 'Phone No',)),
