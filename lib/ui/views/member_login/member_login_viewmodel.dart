@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'package:flutter/material.dart';
 import 'package:money_plaza/app/app.router.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
@@ -6,6 +7,12 @@ import '../../../app/app.dialogs.dart';
 import '../../../app/app.locator.dart';
 
 class MemberLoginViewModel extends BaseViewModel {
+  TextEditingController countryCode =TextEditingController();
+
+
+
+
+
   final _dialogService = locator<DialogService>();
   final _navigationService = locator<NavigationService>();
   final registerDropDown = ["Option 1", "Option 2", "Option 3"];

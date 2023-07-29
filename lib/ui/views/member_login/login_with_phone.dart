@@ -11,13 +11,20 @@ import 'package:country_code_picker/country_code_picker.dart';
 
 class LoginWithPhone extends StackedView<MemberLoginViewModel> {
   const LoginWithPhone({Key? key}) : super(key: key);
-
+@override
+  void onViewModelReady(MemberLoginViewModel viewModel) {
+    viewModel.countryCode.text="+92";
+    // TODO: implement onViewModelReady
+    super.onViewModelReady(viewModel);
+  }
   @override
   Widget builder(
     BuildContext context,
     MemberLoginViewModel viewModel,
     Widget? child,
   ) {
+    // onViewModelReady(viewModel);
+    
     return Column(
       children: [
         verticalSpaceSmall,
@@ -26,26 +33,30 @@ class LoginWithPhone extends StackedView<MemberLoginViewModel> {
           height: 40,
           width: double.infinity,
           decoration: BoxDecoration(
-            color: Colors.white,
-           border: Border.all(color: darkGreenLight.withOpacity(0.8),width: 1),
-           borderRadius: BorderRadius.circular(5)
-          ),
+              color: Colors.white,
+              border:
+                  Border.all(color: darkGreenLight.withOpacity(0.8), width: 1),
+              borderRadius: BorderRadius.circular(5)),
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-                SizedBox(width: 40,child: TextField(
-                  decoration: InputDecoration(border: InputBorder.none)
-                ),),
-                horizontalSpaceTiny,
-                 Expanded(child: TextField(
-                                  decoration: InputDecoration(border: InputBorder.none)
-        
-                 ),),
+              
+              SizedBox(
+                width: 40,
+                child: TextField(
+                  controller:viewModel.countryCode,
+                    decoration: InputDecoration(border: InputBorder.none)),
+              ),
+              horizontalSpaceTiny,
+              VerticalDivider(color: darkGreenLight.withOpacity(0.8)),
+              Expanded(
+                child: TextField(
+                    decoration: InputDecoration(
+                        border: InputBorder.none, hintText: 'Phone No',)),
+              ),
             ],
           ),
         ),
-
-
-
 
         // CustomTextField(
         //   textInputType: TextInputType.number,
