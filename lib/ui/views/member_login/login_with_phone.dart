@@ -23,11 +23,13 @@ class LoginWithPhone extends StackedView<MemberLoginViewModel> {
     MemberLoginViewModel viewModel,
     Widget? child,
   ) {
-    // onViewModelReady(viewModel);
+   final width = MediaQuery.of(context).size.width;
     
     return Column(
       children: [
         verticalSpaceSmall,
+            
+     
         verticalSpaceTiny,
         Container(
           height: 40,
@@ -42,16 +44,32 @@ class LoginWithPhone extends StackedView<MemberLoginViewModel> {
             children: [
               
               SizedBox(
-                width: 40,
-                child: TextField(
-                  controller:viewModel.countryCode,
-                    decoration: const InputDecoration(border: InputBorder.none)),
-              ),
-              horizontalSpaceTiny,
+          
+                width: width*0.06,
+                child:  CountryCodePicker(
+                  padding: EdgeInsets.all(0),
+         onChanged: print,
+         showFlag: false,
+         // Initial selection and favorite can be one of code ('IT') OR dial_code('+39')
+         initialSelection: 'IT',
+         favorite: ['+39','FR'],
+         // optional. Shows only country name and flag
+         showCountryOnly: false,
+         // optional. Shows only country name and flag when popup is closed.
+         showOnlyCountryWhenClosed: false,
+         // optional. aligns the flag and the Text left
+         alignLeft: false,
+       ),),
+            
               VerticalDivider(color: darkGreenLight.withOpacity(0.8)),
               const Expanded(
                 child: TextField(
+                  textAlign: TextAlign.start,
+                  
+                  scrollPadding: EdgeInsets.all(0),
+                  keyboardType: TextInputType.number,
                     decoration: InputDecoration(
+                      
                         border: InputBorder.none, hintText: 'Phone No',)),
               ),
             ],
