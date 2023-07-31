@@ -11,28 +11,27 @@ import 'package:country_code_picker/country_code_picker.dart';
 
 class LoginWithPhone extends StackedView<MemberLoginViewModel> {
   const LoginWithPhone({Key? key}) : super(key: key);
-@override
+  @override
   void onViewModelReady(MemberLoginViewModel viewModel) {
-    viewModel.countryCode.text="+92";
+    viewModel.countryCode.text = "+92";
     // TODO: implement onViewModelReady
     super.onViewModelReady(viewModel);
   }
+
   @override
   Widget builder(
     BuildContext context,
     MemberLoginViewModel viewModel,
     Widget? child,
   ) {
-   final width = MediaQuery.of(context).size.width;
-    
+    final width = MediaQuery.of(context).size.width;
+
     return Column(
       children: [
         verticalSpaceSmall,
-            
-     
         verticalSpaceTiny,
         Container(
-          height: 40,
+          height: 35,
           width: double.infinity,
           decoration: BoxDecoration(
               color: Colors.white,
@@ -42,46 +41,45 @@ class LoginWithPhone extends StackedView<MemberLoginViewModel> {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              
               SizedBox(
-          
-                width: width*0.06,
-                child:  CountryCodePicker(
+                width: width * 0.1,
+                child: const CountryCodePicker(
                   padding: EdgeInsets.all(0),
-         onChanged: print,
-         showFlag: false,
-         // Initial selection and favorite can be one of code ('IT') OR dial_code('+39')
-         initialSelection: 'IT',
-         favorite: ['+39','FR'],
-         // optional. Shows only country name and flag
-         showCountryOnly: false,
-         // optional. Shows only country name and flag when popup is closed.
-         showOnlyCountryWhenClosed: false,
-         // optional. aligns the flag and the Text left
-         alignLeft: false,
-       ),),
-            
+                  onChanged: print,
+                  showFlag: false,
+                  // Initial selection and favorite can be one of code ('IT') OR dial_code('+39')
+                  initialSelection: 'IT',
+                  favorite: ['+39', 'FR'],
+                  // optional. Shows only country name and flag
+                  showCountryOnly: false,
+                  // optional. Shows only country name and flag when popup is closed.
+                  showOnlyCountryWhenClosed: false,
+                  // optional. aligns the flag and the Text left
+                  alignLeft: false,
+                ),
+              ),
               VerticalDivider(color: darkGreenLight.withOpacity(0.8)),
-              const Expanded(
-                child: TextField(
-                  textAlign: TextAlign.start,
-                  
-                  scrollPadding: EdgeInsets.all(0),
-                  keyboardType: TextInputType.number,
+              Expanded(
+                child: TextFormField(
+                    textAlign: TextAlign.center,
+                    //  c :
+
+                    keyboardType: TextInputType.number,
                     decoration: InputDecoration(
-                      
-                        border: InputBorder.none, hintText: 'Phone No',)),
+                      contentPadding:
+                          EdgeInsets.only(bottom: 12.5, right: width * 0.15),
+                      border: InputBorder.none,
+                      hintText: 'Phone No',
+                      hintStyle: const TextStyle(
+                        // color: Colors.black,
+                        fontSize: 14,
+                        fontFamily: 'Roboto',
+                      ),
+                    )),
               ),
             ],
           ),
         ),
-
-        // CustomTextField(
-        //   textInputType: TextInputType.number,
-        //   hintText: "phone No",
-        //   hintStyle: const TextStyle(fontSize: 14),
-        //   textAlign: TextAlign.center,
-        // ),
         verticalSpaceTiny,
         CustomTextField(
           hintText: "password",
