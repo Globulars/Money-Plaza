@@ -84,7 +84,7 @@ class ResetWithPhone extends StackedView<ResetPasswordDialogModel> {
               fontSize: 14,
             ),
             CustomTextField(
-              width: width * 0.52,
+              width: width * 0.51,
               hintText: "verificationCode",
               hintStyle: const TextStyle(),
               textAlign: TextAlign.center,

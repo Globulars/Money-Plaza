@@ -85,6 +85,7 @@ class SignUpWithPhone extends StackedView<MemberLoginViewModel> {
               boxcolor: darkGreenLight,
               color: Colors.white,
               fontSize: 14,
+              
             ),
             CustomTextField(
               width: width * 0.68,
