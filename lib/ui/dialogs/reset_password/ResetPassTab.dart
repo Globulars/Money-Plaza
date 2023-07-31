@@ -6,6 +6,7 @@ import 'package:money_plaza/ui/dialogs/reset_password/reset_with_email.dart';
 import 'package:stacked/stacked.dart';
 import '../../common/app_colors.dart';
 import '../../widgets/common/icon_box_btn/return_button.dart';
+import 'reset_with_phone.dart';
 
 class ResetPassTab extends StackedView<ResetPasswordDialogModel> {
   const ResetPassTab({Key? key}) : super(key: key);
@@ -71,7 +72,7 @@ class ResetPassTab extends StackedView<ResetPasswordDialogModel> {
               ),
               viewModel.initialIndex == 0
                   ? const ResetWithEmail()
-                  : const Text("Reset by mobile tab"),
+                  : const ResetWithPhone(),
             ],
           ),
         ),
