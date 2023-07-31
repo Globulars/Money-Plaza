@@ -4,6 +4,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:money_plaza/ui/views/member_login/signup_with_email.dart';
+import 'package:money_plaza/ui/views/member_login/signup_with_phone.dart';
 import 'package:stacked/stacked.dart';
 import '../../common/app_colors.dart';
 import 'member_login_viewmodel.dart';
@@ -60,7 +61,7 @@ class RegisterTab extends StackedView<MemberLoginViewModel> {
           body: const TabBarView(
             children: <Widget>[
               SingleChildScrollView(child: SignUpWithEmail()),
-              SingleChildScrollView(child: Text("registerWithMobile")),
+              SingleChildScrollView(child: SignUpWithPhone()),
             ],
           ),
         ),
