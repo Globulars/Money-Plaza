@@ -12,6 +12,7 @@ import '../../widgets/common/custom_text_field/custom_text_field.dart';
 import '../../widgets/common/dropdown_textfield/dropdown_textfield.dart';
 import '../../widgets/common/icon_box_btn/return_button.dart';
 import '../../widgets/common/icon_box_btn/submit_button.dart';
+import '../../widgets/top_banner.dart';
 import 'credit_card_viewmodel.dart';
 
 class CreditCardView extends StackedView<CreditCardViewModel> {
@@ -23,7 +24,6 @@ class CreditCardView extends StackedView<CreditCardViewModel> {
     CreditCardViewModel viewModel,
     Widget? child,
   ) {
-    final width = MediaQuery.of(context).size.width;
     return Stack(
       children: [
         const BackgroundImage(),
@@ -33,23 +33,9 @@ class CreditCardView extends StackedView<CreditCardViewModel> {
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Container(
-                height: 170,
-                width: width * 1,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/images/best_deals.jpg'),
-                      fit: BoxFit.fitWidth),
-                ),
-                child: Center(
-                    child: CustomText(
-                  text: 'compareCreditCard',
-                  fontSize: 24,
-                  color: Colors.white,
-                  textAlign: TextAlign.center,
-                  fontWeight: FontWeight.bold,
-                )),
-              ),
+              const TopBanner(
+                  text: "compareCreditCard",
+                  image: 'assets/images/best_deals.jpg'),
               Expanded(
                 child: SingleChildScrollView(
                   child: Padding(

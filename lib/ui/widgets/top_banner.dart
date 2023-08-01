@@ -7,7 +7,8 @@ import 'common/icon_box_btn/text.dart';
 class TopBanner extends StackedView<WidgetViewModel> {
   final String text;
   final String image;
-  const TopBanner(this.text, this.image, {Key? key}) : super(key: key);
+  const TopBanner({Key? key, required this.text, required this.image})
+      : super(key: key);
 
   @override
   Widget builder(
@@ -16,9 +17,8 @@ class TopBanner extends StackedView<WidgetViewModel> {
     Widget? child,
   ) {
     final width = MediaQuery.of(context).size.width;
-
     return Container(
-      height: width * 0.4,
+      height: width * 0.37,
       width: width * 1,
       decoration: BoxDecoration(
         image: DecorationImage(image: AssetImage(image), fit: BoxFit.fitWidth),

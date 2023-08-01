@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:stacked/stacked.dart';
-
 import '../../../widgets/app_bar.dart';
 import '../../../widgets/bottom_bar.dart';
 import '../../../widgets/common/background_image.dart';
 import '../../../widgets/common/icon_box_btn/icon_box_btn.dart';
 import '../../../widgets/common/icon_box_btn/return_button.dart';
-import '../../../widgets/common/icon_box_btn/text.dart';
+import '../../../widgets/top_banner.dart';
 import 'member_setting_viewmodel.dart';
 
 class MemberSettingView extends StackedView<MemberSettingViewModel> {
@@ -31,26 +30,8 @@ class MemberSettingView extends StackedView<MemberSettingViewModel> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Stack(
-                  alignment: AlignmentDirectional.center,
-                  children: [
-                    Container(
-                      height: 170,
-                      width: width * 1,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage('assets/images/best_deals.jpg'),
-                            fit: BoxFit.fitWidth),
-                      ),
-                    ),
-                    CustomText(
-                      text: "memberZone",
-                      color: kcPureWhite,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                    )
-                  ],
-                ),
+                const TopBanner(
+                    text: "memberZone", image: 'assets/images/best_deals.jpg'),
                 Padding(
                   padding: const EdgeInsets.all(15.0),
                   child: Column(

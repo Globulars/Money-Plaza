@@ -6,7 +6,7 @@ import 'package:stacked/stacked.dart';
 import '../../widgets/app_bar.dart';
 import '../../widgets/bottom_bar.dart';
 import '../../widgets/common/icon_box_btn/icon_box_btn.dart';
-import '../../widgets/common/icon_box_btn/text.dart';
+import '../../widgets/top_banner.dart';
 import 'landing_viewmodel.dart';
 
 class LandingView extends StackedView<LandingViewModel> {
@@ -34,23 +34,9 @@ class LandingView extends StackedView<LandingViewModel> {
             ),
             child: SingleChildScrollView(
               child: Column(children: [
-                Container(
-                  height: width * 0.37,
-                  width: width * 1,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage('assets/images/best_deals.jpg'),
-                        fit: BoxFit.fitWidth),
-                  ),
-                  child: Center(
-                      child: CustomText(
-                    text: 'getFinancialProduct',
-                    fontSize: 24,
-                    color: Colors.white,
-                    textAlign: TextAlign.center,
-                    fontWeight: FontWeight.bold,
-                  )),
-                ),
+                const TopBanner(
+                    text: "getFinancialProduct",
+                    image: 'assets/images/best_deals.jpg'),
                 Padding(
                   padding: const EdgeInsets.only(top: 30.0),
                   child: Column(
