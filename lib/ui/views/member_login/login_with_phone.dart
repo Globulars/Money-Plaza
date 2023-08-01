@@ -33,7 +33,7 @@ class LoginWithPhone extends ViewModelWidget<MemberLoginViewModel> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(
-                width: width * 0.1,
+                width: width * 0.14,
                 child: const CountryCodePicker(
                   padding: EdgeInsets.all(0),
                   onChanged: print,

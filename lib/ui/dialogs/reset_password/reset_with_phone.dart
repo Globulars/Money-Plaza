@@ -34,7 +34,7 @@ class ResetWithPhone extends StackedView<ResetPasswordDialogModel> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(
-                width: width * 0.1,
+                width: width * 0.14,
                 child: const CountryCodePicker(
                   padding: EdgeInsets.all(0),
                   onChanged: print,
@@ -51,12 +51,12 @@ class ResetWithPhone extends StackedView<ResetPasswordDialogModel> {
                 child: TextFormField(
                     textAlign: TextAlign.center,
                     keyboardType: TextInputType.number,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       contentPadding:
-                          EdgeInsets.only(bottom: 12.5, right: width * 0.15),
+                          EdgeInsets.only(bottom: 12.5,),
                       border: InputBorder.none,
                       hintText: 'Phone No',
-                      hintStyle: const TextStyle(
+                      hintStyle: TextStyle(
                         fontSize: 14,
                         fontFamily: 'Roboto',
                       ),
