@@ -52,44 +52,58 @@ class PersonalInfoView extends StackedView<PersonalInfoViewModel> {
                         backgroundColor: lightGreenHeigh,
                         pinned: true,
                         floating: false,
-                        bottom: TabBar(
-                          unselectedLabelColor: darkGreenHeigh,
-                          controller: DefaultTabController.of(context),
-                          labelColor: Colors.white,
-                          labelStyle: GoogleFonts.ibmPlexSans(
-                              fontSize: 11, fontWeight: FontWeight.w600),
-                          indicator: const BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(10),
-                                  topRight:
-                                      Radius.circular(10)), // Creates border
-                              color: darkGreenHeigh),
-                          tabs: [
-                            Tab(
-                              child: const Text(
-                                'privateInfo',
-                                textAlign: TextAlign.center,
-                              ).tr(),
-                            ),
-                            Tab(
-                              child: const Text(
-                                'contactInfo',
-                                textAlign: TextAlign.center,
-                              ).tr(),
-                            ),
-                            Tab(
-                              child: const Text(
-                                'interestedProducts',
-                                textAlign: TextAlign.center,
-                              ).tr(),
-                            ),
-                            Tab(
-                              child: const Text(
-                                'loanStatus',
-                                textAlign: TextAlign.center,
-                              ).tr(),
-                            ),
-                          ],
+                        bottom: PreferredSize(
+                          preferredSize: Size(width, 50),
+                          child: Column(
+                            children: [
+                              TabBar(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 6),
+                                unselectedLabelColor: darkGreenHeigh,
+                                controller: DefaultTabController.of(context),
+                                labelColor: Colors.white,
+                                labelStyle: GoogleFonts.ibmPlexSans(
+                                    fontSize: 11, fontWeight: FontWeight.w600),
+                                indicator: const BoxDecoration(
+                                    borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(10),
+                                        topRight: Radius.circular(
+                                            10)), // Creates border
+                                    color: darkGreenHeigh),
+                                tabs: [
+                                  Tab(
+                                    child: const Text(
+                                      'privateInfo',
+                                      textAlign: TextAlign.center,
+                                    ).tr(),
+                                  ),
+                                  Tab(
+                                    child: const Text(
+                                      'contactInfo',
+                                      textAlign: TextAlign.center,
+                                    ).tr(),
+                                  ),
+                                  Tab(
+                                    child: const Text(
+                                      'interestedProducts',
+                                      textAlign: TextAlign.center,
+                                    ).tr(),
+                                  ),
+                                  Tab(
+                                    child: const Text(
+                                      'loanStatus',
+                                      textAlign: TextAlign.center,
+                                    ).tr(),
+                                  ),
+                                ],
+                              ),
+                              const Divider(
+                                color: darkGreenHeigh,
+                                height: 1.0,
+                                thickness: 3,
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ];
