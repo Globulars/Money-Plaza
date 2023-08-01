@@ -12,14 +12,13 @@ import '../../widgets/common/icon_box_btn/return_button.dart';
 import '../../widgets/common/icon_box_btn/submit_button.dart';
 import 'member_login_viewmodel.dart';
 
-class SignUpWithEmail extends StackedView<MemberLoginViewModel> {
+class SignUpWithEmail extends ViewModelWidget<MemberLoginViewModel> {
   const SignUpWithEmail({Key? key}) : super(key: key);
 
   @override
-  Widget builder(
+  Widget build(
     BuildContext context,
     MemberLoginViewModel viewModel,
-    Widget? child,
   ) {
     final width = MediaQuery.of(context).size.width;
     return Column(
@@ -126,10 +125,4 @@ class SignUpWithEmail extends StackedView<MemberLoginViewModel> {
       ],
     );
   }
-
-  @override
-  MemberLoginViewModel viewModelBuilder(
-    BuildContext context,
-  ) =>
-      MemberLoginViewModel();
 }

@@ -73,15 +73,6 @@ class SubBar extends StackedView<IconBoxBtnModel> {
             width: width ?? MediaQuery.of(context).size.width * 1 - 10,
             decoration: BoxDecoration(
               color: boxColor ?? darkGreenHeigh.withOpacity(0.8),
-              // gradient: LinearGradient(
-              //   begin: Alignment.topCenter,
-              //   end: Alignment.bottomCenter,
-              //   colors: [
-              //     darkGreenHeigh,
-              //     darkGreenHeigh.withOpacity(0.6),
-              //     darkGreenHeigh
-              //   ],
-              // ),
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(topLeftRadius ?? 10),
                   topRight: Radius.circular(topRightRadius ?? 10),
@@ -120,7 +111,7 @@ class SubBar extends StackedView<IconBoxBtnModel> {
                 ),
                 close
                     ? Padding(
-                        padding: const EdgeInsets.only(right: 8),
+                        padding: const EdgeInsets.only(right: 15),
                         child: GestureDetector(
                           onTap: () {
                             Navigator.pop(context);

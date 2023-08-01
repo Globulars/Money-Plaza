@@ -8,14 +8,13 @@ import '../../widgets/common/custom_text_field/custom_text_field.dart';
 import '../../widgets/common/icon_box_btn/submit_button.dart';
 import 'member_login_viewmodel.dart';
 
-class LoginWithEmail extends StackedView<MemberLoginViewModel> {
+class LoginWithEmail extends ViewModelWidget<MemberLoginViewModel> {
   const LoginWithEmail({Key? key}) : super(key: key);
 
   @override
-  Widget builder(
+  Widget build(
     BuildContext context,
     MemberLoginViewModel viewModel,
-    Widget? child,
   ) {
     return Column(
       children: [
@@ -70,10 +69,4 @@ class LoginWithEmail extends StackedView<MemberLoginViewModel> {
       ],
     );
   }
-
-  @override
-  MemberLoginViewModel viewModelBuilder(
-    BuildContext context,
-  ) =>
-      MemberLoginViewModel();
 }

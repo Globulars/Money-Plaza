@@ -42,14 +42,10 @@ class SignUpWithPhone extends StackedView<MemberLoginViewModel> {
                   padding: EdgeInsets.all(0),
                   onChanged: print,
                   showFlag: false,
-                  // Initial selection and favorite can be one of code ('IT') OR dial_code('+39')
                   initialSelection: 'IT',
                   favorite: ['+39', 'FR'],
-                  // optional. Shows only country name and flag
                   showCountryOnly: false,
-                  // optional. Shows only country name and flag when popup is closed.
                   showOnlyCountryWhenClosed: false,
-                  // optional. aligns the flag and the Text left
                   alignLeft: false,
                 ),
               ),
@@ -85,7 +81,6 @@ class SignUpWithPhone extends StackedView<MemberLoginViewModel> {
               boxcolor: darkGreenLight,
               color: Colors.white,
               fontSize: 14,
-              
             ),
             CustomTextField(
               width: width * 0.68,
@@ -138,7 +133,7 @@ class SignUpWithPhone extends StackedView<MemberLoginViewModel> {
           options: [],
         ),
         verticalSpaceSmall,
-        verticalSpaceSmall, 
+        verticalSpaceSmall,
         Row(
           children: [
             Image.asset(

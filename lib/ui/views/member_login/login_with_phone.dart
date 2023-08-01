@@ -9,23 +9,14 @@ import '../../widgets/common/icon_box_btn/submit_button.dart';
 import 'member_login_viewmodel.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 
-class LoginWithPhone extends StackedView<MemberLoginViewModel> {
+class LoginWithPhone extends ViewModelWidget<MemberLoginViewModel> {
   const LoginWithPhone({Key? key}) : super(key: key);
   @override
-  // void onViewModelReady(MemberLoginViewModel viewModel) {
-  //   viewModel.countryCode.text = "+92";
-  //   // TODO: implement onViewModelReady
-  //   super.onViewModelReady(viewModel);
-  // }
-
-  @override
-  Widget builder(
+  Widget build(
     BuildContext context,
     MemberLoginViewModel viewModel,
-    Widget? child,
   ) {
     final width = MediaQuery.of(context).size.width;
-
     return Column(
       children: [
         verticalSpaceSmall,
@@ -47,14 +38,10 @@ class LoginWithPhone extends StackedView<MemberLoginViewModel> {
                   padding: EdgeInsets.all(0),
                   onChanged: print,
                   showFlag: false,
-                  // Initial selection and favorite can be one of code ('IT') OR dial_code('+39')
                   initialSelection: 'IT',
                   favorite: ['+39', 'FR'],
-                  // optional. Shows only country name and flag
                   showCountryOnly: false,
-                  // optional. Shows only country name and flag when popup is closed.
                   showOnlyCountryWhenClosed: false,
-                  // optional. aligns the flag and the Text left
                   alignLeft: false,
                 ),
               ),
@@ -69,7 +56,6 @@ class LoginWithPhone extends StackedView<MemberLoginViewModel> {
                       border: InputBorder.none,
                       hintText: 'Phone No',
                       hintStyle: const TextStyle(
-                        // color: Colors.black,
                         fontSize: 14,
                         fontFamily: 'Roboto',
                       ),
@@ -122,10 +108,4 @@ class LoginWithPhone extends StackedView<MemberLoginViewModel> {
       ],
     );
   }
-
-  @override
-  MemberLoginViewModel viewModelBuilder(
-    BuildContext context,
-  ) =>
-      MemberLoginViewModel();
 }

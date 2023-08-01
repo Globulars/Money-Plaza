@@ -9,14 +9,13 @@ import '../../common/app_colors.dart';
 import 'login_with_phone.dart';
 import 'member_login_viewmodel.dart';
 
-class MemberLoginTab extends StackedView<MemberLoginViewModel> {
+class MemberLoginTab extends ViewModelWidget<MemberLoginViewModel> {
   const MemberLoginTab({Key? key}) : super(key: key);
 
   @override
-  Widget builder(
+  Widget build(
     BuildContext context,
     MemberLoginViewModel viewModel,
-    Widget? child,
   ) {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
@@ -70,10 +69,4 @@ class MemberLoginTab extends StackedView<MemberLoginViewModel> {
           ),
         ));
   }
-
-  @override
-  MemberLoginViewModel viewModelBuilder(
-    BuildContext context,
-  ) =>
-      MemberLoginViewModel();
 }

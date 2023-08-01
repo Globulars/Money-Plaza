@@ -9,14 +9,13 @@ import 'package:stacked/stacked.dart';
 import '../../common/app_colors.dart';
 import 'member_login_viewmodel.dart';
 
-class RegisterTab extends StackedView<MemberLoginViewModel> {
+class RegisterTab extends ViewModelWidget<MemberLoginViewModel> {
   const RegisterTab({Key? key}) : super(key: key);
 
   @override
-  Widget builder(
+  Widget build(
     BuildContext context,
     MemberLoginViewModel viewModel,
-    Widget? child,
   ) {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
@@ -68,10 +67,4 @@ class RegisterTab extends StackedView<MemberLoginViewModel> {
       ),
     );
   }
-
-  @override
-  MemberLoginViewModel viewModelBuilder(
-    BuildContext context,
-  ) =>
-      MemberLoginViewModel();
 }
