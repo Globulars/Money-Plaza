@@ -34,7 +34,7 @@ class LoanView extends StackedView<LoanViewModel> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  height: 170,
+                  height: width*0.4,
                   width: width * 1,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
