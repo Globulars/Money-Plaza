@@ -40,7 +40,7 @@ class SettingsView extends StackedView<SettingsViewModel> {
             child: Column(children: [
               SubBar(
                 text: "settings",
-                image: myIcons.appbarSetting,
+                image: myIcons.setting,
                 height: 50,
                 imgwidth: 30,
                 divider: true,
