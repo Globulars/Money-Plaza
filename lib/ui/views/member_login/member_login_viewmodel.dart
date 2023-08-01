@@ -7,11 +7,7 @@ import '../../../app/app.dialogs.dart';
 import '../../../app/app.locator.dart';
 
 class MemberLoginViewModel extends BaseViewModel {
-  TextEditingController countryCode =TextEditingController();
-
-
-
-
+  TextEditingController countryCode = TextEditingController();
 
   final _dialogService = locator<DialogService>();
   final _navigationService = locator<NavigationService>();

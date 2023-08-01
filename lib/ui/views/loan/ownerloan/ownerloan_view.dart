@@ -1,14 +1,12 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
-import '../../../common/app_colors.dart';
 import '../../../common/ui_helpers.dart';
 import '../../../widgets/app_bar.dart';
 import '../../../widgets/bottom_bar.dart';
 import '../../../widgets/common/background_image.dart';
 import '../../../widgets/common/icon_box_btn/return_button.dart';
+import '../sliver_app_bar.dart';
 import 'ownerloan_viewmodel.dart';
 import 'ownerloan_widgets/owner_tab_bar1.dart';
 import 'ownerloan_widgets/owner_tab_bar2.dart';
@@ -23,6 +21,7 @@ class OwnerloanView extends StackedView<OwnerloanViewModel> {
     OwnerloanViewModel viewModel,
     Widget? child,
   ) {
+    final width = MediaQuery.of(context).size.width;
     return DefaultTabController(
       length: 3,
       child: Builder(builder: (context) {
@@ -36,57 +35,7 @@ class OwnerloanView extends StackedView<OwnerloanViewModel> {
                 headerSliverBuilder:
                     (BuildContext context, bool innerBoxIsScrolled) {
                   return <Widget>[
-                    SliverAppBar(
-                      toolbarHeight: 0,
-                      backgroundColor: lightGreenHeigh,
-                      pinned: true,
-                      floating: false,
-                      bottom: TabBar(
-                        onTap: (index) => viewModel.indexing(index),
-                        unselectedLabelColor: darkGreenHeigh,
-                        labelColor: Colors.white,
-                        labelStyle: GoogleFonts.ibmPlexSans(fontSize: 10),
-                        indicator: const BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(10),
-                                topRight:
-                                    Radius.circular(10)), // Creates border
-                            color: darkGreenHeigh),
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
-                        tabs: [
-                          Tab(
-                            child: const Text(
-                              'earlyPaybackPenalty',
-                              textAlign: TextAlign.center,
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                  fontSize: 12, fontWeight: FontWeight.w600),
-                            ).tr(),
-                          ),
-                          Tab(
-                            child: const Text(
-                              'sourceOfIncome',
-                              textAlign: TextAlign.center,
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                  fontSize: 12, fontWeight: FontWeight.w600),
-                            ).tr(),
-                          ),
-                          Tab(
-                            child: const Text(
-                              'outstandingLoan',
-                              textAlign: TextAlign.center,
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                  fontSize: 12, fontWeight: FontWeight.w600),
-                            ).tr(),
-                          ),
-                        ],
-                      ),
-                    ),
+                    mySliverAppBar(viewModel, width),
                   ];
                 },
                 body: const TabBarView(

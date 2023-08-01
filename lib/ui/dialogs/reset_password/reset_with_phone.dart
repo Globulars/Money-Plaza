@@ -22,7 +22,7 @@ class ResetWithPhone extends StackedView<ResetPasswordDialogModel> {
     return Column(
       children: [
         verticalSpaceSmall,
-         Container(
+        Container(
           height: 35,
           width: double.infinity,
           decoration: BoxDecoration(

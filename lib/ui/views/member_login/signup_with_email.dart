@@ -94,7 +94,7 @@ class SignUpWithEmail extends ViewModelWidget<MemberLoginViewModel> {
           options: [],
         ),
         verticalSpaceSmall,
-        verticalSpaceSmall, 
+        verticalSpaceSmall,
         Row(
           children: [
             Image.asset(

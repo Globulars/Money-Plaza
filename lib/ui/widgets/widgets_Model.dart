@@ -1,5 +1,3 @@
 import 'package:stacked/stacked.dart';
 
-class WidgetViewModel extends BaseViewModel {
-
-}
+class WidgetViewModel extends BaseViewModel {}

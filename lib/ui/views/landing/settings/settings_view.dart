@@ -90,7 +90,7 @@ class SettingsView extends StackedView<SettingsViewModel> {
                           borderRadius: 10.0,
                           activeColor: darkGreenHeigh,
                           value: viewModel.notification,
-                         onToggle: (value) {
+                          onToggle: (value) {
                             viewModel.setNotification();
                           },
                         ),
