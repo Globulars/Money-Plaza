@@ -68,7 +68,7 @@ class PersonalInfoView extends StackedView<PersonalInfoViewModel> {
                                     borderRadius: BorderRadius.only(
                                         topLeft: Radius.circular(10),
                                         topRight: Radius.circular(
-                                            10)), // Creates border
+                                            10)), 
                                     color: darkGreenHeigh),
                                 tabs: [
                                   Tab(

@@ -112,7 +112,6 @@ class RewardApplicationView extends StackedView<RewardApplicationViewModel> {
               SubmitButton(
                 image: myIcons.done,
                 imgwidth: 12,
-                // onPress: viewModel.navigateToCreditCardResult,
                 text: 'submit',
                 height: 40,
                 width: 80,

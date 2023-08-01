@@ -1,4 +1,3 @@
-import 'package:money_plaza/ui/dialogs/info_alert/info_alert_dialog.dart';
 import 'package:money_plaza/ui/views/landing/startup/startup_view.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
@@ -79,7 +78,6 @@ import 'package:money_plaza/ui/widgets/common/horizental_list_view/horizental_li
     // @stacked-service
   ],
   dialogs: [
-    StackedDialog(classType: InfoAlertDialog),
     StackedDialog(classType: FilterDialog),
     StackedDialog(classType: CalculatorDialog),
     StackedDialog(classType: ResetPasswordDialog),

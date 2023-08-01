@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:money_plaza/ui/widgets/common/icon_box_btn/sub_bar.dart';
 import 'package:stacked/stacked.dart';
-
 import '../../../../common/app_colors.dart';
 import '../../../../common/ui_helpers.dart';
 import '../../../../widgets/common/custom_text_field/custom_text_field.dart';
@@ -85,6 +85,17 @@ class PersonalTabBar4 extends ViewModelWidget<PersonalInfoViewModel> {
                   ],
                 )
               ],
+            ),
+            verticalSpaceMedium,
+            SubBar(
+              text: "addLoanRecord",
+              height: 40,
+              boxColor: darkGreenLight,
+              btmRightRadius: 5,
+              btmLeftRadius: 5,
+              topLeftRadius: 5,
+              topRightRadius: 5,
+              width: width * 0.6,
             ),
             verticalSpaceLarge
           ],

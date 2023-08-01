@@ -12,12 +12,10 @@ import '../ui/dialogs/contact_us/contact_us_dialog.dart';
 import '../ui/dialogs/credit_card_filter/credit_card_filter_dialog.dart';
 import '../ui/dialogs/detail_filte/detail_filte_dialog.dart';
 import '../ui/dialogs/filter/filter_dialog.dart';
-import '../ui/dialogs/info_alert/info_alert_dialog.dart';
 import '../ui/dialogs/morgages_filter/morgages_filter_dialog.dart';
 import '../ui/dialogs/reset_password/reset_password_dialog.dart';
 
 enum DialogType {
-  infoAlert,
   filter,
   calculator,
   resetPassword,
@@ -31,8 +29,6 @@ void setupDialogUi() {
   final dialogService = locator<DialogService>();
 
   final Map<DialogType, DialogBuilder> builders = {
-    DialogType.infoAlert: (context, request, completer) =>
-        InfoAlertDialog(request: request, completer: completer),
     DialogType.filter: (context, request, completer) =>
         FilterDialog(request: request, completer: completer),
     DialogType.calculator: (context, request, completer) =>

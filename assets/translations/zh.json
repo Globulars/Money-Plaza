@@ -214,5 +214,6 @@
   "compareCreditCard": "比較可用\n信用卡",
   "signUpByEmail": "通過電子郵件註冊",
   "signUpByMobile": "通過手機註冊",
-  "getFinancialProduct": "獲取您的金融產品\n1 分鐘內！"
+  "getFinancialProduct": "獲取您的金融產品\n1 分鐘內！",
+  "addLoanRecord": "addLoanRecord"
 }
