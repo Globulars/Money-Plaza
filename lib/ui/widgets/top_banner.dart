@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/widgets/widgets_Model.dart';
 import 'package:stacked/stacked.dart';
-
 import 'common/icon_box_btn/text.dart';
 
-class TopBanner extends StackedView<WidgetViewModel> {
+class TopBanner extends ViewModelWidget<WidgetViewModel> {
   final String text;
   final String image;
   const TopBanner({Key? key, required this.text, required this.image})
       : super(key: key);
-
   @override
-  Widget builder(
+  Widget build(
     BuildContext context,
     WidgetViewModel viewModel,
-    Widget? child,
   ) {
     final width = MediaQuery.of(context).size.width;
     return Container(
@@ -33,10 +30,4 @@ class TopBanner extends StackedView<WidgetViewModel> {
       )),
     );
   }
-
-  @override
-  WidgetViewModel viewModelBuilder(
-    BuildContext context,
-  ) =>
-      WidgetViewModel();
 }
