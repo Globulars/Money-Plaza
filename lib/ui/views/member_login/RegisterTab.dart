@@ -33,11 +33,10 @@ class RegisterTab extends ViewModelWidget<MemberLoginViewModel> {
                 border: Border.all(color: Colors.black, width: 1),
               ),
               child: TabBar(
-                
                 labelStyle: GoogleFonts.ibmPlexSans(fontSize: 10),
-                indicator: const BoxDecoration(
-                    // Creates border
-                    color: darkGreenHeigh),
+                unselectedLabelColor: darkGreenHeigh,
+                labelColor: Colors.white,
+                indicator: const BoxDecoration(color: darkGreenHeigh),
                 tabs: [
                   Tab(
                     child: Text(

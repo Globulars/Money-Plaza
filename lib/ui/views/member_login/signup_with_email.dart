@@ -37,7 +37,7 @@ class SignUpWithEmail extends ViewModelWidget<MemberLoginViewModel> {
           children: [
             ReturnButton(
               text: "send",
-              height: 41.5,
+              height: 40,
               width: width * 0.22,
               boxcolor: darkGreenLight,
               color: Colors.white,
@@ -83,13 +83,13 @@ class SignUpWithEmail extends ViewModelWidget<MemberLoginViewModel> {
         ),
         verticalSpaceSmall,
         DropdownTextfield(
-            height: 44,
+            height: 40,
             options: viewModel.registerDropDown,
             value: viewModel.registerDropdown,
             onChanged: (onChanged) {}),
         verticalSpaceSmall,
         DropdownTextfield(
-          height: 44,
+          height: 40,
           onChanged: (String) {},
           options: [],
         ),

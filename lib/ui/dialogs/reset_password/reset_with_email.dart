@@ -33,7 +33,7 @@ class ResetWithEmail extends StackedView<ResetPasswordDialogModel> {
           children: [
             ReturnButton(
               text: "send",
-              height: 41.5,
+              height: 40,
               width: width * 0.19,
               boxcolor: darkGreenLight,
               color: Colors.white,
