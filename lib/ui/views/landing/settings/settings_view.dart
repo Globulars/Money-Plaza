@@ -26,8 +26,6 @@ class SettingsView extends StackedView<SettingsViewModel> {
     SettingsViewModel viewModel,
     Widget? child,
   ) {
-    bool isToggled = true;
-
     return Stack(
       children: [
         Scaffold(
@@ -91,11 +89,9 @@ class SettingsView extends StackedView<SettingsViewModel> {
                           toggleSize: 15.0,
                           borderRadius: 10.0,
                           activeColor: darkGreenHeigh,
-                          value: isToggled,
-                          onToggle: (value) {
-                            //   setState(() {
-                            //     isToggled = value;
-                            //   });
+                          value: viewModel.notification,
+                         onToggle: (value) {
+                            viewModel.setNotification();
                           },
                         ),
                       ],

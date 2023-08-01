@@ -10,6 +10,7 @@ import '../../../../app/app.locator.dart';
 class SettingsViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
   bool englishLanguage = true;
+  bool notification = true;
 
   navigateToMemberSetting() {
     _navigationService.navigateToMemberSettingView();
@@ -30,6 +31,11 @@ class SettingsViewModel extends BaseViewModel {
       context.setLocale(const Locale('en'));
     }
     englishLanguage = !englishLanguage;
+    notifyListeners();
+  }
+
+  setNotification() {
+    notification = !notification;
     notifyListeners();
   }
 }
