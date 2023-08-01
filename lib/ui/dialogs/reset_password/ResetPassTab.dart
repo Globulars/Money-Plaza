@@ -1,5 +1,4 @@
 // ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/dialogs/reset_password/reset_password_dialog_model.dart';
 import 'package:money_plaza/ui/dialogs/reset_password/reset_with_email.dart';
@@ -46,7 +45,6 @@ class ResetPassTab extends StackedView<ResetPasswordDialogModel> {
                     onPress: () {
                       viewModel.setInitialIndex(0);
                     },
-                    // onPress: ,
                   ),
                   ReturnButton(
                     height: 35,
@@ -57,7 +55,6 @@ class ResetPassTab extends StackedView<ResetPasswordDialogModel> {
                     topLeftRadius: 0,
                     topRightRadius: 0,
                     borderWidth: 0,
-                    // onPress: ,
                     boxcolor: viewModel.initialIndex == 1
                         ? darkGreenHeigh
                         : Colors.white,

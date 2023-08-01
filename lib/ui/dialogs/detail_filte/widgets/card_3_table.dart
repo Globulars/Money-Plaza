@@ -22,7 +22,6 @@ class Card3Table extends ViewModelWidget<DetailFilteDialogModel> {
           dataRowMaxHeight: 20,
           horizontalMargin: 0,
           columns: [
-            // Set the name of the column
             DataColumn(
               label: SizedBox(
                   width: width * 0.27,
@@ -36,8 +35,6 @@ class Card3Table extends ViewModelWidget<DetailFilteDialogModel> {
             DataColumn(
               label: SizedBox(
                   width: width * 0.27,
-                  // height: 200,
-
                   child: CustomText(
                     text: 'repaymentPeriod2',
                     textAlign: TextAlign.center,
@@ -57,7 +54,6 @@ class Card3Table extends ViewModelWidget<DetailFilteDialogModel> {
             ),
           ],
           rows: [
-            // Set the values to the columns
             DataRow(cells: [
               DataCell(SizedBox(
                   width: width * 0.27,

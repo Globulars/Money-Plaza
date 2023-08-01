@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:money_plaza/ui/dialogs/reset_password/reset_password_dialog_model.dart';
 import 'package:stacked/stacked.dart';
-
 import '../../common/app_colors.dart';
 import '../../common/ui_helpers.dart';
 import '../../widgets/common/custom_text_field/custom_text_field.dart';
