@@ -100,7 +100,6 @@ class LoginWithPhone extends ViewModelWidget<MemberLoginViewModel> {
           onTap: viewModel.showResetPassword,
           child: CustomText(
             text: "forgetPassword?",
-            color: kcDarkGreyColor,
             fontSize: 16,
             fontWeight: FontWeight.w400,
           ),

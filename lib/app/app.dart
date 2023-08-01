@@ -1,4 +1,3 @@
-import 'package:money_plaza/ui/bottom_sheets/notice/notice_sheet.dart';
 import 'package:money_plaza/ui/dialogs/info_alert/info_alert_dialog.dart';
 import 'package:money_plaza/ui/views/landing/startup/startup_view.dart';
 import 'package:stacked/stacked_annotations.dart';
@@ -78,10 +77,6 @@ import 'package:money_plaza/ui/widgets/common/horizental_list_view/horizental_li
     LazySingleton(classType: DialogService),
     LazySingleton(classType: NavigationService),
     // @stacked-service
-  ],
-  bottomsheets: [
-    StackedBottomsheet(classType: NoticeSheet),
-    // @stacked-bottom-sheet
   ],
   dialogs: [
     StackedDialog(classType: InfoAlertDialog),

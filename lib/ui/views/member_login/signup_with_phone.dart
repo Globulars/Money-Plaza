@@ -146,7 +146,6 @@ class SignUpWithPhone extends StackedView<MemberLoginViewModel> {
               width: width * 0.75,
               child: CustomText(
                 text: "subscribeGetLatest",
-                color: kcDarkGreyColor,
                 fontSize: 16,
               ),
             ),

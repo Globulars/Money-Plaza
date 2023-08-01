@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:money_plaza/app/app.bottomsheets.dart';
 import 'package:money_plaza/app/app.dialogs.dart';
 import 'package:money_plaza/app/app.locator.dart';
 import 'package:money_plaza/app/app.router.dart';
@@ -10,7 +9,6 @@ import 'package:easy_localization/easy_localization.dart';
 Future<void> main() async {
   setupLocator();
   setupDialogUi();
-  setupBottomSheetUi();
   WidgetsFlutterBinding.ensureInitialized();
 
   await EasyLocalization.ensureInitialized();
@@ -32,7 +30,6 @@ class MyApp extends StatelessWidget {
       title: 'Money Plaza',
       theme: Theme.of(context).copyWith(
         primaryColor: kcBackgroundColor,
-        focusColor: kcPrimaryColor,
         colorScheme:
             ColorScheme.fromSwatch().copyWith(secondary: darkGreenLight),
         textTheme: Theme.of(context).textTheme.apply(
