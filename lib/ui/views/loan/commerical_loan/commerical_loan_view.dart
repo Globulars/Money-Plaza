@@ -6,7 +6,7 @@ import '../../../widgets/app_bar.dart';
 import '../../../widgets/bottom_bar.dart';
 import '../../../widgets/common/background_image.dart';
 import '../../../widgets/common/icon_box_btn/return_button.dart';
-import '../sliver_app_bar.dart';
+import '../widgets/sliver_app_bar.dart';
 import 'commeriacal_widgets/commerical_view1.dart';
 import 'commeriacal_widgets/commerical_view2.dart';
 import 'commeriacal_widgets/commerical_view3.dart';

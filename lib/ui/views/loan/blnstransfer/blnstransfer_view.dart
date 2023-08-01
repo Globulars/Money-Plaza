@@ -8,7 +8,7 @@ import '../../../widgets/app_bar.dart';
 import '../../../widgets/bottom_bar.dart';
 import '../../../widgets/common/background_image.dart';
 import '../../../widgets/common/icon_box_btn/return_button.dart';
-import '../sliver_app_bar.dart';
+import '../widgets/sliver_app_bar.dart';
 import 'blnstransfer_viewmodel.dart';
 import 'tranfer_loan_widget/transfer_tabbar1.dart';
 

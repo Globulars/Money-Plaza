@@ -5,66 +5,63 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:flutter/material.dart' as _i31;
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart' as _i32;
-import 'package:money_plaza/ui/views/credit_card/credit_card_view.dart' as _i23;
+import 'package:money_plaza/ui/views/credit_card/credit_card_view.dart' as _i22;
 import 'package:money_plaza/ui/views/credit_card/credit_result/credit_result_view.dart'
-    as _i24;
-import 'package:money_plaza/ui/views/home/home_view.dart' as _i2;
-import 'package:money_plaza/ui/views/landing/landing_view.dart' as _i4;
+    as _i23;
+import 'package:money_plaza/ui/views/landing/landing_view.dart' as _i3;
 import 'package:money_plaza/ui/views/landing/settings/settings_view.dart'
-    as _i13;
-import 'package:money_plaza/ui/views/landing/startup/startup_view.dart' as _i3;
-import 'package:money_plaza/ui/views/loan/applyconfirm/applyconfirm_view.dart'
-    as _i8;
-import 'package:money_plaza/ui/views/loan/blnstransfer/blnstransfer_view.dart'
-    as _i15;
-import 'package:money_plaza/ui/views/loan/blnstransfer/transfer_result/transfer_result_view.dart'
-    as _i16;
-import 'package:money_plaza/ui/views/loan/calculator_result/calculator_result_view.dart'
-    as _i6;
-import 'package:money_plaza/ui/views/loan/commerical_loan/commerical_loan_view.dart'
-    as _i17;
-import 'package:money_plaza/ui/views/loan/commerical_loan/commerical_result/commerical_result_view.dart'
-    as _i18;
-import 'package:money_plaza/ui/views/loan/loan_view.dart' as _i5;
-import 'package:money_plaza/ui/views/loan/loancompare/loancompare_view.dart'
-    as _i7;
-import 'package:money_plaza/ui/views/loan/ownerloan/ownerloan_view.dart'
-    as _i11;
-import 'package:money_plaza/ui/views/loan/ownerloan/ownerloanresult/ownerloanresult_view.dart'
     as _i12;
-import 'package:money_plaza/ui/views/loan/personal_loan/personalloan_view.dart'
-    as _i9;
-import 'package:money_plaza/ui/views/loan/personal_loan/ploanreslut/ploanreslut_view.dart'
-    as _i10;
-import 'package:money_plaza/ui/views/member/change_password/change_password_view.dart'
-    as _i29;
-import 'package:money_plaza/ui/views/member/member_setting/member_setting_view.dart'
-    as _i25;
-import 'package:money_plaza/ui/views/member/personal_info/personal_info_view.dart'
-    as _i26;
-import 'package:money_plaza/ui/views/member/reward/reward_view.dart' as _i27;
-import 'package:money_plaza/ui/views/member/reward_application/reward_application_view.dart'
-    as _i28;
-import 'package:money_plaza/ui/views/member_login/member_login_view.dart'
+import 'package:money_plaza/ui/views/landing/startup/startup_view.dart' as _i2;
+import 'package:money_plaza/ui/views/loan/applyconfirm/applyconfirm_view.dart'
+    as _i7;
+import 'package:money_plaza/ui/views/loan/blnstransfer/blnstransfer_view.dart'
     as _i14;
+import 'package:money_plaza/ui/views/loan/blnstransfer/transfer_result/transfer_result_view.dart'
+    as _i15;
+import 'package:money_plaza/ui/views/loan/calculator_result/calculator_result_view.dart'
+    as _i5;
+import 'package:money_plaza/ui/views/loan/commerical_loan/commerical_loan_view.dart'
+    as _i16;
+import 'package:money_plaza/ui/views/loan/commerical_loan/commerical_result/commerical_result_view.dart'
+    as _i17;
+import 'package:money_plaza/ui/views/loan/loan_view.dart' as _i4;
+import 'package:money_plaza/ui/views/loan/loancompare/loancompare_view.dart'
+    as _i6;
+import 'package:money_plaza/ui/views/loan/ownerloan/ownerloan_view.dart'
+    as _i10;
+import 'package:money_plaza/ui/views/loan/ownerloan/ownerloanresult/ownerloanresult_view.dart'
+    as _i11;
+import 'package:money_plaza/ui/views/loan/personal_loan/personalloan_view.dart'
+    as _i8;
+import 'package:money_plaza/ui/views/loan/personal_loan/ploanreslut/ploanreslut_view.dart'
+    as _i9;
+import 'package:money_plaza/ui/views/member/change_password/change_password_view.dart'
+    as _i28;
+import 'package:money_plaza/ui/views/member/member_setting/member_setting_view.dart'
+    as _i24;
+import 'package:money_plaza/ui/views/member/personal_info/personal_info_view.dart'
+    as _i25;
+import 'package:money_plaza/ui/views/member/reward/reward_view.dart' as _i26;
+import 'package:money_plaza/ui/views/member/reward_application/reward_application_view.dart'
+    as _i27;
+import 'package:money_plaza/ui/views/member_login/member_login_view.dart'
+    as _i13;
 import 'package:money_plaza/ui/views/morgages/morgages_contact_info/morgages_contact_info_view.dart'
-    as _i22;
-import 'package:money_plaza/ui/views/morgages/morgages_result/morgages_result_view.dart'
-    as _i20;
-import 'package:money_plaza/ui/views/morgages/morgages_splash/morgages_splash_view.dart'
     as _i21;
-import 'package:money_plaza/ui/views/morgages/morgages_view.dart' as _i19;
+import 'package:money_plaza/ui/views/morgages/morgages_result/morgages_result_view.dart'
+    as _i19;
+import 'package:money_plaza/ui/views/morgages/morgages_splash/morgages_splash_view.dart'
+    as _i20;
+import 'package:money_plaza/ui/views/morgages/morgages_view.dart' as _i18;
 import 'package:money_plaza/ui/widgets/common/horizental_list_view/horizental_list_view_view.dart'
-    as _i31;
-import 'package:money_plaza/ui/widgets/top_bar2/top_bar2_view.dart' as _i30;
+    as _i30;
+import 'package:money_plaza/ui/widgets/top_bar2/top_bar2_view.dart' as _i29;
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i33;
+import 'package:stacked_services/stacked_services.dart' as _i32;
 
 class Routes {
-  static const homeView = '/home-view';
-
   static const startupView = '/startup-view';
 
   static const landingView = '/landing-view';
@@ -124,7 +121,6 @@ class Routes {
   static const horizentalListViewView = '/horizental-list-view-view';
 
   static const all = <String>{
-    homeView,
     startupView,
     landingView,
     loanView,
@@ -160,310 +156,300 @@ class Routes {
 class StackedRouter extends _i1.RouterBase {
   final _routes = <_i1.RouteDef>[
     _i1.RouteDef(
-      Routes.homeView,
-      page: _i2.HomeView,
-    ),
-    _i1.RouteDef(
       Routes.startupView,
-      page: _i3.StartupView,
+      page: _i2.StartupView,
     ),
     _i1.RouteDef(
       Routes.landingView,
-      page: _i4.LandingView,
+      page: _i3.LandingView,
     ),
     _i1.RouteDef(
       Routes.loanView,
-      page: _i5.LoanView,
+      page: _i4.LoanView,
     ),
     _i1.RouteDef(
       Routes.calculatorResultView,
-      page: _i6.CalculatorResultView,
+      page: _i5.CalculatorResultView,
     ),
     _i1.RouteDef(
       Routes.loancompareView,
-      page: _i7.LoancompareView,
+      page: _i6.LoancompareView,
     ),
     _i1.RouteDef(
       Routes.applyconfirmView,
-      page: _i8.ApplyconfirmView,
+      page: _i7.ApplyconfirmView,
     ),
     _i1.RouteDef(
       Routes.personalloanView,
-      page: _i9.PersonalloanView,
+      page: _i8.PersonalloanView,
     ),
     _i1.RouteDef(
       Routes.ploanreslutView,
-      page: _i10.PloanreslutView,
+      page: _i9.PloanreslutView,
     ),
     _i1.RouteDef(
       Routes.ownerloanView,
-      page: _i11.OwnerloanView,
+      page: _i10.OwnerloanView,
     ),
     _i1.RouteDef(
       Routes.ownerloanresultView,
-      page: _i12.OwnerloanresultView,
+      page: _i11.OwnerloanresultView,
     ),
     _i1.RouteDef(
       Routes.settingsView,
-      page: _i13.SettingsView,
+      page: _i12.SettingsView,
     ),
     _i1.RouteDef(
       Routes.memberLoginView,
-      page: _i14.MemberLoginView,
+      page: _i13.MemberLoginView,
     ),
     _i1.RouteDef(
       Routes.blnstransferView,
-      page: _i15.BlnstransferView,
+      page: _i14.BlnstransferView,
     ),
     _i1.RouteDef(
       Routes.transferResultView,
-      page: _i16.TransferResultView,
+      page: _i15.TransferResultView,
     ),
     _i1.RouteDef(
       Routes.commericalLoanView,
-      page: _i17.CommericalLoanView,
+      page: _i16.CommericalLoanView,
     ),
     _i1.RouteDef(
       Routes.commericalResultView,
-      page: _i18.CommericalResultView,
+      page: _i17.CommericalResultView,
     ),
     _i1.RouteDef(
       Routes.morgagesView,
-      page: _i19.MorgagesView,
+      page: _i18.MorgagesView,
     ),
     _i1.RouteDef(
       Routes.morgagesResultView,
-      page: _i20.MorgagesResultView,
+      page: _i19.MorgagesResultView,
     ),
     _i1.RouteDef(
       Routes.morgagesSplashView,
-      page: _i21.MorgagesSplashView,
+      page: _i20.MorgagesSplashView,
     ),
     _i1.RouteDef(
       Routes.morgagesContactInfoView,
-      page: _i22.MorgagesContactInfoView,
+      page: _i21.MorgagesContactInfoView,
     ),
     _i1.RouteDef(
       Routes.creditCardView,
-      page: _i23.CreditCardView,
+      page: _i22.CreditCardView,
     ),
     _i1.RouteDef(
       Routes.creditResultView,
-      page: _i24.CreditResultView,
+      page: _i23.CreditResultView,
     ),
     _i1.RouteDef(
       Routes.memberSettingView,
-      page: _i25.MemberSettingView,
+      page: _i24.MemberSettingView,
     ),
     _i1.RouteDef(
       Routes.personalInfoView,
-      page: _i26.PersonalInfoView,
+      page: _i25.PersonalInfoView,
     ),
     _i1.RouteDef(
       Routes.rewardView,
-      page: _i27.RewardView,
+      page: _i26.RewardView,
     ),
     _i1.RouteDef(
       Routes.rewardApplicationView,
-      page: _i28.RewardApplicationView,
+      page: _i27.RewardApplicationView,
     ),
     _i1.RouteDef(
       Routes.changePasswordView,
-      page: _i29.ChangePasswordView,
+      page: _i28.ChangePasswordView,
     ),
     _i1.RouteDef(
       Routes.topBar2View,
-      page: _i30.TopBar2View,
+      page: _i29.TopBar2View,
     ),
     _i1.RouteDef(
       Routes.horizentalListViewView,
-      page: _i31.HorizentalListViewView,
+      page: _i30.HorizentalListViewView,
     ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
-    _i2.HomeView: (data) {
-      return _i32.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i2.HomeView(),
+    _i2.StartupView: (data) {
+      return _i31.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i2.StartupView(),
         settings: data,
       );
     },
-    _i3.StartupView: (data) {
-      return _i32.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i3.StartupView(),
+    _i3.LandingView: (data) {
+      return _i31.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i3.LandingView(),
         settings: data,
       );
     },
-    _i4.LandingView: (data) {
-      return _i32.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i4.LandingView(),
+    _i4.LoanView: (data) {
+      return _i31.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i4.LoanView(),
         settings: data,
       );
     },
-    _i5.LoanView: (data) {
-      return _i32.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i5.LoanView(),
+    _i5.CalculatorResultView: (data) {
+      return _i31.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i5.CalculatorResultView(),
         settings: data,
       );
     },
-    _i6.CalculatorResultView: (data) {
-      return _i32.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i6.CalculatorResultView(),
+    _i6.LoancompareView: (data) {
+      return _i31.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i6.LoancompareView(),
         settings: data,
       );
     },
-    _i7.LoancompareView: (data) {
-      return _i32.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i7.LoancompareView(),
-        settings: data,
-      );
-    },
-    _i8.ApplyconfirmView: (data) {
+    _i7.ApplyconfirmView: (data) {
       final args = data.getArgs<ApplyconfirmViewArguments>(
         orElse: () => const ApplyconfirmViewArguments(),
       );
-      return _i32.MaterialPageRoute<dynamic>(
+      return _i31.MaterialPageRoute<dynamic>(
         builder: (context) =>
-            _i8.ApplyconfirmView(key: args.key, match: args.match),
+            _i7.ApplyconfirmView(key: args.key, match: args.match),
         settings: data,
       );
     },
-    _i9.PersonalloanView: (data) {
-      return _i32.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i9.PersonalloanView(),
+    _i8.PersonalloanView: (data) {
+      return _i31.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i8.PersonalloanView(),
         settings: data,
       );
     },
-    _i10.PloanreslutView: (data) {
-      return _i32.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i10.PloanreslutView(),
+    _i9.PloanreslutView: (data) {
+      return _i31.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i9.PloanreslutView(),
         settings: data,
       );
     },
-    _i11.OwnerloanView: (data) {
-      return _i32.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i11.OwnerloanView(),
+    _i10.OwnerloanView: (data) {
+      return _i31.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i10.OwnerloanView(),
         settings: data,
       );
     },
-    _i12.OwnerloanresultView: (data) {
-      return _i32.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i12.OwnerloanresultView(),
+    _i11.OwnerloanresultView: (data) {
+      return _i31.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i11.OwnerloanresultView(),
         settings: data,
       );
     },
-    _i13.SettingsView: (data) {
+    _i12.SettingsView: (data) {
       final args = data.getArgs<SettingsViewArguments>(nullOk: false);
-      return _i32.MaterialPageRoute<dynamic>(
-        builder: (context) => _i13.SettingsView(args.context, key: args.key),
+      return _i31.MaterialPageRoute<dynamic>(
+        builder: (context) => _i12.SettingsView(args.context, key: args.key),
         settings: data,
       );
     },
-    _i14.MemberLoginView: (data) {
-      return _i32.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i14.MemberLoginView(),
+    _i13.MemberLoginView: (data) {
+      return _i31.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i13.MemberLoginView(),
         settings: data,
       );
     },
-    _i15.BlnstransferView: (data) {
-      return _i32.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i15.BlnstransferView(),
+    _i14.BlnstransferView: (data) {
+      return _i31.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i14.BlnstransferView(),
         settings: data,
       );
     },
-    _i16.TransferResultView: (data) {
-      return _i32.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i16.TransferResultView(),
+    _i15.TransferResultView: (data) {
+      return _i31.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i15.TransferResultView(),
         settings: data,
       );
     },
-    _i17.CommericalLoanView: (data) {
-      return _i32.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i17.CommericalLoanView(),
+    _i16.CommericalLoanView: (data) {
+      return _i31.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i16.CommericalLoanView(),
         settings: data,
       );
     },
-    _i18.CommericalResultView: (data) {
-      return _i32.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i18.CommericalResultView(),
+    _i17.CommericalResultView: (data) {
+      return _i31.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i17.CommericalResultView(),
         settings: data,
       );
     },
-    _i19.MorgagesView: (data) {
-      return _i32.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i19.MorgagesView(),
+    _i18.MorgagesView: (data) {
+      return _i31.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i18.MorgagesView(),
         settings: data,
       );
     },
-    _i20.MorgagesResultView: (data) {
-      return _i32.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i20.MorgagesResultView(),
+    _i19.MorgagesResultView: (data) {
+      return _i31.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i19.MorgagesResultView(),
         settings: data,
       );
     },
-    _i21.MorgagesSplashView: (data) {
-      return _i32.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i21.MorgagesSplashView(),
+    _i20.MorgagesSplashView: (data) {
+      return _i31.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i20.MorgagesSplashView(),
         settings: data,
       );
     },
-    _i22.MorgagesContactInfoView: (data) {
-      return _i32.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i22.MorgagesContactInfoView(),
+    _i21.MorgagesContactInfoView: (data) {
+      return _i31.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i21.MorgagesContactInfoView(),
         settings: data,
       );
     },
-    _i23.CreditCardView: (data) {
-      return _i32.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i23.CreditCardView(),
+    _i22.CreditCardView: (data) {
+      return _i31.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i22.CreditCardView(),
         settings: data,
       );
     },
-    _i24.CreditResultView: (data) {
-      return _i32.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i24.CreditResultView(),
+    _i23.CreditResultView: (data) {
+      return _i31.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i23.CreditResultView(),
         settings: data,
       );
     },
-    _i25.MemberSettingView: (data) {
-      return _i32.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i25.MemberSettingView(),
+    _i24.MemberSettingView: (data) {
+      return _i31.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i24.MemberSettingView(),
         settings: data,
       );
     },
-    _i26.PersonalInfoView: (data) {
-      return _i32.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i26.PersonalInfoView(),
+    _i25.PersonalInfoView: (data) {
+      return _i31.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i25.PersonalInfoView(),
         settings: data,
       );
     },
-    _i27.RewardView: (data) {
-      return _i32.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i27.RewardView(),
+    _i26.RewardView: (data) {
+      return _i31.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i26.RewardView(),
         settings: data,
       );
     },
-    _i28.RewardApplicationView: (data) {
-      return _i32.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i28.RewardApplicationView(),
+    _i27.RewardApplicationView: (data) {
+      return _i31.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i27.RewardApplicationView(),
         settings: data,
       );
     },
-    _i29.ChangePasswordView: (data) {
-      return _i32.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i29.ChangePasswordView(),
+    _i28.ChangePasswordView: (data) {
+      return _i31.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i28.ChangePasswordView(),
         settings: data,
       );
     },
-    _i30.TopBar2View: (data) {
-      return _i32.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i30.TopBar2View(),
+    _i29.TopBar2View: (data) {
+      return _i31.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i29.TopBar2View(),
         settings: data,
       );
     },
-    _i31.HorizentalListViewView: (data) {
-      return _i32.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i31.HorizentalListViewView(),
+    _i30.HorizentalListViewView: (data) {
+      return _i31.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i30.HorizentalListViewView(),
         settings: data,
       );
     },
@@ -481,7 +467,7 @@ class ApplyconfirmViewArguments {
     this.match = false,
   });
 
-  final _i32.Key? key;
+  final _i31.Key? key;
 
   final bool match;
 
@@ -508,9 +494,9 @@ class SettingsViewArguments {
     this.key,
   });
 
-  final _i32.BuildContext context;
+  final _i31.BuildContext context;
 
-  final _i32.Key? key;
+  final _i31.Key? key;
 
   @override
   String toString() {
@@ -529,21 +515,7 @@ class SettingsViewArguments {
   }
 }
 
-extension NavigatorStateExtension on _i33.NavigationService {
-  Future<dynamic> navigateToHomeView([
-    int? routerId,
-    bool preventDuplicates = true,
-    Map<String, String>? parameters,
-    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
-        transition,
-  ]) async {
-    return navigateTo<dynamic>(Routes.homeView,
-        id: routerId,
-        preventDuplicates: preventDuplicates,
-        parameters: parameters,
-        transition: transition);
-  }
-
+extension NavigatorStateExtension on _i32.NavigationService {
   Future<dynamic> navigateToStartupView([
     int? routerId,
     bool preventDuplicates = true,
@@ -615,7 +587,7 @@ extension NavigatorStateExtension on _i33.NavigationService {
   }
 
   Future<dynamic> navigateToApplyconfirmView({
-    _i32.Key? key,
+    _i31.Key? key,
     bool match = false,
     int? routerId,
     bool preventDuplicates = true,
@@ -688,8 +660,8 @@ extension NavigatorStateExtension on _i33.NavigationService {
   }
 
   Future<dynamic> navigateToSettingsView({
-    required _i32.BuildContext context,
-    _i32.Key? key,
+    required _i31.BuildContext context,
+    _i31.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -956,20 +928,6 @@ extension NavigatorStateExtension on _i33.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> replaceWithHomeView([
-    int? routerId,
-    bool preventDuplicates = true,
-    Map<String, String>? parameters,
-    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
-        transition,
-  ]) async {
-    return replaceWith<dynamic>(Routes.homeView,
-        id: routerId,
-        preventDuplicates: preventDuplicates,
-        parameters: parameters,
-        transition: transition);
-  }
-
   Future<dynamic> replaceWithStartupView([
     int? routerId,
     bool preventDuplicates = true,
@@ -1041,7 +999,7 @@ extension NavigatorStateExtension on _i33.NavigationService {
   }
 
   Future<dynamic> replaceWithApplyconfirmView({
-    _i32.Key? key,
+    _i31.Key? key,
     bool match = false,
     int? routerId,
     bool preventDuplicates = true,
@@ -1114,8 +1072,8 @@ extension NavigatorStateExtension on _i33.NavigationService {
   }
 
   Future<dynamic> replaceWithSettingsView({
-    required _i32.BuildContext context,
-    _i32.Key? key,
+    required _i31.BuildContext context,
+    _i31.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,

@@ -8,7 +8,7 @@ import 'package:money_plaza/ui/common/app_icons.dart';
 import '../../../widgets/app_bar.dart';
 import '../../../widgets/bottom_bar.dart';
 import '../../../widgets/common/icon_box_btn/return_button.dart';
-import '../sliver_app_bar.dart';
+import '../widgets/sliver_app_bar.dart';
 import 'personal_widgets/tabbarview2.dart';
 import 'personal_widgets/tabbarview1.dart';
 import 'personalloan_viewmodel.dart';

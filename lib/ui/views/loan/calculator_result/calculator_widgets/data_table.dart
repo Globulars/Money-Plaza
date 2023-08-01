@@ -39,7 +39,6 @@ class CalDataTable extends ViewModelWidget<CalculatorResultViewModel> {
                   dataRowMaxHeight: 20,
                   horizontalMargin: 0,
                   columns: [
-                    // Set the name of the column
                     DataColumn(
                       label: SizedBox(
                           width: 40,
@@ -53,8 +52,6 @@ class CalDataTable extends ViewModelWidget<CalculatorResultViewModel> {
                     DataColumn(
                       label: SizedBox(
                           width: 60,
-                          // height: 200,
-
                           child: CustomText(
                             text: 'monthlyRepaymentnAmount',
                             textAlign: TextAlign.center,
@@ -94,7 +91,6 @@ class CalDataTable extends ViewModelWidget<CalculatorResultViewModel> {
                     ),
                   ],
                   rows: [
-                    // Set the values to the columns
                     DataRow(cells: [
                       DataCell(SizedBox(
                           width: 20,

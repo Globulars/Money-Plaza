@@ -17,7 +17,6 @@ class BtnListView extends ViewModelWidget<CalculatorResultViewModel> {
   ) {
     final width = MediaQuery.of(context).size.width;
     return Column(
-      // crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         const TopBar2View(),
         verticalSpaceSmall,
@@ -71,7 +70,6 @@ class BtnListView extends ViewModelWidget<CalculatorResultViewModel> {
             ),
           ),
         ),
-        // verticalSpaceTiny,
         const Divider(
           color: Colors.black,
           height: 0,
