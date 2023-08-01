@@ -40,7 +40,7 @@ class SettingsView extends StackedView<SettingsViewModel> {
             child: Column(children: [
               SubBar(
                 text: "settings",
-                image: myIcons.setting,
+                image: myIcons.appbarSetting,
                 height: 50,
                 imgwidth: 30,
                 divider: true,
@@ -57,7 +57,6 @@ class SettingsView extends StackedView<SettingsViewModel> {
                         CustomText(
                           text: "中国人English",
                           fontSize: 18,
-                          color: kcDarkGreyColor,
                         ),
                         FlutterSwitch(
                           height: 20.0,
@@ -80,7 +79,6 @@ class SettingsView extends StackedView<SettingsViewModel> {
                         CustomText(
                           text: "pushNotifications",
                           fontSize: 18,
-                          color: kcDarkGreyColor,
                         ),
                         FlutterSwitch(
                           height: 20.0,
@@ -100,13 +98,11 @@ class SettingsView extends StackedView<SettingsViewModel> {
                     CustomText(
                       text: "privacyPolicy",
                       fontSize: 18,
-                      color: kcDarkGreyColor,
                     ),
                     verticalSpaceSmall,
                     CustomText(
                       text: "termsConditions",
                       fontSize: 18,
-                      color: kcDarkGreyColor,
                     ),
                     verticalSpaceSmall,
                     InkWell(
@@ -114,7 +110,6 @@ class SettingsView extends StackedView<SettingsViewModel> {
                       child: CustomText(
                         text: "memberSetting",
                         fontSize: 18,
-                        color: kcDarkGreyColor,
                       ),
                     ),
                   ],

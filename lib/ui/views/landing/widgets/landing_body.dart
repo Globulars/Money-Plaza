@@ -29,7 +29,7 @@ class LandingBody extends ViewModelWidget<LandingViewModel> {
               IconBoxBtn(
                 height: width / 3,
                 width: width / 3,
-                color: kcDarkGreyColor,
+                color: darkGreenHeigh,
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
                 text: "loans",
@@ -41,7 +41,7 @@ class LandingBody extends ViewModelWidget<LandingViewModel> {
               IconBoxBtn(
                 height: width / 3,
                 width: width / 3,
-                color: kcDarkGreyColor,
+                color: darkGreenHeigh,
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
                 text: "morgages",
@@ -58,7 +58,7 @@ class LandingBody extends ViewModelWidget<LandingViewModel> {
               IconBoxBtn(
                 height: width / 3,
                 width: width / 3,
-                color: kcDarkGreyColor,
+                color: darkGreenHeigh,
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
                 text: "insurances",
@@ -69,7 +69,7 @@ class LandingBody extends ViewModelWidget<LandingViewModel> {
               IconBoxBtn(
                 height: width / 3,
                 width: width / 3,
-                color: kcDarkGreyColor,
+                color: darkGreenHeigh,
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
                 text: "creditCards",
@@ -83,7 +83,7 @@ class LandingBody extends ViewModelWidget<LandingViewModel> {
           IconBoxBtn(
             height: width / 3,
             width: width / 3,
-            color: kcDarkGreyColor,
+            color: darkGreenHeigh,
             fontSize: 16,
             fontWeight: FontWeight.bold,
             text: "signUpLogin",
