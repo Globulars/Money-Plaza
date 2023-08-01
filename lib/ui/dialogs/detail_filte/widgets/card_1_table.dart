@@ -34,8 +34,6 @@ class Card1Table extends ViewModelWidget<DetailFilteDialogModel> {
             DataColumn(
               label: SizedBox(
                   width: 60,
-                  // height: 200,
-
                   child: CustomText(
                     text: 'repaymentPeriod',
                     textAlign: TextAlign.center,
@@ -75,7 +73,6 @@ class Card1Table extends ViewModelWidget<DetailFilteDialogModel> {
             ),
           ],
           rows: [
-            // Set the values to the columns
             DataRow(cells: [
               DataCell(SizedBox(
                   width: 20,
