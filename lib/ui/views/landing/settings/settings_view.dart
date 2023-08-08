@@ -127,6 +127,7 @@ class SettingsView extends StackedView<SettingsViewModel> {
                 text: 'return',
                 height: 40,
                 width: 80,
+                onPress: viewModel.navigateToLanding,
               ),
             ],
           ),
