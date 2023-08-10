@@ -3,11 +3,13 @@ import 'dart:developer';
 
 import 'package:http/http.dart' as http;
 
+import '../ui/common/app_url.dart';
+
 class AuthService {
+  final ApiUrl _apiUrl = ApiUrl();
   sendEmailCode(email, type) async {
     try {
-      final response = await http.post(
-          Uri.parse("https://api.moneyplaza.site/auth/sendEmailCode"),
+      final response = await http.post(_apiUrl.sendEmailCode,
           body: jsonEncode(
               {"email": "mudassirmukhtar4@gmail.com", "type": "signup"}),
           headers: {
