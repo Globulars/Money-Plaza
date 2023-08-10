@@ -27,6 +27,7 @@ class SignUpWithEmail extends ViewModelWidget<MemberLoginViewModel> {
         verticalSpaceTiny,
         CustomTextField(
           hintText: "email",
+          controller: viewModel.emailCtrl,
           hintStyle: const TextStyle(fontSize: 16),
           textAlign: TextAlign.center,
         ),
@@ -37,6 +38,7 @@ class SignUpWithEmail extends ViewModelWidget<MemberLoginViewModel> {
           children: [
             ReturnButton(
               text: "send",
+              onPress: viewModel.sendEmailCode,
               height: 40,
               width: width * 0.22,
               boxcolor: darkGreenLight,
