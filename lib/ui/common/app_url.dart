@@ -1,6 +1,6 @@
 
  const baseUrl = "https://api.moneyplaza.site";
-class Url {
+class ApiUrl {
 
 // authentication url
 final Uri login = Uri.parse("$baseUrl/auth/login");
