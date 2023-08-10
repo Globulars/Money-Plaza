@@ -86,15 +86,15 @@ class SignUpWithEmail extends ViewModelWidget<MemberLoginViewModel> {
         verticalSpaceSmall,
         DropdownTextfield(
             height: 40,
-            options: viewModel.registerDropDown,
-            value: viewModel.registerDropdown,
-            onChanged: (onChanged) {}),
+            options: viewModel.interestProductsList,
+            value: viewModel.interestProducts,
+            onChanged: viewModel.setInterestProducts),
         verticalSpaceSmall,
         DropdownTextfield(
-          height: 40,
-          onChanged: (String) {},
-          options: [],
-        ),
+            height: 40,
+            options: viewModel.knownChannelList,
+            value: viewModel.knownChannel,
+            onChanged: viewModel.setKnownChannel),
         verticalSpaceSmall,
         verticalSpaceSmall,
         Row(

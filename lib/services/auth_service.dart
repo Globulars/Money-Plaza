@@ -25,22 +25,20 @@ class AuthService {
     }
   }
 
-  signupByEmail() async {
-    Map<String, dynamic> body = {
-      "code": "string",
-      "email": "string",
-      "firstName": "string",
-      "interestProducts": ["string"],
-      "knownChannel": "string",
-      "lastName": "string",
-      "password": "string",
-      "receiveNews": true
-    };
-    final response = await http.post(
-        Uri.parse("https://api.moneyplaza.site/auth/signupByEmail"),
-        body: body);
-    if (response.statusCode == 200) {
-      log(response.body);
+  signupByEmail(body) async {
+    try {
+      final response = await http.post(_apiUrl.signupByEmail,
+          body: jsonEncode(body),
+          headers: {
+            "Accept": "application/json",
+            "content-type": "application/json"
+          });
+      if (response.statusCode == 200) {
+        var data = json.decode(response.body);
+        return data;
+      }
+    } catch (e) {
+      return e;
     }
   }
 }
