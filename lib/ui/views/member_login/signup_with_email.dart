@@ -48,7 +48,7 @@ class SignUpWithEmail extends ViewModelWidget<MemberLoginViewModel> {
             CustomTextField(
               width: width * 0.68,
               hintText: "verificationCode",
-              hintStyle: const TextStyle(),
+              controller: viewModel.verifyCode,
               textAlign: TextAlign.center,
             ),
           ],
@@ -56,12 +56,13 @@ class SignUpWithEmail extends ViewModelWidget<MemberLoginViewModel> {
         verticalSpaceTiny,
         CustomTextField(
           hintText: "enterPassword",
-          hintStyle: const TextStyle(),
+          controller: viewModel.passwordCtrl,
           textAlign: TextAlign.center,
         ),
         verticalSpaceTiny,
         CustomTextField(
           hintText: "confirmPassword",
+          controller: viewModel.confirmPasswordCtrl,
           hintStyle: const TextStyle(),
           textAlign: TextAlign.center,
         ),
@@ -72,12 +73,14 @@ class SignUpWithEmail extends ViewModelWidget<MemberLoginViewModel> {
             CustomTextField(
               width: width * 0.44,
               hintText: "firstName",
+              controller: viewModel.firstNameCtrl,
               hintStyle: const TextStyle(),
               textAlign: TextAlign.center,
             ),
             CustomTextField(
               width: width * 0.44,
               hintText: "lastName",
+              controller: viewModel.lastNameCtrl,
               hintStyle: const TextStyle(),
               textAlign: TextAlign.center,
             ),
@@ -120,6 +123,7 @@ class SignUpWithEmail extends ViewModelWidget<MemberLoginViewModel> {
           height: 40,
           width: MediaQuery.of(context).size.width * 0.3,
           text: "register",
+          onPress: viewModel.signupByEmail,
           fontSize: 16,
         ),
         verticalSpaceLarge

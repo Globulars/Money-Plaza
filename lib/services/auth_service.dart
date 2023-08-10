@@ -7,20 +7,21 @@ import '../ui/common/app_url.dart';
 
 class AuthService {
   final ApiUrl _apiUrl = ApiUrl();
-  sendEmailCode(email, type) async {
+  sendEmailCode(body) async {
     try {
       final response = await http.post(_apiUrl.sendEmailCode,
-          body: jsonEncode(
-              {"email": "mudassirmukhtar4@gmail.com", "type": "signup"}),
+          body: jsonEncode(body),
           headers: {
             "Accept": "application/json",
             "content-type": "application/json"
           });
       if (response.statusCode == 200) {
         var data = json.decode(response.body);
+        log(data.toString());
         return data;
       }
     } catch (e) {
+      log(e.toString());
       return e;
     }
   }
@@ -35,9 +36,11 @@ class AuthService {
           });
       if (response.statusCode == 200) {
         var data = json.decode(response.body);
+        log("===>${data.toString()}");
         return data;
       }
     } catch (e) {
+      log("Error=====>${e.toString()}");
       return e;
     }
   }

@@ -9,13 +9,14 @@ import '../../../services/auth_service.dart';
 
 class MemberLoginViewModel extends BaseViewModel {
   TextEditingController emailCtrl = TextEditingController();
-  String verifyCode = "";
+  TextEditingController verifyCode = TextEditingController();
   TextEditingController firstNameCtrl = TextEditingController();
   TextEditingController lastNameCtrl = TextEditingController();
   TextEditingController passwordCtrl = TextEditingController();
   TextEditingController confirmPasswordCtrl = TextEditingController();
-  String interestProducts = "";
-  String knownChannel = "";
+  String interestProducts = "Loans";
+  String knownChannel = "Facebook";
+  bool receiveNews = true;
   final interestProductsList = [
     "Loans",
     "Mortgages",
@@ -66,32 +67,32 @@ class MemberLoginViewModel extends BaseViewModel {
 
   sendEmailCode() async {
     log("Runing....");
-    var data = await _authnService.sendEmailCode(emailCtrl.text, "signup");
+    Map<String, dynamic> body = {"email": emailCtrl.text, "type": "signup"};
+    var data = await _authnService.sendEmailCode(body);
     if (data["success"] == true) {
-      verifyCode = data["code"];
       log("code send success..");
     } else {
-      log("try again");
+      log(data["message"]);
     }
   }
 
   signupByEmail() async {
     log("Runing....");
     Map<String, dynamic> body = {
-      "code": verifyCode,
+      "code": verifyCode.text,
       "email": emailCtrl.text,
-      "firstName": "string",
-      "interestProducts": ["string"],
-      "knownChannel": "string",
-      "lastName": "string",
-      "password": "string",
-      "receiveNews": true
+      "firstName": firstNameCtrl.text,
+      "interestProducts": [interestProducts],
+      "knownChannel": knownChannel,
+      "lastName": lastNameCtrl.text,
+      "password": passwordCtrl.text,
+      "receiveNews": receiveNews
     };
     var data = await _authnService.signupByEmail(body);
     if (data["success"] == true) {
-      log("code send success..");
+      log(data.toString());
     } else {
-      log("try again");
+      log(data["message"]);
     }
   }
 }
