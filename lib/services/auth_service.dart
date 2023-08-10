@@ -14,15 +14,12 @@ class AuthService {
             "Accept": "application/json",
             "content-type": "application/json"
           });
-      log(response.body.toString());
-      var data = json.decode(response.body);
       if (response.statusCode == 200) {
-        log(response.body);
-      } else {
-        log("Message======>${data["message"]}");
+        var data = json.decode(response.body);
+        return data;
       }
     } catch (e) {
-      log("Error===>$e");
+      return e;
     }
   }
 
