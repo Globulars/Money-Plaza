@@ -5,12 +5,16 @@ import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import '../../../app/app.dialogs.dart';
 import '../../../app/app.locator.dart';
+import '../../../services/auth_service.dart';
 
 class MemberLoginViewModel extends BaseViewModel {
   TextEditingController countryCode = TextEditingController();
+  TextEditingController emailCtrl = TextEditingController();
+  String code = "";
 
   final _dialogService = locator<DialogService>();
   final _navigationService = locator<NavigationService>();
+  final _authnService = locator<AuthService>();
   final registerDropDown = ["Option 1", "Option 2", "Option 3"];
 
   void showResetPassword() {
@@ -35,5 +39,16 @@ class MemberLoginViewModel extends BaseViewModel {
 
   navigateToMemberSetting() {
     _navigationService.navigateToMemberSettingView();
+  }
+
+  sendEmailCode() async {
+    log("Runing....");
+    var data = await _authnService.sendEmailCode(emailCtrl.text, "signup");
+    if (data["success"] == true) {
+      code = data["code"];
+      log("code send success..");
+    } else {
+      log("try again");
+    }
   }
 }
