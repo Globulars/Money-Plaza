@@ -41,4 +41,21 @@ class AuthService {
       return {"message": e};
     }
   }
+
+   loginWithEmail(body) async {
+    try {
+      final response = await http.post(_apiUrl.loginByEmail,
+          body: jsonEncode(body),
+          headers: {
+            "Accept": "application/json",
+            "content-type": "application/json"
+          });
+      if (response.statusCode == 200) {
+        var data = json.decode(response.body);
+        return data;
+      }
+    } catch (e) {
+      return {"message": e};
+    }
+  }
 }

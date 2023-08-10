@@ -76,7 +76,7 @@ class LoginWithPhone extends ViewModelWidget<MemberLoginViewModel> {
           width: MediaQuery.of(context).size.width * 0.3,
           text: "login",
           fontSize: 16,
-          onPress: viewModel.navigateToMemberSetting,
+          // onPress: viewModel.navigateToMemberSetting,
         ),
         verticalSpaceMedium,
         Row(

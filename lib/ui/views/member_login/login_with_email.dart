@@ -21,11 +21,13 @@ class LoginWithEmail extends ViewModelWidget<MemberLoginViewModel> {
         verticalSpaceTiny,
         CustomTextField(
           hintText: "email",
+          controller: viewModel.emailCtrl,
           hintStyle: const TextStyle(fontSize: 14),
           textAlign: TextAlign.center,
         ),
         verticalSpaceTiny,
         CustomTextField(
+          controller: viewModel.passwordCtrl,
           hintText: "password",
           hintStyle: const TextStyle(fontSize: 14),
           textAlign: TextAlign.center,
@@ -36,7 +38,7 @@ class LoginWithEmail extends ViewModelWidget<MemberLoginViewModel> {
           width: MediaQuery.of(context).size.width * 0.3,
           text: "login",
           fontSize: 16,
-          onPress: viewModel.navigateToMemberSetting,
+          onPress: viewModel.loginWithEmail,
         ),
         verticalSpaceMedium,
         Row(
