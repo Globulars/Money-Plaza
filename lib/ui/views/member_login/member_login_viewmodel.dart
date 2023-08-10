@@ -61,10 +61,6 @@ class MemberLoginViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  navigateToMemberSetting() {
-    _navigationService.navigateToMemberSettingView();
-  }
-
   sendEmailCode() async {
     log("Runing....");
     Map<String, dynamic> body = {"email": emailCtrl.text, "type": "signup"};
@@ -90,6 +86,21 @@ class MemberLoginViewModel extends BaseViewModel {
     };
     var data = await _authnService.signupByEmail(body);
     if (data["success"] == true) {
+      log(data.toString());
+    } else {
+      log(data["message"].toString());
+    }
+  }
+
+  loginWithEmail() async {
+    log("Runing....");
+    Map<String, dynamic> body = {
+      "email": emailCtrl.text,
+      "password": passwordCtrl.text,
+    };
+    var data = await _authnService.loginWithEmail(body);
+    if (data["success"] == true) {
+      _navigationService.navigateToMemberSettingView();
       log(data.toString());
     } else {
       log(data["message"].toString());
