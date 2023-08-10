@@ -84,7 +84,7 @@ class MemberLoginViewModel extends BaseViewModel {
       "firstName": firstNameCtrl.text,
       "interestProducts": [interestProducts],
       "knownChannel": knownChannel,
-      "lastName": lastNameCtrl.text,
+      "lastName": lastNameCtrl,
       "password": passwordCtrl.text,
       "receiveNews": receiveNews
     };
@@ -92,7 +92,7 @@ class MemberLoginViewModel extends BaseViewModel {
     if (data["success"] == true) {
       log(data.toString());
     } else {
-      log(data["message"]);
+      log(data["message"].toString());
     }
   }
 }

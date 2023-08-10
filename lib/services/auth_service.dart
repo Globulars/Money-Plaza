@@ -21,8 +21,7 @@ class AuthService {
         return data;
       }
     } catch (e) {
-      log(e.toString());
-      return e;
+      return {"message": e};
     }
   }
 
@@ -36,12 +35,10 @@ class AuthService {
           });
       if (response.statusCode == 200) {
         var data = json.decode(response.body);
-        log("===>${data.toString()}");
         return data;
       }
     } catch (e) {
-      log("Error=====>${e.toString()}");
-      return e;
+      return {"message": e};
     }
   }
 }
