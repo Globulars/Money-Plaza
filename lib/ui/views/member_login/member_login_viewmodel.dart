@@ -67,8 +67,9 @@ class MemberLoginViewModel extends BaseViewModel {
     var data = await _authnService.sendEmailCode(body);
     if (data["success"] == true) {
       log("code send success..");
+      log(data.toString());
     } else {
-      log(data["message"]);
+      log(data["message"].toString());
     }
   }
 
