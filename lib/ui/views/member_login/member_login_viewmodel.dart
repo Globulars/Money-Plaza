@@ -8,14 +8,33 @@ import '../../../app/app.locator.dart';
 import '../../../services/auth_service.dart';
 
 class MemberLoginViewModel extends BaseViewModel {
-  TextEditingController countryCode = TextEditingController();
   TextEditingController emailCtrl = TextEditingController();
-  String code = "";
-
+  TextEditingController verifyCode = TextEditingController();
+  TextEditingController firstNameCtrl = TextEditingController();
+  TextEditingController lastNameCtrl = TextEditingController();
+  TextEditingController passwordCtrl = TextEditingController();
+  TextEditingController confirmPasswordCtrl = TextEditingController();
+  String interestProducts = "Loans";
+  String knownChannel = "Facebook";
+  bool receiveNews = true;
+  final interestProductsList = [
+    "Loans",
+    "Mortgages",
+    "Creadit Cards",
+    "Accounts",
+    "Insurances"
+  ];
+  final knownChannelList = [
+    "Facebook",
+    "Search Engine",
+    "Friends",
+    "Youtube",
+    "Instagram",
+    "Other"
+  ];
   final _dialogService = locator<DialogService>();
   final _navigationService = locator<NavigationService>();
   final _authnService = locator<AuthService>();
-  final registerDropDown = ["Option 1", "Option 2", "Option 3"];
 
   void showResetPassword() {
     _dialogService.showCustomDialog(
@@ -30,10 +49,15 @@ class MemberLoginViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  var registerDropdown = "Option 1";
-  setRegisterDropDown(value) {
+  setInterestProducts(value) {
     log(value.toString());
-    registerDropdown = value;
+    interestProducts = value;
+    notifyListeners();
+  }
+
+  setKnownChannel(value) {
+    log(value.toString());
+    knownChannel = value;
     notifyListeners();
   }
 
@@ -43,12 +67,32 @@ class MemberLoginViewModel extends BaseViewModel {
 
   sendEmailCode() async {
     log("Runing....");
-    var data = await _authnService.sendEmailCode(emailCtrl.text, "signup");
+    Map<String, dynamic> body = {"email": emailCtrl.text, "type": "signup"};
+    var data = await _authnService.sendEmailCode(body);
     if (data["success"] == true) {
-      code = data["code"];
       log("code send success..");
     } else {
-      log("try again");
+      log(data["message"]);
+    }
+  }
+
+  signupByEmail() async {
+    log("Runing....");
+    Map<String, dynamic> body = {
+      "code": verifyCode.text,
+      "email": emailCtrl.text,
+      "firstName": firstNameCtrl.text,
+      "interestProducts": [interestProducts],
+      "knownChannel": knownChannel,
+      "lastName": lastNameCtrl,
+      "password": passwordCtrl.text,
+      "receiveNews": receiveNews
+    };
+    var data = await _authnService.signupByEmail(body);
+    if (data["success"] == true) {
+      log(data.toString());
+    } else {
+      log(data["message"].toString());
     }
   }
 }
