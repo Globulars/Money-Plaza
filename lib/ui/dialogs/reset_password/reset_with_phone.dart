@@ -52,8 +52,9 @@ class ResetWithPhone extends StackedView<ResetPasswordDialogModel> {
                     textAlign: TextAlign.center,
                     keyboardType: TextInputType.number,
                     decoration: const InputDecoration(
-                      contentPadding:
-                          EdgeInsets.only(bottom: 12.5,),
+                      contentPadding: EdgeInsets.only(
+                        bottom: 12.5,
+                      ),
                       border: InputBorder.none,
                       hintText: 'Phone No',
                       hintStyle: TextStyle(

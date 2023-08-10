@@ -36,6 +36,7 @@ import 'package:money_plaza/ui/views/member/change_password/change_password_view
 import 'package:money_plaza/ui/dialogs/detail_filte/detail_filte_dialog.dart';
 import 'package:money_plaza/ui/widgets/top_bar2/top_bar2_view.dart';
 import 'package:money_plaza/ui/widgets/common/horizental_list_view/horizental_list_view_view.dart';
+import 'package:money_plaza/services/auth_service.dart';
 // @stacked-import
 
 @StackedApp(
@@ -75,7 +76,8 @@ import 'package:money_plaza/ui/widgets/common/horizental_list_view/horizental_li
     LazySingleton(classType: BottomSheetService),
     LazySingleton(classType: DialogService),
     LazySingleton(classType: NavigationService),
-    // @stacked-service
+    LazySingleton(classType: AuthService),
+// @stacked-service
   ],
   dialogs: [
     StackedDialog(classType: FilterDialog),
