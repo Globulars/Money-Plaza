@@ -1,4 +1,6 @@
-const baseUrl = "https://api.moneyplaza.site";
+
+ const baseUrl = "https://api.moneyplaza.site";
+class ApiUrl {
 
 // authentication url
 final Uri login = Uri.parse("$baseUrl/auth/login");
@@ -13,5 +15,8 @@ final Uri signupByMobile =Uri.parse("$baseUrl/auth/signupByMobile");
 // award controller url
 final Uri awardCreate =Uri.parse("$baseUrl/award");
 
-// 
+//  
+}
+
+
 
