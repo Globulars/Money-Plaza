@@ -100,11 +100,12 @@ class MemberLoginViewModel extends BaseViewModel {
       "password": passwordCtrl.text,
     };
     var data = await _authnService.loginWithEmail(body);
-    if (data["success"] == true) {
+    if (data?["success"] == true) {
       _navigationService.navigateToMemberSettingView();
       log(data.toString());
     } else {
-      log(data["message"].toString());
+      // log(data["message"].toString());
+      log(data.toString());
     }
   }
 }
