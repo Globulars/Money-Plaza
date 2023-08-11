@@ -35,12 +35,12 @@ class ResetWithPhone extends StackedView<ResetPasswordDialogModel> {
             children: [
               SizedBox(
                 width: width * 0.14,
-                child: const CountryCodePicker(
-                  padding: EdgeInsets.all(0),
-                  onChanged: print,
+                child: CountryCodePicker(
+                  padding: const EdgeInsets.all(0),
+                  onChanged: viewModel.setCountryCode,
                   showFlag: false,
                   initialSelection: 'IT',
-                  favorite: ['+39', 'FR'],
+                  favorite: const ['+39', 'FR'],
                   showCountryOnly: false,
                   showOnlyCountryWhenClosed: false,
                   alignLeft: false,
@@ -50,6 +50,7 @@ class ResetWithPhone extends StackedView<ResetPasswordDialogModel> {
               Expanded(
                 child: TextFormField(
                     textAlign: TextAlign.center,
+                    controller: viewModel.phoneNoCtrl,
                     keyboardType: TextInputType.number,
                     decoration: const InputDecoration(
                       contentPadding: EdgeInsets.only(
@@ -73,6 +74,7 @@ class ResetWithPhone extends StackedView<ResetPasswordDialogModel> {
           children: [
             ReturnButton(
               text: "send",
+              onPress: viewModel.sendForgetPasswordCodeByMobile,
               height: 40,
               width: width * 0.19,
               boxcolor: darkGreenLight,
@@ -82,6 +84,7 @@ class ResetWithPhone extends StackedView<ResetPasswordDialogModel> {
             CustomTextField(
               width: width * 0.51,
               hintText: "verificationCode",
+              controller: viewModel.verifyCode,
               hintStyle: const TextStyle(),
               textAlign: TextAlign.center,
             ),
@@ -90,12 +93,14 @@ class ResetWithPhone extends StackedView<ResetPasswordDialogModel> {
         verticalSpaceTiny,
         CustomTextField(
           hintText: "enterPassword",
+          controller: viewModel.passwordCtrl,
           hintStyle: const TextStyle(fontSize: 16),
           textAlign: TextAlign.center,
         ),
         verticalSpaceTiny,
         CustomTextField(
           hintText: "confirmPassword",
+          controller: viewModel.confirmPasswordCtrl,
           hintStyle: const TextStyle(fontSize: 16),
           textAlign: TextAlign.center,
         ),
@@ -109,12 +114,14 @@ class ResetWithPhone extends StackedView<ResetPasswordDialogModel> {
               image: myIcons.iconPowerReset,
               imgwidth: 16,
               text: "resetAll",
+              onPress: viewModel.resetAll,
               boxColor: Colors.transparent,
             ),
             SubmitButton(
               height: 40,
               width: 80,
               text: "submit",
+              onPress: viewModel.updatePasswordByMobileCode,
               fontSize: 16,
             ),
           ],

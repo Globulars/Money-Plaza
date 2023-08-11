@@ -24,10 +24,12 @@ class ResetPasswordDialogModel extends BaseViewModel {
     initialIndex = value;
     notifyListeners();
   }
+
   setCountryCode(value) {
     countryCode = value.toString();
     notifyListeners();
   }
+
   resetAll() {
     emailCtrl.clear();
     verifyCode.clear();
@@ -66,7 +68,8 @@ class ResetPasswordDialogModel extends BaseViewModel {
       _toasterService.errorToast(data["message"].toString());
     }
   }
-    sendForgetPasswordCodeByMobile() async {
+
+  sendForgetPasswordCodeByMobile() async {
     log("Runing....");
     Map<String, dynamic> body = {"mobile": emailCtrl.text};
     var data = await _authnService.sendForgetPasswordCodeByMobile(body);
