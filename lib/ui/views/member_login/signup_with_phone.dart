@@ -60,7 +60,6 @@ class SignUpWithPhone extends StackedView<MemberLoginViewModel> {
                       border: InputBorder.none,
                       hintText: 'Phone No',
                       hintStyle: const TextStyle(
-                        // color: Colors.black,
                         fontSize: 14,
                         fontFamily: 'Roboto',
                       ),
