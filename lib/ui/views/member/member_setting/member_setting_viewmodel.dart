@@ -10,7 +10,6 @@ class MemberSettingViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
 
   navigateToPersonalInfoView() {
-    
     _navigationService.navigateToPersonalInfoView();
     toaster();
   }
@@ -23,7 +22,7 @@ class MemberSettingViewModel extends BaseViewModel {
     _navigationService.navigateToChangePasswordView();
   }
 
-  toaster(){
+  toaster() {
     Fluttertoast.showToast(
         msg: "This is Center Short Toast",
         toastLength: Toast.LENGTH_LONG,
@@ -31,7 +30,6 @@ class MemberSettingViewModel extends BaseViewModel {
         timeInSecForIosWeb: 5,
         backgroundColor: Colors.red,
         textColor: Colors.black,
-        fontSize: 16.0
-    );
+        fontSize: 16.0);
   }
 }

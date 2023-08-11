@@ -1,6 +1,5 @@
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
 import 'package:stacked/stacked.dart';
 import '../../common/app_colors.dart';
@@ -38,12 +37,12 @@ class SignUpWithPhone extends StackedView<MemberLoginViewModel> {
             children: [
               SizedBox(
                 width: width * 0.14,
-                child: const CountryCodePicker(
-                  padding: EdgeInsets.all(0),
-                  onChanged: print,
+                child: CountryCodePicker(
+                  padding: const EdgeInsets.all(0),
+                  onChanged: viewModel.setCountryCode,
                   showFlag: false,
                   initialSelection: 'IT',
-                  favorite: ['+39', 'FR'],
+                  favorite: const ['+39', 'FR'],
                   showCountryOnly: false,
                   showOnlyCountryWhenClosed: false,
                   alignLeft: false,
@@ -54,6 +53,7 @@ class SignUpWithPhone extends StackedView<MemberLoginViewModel> {
                 child: TextFormField(
                     textAlign: TextAlign.center,
                     keyboardType: TextInputType.number,
+                    controller: viewModel.phoneNoCtrl,
                     decoration: InputDecoration(
                       contentPadding:
                           EdgeInsets.only(bottom: 12.5, right: width * 0.15),
@@ -76,6 +76,7 @@ class SignUpWithPhone extends StackedView<MemberLoginViewModel> {
           children: [
             ReturnButton(
               text: "send",
+              onPress: viewModel.sendSmsCode,
               height: 40,
               width: width * 0.22,
               boxcolor: darkGreenLight,
@@ -85,6 +86,7 @@ class SignUpWithPhone extends StackedView<MemberLoginViewModel> {
             CustomTextField(
               width: width * 0.68,
               hintText: "verificationCode",
+              controller: viewModel.verifyCode,
               hintStyle: const TextStyle(),
               textAlign: TextAlign.center,
             ),
@@ -93,12 +95,14 @@ class SignUpWithPhone extends StackedView<MemberLoginViewModel> {
         verticalSpaceTiny,
         CustomTextField(
           hintText: "enterPassword",
+          controller: viewModel.passwordCtrl,
           hintStyle: const TextStyle(),
           textAlign: TextAlign.center,
         ),
         verticalSpaceTiny,
         CustomTextField(
           hintText: "confirmPassword",
+          controller: viewModel.confirmPasswordCtrl,
           hintStyle: const TextStyle(),
           textAlign: TextAlign.center,
         ),
@@ -109,12 +113,14 @@ class SignUpWithPhone extends StackedView<MemberLoginViewModel> {
             CustomTextField(
               width: width * 0.44,
               hintText: "firstName",
+              controller: viewModel.firstNameCtrl,
               hintStyle: const TextStyle(),
               textAlign: TextAlign.center,
             ),
             CustomTextField(
               width: width * 0.44,
               hintText: "lastName",
+              controller: viewModel.lastNameCtrl,
               hintStyle: const TextStyle(),
               textAlign: TextAlign.center,
             ),
@@ -136,10 +142,9 @@ class SignUpWithPhone extends StackedView<MemberLoginViewModel> {
         verticalSpaceSmall,
         Row(
           children: [
-            Image.asset(
-              myIcons.charmSquareTick,
-              height: 25,
-              width: 25,
+            Checkbox(
+              value: viewModel.receiveNews,
+              onChanged: viewModel.setReceiveNews,
             ),
             horizontalSpaceSmall,
             SizedBox(
@@ -154,9 +159,10 @@ class SignUpWithPhone extends StackedView<MemberLoginViewModel> {
         verticalSpaceSmall,
         verticalSpaceSmall,
         SubmitButton(
-          height: 40,
-          width: MediaQuery.of(context).size.width * 0.3,
           text: "register",
+          onPress: viewModel.signupByMobile,
+          width: MediaQuery.of(context).size.width * 0.3,
+          height: 40,
           fontSize: 16,
         ),
         verticalSpaceLarge
