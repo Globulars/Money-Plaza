@@ -15,12 +15,12 @@ class CreditCard {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['code'] = this.code;
+    data['code'] = code;
     if (this.data != null) {
       data['data'] = this.data!.toJson();
     }
-    data['message'] = this.message;
-    data['success'] = this.success;
+    data['message'] = message;
+    data['success'] = success;
     return data;
   }
 }
@@ -49,13 +49,13 @@ class Data {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['current'] = this.current;
-    data['pages'] = this.pages;
-    if (this.records != null) {
-      data['records'] = this.records!.map((v) => v.toJson()).toList();
+    data['current'] = current;
+    data['pages'] = pages;
+    if (records != null) {
+      data['records'] = records!.map((v) => v.toJson()).toList();
     }
-    data['size'] = this.size;
-    data['total'] = this.total;
+    data['size'] = size;
+    data['total'] = total;
     return data;
   }
 }
@@ -202,55 +202,55 @@ class Records {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['advantage'] = this.advantage;
-    data['advantageCht'] = this.advantageCht;
-    data['applyLink'] = this.applyLink;
-    data['banner'] = this.banner;
-    data['bannerLink'] = this.bannerLink;
-    if (this.company != null) {
-      data['company'] = this.company!.toJson();
+    data['advantage'] = advantage;
+    data['advantageCht'] = advantageCht;
+    data['applyLink'] = applyLink;
+    data['banner'] = banner;
+    data['bannerLink'] = bannerLink;
+    if (company != null) {
+      data['company'] = company!.toJson();
     }
-    data['companyId'] = this.companyId;
-    data['createDate'] = this.createDate;
-    data['detail'] = this.detail;
-    data['detailCht'] = this.detailCht;
-    data['detailTitle'] = this.detailTitle;
-    data['detailTitleCht'] = this.detailTitleCht;
-    data['features'] = this.features;
-    if (this.iconFeatureItems != null) {
+    data['companyId'] = companyId;
+    data['createDate'] = createDate;
+    data['detail'] = detail;
+    data['detailCht'] = detailCht;
+    data['detailTitle'] = detailTitle;
+    data['detailTitleCht'] = detailTitleCht;
+    data['features'] = features;
+    if (iconFeatureItems != null) {
       data['iconFeatureItems'] =
-          this.iconFeatureItems!.map((v) => v.toJson()).toList();
+          iconFeatureItems!.map((v) => v.toJson()).toList();
     }
-    data['id'] = this.id;
-    data['image'] = this.image;
-    data['incentive'] = this.incentive;
-    data['incentiveCht'] = this.incentiveCht;
-    data['issuer'] = this.issuer;
-    data['likeCount'] = this.likeCount;
-    data['minimumAnnualIncome'] = this.minimumAnnualIncome;
-    data['name'] = this.name;
-    data['nameCht'] = this.nameCht;
-    data['ordering'] = this.ordering;
-    data['previewToken'] = this.previewToken;
-    data['publishDate'] = this.publishDate;
-    if (this.rebateInfo != null) {
-      data['rebateInfo'] = this.rebateInfo!.map((v) => v.toJson()).toList();
+    data['id'] = id;
+    data['image'] = image;
+    data['incentive'] = incentive;
+    data['incentiveCht'] = incentiveCht;
+    data['issuer'] = issuer;
+    data['likeCount'] = likeCount;
+    data['minimumAnnualIncome'] = minimumAnnualIncome;
+    data['name'] = name;
+    data['nameCht'] = nameCht;
+    data['ordering'] = ordering;
+    data['previewToken'] = previewToken;
+    data['publishDate'] = publishDate;
+    if (rebateInfo != null) {
+      data['rebateInfo'] = rebateInfo!.map((v) => v.toJson()).toList();
     }
-    data['referralCode'] = this.referralCode;
-    data['shareMsg'] = this.shareMsg;
-    data['shareMsgCht'] = this.shareMsgCht;
-    data['showBanner'] = this.showBanner;
-    data['signBannerUrl'] = this.signBannerUrl;
-    data['signImageUrl'] = this.signImageUrl;
-    data['status'] = this.status;
-    data['summary'] = this.summary;
-    data['summaryCht'] = this.summaryCht;
+    data['referralCode'] = referralCode;
+    data['shareMsg'] = shareMsg;
+    data['shareMsgCht'] = shareMsgCht;
+    data['showBanner'] = showBanner;
+    data['signBannerUrl'] = signBannerUrl;
+    data['signImageUrl'] = signImageUrl;
+    data['status'] = status;
+    data['summary'] = summary;
+    data['summaryCht'] = summaryCht;
     // if (this.textFeatureItems != null) {
     //   data['textFeatureItems'] =
     //       this.textFeatureItems!.map((v) => v.toJson()).toList();
     // }
-    data['type'] = this.type;
-    data['updateDate'] = this.updateDate;
+    data['type'] = type;
+    data['updateDate'] = updateDate;
     return data;
   }
 }
@@ -342,32 +342,32 @@ class Company {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['accountOrdering'] = this.accountOrdering;
-    data['applyLink'] = this.applyLink;
-    data['applyLinkCht'] = this.applyLinkCht;
-    data['bank'] = this.bank;
-    data['cardOrdering'] = this.cardOrdering;
-    data['code'] = this.code;
-    data['createDate'] = this.createDate;
-    data['emailList'] = this.emailList;
-    data['emails'] = this.emails;
-    data['enableAutoSubmit'] = this.enableAutoSubmit;
-    data['enableCheckId'] = this.enableCheckId;
-    data['id'] = this.id;
-    data['insuranceOrdering'] = this.insuranceOrdering;
-    data['licenseNo'] = this.licenseNo;
-    data['loanOrdering'] = this.loanOrdering;
-    data['logo'] = this.logo;
-    data['mobileList'] = this.mobileList;
-    data['mobiles'] = this.mobiles;
-    data['mortgageOrdering'] = this.mortgageOrdering;
-    data['name'] = this.name;
-    data['nameCht'] = this.nameCht;
-    data['ordering'] = this.ordering;
-    data['pdfFormId'] = this.pdfFormId;
-    data['signLogoUrl'] = this.signLogoUrl;
-    data['surveyId'] = this.surveyId;
-    data['updateDate'] = this.updateDate;
+    data['accountOrdering'] = accountOrdering;
+    data['applyLink'] = applyLink;
+    data['applyLinkCht'] = applyLinkCht;
+    data['bank'] = bank;
+    data['cardOrdering'] = cardOrdering;
+    data['code'] = code;
+    data['createDate'] = createDate;
+    data['emailList'] = emailList;
+    data['emails'] = emails;
+    data['enableAutoSubmit'] = enableAutoSubmit;
+    data['enableCheckId'] = enableCheckId;
+    data['id'] = id;
+    data['insuranceOrdering'] = insuranceOrdering;
+    data['licenseNo'] = licenseNo;
+    data['loanOrdering'] = loanOrdering;
+    data['logo'] = logo;
+    data['mobileList'] = mobileList;
+    data['mobiles'] = mobiles;
+    data['mortgageOrdering'] = mortgageOrdering;
+    data['name'] = name;
+    data['nameCht'] = nameCht;
+    data['ordering'] = ordering;
+    data['pdfFormId'] = pdfFormId;
+    data['signLogoUrl'] = signLogoUrl;
+    data['surveyId'] = surveyId;
+    data['updateDate'] = updateDate;
     return data;
   }
 }
@@ -399,12 +399,12 @@ class IconFeatureItems {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['imageUrl'] = this.imageUrl;
-    data['insuranceExtra'] = this.insuranceExtra;
-    data['name'] = this.name;
-    data['nameCht'] = this.nameCht;
-    data['value'] = this.value;
-    data['valueCht'] = this.valueCht;
+    data['imageUrl'] = imageUrl;
+    data['insuranceExtra'] = insuranceExtra;
+    data['name'] = name;
+    data['nameCht'] = nameCht;
+    data['value'] = value;
+    data['valueCht'] = valueCht;
     return data;
   }
 }
@@ -422,8 +422,8 @@ class RebateInfo {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['feature'] = this.feature;
-    data['value'] = this.value;
+    data['feature'] = feature;
+    data['value'] = value;
     return data;
   }
 }
