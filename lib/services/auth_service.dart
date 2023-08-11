@@ -85,10 +85,11 @@ class AuthService {
       return {"message": e};
     }
   }
+
   /////////////////////////////////////Forget By Email////////////////////////////////
-    sendForgetPasswordCodeByEmail(body) async {
+  sendForgetPasswordCodeByEmail(body) async {
     try {
-      final response = await http.post(_apiUrl.sendEmailCode,
+      final response = await http.post(_apiUrl.sendForgetPasswordCodeByEmail,
           body: jsonEncode(body), headers: headers);
       if (response.statusCode == 200) {
         var data = json.decode(response.body);
@@ -100,8 +101,21 @@ class AuthService {
       return {"message": e};
     }
   }
-  
-  
-  /////////////////////////////////////Forget By Mobile Number////////////////////////////////
 
+  updatePasswordByEmailCode(body) async {
+    try {
+      final response = await http.post(_apiUrl.updatePasswordByEmailCode,
+          body: jsonEncode(body), headers: headers);
+      if (response.statusCode == 200) {
+        var data = json.decode(response.body);
+        return data;
+      } else {
+        return {"message": "${response.statusCode} error found"};
+      }
+    } catch (e) {
+      return {"message": e};
+    }
+  }
+
+  /////////////////////////////////////Forget By Mobile Number////////////////////////////////
 }

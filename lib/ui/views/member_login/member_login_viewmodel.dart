@@ -121,7 +121,10 @@ class MemberLoginViewModel extends BaseViewModel {
 
   sendSmsCode() async {
     log("Runing....");
-    Map<String, dynamic> body = {"mobile": "+923454335400", "type": "signup"};
+    Map<String, dynamic> body = {
+      "mobile": "$verifyCode${phoneNoCtrl.text}",
+      "type": "signup"
+    };
     var data = await _authnService.sendSmsCode(body);
     if (data?["success"] == true) {
       log(data.toString());

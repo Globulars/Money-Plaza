@@ -23,6 +23,7 @@ class ResetWithEmail extends StackedView<ResetPasswordDialogModel> {
         verticalSpaceSmall,
         CustomTextField(
           hintText: "email",
+          controller: viewModel.emailCtrl,
           hintStyle: const TextStyle(fontSize: 16),
           textAlign: TextAlign.center,
         ),
@@ -33,6 +34,7 @@ class ResetWithEmail extends StackedView<ResetPasswordDialogModel> {
           children: [
             ReturnButton(
               text: "send",
+              onPress: viewModel.sendForgetPasswordCodeByEmail,
               height: 40,
               width: width * 0.19,
               boxcolor: darkGreenLight,
@@ -40,7 +42,8 @@ class ResetWithEmail extends StackedView<ResetPasswordDialogModel> {
               fontSize: 14,
             ),
             CustomTextField(
-              width: width * 0.52,
+              width: width * 0.51,
+              controller: viewModel.verifyCode,
               hintText: "verificationCode",
               hintStyle: const TextStyle(),
               textAlign: TextAlign.center,
@@ -50,12 +53,14 @@ class ResetWithEmail extends StackedView<ResetPasswordDialogModel> {
         verticalSpaceTiny,
         CustomTextField(
           hintText: "enterPassword",
+          controller: viewModel.passwordCtrl,
           hintStyle: const TextStyle(fontSize: 16),
           textAlign: TextAlign.center,
         ),
         verticalSpaceTiny,
         CustomTextField(
           hintText: "confirmPassword",
+          controller: viewModel.confirmPasswordCtrl,
           hintStyle: const TextStyle(fontSize: 16),
           textAlign: TextAlign.center,
         ),
@@ -69,11 +74,13 @@ class ResetWithEmail extends StackedView<ResetPasswordDialogModel> {
               image: myIcons.iconPowerReset,
               imgwidth: 16,
               text: "resetAll",
+              onPress: viewModel.resetAll,
               boxColor: Colors.transparent,
             ),
             SubmitButton(
               height: 40,
               width: 80,
+              onPress: viewModel.updatePasswordByEmailCode,
               text: "submit",
               fontSize: 16,
             ),
