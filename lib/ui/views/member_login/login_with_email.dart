@@ -38,7 +38,9 @@ class LoginWithEmail extends ViewModelWidget<MemberLoginViewModel> {
           width: MediaQuery.of(context).size.width * 0.3,
           text: "login",
           fontSize: 16,
-          onPress:() {viewModel.login("email");},
+          onPress: () {
+            viewModel.login("email");
+          },
         ),
         verticalSpaceMedium,
         Row(

@@ -9,8 +9,7 @@ class ToasterService {
         webShowClose: true,
         gravity: ToastGravity.NONE,
         timeInSecForIosWeb: 5,
-        backgroundColor: Colors.grey.withOpacity(0.3),
-        textColor: Colors.yellow,
+        backgroundColor: Colors.yellow.withOpacity(0.3),
         fontSize: 16.0);
   }
 
@@ -21,10 +20,10 @@ class ToasterService {
         webShowClose: true,
         gravity: ToastGravity.NONE,
         timeInSecForIosWeb: 5,
-        backgroundColor: Colors.grey.withOpacity(0.3),
-        textColor: Colors.green,
+        backgroundColor: Colors.green.withOpacity(0.3),
         fontSize: 16.0);
   }
+
   infoToast(title) {
     Fluttertoast.showToast(
         msg: title,
@@ -32,8 +31,7 @@ class ToasterService {
         webShowClose: true,
         gravity: ToastGravity.NONE,
         timeInSecForIosWeb: 5,
-        backgroundColor: Colors.grey.withOpacity(0.3),
-        textColor: Colors.black,
+        backgroundColor: Colors.blue.withOpacity(0.3),
         fontSize: 16.0);
   }
 
@@ -44,11 +42,9 @@ class ToasterService {
         webShowClose: true,
         gravity: ToastGravity.NONE,
         timeInSecForIosWeb: 5,
-        backgroundColor: Colors.grey.withOpacity(0.3),
-        textColor: Colors.red,
+        backgroundColor: Colors.red.withOpacity(0.3),
         fontSize: 16.0);
   }
-
 
   snakBar(context, title) {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
@@ -56,5 +52,4 @@ class ToasterService {
       dismissDirection: DismissDirection.endToStart,
     ));
   }
-  
 }

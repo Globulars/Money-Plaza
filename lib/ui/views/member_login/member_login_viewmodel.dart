@@ -6,9 +6,12 @@ import 'package:stacked_services/stacked_services.dart';
 import '../../../app/app.dialogs.dart';
 import '../../../app/app.locator.dart';
 import '../../../services/auth_service.dart';
+import '../../../services/toaster_service.dart';
 
 class MemberLoginViewModel extends BaseViewModel {
   final _dialogService = locator<DialogService>();
+  final _toasterService = locator<ToasterService>();
+
   final _navigationService = locator<NavigationService>();
   final _authnService = locator<AuthService>();
   TextEditingController emailCtrl = TextEditingController();
@@ -36,6 +39,16 @@ class MemberLoginViewModel extends BaseViewModel {
     "Instagram",
     "Other"
   ];
+  resetAll() {
+    emailCtrl.clear();
+    verifyCode.clear();
+    firstNameCtrl.clear();
+    lastNameCtrl.clear();
+    passwordCtrl.clear();
+    confirmPasswordCtrl.clear();
+    phoneNoCtrl.clear();
+  }
+
   String countryCode = "+39";
   void showResetPassword() {
     _dialogService.showCustomDialog(
@@ -65,25 +78,23 @@ class MemberLoginViewModel extends BaseViewModel {
   }
 
   setReceiveNews(value) {
-    log(value);
     receiveNews = value;
     notifyListeners();
   }
 
   sendEmailCode() async {
-    log("Runing....");
     Map<String, dynamic> body = {"email": emailCtrl.text, "type": "signup"};
     var data = await _authnService.sendEmailCode(body);
     if (data["success"] == true) {
-      log("code send success..");
+      _toasterService.successToast(data["message"]);
+      resetAll();
       log(data.toString());
     } else {
-      log(data["message"].toString());
+      _toasterService.errorToast(data["message"].toString());
     }
   }
 
   signupByEmail() async {
-    log("Runing....");
     Map<String, dynamic> body = {
       "code": verifyCode.text,
       "email": emailCtrl.text,
@@ -97,14 +108,16 @@ class MemberLoginViewModel extends BaseViewModel {
     var data = await _authnService.signupByEmail(body);
     if (data["success"] == true) {
       log(data.toString());
+      _toasterService.successToast(data["message"]);
+      resetAll();
+
       _navigationService.back();
     } else {
-      log(data["message"].toString());
+      _toasterService.errorToast(data["message"].toString());
     }
   }
 
   login(type) async {
-    log("Runing....");
     Map<String, dynamic> body = {
       "login":
           type == "email" ? emailCtrl.text : "$verifyCode${phoneNoCtrl.text}",
@@ -112,29 +125,32 @@ class MemberLoginViewModel extends BaseViewModel {
     };
     var data = await _authnService.login(body);
     if (data?["success"] == true) {
-      _navigationService.navigateToMemberSettingView();
       log(data.toString());
+      resetAll();
+      _toasterService.successToast(data["message"]);
+
+      _navigationService.navigateToMemberSettingView();
     } else {
-      log(data["message"].toString());
+      _toasterService.errorToast(data["message"].toString());
     }
   }
 
   sendSmsCode() async {
-    log("Runing....");
     Map<String, dynamic> body = {
       "mobile": "$verifyCode${phoneNoCtrl.text}",
       "type": "signup"
     };
     var data = await _authnService.sendSmsCode(body);
     if (data?["success"] == true) {
+      _toasterService.successToast(data["message"]);
+      resetAll();
       log(data.toString());
     } else {
-      log(data["message"].toString());
+      _toasterService.errorToast(data["message"].toString());
     }
   }
 
   signupByMobile() async {
-    log("Runing....");
     Map<String, dynamic> body = {
       "code": verifyCode.text,
       "firstName": firstNameCtrl.text,
@@ -147,10 +163,12 @@ class MemberLoginViewModel extends BaseViewModel {
     };
     var data = await _authnService.signupByMobile(body);
     if (data["success"] == true) {
+      _toasterService.successToast(data["message"]);
+      resetAll();
       log(data.toString());
       _navigationService.back();
     } else {
-      log(data["message"].toString());
+      _toasterService.errorToast(data["message"].toString());
     }
   }
 }

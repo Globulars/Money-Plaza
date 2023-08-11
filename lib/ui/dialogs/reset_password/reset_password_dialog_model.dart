@@ -4,9 +4,12 @@ import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import '../../../app/app.locator.dart';
 import '../../../services/auth_service.dart';
+import '../../../services/toaster_service.dart';
 
 class ResetPasswordDialogModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
+  final _toasterService = locator<ToasterService>();
+
   final _authnService = locator<AuthService>();
 
   TextEditingController emailCtrl = TextEditingController();
@@ -34,14 +37,15 @@ class ResetPasswordDialogModel extends BaseViewModel {
     Map<String, dynamic> body = {"email": emailCtrl.text};
     var data = await _authnService.sendForgetPasswordCodeByEmail(body);
     if (data?["success"] == true) {
+      _toasterService.successToast(data["message"]);
+      resetAll();
       log(data.toString());
     } else {
-      log(data["message"].toString());
+      _toasterService.errorToast(data["message"].toString());
     }
   }
 
   updatePasswordByEmailCode() async {
-    log("Runing....");
     Map<String, dynamic> body = {
       "code": verifyCode.text,
       "email": emailCtrl.text,
@@ -49,10 +53,13 @@ class ResetPasswordDialogModel extends BaseViewModel {
     };
     var data = await _authnService.updatePasswordByEmailCode(body);
     if (data?["success"] == true) {
+      _toasterService.successToast(data["message"]);
+      resetAll();
+
       log(data.toString());
       _navigationService.back();
     } else {
-      log(data["message"].toString());
+      _toasterService.errorToast(data["message"].toString());
     }
   }
 }

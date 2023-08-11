@@ -9,7 +9,7 @@ class MemberSettingViewModel extends BaseViewModel {
 
   navigateToPersonalInfoView() {
     _navigationService.navigateToPersonalInfoView();
-  //  _toastService.warningToast("You are successfully subscribe");
+    //  _toastService.warningToast("You are successfully subscribe");
   }
 
   navigateToReward() {
