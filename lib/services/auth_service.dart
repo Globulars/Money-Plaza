@@ -38,9 +38,9 @@ class AuthService {
     }
   }
 
-  loginWithEmail(body) async {
+  login(body) async {
     try {
-      final response = await http.post(_apiUrl.loginByEmailCode,
+      final response = await http.post(_apiUrl.login,
           body: jsonEncode(body), headers: headers);
       if (response.statusCode == 200) {
         var data = json.decode(response.body);

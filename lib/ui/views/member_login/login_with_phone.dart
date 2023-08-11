@@ -34,12 +34,12 @@ class LoginWithPhone extends ViewModelWidget<MemberLoginViewModel> {
             children: [
               SizedBox(
                 width: width * 0.14,
-                child: const CountryCodePicker(
-                  padding: EdgeInsets.all(0),
-                  onChanged: print,
+                child: CountryCodePicker(
+                  padding: const EdgeInsets.all(0),
+                  onChanged: viewModel.setCountryCode,
                   showFlag: false,
                   initialSelection: 'IT',
-                  favorite: ['+39', 'FR'],
+                  favorite: const ['+39', 'FR'],
                   showCountryOnly: false,
                   showOnlyCountryWhenClosed: false,
                   alignLeft: false,
@@ -49,6 +49,7 @@ class LoginWithPhone extends ViewModelWidget<MemberLoginViewModel> {
               Expanded(
                 child: TextFormField(
                     textAlign: TextAlign.center,
+                    controller: viewModel.phoneNoCtrl,
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
                       contentPadding:
@@ -67,6 +68,7 @@ class LoginWithPhone extends ViewModelWidget<MemberLoginViewModel> {
         verticalSpaceTiny,
         CustomTextField(
           hintText: "password",
+          controller: viewModel.passwordCtrl,
           hintStyle: const TextStyle(fontSize: 14),
           textAlign: TextAlign.center,
         ),
@@ -76,7 +78,7 @@ class LoginWithPhone extends ViewModelWidget<MemberLoginViewModel> {
           width: MediaQuery.of(context).size.width * 0.3,
           text: "login",
           fontSize: 16,
-          // onPress: viewModel.navigateToMemberSetting,
+          onPress: viewModel.login("mobile"),
         ),
         verticalSpaceMedium,
         Row(

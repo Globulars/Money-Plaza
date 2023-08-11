@@ -103,13 +103,14 @@ class MemberLoginViewModel extends BaseViewModel {
     }
   }
 
-  loginWithEmail() async {
+  login(type) async {
     log("Runing....");
     Map<String, dynamic> body = {
-      "login": emailCtrl.text,
+      "login":
+          type == "email" ? emailCtrl.text : "$verifyCode${phoneNoCtrl.text}",
       "password": passwordCtrl.text,
     };
-    var data = await _authnService.loginWithEmail(body);
+    var data = await _authnService.login(body);
     if (data?["success"] == true) {
       _navigationService.navigateToMemberSettingView();
       log(data.toString());
