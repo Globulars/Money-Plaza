@@ -52,4 +52,34 @@ class AuthService {
       return {"message": e};
     }
   }
+
+  sendSmsCode(body) async {
+    try {
+      final response = await http.post(_apiUrl.sendSmsCode,
+          body: jsonEncode(body), headers: headers);
+      if (response.statusCode == 200) {
+        var data = json.decode(response.body);
+        return data;
+      } else {
+        return {"message": "${response.statusCode} error found"};
+      }
+    } catch (e) {
+      return {"message": e};
+    }
+  }
+
+  signupByMobile(body) async {
+    try {
+      final response = await http.post(_apiUrl.signupByMobile,
+          body: jsonEncode(body), headers: headers);
+      if (response.statusCode == 200) {
+        var data = json.decode(response.body);
+        return data;
+      } else {
+        return {"message": "${response.statusCode} error found"};
+      }
+    } catch (e) {
+      return {"message": e};
+    }
+  }
 }
