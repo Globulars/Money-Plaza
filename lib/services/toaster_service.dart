@@ -22,7 +22,7 @@ class ToasterService {
         gravity: ToastGravity.NONE,
         timeInSecForIosWeb: 5,
         backgroundColor: Colors.green.withOpacity(0.3),
-        textColor:Colors.black,
+        textColor: Colors.black,
         fontSize: 16.0);
   }
 

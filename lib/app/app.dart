@@ -39,6 +39,7 @@ import 'package:money_plaza/ui/widgets/common/horizental_list_view/horizental_li
 import 'package:money_plaza/services/auth_service.dart';
 import 'package:money_plaza/services/toaster_service.dart';
 import 'package:money_plaza/services/mortgage_service.dart';
+import 'package:money_plaza/services/credit_card_service.dart';
 // @stacked-import
 
 @StackedApp(
@@ -81,6 +82,7 @@ import 'package:money_plaza/services/mortgage_service.dart';
     LazySingleton(classType: AuthService),
     LazySingleton(classType: ToasterService),
     LazySingleton(classType: MortgageService),
+    LazySingleton(classType: CreditCardService),
 // @stacked-service
   ],
   dialogs: [
