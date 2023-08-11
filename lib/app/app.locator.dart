@@ -12,6 +12,7 @@ import 'package:stacked_services/src/navigation/navigation_service.dart';
 import 'package:stacked_shared/stacked_shared.dart';
 
 import '../services/auth_service.dart';
+import '../services/credit_card_service.dart';
 import '../services/mortgage_service.dart';
 import '../services/toaster_service.dart';
 
@@ -32,4 +33,5 @@ Future<void> setupLocator({
   locator.registerLazySingleton(() => AuthService());
   locator.registerLazySingleton(() => ToasterService());
   locator.registerLazySingleton(() => MortgageService());
+  locator.registerLazySingleton(() => CreditCardService());
 }

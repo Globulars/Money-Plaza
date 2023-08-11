@@ -1,7 +1,6 @@
 const baseUrl = "https://api.moneyplaza.site";
 
 class ApiUrl {
-  
   /////////////////////////////////////Auth Controller////////////////////////////////
   final Uri login = Uri.parse("$baseUrl/auth/login");
   final Uri loginByEmailCode = Uri.parse("$baseUrl/auth/loginByEmailCode");
@@ -50,49 +49,52 @@ class ApiUrl {
   final Uri accountList = Uri.parse("$baseUrl/account/list");
 
   /////////////////////////////////////award Controller////////////////////////////////
-   final Uri award = Uri.parse("$baseUrl/award");
+  final Uri award = Uri.parse("$baseUrl/award");
 
-   /////////////////////////////////////banner Controller////////////////////////////////
-   final Uri bannerGetBannersByType = Uri.parse("$baseUrl/banner/getBannersByType");
+  /////////////////////////////////////banner Controller////////////////////////////////
+  final Uri bannerGetBannersByType =
+      Uri.parse("$baseUrl/banner/getBannersByType");
 
-   ///////////////////////////////////////blog Controller////////////////////////////////
-   final Uri blog = Uri.parse("$baseUrl/blog/");
-   final Uri blogGetByType = Uri.parse("$baseUrl/blog/getByType");
-   final Uri blogGetType = Uri.parse("$baseUrl/blog/getTypes");
+  ///////////////////////////////////////blog Controller////////////////////////////////
+  final Uri blog = Uri.parse("$baseUrl/blog/");
+  final Uri blogGetByType = Uri.parse("$baseUrl/blog/getByType");
+  final Uri blogGetType = Uri.parse("$baseUrl/blog/getTypes");
 
-   ///////////////////////////////////////card Controller////////////////////////////////
-   final Uri cardLike = Uri.parse("$baseUrl/card/like/");
-   final Uri cardList = Uri.parse("$baseUrl/card/list");
-   final Uri cardPreview = Uri.parse("$baseUrl/card/preview/");
+  ///////////////////////////////////////card Controller////////////////////////////////
+  final Uri cardLike = Uri.parse("$baseUrl/card/like/");
+  final Uri cardList = Uri.parse("$baseUrl/card/list");
+  final Uri cardPreview = Uri.parse("$baseUrl/card/preview/");
 
-   ///////////////////////////////////////check-id Controller////////////////////////////////
-   final Uri checkIdAddComment = Uri.parse("$baseUrl/checkId/addcomment");
-   final Uri checkIdDetails = Uri.parse("$baseUrl/checkId/details");
-   final Uri checkIdInfo = Uri.parse("$baseUrl/checkId/info");
-   final Uri checkIdOffers = Uri.parse("$baseUrl/checkId/offers");
-   final Uri checkIdSubmit = Uri.parse("$baseUrl/checkId/submit/");
+  ///////////////////////////////////////check-id Controller////////////////////////////////
+  final Uri checkIdAddComment = Uri.parse("$baseUrl/checkId/addcomment");
+  final Uri checkIdDetails = Uri.parse("$baseUrl/checkId/details");
+  final Uri checkIdInfo = Uri.parse("$baseUrl/checkId/info");
+  final Uri checkIdOffers = Uri.parse("$baseUrl/checkId/offers");
+  final Uri checkIdSubmit = Uri.parse("$baseUrl/checkId/submit/");
 
-   ///////////////////////////////////////company Controller////////////////////////////////
-   final Uri companyGetCompaniesByType = Uri.parse("$baseUrl/company/getCompaniesByType");
-   final Uri companyGetCompanyById = Uri.parse("$baseUrl/company/getCompanyById/");
+  ///////////////////////////////////////company Controller////////////////////////////////
+  final Uri companyGetCompaniesByType =
+      Uri.parse("$baseUrl/company/getCompaniesByType");
+  final Uri companyGetCompanyById =
+      Uri.parse("$baseUrl/company/getCompanyById/");
 
-   ///////////////////////////////////////form Controller////////////////////////////////
-   final Uri form = Uri.parse("$baseUrl/form/");
-   final Uri formInfo = Uri.parse("$baseUrl/form/info/");
-   final Uri formPrefill = Uri.parse("$baseUrl/form/prefill/");
-   final Uri formSubmit = Uri.parse("$baseUrl/form/submit/");
+  ///////////////////////////////////////form Controller////////////////////////////////
+  final Uri form = Uri.parse("$baseUrl/form/");
+  final Uri formInfo = Uri.parse("$baseUrl/form/info/");
+  final Uri formPrefill = Uri.parse("$baseUrl/form/prefill/");
+  final Uri formSubmit = Uri.parse("$baseUrl/form/submit/");
 
-   ///////////////////////////////////////insurance Controller////////////////////////////////
-   final Uri insuranceLike = Uri.parse("$baseUrl/insurance/like");
-   final Uri insuranceList = Uri.parse("$baseUrl/insurance/list");
+  ///////////////////////////////////////insurance Controller////////////////////////////////
+  final Uri insuranceLike = Uri.parse("$baseUrl/insurance/like");
+  final Uri insuranceList = Uri.parse("$baseUrl/insurance/list");
 
-    ///////////////////////////////////////loan Controller////////////////////////////////
-   final Uri loanLike = Uri.parse("$baseUrl/loan/like/");
-   final Uri loanList = Uri.parse("$baseUrl/loan/list");
-   final Uri loanMatch = Uri.parse("$baseUrl/loan/match");
-   final Uri loanPreview = Uri.parse("$baseUrl/loan/preview/");
+  ///////////////////////////////////////loan Controller////////////////////////////////
+  final Uri loanLike = Uri.parse("$baseUrl/loan/like/");
+  final Uri loanList = Uri.parse("$baseUrl/loan/list");
+  final Uri loanMatch = Uri.parse("$baseUrl/loan/match");
+  final Uri loanPreview = Uri.parse("$baseUrl/loan/preview/");
 
-   /////////////////////////////////////loan-request Controller////////////////////////////////
+  /////////////////////////////////////loan-request Controller////////////////////////////////
   final Uri loanRequestApply = Uri.parse("$baseUrl/loanRequest/apply");
   final Uri loanRequestQuery = Uri.parse("$baseUrl/loanRequest/query");
 
@@ -111,23 +113,31 @@ class ApiUrl {
   ///////////////////////////////////////option Controller////////////////////////////////
   final Uri optionAreas = Uri.parse("$baseUrl/option/areas");
   final Uri optionCarFactories = Uri.parse("$baseUrl/option/carFactories");
-  final Uri optionCarModelByCarFactory = Uri.parse("$baseUrl/option/carModelByCarFactory");
+  final Uri optionCarModelByCarFactory =
+      Uri.parse("$baseUrl/option/carModelByCarFactory");
   final Uri optionCountries = Uri.parse("$baseUrl/option/countries");
   final Uri optionDistricts = Uri.parse("$baseUrl/option/districts");
   final Uri optionEducations = Uri.parse("$baseUrl/option/educations");
-  final Uri optionEmploymentTypes = Uri.parse("$baseUrl/option/employmentTypes");
-  final Uri optionGetDistrictsByAreaCode = Uri.parse("$baseUrl/option/getDistrictsByAreaCode");
-  final Uri optionIncomeProofTypes = Uri.parse("$baseUrl/option/incomeProofTypes");
+  final Uri optionEmploymentTypes =
+      Uri.parse("$baseUrl/option/employmentTypes");
+  final Uri optionGetDistrictsByAreaCode =
+      Uri.parse("$baseUrl/option/getDistrictsByAreaCode");
+  final Uri optionIncomeProofTypes =
+      Uri.parse("$baseUrl/option/incomeProofTypes");
   final Uri optionIndustries = Uri.parse("$baseUrl/option/industries");
-  final Uri optionInsuranceExtraFeatures = Uri.parse("$baseUrl/option/insuranceExtraFeatures");
+  final Uri optionInsuranceExtraFeatures =
+      Uri.parse("$baseUrl/option/insuranceExtraFeatures");
   final Uri optionInsuranceTypes = Uri.parse("$baseUrl/option/insuranceTypes");
-  final Uri optionLoanCalculateMethods = Uri.parse("$baseUrl/option/loanCalculateMethods");
-  final Uri optionMortgageCalculateMethods = Uri.parse("$baseUrl/option/mortgageCalculateMethods");
+  final Uri optionLoanCalculateMethods =
+      Uri.parse("$baseUrl/option/loanCalculateMethods");
+  final Uri optionMortgageCalculateMethods =
+      Uri.parse("$baseUrl/option/mortgageCalculateMethods");
   final Uri optionPaymentMethods = Uri.parse("$baseUrl/option/paymentMethods");
   final Uri optionPremiseTypes = Uri.parse("$baseUrl/option/premiseTypes");
   final Uri optionProducts = Uri.parse("$baseUrl/option/products");
   final Uri optionPropertyStatus = Uri.parse("$baseUrl/option/propertyStatus");
-  final Uri optionTenorListByCalculateMethod= Uri.parse("$baseUrl/option/tenorListByCalculateMethod");
+  final Uri optionTenorListByCalculateMethod =
+      Uri.parse("$baseUrl/option/tenorListByCalculateMethod");
 
   ///////////////////////////////////////page Controller////////////////////////////////
   final Uri pageGetByPath = Uri.parse("$baseUrl/page/getByPath");
@@ -136,22 +146,33 @@ class ApiUrl {
   final Uri pocForm = Uri.parse("$baseUrl/poc/form");
 
   ///////////////////////////////////////property-evalute Controller////////////////////////////////
-  final Uri propertyEvaluateSubmit = Uri.parse("$baseUrl/propertyEvaluate/submit");
+  final Uri propertyEvaluateSubmit =
+      Uri.parse("$baseUrl/propertyEvaluate/submit");
 
   ///////////////////////////////////////query Controller////////////////////////////////
   final Uri queryGetByType = Uri.parse("$baseUrl/query/getByType");
   final Uri queryList = Uri.parse("$baseUrl/query/list");
 
   ///////////////////////////////////////re-payment-shedule Controller////////////////////////////////
-  final Uri repaymentScheduleByInterestOnlyForInterestRate = Uri.parse("$baseUrl/repayment/scheduleByInterestOnlyForInterestRate");
-  final Uri repaymentScheduleByInterestOnlyForRepayment = Uri.parse("$baseUrl/repayment/scheduleByInterestOnlyForRepayment");
-  final Uri repaymentScheduleByMinPay = Uri.parse("$baseUrl/repayment/scheduleByMinPay");
-  final Uri repaymentScheduleByPLoanForInterestRate = Uri.parse("$baseUrl/repayment/scheduleByPLoanForInterestRate");
-  final Uri repaymentScheduleByPLoanForRepayment = Uri.parse("$baseUrl/repayment/scheduleByPLoanForRepayment");
-  final Uri repaymentScheduleByPLoanForTenor = Uri.parse("$baseUrl/repayment/scheduleByPLoanForTenor");
-  final Uri repaymentScheduleByPrepaidInterestForInterestRate = Uri.parse("$baseUrl/repayment/scheduleByPrepaidInterestForInterestRate");
-  final Uri repaymentScheduleByPrepaidInterestForPrepaidInterestAmount = Uri.parse("$baseUrl/repayment/scheduleByPrepaidInterestForPrepaidInterestAmount");
-  final Uri repaymentScheduleByPrepaidInterestForTenor = Uri.parse("$baseUrl/repayment/scheduleByPrepaidInterestForTenor");
+  final Uri repaymentScheduleByInterestOnlyForInterestRate =
+      Uri.parse("$baseUrl/repayment/scheduleByInterestOnlyForInterestRate");
+  final Uri repaymentScheduleByInterestOnlyForRepayment =
+      Uri.parse("$baseUrl/repayment/scheduleByInterestOnlyForRepayment");
+  final Uri repaymentScheduleByMinPay =
+      Uri.parse("$baseUrl/repayment/scheduleByMinPay");
+  final Uri repaymentScheduleByPLoanForInterestRate =
+      Uri.parse("$baseUrl/repayment/scheduleByPLoanForInterestRate");
+  final Uri repaymentScheduleByPLoanForRepayment =
+      Uri.parse("$baseUrl/repayment/scheduleByPLoanForRepayment");
+  final Uri repaymentScheduleByPLoanForTenor =
+      Uri.parse("$baseUrl/repayment/scheduleByPLoanForTenor");
+  final Uri repaymentScheduleByPrepaidInterestForInterestRate =
+      Uri.parse("$baseUrl/repayment/scheduleByPrepaidInterestForInterestRate");
+  final Uri repaymentScheduleByPrepaidInterestForPrepaidInterestAmount =
+      Uri.parse(
+          "$baseUrl/repayment/scheduleByPrepaidInterestForPrepaidInterestAmount");
+  final Uri repaymentScheduleByPrepaidInterestForTenor =
+      Uri.parse("$baseUrl/repayment/scheduleByPrepaidInterestForTenor");
 
   ///////////////////////////////////////seo Controller////////////////////////////////
   final Uri seoGetByPath = Uri.parse("$baseUrl/seo/getByPath");
@@ -170,7 +191,8 @@ class ApiUrl {
   final Uri tagGetTagsByType = Uri.parse("$baseUrl/tag/getTagsByType");
 
   ///////////////////////////////////////travel-insurance-request Controller////////////////////////////////
-  final Uri travelInsuranceRequest = Uri.parse("$baseUrl/travelInsuranceRequest");
+  final Uri travelInsuranceRequest =
+      Uri.parse("$baseUrl/travelInsuranceRequest");
 
   ///////////////////////////////////////user-reward Controller////////////////////////////////
   final Uri userRewardDelete = Uri.parse("$baseUrl/userReward/delete/");
@@ -180,7 +202,4 @@ class ApiUrl {
   ///////////////////////////////////////user-reward Controller////////////////////////////////
   final Uri vendorIndex = Uri.parse("$baseUrl/vendor/index");
   final Uri vendorLogin = Uri.parse("$baseUrl/vendor/login");
-
-
-
 }

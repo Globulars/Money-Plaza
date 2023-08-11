@@ -46,7 +46,27 @@ class CreditResultView extends StackedView<CreditResultViewModel> {
                 thickness: 3,
               ),
               verticalSpaceSmall,
-              const CreditCardWiget(),
+              FutureBuilder(
+                future: viewModel.cardListData(),
+                builder: (ctx, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.done) {
+                    if (snapshot.hasError) {
+                      return Center(
+                        child: Text(
+                          snapshot.error.toString(),
+                          style: const TextStyle(fontSize: 18),
+                        ),
+                      );
+                    } else if (snapshot.hasData) {
+                      final data = snapshot.data.toString();
+                      return const CreditCardWiget();
+                    }
+                  }
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                },
+              ),
               verticalSpaceMedium
             ],
           ),
