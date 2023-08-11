@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import '../ui/common/app_colors.dart';
 
 class ToasterService {
   warningToast(title) {
@@ -9,8 +10,8 @@ class ToasterService {
         webShowClose: true,
         gravity: ToastGravity.NONE,
         timeInSecForIosWeb: 5,
-        backgroundColor: Colors.grey.withOpacity(0.3),
-        textColor: Colors.yellow,
+        backgroundColor: Colors.yellow,
+        textColor: darkGreenHeigh,
         fontSize: 16.0);
   }
 
@@ -21,8 +22,8 @@ class ToasterService {
         webShowClose: true,
         gravity: ToastGravity.NONE,
         timeInSecForIosWeb: 5,
-        backgroundColor: Colors.grey.withOpacity(0.3),
-        textColor: Colors.green,
+        backgroundColor: Colors.green,
+        textColor:darkGreenHeigh,
         fontSize: 16.0);
   }
   infoToast(title) {
@@ -33,7 +34,7 @@ class ToasterService {
         gravity: ToastGravity.NONE,
         timeInSecForIosWeb: 5,
         backgroundColor: Colors.grey.withOpacity(0.3),
-        textColor: Colors.black,
+        textColor: darkGreenHeigh,
         fontSize: 16.0);
   }
 
@@ -44,8 +45,8 @@ class ToasterService {
         webShowClose: true,
         gravity: ToastGravity.NONE,
         timeInSecForIosWeb: 5,
-        backgroundColor: Colors.grey.withOpacity(0.3),
-        textColor: Colors.red,
+        backgroundColor: Colors.red,
+        textColor: darkGreenHeigh,
         fontSize: 16.0);
   }
 
