@@ -8,6 +8,7 @@ class AuthService {
     "Accept": "application/json",
     "content-type": "application/json"
   };
+  /////////////////////////////////////By Email////////////////////////////////
   sendEmailCode(body) async {
     try {
       final response = await http.post(_apiUrl.sendEmailCode,
@@ -37,6 +38,7 @@ class AuthService {
       return {"message": e};
     }
   }
+  /////////////////////////////////////Login////////////////////////////////
 
   login(body) async {
     try {
@@ -52,6 +54,7 @@ class AuthService {
       return {"message": e};
     }
   }
+  /////////////////////////////////////By Mobile Number////////////////////////////////
 
   sendSmsCode(body) async {
     try {
@@ -82,4 +85,23 @@ class AuthService {
       return {"message": e};
     }
   }
+  /////////////////////////////////////Forget By Email////////////////////////////////
+    sendForgetPasswordCodeByEmail(body) async {
+    try {
+      final response = await http.post(_apiUrl.sendEmailCode,
+          body: jsonEncode(body), headers: headers);
+      if (response.statusCode == 200) {
+        var data = json.decode(response.body);
+        return data;
+      } else {
+        return {"message": "${response.statusCode} error found"};
+      }
+    } catch (e) {
+      return {"message": e};
+    }
+  }
+  
+  
+  /////////////////////////////////////Forget By Mobile Number////////////////////////////////
+
 }
