@@ -96,7 +96,7 @@ class MemberLoginViewModel extends BaseViewModel {
   loginWithEmail() async {
     log("Runing....");
     Map<String, dynamic> body = {
-      "email": emailCtrl.text,
+      "login": emailCtrl.text,
       "password": passwordCtrl.text,
     };
     var data = await _authnService.loginWithEmail(body);
@@ -104,8 +104,7 @@ class MemberLoginViewModel extends BaseViewModel {
       _navigationService.navigateToMemberSettingView();
       log(data.toString());
     } else {
-      // log(data["message"].toString());
-      log(data.toString());
+      log(data["message"].toString());
     }
   }
 }
