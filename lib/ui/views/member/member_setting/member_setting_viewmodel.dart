@@ -5,11 +5,9 @@ import '../../../../app/app.locator.dart';
 
 class MemberSettingViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
-  // final _toastService = locator<ToasterService>();
 
   navigateToPersonalInfoView() {
     _navigationService.navigateToPersonalInfoView();
-    //  _toastService.warningToast("You are successfully subscribe");
   }
 
   navigateToReward() {
