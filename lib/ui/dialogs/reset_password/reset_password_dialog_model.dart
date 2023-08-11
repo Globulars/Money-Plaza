@@ -18,12 +18,16 @@ class ResetPasswordDialogModel extends BaseViewModel {
   TextEditingController confirmPasswordCtrl = TextEditingController();
   TextEditingController phoneNoCtrl = TextEditingController();
   var initialIndex = 0;
+  String countryCode = "+39";
 
   setInitialIndex(value) {
     initialIndex = value;
     notifyListeners();
   }
-
+  setCountryCode(value) {
+    countryCode = value.toString();
+    notifyListeners();
+  }
   resetAll() {
     emailCtrl.clear();
     verifyCode.clear();
@@ -52,6 +56,36 @@ class ResetPasswordDialogModel extends BaseViewModel {
       "password": passwordCtrl.text
     };
     var data = await _authnService.updatePasswordByEmailCode(body);
+    if (data?["success"] == true) {
+      _toasterService.successToast(data["message"]);
+      resetAll();
+
+      log(data.toString());
+      _navigationService.back();
+    } else {
+      _toasterService.errorToast(data["message"].toString());
+    }
+  }
+    sendForgetPasswordCodeByMobile() async {
+    log("Runing....");
+    Map<String, dynamic> body = {"mobile": emailCtrl.text};
+    var data = await _authnService.sendForgetPasswordCodeByMobile(body);
+    if (data?["success"] == true) {
+      _toasterService.successToast(data["message"]);
+      resetAll();
+      log(data.toString());
+    } else {
+      _toasterService.errorToast(data["message"].toString());
+    }
+  }
+
+  updatePasswordByMobileCode() async {
+    Map<String, dynamic> body = {
+      "code": verifyCode.text,
+      "email": emailCtrl.text,
+      "password": passwordCtrl.text
+    };
+    var data = await _authnService.updatePasswordByMobileCode(body);
     if (data?["success"] == true) {
       _toasterService.successToast(data["message"]);
       resetAll();
