@@ -3,6 +3,7 @@ import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:money_plaza/ui/views/credit_card/credit_result/result_card_widget.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
+import '../../../../services/Models/credit_card.dart';
 import '../../../common/app_colors.dart';
 import '../../../widgets/app_bar.dart';
 import '../../../widgets/bottom_bar.dart';
@@ -46,7 +47,28 @@ class CreditResultView extends StackedView<CreditResultViewModel> {
                 thickness: 3,
               ),
               verticalSpaceSmall,
-              const CreditCardWiget(),
+              SingleChildScrollView(
+                child: FutureBuilder<List<CreditCard>>(
+                  future: viewModel.cardListData(),
+                  builder: (ctx, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.done) {
+                      if (snapshot.hasError) {
+                        return Center(
+                          child: Text(
+                            snapshot.error.toString(),
+                            style: const TextStyle(fontSize: 18),
+                          ),
+                        );
+                      } else if (snapshot.hasData) {
+                        return CreditCardWiget(creditCard: snapshot.data);
+                      }
+                    }
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  },
+                ),
+              ),
               verticalSpaceMedium
             ],
           ),
