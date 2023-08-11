@@ -1,16 +1,12 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:money_plaza/app/app.router.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import '../../../app/app.locator.dart';
-import '../../../services/credit_card_service.dart';
-// import '../../../services/toaster_service.dart';
 
 class CreditCardViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
-  final _creditCardService = locator<CreditCardService>();
+  // final _creditCardService = locator<CreditCardService>();
   // final _toasterService = locator<ToasterService>();
 
   String cardProvider = "Select the Card Providers";
