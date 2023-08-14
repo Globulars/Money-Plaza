@@ -9,7 +9,7 @@ import '../../../widgets/common/icon_box_btn/text.dart';
 import 'morgages_result_viewmodel.dart';
 
 class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
-  final List<MortagesCard>? mortgagesCard;
+  final List<MortgagesCard>? mortgagesCard;
   const MorgagesResultCard({Key? key,required this.mortgagesCard}) : super(key: key);
 
   @override

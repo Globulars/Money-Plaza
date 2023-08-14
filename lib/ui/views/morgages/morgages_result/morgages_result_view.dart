@@ -67,7 +67,7 @@ class MorgagesResultView extends StackedView<MorgagesResultViewModel> {
                 height: 1,
               ),
               verticalSpaceSmall,
-              FutureBuilder<List<MortagesCard>>(
+              FutureBuilder<List<MortgagesCard>>(
                   future: viewModel.mortgsgesCardData(),
                   builder: (ctx, snapshot) {
                     if (snapshot.connectionState == ConnectionState.done) {
