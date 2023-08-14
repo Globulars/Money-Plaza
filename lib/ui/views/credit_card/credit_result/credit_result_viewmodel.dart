@@ -24,13 +24,14 @@ class CreditResultViewModel extends BaseViewModel {
 
   Future<List<CreditCard>> cardListData(
       issuersList, typesList, annualIncome) async {
+        log("  $issuersList, #$typesList, #$annualIncome");
     Map<String, dynamic> body = {
       // "companyIds": [0],
       // "features": ["string"],
       // "id": 0,
       // "ids": [0],
-      "income": annualIncome,
-      "issuers": [issuersList],
+      // "income": annualIncome,
+      "issuers": issuersList,
       // "keyword": "string",
       "limit": 50,
       "order": "ascending",
@@ -38,7 +39,7 @@ class CreditResultViewModel extends BaseViewModel {
       // "publishDate": "yyyy-MM-dd HH:mm:ss",
       // "sort": "string",
       "status": true,
-      "types": [typesList]
+      "types": typesList
     };
     var data = await _creditCardService.cardList(body);
     if (data?["success"] == true) {

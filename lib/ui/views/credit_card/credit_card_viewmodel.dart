@@ -21,10 +21,10 @@ class CreditCardViewModel extends BaseViewModel {
   ];
   List<String> cardList = [
     "Select type of Card",
-    "Personal Card",
-    "Corporate Credit Card",
-    "Student Credit Card",
-    "Debit Card",
+    "Debit",
+    "Personal",
+    "Corporate Credit",
+    "Student Credit",
   ];
 
   setCardProvider(value) {
