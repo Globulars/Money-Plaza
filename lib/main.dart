@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:money_plaza/app/app.dialogs.dart';
 import 'package:money_plaza/app/app.locator.dart';
@@ -10,6 +12,7 @@ Future<void> main() async {
   setupLocator();
   setupDialogUi();
   WidgetsFlutterBinding.ensureInitialized();
+  HttpOverrides.global = MyHttpOverrides();
 
   await EasyLocalization.ensureInitialized();
   runApp(
@@ -50,4 +53,12 @@ class MyApp extends StatelessWidget {
   }
 }
 
+class MyHttpOverrides extends HttpOverrides {
+  @override
+  HttpClient createHttpClient(SecurityContext? context) {
+    return super.createHttpClient(context)
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
+  }
+}
 // import 'package:money_plaza/ui/common/app_icons.dart';

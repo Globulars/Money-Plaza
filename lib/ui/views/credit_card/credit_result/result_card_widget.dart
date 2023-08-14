@@ -24,8 +24,9 @@ class CreditCardWiget extends ViewModelWidget<CreditResultViewModel> {
     final width = MediaQuery.of(context).size.width;
 
     return ListView.builder(
-      itemCount: 4,
+      itemCount: creditCard?.length ?? 0,
       shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
       itemBuilder: (BuildContext context, int index) {
         return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 5),

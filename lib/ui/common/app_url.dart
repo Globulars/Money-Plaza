@@ -1,4 +1,5 @@
-const baseUrl = "https://api.moneyplaza.site";
+// const baseUrl = "https://api.moneyplaza.site";
+const baseUrl = "https://admin.moneyplaza.com.hk";
 
 class ApiUrl {
   /////////////////////////////////////Auth Controller////////////////////////////////
