@@ -27,28 +27,28 @@ class CreditResultView extends StackedView<CreditResultViewModel> {
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: appBar(context),
-          body: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 6),
-                child: SubBar(
-                  btmLeftRadius: 0,
-                  btmRightRadius: 0,
-                  image: myIcons.setting,
-                  text: 'filter',
-                  fontSize: 18,
-                  onPress: viewModel.showCreditFilter,
+          body: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 6),
+                  child: SubBar(
+                    btmLeftRadius: 0,
+                    btmRightRadius: 0,
+                    image: myIcons.setting,
+                    text: 'filter',
+                    fontSize: 18,
+                    onPress: viewModel.showCreditFilter,
+                  ),
                 ),
-              ),
-              const Divider(
-                color: darkGreenHeigh,
-                height: 1.0,
-                thickness: 3,
-              ),
-              verticalSpaceSmall,
-              SingleChildScrollView(
-                child: FutureBuilder<List<CreditCard>>(
+                const Divider(
+                  color: darkGreenHeigh,
+                  height: 1.0,
+                  thickness: 3,
+                ),
+                verticalSpaceSmall,
+                FutureBuilder<List<CreditCard>>(
                   future: viewModel.cardListData(),
                   builder: (ctx, snapshot) {
                     if (snapshot.connectionState == ConnectionState.done) {
@@ -68,9 +68,9 @@ class CreditResultView extends StackedView<CreditResultViewModel> {
                     );
                   },
                 ),
-              ),
-              verticalSpaceMedium
-            ],
+                verticalSpaceMedium
+              ],
+            ),
           ),
         ),
         bottomBar(
