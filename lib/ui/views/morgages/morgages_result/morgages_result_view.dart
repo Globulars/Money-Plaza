@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
+import '../../../../services/Models/mortgages_card.dart';
 import '../../../common/ui_helpers.dart';
 import '../../../widgets/app_bar.dart';
 import '../../../widgets/bottom_bar.dart';
@@ -66,7 +67,27 @@ class MorgagesResultView extends StackedView<MorgagesResultViewModel> {
                 height: 1,
               ),
               verticalSpaceSmall,
-              const MorgagesResultCard(),
+              FutureBuilder<List<MortagesCard>>(
+                  future: viewModel.mortgsgesCardData(),
+                  builder: (ctx, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.done) {
+                      if (snapshot.hasError) {
+                        return Center(
+                          child: Text(
+                            snapshot.error.toString(),
+                            style: const TextStyle(fontSize: 18),
+                          ),
+                        );
+                      } else if (snapshot.hasData) {
+                        return MorgagesResultCard(mortgagesCard: snapshot.data);
+                      }
+                    }
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  },
+                ),
+              // const MorgagesResultCard(),
             ],
           ),
         ),

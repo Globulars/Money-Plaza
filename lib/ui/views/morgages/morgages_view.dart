@@ -5,6 +5,8 @@ import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import '../../widgets/app_bar.dart';
 import '../../widgets/bottom_bar.dart';
+
+
 import '../../widgets/common/background_image.dart';
 import '../../widgets/common/icon_box_btn/return_button.dart';
 import 'morgages_viewmodel.dart';
@@ -20,7 +22,6 @@ class MorgagesView extends StackedView<MorgagesViewModel> {
     MorgagesViewModel viewModel,
     Widget? child,
   ) {
-    // final width = MediaQuery.of(context).size.width;
     return Stack(
       children: [
         const BackgroundImage(),
