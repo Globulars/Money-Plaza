@@ -22,7 +22,7 @@ class MorgagesResultViewModel extends BaseViewModel {
     _navigationService.navigateToMorgagesSplashView();
   }
 
-  Future<List<MortagesCard>> cardListData() async {
+  Future<List<MortagesCard>> mortgsgesCardData() async {
     Map<String, dynamic> body = {};
     var data = await _mortgagesService.mortgagesList(body);
     if (data?["success"] == true) {
