@@ -102,9 +102,12 @@ class ApiUrl {
   final Uri menuGetTopMenus = Uri.parse("$baseUrl/menu/getTopMenus");
   final Uri menuList = Uri.parse("$baseUrl/menu/list");
 
-  /////////////////////////////////////mortgages Controller////////////////////////////////
-  final Uri mortgageLike = Uri.parse("$baseUrl/mortgage/like/");
+   /////////////////////////////////////mortgages Controller////////////////////////////////
+  final Uri mortgageDelete = Uri.parse("$baseUrl/mortgage/delete/");
   final Uri mortgageList = Uri.parse("$baseUrl/mortgage/list");
+  final Uri mortgageLike = Uri.parse("$baseUrl/mortgage/like/");
+  final Uri mortgageListAll = Uri.parse("$baseUrl/mortgage/listAll");
+  final Uri mortgageSaveOrUpdate = Uri.parse("$baseUrl/mortgage/saveOrUpdate");
 
   /////////////////////////////////////mortgages-request Controller////////////////////////////////
   final Uri mortgageRequestApply = Uri.parse("$baseUrl/mortgageRequest/apply");
