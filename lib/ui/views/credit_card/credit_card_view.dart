@@ -62,7 +62,7 @@ class CreditCardView extends StackedView<CreditCardViewModel> {
                         ),
                         verticalSpaceSmall,
                         DropdownTextfield(
-                          value: viewModel.card,
+                          value: viewModel.cardType,
                           onChanged: viewModel.setCard,
                           options: viewModel.cardList,
                           titleText: 'card',

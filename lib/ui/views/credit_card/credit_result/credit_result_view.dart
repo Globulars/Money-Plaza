@@ -13,7 +13,11 @@ import '../../../widgets/common/icon_box_btn/sub_bar.dart';
 import 'credit_result_viewmodel.dart';
 
 class CreditResultView extends StackedView<CreditResultViewModel> {
-  const CreditResultView({Key? key}) : super(key: key);
+  final String annualIncome;
+  final List issuersList, typesList;
+  const CreditResultView(this.issuersList, this.typesList, this.annualIncome,
+      {Key? key})
+      : super(key: key);
 
   @override
   Widget builder(
@@ -49,7 +53,8 @@ class CreditResultView extends StackedView<CreditResultViewModel> {
                 ),
                 verticalSpaceSmall,
                 FutureBuilder<List<CreditCard>>(
-                  future: viewModel.cardListData(),
+                  future: viewModel.cardListData(
+                      issuersList, typesList, annualIncome),
                   builder: (ctx, snapshot) {
                     if (snapshot.connectionState == ConnectionState.done) {
                       if (snapshot.hasError) {
