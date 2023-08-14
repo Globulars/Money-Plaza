@@ -28,6 +28,7 @@ class CreditCardWiget extends ViewModelWidget<CreditResultViewModel> {
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       itemBuilder: (BuildContext context, int index) {
+        CreditCard _creditCard = creditCard![index];
         return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 5),
           child: Card(
@@ -43,15 +44,15 @@ class CreditCardWiget extends ViewModelWidget<CreditResultViewModel> {
                       children: [
                         Row(
                           children: [
-                            Image.asset(
-                              myIcons.creditCardFrame,
+                            Image.network(
+                              _creditCard.signImageUrl.toString(),
                               width: 80,
                             ),
                             horizontalSpaceTiny,
                             SizedBox(
                               width: width * 0.45,
                               child: CustomText(
-                                text: 'dbsEminentVisa',
+                                text: _creditCard.name.toString(),
                                 fontSize: 18,
                                 maxLines: 2,
                                 textOverflow: TextOverflow.ellipsis,
@@ -71,74 +72,40 @@ class CreditCardWiget extends ViewModelWidget<CreditResultViewModel> {
                       ],
                     ),
                     verticalSpaceTiny,
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        SizedBox(
-                          width: width * 0.28,
-                          child: Column(
-                            children: [
-                              CustomText(
-                                text: "minimumAnnualSalary",
-                                color: Colors.black.withOpacity(0.6),
-                                textAlign: TextAlign.center,
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold,
+                    SizedBox(
+                      height: 70,
+                      width: width - 30,
+                      child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount:
+                              creditCard![index].textFeatureItems?.length ?? 0,
+                          itemBuilder: (BuildContext context, int index) {
+                            List<TextFeatureItems> featureItems =
+                                creditCard![index].textFeatureItems ?? [];
+                            return SizedBox(
+                              width: width * 0.28,
+                              child: Column(
+                                children: [
+                                  CustomText(
+                                    text: featureItems[index].name.toString(),
+                                    color: Colors.black.withOpacity(0.6),
+                                    textAlign: TextAlign.center,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                  CustomText(
+                                    text: "\$${featureItems[index].value}",
+                                    textAlign: TextAlign.center,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ],
                               ),
-                              CustomText(
-                                text: "\$150,000",
-                                textAlign: TextAlign.center,
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          width: width * 0.28,
-                          child: Column(
-                            children: [
-                              CustomText(
-                                text: "4designated",
-                                color: Colors.black.withOpacity(0.6),
-                                textAlign: TextAlign.center,
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold,
-                              ),
-                              CustomText(
-                                text: "5%",
-                                textAlign: TextAlign.center,
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          width: width * 0.28,
-                          child: Column(
-                            children: [
-                              CustomText(
-                                text: "otherRetail",
-                                color: Colors.black.withOpacity(0.6),
-                                textAlign: TextAlign.center,
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold,
-                              ),
-                              CustomText(
-                                text: "1%",
-                                textAlign: TextAlign.center,
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
+                            );
+                          }),
                     ),
                     CustomText(
-                        text: "upTo5%Rebate".tr(args: ['5']),
+                        text: _creditCard.advantage.toString(),
                         color: Colors.black,
                         textAlign: TextAlign.start,
                         fontWeight: FontWeight.w400),
