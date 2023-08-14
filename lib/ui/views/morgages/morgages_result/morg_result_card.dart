@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:money_plaza/services/Models/mortgages_card.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/submit_button.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
@@ -8,7 +9,8 @@ import '../../../widgets/common/icon_box_btn/text.dart';
 import 'morgages_result_viewmodel.dart';
 
 class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
-  const MorgagesResultCard({Key? key}) : super(key: key);
+  final List<MortagesCard>? mortgagesCard;
+  const MorgagesResultCard({Key? key,required this.mortgagesCard}) : super(key: key);
 
   @override
   Widget builder(

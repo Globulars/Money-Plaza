@@ -10,9 +10,27 @@ class MortgageService {
     "content-type": "application/json"
   };
 
-  mortgagesView(body) async {
+/////////////////////////////////////mortgages List////////////////////////////////
+  mortgagesList(body) async {
     try {
       final response = await http.post(_apiUrl.mortgageList,
+          body: jsonEncode(body), headers: headers);
+      if (response.statusCode == 200) {
+        var data = json.decode(response.body);
+        return data;
+      } else {
+        return {"message": "${response.statusCode} error found"};
+      }
+    } catch (e) {
+      return {"message": e};
+    }
+  }
+
+   /////////////////////////////////////mortgages Like////////////////////////////////
+
+  cardLike(body) async {
+    try {
+      final response = await http.post(_apiUrl.mortgageLike,
           body: jsonEncode(body), headers: headers);
       if (response.statusCode == 200) {
         var data = json.decode(response.body);
