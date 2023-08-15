@@ -63,7 +63,7 @@ class ApiUrl {
 
   ///////////////////////////////////////card Controller////////////////////////////////
   final Uri cardList = Uri.parse("$baseUrl/card/list");
-  // final Uri cardList = Uri.parse("$baseUrl/card/list");
+  final Uri surveyForm = Uri.parse("$baseUrl/surveyform/survey/submit/daa7596e-550e-4e3d-aa4d-0ebac22700eb");
 
 
 
