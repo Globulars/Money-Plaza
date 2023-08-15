@@ -1,10 +1,8 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/submit_button.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import '../../../../services/Models/credit_card.dart';
-import '../../../common/app_colors.dart';
 import '../../../common/ui_helpers.dart';
 import '../../../widgets/common/icon_box_btn/text.dart';
 import 'credit_result_viewmodel.dart';
@@ -107,11 +105,6 @@ class CreditCardWiget extends ViewModelWidget<CreditResultViewModel> {
                     CustomText(
                         text: _creditCard.advantage.toString(),
                         color: Colors.black,
-                        textAlign: TextAlign.start,
-                        fontWeight: FontWeight.w400),
-                    CustomText(
-                        text: "exclusiveOffer".tr(args: ["304"]),
-                        color: darkGreenLight,
                         textAlign: TextAlign.start,
                         fontWeight: FontWeight.w400),
                     verticalSpaceTiny,
