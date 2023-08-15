@@ -406,8 +406,11 @@ class StackedRouter extends _i1.RouterBase {
       );
     },
     _i23.CreditResultView: (data) {
+      final args = data.getArgs<CreditResultViewArguments>(nullOk: false);
       return _i31.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i23.CreditResultView(),
+        builder: (context) => _i23.CreditResultView(
+            args.issuersList, args.typesList, args.annualIncome,
+            key: args.key),
         settings: data,
       );
     },
@@ -512,6 +515,45 @@ class SettingsViewArguments {
   @override
   int get hashCode {
     return context.hashCode ^ key.hashCode;
+  }
+}
+
+class CreditResultViewArguments {
+  const CreditResultViewArguments({
+    required this.issuersList,
+    required this.typesList,
+    required this.annualIncome,
+    this.key,
+  });
+
+  final List<dynamic> issuersList;
+
+  final List<dynamic> typesList;
+
+  final String annualIncome;
+
+  final _i31.Key? key;
+
+  @override
+  String toString() {
+    return '{"issuersList": "$issuersList", "typesList": "$typesList", "annualIncome": "$annualIncome", "key": "$key"}';
+  }
+
+  @override
+  bool operator ==(covariant CreditResultViewArguments other) {
+    if (identical(this, other)) return true;
+    return other.issuersList == issuersList &&
+        other.typesList == typesList &&
+        other.annualIncome == annualIncome &&
+        other.key == key;
+  }
+
+  @override
+  int get hashCode {
+    return issuersList.hashCode ^
+        typesList.hashCode ^
+        annualIncome.hashCode ^
+        key.hashCode;
   }
 }
 
@@ -816,14 +858,23 @@ extension NavigatorStateExtension on _i32.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> navigateToCreditResultView([
+  Future<dynamic> navigateToCreditResultView({
+    required List<dynamic> issuersList,
+    required List<dynamic> typesList,
+    required String annualIncome,
+    _i31.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return navigateTo<dynamic>(Routes.creditResultView,
+        arguments: CreditResultViewArguments(
+            issuersList: issuersList,
+            typesList: typesList,
+            annualIncome: annualIncome,
+            key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -1228,14 +1279,23 @@ extension NavigatorStateExtension on _i32.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> replaceWithCreditResultView([
+  Future<dynamic> replaceWithCreditResultView({
+    required List<dynamic> issuersList,
+    required List<dynamic> typesList,
+    required String annualIncome,
+    _i31.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return replaceWith<dynamic>(Routes.creditResultView,
+        arguments: CreditResultViewArguments(
+            issuersList: issuersList,
+            typesList: typesList,
+            annualIncome: annualIncome,
+            key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

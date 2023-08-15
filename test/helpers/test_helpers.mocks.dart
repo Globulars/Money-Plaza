@@ -660,7 +660,22 @@ class MockToasterService extends _i1.Mock implements _i7.ToasterService {}
 /// A class which mocks [MortgageService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockMortgageService extends _i1.Mock implements _i8.MortgageService {}
+class MockMortgageService extends _i1.Mock implements _i8.MortgageService {
+  @override
+  Map<String, String> get headers => (super.noSuchMethod(
+        Invocation.getter(#headers),
+        returnValue: <String, String>{},
+        returnValueForMissingStub: <String, String>{},
+      ) as Map<String, String>);
+  @override
+  set headers(Map<String, String>? _headers) => super.noSuchMethod(
+        Invocation.setter(
+          #headers,
+          _headers,
+        ),
+        returnValueForMissingStub: null,
+      );
+}
 
 /// A class which mocks [CreditCardService].
 ///
