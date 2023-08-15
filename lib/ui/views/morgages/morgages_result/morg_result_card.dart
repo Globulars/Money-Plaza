@@ -10,7 +10,8 @@ import 'morgages_result_viewmodel.dart';
 
 class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
   final List<MortgagesCard>? mortgagesCard;
-  const MorgagesResultCard({Key? key,required this.mortgagesCard}) : super(key: key);
+  const MorgagesResultCard({Key? key, required this.mortgagesCard})
+      : super(key: key);
 
   @override
   Widget builder(
@@ -23,9 +24,10 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
       child: SingleChildScrollView(
           child: ListView.builder(
         shrinkWrap: true,
-        itemCount: 6,
+        itemCount: mortgagesCard!.length,
         physics: const NeverScrollableScrollPhysics(),
         itemBuilder: (BuildContext context, int index) {
+          final mortgage = mortgagesCard![index];
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
             child: Card(
@@ -38,8 +40,10 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Image.asset(
-                          myIcons.hSBC,
+                        Image.network(
+                          mortgage.company!.signLogoUrl.toString(),
+
+                          // myIcons.hSBC,
                           width: 80,
                         ),
                         SubmitButton(
@@ -53,6 +57,36 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                       ],
                     ),
                     verticalSpaceTiny,
+                    // SizedBox(
+                    //   height: 50,
+                    //   child: ListView.builder(
+                    //       itemCount: mortgage.displayColumns?.length ?? 0,
+                    //       shrinkWrap: true,
+                    //       physics: NeverScrollableScrollPhysics(),
+                    //       scrollDirection: Axis.horizontal,
+                    //       itemBuilder: (BuildContext context, int index) {
+                    //         List items = mortgage.displayColumns ?? [];
+                          
+                    //         return SizedBox(
+                    //           width: width * 0.3,
+                    //           child: Column(
+                    //             crossAxisAlignment: CrossAxisAlignment.center,
+                    //             children: [
+                    //               CustomText(
+                    //                 text: items[index],
+                    //                 fontSize: 10,
+                    //                 fontWeight: FontWeight.w600,
+                    //                 color: Colors.black.withOpacity(0.6),
+                    //               ),
+                    //               CustomText(
+                    //                 text: items[index],
+                    //                 fontWeight: FontWeight.bold,
+                    //               ),
+                    //             ],
+                    //           ),
+                    //         );
+                    //       }),
+                    // ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -74,7 +108,7 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                                 color: Colors.black.withOpacity(0.6),
                               ),
                               CustomText(
-                                text: '1.3%',
+                                text:"${mortgage.interestRate}%",
                                 fontWeight: FontWeight.bold,
                               ),
                             ],
@@ -98,7 +132,7 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                                 color: Colors.black.withOpacity(0.6),
                               ),
                               CustomText(
-                                text: '\$6,000',
+                                text: '${mortgage.totalRebate}',
                                 fontWeight: FontWeight.bold,
                               ),
                             ],
@@ -122,7 +156,8 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                                 color: Colors.black.withOpacity(0.6),
                               ),
                               CustomText(
-                                text: '\$6713.5',
+                                text:
+                                 '\$6713.5',
                                 fontWeight: FontWeight.bold,
                               ),
                             ],

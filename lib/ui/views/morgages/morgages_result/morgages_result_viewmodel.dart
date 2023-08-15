@@ -22,11 +22,11 @@ class MorgagesResultViewModel extends BaseViewModel {
     _navigationService.navigateToMorgagesSplashView();
   }
 
-  Future<List<MortgagesCard>> mortgsgesCardData() async {
+  Future<List<MortgagesCard>> mortgagesCardData() async {
     Map<String, dynamic> body = {};
     var data = await _mortgagesService.mortgagesList(body);
     if (data?["success"] == true) {
-      // log(data.toString());
+       log(data.toString());
       // return List<CreditCard>.from(data["data"]["records"]);
       List dataList = data["data"]["records"];
       return dataList.map((data) => MortgagesCard.fromJson(data)).toList();

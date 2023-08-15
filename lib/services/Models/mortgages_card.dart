@@ -1,69 +1,9 @@
+
+
 class MortgagesCard {
-  String? code;
-  Data? data;
-  String? message;
-  bool? success;
-
-  MortgagesCard({this.code, this.data, this.message, this.success});
-
-  MortgagesCard.fromJson(Map<String, dynamic> json) {
-    code = json['code'];
-    data = json['data'] != null ? new Data.fromJson(json['data']) : null;
-    message = json['message'];
-    success = json['success'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['code'] = this.code;
-    if (this.data != null) {
-      data['data'] = this.data!.toJson();
-    }
-    data['message'] = this.message;
-    data['success'] = this.success;
-    return data;
-  }
-}
-
-class Data {
-  int? current;
-  int? pages;
-  List<Records>? records;
-  int? size;
-  int? total;
-
-  Data({this.current, this.pages, this.records, this.size, this.total});
-
-  Data.fromJson(Map<String, dynamic> json) {
-    current = json['current'];
-    pages = json['pages'];
-    if (json['records'] != null) {
-      records = <Records>[];
-      json['records'].forEach((v) {
-        records!.add(new Records.fromJson(v));
-      });
-    }
-    size = json['size'];
-    total = json['total'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['current'] = this.current;
-    data['pages'] = this.pages;
-    if (this.records != null) {
-      data['records'] = this.records!.map((v) => v.toJson()).toList();
-    }
-    data['size'] = this.size;
-    data['total'] = this.total;
-    return data;
-  }
-}
-
-class Records {
   String? advantage;
   String? advantageCht;
-  int? allowance;
+  double? allowance;
   String? applyButtonAction;
   String? applyLink;
   String? banner;
@@ -86,26 +26,26 @@ class Records {
   int? id;
   String? incentive;
   String? incentiveCht;
-  int? interestRate;
-  int? latePaymentFee;
+  double? interestRate;
+  double? latePaymentFee;
   int? likeCount;
   int? ltvRatio;
-  int? maxAmount;
+  double? maxAmount;
   int? maxTenor;
-  int? minAmount;
-  int? minPayAbsolute;
-  int? minPayInterest;
-  int? minPaymentAmount;
+  double? minAmount;
+  double? minPayAbsolute;
+  double? minPayInterest;
+  double? minPaymentAmount;
   String? minPaymentAmountStr;
   int? minTenor;
-  int? minimumMonthlyIncome;
+  double? minimumMonthlyIncome;
   int? ordering;
   int? penaltyInterestPeriod;
-  int? primeRate;
+  double? primeRate;
   String? propertyType;
   List<String>? propertyTypes;
   String? publishDate;
-  int? rebateRate;
+  double? rebateRate;
   String? referralCode;
   String? shareMsg;
   String? shareMsgCht;
@@ -119,7 +59,7 @@ class Records {
   String? updateDate;
   String? vendorEmail;
 
-  Records(
+  MortgagesCard(
       {this.advantage,
       this.advantageCht,
       this.allowance,
@@ -178,7 +118,7 @@ class Records {
       this.updateDate,
       this.vendorEmail});
 
-  Records.fromJson(Map<String, dynamic> json) {
+  MortgagesCard.fromJson(Map<String, dynamic> json) {
     advantage = json['advantage'];
     advantageCht = json['advantageCht'];
     allowance = json['allowance'];
