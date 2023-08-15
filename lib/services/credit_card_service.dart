@@ -26,7 +26,7 @@ class CreditCardService {
   }
   /////////////////////////////////////Card Like////////////////////////////////
 
-  surveyForm(body) async {
+  submitSurveyForm(body) async {
     try {
       final response = await http.post(_apiUrl.surveyForm,
           body: jsonEncode(body), headers: headers);
