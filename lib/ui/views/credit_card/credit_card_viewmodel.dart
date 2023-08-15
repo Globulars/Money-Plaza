@@ -10,7 +10,7 @@ class CreditCardViewModel extends BaseViewModel {
   // final _toasterService = locator<ToasterService>();
 
   String cardProvider = "Select the Card Providers";
-  String card = "Select type of Card";
+  String cardType = "Select type of Card";
   final TextEditingController annualIncomeCtrl = TextEditingController();
   List<String> cardProviderList = [
     "Select the Card Providers",
@@ -21,10 +21,10 @@ class CreditCardViewModel extends BaseViewModel {
   ];
   List<String> cardList = [
     "Select type of Card",
-    "Personal Card",
-    "Corporate Credit Card",
-    "Student Credit Card",
-    "Debit Card",
+    "Debit",
+    "Personal",
+    "Corporate Credit",
+    "Student Credit",
   ];
 
   setCardProvider(value) {
@@ -33,13 +33,14 @@ class CreditCardViewModel extends BaseViewModel {
   }
 
   setCard(value) {
-    card = value;
+    cardType = value;
     notifyListeners();
   }
 
   navigateToCreditCardResult() {
-    _navigationService.navigateToCreditResultView();
+    _navigationService.navigateToCreditResultView(
+        annualIncome: annualIncomeCtrl.text,
+        issuersList: [cardProvider],
+        typesList: [cardType]);
   }
-
-
 }
