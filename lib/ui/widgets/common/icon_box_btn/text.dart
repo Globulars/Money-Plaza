@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'icon_box_btn_model.dart';
+import 'package:flutter_html/flutter_html.dart';
 
 class CustomText extends StackedView<IconBoxBtnModel> {
   final String text;
@@ -36,19 +37,21 @@ class CustomText extends StackedView<IconBoxBtnModel> {
     IconBoxBtnModel viewModel,
     Widget? child,
   ) {
-    return Text(
-      text,
-      style: GoogleFonts.ibmPlexSans(
-        color: color ?? Colors.black,
-        fontSize: fontSize ?? 14,
-        fontWeight: fontWeight ?? FontWeight.w400,
-        letterSpacing: letterSpacing ?? 0,
-        wordSpacing: wordspacing ?? 0,
-      ),
-      textAlign: textAlign,
-      overflow: textOverflow,
-      maxLines: maxLines,
-    ).tr();
+    return text[0] == "<"
+        ? Html(data: text)
+        : Text(
+            text,
+            style: GoogleFonts.ibmPlexSans(
+              color: color ?? Colors.black,
+              fontSize: fontSize ?? 14,
+              fontWeight: fontWeight ?? FontWeight.w400,
+              letterSpacing: letterSpacing ?? 0,
+              wordSpacing: wordspacing ?? 0,
+            ),
+            textAlign: textAlign,
+            overflow: textOverflow,
+            maxLines: maxLines,
+          ).tr();
   }
 
   @override

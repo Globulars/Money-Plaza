@@ -62,8 +62,12 @@ class ApiUrl {
   final Uri blogGetType = Uri.parse("$baseUrl/blog/getTypes");
 
   ///////////////////////////////////////card Controller////////////////////////////////
-  final Uri cardLike = Uri.parse("$baseUrl/card/like/");
   final Uri cardList = Uri.parse("$baseUrl/card/list");
+  // final Uri cardList = Uri.parse("$baseUrl/card/list");
+
+
+
+  final Uri cardLike = Uri.parse("$baseUrl/card/like/");
   final Uri cardPreview = Uri.parse("$baseUrl/card/preview/");
 
   ///////////////////////////////////////check-id Controller////////////////////////////////
