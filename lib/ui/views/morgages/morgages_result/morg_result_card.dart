@@ -32,7 +32,7 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
             child: Card(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 8),
+                padding: const EdgeInsets.only(left: 6, top: 8,right: 6),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -57,7 +57,7 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                       ],
                     ),
                     verticalSpaceTiny,
-                    // SizedBox(
+                    //  SizedBox(
                     //   height: 50,
                     //   child: ListView.builder(
                     //       itemCount: mortgage.displayColumns?.length ?? 0,
@@ -79,7 +79,7 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                     //                 color: Colors.black.withOpacity(0.6),
                     //               ),
                     //               CustomText(
-                    //                 text: items[index],
+                    //                 text: items[index].toString(),
                     //                 fontWeight: FontWeight.bold,
                     //               ),
                     //             ],
@@ -156,8 +156,8 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                                 color: Colors.black.withOpacity(0.6),
                               ),
                               CustomText(
-                                text:
-                                 '\$6713.5',
+                                text:mortgage.minPaymentAmountStr??"\$6713.5",
+                                //  '\$6713.5',
                                 fontWeight: FontWeight.bold,
                               ),
                             ],
@@ -167,15 +167,16 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                     ),
                     verticalSpaceTiny,
                     CustomText(
-                      text: 'moneyPlazaExclusiveOffer',
-                      fontSize: 12,
-                      color: darkGreenLight,
+                      text: mortgage.advantage.toString(),
+                      // 'moneyPlazaExclusiveOffer',
+                      // fontSize: 12,
+                      // color: darkGreenLight,
                     ),
                     verticalSpaceSmall,
-                    CustomText(
-                      text: 'noteMoney',
-                      fontSize: 12,
-                    ),
+                    // CustomText(
+                    //   text: 'noteMoney',
+                    //   fontSize: 12,
+                    // ),
                   ],
                 ),
               ),

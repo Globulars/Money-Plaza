@@ -12,9 +12,7 @@ class MorgagesViewModel extends BaseViewModel {
   // final _toasterService = locator<ToasterService>();
   // final _mortgagesService = locator<MortgageService>();
 
-  navigateToMorgagesResult() {
-    _navigationService.navigateToMorgagesResultView();
-  }
+ 
    
   TextEditingController mortgagesPropertyValuationCtrl = TextEditingController();
   TextEditingController mortgagesValueRatioCtrl = TextEditingController();
@@ -53,6 +51,8 @@ class MorgagesViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-
+ navigateToMorgagesResult() {
+    _navigationService.navigateToMorgagesResultView();
+  }
 
 }
