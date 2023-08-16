@@ -64,4 +64,3 @@ class CreditResultViewModel extends BaseViewModel {
   //   }
   // }
 }
-// https://admin.moneyplaza.com.hk/banner/getBannersByType?type=card

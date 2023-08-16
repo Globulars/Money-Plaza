@@ -34,7 +34,7 @@ class LoanView extends StackedView<LoanViewModel> {
               children: [
                 const TopBanner(
                     url:
-                        "https://admin.moneyplaza.com.hk/banner/getBannersByType?type=card"),
+                        "https://admin.moneyplaza.com.hk/banner/getBannersByType?type=loan"),
                 verticalSpaceMedium,
                 loanCont(context),
                 verticalSpaceTiny,
