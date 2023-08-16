@@ -14,7 +14,12 @@ import 'morg_result_card.dart';
 import 'morgages_result_viewmodel.dart';
 
 class MorgagesResultView extends StackedView<MorgagesResultViewModel> {
-  const MorgagesResultView({Key? key}) : super(key: key);
+  final String mortgagesPropertyValuation;
+  final String  mortgagesValueRatio;
+  final String mortgagesTenor;
+  final String mortgagesMonthlyIncome;
+    final List mortgageList, typePropertyList;
+   const MorgagesResultView(this.mortgagesPropertyValuation, this.mortgagesValueRatio, this.mortgagesTenor, this.mortgagesMonthlyIncome, this.mortgageList, this.typePropertyList, {Key? key}) : super(key: key);
 
   @override
   Widget builder(
@@ -67,8 +72,8 @@ class MorgagesResultView extends StackedView<MorgagesResultViewModel> {
                 height: 1,
               ),
               verticalSpaceSmall,
-              FutureBuilder<List<MortagesCard>>(
-                  future: viewModel.mortgsgesCardData(),
+              FutureBuilder<List<MortgagesCard>>(
+                  future: viewModel.mortgagesCardData(),
                   builder: (ctx, snapshot) {
                     if (snapshot.connectionState == ConnectionState.done) {
                       if (snapshot.hasError) {

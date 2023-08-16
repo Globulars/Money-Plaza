@@ -382,8 +382,16 @@ class StackedRouter extends _i1.RouterBase {
       );
     },
     _i19.MorgagesResultView: (data) {
+      final args = data.getArgs<MorgagesResultViewArguments>(nullOk: false);
       return _i31.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i19.MorgagesResultView(),
+        builder: (context) => _i19.MorgagesResultView(
+            args.mortgagesPropertyValuation,
+            args.mortgagesValueRatio,
+            args.mortgagesTenor,
+            args.mortgagesMonthlyIncome,
+            args.mortgageList,
+            args.typePropertyList,
+            key: args.key),
         settings: data,
       );
     },
@@ -515,6 +523,60 @@ class SettingsViewArguments {
   @override
   int get hashCode {
     return context.hashCode ^ key.hashCode;
+  }
+}
+
+class MorgagesResultViewArguments {
+  const MorgagesResultViewArguments({
+    required this.mortgagesPropertyValuation,
+    required this.mortgagesValueRatio,
+    required this.mortgagesTenor,
+    required this.mortgagesMonthlyIncome,
+    required this.mortgageList,
+    required this.typePropertyList,
+    this.key,
+  });
+
+  final String mortgagesPropertyValuation;
+
+  final String mortgagesValueRatio;
+
+  final String mortgagesTenor;
+
+  final String mortgagesMonthlyIncome;
+
+  final List<dynamic> mortgageList;
+
+  final List<dynamic> typePropertyList;
+
+  final _i31.Key? key;
+
+  @override
+  String toString() {
+    return '{"mortgagesPropertyValuation": "$mortgagesPropertyValuation", "mortgagesValueRatio": "$mortgagesValueRatio", "mortgagesTenor": "$mortgagesTenor", "mortgagesMonthlyIncome": "$mortgagesMonthlyIncome", "mortgageList": "$mortgageList", "typePropertyList": "$typePropertyList", "key": "$key"}';
+  }
+
+  @override
+  bool operator ==(covariant MorgagesResultViewArguments other) {
+    if (identical(this, other)) return true;
+    return other.mortgagesPropertyValuation == mortgagesPropertyValuation &&
+        other.mortgagesValueRatio == mortgagesValueRatio &&
+        other.mortgagesTenor == mortgagesTenor &&
+        other.mortgagesMonthlyIncome == mortgagesMonthlyIncome &&
+        other.mortgageList == mortgageList &&
+        other.typePropertyList == typePropertyList &&
+        other.key == key;
+  }
+
+  @override
+  int get hashCode {
+    return mortgagesPropertyValuation.hashCode ^
+        mortgagesValueRatio.hashCode ^
+        mortgagesTenor.hashCode ^
+        mortgagesMonthlyIncome.hashCode ^
+        mortgageList.hashCode ^
+        typePropertyList.hashCode ^
+        key.hashCode;
   }
 }
 
@@ -802,14 +864,29 @@ extension NavigatorStateExtension on _i32.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> navigateToMorgagesResultView([
+  Future<dynamic> navigateToMorgagesResultView({
+    required String mortgagesPropertyValuation,
+    required String mortgagesValueRatio,
+    required String mortgagesTenor,
+    required String mortgagesMonthlyIncome,
+    required List<dynamic> mortgageList,
+    required List<dynamic> typePropertyList,
+    _i31.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return navigateTo<dynamic>(Routes.morgagesResultView,
+        arguments: MorgagesResultViewArguments(
+            mortgagesPropertyValuation: mortgagesPropertyValuation,
+            mortgagesValueRatio: mortgagesValueRatio,
+            mortgagesTenor: mortgagesTenor,
+            mortgagesMonthlyIncome: mortgagesMonthlyIncome,
+            mortgageList: mortgageList,
+            typePropertyList: typePropertyList,
+            key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -1223,14 +1300,29 @@ extension NavigatorStateExtension on _i32.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> replaceWithMorgagesResultView([
+  Future<dynamic> replaceWithMorgagesResultView({
+    required String mortgagesPropertyValuation,
+    required String mortgagesValueRatio,
+    required String mortgagesTenor,
+    required String mortgagesMonthlyIncome,
+    required List<dynamic> mortgageList,
+    required List<dynamic> typePropertyList,
+    _i31.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return replaceWith<dynamic>(Routes.morgagesResultView,
+        arguments: MorgagesResultViewArguments(
+            mortgagesPropertyValuation: mortgagesPropertyValuation,
+            mortgagesValueRatio: mortgagesValueRatio,
+            mortgagesTenor: mortgagesTenor,
+            mortgagesMonthlyIncome: mortgagesMonthlyIncome,
+            mortgageList: mortgageList,
+            typePropertyList: typePropertyList,
+            key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

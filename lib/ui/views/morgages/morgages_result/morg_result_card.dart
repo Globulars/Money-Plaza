@@ -3,14 +3,14 @@ import 'package:money_plaza/services/Models/mortgages_card.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/submit_button.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
-import '../../../common/app_colors.dart';
 import '../../../common/ui_helpers.dart';
 import '../../../widgets/common/icon_box_btn/text.dart';
 import 'morgages_result_viewmodel.dart';
 
 class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
-  final List<MortagesCard>? mortgagesCard;
-  const MorgagesResultCard({Key? key,required this.mortgagesCard}) : super(key: key);
+  final List<MortgagesCard>? mortgagesCard;
+  const MorgagesResultCard({Key? key, required this.mortgagesCard})
+      : super(key: key);
 
   @override
   Widget builder(
@@ -23,14 +23,15 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
       child: SingleChildScrollView(
           child: ListView.builder(
         shrinkWrap: true,
-        itemCount: 6,
+        itemCount: mortgagesCard!.length,
         physics: const NeverScrollableScrollPhysics(),
         itemBuilder: (BuildContext context, int index) {
+          final mortgage = mortgagesCard![index];
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
             child: Card(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 8),
+                padding: const EdgeInsets.only(left: 6, top: 8,right: 6),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -38,8 +39,10 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Image.asset(
-                          myIcons.hSBC,
+                        Image.network(
+                          mortgage.company!.signLogoUrl.toString(),
+
+                          // myIcons.hSBC,
                           width: 80,
                         ),
                         SubmitButton(
@@ -53,6 +56,36 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                       ],
                     ),
                     verticalSpaceTiny,
+                    //  SizedBox(
+                    //   height: 50,
+                    //   child: ListView.builder(
+                    //       itemCount: mortgage.displayColumns?.length ?? 0,
+                    //       shrinkWrap: true,
+                    //       physics: NeverScrollableScrollPhysics(),
+                    //       scrollDirection: Axis.horizontal,
+                    //       itemBuilder: (BuildContext context, int index) {
+                    //         List items = mortgage.displayColumns ?? [];
+                          
+                    //         return SizedBox(
+                    //           width: width * 0.3,
+                    //           child: Column(
+                    //             crossAxisAlignment: CrossAxisAlignment.center,
+                    //             children: [
+                    //               CustomText(
+                    //                 text: items[index],
+                    //                 fontSize: 10,
+                    //                 fontWeight: FontWeight.w600,
+                    //                 color: Colors.black.withOpacity(0.6),
+                    //               ),
+                    //               CustomText(
+                    //                 text: items[index].toString(),
+                    //                 fontWeight: FontWeight.bold,
+                    //               ),
+                    //             ],
+                    //           ),
+                    //         );
+                    //       }),
+                    // ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -74,7 +107,7 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                                 color: Colors.black.withOpacity(0.6),
                               ),
                               CustomText(
-                                text: '1.3%',
+                                text:"${mortgage.interestRate}%",
                                 fontWeight: FontWeight.bold,
                               ),
                             ],
@@ -97,8 +130,12 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                                 fontWeight: FontWeight.w600,
                                 color: Colors.black.withOpacity(0.6),
                               ),
+                              mortgage.totalRebate == "-"?CustomText(
+                                text: '6,000',
+                                fontWeight: FontWeight.bold,
+                              ):
                               CustomText(
-                                text: '\$6,000',
+                                text: '${mortgage.totalRebate}',
                                 fontWeight: FontWeight.bold,
                               ),
                             ],
@@ -122,7 +159,8 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                                 color: Colors.black.withOpacity(0.6),
                               ),
                               CustomText(
-                                text: '\$6713.5',
+                                text:mortgage.minPaymentAmountStr??"\$6713.5",
+                                //  '\$6713.5',
                                 fontWeight: FontWeight.bold,
                               ),
                             ],
@@ -132,15 +170,16 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                     ),
                     verticalSpaceTiny,
                     CustomText(
-                      text: 'moneyPlazaExclusiveOffer',
-                      fontSize: 12,
-                      color: darkGreenLight,
+                      text: mortgage.advantage.toString(),
+                      // 'moneyPlazaExclusiveOffer',
+                      // fontSize: 12,
+                      // color: darkGreenLight,
                     ),
                     verticalSpaceSmall,
-                    CustomText(
-                      text: 'noteMoney',
-                      fontSize: 12,
-                    ),
+                    // CustomText(
+                    //   text: 'noteMoney',
+                    //   fontSize: 12,
+                    // ),
                   ],
                 ),
               ),
