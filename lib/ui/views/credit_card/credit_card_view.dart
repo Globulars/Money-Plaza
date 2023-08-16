@@ -73,6 +73,13 @@ class CreditCardView extends StackedView<CreditCardViewModel> {
                           titleText: 'annualIncome',
                           controller: viewModel.annualIncomeCtrl,
                         ),
+                        verticalSpaceSmall,
+                        DropdownTextfield(
+                          titleText: 'bankFinancialInstitutes',
+                          value: viewModel.financialInstitutes,
+                          onChanged: viewModel.setFinancialInstitutes,
+                          options: viewModel.financialInstitutesList,
+                        ),
                       ],
                     ),
                   ),

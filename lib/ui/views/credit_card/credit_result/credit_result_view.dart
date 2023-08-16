@@ -14,8 +14,8 @@ import 'credit_result_viewmodel.dart';
 
 class CreditResultView extends StackedView<CreditResultViewModel> {
   final String annualIncome;
-  final List issuersList, typesList;
-  const CreditResultView(this.issuersList, this.typesList, this.annualIncome,
+  final List issuersList, typesList,financialInstitutesList;
+  const CreditResultView(this.issuersList, this.typesList, this.annualIncome, this.financialInstitutesList,
       {Key? key})
       : super(key: key);
 
@@ -54,7 +54,7 @@ class CreditResultView extends StackedView<CreditResultViewModel> {
                 verticalSpaceSmall,
                 FutureBuilder<List<CreditCard>>(
                   future: viewModel.cardListData(
-                      issuersList, typesList, annualIncome),
+                      issuersList, typesList, annualIncome,financialInstitutesList),
                   builder: (ctx, snapshot) {
                     if (snapshot.connectionState == ConnectionState.done) {
                       if (snapshot.hasError) {
