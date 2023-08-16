@@ -21,7 +21,7 @@ class MorgagesContactInfoViewModel extends BaseViewModel {
   final TextEditingController institutesAndProductsCtrl =
       TextEditingController();
 
-  submitSurveyForm() async {
+  submitSurveyForm(organization) async {
     Map<String, dynamic> body = {
       "result": [
         {
@@ -59,7 +59,7 @@ class MorgagesContactInfoViewModel extends BaseViewModel {
         {
           "fieldName": "organization",
           "fieldTitle": "申請機構和服務",
-          "fieldValue": "HSBC+New Owner / Mortgage Transfer",
+          "fieldValue": organization,
           "fieldType": "text",
           "fieldOrder": "",
           "fieldAttrs": []

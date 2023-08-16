@@ -19,7 +19,8 @@ class CreditResultViewModel extends BaseViewModel {
   }
 
   navigateToSplashCreditCard() {
-    _navigationService.navigateToMorgagesSplashView(organization: "");
+    _navigationService.navigateToMorgagesSplashView(
+        organization: "DBS Bank (Hong Kong)+Personal Card");
   }
 
   Future<List<CreditCard>> cardListData(
@@ -63,3 +64,4 @@ class CreditResultViewModel extends BaseViewModel {
   //   }
   // }
 }
+// https://admin.moneyplaza.com.hk/banner/getBannersByType?type=card
