@@ -396,14 +396,19 @@ class StackedRouter extends _i1.RouterBase {
       );
     },
     _i20.MorgagesSplashView: (data) {
+      final args = data.getArgs<MorgagesSplashViewArguments>(nullOk: false);
       return _i31.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i20.MorgagesSplashView(),
+        builder: (context) => _i20.MorgagesSplashView(
+            key: args.key, organization: args.organization),
         settings: data,
       );
     },
     _i21.MorgagesContactInfoView: (data) {
+      final args =
+          data.getArgs<MorgagesContactInfoViewArguments>(nullOk: false);
       return _i31.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i21.MorgagesContactInfoView(),
+        builder: (context) => _i21.MorgagesContactInfoView(
+            key: args.key, organization: args.organization),
         settings: data,
       );
     },
@@ -577,6 +582,60 @@ class MorgagesResultViewArguments {
         mortgageList.hashCode ^
         typePropertyList.hashCode ^
         key.hashCode;
+  }
+}
+
+class MorgagesSplashViewArguments {
+  const MorgagesSplashViewArguments({
+    this.key,
+    required this.organization,
+  });
+
+  final _i31.Key? key;
+
+  final String organization;
+
+  @override
+  String toString() {
+    return '{"key": "$key", "organization": "$organization"}';
+  }
+
+  @override
+  bool operator ==(covariant MorgagesSplashViewArguments other) {
+    if (identical(this, other)) return true;
+    return other.key == key && other.organization == organization;
+  }
+
+  @override
+  int get hashCode {
+    return key.hashCode ^ organization.hashCode;
+  }
+}
+
+class MorgagesContactInfoViewArguments {
+  const MorgagesContactInfoViewArguments({
+    this.key,
+    required this.organization,
+  });
+
+  final _i31.Key? key;
+
+  final String organization;
+
+  @override
+  String toString() {
+    return '{"key": "$key", "organization": "$organization"}';
+  }
+
+  @override
+  bool operator ==(covariant MorgagesContactInfoViewArguments other) {
+    if (identical(this, other)) return true;
+    return other.key == key && other.organization == organization;
+  }
+
+  @override
+  int get hashCode {
+    return key.hashCode ^ organization.hashCode;
   }
 }
 
@@ -893,28 +952,36 @@ extension NavigatorStateExtension on _i32.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> navigateToMorgagesSplashView([
+  Future<dynamic> navigateToMorgagesSplashView({
+    _i31.Key? key,
+    required String organization,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return navigateTo<dynamic>(Routes.morgagesSplashView,
+        arguments:
+            MorgagesSplashViewArguments(key: key, organization: organization),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
         transition: transition);
   }
 
-  Future<dynamic> navigateToMorgagesContactInfoView([
+  Future<dynamic> navigateToMorgagesContactInfoView({
+    _i31.Key? key,
+    required String organization,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return navigateTo<dynamic>(Routes.morgagesContactInfoView,
+        arguments: MorgagesContactInfoViewArguments(
+            key: key, organization: organization),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -1329,28 +1396,36 @@ extension NavigatorStateExtension on _i32.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> replaceWithMorgagesSplashView([
+  Future<dynamic> replaceWithMorgagesSplashView({
+    _i31.Key? key,
+    required String organization,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return replaceWith<dynamic>(Routes.morgagesSplashView,
+        arguments:
+            MorgagesSplashViewArguments(key: key, organization: organization),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
         transition: transition);
   }
 
-  Future<dynamic> replaceWithMorgagesContactInfoView([
+  Future<dynamic> replaceWithMorgagesContactInfoView({
+    _i31.Key? key,
+    required String organization,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return replaceWith<dynamic>(Routes.morgagesContactInfoView,
+        arguments: MorgagesContactInfoViewArguments(
+            key: key, organization: organization),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

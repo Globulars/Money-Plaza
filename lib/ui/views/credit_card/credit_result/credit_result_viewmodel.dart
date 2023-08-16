@@ -6,13 +6,11 @@ import 'package:stacked_services/stacked_services.dart';
 import '../../../../app/app.dialogs.dart';
 import '../../../../app/app.locator.dart';
 import '../../../../services/credit_card_service.dart';
-import '../../../../services/toaster_service.dart';
 
 class CreditResultViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
   final _dialogService = locator<DialogService>();
   final _creditCardService = locator<CreditCardService>();
-  final _toasterService = locator<ToasterService>();
 
   void showCreditFilter() {
     _dialogService.showCustomDialog(
@@ -21,12 +19,11 @@ class CreditResultViewModel extends BaseViewModel {
   }
 
   navigateToSplashCreditCard() {
-    _navigationService.navigateToMorgagesSplashView();
+    _navigationService.navigateToMorgagesSplashView(organization: "");
   }
 
   Future<List<CreditCard>> cardListData(
       issuersList, typesList, annualIncome) async {
-    log("  $issuersList, #$typesList, #$annualIncome");
     Map<String, dynamic> body = {
       // "companyIds": [0],
       // "features": ["string"],
@@ -56,13 +53,13 @@ class CreditResultViewModel extends BaseViewModel {
     }
   }
 
-  submitSurveyForm() async {
-    var data = await _creditCardService.submitSurveyForm();
-    if (data["success"] == true) {
-      _toasterService.successToast(data["message"]);
-      _navigationService.back();
-    } else {
-      _toasterService.errorToast(data["message"].toString());
-    }
-  }
+  // submitSurveyForm() async {
+  //   var data = await _creditCardService.submitSurveyForm();
+  //   if (data["success"] == true) {
+  //     _toasterService.successToast(data["message"]);
+  //     _navigationService.back();
+  //   } else {
+  //     _toasterService.errorToast(data["message"].toString());
+  //   }
+  // }
 }
