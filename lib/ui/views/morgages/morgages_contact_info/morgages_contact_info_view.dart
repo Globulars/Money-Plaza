@@ -61,7 +61,7 @@ class MorgagesContactInfoView
                         verticalSpaceTiny,
                         CustomTextField(
                           titleText: 'fullName',
-                          controller: viewModel.emailCtrl,
+                          controller: viewModel.nameCtrl,
                         ),
                         verticalSpaceTiny,
                         CustomTextField(
