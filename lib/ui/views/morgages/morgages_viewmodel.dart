@@ -53,7 +53,12 @@ class MorgagesViewModel extends BaseViewModel {
 
  navigateToMorgagesResult() {
     _navigationService.navigateToMorgagesResultView(
-      
+     mortgagesPropertyValuation: mortgagesPropertyValuationCtrl.text,
+     mortgagesValueRatio:mortgagesValueRatioCtrl.text,
+     mortgagesTenor:mortgagesTenorCtrl.text,
+     mortgagesMonthlyIncome:mortgagesMonthlyIncomeCtrl.text,
+     mortgageList:[mortgages],
+     typePropertyList:[typeOfProperty]
     );
   }
 

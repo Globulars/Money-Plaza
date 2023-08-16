@@ -3,7 +3,6 @@ import 'package:money_plaza/services/Models/mortgages_card.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/submit_button.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
-import '../../../common/app_colors.dart';
 import '../../../common/ui_helpers.dart';
 import '../../../widgets/common/icon_box_btn/text.dart';
 import 'morgages_result_viewmodel.dart';
