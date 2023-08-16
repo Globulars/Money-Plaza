@@ -6,7 +6,6 @@ import '../../../app/app.locator.dart';
 
 class CreditCardViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
-  // final _creditCardService = locator<CreditCardService>();
   // final _toasterService = locator<ToasterService>();
 
   String cardProvider = "VISA";
@@ -63,9 +62,11 @@ class CreditCardViewModel extends BaseViewModel {
     financialInstitutes = financialInstitutesList[0];
     notifyListeners();
   }
+
   back() {
     _navigationService.back();
   }
+
   navigateToCreditCardResult() {
     _navigationService.navigateToCreditResultView(
       annualIncome: annualIncomeCtrl.text,

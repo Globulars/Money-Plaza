@@ -12,9 +12,8 @@ class MorgagesViewModel extends BaseViewModel {
   // final _toasterService = locator<ToasterService>();
   // final _mortgagesService = locator<MortgageService>();
 
- 
-   
-  TextEditingController mortgagesPropertyValuationCtrl = TextEditingController();
+  TextEditingController mortgagesPropertyValuationCtrl =
+      TextEditingController();
   TextEditingController mortgagesValueRatioCtrl = TextEditingController();
   TextEditingController mortgagesTenorCtrl = TextEditingController();
   TextEditingController mortgagesMonthlyIncomeCtrl = TextEditingController();
@@ -51,15 +50,13 @@ class MorgagesViewModel extends BaseViewModel {
     notifyListeners();
   }
 
- navigateToMorgagesResult() {
+  navigateToMorgagesResult() {
     _navigationService.navigateToMorgagesResultView(
-     mortgagesPropertyValuation: mortgagesPropertyValuationCtrl.text,
-     mortgagesValueRatio:mortgagesValueRatioCtrl.text,
-     mortgagesTenor:mortgagesTenorCtrl.text,
-     mortgagesMonthlyIncome:mortgagesMonthlyIncomeCtrl.text,
-     mortgageList:[mortgages],
-     typePropertyList:[typeOfProperty]
-    );
+        mortgagesPropertyValuation: mortgagesPropertyValuationCtrl.text,
+        mortgagesValueRatio: mortgagesValueRatioCtrl.text,
+        mortgagesTenor: mortgagesTenorCtrl.text,
+        mortgagesMonthlyIncome: mortgagesMonthlyIncomeCtrl.text,
+        mortgageList: [mortgages],
+        typePropertyList: [typeOfProperty]);
   }
-
 }

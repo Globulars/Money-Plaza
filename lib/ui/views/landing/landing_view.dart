@@ -32,9 +32,9 @@ class LandingView extends StackedView<LandingViewModel> {
             child: const SingleChildScrollView(
               child: Column(
                 children: [
-                  TopBanner(
-                      text: "getFinancialProduct",
-                      image: 'assets/images/best_deals.jpg'),
+                  const TopBanner(
+                      url:
+                          "https://admin.moneyplaza.com.hk/banner/getBannersByType?type=card"),
                   LandingBody()
                 ],
               ),

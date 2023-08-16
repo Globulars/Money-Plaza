@@ -1,5 +1,3 @@
-// ignore_for_file: non_constant_identifier_names, avoid_types_as_parameter_names, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
 import 'package:stacked/stacked.dart';
@@ -34,8 +32,8 @@ class CreditCardView extends StackedView<CreditCardViewModel> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const TopBanner(
-                  text: "compareCreditCard",
-                  image: 'assets/images/best_deals.jpg'),
+                  url:
+                      "https://admin.moneyplaza.com.hk/banner/getBannersByType?type=card"),
               Expanded(
                 child: SingleChildScrollView(
                   child: Padding(

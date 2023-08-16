@@ -40,4 +40,19 @@ class CreditCardService {
       return {"message": "${response.statusCode} error found"};
     }
   }
+
+  /////////////////////////////////////Card List////////////////////////////////
+  bannerImages(url) async {
+    try {
+      final response = await http.get(Uri.parse(url), headers: headers);
+      if (response.statusCode == 200) {
+        var data = json.decode(response.body);
+        return data;
+      } else {
+        return {"message": "${response.statusCode} error found"};
+      }
+    } catch (e) {
+      return {"message": e};
+    }
+  }
 }

@@ -10,6 +10,7 @@ class MorgagesSplashViewModel extends BaseViewModel {
   Future runStartupMorgaesInfo(organization) async {
     await Future.delayed(const Duration(seconds: 2));
 
-    _navigationService.replaceWithMorgagesContactInfoView(organization: organization);
+    _navigationService.replaceWithMorgagesContactInfoView(
+        organization: organization);
   }
 }

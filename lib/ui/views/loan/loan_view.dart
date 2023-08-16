@@ -33,8 +33,8 @@ class LoanView extends StackedView<LoanViewModel> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const TopBanner(
-                    text: "compareAndApply",
-                    image: 'assets/images/best_deals.jpg'),
+                    url:
+                        "https://admin.moneyplaza.com.hk/banner/getBannersByType?type=card"),
                 verticalSpaceMedium,
                 loanCont(context),
                 verticalSpaceTiny,

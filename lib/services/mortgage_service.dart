@@ -3,8 +3,7 @@ import 'package:http/http.dart' as http;
 import '../ui/common/app_url.dart';
 
 class MortgageService {
-
-   final ApiUrl _apiUrl = ApiUrl();
+  final ApiUrl _apiUrl = ApiUrl();
   Map<String, String> headers = {
     "Accept": "application/json",
     "content-type": "application/json"
@@ -26,7 +25,7 @@ class MortgageService {
     }
   }
 
-   /////////////////////////////////////mortgages Like////////////////////////////////
+  /////////////////////////////////////mortgages Like////////////////////////////////
 
   cardLike(body) async {
     try {
@@ -42,5 +41,4 @@ class MortgageService {
       return {"message": e};
     }
   }
-
 }
