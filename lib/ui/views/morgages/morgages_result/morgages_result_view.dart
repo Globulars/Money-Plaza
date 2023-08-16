@@ -15,11 +15,19 @@ import 'morgages_result_viewmodel.dart';
 
 class MorgagesResultView extends StackedView<MorgagesResultViewModel> {
   final String mortgagesPropertyValuation;
-  final String  mortgagesValueRatio;
+  final String mortgagesValueRatio;
   final String mortgagesTenor;
   final String mortgagesMonthlyIncome;
-    final List mortgageList, typePropertyList;
-   const MorgagesResultView(this.mortgagesPropertyValuation, this.mortgagesValueRatio, this.mortgagesTenor, this.mortgagesMonthlyIncome, this.mortgageList, this.typePropertyList, {Key? key}) : super(key: key);
+  final List mortgageList, typePropertyList;
+  const MorgagesResultView(
+      this.mortgagesPropertyValuation,
+      this.mortgagesValueRatio,
+      this.mortgagesTenor,
+      this.mortgagesMonthlyIncome,
+      this.mortgageList,
+      this.typePropertyList,
+      {Key? key})
+      : super(key: key);
 
   @override
   Widget builder(
@@ -73,25 +81,25 @@ class MorgagesResultView extends StackedView<MorgagesResultViewModel> {
               ),
               verticalSpaceSmall,
               FutureBuilder<List<MortgagesCard>>(
-                  future: viewModel.mortgagesCardData(),
-                  builder: (ctx, snapshot) {
-                    if (snapshot.connectionState == ConnectionState.done) {
-                      if (snapshot.hasError) {
-                        return Center(
-                          child: Text(
-                            snapshot.error.toString(),
-                            style: const TextStyle(fontSize: 18),
-                          ),
-                        );
-                      } else if (snapshot.hasData) {
-                        return MorgagesResultCard(mortgagesCard: snapshot.data);
-                      }
+                future: viewModel.mortgagesCardData(),
+                builder: (ctx, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.done) {
+                    if (snapshot.hasError) {
+                      return Center(
+                        child: Text(
+                          snapshot.error.toString(),
+                          style: const TextStyle(fontSize: 18),
+                        ),
+                      );
+                    } else if (snapshot.hasData) {
+                      return MorgagesResultCard(mortgagesCard: snapshot.data);
                     }
-                    return const Center(
-                      child: CircularProgressIndicator(),
-                    );
-                  },
-                ),
+                  }
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                },
+              ),
               // const MorgagesResultCard(),
             ],
           ),

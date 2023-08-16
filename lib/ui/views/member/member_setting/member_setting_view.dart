@@ -31,7 +31,8 @@ class MemberSettingView extends StackedView<MemberSettingViewModel> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const TopBanner(
-                    text: "memberZone", image: 'assets/images/best_deals.jpg'),
+                    url:
+                        "https://admin.moneyplaza.com.hk/banner/getBannersByType?type=card"),
                 Padding(
                   padding: const EdgeInsets.all(15.0),
                   child: Column(

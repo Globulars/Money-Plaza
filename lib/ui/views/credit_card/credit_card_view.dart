@@ -1,5 +1,3 @@
-// ignore_for_file: non_constant_identifier_names, avoid_types_as_parameter_names, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
 import 'package:stacked/stacked.dart';
@@ -30,55 +28,65 @@ class CreditCardView extends StackedView<CreditCardViewModel> {
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: appBar(context),
-          body: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const TopBanner(
-                  text: "compareCreditCard",
-                  image: 'assets/images/best_deals.jpg'),
-              Expanded(
-                child: SingleChildScrollView(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 15, vertical: 10),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        CustomText(
-                          text: 'knowMoreAboutYou',
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                        ),
-                        CustomText(
-                          text: 'mandatoryField',
-                          fontSize: 10,
-                        ),
-                        verticalSpaceSmall,
-                        DropdownTextfield(
-                          value: viewModel.cardProvider,
-                          onChanged: viewModel.setCardProvider,
-                          options: viewModel.cardProviderList,
-                          titleText: 'cardProviders',
-                        ),
-                        verticalSpaceSmall,
-                        DropdownTextfield(
-                          value: viewModel.cardType,
-                          onChanged: viewModel.setCard,
-                          options: viewModel.cardList,
-                          titleText: 'card',
-                        ),
-                        verticalSpaceSmall,
-                        CustomTextField(
-                          hintText: 'hk',
-                          titleText: 'annualIncome',
-                          controller: viewModel.annualIncomeCtrl,
-                        ),
-                      ],
+          body: Form(
+            key: viewModel.formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const TopBanner(
+                    url:
+                        "https://admin.moneyplaza.com.hk/banner/getBannersByType?type=card"),
+                Expanded(
+                  child: SingleChildScrollView(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 15, vertical: 10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          CustomText(
+                            text: 'knowMoreAboutYou',
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                          ),
+                          CustomText(
+                            text: 'mandatoryField',
+                            fontSize: 10,
+                          ),
+                          verticalSpaceSmall,
+                          DropdownTextfield(
+                            value: viewModel.cardProvider,
+                            onChanged: viewModel.setCardProvider,
+                            options: viewModel.cardProviderList,
+                            titleText: 'cardProviders',
+                          ),
+                          verticalSpaceSmall,
+                          DropdownTextfield(
+                            value: viewModel.cardType,
+                            onChanged: viewModel.setCard,
+                            options: viewModel.cardList,
+                            titleText: 'card',
+                          ),
+                          verticalSpaceSmall,
+                          CustomTextField(
+                            hintText: 'hk',
+                            titleText: 'annualIncome',
+                            controller: viewModel.annualIncomeCtrl,
+                          ),
+                          verticalSpaceSmall,
+                          DropdownTextfield(
+                            titleText: 'bankFinancialInstitutes',
+                            value: viewModel.financialInstitutes,
+                            onChanged: viewModel.setFinancialInstitutes,
+                            options: viewModel.financialInstitutesList,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
         bottomBar(

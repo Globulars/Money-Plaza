@@ -9,6 +9,8 @@ import '../../../services/auth_service.dart';
 import '../../../services/toaster_service.dart';
 
 class MemberLoginViewModel extends BaseViewModel {
+  var formKey = GlobalKey<FormState>();
+
   final _dialogService = locator<DialogService>();
   final _toasterService = locator<ToasterService>();
 
@@ -83,92 +85,107 @@ class MemberLoginViewModel extends BaseViewModel {
   }
 
   sendEmailCode() async {
-    Map<String, dynamic> body = {"email": emailCtrl.text, "type": "signup"};
-    var data = await _authnService.sendEmailCode(body);
-    if (data["success"] == true) {
-      _toasterService.successToast(data["message"]);
-      resetAll();
-      log(data.toString());
-    } else {
-      _toasterService.errorToast(data["message"].toString());
+    var isValid = formKey.currentState!.validate();
+    if (isValid) {
+      Map<String, dynamic> body = {"email": emailCtrl.text, "type": "signup"};
+      var data = await _authnService.sendEmailCode(body);
+      if (data["success"] == true) {
+        _toasterService.successToast(data["message"]);
+        resetAll();
+        log(data.toString());
+      } else {
+        _toasterService.errorToast(data["message"].toString());
+      }
     }
   }
 
   signupByEmail() async {
-    Map<String, dynamic> body = {
-      "code": verifyCode.text,
-      "email": emailCtrl.text,
-      "firstName": firstNameCtrl.text,
-      "interestProducts": [interestProducts],
-      "knownChannel": knownChannel,
-      "lastName": lastNameCtrl,
-      "password": passwordCtrl.text,
-      "receiveNews": receiveNews
-    };
-    var data = await _authnService.signupByEmail(body);
-    if (data["success"] == true) {
-      log(data.toString());
-      _toasterService.successToast(data["message"]);
-      resetAll();
+    var isValid = formKey.currentState!.validate();
+    if (isValid) {
+      Map<String, dynamic> body = {
+        "code": verifyCode.text,
+        "email": emailCtrl.text,
+        "firstName": firstNameCtrl.text,
+        "interestProducts": [interestProducts],
+        "knownChannel": knownChannel,
+        "lastName": lastNameCtrl,
+        "password": passwordCtrl.text,
+        "receiveNews": receiveNews
+      };
+      var data = await _authnService.signupByEmail(body);
+      if (data["success"] == true) {
+        log(data.toString());
+        _toasterService.successToast(data["message"]);
+        resetAll();
 
-      _navigationService.back();
-    } else {
-      _toasterService.errorToast(data["message"].toString());
+        _navigationService.back();
+      } else {
+        _toasterService.errorToast(data["message"].toString());
+      }
     }
   }
 
   login(type) async {
-    Map<String, dynamic> body = {
-      "login":
-          type == "email" ? emailCtrl.text : "$verifyCode${phoneNoCtrl.text}",
-      "password": passwordCtrl.text,
-    };
-    var data = await _authnService.login(body);
-    if (data?["success"] == true) {
-      log(data.toString());
-      resetAll();
-      _toasterService.successToast(data["message"]);
+    var isValid = formKey.currentState!.validate();
+    if (isValid) {
+      Map<String, dynamic> body = {
+        "login":
+            type == "email" ? emailCtrl.text : "$verifyCode${phoneNoCtrl.text}",
+        "password": passwordCtrl.text,
+      };
+      var data = await _authnService.login(body);
+      if (data?["success"] == true) {
+        log(data.toString());
+        resetAll();
+        _toasterService.successToast(data["message"]);
 
-      _navigationService.navigateToMemberSettingView();
-    } else {
-      _toasterService.errorToast(data["message"].toString());
+        _navigationService.navigateToMemberSettingView();
+      } else {
+        _toasterService.errorToast(data["message"].toString());
+      }
     }
   }
 
   sendSmsCode() async {
-    Map<String, dynamic> body = {
-      "mobile": "$verifyCode${phoneNoCtrl.text}",
-      "type": "signup"
-    };
-    var data = await _authnService.sendSmsCode(body);
-    if (data?["success"] == true) {
-      _toasterService.successToast(data["message"]);
-      resetAll();
-      log(data.toString());
-    } else {
-      _toasterService.errorToast(data["message"].toString());
+    var isValid = formKey.currentState!.validate();
+    if (isValid) {
+      Map<String, dynamic> body = {
+        "mobile": "$verifyCode${phoneNoCtrl.text}",
+        "type": "signup"
+      };
+      var data = await _authnService.sendSmsCode(body);
+      if (data?["success"] == true) {
+        _toasterService.successToast(data["message"]);
+        resetAll();
+        log(data.toString());
+      } else {
+        _toasterService.errorToast(data["message"].toString());
+      }
     }
   }
 
   signupByMobile() async {
-    Map<String, dynamic> body = {
-      "code": verifyCode.text,
-      "firstName": firstNameCtrl.text,
-      "interestProducts": [interestProducts],
-      "knownChannel": knownChannel,
-      "lastName": lastNameCtrl,
-      "mobile": "$verifyCode${phoneNoCtrl.text}",
-      "password": passwordCtrl.text,
-      "receiveNews": receiveNews
-    };
-    var data = await _authnService.signupByMobile(body);
-    if (data["success"] == true) {
-      _toasterService.successToast(data["message"]);
-      resetAll();
-      log(data.toString());
-      _navigationService.back();
-    } else {
-      _toasterService.errorToast(data["message"].toString());
+    var isValid = formKey.currentState!.validate();
+    if (isValid) {
+      Map<String, dynamic> body = {
+        "code": verifyCode.text,
+        "firstName": firstNameCtrl.text,
+        "interestProducts": [interestProducts],
+        "knownChannel": knownChannel,
+        "lastName": lastNameCtrl,
+        "mobile": "$verifyCode${phoneNoCtrl.text}",
+        "password": passwordCtrl.text,
+        "receiveNews": receiveNews
+      };
+      var data = await _authnService.signupByMobile(body);
+      if (data["success"] == true) {
+        _toasterService.successToast(data["message"]);
+        resetAll();
+        log(data.toString());
+        _navigationService.back();
+      } else {
+        _toasterService.errorToast(data["message"].toString());
+      }
     }
   }
 }

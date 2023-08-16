@@ -24,9 +24,9 @@ class CreditResultViewModel extends BaseViewModel {
   }
 
   Future<List<CreditCard>> cardListData(
-      issuersList, typesList, annualIncome) async {
+      issuersList, typesList, annualIncome, financialInstitutesList) async {
     Map<String, dynamic> body = {
-      // "companyIds": [0],
+      "companyIds": financialInstitutesList,
       // "features": ["string"],
       // "id": 0,
       // "ids": [0],
@@ -64,4 +64,3 @@ class CreditResultViewModel extends BaseViewModel {
   //   }
   // }
 }
-// https://admin.moneyplaza.com.hk/banner/getBannersByType?type=card

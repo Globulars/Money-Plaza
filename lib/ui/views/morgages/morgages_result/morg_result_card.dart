@@ -31,7 +31,7 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
             child: Card(
               child: Padding(
-                padding: const EdgeInsets.only(left: 6, top: 8,right: 6),
+                padding: const EdgeInsets.only(left: 6, top: 8, right: 6),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -65,7 +65,7 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                     //       scrollDirection: Axis.horizontal,
                     //       itemBuilder: (BuildContext context, int index) {
                     //         List items = mortgage.displayColumns ?? [];
-                          
+
                     //         return SizedBox(
                     //           width: width * 0.3,
                     //           child: Column(
@@ -107,7 +107,7 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                                 color: Colors.black.withOpacity(0.6),
                               ),
                               CustomText(
-                                text:"${mortgage.interestRate}%",
+                                text: "${mortgage.interestRate}%",
                                 fontWeight: FontWeight.bold,
                               ),
                             ],
@@ -130,14 +130,15 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                                 fontWeight: FontWeight.w600,
                                 color: Colors.black.withOpacity(0.6),
                               ),
-                              mortgage.totalRebate == "-"?CustomText(
-                                text: '6,000',
-                                fontWeight: FontWeight.bold,
-                              ):
-                              CustomText(
-                                text: '${mortgage.totalRebate}',
-                                fontWeight: FontWeight.bold,
-                              ),
+                              mortgage.totalRebate == "-"
+                                  ? CustomText(
+                                      text: '6,000',
+                                      fontWeight: FontWeight.bold,
+                                    )
+                                  : CustomText(
+                                      text: '${mortgage.totalRebate}',
+                                      fontWeight: FontWeight.bold,
+                                    ),
                             ],
                           ),
                         ),
@@ -159,7 +160,8 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                                 color: Colors.black.withOpacity(0.6),
                               ),
                               CustomText(
-                                text:mortgage.minPaymentAmountStr??"\$6713.5",
+                                text:
+                                    mortgage.minPaymentAmountStr ?? "\$6713.5",
                                 //  '\$6713.5',
                                 fontWeight: FontWeight.bold,
                               ),

@@ -63,9 +63,8 @@ class ApiUrl {
 
   ///////////////////////////////////////card Controller////////////////////////////////
   final Uri cardList = Uri.parse("$baseUrl/card/list");
-  final Uri surveyForm = Uri.parse("$baseUrl/surveyform/survey/submit/daa7596e-550e-4e3d-aa4d-0ebac22700eb");
-
-
+  final Uri surveyForm = Uri.parse(
+      "$baseUrl/surveyform/survey/submit/daa7596e-550e-4e3d-aa4d-0ebac22700eb");
 
   final Uri cardLike = Uri.parse("$baseUrl/card/like/");
   final Uri cardPreview = Uri.parse("$baseUrl/card/preview/");
@@ -107,7 +106,7 @@ class ApiUrl {
   final Uri menuGetTopMenus = Uri.parse("$baseUrl/menu/getTopMenus");
   final Uri menuList = Uri.parse("$baseUrl/menu/list");
 
-   /////////////////////////////////////mortgages Controller////////////////////////////////
+  /////////////////////////////////////mortgages Controller////////////////////////////////
   final Uri mortgageDelete = Uri.parse("$baseUrl/mortgage/delete/");
   final Uri mortgageList = Uri.parse("$baseUrl/mortgage/list");
   final Uri mortgageLike = Uri.parse("$baseUrl/mortgage/like/");
