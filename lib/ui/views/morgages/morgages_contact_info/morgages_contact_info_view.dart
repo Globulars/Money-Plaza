@@ -56,22 +56,30 @@ class MorgagesContactInfoView
                         verticalSpaceTiny,
                         CustomTextField(
                           titleText: 'email',
+                          controller: viewModel.emailCtrl,
                         ),
                         verticalSpaceTiny,
                         CustomTextField(
                           titleText: 'fullName',
+                          controller: viewModel.nameCtrl,
                         ),
                         verticalSpaceTiny,
                         CustomTextField(
                           titleText: 'referenceNumber',
+                          controller: viewModel.refeNoCtrl,
                         ),
                         verticalSpaceTiny,
                         DropdownTextfield(
                           titleText: 'contactMethod',
+                          value: organization,
                           onChanged: (String) {},
-                          options: [],
+                          options: [organization],
                         ),
-                        CustomTextField(),
+                        verticalSpaceTiny,
+                        CustomTextField(
+                          titleText: 'contactNo',
+                          controller: viewModel.contactNoCtrl,
+                        ),
                       ],
                     ),
                   ),
@@ -95,7 +103,9 @@ class MorgagesContactInfoView
               SubmitButton(
                 image: myIcons.done,
                 imgwidth: 18,
-                onPress: viewModel.navigateToMorgagesResult,
+                onPress: () {
+                  viewModel.submitSurveyForm(organization);
+                },
                 text: 'done',
                 height: 40,
                 width: 80,
