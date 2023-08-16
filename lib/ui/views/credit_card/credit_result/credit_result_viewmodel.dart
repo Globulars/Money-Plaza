@@ -26,7 +26,7 @@ class CreditResultViewModel extends BaseViewModel {
 
   Future<List<CreditCard>> cardListData(
       issuersList, typesList, annualIncome) async {
-        log("  $issuersList, #$typesList, #$annualIncome");
+    log("  $issuersList, #$typesList, #$annualIncome");
     Map<String, dynamic> body = {
       // "companyIds": [0],
       // "features": ["string"],
@@ -35,7 +35,7 @@ class CreditResultViewModel extends BaseViewModel {
       // "income": annualIncome,
       "issuers": issuersList,
       // "keyword": "string",
-      "limit": 50,
+      // "limit": 50,
       "order": "ascending",
       // "previewToken": "string",
       // "publishDate": "yyyy-MM-dd HH:mm:ss",
@@ -45,10 +45,7 @@ class CreditResultViewModel extends BaseViewModel {
     };
     var data = await _creditCardService.cardList(body);
     if (data?["success"] == true) {
-      // log(data.toString());
-      // return List<CreditCard>.from(data["data"]["records"]);
       List dataList = data["data"]["records"];
-      // dataList.map((e) => log("===>${e["issuer"]}"));
       log("===>${dataList.length}");
       List<CreditCard> creditCardList =
           dataList.map((data) => CreditCard.fromJson(data)).toList();
@@ -58,13 +55,11 @@ class CreditResultViewModel extends BaseViewModel {
       throw Exception(data["message"].toString());
     }
   }
-    submitSurveyForm() async {
-    Map<String, dynamic> body = {
-    };
-    var data = await _creditCardService.submitSurveyForm(body);
+
+  submitSurveyForm() async {
+    var data = await _creditCardService.submitSurveyForm();
     if (data["success"] == true) {
       _toasterService.successToast(data["message"]);
-      log(data.toString());
       _navigationService.back();
     } else {
       _toasterService.errorToast(data["message"].toString());
