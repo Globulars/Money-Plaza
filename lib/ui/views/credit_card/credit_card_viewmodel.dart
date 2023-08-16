@@ -5,6 +5,7 @@ import 'package:stacked_services/stacked_services.dart';
 import '../../../app/app.locator.dart';
 
 class CreditCardViewModel extends BaseViewModel {
+  var formKey = GlobalKey<FormState>();
   final _navigationService = locator<NavigationService>();
   // final _toasterService = locator<ToasterService>();
 
@@ -68,11 +69,14 @@ class CreditCardViewModel extends BaseViewModel {
   }
 
   navigateToCreditCardResult() {
-    _navigationService.navigateToCreditResultView(
-      annualIncome: annualIncomeCtrl.text,
-      issuersList: [cardProvider],
-      typesList: [cardType],
-      financialInstitutesList: [financialInstitutesValue],
-    );
+    var isValid = formKey.currentState!.validate();
+    if (isValid) {
+      _navigationService.navigateToCreditResultView(
+        annualIncome: annualIncomeCtrl.text,
+        issuersList: [cardProvider],
+        typesList: [cardType],
+        financialInstitutesList: [financialInstitutesValue],
+      );
+    }
   }
 }

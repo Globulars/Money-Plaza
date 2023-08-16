@@ -55,65 +55,68 @@ class CreditCardFilterDialog extends StackedView<CreditCardViewModel> {
               close: true,
             ),
             verticalSpaceTiny,
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 6),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  DropdownTextfield(
-                    value: viewModel.cardProvider,
-                    onChanged: viewModel.setCardProvider,
-                    options: viewModel.cardProviderList,
-                    titleText: 'cardProviders',
-                  ),
-                  verticalSpaceSmall,
-                  DropdownTextfield(
-                    value: viewModel.cardType,
-                    onChanged: viewModel.setCard,
-                    options: viewModel.cardList,
-                    titleText: 'card',
-                  ),
-                  verticalSpaceSmall,
-                  CustomTextField(
-                    hintText: 'hk',
-                    titleText: 'annualIncome',
-                    controller: viewModel.annualIncomeCtrl,
-                  ),
-                  verticalSpaceSmall,
-                  DropdownTextfield(
-                    titleText: 'bankFinancialInstitutes',
-                    value: viewModel.financialInstitutes,
-                    onChanged: viewModel.setFinancialInstitutes,
-                    options: viewModel.financialInstitutesList,
-                  ),
-                  verticalSpaceSmall,
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SubmitButton(
-                        height: 40,
-                        width: 80,
-                        boxColor: Colors.transparent,
-                        image: myIcons.iconPowerReset,
-                        imgwidth: 15,
-                        text: 'resetAll',
-                        onPress: viewModel.resetAll,
-                        color: darkGreenLight,
-                      ),
-                      SubmitButton(
-                        text: 'matching',
-                        onPress: () {
-                          log("message");
-                          viewModel.back();
-                          viewModel.back();
-                          viewModel.navigateToCreditCardResult();
-                        },
-                        height: 40,
-                        width: 100,
-                      ),
-                    ],
-                  )
-                ],
+            Form(
+              key: viewModel.formKey,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 6),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    DropdownTextfield(
+                      value: viewModel.cardProvider,
+                      onChanged: viewModel.setCardProvider,
+                      options: viewModel.cardProviderList,
+                      titleText: 'cardProviders',
+                    ),
+                    verticalSpaceSmall,
+                    DropdownTextfield(
+                      value: viewModel.cardType,
+                      onChanged: viewModel.setCard,
+                      options: viewModel.cardList,
+                      titleText: 'card',
+                    ),
+                    verticalSpaceSmall,
+                    CustomTextField(
+                      hintText: 'hk',
+                      titleText: 'annualIncome',
+                      controller: viewModel.annualIncomeCtrl,
+                    ),
+                    verticalSpaceSmall,
+                    DropdownTextfield(
+                      titleText: 'bankFinancialInstitutes',
+                      value: viewModel.financialInstitutes,
+                      onChanged: viewModel.setFinancialInstitutes,
+                      options: viewModel.financialInstitutesList,
+                    ),
+                    verticalSpaceSmall,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SubmitButton(
+                          height: 40,
+                          width: 80,
+                          boxColor: Colors.transparent,
+                          image: myIcons.iconPowerReset,
+                          imgwidth: 15,
+                          text: 'resetAll',
+                          onPress: viewModel.resetAll,
+                          color: darkGreenLight,
+                        ),
+                        SubmitButton(
+                          text: 'matching',
+                          onPress: () {
+                            log("message");
+                            viewModel.back();
+                            viewModel.back();
+                            viewModel.navigateToCreditCardResult();
+                          },
+                          height: 40,
+                          width: 100,
+                        ),
+                      ],
+                    )
+                  ],
+                ),
               ),
             ),
           ],
