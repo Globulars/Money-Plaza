@@ -110,14 +110,17 @@ class MemberLoginView extends StackedView<MemberLoginViewModel> {
                     ),
                   ];
                 },
-                body: const Padding(
-                  padding: EdgeInsets.all(15.0),
-                  child: TabBarView(
-                    physics: NeverScrollableScrollPhysics(),
-                    children: <Widget>[
-                      MemberLoginTab(),
-                      RegisterTab(),
-                    ],
+                body: Form(
+                  key: viewModel.formKey,
+                  child: const Padding(
+                    padding: EdgeInsets.all(15.0),
+                    child: TabBarView(
+                      physics: NeverScrollableScrollPhysics(),
+                      children: <Widget>[
+                        MemberLoginTab(),
+                        RegisterTab(),
+                      ],
+                    ),
                   ),
                 ),
               ),

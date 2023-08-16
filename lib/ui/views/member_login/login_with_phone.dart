@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
@@ -48,19 +49,26 @@ class LoginWithPhone extends ViewModelWidget<MemberLoginViewModel> {
               VerticalDivider(color: darkGreenLight.withOpacity(0.8)),
               Expanded(
                 child: TextFormField(
-                    textAlign: TextAlign.center,
-                    controller: viewModel.phoneNoCtrl,
-                    keyboardType: TextInputType.number,
-                    decoration: InputDecoration(
-                      contentPadding:
-                          EdgeInsets.only(bottom: 12.5, right: width * 0.15),
-                      border: InputBorder.none,
-                      hintText: 'Phone No',
-                      hintStyle: const TextStyle(
-                        fontSize: 14,
-                        fontFamily: 'Roboto',
-                      ),
-                    )),
+                  textAlign: TextAlign.center,
+                  controller: viewModel.phoneNoCtrl,
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                    contentPadding:
+                        EdgeInsets.only(bottom: 12.5, right: width * 0.15),
+                    border: InputBorder.none,
+                    hintText: 'Phone No',
+                    hintStyle: const TextStyle(
+                      fontSize: 14,
+                      fontFamily: 'Roboto',
+                    ),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'validation'.tr();
+                    }
+                    return null;
+                  },
+                ),
               ),
             ],
           ),
