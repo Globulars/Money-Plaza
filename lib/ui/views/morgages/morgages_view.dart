@@ -26,10 +26,10 @@ class MorgagesView extends StackedView<MorgagesViewModel> {
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: appBar(context),
-          body:  const Column(
+          body: const Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-                   TopBanner(
+              TopBanner(
                   url:
                       "https://admin.moneyplaza.com.hk/banner/getBannersByType?type=mortgage"),
               MorgTextFields(),
