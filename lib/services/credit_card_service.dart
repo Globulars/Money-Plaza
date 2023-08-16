@@ -25,20 +25,11 @@ class CreditCardService {
   }
   /////////////////////////////////////Card Like////////////////////////////////
 
-  submitSurveyForm() async {
+  submitSurveyForm(body) async {
     http.Response response = await http.post(
       Uri.parse(
           "https://admin.moneyplaza.com.hk/surveyform/survey/submit/daa7596e-550e-4e3d-aa4d-0ebac22700eb"),
-      body: json.encode({
-        "result": {
-          "fieldName": "email",
-          "fieldTitle": "E-mail",
-          "fieldValue": "mudassirmukhtar4@gmail.com",
-          "fieldType": "unique",
-          "fieldOrder": "",
-          "fieldAttrs": []
-        }
-      }),
+      body: json.encode(body),
       headers: <String, String>{"Content-Type": "application/json"},
     );
     if (response.statusCode == 200) {

@@ -17,7 +17,9 @@ import 'morgages_contact_info_viewmodel.dart';
 
 class MorgagesContactInfoView
     extends StackedView<MorgagesContactInfoViewModel> {
-  const MorgagesContactInfoView({Key? key}) : super(key: key);
+  final String organization;
+  const MorgagesContactInfoView({Key? key, required this.organization})
+      : super(key: key);
 
   @override
   Widget builder(
