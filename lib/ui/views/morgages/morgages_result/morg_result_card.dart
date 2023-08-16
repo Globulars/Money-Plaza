@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:money_plaza/services/Models/mortgages_card.dart';
+import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/submit_button.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
@@ -130,10 +131,7 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                                 fontWeight: FontWeight.w600,
                                 color: Colors.black.withOpacity(0.6),
                               ),
-                              mortgage.totalRebate == "-"?CustomText(
-                                text: '6,000',
-                                fontWeight: FontWeight.bold,
-                              ):
+                              
                               CustomText(
                                 text: '${mortgage.totalRebate}',
                                 fontWeight: FontWeight.bold,
@@ -172,8 +170,8 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                     CustomText(
                       text: mortgage.advantage.toString(),
                       // 'moneyPlazaExclusiveOffer',
-                      // fontSize: 12,
-                      // color: darkGreenLight,
+                      fontSize: 12,
+                      color: darkGreenLight,
                     ),
                     verticalSpaceSmall,
                     // CustomText(
