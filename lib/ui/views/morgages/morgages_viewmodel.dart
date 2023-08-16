@@ -52,7 +52,9 @@ class MorgagesViewModel extends BaseViewModel {
   }
 
  navigateToMorgagesResult() {
-    _navigationService.navigateToMorgagesResultView();
+    _navigationService.navigateToMorgagesResultView(
+      
+    );
   }
 
 }

@@ -131,6 +131,10 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                                 fontWeight: FontWeight.w600,
                                 color: Colors.black.withOpacity(0.6),
                               ),
+                              mortgage.totalRebate == "-"?CustomText(
+                                text: '6,000',
+                                fontWeight: FontWeight.bold,
+                              ):
                               CustomText(
                                 text: '${mortgage.totalRebate}',
                                 fontWeight: FontWeight.bold,
