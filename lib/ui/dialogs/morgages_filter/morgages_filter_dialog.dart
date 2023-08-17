@@ -6,13 +6,14 @@ import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
+import '../../../services/Models/list_of_banks.dart';
+import '../../views/morgages/morgages_viewmodel.dart';
 import '../../widgets/common/custom_text_field/custom_text_field.dart';
 import '../../widgets/common/dropdown_textfield/dropdown_textfield.dart';
 import '../../widgets/common/icon_box_btn/sub_bar.dart';
 import '../../widgets/common/icon_box_btn/submit_button.dart';
-import 'morgages_filter_dialog_model.dart';
 
-class MorgagesFilterDialog extends StackedView<MorgagesFilterDialogModel> {
+class MorgagesFilterDialog extends StackedView<MorgagesViewModel> {
   final DialogRequest request;
   final Function(DialogResponse) completer;
 
@@ -25,7 +26,7 @@ class MorgagesFilterDialog extends StackedView<MorgagesFilterDialogModel> {
   @override
   Widget builder(
     BuildContext context,
-    MorgagesFilterDialogModel viewModel,
+    MorgagesViewModel viewModel,
     Widget? child,
   ) {
     final width = MediaQuery.of(context).size.width;
@@ -53,53 +54,86 @@ class MorgagesFilterDialog extends StackedView<MorgagesFilterDialogModel> {
               close: true,
             ),
             verticalSpaceTiny,
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 6),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  DropdownTextfield(
-                    titleText: 'mortgages',
-                    onChanged: (String) {},
-                    options: [],
-                  ),
-                  verticalSpaceSmall,
-                  CustomTextField(
-                    titleText: 'mortgageLoadAmount',
-                    hintText: 'hk',
-                  ),
-                  verticalSpaceSmall,
-                  CustomTextField(
-                    titleText: 'mortgageTenors',
-                    hintText: 'year',
-                  ),
-                  verticalSpaceSmall,
-                  DropdownTextfield(
-                    titleText: 'bankFinancialInstitutes',
-                    onChanged: (String) {},
-                    options: [],
-                  ),
-                  verticalSpaceSmall,
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SubmitButton(
-                        height: 40,
-                        width: 80,
-                        boxColor: Colors.transparent,
-                        image: myIcons.iconPowerReset,
-                        imgwidth: 15,
-                        text: 'resetAll',
-                        color: darkGreenLight,
-                      ),
-                      SubmitButton(
-                        text: 'matching',
-                        height: 40,
-                        width: 100,
-                      ),
-                    ],
-                  )
-                ],
+            Form(
+              key: viewModel.formKey,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 6),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    DropdownTextfield(
+                      onChanged: viewModel.setMortgages,
+                      value: viewModel.mortgages,
+                      options: viewModel.mortgagesList,
+                      titleText: 'mortgages',
+                    ),
+                    verticalSpaceSmall,
+                    CustomTextField(
+                      controller: viewModel.mortgagesPropertyValuationCtrl,
+                      titleText: 'mortgageLoadAmount',
+                      hintText: 'hk',
+                    ),
+                    verticalSpaceSmall,
+                    CustomTextField(
+                      controller: viewModel.mortgagesTenorCtrl,
+                      titleText: 'mortgageTenors',
+                      hintText: 'year',
+                    ),
+                    verticalSpaceSmall,
+                    FutureBuilder<List<BankList>>(
+                      future: viewModel.mortgagesBankListData(),
+                      builder: (ctx, snapshot) {
+                        if (snapshot.connectionState == ConnectionState.done) {
+                          if (snapshot.hasError) {
+                            return Center(
+                              child: Text(
+                                snapshot.error.toString(),
+                                style: const TextStyle(fontSize: 18),
+                              ),
+                            );
+                          } else if (snapshot.hasData) {
+                            List<BankList>? bankList = snapshot.data;
+                            return DropdownTextfield(
+                              titleText: 'bankFinancialInstitutes',
+                              onChanged: (String) {},
+                              options: bankList,
+                            );
+                          }
+                        }
+                        return DropdownTextfield(
+                          titleText: 'bankFinancialInstitutes',
+                          onChanged: (String) {},
+                          options: [],
+                        );
+                      },
+                    ),
+                    // DropdownTextfield(
+                    //   titleText: 'bankFinancialInstitutes',
+                    //   onChanged: (String) {},
+                    //   options: [],
+                    // ),
+                    verticalSpaceSmall,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SubmitButton(
+                          height: 40,
+                          width: 80,
+                          boxColor: Colors.transparent,
+                          image: myIcons.iconPowerReset,
+                          imgwidth: 15,
+                          text: 'resetAll',
+                          color: darkGreenLight,
+                        ),
+                        SubmitButton(
+                          text: 'matching',
+                          height: 40,
+                          width: 100,
+                        ),
+                      ],
+                    )
+                  ],
+                ),
               ),
             ),
           ],
@@ -109,6 +143,6 @@ class MorgagesFilterDialog extends StackedView<MorgagesFilterDialogModel> {
   }
 
   @override
-  MorgagesFilterDialogModel viewModelBuilder(BuildContext context) =>
-      MorgagesFilterDialogModel();
+  MorgagesViewModel viewModelBuilder(BuildContext context) =>
+      MorgagesViewModel();
 }
