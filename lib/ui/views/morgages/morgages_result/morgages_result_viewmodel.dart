@@ -12,8 +12,8 @@ class MorgagesResultViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
   final _mortgagesService = locator<MortgageService>();
 
+
   setCardSelect(value, MortgagesCard mortgage) {
-    log("====================>>>");
     mortgage.checkBox = value;
     notifyListeners();
   }

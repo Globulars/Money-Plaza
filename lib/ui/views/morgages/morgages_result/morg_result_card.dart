@@ -47,11 +47,14 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                             ),
                             Row(
                               children: [
-                                Checkbox(
-                                  value: mortgage.checkBox,
-                                  onChanged: (value) {
-                                    viewModel.setCardSelect(value, mortgage);
-                                  },
+                                SizedBox(                              
+                                  width: 30,
+                                  child: Checkbox(
+                                    value: mortgage.checkBox,
+                                    onChanged: (value) {
+                                      viewModel.setCardSelect(value, mortgage);
+                                    },
+                                  ),
                                 ),
                                 CustomText(
                                   text: 'select',
