@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:money_plaza/app/app.router.dart';
 import 'package:stacked/stacked.dart';
@@ -75,17 +73,21 @@ class MorgagesViewModel extends BaseViewModel {
   }
 
   setBankList(value) {
-    log(value.name.toString());
     bankList = value;
-    log(value.toString());
     notifyListeners();
   }
 
   resetAll() {
-    mortgagesPropertyValuationCtrl.text = "10000";
-    mortgagesValueRatioCtrl.text = "15";
+    bankList = bankDataList[0];
     mortgagesTenorCtrl.text = "25";
+    typeOfProperty = "New building";
+    mortgagesValueRatioCtrl.text = "15";
+    typeOfPropertyForApi = "new_property";
+    mortgagesForApi = "first_sub_mortgage";
     mortgagesMonthlyIncomeCtrl.text = "5000000";
+    mortgages = "New Owner / Mortgages Transfer";
+    mortgagesPropertyValuationCtrl.text = "10000";
+    notifyListeners();
   }
 
   navigateToMorgagesResult() {
@@ -97,8 +99,12 @@ class MorgagesViewModel extends BaseViewModel {
           mortgagesTenor: mortgagesTenorCtrl.text,
           mortgagesMonthlyIncome: mortgagesMonthlyIncomeCtrl.text,
           mortgageList: [mortgagesForApi],
-          typePropertyList: [typeOfProperty]);
+          typePropertyList: [typeOfProperty], companyIds: [bankList]);
     }
+  }
+
+  back() {
+    _navigationService.back();
   }
 
   Future<List<BankList>> mortgagesBankListData() async {
@@ -107,7 +113,7 @@ class MorgagesViewModel extends BaseViewModel {
       if (data?["success"] == true) {
         List dataList = data["data"];
         bankDataList = dataList.map((data) => BankList.fromJson(data)).toList();
-        bankList =bankDataList[0];
+        bankList = bankDataList[0];
         notifyListeners();
         return bankDataList;
       } else {

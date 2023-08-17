@@ -45,7 +45,8 @@ class MorgagesResultViewModel extends BaseViewModel {
       mortgagesTenor,
       mortgagesMonthlyIncome,
       mortgageList,
-      typePropertyList) async {
+      typePropertyList,
+      companyIds) async {
     Map<String, dynamic> body = {
       "types": mortgageList,
       "order": "descending",
@@ -54,7 +55,7 @@ class MorgagesResultViewModel extends BaseViewModel {
       "tenor": mortgagesTenor,
       "propertyType": typePropertyList,
       "features": [],
-      "companyIds": [],
+      "companyIds": companyIds,
       "income": mortgagesMonthlyIncome,
       "amount": mortgagesPropertyValuation
     };

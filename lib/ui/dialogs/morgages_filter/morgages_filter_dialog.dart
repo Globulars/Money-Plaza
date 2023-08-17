@@ -120,10 +120,16 @@ class MorgagesFilterDialog extends StackedView<MorgagesViewModel> {
                           image: myIcons.iconPowerReset,
                           imgwidth: 15,
                           text: 'resetAll',
+                          onPress: viewModel.resetAll,
                           color: darkGreenLight,
                         ),
                         SubmitButton(
                           text: 'matching',
+                          onPress: () {
+                            viewModel.back();
+                            viewModel.back();
+                            viewModel.navigateToMorgagesResult();
+                          },
                           height: 40,
                           width: 100,
                         ),

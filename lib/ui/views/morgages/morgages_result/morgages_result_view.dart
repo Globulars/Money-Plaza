@@ -14,11 +14,11 @@ import 'morg_result_card.dart';
 import 'morgages_result_viewmodel.dart';
 
 class MorgagesResultView extends StackedView<MorgagesResultViewModel> {
-  final String mortgagesPropertyValuation;
-  final String mortgagesValueRatio;
-  final String mortgagesTenor;
-  final String mortgagesMonthlyIncome;
-  final List mortgageList, typePropertyList;
+  final String mortgagesPropertyValuation,
+      mortgagesValueRatio,
+      mortgagesTenor,
+      mortgagesMonthlyIncome;
+  final List mortgageList, typePropertyList, companyIds;
   const MorgagesResultView(
       this.mortgagesPropertyValuation,
       this.mortgagesValueRatio,
@@ -26,6 +26,7 @@ class MorgagesResultView extends StackedView<MorgagesResultViewModel> {
       this.mortgagesMonthlyIncome,
       this.mortgageList,
       this.typePropertyList,
+      this.companyIds,
       {Key? key})
       : super(key: key);
 
@@ -88,7 +89,8 @@ class MorgagesResultView extends StackedView<MorgagesResultViewModel> {
                     mortgagesTenor,
                     mortgagesMonthlyIncome,
                     mortgageList,
-                    typePropertyList),
+                    typePropertyList,
+                    companyIds),
                 builder: (ctx, snapshot) {
                   if (snapshot.connectionState == ConnectionState.done) {
                     if (snapshot.hasError) {

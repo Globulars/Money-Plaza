@@ -391,6 +391,7 @@ class StackedRouter extends _i1.RouterBase {
             args.mortgagesMonthlyIncome,
             args.mortgageList,
             args.typePropertyList,
+            args.companyIds,
             key: args.key),
         settings: data,
       );
@@ -539,6 +540,7 @@ class MorgagesResultViewArguments {
     required this.mortgagesMonthlyIncome,
     required this.mortgageList,
     required this.typePropertyList,
+    required this.companyIds,
     this.key,
   });
 
@@ -554,11 +556,13 @@ class MorgagesResultViewArguments {
 
   final List<dynamic> typePropertyList;
 
+  final List<dynamic> companyIds;
+
   final _i31.Key? key;
 
   @override
   String toString() {
-    return '{"mortgagesPropertyValuation": "$mortgagesPropertyValuation", "mortgagesValueRatio": "$mortgagesValueRatio", "mortgagesTenor": "$mortgagesTenor", "mortgagesMonthlyIncome": "$mortgagesMonthlyIncome", "mortgageList": "$mortgageList", "typePropertyList": "$typePropertyList", "key": "$key"}';
+    return '{"mortgagesPropertyValuation": "$mortgagesPropertyValuation", "mortgagesValueRatio": "$mortgagesValueRatio", "mortgagesTenor": "$mortgagesTenor", "mortgagesMonthlyIncome": "$mortgagesMonthlyIncome", "mortgageList": "$mortgageList", "typePropertyList": "$typePropertyList", "companyIds": "$companyIds", "key": "$key"}';
   }
 
   @override
@@ -570,6 +574,7 @@ class MorgagesResultViewArguments {
         other.mortgagesMonthlyIncome == mortgagesMonthlyIncome &&
         other.mortgageList == mortgageList &&
         other.typePropertyList == typePropertyList &&
+        other.companyIds == companyIds &&
         other.key == key;
   }
 
@@ -581,6 +586,7 @@ class MorgagesResultViewArguments {
         mortgagesMonthlyIncome.hashCode ^
         mortgageList.hashCode ^
         typePropertyList.hashCode ^
+        companyIds.hashCode ^
         key.hashCode;
   }
 }
@@ -935,6 +941,7 @@ extension NavigatorStateExtension on _i32.NavigationService {
     required String mortgagesMonthlyIncome,
     required List<dynamic> mortgageList,
     required List<dynamic> typePropertyList,
+    required List<dynamic> companyIds,
     _i31.Key? key,
     int? routerId,
     bool preventDuplicates = true,
@@ -950,6 +957,7 @@ extension NavigatorStateExtension on _i32.NavigationService {
             mortgagesMonthlyIncome: mortgagesMonthlyIncome,
             mortgageList: mortgageList,
             typePropertyList: typePropertyList,
+            companyIds: companyIds,
             key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
@@ -1381,6 +1389,7 @@ extension NavigatorStateExtension on _i32.NavigationService {
     required String mortgagesMonthlyIncome,
     required List<dynamic> mortgageList,
     required List<dynamic> typePropertyList,
+    required List<dynamic> companyIds,
     _i31.Key? key,
     int? routerId,
     bool preventDuplicates = true,
@@ -1396,6 +1405,7 @@ extension NavigatorStateExtension on _i32.NavigationService {
             mortgagesMonthlyIncome: mortgagesMonthlyIncome,
             mortgageList: mortgageList,
             typePropertyList: typePropertyList,
+            companyIds: companyIds,
             key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,

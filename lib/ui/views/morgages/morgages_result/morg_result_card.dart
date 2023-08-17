@@ -47,7 +47,7 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                             ),
                             Row(
                               children: [
-                                SizedBox(                              
+                                SizedBox(
                                   width: 30,
                                   child: Checkbox(
                                     value: mortgage.checkBox,

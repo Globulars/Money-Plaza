@@ -10,7 +10,7 @@ import 'dropdown_textfield_model.dart';
 
 class ModelDropdown extends StackedView<DropdownTextfieldModel> {
   final String hintText;
-  final List<dynamic > options;
+  final List<dynamic> options;
   dynamic value;
   String? titleText;
   double? height;
@@ -55,8 +55,8 @@ class ModelDropdown extends StackedView<DropdownTextfieldModel> {
           ),
           width: double.infinity,
           height: height ?? 40,
-          child: FormField<dynamic >(
-            builder: (FormFieldState<dynamic > state) {
+          child: FormField<dynamic>(
+            builder: (FormFieldState<dynamic> state) {
               return InputDecorator(
                 decoration: InputDecoration(
                   contentPadding:
@@ -76,8 +76,8 @@ class ModelDropdown extends StackedView<DropdownTextfieldModel> {
                     value: value,
                     isDense: true,
                     onChanged: onChanged,
-                    items: options.map((dynamic  value) {
-                      return DropdownMenuItem<dynamic >(
+                    items: options.map((dynamic value) {
+                      return DropdownMenuItem<dynamic>(
                         value: value,
                         child: Text(value.name.toString()).tr(),
                       );
