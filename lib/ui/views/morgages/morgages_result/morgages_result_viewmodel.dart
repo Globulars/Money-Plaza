@@ -11,7 +11,17 @@ class MorgagesResultViewModel extends BaseViewModel {
   final _dialogService = locator<DialogService>();
   final _navigationService = locator<NavigationService>();
   final _mortgagesService = locator<MortgageService>();
+  late List<MortgagesCard> mortgagesCard = [];
+  bool selectAll = false;
+  setSelectAll() {
+    selectAll = !selectAll;
+    for (var e in mortgagesCard) {
+      e.checkBox = selectAll;
+    }
 
+    log("$selectAll======>${mortgagesCard[0].checkBox}");
+    notifyListeners();
+  }
 
   setCardSelect(value, MortgagesCard mortgage) {
     mortgage.checkBox = value;
@@ -48,16 +58,21 @@ class MorgagesResultViewModel extends BaseViewModel {
       "income": mortgagesMonthlyIncome,
       "amount": mortgagesPropertyValuation
     };
+    if (mortgagesCard.isEmpty) {
+      var data = await _mortgagesService.mortgagesList(body);
+      if (data?["success"] == true) {
+        log(data.toString());
+        List dataList = data["data"]["records"];
+        mortgagesCard =
+            dataList.map((data) => MortgagesCard.fromJson(data)).toList();
 
-    var data = await _mortgagesService.mortgagesList(body);
-    if (data?["success"] == true) {
-      log(data.toString());
-      // return List<CreditCard>.from(data["data"]["records"]);
-      List dataList = data["data"]["records"];
-      return dataList.map((data) => MortgagesCard.fromJson(data)).toList();
+        return mortgagesCard;
+      } else {
+        log(data["message"].toString());
+        throw Exception(data["message"].toString());
+      }
     } else {
-      log(data["message"].toString());
-      throw Exception(data["message"].toString());
+      return mortgagesCard;
     }
   }
 }
