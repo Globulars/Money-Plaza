@@ -12,6 +12,12 @@ class MorgagesResultViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
   final _mortgagesService = locator<MortgageService>();
 
+  setCardSelect(value, MortgagesCard mortgage) {
+    log("====================>>>");
+    mortgage.checkBox = value;
+    notifyListeners();
+  }
+
   void showMorgagesFilter() {
     _dialogService.showCustomDialog(
       variant: DialogType.morgagesFilter,
@@ -33,7 +39,7 @@ class MorgagesResultViewModel extends BaseViewModel {
     Map<String, dynamic> body = {
       "types": mortgageList,
       "order": "descending",
-       "ltvRatio":mortgagesValueRatio ,
+      "ltvRatio": mortgagesValueRatio,
       "sort": "ordering",
       "tenor": mortgagesTenor,
       "propertyType": typePropertyList,

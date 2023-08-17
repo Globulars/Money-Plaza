@@ -8,24 +8,24 @@ import '../../../app/app.locator.dart';
 
 class MorgagesViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
+  var formKey = GlobalKey<FormState>();
   // final _dialogService = locator<DialogService>();
   // final _toasterService = locator<ToasterService>();
   // final _mortgagesService = locator<MortgageService>();
 
-  TextEditingController mortgagesPropertyValuationCtrl = TextEditingController();   
-  TextEditingController mortgagesValueRatioCtrl = TextEditingController();
-  TextEditingController mortgagesTenorCtrl = TextEditingController();
-  TextEditingController mortgagesMonthlyIncomeCtrl = TextEditingController();
+  TextEditingController mortgagesPropertyValuationCtrl =
+      TextEditingController(text: "10000");
+  TextEditingController mortgagesValueRatioCtrl =
+      TextEditingController(text: "15");
+  TextEditingController mortgagesTenorCtrl = TextEditingController(text: "25");
+  TextEditingController mortgagesMonthlyIncomeCtrl =
+      TextEditingController(text: "5000000");
 
   String mortgages = "New Owner / Mortgages Transfer";
   String mortgagesForApi = "first_sub_mortgage";
 
   String typeOfProperty = "New building";
   String typeOfPropertyForApi = "new_property";
- 
-
-
-
 
   final mortgagesList = [
     "New Owner / Mortgages Transfer",
@@ -54,17 +54,19 @@ class MorgagesViewModel extends BaseViewModel {
   }
 
   setTypeOfProperty(value) {
-    if(value == typeOfPropertyList[0]){
-    typeOfPropertyForApi = "new_property";
-    }else if(value == typeOfPropertyList[1]){
-      typeOfPropertyForApi =  "private_property"; 
-    }else if(value == typeOfPropertyList[2]){
-      typeOfPropertyForApi =  "estate"; 
-    }else if(value == typeOfPropertyList[3]){
-      typeOfPropertyForApi =  "hos_property1"; 
-    }else{
-      typeOfPropertyForApi =  "hos_property2"; 
+    if (value == typeOfPropertyList[0]) {
+      typeOfPropertyForApi = "new_property";
+    } else if (value == typeOfPropertyList[1]) {
+      typeOfPropertyForApi = "private_property";
+    } else if (value == typeOfPropertyList[2]) {
+      typeOfPropertyForApi = "estate";
+    } else if (value == typeOfPropertyList[3]) {
+      typeOfPropertyForApi = "hos_property1";
+    } else {
+      typeOfPropertyForApi = "hos_property2";
     }
+    typeOfProperty = value;
+    notifyListeners();
   }
 
   resetAll() {
@@ -74,18 +76,16 @@ class MorgagesViewModel extends BaseViewModel {
     mortgagesMonthlyIncomeCtrl.clear();
   }
 
-  // setTypeOfProperty(value) {
-  //   typeOfProperty = value;
-  //   notifyListeners();
-  // }
-
   navigateToMorgagesResult() {
-    _navigationService.navigateToMorgagesResultView(
-        mortgagesPropertyValuation: mortgagesPropertyValuationCtrl.text,
-        mortgagesValueRatio: mortgagesValueRatioCtrl.text,
-        mortgagesTenor: mortgagesTenorCtrl.text,
-        mortgagesMonthlyIncome: mortgagesMonthlyIncomeCtrl.text,
-        mortgageList: [mortgagesForApi],
-        typePropertyList: [typeOfProperty]);
+    var isValid = formKey.currentState!.validate();
+    if (isValid) {
+      _navigationService.navigateToMorgagesResultView(
+          mortgagesPropertyValuation: mortgagesPropertyValuationCtrl.text,
+          mortgagesValueRatio: mortgagesValueRatioCtrl.text,
+          mortgagesTenor: mortgagesTenorCtrl.text,
+          mortgagesMonthlyIncome: mortgagesMonthlyIncomeCtrl.text,
+          mortgageList: [mortgagesForApi],
+          typePropertyList: [typeOfProperty]);
+    }
   }
 }

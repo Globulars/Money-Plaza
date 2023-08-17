@@ -49,7 +49,7 @@ class MorgTextFields extends ViewModelWidget<MorgagesViewModel> {
               CustomTextField(
                 hintText: 'hk',
                 titleText: 'propertyValuation',
-                controller:viewModel.mortgagesPropertyValuationCtrl,
+                controller: viewModel.mortgagesPropertyValuationCtrl,
               ),
               verticalSpaceSmall,
               CustomTextField(
