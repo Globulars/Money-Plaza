@@ -44,8 +44,6 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                       children: [
                         Image.network(
                           mortgage.company!.signLogoUrl.toString(),
-
-                          // myIcons.hSBC,
                           width: 80,
                         ),
                         SubmitButton(
@@ -140,138 +138,14 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                     verticalSpaceTiny,
                     CustomText(
                       text: mortgage.advantage.toString(),
-                      // 'moneyPlazaExclusiveOffer',
                       fontSize: 12,
                       color: darkGreenLight,
                     ),
-                    verticalSpaceSmall,
-                    verticalSpaceTiny,
-                    //  SizedBox(
-                    //   height: 50,
-                    //   child: ListView.builder(
-                    //       itemCount: mortgage.displayColumns?.length ?? 0,
-                    //       shrinkWrap: true,
-                    //       physics: NeverScrollableScrollPhysics(),
-                    //       scrollDirection: Axis.horizontal,
-                    //       itemBuilder: (BuildContext context, int index) {
-                    //         List items = mortgage.displayColumns ?? [];
-
-                    //         return SizedBox(
-                    //           width: width * 0.3,
-                    //           child: Column(
-                    //             crossAxisAlignment: CrossAxisAlignment.center,
-                    //             children: [
-                    //               CustomText(
-                    //                 text: items[index],
-                    //                 fontSize: 10,
-                    //                 fontWeight: FontWeight.w600,
-                    //                 color: Colors.black.withOpacity(0.6),
-                    //               ),
-                    //               CustomText(
-                    //                 text: items[index].toString(),
-                    //                 fontWeight: FontWeight.bold,
-                    //               ),
-                    //             ],
-                    //           ),
-                    //         );
-                    //       }),
-                    // ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        SizedBox(
-                          width: width * 0.3,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              CustomText(
-                                text: 'minimumMortgages',
-                                fontSize: 10,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.black.withOpacity(0.6),
-                              ),
-                              CustomText(
-                                text: 'interestRate',
-                                fontSize: 10,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.black.withOpacity(0.6),
-                              ),
-                              CustomText(
-                                text: "${mortgage.interestRate}%",
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          width: width * 0.3,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              CustomText(
-                                text: 'highest',
-                                fontSize: 10,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.black.withOpacity(0.6),
-                              ),
-                              CustomText(
-                                text: 'cashRebate',
-                                fontSize: 10,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.black.withOpacity(0.6),
-                              ),
-                              mortgage.totalRebate == "-"
-                                  ? CustomText(
-                                      text: '6,000',
-                                      fontWeight: FontWeight.bold,
-                                    )
-                                  : CustomText(
-                                      text: '${mortgage.totalRebate}',
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          width: width * 0.3,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              CustomText(
-                                text: 'minMonthly',
-                                fontSize: 10,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.black.withOpacity(0.6),
-                              ),
-                              CustomText(
-                                text: 'repayment',
-                                fontSize: 10,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.black.withOpacity(0.6),
-                              ),
-                              CustomText(
-                                text:
-                                    mortgage.minPaymentAmountStr ?? "\$6713.5",
-                                //  '\$6713.5',
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                    verticalSpaceTiny,
-                    CustomText(
-                      text: mortgage.advantage.toString(),
-                      // 'moneyPlazaExclusiveOffer',
-                      // fontSize: 12,
-                      // color: darkGreenLight,
-                    ),
-                    verticalSpaceSmall,
-                    // CustomText(
-                    //   text: 'noteMoney',
-                    //   fontSize: 12,
-                    // ),
+                    
+                    
+                  
+                   
+                  
                   ],
                 ),
           )));

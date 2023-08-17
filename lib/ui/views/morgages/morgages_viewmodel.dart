@@ -12,38 +12,27 @@ class MorgagesViewModel extends BaseViewModel {
   // final _toasterService = locator<ToasterService>();
   // final _mortgagesService = locator<MortgageService>();
 
-  TextEditingController mortgagesPropertyValuationCtrl =TextEditingController();
-      
+  TextEditingController mortgagesPropertyValuationCtrl = TextEditingController();   
   TextEditingController mortgagesValueRatioCtrl = TextEditingController();
   TextEditingController mortgagesTenorCtrl = TextEditingController();
   TextEditingController mortgagesMonthlyIncomeCtrl = TextEditingController();
-  String mortgages = "New Owner / Mortgages Transfer";
 
+  String mortgages = "New Owner / Mortgages Transfer";
   String mortgagesForApi = "first_sub_mortgage";
 
-  // "New Owner / Mortgages Transfer";
   String typeOfProperty = "New building";
+  String typeOfPropertyForApi = "new_property";
+ 
 
-  // final mortgagesList = [
-  //   "first_sub_mortgage",
-  //   "secondary_mortgage",
-  //   "owner_private_loan"
-  // ];
+
+
 
   final mortgagesList = [
     "New Owner / Mortgages Transfer",
     "Second Mortgages",
     "Property Owner Loan"
   ];
-  //  Map<String, dynamic> mortgagesList = {
 
-  //     "first_sub_mortgage": "New Owner / Mortgages Transfer",
-  //     "secondary_mortgage": "Second Mortgages",
-  //     "owner_private_loan":"Property Owner Loan"
-  //   };
-  // [
-  //
-  // ];
   final typeOfPropertyList = [
     "New building",
     "Private housing",
@@ -51,13 +40,6 @@ class MorgagesViewModel extends BaseViewModel {
     "HOS House (Make -up price)",
     "House (unpaid land price)"
   ];
-
-  resetAll() {
-    mortgagesPropertyValuationCtrl.clear();
-    mortgagesValueRatioCtrl.clear();
-    mortgagesTenorCtrl.clear();
-    mortgagesMonthlyIncomeCtrl.clear();
-  }
 
   setMortgages(value) {
     if (value == mortgagesList[0]) {
@@ -72,9 +54,30 @@ class MorgagesViewModel extends BaseViewModel {
   }
 
   setTypeOfProperty(value) {
-    typeOfProperty = value;
-    notifyListeners();
+    if(value == typeOfPropertyList[0]){
+    typeOfPropertyForApi = "new_property";
+    }else if(value == typeOfPropertyList[1]){
+      typeOfPropertyForApi =  "private_property"; 
+    }else if(value == typeOfPropertyList[2]){
+      typeOfPropertyForApi =  "estate"; 
+    }else if(value == typeOfPropertyList[3]){
+      typeOfPropertyForApi =  "hos_property1"; 
+    }else{
+      typeOfPropertyForApi =  "hos_property2"; 
+    }
   }
+
+  resetAll() {
+    mortgagesPropertyValuationCtrl.clear();
+    mortgagesValueRatioCtrl.clear();
+    mortgagesTenorCtrl.clear();
+    mortgagesMonthlyIncomeCtrl.clear();
+  }
+
+  // setTypeOfProperty(value) {
+  //   typeOfProperty = value;
+  //   notifyListeners();
+  // }
 
   navigateToMorgagesResult() {
     _navigationService.navigateToMorgagesResultView(
