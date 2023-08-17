@@ -90,7 +90,7 @@ class MorgagesViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  navigateToMorgagesResult() {
+  navigateToMorgagesResult(List companyIds) {
     var isValid = formKey.currentState!.validate();
     if (isValid) {
       _navigationService.navigateToMorgagesResultView(
@@ -99,7 +99,7 @@ class MorgagesViewModel extends BaseViewModel {
           mortgagesTenor: mortgagesTenorCtrl.text,
           mortgagesMonthlyIncome: mortgagesMonthlyIncomeCtrl.text,
           mortgageList: [mortgagesForApi],
-          typePropertyList: [typeOfProperty], companyIds: [bankList]);
+          typePropertyList: [typeOfProperty], companyIds: companyIds);
     }
   }
 
