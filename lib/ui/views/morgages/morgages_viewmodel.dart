@@ -84,7 +84,7 @@ class MorgagesViewModel extends BaseViewModel {
         mortgagesValueRatio: mortgagesValueRatioCtrl.text,
         mortgagesTenor: mortgagesTenorCtrl.text,
         mortgagesMonthlyIncome: mortgagesMonthlyIncomeCtrl.text,
-        mortgageList: [mortgagesForApi],
+        mortgageList: [mortgages],
         typePropertyList: [typeOfProperty]);
   }
 }

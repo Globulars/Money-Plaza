@@ -8,9 +8,12 @@ import 'morgages_splash_viewmodel.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 
 class MorgagesSplashView extends StackedView<MorgagesSplashViewModel> {
-    final String organization;
+  final String organization;
 
-  const MorgagesSplashView( {Key? key,required this.organization,}) : super(key: key);
+  const MorgagesSplashView({
+    Key? key,
+    required this.organization,
+  }) : super(key: key);
 
   @override
   Widget builder(
@@ -77,7 +80,7 @@ class MorgagesSplashView extends StackedView<MorgagesSplashViewModel> {
       MorgagesSplashViewModel();
 
   @override
-  void onViewModelReady(MorgagesSplashViewModel viewModel) => SchedulerBinding
-      .instance
-      .addPostFrameCallback((timeStamp) => viewModel.runStartupMorgaesInfo(organization));
+  void onViewModelReady(MorgagesSplashViewModel viewModel) =>
+      SchedulerBinding.instance.addPostFrameCallback(
+          (timeStamp) => viewModel.runStartupMorgaesInfo(organization));
 }

@@ -1,18 +1,20 @@
 // ignore_for_file: non_constant_identifier_names, avoid_types_as_parameter_names, prefer_const_literals_to_create_immutables
 
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
+import '../../views/credit_card/credit_card_viewmodel.dart';
 import '../../widgets/common/custom_text_field/custom_text_field.dart';
 import '../../widgets/common/dropdown_textfield/dropdown_textfield.dart';
 import '../../widgets/common/icon_box_btn/sub_bar.dart';
 import '../../widgets/common/icon_box_btn/submit_button.dart';
-import 'credit_card_filter_dialog_model.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 
-class CreditCardFilterDialog extends StackedView<CreditCardFilterDialogModel> {
+class CreditCardFilterDialog extends StackedView<CreditCardViewModel> {
   final DialogRequest request;
   final Function(DialogResponse) completer;
 
@@ -25,7 +27,7 @@ class CreditCardFilterDialog extends StackedView<CreditCardFilterDialogModel> {
   @override
   Widget builder(
     BuildContext context,
-    CreditCardFilterDialogModel viewModel,
+    CreditCardViewModel viewModel,
     Widget? child,
   ) {
     final width = MediaQuery.of(context).size.width;
@@ -53,53 +55,68 @@ class CreditCardFilterDialog extends StackedView<CreditCardFilterDialogModel> {
               close: true,
             ),
             verticalSpaceTiny,
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 6),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  DropdownTextfield(
-                    titleText: 'mortgages',
-                    onChanged: (String) {},
-                    options: [],
-                  ),
-                  verticalSpaceSmall,
-                  CustomTextField(
-                    titleText: 'mortgageLoadAmount',
-                    hintText: 'hk',
-                  ),
-                  verticalSpaceSmall,
-                  CustomTextField(
-                    titleText: 'mortgageTenors',
-                    hintText: 'year',
-                  ),
-                  verticalSpaceSmall,
-                  DropdownTextfield(
-                    titleText: 'bankFinancialInstitutes',
-                    onChanged: (String) {},
-                    options: [],
-                  ),
-                  verticalSpaceSmall,
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SubmitButton(
-                        height: 40,
-                        width: 80,
-                        boxColor: Colors.transparent,
-                        image: myIcons.iconPowerReset,
-                        imgwidth: 15,
-                        text: 'resetAll',
-                        color: darkGreenLight,
-                      ),
-                      SubmitButton(
-                        text: 'matching',
-                        height: 40,
-                        width: 100,
-                      ),
-                    ],
-                  )
-                ],
+            Form(
+              key: viewModel.formKey,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 6),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    DropdownTextfield(
+                      value: viewModel.cardProvider,
+                      onChanged: viewModel.setCardProvider,
+                      options: viewModel.cardProviderList,
+                      titleText: 'cardProviders',
+                    ),
+                    verticalSpaceSmall,
+                    DropdownTextfield(
+                      value: viewModel.cardType,
+                      onChanged: viewModel.setCard,
+                      options: viewModel.cardList,
+                      titleText: 'card',
+                    ),
+                    verticalSpaceSmall,
+                    CustomTextField(
+                      hintText: 'hk',
+                      titleText: 'annualIncome',
+                      controller: viewModel.annualIncomeCtrl,
+                    ),
+                    verticalSpaceSmall,
+                    DropdownTextfield(
+                      titleText: 'bankFinancialInstitutes',
+                      value: viewModel.financialInstitutes,
+                      onChanged: viewModel.setFinancialInstitutes,
+                      options: viewModel.financialInstitutesList,
+                    ),
+                    verticalSpaceSmall,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SubmitButton(
+                          height: 40,
+                          width: 80,
+                          boxColor: Colors.transparent,
+                          image: myIcons.iconPowerReset,
+                          imgwidth: 15,
+                          text: 'resetAll',
+                          onPress: viewModel.resetAll,
+                          color: darkGreenLight,
+                        ),
+                        SubmitButton(
+                          text: 'matching',
+                          onPress: () {
+                            log("message");
+                            viewModel.back();
+                            viewModel.back();
+                            viewModel.navigateToCreditCardResult();
+                          },
+                          height: 40,
+                          width: 100,
+                        ),
+                      ],
+                    )
+                  ],
+                ),
               ),
             ),
           ],
@@ -109,6 +126,6 @@ class CreditCardFilterDialog extends StackedView<CreditCardFilterDialogModel> {
   }
 
   @override
-  CreditCardFilterDialogModel viewModelBuilder(BuildContext context) =>
-      CreditCardFilterDialogModel();
+  CreditCardViewModel viewModelBuilder(BuildContext context) =>
+      CreditCardViewModel();
 }

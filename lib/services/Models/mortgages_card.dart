@@ -1,5 +1,3 @@
-
-
 class MortgagesCard {
   String? advantage;
   String? advantageCht;

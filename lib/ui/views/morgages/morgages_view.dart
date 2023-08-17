@@ -7,8 +7,8 @@ import '../../widgets/app_bar.dart';
 import '../../widgets/bottom_bar.dart';
 import '../../widgets/common/background_image.dart';
 import '../../widgets/common/icon_box_btn/return_button.dart';
+import '../../widgets/top_banner.dart';
 import 'morgages_viewmodel.dart';
-import 'morgages_widgets/pic_text.dart';
 import 'morgages_widgets/text_fields.dart';
 
 class MorgagesView extends StackedView<MorgagesViewModel> {
@@ -29,7 +29,9 @@ class MorgagesView extends StackedView<MorgagesViewModel> {
           body: const Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Picture(),
+              TopBanner(
+                  url:
+                      "https://admin.moneyplaza.com.hk/banner/getBannersByType?type=mortgage"),
               MorgTextFields(),
             ],
           ),

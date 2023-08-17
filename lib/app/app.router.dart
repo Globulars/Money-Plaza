@@ -421,8 +421,8 @@ class StackedRouter extends _i1.RouterBase {
     _i23.CreditResultView: (data) {
       final args = data.getArgs<CreditResultViewArguments>(nullOk: false);
       return _i31.MaterialPageRoute<dynamic>(
-        builder: (context) => _i23.CreditResultView(
-            args.issuersList, args.typesList, args.annualIncome,
+        builder: (context) => _i23.CreditResultView(args.issuersList,
+            args.typesList, args.annualIncome, args.financialInstitutesList,
             key: args.key),
         settings: data,
       );
@@ -644,6 +644,7 @@ class CreditResultViewArguments {
     required this.issuersList,
     required this.typesList,
     required this.annualIncome,
+    required this.financialInstitutesList,
     this.key,
   });
 
@@ -653,11 +654,13 @@ class CreditResultViewArguments {
 
   final String annualIncome;
 
+  final List<dynamic> financialInstitutesList;
+
   final _i31.Key? key;
 
   @override
   String toString() {
-    return '{"issuersList": "$issuersList", "typesList": "$typesList", "annualIncome": "$annualIncome", "key": "$key"}';
+    return '{"issuersList": "$issuersList", "typesList": "$typesList", "annualIncome": "$annualIncome", "financialInstitutesList": "$financialInstitutesList", "key": "$key"}';
   }
 
   @override
@@ -666,6 +669,7 @@ class CreditResultViewArguments {
     return other.issuersList == issuersList &&
         other.typesList == typesList &&
         other.annualIncome == annualIncome &&
+        other.financialInstitutesList == financialInstitutesList &&
         other.key == key;
   }
 
@@ -674,6 +678,7 @@ class CreditResultViewArguments {
     return issuersList.hashCode ^
         typesList.hashCode ^
         annualIncome.hashCode ^
+        financialInstitutesList.hashCode ^
         key.hashCode;
   }
 }
@@ -1006,6 +1011,7 @@ extension NavigatorStateExtension on _i32.NavigationService {
     required List<dynamic> issuersList,
     required List<dynamic> typesList,
     required String annualIncome,
+    required List<dynamic> financialInstitutesList,
     _i31.Key? key,
     int? routerId,
     bool preventDuplicates = true,
@@ -1018,6 +1024,7 @@ extension NavigatorStateExtension on _i32.NavigationService {
             issuersList: issuersList,
             typesList: typesList,
             annualIncome: annualIncome,
+            financialInstitutesList: financialInstitutesList,
             key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
@@ -1450,6 +1457,7 @@ extension NavigatorStateExtension on _i32.NavigationService {
     required List<dynamic> issuersList,
     required List<dynamic> typesList,
     required String annualIncome,
+    required List<dynamic> financialInstitutesList,
     _i31.Key? key,
     int? routerId,
     bool preventDuplicates = true,
@@ -1462,6 +1470,7 @@ extension NavigatorStateExtension on _i32.NavigationService {
             issuersList: issuersList,
             typesList: typesList,
             annualIncome: annualIncome,
+            financialInstitutesList: financialInstitutesList,
             key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,

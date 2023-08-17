@@ -77,22 +77,28 @@ class CreditCardWiget extends ViewModelWidget<CreditResultViewModel> {
                           scrollDirection: Axis.horizontal,
                           itemCount:
                               creditCard![index].textFeatureItems?.length ?? 0,
-                          itemBuilder: (BuildContext context, int index) {
+                          itemBuilder: (BuildContext context, int subIndex) {
                             List<TextFeatureItems> featureItems =
                                 creditCard![index].textFeatureItems ?? [];
                             return SizedBox(
-                              width: width * 0.28,
+                              width: width /
+                                      (creditCard![index]
+                                              .textFeatureItems
+                                              ?.length ??
+                                          0) -
+                                  10,
                               child: Column(
                                 children: [
                                   CustomText(
-                                    text: featureItems[index].name.toString(),
+                                    text:
+                                        featureItems[subIndex].name.toString(),
                                     color: Colors.black.withOpacity(0.6),
                                     textAlign: TextAlign.center,
                                     fontSize: 12,
                                     fontWeight: FontWeight.bold,
                                   ),
                                   CustomText(
-                                    text: "\$${featureItems[index].value}",
+                                    text: "\$${featureItems[subIndex].value}",
                                     textAlign: TextAlign.center,
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold,
