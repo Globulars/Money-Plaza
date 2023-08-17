@@ -1,5 +1,4 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, non_constant_identifier_names, avoid_types_as_parameter_names
-
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
@@ -10,6 +9,7 @@ import '../../../services/Models/list_of_banks.dart';
 import '../../views/morgages/morgages_viewmodel.dart';
 import '../../widgets/common/custom_text_field/custom_text_field.dart';
 import '../../widgets/common/dropdown_textfield/dropdown_textfield.dart';
+import '../../widgets/common/dropdown_textfield/model_dropdown.dart';
 import '../../widgets/common/icon_box_btn/sub_bar.dart';
 import '../../widgets/common/icon_box_btn/submit_button.dart';
 
@@ -92,11 +92,13 @@ class MorgagesFilterDialog extends StackedView<MorgagesViewModel> {
                               ),
                             );
                           } else if (snapshot.hasData) {
-                            List<BankList>? bankList = snapshot.data;
-                            return DropdownTextfield(
+                            return ModelDropdown(
                               titleText: 'bankFinancialInstitutes',
-                              onChanged: (String) {},
-                              options: bankList,
+                              value: viewModel.bankList,
+                              onChanged: (value) {
+                                viewModel.setBankList(value);
+                              },
+                              options: viewModel.bankDataList,
                             );
                           }
                         }
@@ -107,11 +109,6 @@ class MorgagesFilterDialog extends StackedView<MorgagesViewModel> {
                         );
                       },
                     ),
-                    // DropdownTextfield(
-                    //   titleText: 'bankFinancialInstitutes',
-                    //   onChanged: (String) {},
-                    //   options: [],
-                    // ),
                     verticalSpaceSmall,
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,

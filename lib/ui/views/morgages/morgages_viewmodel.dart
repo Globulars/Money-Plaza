@@ -27,7 +27,8 @@ class MorgagesViewModel extends BaseViewModel {
 
   String mortgages = "New Owner / Mortgages Transfer";
   String mortgagesForApi = "first_sub_mortgage";
-
+  BankList? bankList;
+  List<BankList> bankDataList = [];
   String typeOfProperty = "New building";
   String typeOfPropertyForApi = "new_property";
 
@@ -73,36 +74,47 @@ class MorgagesViewModel extends BaseViewModel {
     notifyListeners();
   }
 
+  setBankList(value) {
+    log(value.name.toString());
+    bankList = value;
+    log(value.toString());
+    notifyListeners();
+  }
+
   resetAll() {
     mortgagesPropertyValuationCtrl.text = "10000";
     mortgagesValueRatioCtrl.text = "15";
     mortgagesTenorCtrl.text = "25";
     mortgagesMonthlyIncomeCtrl.text = "5000000";
- }
-    navigateToMorgagesResult() {
-      var isValid = formKey.currentState!.validate();
-      if (isValid) {
-        _navigationService.navigateToMorgagesResultView(
-            mortgagesPropertyValuation: mortgagesPropertyValuationCtrl.text,
-            mortgagesValueRatio: mortgagesValueRatioCtrl.text,
-            mortgagesTenor: mortgagesTenorCtrl.text,
-            mortgagesMonthlyIncome: mortgagesMonthlyIncomeCtrl.text,
-            mortgageList: [mortgagesForApi],
-            typePropertyList: [typeOfProperty]);
-      }
-    }
+  }
 
-    Future<List<BankList>> mortgagesBankListData() async {
+  navigateToMorgagesResult() {
+    var isValid = formKey.currentState!.validate();
+    if (isValid) {
+      _navigationService.navigateToMorgagesResultView(
+          mortgagesPropertyValuation: mortgagesPropertyValuationCtrl.text,
+          mortgagesValueRatio: mortgagesValueRatioCtrl.text,
+          mortgagesTenor: mortgagesTenorCtrl.text,
+          mortgagesMonthlyIncome: mortgagesMonthlyIncomeCtrl.text,
+          mortgageList: [mortgagesForApi],
+          typePropertyList: [typeOfProperty]);
+    }
+  }
+
+  Future<List<BankList>> mortgagesBankListData() async {
+    if (bankDataList.isEmpty) {
       var data = await _mortgagesService.getCompaniesByType();
       if (data?["success"] == true) {
-        log(data.toString());
-        // return List<CreditCard>.from(data["data"]["records"]);
         List dataList = data["data"];
-        return dataList.map((data) => BankList.fromJson(data)).toList();
+        bankDataList = dataList.map((data) => BankList.fromJson(data)).toList();
+        bankList =bankDataList[0];
+        notifyListeners();
+        return bankDataList;
       } else {
-        log(data["message"].toString());
         throw Exception(data["message"].toString());
       }
+    } else {
+      return bankDataList;
     }
- 
+  }
 }
