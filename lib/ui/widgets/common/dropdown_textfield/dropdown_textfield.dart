@@ -1,7 +1,5 @@
 // ignore_for_file: must_be_immutable
 
-import 'dart:developer';
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -9,15 +7,6 @@ import 'package:stacked/stacked.dart';
 import '../../../common/app_colors.dart';
 import '../../../common/ui_helpers.dart';
 import 'dropdown_textfield_model.dart';
-
-// DropdownTextfield(
-//   titleText: "Gender",
-//   options: const ["Male", "Female"],
-//   value: gender,
-//   onChanged: (String? value) {
-//     gender = value!;
-//   },
-// ),
 
 class DropdownTextfield extends StackedView<DropdownTextfieldModel> {
   final String hintText;
