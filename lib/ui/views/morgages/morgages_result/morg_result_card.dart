@@ -42,119 +42,109 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Image.network(
-                              mortgage.company!.signLogoUrl.toString(),
+                        Image.network(
+                          mortgage.company!.signLogoUrl.toString(),
 
-                              // myIcons.hSBC,
-                              width: 80,
-                            ),
-                            SubmitButton(
-                              boxColor: Colors.transparent,
-                              image: myIcons.compare2,
-                              imgwidth: 12,
-                              text: 'select',
-                              color: Colors.black,
-                              fontSize: 12,
-                            )
-                          ],
+                          // myIcons.hSBC,
+                          width: 80,
                         ),
-                        verticalSpaceTiny,
-
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            SizedBox(
-                              width: width * 0.3,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  CustomText(
-                                    text: 'minimumMortgages',
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.black.withOpacity(0.6),
-                                  ),
-                                  CustomText(
-                                    text: 'interestRate',
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.black.withOpacity(0.6),
-                                  ),
-                                  CustomText(
-                                    text:"${mortgage.interestRate}%",
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ],
-                              ),
-                            ),
-                            SizedBox(
-                              width: width * 0.3,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  CustomText(
-                                    text: 'highest',
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.black.withOpacity(0.6),
-                                  ),
-                                  CustomText(
-                                    text: 'cashRebate',
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.black.withOpacity(0.6),
-                                  ),
-                                  CustomText(
-                                    text: '${mortgage.totalRebate}',
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ],
-                              ),
-                            ),
-                            SizedBox(
-                              width: width * 0.3,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  CustomText(
-                                    text: 'minMonthly',
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.black.withOpacity(0.6),
-                                  ),
-                                  CustomText(
-                                    text: 'repayment',
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.black.withOpacity(0.6),
-                                  ),
-                                  CustomText(
-                                    text:mortgage.minPaymentAmountStr??"",
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                        verticalSpaceTiny,
-                        CustomText(
-                          text: mortgage.advantage.toString(),
-                          // 'moneyPlazaExclusiveOffer',
+                        SubmitButton(
+                          boxColor: Colors.transparent,
+                          image: myIcons.compare2,
+                          imgwidth: 12,
+                          text: 'select',
+                          color: Colors.black,
                           fontSize: 12,
-                          color: darkGreenLight,
-                        ),
-                        verticalSpaceSmall,
-                        // CustomText(
-                        //   text: 'noteMoney',
-                        //   fontSize: 12,
-                        // ),
+                        )
                       ],
                     ),
+                    verticalSpaceTiny,
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SizedBox(
+                          width: width * 0.3,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              CustomText(
+                                text: 'minimumMortgages',
+                                fontSize: 10,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black.withOpacity(0.6),
+                              ),
+                              CustomText(
+                                text: 'interestRate',
+                                fontSize: 10,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black.withOpacity(0.6),
+                              ),
+                              CustomText(
+                                text:"${mortgage.interestRate}%",
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          width: width * 0.3,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              CustomText(
+                                text: 'highest',
+                                fontSize: 10,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black.withOpacity(0.6),
+                              ),
+                              CustomText(
+                                text: 'cashRebate',
+                                fontSize: 10,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black.withOpacity(0.6),
+                              ),
+                              CustomText(
+                                text: '${mortgage.totalRebate}',
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          width: width * 0.3,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              CustomText(
+                                text: 'minMonthly',
+                                fontSize: 10,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black.withOpacity(0.6),
+                              ),
+                              CustomText(
+                                text: 'repayment',
+                                fontSize: 10,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black.withOpacity(0.6),
+                              ),
+                              CustomText(
+                                text:mortgage.minPaymentAmountStr??"",
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                    verticalSpaceTiny,
+                    CustomText(
+                      text: mortgage.advantage.toString(),
+                      // 'moneyPlazaExclusiveOffer',
+                      fontSize: 12,
+                      color: darkGreenLight,
+                    ),
+                    verticalSpaceSmall,
                     verticalSpaceTiny,
                     //  SizedBox(
                     //   height: 50,
