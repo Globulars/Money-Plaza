@@ -20,7 +20,7 @@ class SignUpWithPhone extends StackedView<MemberLoginViewModel> {
     Widget? child,
   ) {
     final width = MediaQuery.of(context).size.width;
-    return  Form(
+    return Form(
       key: viewModel.formKey,
       child: Column(
         children: [
@@ -31,8 +31,8 @@ class SignUpWithPhone extends StackedView<MemberLoginViewModel> {
             width: double.infinity,
             decoration: BoxDecoration(
                 color: Colors.white,
-                border:
-                    Border.all(color: darkGreenLight.withOpacity(0.8), width: 1),
+                border: Border.all(
+                    color: darkGreenLight.withOpacity(0.8), width: 1),
                 borderRadius: BorderRadius.circular(5)),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,

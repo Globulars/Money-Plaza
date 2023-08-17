@@ -61,16 +61,18 @@ class MorgagesResultView extends StackedView<MorgagesResultViewModel> {
                       imgwidth: 22,
                       onPress: viewModel.showMorgagesFilter,
                     ),
-                    SubBar(
-                      width: width * 0.45,
-                      height: 50,
-                      btmLeftRadius: 0,
-                      btmRightRadius: 0,
-                      divider: true,
-                      text: 'selectall',
-                      image: myIcons.compare1,
-                      imgwidth: 18,
-                    ),
+                  
+                       
+                        SubBar(
+                          width: width * 0.45,
+                          height: 50,
+                          btmLeftRadius: 0,
+                          btmRightRadius: 0,
+                          divider: true,
+                          text: 'selectall',
+                          image: myIcons.compare1,
+                          imgwidth: 18,
+                        ),
                   ],
                 ),
               ),
@@ -107,7 +109,6 @@ class MorgagesResultView extends StackedView<MorgagesResultViewModel> {
                 },
               ),
               // const MorgagesResultCard(),
-            
             ],
           ),
         ),

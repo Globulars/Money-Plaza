@@ -8,42 +8,31 @@ import '../../../app/app.locator.dart';
 
 class MorgagesViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
+  var formKey = GlobalKey<FormState>();
   // final _dialogService = locator<DialogService>();
   // final _toasterService = locator<ToasterService>();
   // final _mortgagesService = locator<MortgageService>();
 
-  TextEditingController mortgagesPropertyValuationCtrl =TextEditingController();
-      
-  TextEditingController mortgagesValueRatioCtrl = TextEditingController();
-  TextEditingController mortgagesTenorCtrl = TextEditingController();
-  TextEditingController mortgagesMonthlyIncomeCtrl = TextEditingController();
-  String mortgages = "New Owner / Mortgages Transfer";
+  TextEditingController mortgagesPropertyValuationCtrl =
+      TextEditingController(text: "10000");
+  TextEditingController mortgagesValueRatioCtrl =
+      TextEditingController(text: "15");
+  TextEditingController mortgagesTenorCtrl = TextEditingController(text: "25");
+  TextEditingController mortgagesMonthlyIncomeCtrl =
+      TextEditingController(text: "5000000");
 
+  String mortgages = "New Owner / Mortgages Transfer";
   String mortgagesForApi = "first_sub_mortgage";
 
-  // "New Owner / Mortgages Transfer";
   String typeOfProperty = "New building";
-
-  // final mortgagesList = [
-  //   "first_sub_mortgage",
-  //   "secondary_mortgage",
-  //   "owner_private_loan"
-  // ];
+  String typeOfPropertyForApi = "new_property";
 
   final mortgagesList = [
     "New Owner / Mortgages Transfer",
     "Second Mortgages",
     "Property Owner Loan"
   ];
-  //  Map<String, dynamic> mortgagesList = {
 
-  //     "first_sub_mortgage": "New Owner / Mortgages Transfer",
-  //     "secondary_mortgage": "Second Mortgages",
-  //     "owner_private_loan":"Property Owner Loan"
-  //   };
-  // [
-  //
-  // ];
   final typeOfPropertyList = [
     "New building",
     "Private housing",
@@ -51,13 +40,6 @@ class MorgagesViewModel extends BaseViewModel {
     "HOS House (Make -up price)",
     "House (unpaid land price)"
   ];
-
-  resetAll() {
-    mortgagesPropertyValuationCtrl.clear();
-    mortgagesValueRatioCtrl.clear();
-    mortgagesTenorCtrl.clear();
-    mortgagesMonthlyIncomeCtrl.clear();
-  }
 
   setMortgages(value) {
     if (value == mortgagesList[0]) {
@@ -72,17 +54,38 @@ class MorgagesViewModel extends BaseViewModel {
   }
 
   setTypeOfProperty(value) {
+    if (value == typeOfPropertyList[0]) {
+      typeOfPropertyForApi = "new_property";
+    } else if (value == typeOfPropertyList[1]) {
+      typeOfPropertyForApi = "private_property";
+    } else if (value == typeOfPropertyList[2]) {
+      typeOfPropertyForApi = "estate";
+    } else if (value == typeOfPropertyList[3]) {
+      typeOfPropertyForApi = "hos_property1";
+    } else {
+      typeOfPropertyForApi = "hos_property2";
+    }
     typeOfProperty = value;
     notifyListeners();
   }
 
+  resetAll() {
+    mortgagesPropertyValuationCtrl.clear();
+    mortgagesValueRatioCtrl.clear();
+    mortgagesTenorCtrl.clear();
+    mortgagesMonthlyIncomeCtrl.clear();
+  }
+
   navigateToMorgagesResult() {
-    _navigationService.navigateToMorgagesResultView(
-        mortgagesPropertyValuation: mortgagesPropertyValuationCtrl.text,
-        mortgagesValueRatio: mortgagesValueRatioCtrl.text,
-        mortgagesTenor: mortgagesTenorCtrl.text,
-        mortgagesMonthlyIncome: mortgagesMonthlyIncomeCtrl.text,
-        mortgageList: [mortgagesForApi],
-        typePropertyList: [typeOfProperty]);
+    var isValid = formKey.currentState!.validate();
+    if (isValid) {
+      _navigationService.navigateToMorgagesResultView(
+          mortgagesPropertyValuation: mortgagesPropertyValuationCtrl.text,
+          mortgagesValueRatio: mortgagesValueRatioCtrl.text,
+          mortgagesTenor: mortgagesTenorCtrl.text,
+          mortgagesMonthlyIncome: mortgagesMonthlyIncomeCtrl.text,
+          mortgageList: [mortgagesForApi],
+          typePropertyList: [typeOfProperty]);
+    }
   }
 }

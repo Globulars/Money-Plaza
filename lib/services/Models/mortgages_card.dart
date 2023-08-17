@@ -56,6 +56,7 @@ class MortgagesCard {
   String? type;
   String? updateDate;
   String? vendorEmail;
+  bool? checkBox = false;
 
   MortgagesCard(
       {this.advantage,
@@ -114,7 +115,8 @@ class MortgagesCard {
       this.totalRebate,
       this.type,
       this.updateDate,
-      this.vendorEmail});
+      this.vendorEmail,
+      this.checkBox});
 
   MortgagesCard.fromJson(Map<String, dynamic> json) {
     advantage = json['advantage'];
