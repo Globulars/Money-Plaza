@@ -23,8 +23,35 @@ class MorgagesResultViewModel extends BaseViewModel {
         organization: "HSBC+New Owner / Mortgage Transfer");
   }
 
-  Future<List<MortgagesCard>> mortgagesCardData() async {
-    Map<String, dynamic> body = {};
+  Future<List<MortgagesCard>> mortgagesCardData(
+      mortgagesPropertyValuation,
+      mortgagesValueRatio,
+      mortgagesTenor,
+      mortgagesMonthlyIncome,
+      mortgageList,
+      typePropertyList) async {
+    Map<String, dynamic> body = {
+      "types": mortgageList,
+      "order": "descending",
+      "sort": "ordering",
+      "tenor": 120,
+      "propertyType": "private_property",
+      "features": [],
+      "companyIds": [],
+      "amount": "500000"
+    };
+//     {
+//   "types": [
+//     "first_sub_mortgage"
+//   ],
+//   "order": "descending",
+//   "sort": "ordering",
+//   "tenor": 120,
+//   "propertyType": "new_property",
+//   "features": [],
+//   "companyIds": [],
+//   "amount": "500000"
+// }
     var data = await _mortgagesService.mortgagesList(body);
     if (data?["success"] == true) {
       log(data.toString());

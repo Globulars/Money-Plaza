@@ -12,19 +12,38 @@ class MorgagesViewModel extends BaseViewModel {
   // final _toasterService = locator<ToasterService>();
   // final _mortgagesService = locator<MortgageService>();
 
-  TextEditingController mortgagesPropertyValuationCtrl =
-      TextEditingController();
+  TextEditingController mortgagesPropertyValuationCtrl =TextEditingController();
+      
   TextEditingController mortgagesValueRatioCtrl = TextEditingController();
   TextEditingController mortgagesTenorCtrl = TextEditingController();
   TextEditingController mortgagesMonthlyIncomeCtrl = TextEditingController();
   String mortgages = "New Owner / Mortgages Transfer";
+
+  String mortgagesForApi = "first_sub_mortgage";
+
+  // "New Owner / Mortgages Transfer";
   String typeOfProperty = "New building";
+
+  // final mortgagesList = [
+  //   "first_sub_mortgage",
+  //   "secondary_mortgage",
+  //   "owner_private_loan"
+  // ];
 
   final mortgagesList = [
     "New Owner / Mortgages Transfer",
     "Second Mortgages",
     "Property Owner Loan"
   ];
+  //  Map<String, dynamic> mortgagesList = {
+
+  //     "first_sub_mortgage": "New Owner / Mortgages Transfer",
+  //     "secondary_mortgage": "Second Mortgages",
+  //     "owner_private_loan":"Property Owner Loan"
+  //   };
+  // [
+  //
+  // ];
   final typeOfPropertyList = [
     "New building",
     "Private housing",
@@ -41,6 +60,13 @@ class MorgagesViewModel extends BaseViewModel {
   }
 
   setMortgages(value) {
+    if (value == mortgagesList[0]) {
+      mortgagesForApi = "first_sub_mortgage";
+    } else if (value == mortgagesList[1]) {
+      mortgagesForApi = "secondary_mortgage";
+    } else {
+      mortgagesForApi = "owner_private_loan";
+    }
     mortgages = value;
     notifyListeners();
   }

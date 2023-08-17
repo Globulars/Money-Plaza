@@ -81,7 +81,13 @@ class MorgagesResultView extends StackedView<MorgagesResultViewModel> {
               ),
               verticalSpaceSmall,
               FutureBuilder<List<MortgagesCard>>(
-                future: viewModel.mortgagesCardData(),
+                future: viewModel.mortgagesCardData(
+                    mortgagesPropertyValuation,
+                    mortgagesValueRatio,
+                    mortgagesTenor,
+                    mortgagesMonthlyIncome,
+                    mortgageList,
+                    typePropertyList),
                 builder: (ctx, snapshot) {
                   if (snapshot.connectionState == ConnectionState.done) {
                     if (snapshot.hasError) {
@@ -101,6 +107,7 @@ class MorgagesResultView extends StackedView<MorgagesResultViewModel> {
                 },
               ),
               // const MorgagesResultCard(),
+            
             ],
           ),
         ),
