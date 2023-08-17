@@ -41,4 +41,24 @@ class MortgageService {
       return {"message": e};
     }
   }
+
+  /////////////////////////////////////List of banks////////////////////////////////
+  ///
+
+  getCompaniesByType() async {
+    try {
+      final response = await http.get(
+          Uri.parse(
+              "https://admin.moneyplaza.com.hk/company/getCompaniesByType?type=mortgag"),
+          headers: headers);
+      if (response.statusCode == 200) {
+        var data = json.decode(response.body);
+        return data;
+      } else {
+        return {"message": "${response.statusCode} error found"};
+      }
+    } catch (e) {
+      return {"message": e};
+    }
+  }
 }

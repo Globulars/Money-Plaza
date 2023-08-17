@@ -1,8 +1,12 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:money_plaza/app/app.router.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import '../../../app/app.locator.dart';
+import '../../../services/Models/list_of_banks.dart';
+import '../../../services/mortgage_service.dart';
 // import '../../../services/toaster_service.dart';
 // import 'package:money_plaza/services/mortgage_service.dart';
 
@@ -11,7 +15,7 @@ class MorgagesViewModel extends BaseViewModel {
   var formKey = GlobalKey<FormState>();
   // final _dialogService = locator<DialogService>();
   // final _toasterService = locator<ToasterService>();
-  // final _mortgagesService = locator<MortgageService>();
+  final _mortgagesService = locator<MortgageService>();
 
   TextEditingController mortgagesPropertyValuationCtrl =
       TextEditingController(text: "10000");
@@ -70,22 +74,35 @@ class MorgagesViewModel extends BaseViewModel {
   }
 
   resetAll() {
-    mortgagesPropertyValuationCtrl.clear();
-    mortgagesValueRatioCtrl.clear();
-    mortgagesTenorCtrl.clear();
-    mortgagesMonthlyIncomeCtrl.clear();
-  }
-
-  navigateToMorgagesResult() {
-    var isValid = formKey.currentState!.validate();
-    if (isValid) {
-      _navigationService.navigateToMorgagesResultView(
-          mortgagesPropertyValuation: mortgagesPropertyValuationCtrl.text,
-          mortgagesValueRatio: mortgagesValueRatioCtrl.text,
-          mortgagesTenor: mortgagesTenorCtrl.text,
-          mortgagesMonthlyIncome: mortgagesMonthlyIncomeCtrl.text,
-          mortgageList: [mortgagesForApi],
-          typePropertyList: [typeOfProperty]);
+    mortgagesPropertyValuationCtrl.text = "10000";
+    mortgagesValueRatioCtrl.text = "15";
+    mortgagesTenorCtrl.text = "25";
+    mortgagesMonthlyIncomeCtrl.text = "5000000";
+ }
+    navigateToMorgagesResult() {
+      var isValid = formKey.currentState!.validate();
+      if (isValid) {
+        _navigationService.navigateToMorgagesResultView(
+            mortgagesPropertyValuation: mortgagesPropertyValuationCtrl.text,
+            mortgagesValueRatio: mortgagesValueRatioCtrl.text,
+            mortgagesTenor: mortgagesTenorCtrl.text,
+            mortgagesMonthlyIncome: mortgagesMonthlyIncomeCtrl.text,
+            mortgageList: [mortgagesForApi],
+            typePropertyList: [typeOfProperty]);
+      }
     }
-  }
+
+    Future<List<BankList>> mortgagesBankListData() async {
+      var data = await _mortgagesService.getCompaniesByType();
+      if (data?["success"] == true) {
+        log(data.toString());
+        // return List<CreditCard>.from(data["data"]["records"]);
+        List dataList = data["data"];
+        return dataList.map((data) => BankList.fromJson(data)).toList();
+      } else {
+        log(data["message"].toString());
+        throw Exception(data["message"].toString());
+      }
+    }
+ 
 }
