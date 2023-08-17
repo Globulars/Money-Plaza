@@ -46,41 +46,44 @@ class MorgagesContactInfoView
                 btmRightRadius: 0,
               ),
               verticalSpaceSmall,
-              Expanded(
-                child: SingleChildScrollView(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                    child: Column(
-                      children: [
-                        CustomText(text: 'enterFollowingInformation.'),
-                        verticalSpaceTiny,
-                        CustomTextField(
-                          titleText: 'email',
-                          controller: viewModel.emailCtrl,
-                        ),
-                        verticalSpaceTiny,
-                        CustomTextField(
-                          titleText: 'fullName',
-                          controller: viewModel.nameCtrl,
-                        ),
-                        verticalSpaceTiny,
-                        CustomTextField(
-                          titleText: 'referenceNumber',
-                          controller: viewModel.refeNoCtrl,
-                        ),
-                        verticalSpaceTiny,
-                        DropdownTextfield(
-                          titleText: 'contactMethod',
-                          value: organization,
-                          onChanged: (String) {},
-                          options: [organization],
-                        ),
-                        verticalSpaceTiny,
-                        CustomTextField(
-                          titleText: 'contactNo',
-                          controller: viewModel.contactNoCtrl,
-                        ),
-                      ],
+              Form(
+                key: viewModel.formKey,
+                child: Expanded(
+                  child: SingleChildScrollView(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: Column(
+                        children: [
+                          CustomText(text: 'enterFollowingInformation.'),
+                          verticalSpaceTiny,
+                          CustomTextField(
+                            titleText: 'email',
+                            controller: viewModel.emailCtrl,
+                          ),
+                          verticalSpaceTiny,
+                          CustomTextField(
+                            titleText: 'fullName',
+                            controller: viewModel.nameCtrl,
+                          ),
+                          verticalSpaceTiny,
+                          CustomTextField(
+                            titleText: 'referenceNumber',
+                            controller: viewModel.refeNoCtrl,
+                          ),
+                          verticalSpaceTiny,
+                          DropdownTextfield(
+                            titleText: 'contactMethod',
+                            value: organization,
+                            onChanged: (String) {},
+                            options: [organization],
+                          ),
+                          verticalSpaceTiny,
+                          CustomTextField(
+                            titleText: 'contactNo',
+                            controller: viewModel.contactNoCtrl,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
