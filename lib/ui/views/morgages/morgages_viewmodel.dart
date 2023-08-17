@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:money_plaza/app/app.router.dart';
 import 'package:stacked/stacked.dart';
@@ -14,8 +12,8 @@ class MorgagesViewModel extends BaseViewModel {
   // final _toasterService = locator<ToasterService>();
   // final _mortgagesService = locator<MortgageService>();
 
-  TextEditingController mortgagesPropertyValuationCtrl =
-      TextEditingController();
+  TextEditingController mortgagesPropertyValuationCtrl =TextEditingController();
+      
   TextEditingController mortgagesValueRatioCtrl = TextEditingController();
   TextEditingController mortgagesTenorCtrl = TextEditingController();
   TextEditingController mortgagesMonthlyIncomeCtrl = TextEditingController();
