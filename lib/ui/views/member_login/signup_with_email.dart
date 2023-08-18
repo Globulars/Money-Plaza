@@ -36,14 +36,17 @@ class SignUpWithEmail extends ViewModelWidget<MemberLoginViewModel> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            ReturnButton(
-              text: "send",
-              onPress: viewModel.sendEmailCode,
-              height: 40,
-              width: width * 0.22,
-              boxcolor: darkGreenLight,
-              color: Colors.white,
-              fontSize: 14,
+            Padding(
+              padding: const EdgeInsets.only(top: 5),
+              child: ReturnButton(
+                text: "send",
+                onPress: viewModel.sendEmailCode,
+                height: 40,
+                width: width * 0.22,
+                boxcolor: darkGreenLight,
+                color: Colors.white,
+                fontSize: 14,
+              ),
             ),
             CustomTextField(
               width: width * 0.68,

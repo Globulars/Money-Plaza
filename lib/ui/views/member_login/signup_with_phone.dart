@@ -73,16 +73,19 @@ class SignUpWithPhone extends StackedView<MemberLoginViewModel> {
           verticalSpaceTiny,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              ReturnButton(
-                text: "send",
-                onPress: viewModel.sendSmsCode,
-                height: 40,
-                width: width * 0.22,
-                boxcolor: darkGreenLight,
-                color: Colors.white,
-                fontSize: 14,
+              Padding(
+                padding: const EdgeInsets.only(top: 5),
+                child: ReturnButton(
+                  text: "send",
+                  onPress: viewModel.sendSmsCode,
+                  height: 40,
+                  width: width * 0.22,
+                  boxcolor: darkGreenLight,
+                  color: Colors.white,
+                  fontSize: 14,
+                ),
               ),
               CustomTextField(
                 width: width * 0.68,
