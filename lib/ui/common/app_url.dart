@@ -4,16 +4,16 @@ const baseUrl = "https://admin.moneyplaza.com.hk";
 class ApiUrl {
   /////////////////////////////////////Auth Controller////////////////////////////////
   final Uri login = Uri.parse("$baseUrl/auth/login");
-  final Uri loginByEmailCode = Uri.parse("$baseUrl/auth/loginByEmailCode");
-  final Uri loginByMobileCode = Uri.parse("$baseUrl/auth/loginByMobileCode");
-  final Uri logOut = Uri.parse("$baseUrl/auth/logout");
+  // final Uri loginByEmailCode = Uri.parse("$baseUrl/auth/loginByEmailCode");
+  // final Uri loginByMobileCode = Uri.parse("$baseUrl/auth/loginByMobileCode");
+  // final Uri logOut = Uri.parse("$baseUrl/auth/logout");
   final Uri sendEmailCode = Uri.parse("$baseUrl/auth/sendEmailCode");
   final Uri sendSmsCode = Uri.parse("$baseUrl/auth/sendSmsCode");
   final Uri signupByEmail = Uri.parse("$baseUrl/auth/signupByEmail");
   final Uri signupByMobile = Uri.parse("$baseUrl/auth/signupByMobile");
 
   /////////////////////////////////////Award Controller////////////////////////////////
-  final Uri awardCreate = Uri.parse("$baseUrl/award");
+  // final Uri awardCreate = Uri.parse("$baseUrl/award");
 
   /////////////////////////////////////User Controller////////////////////////////////
 
