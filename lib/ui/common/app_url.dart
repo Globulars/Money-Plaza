@@ -63,8 +63,8 @@ class ApiUrl {
 
   ///////////////////////////////////////card Controller////////////////////////////////
   final Uri cardList = Uri.parse("$baseUrl/card/list");
-  // final Uri surveyForm = Uri.parse(
-      // "$baseUrl/surveyform/survey/submit/daa7596e-550e-4e3d-aa4d-0ebac22700eb");
+  final Uri surveyForm = Uri.parse(
+      "$baseUrl/surveyform/survey/submit/daa7596e-550e-4e3d-aa4d-0ebac22700eb");
 
   // final Uri cardLike = Uri.parse("$baseUrl/card/like/");
   // final Uri cardPreview = Uri.parse("$baseUrl/card/preview/");
@@ -77,6 +77,9 @@ class ApiUrl {
   // final Uri checkIdSubmit = Uri.parse("$baseUrl/checkId/submit/");
 
   ///////////////////////////////////////company Controller////////////////////////////////
+  final Uri getCompaniesByType =
+      Uri.parse("$baseUrl/company/getCompaniesByType?type=mortgag");
+
   // final Uri companyGetCompaniesByType =
   //     Uri.parse("$baseUrl/company/getCompaniesByType");
   // final Uri companyGetCompanyById =

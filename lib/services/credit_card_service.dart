@@ -26,9 +26,7 @@ class CreditCardService {
   /////////////////////////////////////Card Like////////////////////////////////
 
   submitSurveyForm(body) async {
-    http.Response response = await http.post(
-      Uri.parse(
-          "https://admin.moneyplaza.com.hk/surveyform/survey/submit/daa7596e-550e-4e3d-aa4d-0ebac22700eb"),
+    http.Response response = await http.post(_apiUrl.surveyForm,
       body: json.encode(body),
       headers: <String, String>{"Content-Type": "application/json"},
     );

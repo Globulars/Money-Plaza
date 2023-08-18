@@ -47,9 +47,7 @@ class MortgageService {
 
   getCompaniesByType() async {
     try {
-      final response = await http.get(
-          Uri.parse(
-              "https://admin.moneyplaza.com.hk/company/getCompaniesByType?type=mortgag"),
+      final response = await http.get(_apiUrl.getCompaniesByType,
           headers: headers);
       if (response.statusCode == 200) {
         var data = json.decode(response.body);
