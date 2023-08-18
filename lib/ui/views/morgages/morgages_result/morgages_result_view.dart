@@ -36,6 +36,7 @@ class MorgagesResultView extends StackedView<MorgagesResultViewModel> {
     MorgagesResultViewModel viewModel,
     Widget? child,
   ) {
+    final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     return Stack(
       children: [
@@ -104,12 +105,15 @@ class MorgagesResultView extends StackedView<MorgagesResultViewModel> {
                       return MorgagesResultCard(mortgagesCard: snapshot.data);
                     }
                   }
-                  return const Center(
-                    child: CircularProgressIndicator(),
+                  return Column(
+                    children: [
+                      SizedBox(height: height*0.45
+                      ),
+                      const CircularProgressIndicator(),
+                    ],
                   );
                 },
               ),
-              // const MorgagesResultCard(),
             ],
           ),
         ),
