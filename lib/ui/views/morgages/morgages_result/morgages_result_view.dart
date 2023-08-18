@@ -107,7 +107,7 @@ class MorgagesResultView extends StackedView<MorgagesResultViewModel> {
                   }
                   return Column(
                     children: [
-                      SizedBox(height: height*0.45
+                      SizedBox(height: height*0.3
                       ),
                       const CircularProgressIndicator(),
                     ],
