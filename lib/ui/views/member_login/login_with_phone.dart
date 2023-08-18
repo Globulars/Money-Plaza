@@ -62,12 +62,12 @@ class LoginWithPhone extends ViewModelWidget<MemberLoginViewModel> {
                       fontFamily: 'Roboto',
                     ),
                   ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'validation'.tr();
-                    }
-                    return null;
-                  },
+                  // validator: (value) {
+                  //   if (value == null || value.isEmpty) {
+                  //     return 'validation'.tr();
+                  //   }
+                  //   return null;
+                  // },
                 ),
               ),
             ],
