@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/widgets/widgets_Model.dart';
 import 'package:stacked/stacked.dart';
-
 import '../../services/Models/card_banners.dart';
 
 class TopBanner extends StackedView<WidgetViewModel> {

@@ -212,4 +212,4 @@ class ApiUrl {
   ///////////////////////////////////////user-reward Controller////////////////////////////////
 //   final Uri vendorIndex = Uri.parse("$baseUrl/vendor/index");
 //   final Uri vendorLogin = Uri.parse("$baseUrl/vendor/login");
- }
+}

@@ -70,13 +70,12 @@ class CreditResultView extends StackedView<CreditResultViewModel> {
                         return CreditCardWiget(creditCard: snapshot.data);
                       }
                     }
-                     return Column(
-                    children: [
-                      SizedBox(height: height*0.3
-                      ),
-                      const CircularProgressIndicator(),
-                    ],
-                  );
+                    return Column(
+                      children: [
+                        SizedBox(height: height * 0.3),
+                        const CircularProgressIndicator(),
+                      ],
+                    );
                   },
                 ),
                 verticalSpaceMedium

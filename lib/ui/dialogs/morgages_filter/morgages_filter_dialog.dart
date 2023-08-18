@@ -128,7 +128,8 @@ class MorgagesFilterDialog extends StackedView<MorgagesViewModel> {
                           onPress: () {
                             viewModel.back();
                             viewModel.back();
-                            viewModel.navigateToMorgagesResult([viewModel.bankList?.id]);
+                            viewModel.navigateToMorgagesResult(
+                                [viewModel.bankList?.id]);
                           },
                           height: 40,
                           width: 100,

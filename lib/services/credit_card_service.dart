@@ -26,7 +26,8 @@ class CreditCardService {
   /////////////////////////////////////Card Like////////////////////////////////
 
   submitSurveyForm(body) async {
-    http.Response response = await http.post(_apiUrl.surveyForm,
+    http.Response response = await http.post(
+      _apiUrl.surveyForm,
       body: json.encode(body),
       headers: <String, String>{"Content-Type": "application/json"},
     );
