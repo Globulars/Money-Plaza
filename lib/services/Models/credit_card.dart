@@ -34,7 +34,7 @@ class CreditCard {
   String? createDate;
   List<String>? features;
   String? signImageUrl;
-  List<Null>? iconFeatureItems;
+  List? iconFeatureItems;
   List<TextFeatureItems>? textFeatureItems;
 
   CreditCard(
