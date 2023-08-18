@@ -108,7 +108,7 @@ class CreditCardFilterDialog extends StackedView<CreditCardViewModel> {
                             log("message");
                             viewModel.back();
                             viewModel.back();
-                            viewModel.navigateToCreditCardResult();
+                            viewModel.navigateToCreditCardResult([viewModel.financialInstitutesValue]);
                           },
                           height: 40,
                           width: 100,

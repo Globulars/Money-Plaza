@@ -68,14 +68,14 @@ class CreditCardViewModel extends BaseViewModel {
     _navigationService.back();
   }
 
-  navigateToCreditCardResult() {
+  navigateToCreditCardResult(_financialInstitutesValue) {
     var isValid = formKey.currentState!.validate();
     if (isValid) {
       _navigationService.navigateToCreditResultView(
         annualIncome: annualIncomeCtrl.text,
         issuersList: [cardProvider],
         typesList: [cardType],
-        financialInstitutesList: [financialInstitutesValue],
+        financialInstitutesList: _financialInstitutesValue,
       );
     }
   }
