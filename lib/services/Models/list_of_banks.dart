@@ -51,22 +51,22 @@ class BankList {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['logo'] = this.logo;
-    data['name'] = this.name;
-    data['nameCht'] = this.nameCht;
-    data['licenseNo'] = this.licenseNo;
-    data['bank'] = this.bank;
-    data['ordering'] = this.ordering;
-    data['loanOrdering'] = this.loanOrdering;
-    data['cardOrdering'] = this.cardOrdering;
-    data['mortgageOrdering'] = this.mortgageOrdering;
-    data['accountOrdering'] = this.accountOrdering;
-    data['insuranceOrdering'] = this.insuranceOrdering;
-    data['updateDate'] = this.updateDate;
-    data['createDate'] = this.createDate;
-    data['signLogoUrl'] = this.signLogoUrl;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['logo'] = logo;
+    data['name'] = name;
+    data['nameCht'] = nameCht;
+    data['licenseNo'] = licenseNo;
+    data['bank'] = bank;
+    data['ordering'] = ordering;
+    data['loanOrdering'] = loanOrdering;
+    data['cardOrdering'] = cardOrdering;
+    data['mortgageOrdering'] = mortgageOrdering;
+    data['accountOrdering'] = accountOrdering;
+    data['insuranceOrdering'] = insuranceOrdering;
+    data['updateDate'] = updateDate;
+    data['createDate'] = createDate;
+    data['signLogoUrl'] = signLogoUrl;
     return data;
   }
 }
