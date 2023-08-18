@@ -53,8 +53,8 @@ class ApiUrl {
   // final Uri award = Uri.parse("$baseUrl/award");
 
   /////////////////////////////////////banner Controller////////////////////////////////
-  // final Uri bannerGetBannersByType =
-  //     Uri.parse("$baseUrl/banner/getBannersByType");
+  final Uri creditCardGetBannersByType =
+      Uri.parse("$baseUrl/banner/getBannersByType?type=card");
 
   ///////////////////////////////////////blog Controller////////////////////////////////
   // final Uri blog = Uri.parse("$baseUrl/blog/");
