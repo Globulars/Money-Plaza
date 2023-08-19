@@ -26,6 +26,7 @@ class CreditResultView extends StackedView<CreditResultViewModel> {
     CreditResultViewModel viewModel,
     Widget? child,
   ) {
+    final height = MediaQuery.of(context).size.height;
     return Stack(
       children: [
         const BackgroundImage(),
@@ -69,9 +70,13 @@ class CreditResultView extends StackedView<CreditResultViewModel> {
                         return CreditCardWiget(creditCard: snapshot.data);
                       }
                     }
-                    return const Center(
-                      child: CircularProgressIndicator(),
-                    );
+                     return Column(
+                    children: [
+                      SizedBox(height: height*0.45
+                      ),
+                      const CircularProgressIndicator(),
+                    ],
+                  );
                   },
                 ),
                 verticalSpaceMedium
