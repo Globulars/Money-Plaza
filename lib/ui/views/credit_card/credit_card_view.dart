@@ -73,13 +73,6 @@ class CreditCardView extends StackedView<CreditCardViewModel> {
                             titleText: 'annualIncome',
                             controller: viewModel.annualIncomeCtrl,
                           ),
-                          verticalSpaceSmall,
-                          DropdownTextfield(
-                            titleText: 'bankFinancialInstitutes',
-                            value: viewModel.financialInstitutes,
-                            onChanged: viewModel.setFinancialInstitutes,
-                            options: viewModel.financialInstitutesList,
-                          ),
                         ],
                       ),
                     ),
@@ -103,7 +96,9 @@ class CreditCardView extends StackedView<CreditCardViewModel> {
               SubmitButton(
                 image: myIcons.search,
                 imgwidth: 12,
-                onPress: viewModel.navigateToCreditCardResult,
+                onPress: () {
+                  viewModel.navigateToCreditCardResult([]);
+                },
                 text: 'search',
                 height: 40,
                 width: 80,
