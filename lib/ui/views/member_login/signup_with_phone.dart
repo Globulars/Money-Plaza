@@ -26,19 +26,24 @@ class SignUpWithPhone extends StackedView<MemberLoginViewModel> {
         children: [
           verticalSpaceSmall,
           verticalSpaceTiny,
-          Container(
-            height: 35,
-            width: double.infinity,
-            decoration: BoxDecoration(
-                color: Colors.white,
-                border: Border.all(
-                    color: darkGreenLight.withOpacity(0.8), width: 1),
-                borderRadius: BorderRadius.circular(5)),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                SizedBox(
-                  width: width * 0.14,
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 5),
+                child: Container(
+                  height: 41,
+                  width: width * 0.2,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    border: Border(
+                        left: BorderSide(
+                            color: darkGreenLight.withOpacity(0.8), width: 1),
+                        top: BorderSide(
+                            color: darkGreenLight.withOpacity(0.8), width: 1),
+                        bottom: BorderSide(
+                            color: darkGreenLight.withOpacity(0.8), width: 1)),
+                  ),
                   child: CountryCodePicker(
                     padding: const EdgeInsets.all(0),
                     onChanged: viewModel.setCountryCode,
@@ -50,25 +55,21 @@ class SignUpWithPhone extends StackedView<MemberLoginViewModel> {
                     alignLeft: false,
                   ),
                 ),
-                VerticalDivider(color: darkGreenLight.withOpacity(0.8)),
-                Expanded(
-                  child: TextFormField(
-                      textAlign: TextAlign.center,
-                      keyboardType: TextInputType.number,
-                      controller: viewModel.phoneNoCtrl,
-                      decoration: InputDecoration(
-                        contentPadding:
-                            EdgeInsets.only(bottom: 12.5, right: width * 0.15),
-                        border: InputBorder.none,
-                        hintText: 'Phone No',
-                        hintStyle: const TextStyle(
-                          fontSize: 14,
-                          fontFamily: 'Roboto',
-                        ),
-                      )),
+              ),
+              Expanded(
+                child: CustomTextField(
+                  hintText: "Phone No",
+                  controller: viewModel.passwordCtrl,
+                  hintStyle: const TextStyle(fontSize: 14),
+                  textAlign: TextAlign.center,
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(0),
+                    borderSide: BorderSide(
+                        color: darkGreenLight.withOpacity(0.8), width: 1.0),
+                  ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
           verticalSpaceTiny,
           Row(
