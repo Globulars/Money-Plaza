@@ -31,9 +31,7 @@ class TopBanner extends StackedView<WidgetViewModel> {
             );
           }
         }
-        return const Center(
-          child: CircularProgressIndicator(),
-        );
+        return const SizedBox();
       },
     );
   }
