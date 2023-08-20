@@ -34,8 +34,7 @@ class CreditCardView extends StackedView<CreditCardViewModel> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const TopBanner(
-                    url:
-                        "https://admin.moneyplaza.com.hk/banner/getBannersByType?type=card"),
+                    url:"https://admin.moneyplaza.com.hk/banner/getBannersByType?type=card"),
                 Expanded(
                   child: SingleChildScrollView(
                     child: Padding(
