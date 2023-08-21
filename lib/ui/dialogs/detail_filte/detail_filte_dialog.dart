@@ -6,7 +6,6 @@ import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import '../../../services/Models/loan_card.dart';
 import '../../widgets/common/icon_box_btn/sub_bar.dart';
-import '../../widgets/common/icon_box_btn/text.dart';
 import '../../widgets/common/result_card.dart';
 import 'detail_filte_dialog_model.dart';
 import 'widgets/detail_card_2.dart';
