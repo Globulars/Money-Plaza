@@ -37,10 +37,13 @@ class DetailCard1 extends ViewModelWidget<DetailFilteDialogModel> {
               //     ],
               //   ),
               // ),
-              CustomText(text: loanData.detail.toString()
-                  // 'for3monthsSuccessfully'
-                  ),
-              const Card1Table()
+              // CustomText(text: loanData.detail.toString()
+              //     // 'for3monthsSuccessfully'
+              //     ),
+                   
+              Container(
+               width: 600,
+                child:  WebViewHtml(url: loanData.detail.toString(),))
             ],
           ),
         ),
