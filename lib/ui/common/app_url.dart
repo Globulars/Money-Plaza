@@ -97,7 +97,7 @@ class ApiUrl {
 
   ///////////////////////////////////////loan Controller////////////////////////////////
   // final Uri loanLike = Uri.parse("$baseUrl/loan/like/");
-  // final Uri loanList = Uri.parse("$baseUrl/loan/list");
+  final Uri loanList = Uri.parse("$baseUrl/loan/list");
   // final Uri loanMatch = Uri.parse("$baseUrl/loan/match");
   // final Uri loanPreview = Uri.parse("$baseUrl/loan/preview/");
 
