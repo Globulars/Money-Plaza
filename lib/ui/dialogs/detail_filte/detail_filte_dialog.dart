@@ -6,6 +6,7 @@ import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import '../../../services/Models/loan_card.dart';
 import '../../widgets/common/icon_box_btn/sub_bar.dart';
+import '../../widgets/common/icon_box_btn/text.dart';
 import '../../widgets/common/result_card.dart';
 import 'detail_filte_dialog_model.dart';
 import 'widgets/detail_card_2.dart';
@@ -29,7 +30,7 @@ class DetailFilteDialog extends StackedView<DetailFilteDialogModel> {
     Widget? child,
   ) {
     final width = MediaQuery.of(context).size.width;
-    LoanCard loanData =request.data;
+    LoanCard loanData = request.data;
     return Dialog(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       insetPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 0),
@@ -58,8 +59,8 @@ class DetailFilteDialog extends StackedView<DetailFilteDialogModel> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    resultCard(context,loanData,detailPage: 0.17),
-                     DetailCard1(loanData: loanData),
+                    resultCard(context, loanData, detailPage: 0.17),
+                    DetailCard1(loanData: loanData),
                     const DetailCard2(),
                     const DetailCard3(),
                   ],

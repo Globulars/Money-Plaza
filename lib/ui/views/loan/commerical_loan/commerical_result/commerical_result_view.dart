@@ -38,7 +38,7 @@ class CommericalResultView extends StackedView<CommericalResultViewModel> {
                       itemCount: 3,
                       shrinkWrap: true,
                       itemBuilder: (BuildContext context, int index) {
-                        return resultCard(context,LoanCard());
+                        return resultCard(context, LoanCard());
                       },
                     ),
                   ),

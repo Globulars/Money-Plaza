@@ -9,18 +9,16 @@ import '../detail_filte_dialog_model.dart';
 
 class DetailCard1 extends ViewModelWidget<DetailFilteDialogModel> {
   final LoanCard loanData;
-  const DetailCard1( {Key? key,required this.loanData}) : super(key: key);
+  const DetailCard1({Key? key, required this.loanData}) : super(key: key);
 
   @override
   Widget build(
     BuildContext context,
     DetailFilteDialogModel viewModel,
   ) {
-   
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 5),
       child: Card(
-      
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 0),
           child: Column(
@@ -41,11 +39,10 @@ class DetailCard1 extends ViewModelWidget<DetailFilteDialogModel> {
               //     ],
               //   ),
               // ),
-              CustomText(text:loanData.detail.toString() 
-              // 'for3monthsSuccessfully'
-              ),
+              CustomText(text: loanData.detail.toString()
+                  // 'for3monthsSuccessfully'
+                  ),
               const Card1Table()
-
             ],
           ),
         ),

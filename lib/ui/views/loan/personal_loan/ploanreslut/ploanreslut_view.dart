@@ -39,7 +39,7 @@ class PloanreslutView extends StackedView<PloanreslutViewModel> {
                       shrinkWrap: true,
                       padding: const EdgeInsets.only(bottom: 60),
                       itemBuilder: (BuildContext context, int index) {
-                        return resultCard(context,LoanCard());
+                        return resultCard(context, LoanCard());
                       },
                     ),
                   ),

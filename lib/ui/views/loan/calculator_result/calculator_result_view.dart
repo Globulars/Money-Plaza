@@ -59,7 +59,7 @@ class CalculatorResultView extends StackedView<CalculatorResultViewModel> {
                         itemCount: 2,
                         physics: const NeverScrollableScrollPhysics(),
                         itemBuilder: (BuildContext context, int index) {
-                          return resultCard(context,LoanCard());
+                          return resultCard(context, LoanCard());
                         },
                       ),
                       verticalSpaceTiny,

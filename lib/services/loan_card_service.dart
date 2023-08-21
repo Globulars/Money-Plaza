@@ -9,7 +9,7 @@ class LoanCardService {
     "content-type": "application/json;charset=UTF-8"
   };
 
-   /////////////////////////////////////Card List////////////////////////////////
+  /////////////////////////////////////Card List////////////////////////////////
   loanlist(body) async {
     try {
       final response = await http.post(_apiUrl.loanList,
@@ -24,6 +24,4 @@ class LoanCardService {
       return {"message": e};
     }
   }
-
-
 }
