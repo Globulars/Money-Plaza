@@ -20,7 +20,6 @@ class Card1Table extends ViewModelWidget<DetailFilteDialogModel> {
           dataRowMaxHeight: 20,
           horizontalMargin: 0,
           columns: [
-            // Set the name of the column
             DataColumn(
               label: SizedBox(
                   width: 40,

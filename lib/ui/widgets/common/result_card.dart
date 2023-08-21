@@ -11,7 +11,7 @@ import '../../common/ui_helpers.dart';
 import 'icon_box_btn/submit_button.dart';
 import 'icon_box_btn/text.dart';
 
-Widget resultCard(context,LoanCard loanData , {detailPage = 0}) {
+Widget resultCard(context, LoanCard loanData, {detailPage = 0}) {
   final _navigationService = locator<NavigationService>();
   void applyConfirm() {
     _navigationService.navigateToApplyconfirmView();
@@ -20,10 +20,8 @@ Widget resultCard(context,LoanCard loanData , {detailPage = 0}) {
   final _dialogService = locator<DialogService>();
   void showDetail() {
     _dialogService.showCustomDialog(
-      variant: DialogType.detailFilte,
-    );
+        variant: DialogType.detailFilte, data: loanData);
   }
-
 
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 5),
@@ -40,21 +38,24 @@ Widget resultCard(context,LoanCard loanData , {detailPage = 0}) {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                    Image.network(
-                      loanData.company?.signLogoUrl??"",
+                  Image.network(
+                    loanData.company?.signLogoUrl ?? "",
                     width: 80,
                   ),
                   verticalSpaceTiny,
                   CustomText(
-                    text: loanData.company!.name.toString(),
+                    text: loanData.company?.name ?? "",
                     color: Colors.black,
                     fontSize: 20,
                     fontWeight: FontWeight.w600,
                   ),
                   verticalSpaceTiny,
                   CustomText(
-                      text: "borrowingAmountTenor"
-                          .tr(args: ["${loanData.minAmount}", "${loanData.maxAmount}", "${loanData.minTenor} - ${loanData.maxTenor}"]),
+                      text: "borrowingAmountTenor".tr(args: [
+                        "${loanData.minAmount}",
+                        "${loanData.maxAmount}",
+                        "${loanData.minTenor} - ${loanData.maxTenor}"
+                      ]),
                       color: Colors.black87,
                       fontSize: 15),
                   verticalSpaceTiny,
@@ -62,7 +63,6 @@ Widget resultCard(context,LoanCard loanData , {detailPage = 0}) {
                       text: loanData.advantage.toString(),
                       color: darkGreenLight,
                       fontSize: 14),
-                  
                 ],
               ),
             ),
