@@ -4,6 +4,7 @@ import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:money_plaza/ui/dialogs/detail_filte/widgets/detail_card_1.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
+import '../../../services/Models/loan_card.dart';
 import '../../widgets/common/icon_box_btn/sub_bar.dart';
 import '../../widgets/common/result_card.dart';
 import 'detail_filte_dialog_model.dart';
@@ -56,7 +57,7 @@ class DetailFilteDialog extends StackedView<DetailFilteDialogModel> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    resultCard(context, detailPage: 0.17),
+                    resultCard(context,LoanCard(),detailPage: 0.17),
                     const DetailCard1(),
                     const DetailCard2(),
                     const DetailCard3(),

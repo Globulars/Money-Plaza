@@ -1,16 +1,20 @@
+import 'dart:developer';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:money_plaza/app/app.router.dart';
+import 'package:money_plaza/services/loan_card_service.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:stacked_services/stacked_services.dart';
 import '../../../app/app.dialogs.dart';
 import '../../../app/app.locator.dart';
+import '../../../services/Models/loan_card.dart';
 import '../../common/app_colors.dart';
 import '../../common/ui_helpers.dart';
 import 'icon_box_btn/submit_button.dart';
 import 'icon_box_btn/text.dart';
 
-Widget resultCard(context, {detailPage = 0}) {
+Widget resultCard(context,LoanCard loanData , {detailPage = 0}) {
   final _navigationService = locator<NavigationService>();
   void applyConfirm() {
     _navigationService.navigateToApplyconfirmView();
@@ -22,6 +26,7 @@ Widget resultCard(context, {detailPage = 0}) {
       variant: DialogType.detailFilte,
     );
   }
+
 
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 5),
@@ -38,13 +43,13 @@ Widget resultCard(context, {detailPage = 0}) {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Image.asset(
-                    myIcons.weLend,
-                    width: 90,
+                    Image.network(
+                      loanData.company!.signLogoUrl.toString(),
+                    width: 80,
                   ),
                   verticalSpaceTiny,
                   CustomText(
-                    text: "weLend",
+                    text: loanData.company!.name.toString(),
                     color: Colors.black,
                     fontSize: 20,
                     fontWeight: FontWeight.w600,
@@ -76,7 +81,7 @@ Widget resultCard(context, {detailPage = 0}) {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   CustomText(
-                    text: "valueChange".tr(args: ["2.75%"]),
+                    text: "valueChange".tr(args: ["${loanData.interestRate.toString()}%"]),
                     color: Colors.black,
                     fontSize: 22,
                     fontWeight: FontWeight.w500,

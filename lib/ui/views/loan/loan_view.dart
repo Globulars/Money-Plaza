@@ -1,8 +1,11 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:money_plaza/ui/widgets/top_banner.dart';
 import 'package:money_plaza/ui/widgets/top_bar2/top_bar2_view.dart';
 import 'package:stacked/stacked.dart';
+import '../../../services/Models/loan_card.dart';
 import '../../common/app_icons.dart';
 import '../../widgets/app_bar.dart';
 import '../../widgets/bottom_bar.dart';
@@ -14,7 +17,8 @@ import '../../widgets/loan_containers.dart';
 import 'loan_viewmodel.dart';
 
 class LoanView extends StackedView<LoanViewModel> {
-  const LoanView({Key? key}) : super(key: key);
+  final List<LoanCard>? loanCard;
+  const LoanView( {Key? key,this.loanCard}) : super(key: key);
 
   @override
   Widget builder(
@@ -22,6 +26,8 @@ class LoanView extends StackedView<LoanViewModel> {
     LoanViewModel viewModel,
     Widget? child,
   ) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return Stack(
       children: [
         const BackgroundImage(),
@@ -41,20 +47,44 @@ class LoanView extends StackedView<LoanViewModel> {
                 verticalSpaceSmall,
                 Stack(
                   children: [
-                    Column(
+                     FutureBuilder<List<LoanCard>>(
+                  future: viewModel.loanListData(),
+                  builder: (ctx, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.done) {
+                      if (snapshot.hasError) {
+                        return Center(
+                          child: Text(
+                            snapshot.error.toString(),
+                            style: const TextStyle(fontSize: 18),
+                          ),
+                        );
+                      } else if (snapshot.hasData) {
+                        return Column(
                       children: [
                         verticalSpace(70.0),
                         const HorizentalListViewView(),
                         ListView.builder(
-                          itemCount: 3,
+                          itemCount: snapshot.data!.length,
                           shrinkWrap: true,
                           physics: const NeverScrollableScrollPhysics(),
                           itemBuilder: (BuildContext context, int index) {
-                            return resultCard(context);
+                          
+                            return resultCard(context,snapshot.data![index]);
                           },
                         ),
                       ],
-                    ),
+                    );
+                      }
+                    }
+                    return Column(                     
+                      children: [
+                        SizedBox(height: height * 0.3,width: width*1,),
+                        const CircularProgressIndicator(),
+                      ],
+                    );
+                  },
+                ),
+                   
                     const TopBar2View(),
                   ],
                 ),

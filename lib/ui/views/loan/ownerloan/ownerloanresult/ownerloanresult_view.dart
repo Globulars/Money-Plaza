@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import '../../../../../services/Models/loan_card.dart';
 import '../../../../common/ui_helpers.dart';
 import '../../../../widgets/app_bar.dart';
 import '../../../../widgets/bottom_bar.dart';
@@ -37,7 +38,7 @@ class OwnerloanresultView extends StackedView<OwnerloanresultViewModel> {
                       itemCount: 3,
                       shrinkWrap: true,
                       itemBuilder: (BuildContext context, int index) {
-                        return resultCard(context);
+                        return resultCard(context,LoanCard());
                       },
                     ),
                   ),

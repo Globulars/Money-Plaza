@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
+import '../../../../../services/Models/loan_card.dart';
 import '../../../../widgets/app_bar.dart';
 import '../../../../widgets/bottom_bar.dart';
 import '../../../../widgets/common/background_image.dart';
@@ -38,7 +39,7 @@ class PloanreslutView extends StackedView<PloanreslutViewModel> {
                       shrinkWrap: true,
                       padding: const EdgeInsets.only(bottom: 60),
                       itemBuilder: (BuildContext context, int index) {
-                        return resultCard(context);
+                        return resultCard(context,LoanCard());
                       },
                     ),
                   ),
