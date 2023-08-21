@@ -1,9 +1,6 @@
-import 'dart:developer';
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:money_plaza/app/app.router.dart';
-import 'package:money_plaza/services/loan_card_service.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:stacked_services/stacked_services.dart';
 import '../../../app/app.dialogs.dart';
@@ -44,7 +41,7 @@ Widget resultCard(context,LoanCard loanData , {detailPage = 0}) {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                     Image.network(
-                      loanData.company!.signLogoUrl.toString(),
+                      loanData.company?.signLogoUrl??"",
                     width: 80,
                   ),
                   verticalSpaceTiny,
@@ -57,21 +54,15 @@ Widget resultCard(context,LoanCard loanData , {detailPage = 0}) {
                   verticalSpaceTiny,
                   CustomText(
                       text: "borrowingAmountTenor"
-                          .tr(args: ["10,000", "70,000", "12 - 60"]),
+                          .tr(args: ["${loanData.minAmount}", "${loanData.maxAmount}", "${loanData.minTenor} - ${loanData.maxTenor}"]),
                       color: Colors.black87,
                       fontSize: 15),
                   verticalSpaceTiny,
                   CustomText(
-                      text: "limitedTimeOffer",
+                      text: loanData.advantage.toString(),
                       color: darkGreenLight,
                       fontSize: 14),
-                  verticalSpaceTiny,
-                  CustomText(
-                    text: "moneyLender".tr(args: ["#00093/2022"]),
-                    color: Colors.black,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w500,
-                  ),
+                  
                 ],
               ),
             ),
@@ -81,7 +72,7 @@ Widget resultCard(context,LoanCard loanData , {detailPage = 0}) {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   CustomText(
-                    text: "valueChange".tr(args: ["${loanData.interestRate.toString()}%"]),
+                    text: "${loanData.interestRate.toString()}%",
                     color: Colors.black,
                     fontSize: 22,
                     fontWeight: FontWeight.w500,
