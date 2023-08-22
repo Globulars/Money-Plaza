@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import '../../../../services/Models/loan_card.dart';
 import '../../../widgets/common/icon_box_btn/text.dart';
-import 'card_1_table.dart';
 import '../detail_filte_dialog_model.dart';
 
 class DetailCard1 extends ViewModelWidget<DetailFilteDialogModel> {

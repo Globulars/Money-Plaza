@@ -8,8 +8,6 @@ import '../../../services/Models/loan_card.dart';
 import '../../widgets/common/icon_box_btn/sub_bar.dart';
 import '../../widgets/common/result_card.dart';
 import 'detail_filte_dialog_model.dart';
-import 'widgets/detail_card_2.dart';
-import 'widgets/detail_card_3.dart';
 
 class DetailFilteDialog extends StackedView<DetailFilteDialogModel> {
   final DialogRequest request;
