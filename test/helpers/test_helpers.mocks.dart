@@ -701,4 +701,19 @@ class MockCreditCardService extends _i1.Mock implements _i9.CreditCardService {
 /// A class which mocks [LoanCardService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockLoanCardService extends _i1.Mock implements _i10.LoanCardService {}
+class MockLoanCardService extends _i1.Mock implements _i10.LoanCardService {
+  @override
+  Map<String, String> get headers => (super.noSuchMethod(
+        Invocation.getter(#headers),
+        returnValue: <String, String>{},
+        returnValueForMissingStub: <String, String>{},
+      ) as Map<String, String>);
+  @override
+  set headers(Map<String, String>? _headers) => super.noSuchMethod(
+        Invocation.setter(
+          #headers,
+          _headers,
+        ),
+        returnValueForMissingStub: null,
+      );
+}

@@ -5,8 +5,9 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:flutter/material.dart' as _i31;
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' as _i31;
+import 'package:money_plaza/services/Models/loan_card.dart' as _i32;
 import 'package:money_plaza/ui/views/credit_card/credit_card_view.dart' as _i22;
 import 'package:money_plaza/ui/views/credit_card/credit_result/credit_result_view.dart'
     as _i23;
@@ -59,7 +60,7 @@ import 'package:money_plaza/ui/widgets/common/horizental_list_view/horizental_li
     as _i30;
 import 'package:money_plaza/ui/widgets/top_bar2/top_bar2_view.dart' as _i29;
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i32;
+import 'package:stacked_services/stacked_services.dart' as _i33;
 
 class Routes {
   static const startupView = '/startup-view';
@@ -287,8 +288,12 @@ class StackedRouter extends _i1.RouterBase {
       );
     },
     _i4.LoanView: (data) {
+      final args = data.getArgs<LoanViewArguments>(
+        orElse: () => const LoanViewArguments(),
+      );
       return _i31.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i4.LoanView(),
+        builder: (context) =>
+            _i4.LoanView(key: args.key, loanCard: args.loanCard),
         settings: data,
       );
     },
@@ -476,6 +481,33 @@ class StackedRouter extends _i1.RouterBase {
   List<_i1.RouteDef> get routes => _routes;
   @override
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
+}
+
+class LoanViewArguments {
+  const LoanViewArguments({
+    this.key,
+    this.loanCard,
+  });
+
+  final _i31.Key? key;
+
+  final List<_i32.LoanCard>? loanCard;
+
+  @override
+  String toString() {
+    return '{"key": "$key", "loanCard": "$loanCard"}';
+  }
+
+  @override
+  bool operator ==(covariant LoanViewArguments other) {
+    if (identical(this, other)) return true;
+    return other.key == key && other.loanCard == loanCard;
+  }
+
+  @override
+  int get hashCode {
+    return key.hashCode ^ loanCard.hashCode;
+  }
 }
 
 class ApplyconfirmViewArguments {
@@ -689,7 +721,7 @@ class CreditResultViewArguments {
   }
 }
 
-extension NavigatorStateExtension on _i32.NavigationService {
+extension NavigatorStateExtension on _i33.NavigationService {
   Future<dynamic> navigateToStartupView([
     int? routerId,
     bool preventDuplicates = true,
@@ -718,14 +750,17 @@ extension NavigatorStateExtension on _i32.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> navigateToLoanView([
+  Future<dynamic> navigateToLoanView({
+    _i31.Key? key,
+    List<_i32.LoanCard>? loanCard,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return navigateTo<dynamic>(Routes.loanView,
+        arguments: LoanViewArguments(key: key, loanCard: loanCard),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -1166,14 +1201,17 @@ extension NavigatorStateExtension on _i32.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> replaceWithLoanView([
+  Future<dynamic> replaceWithLoanView({
+    _i31.Key? key,
+    List<_i32.LoanCard>? loanCard,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return replaceWith<dynamic>(Routes.loanView,
+        arguments: LoanViewArguments(key: key, loanCard: loanCard),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

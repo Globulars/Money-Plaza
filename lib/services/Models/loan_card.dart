@@ -65,6 +65,7 @@ class LoanCard {
   bool? pureApr;
   String? aprStr;
   bool? customRate;
+  bool? checkBox=false;
 
   LoanCard(
       {this.id,
@@ -132,7 +133,8 @@ class LoanCard {
       this.interestRateOnly,
       this.pureApr,
       this.aprStr,
-      this.customRate});
+      this.customRate,
+      this.checkBox});
 
   LoanCard.fromJson(Map<String, dynamic> json) {
     id = json['id'];
