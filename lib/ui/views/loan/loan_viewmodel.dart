@@ -49,5 +49,17 @@ class LoanViewModel extends BaseViewModel {
       log(data["message"].toString());
       throw Exception(data["message"].toString());
     }
+  } Future<List<LoanCard>> getLoanTags() async {
+    var data = await _loanCardService.getLoanTags();
+    if (data?["success"] == true) {
+      List dataList = data["data"]["records"];
+      log("===>${dataList.length}");
+      List<LoanCard> loanCardList =
+          dataList.map((data) => LoanCard.fromJson(data)).toList();
+      return loanCardList;
+    } else {
+      log(data["message"].toString());
+      throw Exception(data["message"].toString());
+    }
   }
 }

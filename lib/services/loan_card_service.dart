@@ -26,10 +26,9 @@ class LoanCardService {
   }
 
   /////////////////////////////////////Get Loan Tags////////////////////////////////
-  getLoanTags(body) async {
+  getLoanTags() async {
     try {
-      final response = await http.post(_apiUrl.getLoanTags,
-          body: jsonEncode(body), headers: headers);
+      final response = await http.get(_apiUrl.getLoanTags, headers: headers);
       if (response.statusCode == 200) {
         var data = json.decode(response.body);
         return data;
