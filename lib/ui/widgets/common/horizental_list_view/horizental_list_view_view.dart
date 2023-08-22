@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import '../../../../services/Models/loan_tags.dart';
 import '../../../common/app_colors.dart';
 import '../../../common/ui_helpers.dart';
 import '../icon_box_btn/text.dart';
@@ -15,6 +16,8 @@ class HorizentalListViewView extends StackedView<HorizentalListViewViewModel> {
     HorizentalListViewViewModel viewModel,
     Widget? child,
   ) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
@@ -27,34 +30,54 @@ class HorizentalListViewView extends StackedView<HorizentalListViewViewModel> {
               width: 25,
             ),
             horizontalSpaceTiny,
-            Expanded(
-              child: SizedBox(
-                height: 30.0,
-                child: ListView.builder(
-                  physics: const ClampingScrollPhysics(),
-                  shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 15,
-                  itemBuilder: (BuildContext context, int index) => Padding(
-                    padding: const EdgeInsets.only(right: 5),
-                    child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(5),
-                            border:
-                                Border.all(color: darkGreenHeigh, width: 1)),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 4),
-                          child: Center(
-                              child: CustomText(
-                            text: 'loanAmount',
-                            color: darkGreenHeigh,
-                            fontSize: 12,
-                          )),
-                        )),
-                  ),
-                ),
-              ),
+            FutureBuilder<List<LoanTags>>(
+              future: viewModel.getLoanTags(),
+              builder: (ctx, snapshot) {
+                if (snapshot.connectionState == ConnectionState.done) {
+                  if (snapshot.hasError) {
+                    return Center(
+                      child: Text(
+                        snapshot.error.toString(),
+                        style: const TextStyle(fontSize: 18),
+                      ),
+                    );
+                  } else if (snapshot.hasData) {
+                    return Expanded(
+                      child: SizedBox(
+                        height: 30.0,
+                        child: ListView.builder(
+                            physics: const ClampingScrollPhysics(),
+                            shrinkWrap: true,
+                            scrollDirection: Axis.horizontal,
+                            itemCount: 15,
+                            itemBuilder: (BuildContext context, int index) {
+                              LoanTags loanTags = snapshot.data![index];
+                              return Padding(
+                                padding: const EdgeInsets.only(right: 5),
+                                child: Container(
+                                    decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.circular(5),
+                                        border: Border.all(
+                                            color: darkGreenHeigh, width: 1)),
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 4),
+                                      child: Center(
+                                          child: CustomText(
+                                        text: loanTags.name ?? "",
+                                        color: darkGreenHeigh,
+                                        fontSize: 12,
+                                      )),
+                                    )),
+                              );
+                            }),
+                      ),
+                    );
+                  }
+                }
+                return Container();
+              },
             ),
           ],
         ),
