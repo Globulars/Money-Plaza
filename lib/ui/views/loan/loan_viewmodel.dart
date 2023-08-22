@@ -40,7 +40,6 @@ class LoanViewModel extends BaseViewModel {
       features.add(loanTags.id ?? "");
       loanTags.selected = true;
     }
-    log("======>$features");
     notifyListeners();
   }
 

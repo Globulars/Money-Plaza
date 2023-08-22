@@ -57,7 +57,9 @@ class HorizentalListViewView extends ViewModelWidget<LoanViewModel> {
                                   padding: const EdgeInsets.only(right: 5),
                                   child: Container(
                                       decoration: BoxDecoration(
-                                          color: Colors.white,
+                                          color: loanTags.selected == false
+                                              ? darkGreenHeigh
+                                              : Colors.white,
                                           borderRadius:
                                               BorderRadius.circular(5),
                                           border: Border.all(
@@ -68,7 +70,9 @@ class HorizentalListViewView extends ViewModelWidget<LoanViewModel> {
                                         child: Center(
                                             child: CustomText(
                                           text: loanTags.name ?? "",
-                                          color: darkGreenHeigh,
+                                          color: loanTags.selected == true
+                                              ? darkGreenLight
+                                              : Colors.white,
                                           fontSize: 12,
                                         )),
                                       )),
