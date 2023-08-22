@@ -159,7 +159,9 @@
 // }
 
 import 'package:flutter/material.dart';
-import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:flutter_html/flutter_html.dart';
+import 'package:flutter_html_table/flutter_html_table.dart';
+import 'package:flutter_html_iframe/flutter_html_iframe.dart';
 
 class WebViewHtml extends StatefulWidget {
   final String url;
@@ -170,41 +172,46 @@ class WebViewHtml extends StatefulWidget {
 }
 
 class _WebViewHtmlState extends State<WebViewHtml> {
-  InAppWebViewController? _webViewController;
-
   @override
   Widget build(BuildContext context) {
-    return InAppWebView(
-      initialData: InAppWebViewInitialData(data: widget.url),
-      initialOptions: InAppWebViewGroupOptions(
-          crossPlatform: InAppWebViewOptions(
-              // debuggingEnabled: true,
-              )),
-      onWebViewCreated: (InAppWebViewController controller) {
-        _webViewController = controller;
-
-        _webViewController?.addJavaScriptHandler(
-            handlerName: 'handlerFoo',
-            callback: (args) {
-              // return data to JavaScript side!
-              return {'bar': 'bar_value', 'baz': 'baz_value'};
-            });
-
-        _webViewController?.addJavaScriptHandler(
-            handlerName: 'handlerFooWithArgs',
-            callback: (args) {
-              print(args);
-              // it will print: [1, true, [bar, 5], {foo: baz}, {bar: bar_value, baz: baz_value}]
-            });
+    return Html(
+      data: widget.url,
+      shrinkWrap: true,
+      style: {
+        "table": Style(
+          height: Height.auto(),
+          width: Width.auto(),
+        ),
+        "tr": Style(
+          height: Height.auto(),
+          width: Width.auto(),
+        ),
+        "th": Style(
+          padding: HtmlPaddings.all(6),
+          height: Height.auto(),
+          border: const Border(
+            left: BorderSide(color: Colors.black, width: 0.5),
+            bottom: BorderSide(color: Colors.black, width: 0.5),
+            top: BorderSide(color: Colors.black, width: 0.5),
+          ),
+        ),
+        "td": Style(
+          padding: HtmlPaddings.all(6),
+          height: Height.auto(),
+          border: const Border(
+            left: BorderSide(color: Colors.black, width: 0.5),
+            bottom: BorderSide(color: Colors.black, width: 0.5),
+            top: BorderSide(color: Colors.black, width: 0.5),
+            right: BorderSide(color: Colors.black, width: 0.5),
+          ),
+        ),
+        "col": Style(
+          height: Height.auto(),
+          width: Width.auto(),
+        ),
       },
-      onConsoleMessage: (controller, consoleMessage) {
-        print(consoleMessage);
-        // it will print: {message: {"bar":"bar_value","baz":"baz_value"}, messageLevel: 1}
-      },
+    
+      extensions: const [TableHtmlExtension(),IframeHtmlExtension()],
     );
-
-    // body: Html(
-    //     data:
-    //         """<table><tr><td>100</td><td>200</td><td>300</td></tr></table>"""),
   }
 }
