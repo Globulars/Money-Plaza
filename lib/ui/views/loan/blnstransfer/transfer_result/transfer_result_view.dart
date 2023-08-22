@@ -39,7 +39,7 @@ class TransferResultView extends StackedView<TransferResultViewModel> {
                       itemCount: 3,
                       shrinkWrap: true,
                       itemBuilder: (BuildContext context, int index) {
-                        return resultCard(context, LoanCard());
+                        return ResultCard(loanData: LoanCard());
                       },
                     ),
                   ),

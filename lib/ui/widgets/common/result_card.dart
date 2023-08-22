@@ -2,28 +2,29 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:money_plaza/app/app.router.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
+import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import '../../../app/app.dialogs.dart';
 import '../../../app/app.locator.dart';
 import '../../../services/Models/loan_card.dart';
 import '../../common/app_colors.dart';
 import '../../common/ui_helpers.dart';
+import '../widgets_Model.dart';
 import 'icon_box_btn/submit_button.dart';
 import 'icon_box_btn/text.dart';
 
-Widget resultCard(context, LoanCard loanData, {detailPage = 0}) {
-  final _navigationService = locator<NavigationService>();
-  void applyConfirm() {
-    _navigationService.navigateToApplyconfirmView();
-  }
+class ResultCard extends StackedView<WidgetViewModel> {
+  final LoanCard loanData;
+  final double detailPage;
+ const  ResultCard( {super.key,required this.loanData,this.detailPage=0});
 
-  final _dialogService = locator<DialogService>();
-  void showDetail() {
-    _dialogService.showCustomDialog(
-        variant: DialogType.detailFilte, data: loanData);
-  }
-
-  return Padding(
+  @override
+  Widget builder(
+    BuildContext context,
+    WidgetViewModel viewModel,
+    Widget? child,
+  ) {
+    return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 5),
     child: Card(
       child: Padding(
@@ -84,13 +85,27 @@ Widget resultCard(context, LoanCard loanData, {detailPage = 0}) {
                     fontSize: 12,
                   ),
                   verticalSpaceSmall,
-                  SubmitButton(
-                    image: myIcons.compare2,
-                    imgwidth: 16,
-                    boxColor: Colors.transparent,
-                    text: 'compare',
-                    color: Colors.black87,
-                    fontSize: 18,
+                  SizedBox(width: MediaQuery.of(context).size.width * 0.3,
+                    child: Row(
+                      children: [
+                         SizedBox(height: 10,
+                                    width: 20,
+                                    child: Checkbox(
+                                      value:true,
+                                      //  mortgage.checkBox,
+                                      onChanged: (value) {
+                                        // viewModel.setCardSelect(value, mortgage);
+                                      },
+                                    ),
+                                  ),
+                        SubmitButton(
+                          boxColor: Colors.transparent,
+                          text: 'compare',
+                          color: Colors.black87,
+                          fontSize: 18,
+                        ),
+                      ],
+                    ),
                   ),
                   verticalSpaceSmall,
                   SubmitButton(
@@ -99,7 +114,7 @@ Widget resultCard(context, LoanCard loanData, {detailPage = 0}) {
                     text: 'apply',
                     fontSize: 18,
                     height: 40,
-                    onPress: applyConfirm,
+                    onPress:viewModel. applyConfirm,
                   ),
                   verticalSpaceSmall,
                   SubmitButton(
@@ -109,7 +124,7 @@ Widget resultCard(context, LoanCard loanData, {detailPage = 0}) {
                     text: 'details',
                     color: Colors.black,
                     fontSize: 18,
-                    onPress: showDetail,
+                    onPress:viewModel. showDetail,
                   ),
                 ],
               ),
@@ -119,4 +134,11 @@ Widget resultCard(context, LoanCard loanData, {detailPage = 0}) {
       ),
     ),
   );
+  }
+
+  @override
+  WidgetViewModel viewModelBuilder(
+    BuildContext context,
+  ) =>
+      WidgetViewModel();
 }

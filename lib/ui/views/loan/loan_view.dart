@@ -16,7 +16,8 @@ import 'loan_viewmodel.dart';
 
 class LoanView extends StackedView<LoanViewModel> {
   final List<LoanCard>? loanCard;
-  const LoanView({Key? key, this.loanCard}) : super(key: key);
+  final LoanViewModel viewModel = LoanViewModel();
+  LoanView({Key? key, this.loanCard}) : super(key: key);
 
   @override
   Widget builder(
@@ -67,8 +68,8 @@ class LoanView extends StackedView<LoanViewModel> {
                                   physics: const NeverScrollableScrollPhysics(),
                                   itemBuilder:
                                       (BuildContext context, int index) {
-                                    return resultCard(
-                                        context, snapshot.data![index]);
+                                    return ResultCard(
+                                        loanData: snapshot.data![index]);
                                   },
                                 ),
                               ],
