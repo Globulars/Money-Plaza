@@ -160,8 +160,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:flutter_html_table/flutter_html_table.dart';
-import 'package:flutter_html_iframe/flutter_html_iframe.dart';
 
 class WebViewHtml extends StatefulWidget {
   final String url;
@@ -211,7 +209,7 @@ class _WebViewHtmlState extends State<WebViewHtml> {
         ),
       },
     
-      extensions: const [TableHtmlExtension(),IframeHtmlExtension()],
+      // extensions: const [TableHtmlExtension(),IframeHtmlExtension()],
     );
   }
 }
