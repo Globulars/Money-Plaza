@@ -24,4 +24,20 @@ class LoanCardService {
       return {"message": e};
     }
   }
+
+  /////////////////////////////////////Get Loan Tags////////////////////////////////
+  getLoanTags(body) async {
+    try {
+      final response = await http.post(_apiUrl.getLoanTags,
+          body: jsonEncode(body), headers: headers);
+      if (response.statusCode == 200) {
+        var data = json.decode(response.body);
+        return data;
+      } else {
+        return {"message": "${response.statusCode} error found"};
+      }
+    } catch (e) {
+      return {"message": e};
+    }
+  }
 }
