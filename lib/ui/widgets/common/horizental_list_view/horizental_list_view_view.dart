@@ -3,21 +3,18 @@ import 'package:stacked/stacked.dart';
 import '../../../../services/Models/loan_tags.dart';
 import '../../../common/app_colors.dart';
 import '../../../common/ui_helpers.dart';
+import '../../../views/loan/loan_viewmodel.dart';
 import '../icon_box_btn/text.dart';
-import 'horizental_list_view_viewmodel.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 
-class HorizentalListViewView extends StackedView<HorizentalListViewViewModel> {
+class HorizentalListViewView extends ViewModelWidget<LoanViewModel> {
   const HorizentalListViewView({Key? key}) : super(key: key);
 
   @override
-  Widget builder(
+  Widget build(
     BuildContext context,
-    HorizentalListViewViewModel viewModel,
-    Widget? child,
+    LoanViewModel viewModel,
   ) {
-    final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.width;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
@@ -104,10 +101,4 @@ class HorizentalListViewView extends StackedView<HorizentalListViewViewModel> {
       ],
     );
   }
-
-  @override
-  HorizentalListViewViewModel viewModelBuilder(
-    BuildContext context,
-  ) =>
-      HorizentalListViewViewModel();
 }
