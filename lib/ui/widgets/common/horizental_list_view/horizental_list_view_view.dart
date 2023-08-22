@@ -49,24 +49,30 @@ class HorizentalListViewView extends ViewModelWidget<LoanViewModel> {
                             itemCount: 15,
                             itemBuilder: (BuildContext context, int index) {
                               LoanTags loanTags = snapshot.data![index];
-                              return Padding(
-                                padding: const EdgeInsets.only(right: 5),
-                                child: Container(
-                                    decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        borderRadius: BorderRadius.circular(5),
-                                        border: Border.all(
-                                            color: darkGreenHeigh, width: 1)),
-                                    child: Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 4),
-                                      child: Center(
-                                          child: CustomText(
-                                        text: loanTags.name ?? "",
-                                        color: darkGreenHeigh,
-                                        fontSize: 12,
+                              return InkWell(
+                                onTap: () {
+                                  viewModel.setFeatures(loanTags);
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.only(right: 5),
+                                  child: Container(
+                                      decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius:
+                                              BorderRadius.circular(5),
+                                          border: Border.all(
+                                              color: darkGreenHeigh, width: 1)),
+                                      child: Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 4),
+                                        child: Center(
+                                            child: CustomText(
+                                          text: loanTags.name ?? "",
+                                          color: darkGreenHeigh,
+                                          fontSize: 12,
+                                        )),
                                       )),
-                                    )),
+                                ),
                               );
                             }),
                       ),
