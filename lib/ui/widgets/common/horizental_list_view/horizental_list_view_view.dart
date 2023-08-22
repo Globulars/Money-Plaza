@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import '../../../../services/Models/loan_tags.dart';
 import '../../../common/app_colors.dart';
 import '../../../common/ui_helpers.dart';
+import '../../../views/loan/loan_viewmodel.dart';
 import '../icon_box_btn/text.dart';
-import 'horizental_list_view_viewmodel.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 
-class HorizentalListViewView extends StackedView<HorizentalListViewViewModel> {
+class HorizentalListViewView extends ViewModelWidget<LoanViewModel> {
   const HorizentalListViewView({Key? key}) : super(key: key);
 
   @override
-  Widget builder(
+  Widget build(
     BuildContext context,
-    HorizentalListViewViewModel viewModel,
-    Widget? child,
+    LoanViewModel viewModel,
   ) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -27,34 +27,54 @@ class HorizentalListViewView extends StackedView<HorizentalListViewViewModel> {
               width: 25,
             ),
             horizontalSpaceTiny,
-            Expanded(
-              child: SizedBox(
-                height: 30.0,
-                child: ListView.builder(
-                  physics: const ClampingScrollPhysics(),
-                  shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 15,
-                  itemBuilder: (BuildContext context, int index) => Padding(
-                    padding: const EdgeInsets.only(right: 5),
-                    child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(5),
-                            border:
-                                Border.all(color: darkGreenHeigh, width: 1)),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 4),
-                          child: Center(
-                              child: CustomText(
-                            text: 'loanAmount',
-                            color: darkGreenHeigh,
-                            fontSize: 12,
-                          )),
-                        )),
-                  ),
-                ),
-              ),
+            FutureBuilder<List<LoanTags>>(
+              future: viewModel.getLoanTags(),
+              builder: (ctx, snapshot) {
+                if (snapshot.connectionState == ConnectionState.done) {
+                  if (snapshot.hasError) {
+                    return Center(
+                      child: Text(
+                        snapshot.error.toString(),
+                        style: const TextStyle(fontSize: 18),
+                      ),
+                    );
+                  } else if (snapshot.hasData) {
+                    return Expanded(
+                      child: SizedBox(
+                        height: 30.0,
+                        child: ListView.builder(
+                            physics: const ClampingScrollPhysics(),
+                            shrinkWrap: true,
+                            scrollDirection: Axis.horizontal,
+                            itemCount: 15,
+                            itemBuilder: (BuildContext context, int index) {
+                              LoanTags loanTags = snapshot.data![index];
+                              return Padding(
+                                padding: const EdgeInsets.only(right: 5),
+                                child: Container(
+                                    decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.circular(5),
+                                        border: Border.all(
+                                            color: darkGreenHeigh, width: 1)),
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 4),
+                                      child: Center(
+                                          child: CustomText(
+                                        text: loanTags.name ?? "",
+                                        color: darkGreenHeigh,
+                                        fontSize: 12,
+                                      )),
+                                    )),
+                              );
+                            }),
+                      ),
+                    );
+                  }
+                }
+                return Container();
+              },
             ),
           ],
         ),
@@ -81,10 +101,4 @@ class HorizentalListViewView extends StackedView<HorizentalListViewViewModel> {
       ],
     );
   }
-
-  @override
-  HorizentalListViewViewModel viewModelBuilder(
-    BuildContext context,
-  ) =>
-      HorizentalListViewViewModel();
 }

@@ -5,11 +5,12 @@ import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import '../../../app/app.locator.dart';
 import '../../../services/Models/loan_card.dart';
+import '../../../services/Models/loan_tags.dart';
 import '../../../services/loan_card_service.dart';
 
 class LoanViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
-
+  List features = [];
   navigateToPersonalloan() {
     _navigationService.navigateToPersonalloanView();
   }
@@ -36,7 +37,9 @@ class LoanViewModel extends BaseViewModel {
       "order": "descending",
       "sort": "ordering",
       "tenor": 12,
-      "amount": 50000
+      "amount": 50000,
+      "features": features,
+      "search": ""
     };
     var data = await _loanCardService.loanlist(body);
     if (data?["success"] == true) {
@@ -49,13 +52,15 @@ class LoanViewModel extends BaseViewModel {
       log(data["message"].toString());
       throw Exception(data["message"].toString());
     }
-  } Future<List<LoanCard>> getLoanTags() async {
+  }
+
+  Future<List<LoanTags>> getLoanTags() async {
     var data = await _loanCardService.getLoanTags();
     if (data?["success"] == true) {
-      List dataList = data["data"]["records"];
+      List dataList = data["data"];
       log("===>${dataList.length}");
-      List<LoanCard> loanCardList =
-          dataList.map((data) => LoanCard.fromJson(data)).toList();
+      List<LoanTags> loanCardList =
+          dataList.map((data) => LoanTags.fromJson(data)).toList();
       return loanCardList;
     } else {
       log(data["message"].toString());

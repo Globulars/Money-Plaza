@@ -46,23 +46,24 @@ class LoanView extends StackedView<LoanViewModel> {
                 verticalSpaceSmall,
                 Stack(
                   children: [
-                    FutureBuilder<List<LoanCard>>(
-                      future: viewModel.loanListData(),
-                      builder: (ctx, snapshot) {
-                        if (snapshot.connectionState == ConnectionState.done) {
-                          if (snapshot.hasError) {
-                            return Center(
-                              child: Text(
-                                snapshot.error.toString(),
-                                style: const TextStyle(fontSize: 18),
-                              ),
-                            );
-                          } else if (snapshot.hasData) {
-                            return Column(
-                              children: [
-                                verticalSpace(70.0),
-                                const HorizentalListViewView(),
-                                ListView.builder(
+                    Column(
+                      children: [
+                        verticalSpace(70.0),
+                        const HorizentalListViewView(),
+                        FutureBuilder<List<LoanCard>>(
+                          future: viewModel.loanListData(),
+                          builder: (ctx, snapshot) {
+                            if (snapshot.connectionState ==
+                                ConnectionState.done) {
+                              if (snapshot.hasError) {
+                                return Center(
+                                  child: Text(
+                                    snapshot.error.toString(),
+                                    style: const TextStyle(fontSize: 18),
+                                  ),
+                                );
+                              } else if (snapshot.hasData) {
+                                return ListView.builder(
                                   itemCount: snapshot.data!.length,
                                   shrinkWrap: true,
                                   physics: const NeverScrollableScrollPhysics(),
@@ -71,21 +72,21 @@ class LoanView extends StackedView<LoanViewModel> {
                                     return ResultCard(
                                         loanData: snapshot.data![index]);
                                   },
+                                );
+                              }
+                            }
+                            return Column(
+                              children: [
+                                SizedBox(
+                                  height: height * 0.4,
+                                  width: width * 1,
                                 ),
+                                const CircularProgressIndicator(),
                               ],
                             );
-                          }
-                        }
-                        return Column(
-                          children: [
-                            SizedBox(
-                              height: height * 0.3,
-                              width: width * 1,
-                            ),
-                            const CircularProgressIndicator(),
-                          ],
-                        );
-                      },
+                          },
+                        ),
+                      ],
                     ),
                     const TopBar2View(),
                   ],
