@@ -158,59 +158,53 @@
 //   }
 // }
 
-
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
 class WebViewHtml extends StatefulWidget {
   final String url;
-   const WebViewHtml({Key? key, required this.url}) : super(key: key);
+  const WebViewHtml({Key? key, required this.url}) : super(key: key);
 
   @override
   State<WebViewHtml> createState() => _WebViewHtmlState();
 }
 
 class _WebViewHtmlState extends State<WebViewHtml> {
-   InAppWebViewController? _webViewController;
+  InAppWebViewController? _webViewController;
 
   @override
-   
   Widget build(BuildContext context) {
-    return 
-     InAppWebView(
-                initialData: InAppWebViewInitialData(data: widget.url) ,initialOptions: InAppWebViewGroupOptions(
-                    crossPlatform: InAppWebViewOptions(
-                      // debuggingEnabled: true,
-                    )
-                ),
-                onWebViewCreated: (InAppWebViewController controller) {
-                  _webViewController = controller;
+    return InAppWebView(
+      initialData: InAppWebViewInitialData(data: widget.url),
+      initialOptions: InAppWebViewGroupOptions(
+          crossPlatform: InAppWebViewOptions(
+              // debuggingEnabled: true,
+              )),
+      onWebViewCreated: (InAppWebViewController controller) {
+        _webViewController = controller;
 
-                  _webViewController?.addJavaScriptHandler(handlerName:'handlerFoo', callback: (args) {
-                    // return data to JavaScript side!
-                    return {
-                      'bar': 'bar_value', 'baz': 'baz_value'
-                    };
-                  }
-                  );
+        _webViewController?.addJavaScriptHandler(
+            handlerName: 'handlerFoo',
+            callback: (args) {
+              // return data to JavaScript side!
+              return {'bar': 'bar_value', 'baz': 'baz_value'};
+            });
 
-                  _webViewController?.addJavaScriptHandler(handlerName: 'handlerFooWithArgs', callback: (args) {
-                    print(args);
-                    // it will print: [1, true, [bar, 5], {foo: baz}, {bar: bar_value, baz: baz_value}]
-                  });
-                },
-                onConsoleMessage: (controller, consoleMessage) {
-                  print(consoleMessage);
-                  // it will print: {message: {"bar":"bar_value","baz":"baz_value"}, messageLevel: 1}
-                },
-             
-            );
-    
-        
-      
-        // body: Html(
-        //     data:
-        //         """<table><tr><td>100</td><td>200</td><td>300</td></tr></table>"""),
-    
+        _webViewController?.addJavaScriptHandler(
+            handlerName: 'handlerFooWithArgs',
+            callback: (args) {
+              print(args);
+              // it will print: [1, true, [bar, 5], {foo: baz}, {bar: bar_value, baz: baz_value}]
+            });
+      },
+      onConsoleMessage: (controller, consoleMessage) {
+        print(consoleMessage);
+        // it will print: {message: {"bar":"bar_value","baz":"baz_value"}, messageLevel: 1}
+      },
+    );
+
+    // body: Html(
+    //     data:
+    //         """<table><tr><td>100</td><td>200</td><td>300</td></tr></table>"""),
   }
 }
