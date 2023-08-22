@@ -19,23 +19,7 @@ class DetailCard1 extends ViewModelWidget<DetailFilteDialogModel> {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 0),
           child: Column(
-            children: [
-              // Container(
-              //   height: 50,
-              //   padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 3),
-              //   width: double.infinity,
-              //   decoration: const BoxDecoration(
-              //       color: lightGreenHeigh,
-              //       borderRadius: BorderRadius.only(
-              //           topLeft: Radius.circular(4), topRight: Radius.circular(4))),
-              //   child: Row(
-              //     children: [
-              //       Image.asset(
-              //         myIcons.appbarTitle,
-              //       ),
-              //     ],
-              //   ),
-              // ),
+            children: [            
               CustomText(text: loanData.detail.toString()
                   // 'for3monthsSuccessfully'
                   ),
