@@ -6,6 +6,7 @@ import 'package:stacked_services/stacked_services.dart';
 import '../../app/app.dialogs.dart';
 import '../../app/app.locator.dart';
 import '../../services/Models/card_banners.dart';
+import '../../services/Models/loan_card.dart';
 import '../../services/credit_card_service.dart';
 
 class WidgetViewModel extends BaseViewModel {
@@ -13,13 +14,18 @@ class WidgetViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
   final _dialogService = locator<DialogService>();
 
-void applyConfirm() {
+ applyConfirm() {
     _navigationService.navigateToApplyconfirmView();
   }
 
-   void showDetail(loanData) {
+    showDetail(loanData) {
     _dialogService.showCustomDialog(
         variant: DialogType.detailFilte, data: loanData);
+  }
+
+   setCardSelect(value, LoanCard loanData) {
+    loanData.checkBox = value;
+    notifyListeners();
   }
   
   Future<BannerImages> bannerImages(url) async {
