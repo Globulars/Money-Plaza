@@ -3,16 +3,17 @@ import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:stacked/stacked.dart';
 import '../../../../common/ui_helpers.dart';
 import '../../../../widgets/common/icon_box_btn/text.dart';
-import '../loancompare_viewmodel.dart';
 import 'package:easy_localization/easy_localization.dart';
 
-class HeadBtmText extends ViewModelWidget<LoancompareViewModel> {
+import '../../loan_viewmodel.dart';
+
+class HeadBtmText extends ViewModelWidget<LoanViewModel> {
   const HeadBtmText({Key? key}) : super(key: key);
 
   @override
   Widget build(
     BuildContext context,
-    LoancompareViewModel viewModel,
+    LoanViewModel viewModel,
   ) {
     final width = MediaQuery.of(context).size.width;
     return Padding(

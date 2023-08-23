@@ -4,15 +4,15 @@ import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import '../../../../common/ui_helpers.dart';
 import '../../../../widgets/common/icon_box_btn/text.dart';
-import '../loancompare_viewmodel.dart';
+import '../../loan_viewmodel.dart';
 
-class PromiseLand extends ViewModelWidget<LoancompareViewModel> {
+class PromiseLand extends ViewModelWidget<LoanViewModel> {
   const PromiseLand({Key? key}) : super(key: key);
 
   @override
   Widget build(
     BuildContext context,
-    LoancompareViewModel viewModel,
+    LoanViewModel viewModel,
   ) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10),

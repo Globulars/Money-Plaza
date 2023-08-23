@@ -6,18 +6,18 @@ import '../../../widgets/app_bar.dart';
 import '../../../widgets/bottom_bar.dart';
 import '../../../widgets/common/background_image.dart';
 import '../../../widgets/common/icon_box_btn/return_button.dart';
+import '../loan_viewmodel.dart';
 import '../widgets/filter_bottom_bar.dart';
 import 'compare_widgets/head_btm_text.dart';
 import 'compare_widgets/prom_land.dart';
-import 'loancompare_viewmodel.dart';
 
-class LoancompareView extends StackedView<LoancompareViewModel> {
+class LoancompareView extends StackedView<LoanViewModel> {
   const LoancompareView({Key? key}) : super(key: key);
 
   @override
   Widget builder(
     BuildContext context,
-    LoancompareViewModel viewModel,
+    LoanViewModel viewModel,
     Widget? child,
   ) {
     // final width = MediaQuery.of(context).size.width;
@@ -67,8 +67,8 @@ class LoancompareView extends StackedView<LoancompareViewModel> {
   }
 
   @override
-  LoancompareViewModel viewModelBuilder(
+  LoanViewModel viewModelBuilder(
     BuildContext context,
   ) =>
-      LoancompareViewModel();
+      LoanViewModel();
 }

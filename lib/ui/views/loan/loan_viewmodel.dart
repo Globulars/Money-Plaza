@@ -67,10 +67,11 @@ class LoanViewModel extends BaseViewModel {
       compareData.add(loanData);
       loanData.checkBox = true;
     } else {
-      log("=========>alreay to seleced");
+      log("=========>alreay to seleced${compareData.length}");
     }
     notifyListeners();
   }
+
   void showCalculator() {
     showcard = false;
     notifyListeners();
@@ -88,15 +89,21 @@ class LoanViewModel extends BaseViewModel {
   }
 
   void compareScreen() {
+    log(compareData.length.toString());
+    if (compareData.length == 2) {
+      _navigationService.navigateToLoancompareView();
+    } else {
+      log("Please select two value${compareData.length}");
+    }
     showcard = false;
     notifyListeners();
-    _navigationService.navigateToLoancompareView();
   }
 
   void showHide() {
     showcard = !showcard;
     notifyListeners();
   }
+
   Future<List<LoanTags>> getLoanTags() async {
     var data = await _loanCardService.getLoanTags();
     if (data?["success"] == true) {
