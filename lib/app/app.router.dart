@@ -5,9 +5,9 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:flutter/material.dart' as _i30;
+import 'package:flutter/material.dart' as _i29;
 import 'package:flutter/material.dart';
-import 'package:money_plaza/services/Models/loan_card.dart' as _i31;
+import 'package:money_plaza/services/Models/loan_card.dart' as _i30;
 import 'package:money_plaza/ui/views/credit_card/credit_card_view.dart' as _i22;
 import 'package:money_plaza/ui/views/credit_card/credit_result/credit_result_view.dart'
     as _i23;
@@ -56,9 +56,8 @@ import 'package:money_plaza/ui/views/morgages/morgages_result/morgages_result_vi
 import 'package:money_plaza/ui/views/morgages/morgages_splash/morgages_splash_view.dart'
     as _i20;
 import 'package:money_plaza/ui/views/morgages/morgages_view.dart' as _i18;
-import 'package:money_plaza/ui/widgets/top_bar2/top_bar2_view.dart' as _i29;
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i32;
+import 'package:stacked_services/stacked_services.dart' as _i31;
 
 class Routes {
   static const startupView = '/startup-view';
@@ -115,8 +114,6 @@ class Routes {
 
   static const changePasswordView = '/change-password-view';
 
-  static const topBar2View = '/top-bar2-view';
-
   static const all = <String>{
     startupView,
     landingView,
@@ -145,7 +142,6 @@ class Routes {
     rewardView,
     rewardApplicationView,
     changePasswordView,
-    topBar2View,
   };
 }
 
@@ -259,21 +255,17 @@ class StackedRouter extends _i1.RouterBase {
       Routes.changePasswordView,
       page: _i28.ChangePasswordView,
     ),
-    _i1.RouteDef(
-      Routes.topBar2View,
-      page: _i29.TopBar2View,
-    ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
     _i2.StartupView: (data) {
-      return _i30.MaterialPageRoute<dynamic>(
+      return _i29.MaterialPageRoute<dynamic>(
         builder: (context) => const _i2.StartupView(),
         settings: data,
       );
     },
     _i3.LandingView: (data) {
-      return _i30.MaterialPageRoute<dynamic>(
+      return _i29.MaterialPageRoute<dynamic>(
         builder: (context) => const _i3.LandingView(),
         settings: data,
       );
@@ -282,20 +274,20 @@ class StackedRouter extends _i1.RouterBase {
       final args = data.getArgs<LoanViewArguments>(
         orElse: () => const LoanViewArguments(),
       );
-      return _i30.MaterialPageRoute<dynamic>(
+      return _i29.MaterialPageRoute<dynamic>(
         builder: (context) =>
             _i4.LoanView(key: args.key, loanCard: args.loanCard),
         settings: data,
       );
     },
     _i5.CalculatorResultView: (data) {
-      return _i30.MaterialPageRoute<dynamic>(
+      return _i29.MaterialPageRoute<dynamic>(
         builder: (context) => const _i5.CalculatorResultView(),
         settings: data,
       );
     },
     _i6.LoancompareView: (data) {
-      return _i30.MaterialPageRoute<dynamic>(
+      return _i29.MaterialPageRoute<dynamic>(
         builder: (context) => const _i6.LoancompareView(),
         settings: data,
       );
@@ -304,82 +296,82 @@ class StackedRouter extends _i1.RouterBase {
       final args = data.getArgs<ApplyconfirmViewArguments>(
         orElse: () => const ApplyconfirmViewArguments(),
       );
-      return _i30.MaterialPageRoute<dynamic>(
+      return _i29.MaterialPageRoute<dynamic>(
         builder: (context) =>
             _i7.ApplyconfirmView(key: args.key, match: args.match),
         settings: data,
       );
     },
     _i8.PersonalloanView: (data) {
-      return _i30.MaterialPageRoute<dynamic>(
+      return _i29.MaterialPageRoute<dynamic>(
         builder: (context) => const _i8.PersonalloanView(),
         settings: data,
       );
     },
     _i9.PloanreslutView: (data) {
-      return _i30.MaterialPageRoute<dynamic>(
+      return _i29.MaterialPageRoute<dynamic>(
         builder: (context) => const _i9.PloanreslutView(),
         settings: data,
       );
     },
     _i10.OwnerloanView: (data) {
-      return _i30.MaterialPageRoute<dynamic>(
+      return _i29.MaterialPageRoute<dynamic>(
         builder: (context) => const _i10.OwnerloanView(),
         settings: data,
       );
     },
     _i11.OwnerloanresultView: (data) {
-      return _i30.MaterialPageRoute<dynamic>(
+      return _i29.MaterialPageRoute<dynamic>(
         builder: (context) => const _i11.OwnerloanresultView(),
         settings: data,
       );
     },
     _i12.SettingsView: (data) {
       final args = data.getArgs<SettingsViewArguments>(nullOk: false);
-      return _i30.MaterialPageRoute<dynamic>(
+      return _i29.MaterialPageRoute<dynamic>(
         builder: (context) => _i12.SettingsView(args.context, key: args.key),
         settings: data,
       );
     },
     _i13.MemberLoginView: (data) {
-      return _i30.MaterialPageRoute<dynamic>(
+      return _i29.MaterialPageRoute<dynamic>(
         builder: (context) => const _i13.MemberLoginView(),
         settings: data,
       );
     },
     _i14.BlnstransferView: (data) {
-      return _i30.MaterialPageRoute<dynamic>(
+      return _i29.MaterialPageRoute<dynamic>(
         builder: (context) => const _i14.BlnstransferView(),
         settings: data,
       );
     },
     _i15.TransferResultView: (data) {
-      return _i30.MaterialPageRoute<dynamic>(
+      return _i29.MaterialPageRoute<dynamic>(
         builder: (context) => const _i15.TransferResultView(),
         settings: data,
       );
     },
     _i16.CommericalLoanView: (data) {
-      return _i30.MaterialPageRoute<dynamic>(
+      return _i29.MaterialPageRoute<dynamic>(
         builder: (context) => const _i16.CommericalLoanView(),
         settings: data,
       );
     },
     _i17.CommericalResultView: (data) {
-      return _i30.MaterialPageRoute<dynamic>(
+      return _i29.MaterialPageRoute<dynamic>(
         builder: (context) => const _i17.CommericalResultView(),
         settings: data,
       );
     },
     _i18.MorgagesView: (data) {
-      return _i30.MaterialPageRoute<dynamic>(
+      return _i29.MaterialPageRoute<dynamic>(
         builder: (context) => const _i18.MorgagesView(),
         settings: data,
       );
     },
     _i19.MorgagesResultView: (data) {
       final args = data.getArgs<MorgagesResultViewArguments>(nullOk: false);
-      return _i30.MaterialPageRoute<dynamic>(
+      return _i29.MaterialPageRoute<dynamic>(
         builder: (context) => _i19.MorgagesResultView(
             args.mortgagesPropertyValuation,
             args.mortgagesValueRatio,
@@ -394,7 +386,7 @@ class StackedRouter extends _i1.RouterBase {
     },
     _i20.MorgagesSplashView: (data) {
       final args = data.getArgs<MorgagesSplashViewArguments>(nullOk: false);
-      return _i30.MaterialPageRoute<dynamic>(
+      return _i29.MaterialPageRoute<dynamic>(
         builder: (context) => _i20.MorgagesSplashView(
             key: args.key, organization: args.organization),
         settings: data,
@@ -403,21 +395,21 @@ class StackedRouter extends _i1.RouterBase {
     _i21.MorgagesContactInfoView: (data) {
       final args =
           data.getArgs<MorgagesContactInfoViewArguments>(nullOk: false);
-      return _i30.MaterialPageRoute<dynamic>(
+      return _i29.MaterialPageRoute<dynamic>(
         builder: (context) => _i21.MorgagesContactInfoView(
             key: args.key, organization: args.organization),
         settings: data,
       );
     },
     _i22.CreditCardView: (data) {
-      return _i30.MaterialPageRoute<dynamic>(
+      return _i29.MaterialPageRoute<dynamic>(
         builder: (context) => const _i22.CreditCardView(),
         settings: data,
       );
     },
     _i23.CreditResultView: (data) {
       final args = data.getArgs<CreditResultViewArguments>(nullOk: false);
-      return _i30.MaterialPageRoute<dynamic>(
+      return _i29.MaterialPageRoute<dynamic>(
         builder: (context) => _i23.CreditResultView(args.issuersList,
             args.typesList, args.annualIncome, args.financialInstitutesList,
             key: args.key),
@@ -425,38 +417,32 @@ class StackedRouter extends _i1.RouterBase {
       );
     },
     _i24.MemberSettingView: (data) {
-      return _i30.MaterialPageRoute<dynamic>(
+      return _i29.MaterialPageRoute<dynamic>(
         builder: (context) => const _i24.MemberSettingView(),
         settings: data,
       );
     },
     _i25.PersonalInfoView: (data) {
-      return _i30.MaterialPageRoute<dynamic>(
+      return _i29.MaterialPageRoute<dynamic>(
         builder: (context) => const _i25.PersonalInfoView(),
         settings: data,
       );
     },
     _i26.RewardView: (data) {
-      return _i30.MaterialPageRoute<dynamic>(
+      return _i29.MaterialPageRoute<dynamic>(
         builder: (context) => const _i26.RewardView(),
         settings: data,
       );
     },
     _i27.RewardApplicationView: (data) {
-      return _i30.MaterialPageRoute<dynamic>(
+      return _i29.MaterialPageRoute<dynamic>(
         builder: (context) => const _i27.RewardApplicationView(),
         settings: data,
       );
     },
     _i28.ChangePasswordView: (data) {
-      return _i30.MaterialPageRoute<dynamic>(
+      return _i29.MaterialPageRoute<dynamic>(
         builder: (context) => const _i28.ChangePasswordView(),
-        settings: data,
-      );
-    },
-    _i29.TopBar2View: (data) {
-      return _i30.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i29.TopBar2View(),
         settings: data,
       );
     },
@@ -474,9 +460,9 @@ class LoanViewArguments {
     this.loanCard,
   });
 
-  final _i30.Key? key;
+  final _i29.Key? key;
 
-  final List<_i31.LoanCard>? loanCard;
+  final List<_i30.LoanCard>? loanCard;
 
   @override
   String toString() {
@@ -501,7 +487,7 @@ class ApplyconfirmViewArguments {
     this.match = false,
   });
 
-  final _i30.Key? key;
+  final _i29.Key? key;
 
   final bool match;
 
@@ -528,9 +514,9 @@ class SettingsViewArguments {
     this.key,
   });
 
-  final _i30.BuildContext context;
+  final _i29.BuildContext context;
 
-  final _i30.Key? key;
+  final _i29.Key? key;
 
   @override
   String toString() {
@@ -575,7 +561,7 @@ class MorgagesResultViewArguments {
 
   final List<dynamic> companyIds;
 
-  final _i30.Key? key;
+  final _i29.Key? key;
 
   @override
   String toString() {
@@ -614,7 +600,7 @@ class MorgagesSplashViewArguments {
     required this.organization,
   });
 
-  final _i30.Key? key;
+  final _i29.Key? key;
 
   final String organization;
 
@@ -641,7 +627,7 @@ class MorgagesContactInfoViewArguments {
     required this.organization,
   });
 
-  final _i30.Key? key;
+  final _i29.Key? key;
 
   final String organization;
 
@@ -679,7 +665,7 @@ class CreditResultViewArguments {
 
   final List<dynamic> financialInstitutesList;
 
-  final _i30.Key? key;
+  final _i29.Key? key;
 
   @override
   String toString() {
@@ -706,7 +692,7 @@ class CreditResultViewArguments {
   }
 }
 
-extension NavigatorStateExtension on _i32.NavigationService {
+extension NavigatorStateExtension on _i31.NavigationService {
   Future<dynamic> navigateToStartupView([
     int? routerId,
     bool preventDuplicates = true,
@@ -736,8 +722,8 @@ extension NavigatorStateExtension on _i32.NavigationService {
   }
 
   Future<dynamic> navigateToLoanView({
-    _i30.Key? key,
-    List<_i31.LoanCard>? loanCard,
+    _i29.Key? key,
+    List<_i30.LoanCard>? loanCard,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -781,7 +767,7 @@ extension NavigatorStateExtension on _i32.NavigationService {
   }
 
   Future<dynamic> navigateToApplyconfirmView({
-    _i30.Key? key,
+    _i29.Key? key,
     bool match = false,
     int? routerId,
     bool preventDuplicates = true,
@@ -854,8 +840,8 @@ extension NavigatorStateExtension on _i32.NavigationService {
   }
 
   Future<dynamic> navigateToSettingsView({
-    required _i30.BuildContext context,
-    _i30.Key? key,
+    required _i29.BuildContext context,
+    _i29.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -962,7 +948,7 @@ extension NavigatorStateExtension on _i32.NavigationService {
     required List<dynamic> mortgageList,
     required List<dynamic> typePropertyList,
     required List<dynamic> companyIds,
-    _i30.Key? key,
+    _i29.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -986,7 +972,7 @@ extension NavigatorStateExtension on _i32.NavigationService {
   }
 
   Future<dynamic> navigateToMorgagesSplashView({
-    _i30.Key? key,
+    _i29.Key? key,
     required String organization,
     int? routerId,
     bool preventDuplicates = true,
@@ -1004,7 +990,7 @@ extension NavigatorStateExtension on _i32.NavigationService {
   }
 
   Future<dynamic> navigateToMorgagesContactInfoView({
-    _i30.Key? key,
+    _i29.Key? key,
     required String organization,
     int? routerId,
     bool preventDuplicates = true,
@@ -1040,7 +1026,7 @@ extension NavigatorStateExtension on _i32.NavigationService {
     required List<dynamic> typesList,
     required String annualIncome,
     required List<dynamic> financialInstitutesList,
-    _i30.Key? key,
+    _i29.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -1130,20 +1116,6 @@ extension NavigatorStateExtension on _i32.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> navigateToTopBar2View([
-    int? routerId,
-    bool preventDuplicates = true,
-    Map<String, String>? parameters,
-    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
-        transition,
-  ]) async {
-    return navigateTo<dynamic>(Routes.topBar2View,
-        id: routerId,
-        preventDuplicates: preventDuplicates,
-        parameters: parameters,
-        transition: transition);
-  }
-
   Future<dynamic> replaceWithStartupView([
     int? routerId,
     bool preventDuplicates = true,
@@ -1173,8 +1145,8 @@ extension NavigatorStateExtension on _i32.NavigationService {
   }
 
   Future<dynamic> replaceWithLoanView({
-    _i30.Key? key,
-    List<_i31.LoanCard>? loanCard,
+    _i29.Key? key,
+    List<_i30.LoanCard>? loanCard,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -1218,7 +1190,7 @@ extension NavigatorStateExtension on _i32.NavigationService {
   }
 
   Future<dynamic> replaceWithApplyconfirmView({
-    _i30.Key? key,
+    _i29.Key? key,
     bool match = false,
     int? routerId,
     bool preventDuplicates = true,
@@ -1291,8 +1263,8 @@ extension NavigatorStateExtension on _i32.NavigationService {
   }
 
   Future<dynamic> replaceWithSettingsView({
-    required _i30.BuildContext context,
-    _i30.Key? key,
+    required _i29.BuildContext context,
+    _i29.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -1399,7 +1371,7 @@ extension NavigatorStateExtension on _i32.NavigationService {
     required List<dynamic> mortgageList,
     required List<dynamic> typePropertyList,
     required List<dynamic> companyIds,
-    _i30.Key? key,
+    _i29.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -1423,7 +1395,7 @@ extension NavigatorStateExtension on _i32.NavigationService {
   }
 
   Future<dynamic> replaceWithMorgagesSplashView({
-    _i30.Key? key,
+    _i29.Key? key,
     required String organization,
     int? routerId,
     bool preventDuplicates = true,
@@ -1441,7 +1413,7 @@ extension NavigatorStateExtension on _i32.NavigationService {
   }
 
   Future<dynamic> replaceWithMorgagesContactInfoView({
-    _i30.Key? key,
+    _i29.Key? key,
     required String organization,
     int? routerId,
     bool preventDuplicates = true,
@@ -1477,7 +1449,7 @@ extension NavigatorStateExtension on _i32.NavigationService {
     required List<dynamic> typesList,
     required String annualIncome,
     required List<dynamic> financialInstitutesList,
-    _i30.Key? key,
+    _i29.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -1561,20 +1533,6 @@ extension NavigatorStateExtension on _i32.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.changePasswordView,
-        id: routerId,
-        preventDuplicates: preventDuplicates,
-        parameters: parameters,
-        transition: transition);
-  }
-
-  Future<dynamic> replaceWithTopBar2View([
-    int? routerId,
-    bool preventDuplicates = true,
-    Map<String, String>? parameters,
-    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
-        transition,
-  ]) async {
-    return replaceWith<dynamic>(Routes.topBar2View,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

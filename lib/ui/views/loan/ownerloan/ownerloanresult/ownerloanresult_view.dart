@@ -6,10 +6,10 @@ import '../../../../widgets/app_bar.dart';
 import '../../../../widgets/bottom_bar.dart';
 import '../../../../widgets/common/background_image.dart';
 import '../../../../widgets/common/icon_box_btn/return_button.dart';
-import '../../../../widgets/common/result_card.dart';
+import '../../widgets/result_card.dart';
 import '../../../../widgets/loan_tags_list_view.dart';
-import '../../../../widgets/top_bar2/top_bar2_view.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
+import '../../widgets/filter_bottom_bar.dart';
 import 'ownerloanresult_viewmodel.dart';
 
 class OwnerloanresultView extends StackedView<OwnerloanresultViewModel> {
@@ -45,7 +45,7 @@ class OwnerloanresultView extends StackedView<OwnerloanresultViewModel> {
                   verticalSpaceLarge,
                 ],
               ),
-              const TopBar2View(),
+              const FilterBottomBar(),
             ],
           ),
         ),

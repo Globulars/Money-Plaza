@@ -8,7 +8,7 @@ import '../../../widgets/bottom_bar.dart';
 import '../../../widgets/common/background_image.dart';
 import '../../../widgets/common/icon_box_btn/return_button.dart';
 import '../../../widgets/common/icon_box_btn/text.dart';
-import '../../../widgets/common/result_card.dart';
+import '../widgets/result_card.dart';
 import 'calculator_widgets/btn_listview.dart';
 import 'calculator_result_viewmodel.dart';
 import 'calculator_widgets/calc_items.dart';

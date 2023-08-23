@@ -16,6 +16,7 @@ class LoanViewModel extends BaseViewModel {
   List<LoanTags> loanTagsList = [];
   List<String> features = [];
   List<LoanCard> compareData = [];
+  var showcard = false;
 
   navigateToPersonalloan() {
     _navigationService.navigateToPersonalloanView();
@@ -34,11 +35,7 @@ class LoanViewModel extends BaseViewModel {
   }
 
   navigateToCommerical() {
-    if (compareData.length == 2) {
-      _navigationService.navigateToCommericalLoanView();
-    } else {
-      log("Please select two value");
-    }
+    _navigationService.navigateToCommericalLoanView();
   }
 
   applyConfirm() {
@@ -74,7 +71,32 @@ class LoanViewModel extends BaseViewModel {
     }
     notifyListeners();
   }
+  void showCalculator() {
+    showcard = false;
+    notifyListeners();
+    _dialogService.showCustomDialog(
+      variant: DialogType.calculator,
+    );
+  }
 
+  void showFilter() {
+    showcard = false;
+    notifyListeners();
+    _dialogService.showCustomDialog(
+      variant: DialogType.filter,
+    );
+  }
+
+  void compareScreen() {
+    showcard = false;
+    notifyListeners();
+    _navigationService.navigateToLoancompareView();
+  }
+
+  void showHide() {
+    showcard = !showcard;
+    notifyListeners();
+  }
   Future<List<LoanTags>> getLoanTags() async {
     var data = await _loanCardService.getLoanTags();
     if (data?["success"] == true) {

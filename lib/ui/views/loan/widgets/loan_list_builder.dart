@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import '../../../../services/Models/loan_card.dart';
-import '../../../widgets/common/result_card.dart';
+import 'result_card.dart';
 import '../loan_viewmodel.dart';
 
 class LoanListView extends ViewModelWidget<LoanViewModel> {

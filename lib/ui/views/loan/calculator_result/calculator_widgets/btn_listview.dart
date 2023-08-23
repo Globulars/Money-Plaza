@@ -4,7 +4,7 @@ import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
 import 'package:stacked/stacked.dart';
 import '../../../../common/app_colors.dart';
-import '../../../../widgets/top_bar2/top_bar2_view.dart';
+import '../../widgets/filter_bottom_bar.dart';
 import '../calculator_result_viewmodel.dart';
 
 class BtnListView extends ViewModelWidget<CalculatorResultViewModel> {
@@ -18,7 +18,7 @@ class BtnListView extends ViewModelWidget<CalculatorResultViewModel> {
     final width = MediaQuery.of(context).size.width;
     return Column(
       children: [
-        const TopBar2View(),
+        const FilterBottomBar(),
         verticalSpaceSmall,
         Row(
           mainAxisAlignment: MainAxisAlignment.start,

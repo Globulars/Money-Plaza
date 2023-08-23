@@ -4,6 +4,7 @@ import '../../common/app_icons.dart';
 import 'package:stacked/stacked.dart';
 import 'package:flutter/material.dart';
 import '../../widgets/bottom_bar.dart';
+import 'widgets/filter_bottom_bar.dart';
 import 'widgets/loan_list_builder.dart';
 import '../../widgets/filter_bar_widget.dart';
 import '../../widgets/loan_tags_list_view.dart';
@@ -12,7 +13,6 @@ import '../../widgets/common/background_image.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:money_plaza/ui/widgets/top_banner.dart';
 import '../../widgets/common/icon_box_btn/return_button.dart';
-import 'package:money_plaza/ui/widgets/top_bar2/top_bar2_view.dart';
 
 class LoanView extends StackedView<LoanViewModel> {
   final List<LoanCard>? loanCard;
@@ -56,7 +56,7 @@ class LoanView extends StackedView<LoanViewModel> {
                         LoanListView()
                       ],
                     ),
-                    const TopBar2View(),
+                    const FilterBottomBar(),
                   ],
                 ),
                 verticalSpaceLarge

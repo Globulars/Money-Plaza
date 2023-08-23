@@ -6,7 +6,7 @@ import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import '../../../services/Models/loan_card.dart';
 import '../../widgets/common/icon_box_btn/sub_bar.dart';
-import '../../widgets/common/result_card.dart';
+import '../../views/loan/widgets/result_card.dart';
 import 'detail_filte_dialog_model.dart';
 
 class DetailFilteDialog extends StackedView<DetailFilteDialogModel> {

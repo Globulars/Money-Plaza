@@ -8,8 +8,8 @@ import '../../../../widgets/app_bar.dart';
 import '../../../../widgets/bottom_bar.dart';
 import '../../../../widgets/common/background_image.dart';
 import '../../../../widgets/common/icon_box_btn/return_button.dart';
-import '../../../../widgets/common/result_card.dart';
-import '../../../../widgets/top_bar2/top_bar2_view.dart';
+import '../../widgets/filter_bottom_bar.dart';
+import '../../widgets/result_card.dart';
 import 'transfer_result_viewmodel.dart';
 
 class TransferResultView extends StackedView<TransferResultViewModel> {
@@ -46,7 +46,7 @@ class TransferResultView extends StackedView<TransferResultViewModel> {
                   verticalSpaceLarge,
                 ],
               ),
-              const TopBar2View(),
+              const FilterBottomBar(),
             ],
           ),
         ),

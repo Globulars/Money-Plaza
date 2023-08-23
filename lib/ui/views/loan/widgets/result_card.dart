@@ -2,12 +2,12 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:stacked/stacked.dart';
-import '../../../services/Models/loan_card.dart';
-import '../../common/app_colors.dart';
-import '../../common/ui_helpers.dart';
-import '../../views/loan/loan_viewmodel.dart';
-import 'icon_box_btn/submit_button.dart';
-import 'icon_box_btn/text.dart';
+import '../../../../services/Models/loan_card.dart';
+import '../../../common/app_colors.dart';
+import '../../../common/ui_helpers.dart';
+import '../loan_viewmodel.dart';
+import '../../../widgets/common/icon_box_btn/submit_button.dart';
+import '../../../widgets/common/icon_box_btn/text.dart';
 
 class ResultCard extends ViewModelWidget<LoanViewModel> {
   final LoanCard loanData;

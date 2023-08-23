@@ -2,19 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
-import '../../common/app_colors.dart';
-import '../common/icon_box_btn/icon_box_btn.dart';
-import '../filter_bar_widget.dart';
-import 'top_bar2_viewmodel.dart';
+import '../../../common/app_colors.dart';
+import '../loan_viewmodel.dart';
+import '../../../widgets/common/icon_box_btn/icon_box_btn.dart';
+import '../../../widgets/filter_bar_widget.dart';
 
-class TopBar2View extends StackedView<TopBar2ViewModel> {
-  const TopBar2View({Key? key}) : super(key: key);
+class FilterBottomBar extends ViewModelWidget<LoanViewModel> {
+  const FilterBottomBar({Key? key}) : super(key: key);
 
   @override
-  Widget builder(
+  Widget build(
     BuildContext context,
-    TopBar2ViewModel viewModel,
-    Widget? child,
+    LoanViewModel viewModel,
   ) {
     return Column(
       children: [
@@ -92,10 +91,4 @@ class TopBar2View extends StackedView<TopBar2ViewModel> {
       ],
     );
   }
-
-  @override
-  TopBar2ViewModel viewModelBuilder(
-    BuildContext context,
-  ) =>
-      TopBar2ViewModel();
 }
