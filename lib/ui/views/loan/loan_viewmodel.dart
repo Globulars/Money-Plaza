@@ -34,7 +34,11 @@ class LoanViewModel extends BaseViewModel {
   }
 
   navigateToCommerical() {
-    _navigationService.navigateToCommericalLoanView();
+    if (compareData.length == 2) {
+      _navigationService.navigateToCommericalLoanView();
+    } else {
+      log("Please select two value");
+    }
   }
 
   applyConfirm() {
