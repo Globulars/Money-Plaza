@@ -20,7 +20,6 @@ class LoanView extends StackedView<LoanViewModel> {
   LoanView({Key? key, this.loanCard}) : super(key: key);
   @override
   void onViewModelReady(LoanViewModel viewModel) {
-    viewModel.loanListData();
     viewModel.getLoanTags();
     super.onViewModelReady(viewModel);
   }

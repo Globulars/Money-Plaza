@@ -54,26 +54,34 @@ class LoanViewModel extends BaseViewModel {
       features.add(loanTags.id ?? "");
       loanTags.selected = true;
     }
+    loanListData();
     notifyListeners();
   }
 
   setCompareData(LoanCard loanData) {
-    log("Value: , LoanData: $loanData");
-
     if (compareData.contains(loanData)) {
       compareData.remove(loanData);
-      log("remove list");
       loanData.checkBox = false;
-    } else if (compareData.length < 3) {
+    } else if (compareData.length < 2) {
       compareData.add(loanData);
-      log("add list=====");
       loanData.checkBox = true;
     } else {
-      log("=========alreay to seleced");
+      log("=========>alreay to seleced");
     }
-
-    log("Selected Loan Cards: $compareData");
     notifyListeners();
+  }
+
+  Future<List<LoanTags>> getLoanTags() async {
+    var data = await _loanCardService.getLoanTags();
+    if (data?["success"] == true) {
+      List dataList = data["data"];
+      loanTagsList = dataList.map((data) => LoanTags.fromJson(data)).toList();
+      loanListData();
+      notifyListeners();
+      return loanTagsList;
+    } else {
+      throw Exception(data["message"].toString());
+    }
   }
 
   Future<List<LoanCard>> loanListData() async {
@@ -85,26 +93,13 @@ class LoanViewModel extends BaseViewModel {
       "features": features,
       "search": ""
     };
+    log(features.toString());
     var data = await _loanCardService.loanlist(body);
     if (data?["success"] == true) {
       List dataList = data["data"]["records"];
-      log("===>${dataList.length}");
       loanCardList = dataList.map((data) => LoanCard.fromJson(data)).toList();
       notifyListeners();
       return loanCardList;
-    } else {
-      log(data["message"].toString());
-      throw Exception(data["message"].toString());
-    }
-  }
-
-  Future<List<LoanTags>> getLoanTags() async {
-    var data = await _loanCardService.getLoanTags();
-    if (data?["success"] == true) {
-      List dataList = data["data"];
-      loanTagsList = dataList.map((data) => LoanTags.fromJson(data)).toList();
-      notifyListeners();
-      return loanTagsList;
     } else {
       throw Exception(data["message"].toString());
     }

@@ -27,65 +27,49 @@ class LoanTagsListView extends ViewModelWidget<LoanViewModel> {
               width: 25,
             ),
             horizontalSpaceTiny,
-            FutureBuilder<List<LoanTags>>(
-              future: viewModel.getLoanTags(),
-              builder: (ctx, snapshot) {
-                if (snapshot.connectionState == ConnectionState.done) {
-                  if (snapshot.hasError) {
-                    return Center(
-                      child: Text(
-                        snapshot.error.toString(),
-                        style: const TextStyle(fontSize: 18),
-                      ),
-                    );
-                  } else if (snapshot.hasData) {
-                    return Expanded(
-                      child: SizedBox(
-                        height: 30.0,
-                        child: ListView.builder(
-                            physics: const ClampingScrollPhysics(),
-                            shrinkWrap: true,
-                            scrollDirection: Axis.horizontal,
-                            itemCount: 15,
-                            itemBuilder: (BuildContext context, int index) {
-                              LoanTags loanTags = snapshot.data![index];
-                              return InkWell(
-                                onTap: () {
-                                  viewModel.setFeatures(loanTags);
-                                },
-                                child: Padding(
-                                  padding: const EdgeInsets.only(right: 5),
-                                  child: Container(
-                                      decoration: BoxDecoration(
-                                          color: loanTags.selected ?? false
-                                              ? darkGreenHeigh
-                                              : Colors.white,
-                                          borderRadius:
-                                              BorderRadius.circular(5),
-                                          border: Border.all(
-                                              color: darkGreenHeigh, width: 1)),
-                                      child: Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 4),
-                                        child: Center(
-                                            child: CustomText(
-                                          text: loanTags.name ?? "",
-                                          color: loanTags.selected ?? false
-                                              ? Colors.white
-                                              : darkGreenHeigh,
-                                          fontSize: 12,
-                                        )),
+            viewModel.loanTagsList.isNotEmpty
+                ? Expanded(
+                    child: SizedBox(
+                      height: 30.0,
+                      child: ListView.builder(
+                          physics: const ClampingScrollPhysics(),
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          itemCount: 15,
+                          itemBuilder: (BuildContext context, int index) {
+                            LoanTags loanTags = viewModel.loanTagsList[index];
+                            return InkWell(
+                              onTap: () {
+                                viewModel.setFeatures(loanTags);
+                              },
+                              child: Padding(
+                                padding: const EdgeInsets.only(right: 5),
+                                child: Container(
+                                    decoration: BoxDecoration(
+                                        color: loanTags.selected ?? false
+                                            ? darkGreenHeigh
+                                            : Colors.white,
+                                        borderRadius: BorderRadius.circular(5),
+                                        border: Border.all(
+                                            color: darkGreenHeigh, width: 1)),
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 4),
+                                      child: Center(
+                                          child: CustomText(
+                                        text: loanTags.name ?? "",
+                                        color: loanTags.selected ?? false
+                                            ? Colors.white
+                                            : darkGreenHeigh,
+                                        fontSize: 12,
                                       )),
-                                ),
-                              );
-                            }),
-                      ),
-                    );
-                  }
-                }
-                return Container();
-              },
-            ),
+                                    )),
+                              ),
+                            );
+                          }),
+                    ),
+                  )
+                : Container()
           ],
         ),
         verticalSpaceTiny,
