@@ -85,36 +85,28 @@ class LoanViewModel extends BaseViewModel {
       "features": features,
       "search": ""
     };
-    if (loanCardList.isEmpty) {
-      var data = await _loanCardService.loanlist(body);
-      if (data?["success"] == true) {
-        List dataList = data["data"]["records"];
-        log("===>${dataList.length}");
-        loanCardList = dataList.map((data) => LoanCard.fromJson(data)).toList();
-        notifyListeners();
-        return loanCardList;
-      } else {
-        log(data["message"].toString());
-        throw Exception(data["message"].toString());
-      }
-    } else {
+    var data = await _loanCardService.loanlist(body);
+    if (data?["success"] == true) {
+      List dataList = data["data"]["records"];
+      log("===>${dataList.length}");
+      loanCardList = dataList.map((data) => LoanCard.fromJson(data)).toList();
+      notifyListeners();
       return loanCardList;
+    } else {
+      log(data["message"].toString());
+      throw Exception(data["message"].toString());
     }
   }
 
   Future<List<LoanTags>> getLoanTags() async {
-    if (loanTagsList.isEmpty) {
-      var data = await _loanCardService.getLoanTags();
-      if (data?["success"] == true) {
-        List dataList = data["data"];
-        loanTagsList = dataList.map((data) => LoanTags.fromJson(data)).toList();
-        notifyListeners();
-        return loanTagsList;
-      } else {
-        throw Exception(data["message"].toString());
-      }
-    } else {
+    var data = await _loanCardService.getLoanTags();
+    if (data?["success"] == true) {
+      List dataList = data["data"];
+      loanTagsList = dataList.map((data) => LoanTags.fromJson(data)).toList();
+      notifyListeners();
       return loanTagsList;
+    } else {
+      throw Exception(data["message"].toString());
     }
   }
 }

@@ -7,7 +7,6 @@ import 'package:money_plaza/services/Models/loan_tags.dart';
 import 'package:money_plaza/ui/views/loan/loan_viewmodel.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
 
-
 class LoanTagsListView extends ViewModelWidget<LoanViewModel> {
   const LoanTagsListView({Key? key}) : super(key: key);
 
@@ -95,7 +94,7 @@ class LoanTagsListView extends ViewModelWidget<LoanViewModel> {
           child: Align(
             alignment: Alignment.centerRight,
             child: CustomText(
-              text: '88results',
+              text: '${viewModel.loanCardList.length} results',
               color: Colors.black,
               fontSize: 15,
               fontWeight: FontWeight.w400,

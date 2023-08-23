@@ -1,23 +1,29 @@
-import 'package:flutter/material.dart';
-import 'package:money_plaza/ui/common/ui_helpers.dart';
-import 'package:money_plaza/ui/widgets/top_banner.dart';
-import 'package:money_plaza/ui/widgets/top_bar2/top_bar2_view.dart';
-import 'package:stacked/stacked.dart';
-import '../../../services/Models/loan_card.dart';
-import '../../common/app_icons.dart';
+import 'loan_viewmodel.dart';
 import '../../widgets/app_bar.dart';
+import '../../common/app_icons.dart';
+import 'package:stacked/stacked.dart';
+import 'package:flutter/material.dart';
 import '../../widgets/bottom_bar.dart';
-import '../../widgets/common/background_image.dart';
-import '../../widgets/common/icon_box_btn/return_button.dart';
-import '../../widgets/common/result_card.dart';
+import 'widgets/loan_list_builder.dart';
 import '../../widgets/loan_containers.dart';
 import '../../widgets/loan_tags_list_view.dart';
-import 'loan_viewmodel.dart';
+import '../../../services/Models/loan_card.dart';
+import '../../widgets/common/background_image.dart';
+import 'package:money_plaza/ui/common/ui_helpers.dart';
+import 'package:money_plaza/ui/widgets/top_banner.dart';
+import '../../widgets/common/icon_box_btn/return_button.dart';
+import 'package:money_plaza/ui/widgets/top_bar2/top_bar2_view.dart';
 
 class LoanView extends StackedView<LoanViewModel> {
   final List<LoanCard>? loanCard;
   final LoanViewModel viewModel = LoanViewModel();
   LoanView({Key? key, this.loanCard}) : super(key: key);
+  @override
+  void onViewModelReady(LoanViewModel viewModel) {
+    viewModel.loanListData();
+    viewModel.getLoanTags();
+    super.onViewModelReady(viewModel);
+  }
 
   @override
   Widget builder(
@@ -25,8 +31,6 @@ class LoanView extends StackedView<LoanViewModel> {
     LoanViewModel viewModel,
     Widget? child,
   ) {
-    final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.width;
     return Stack(
       children: [
         const BackgroundImage(),
@@ -50,42 +54,7 @@ class LoanView extends StackedView<LoanViewModel> {
                       children: [
                         verticalSpace(70.0),
                         const LoanTagsListView(),
-                        FutureBuilder<List<LoanCard>>(
-                          future: viewModel.loanListData(),
-                          builder: (ctx, snapshot) {
-                            if (snapshot.connectionState ==
-                                ConnectionState.done) {
-                              if (snapshot.hasError) {
-                                return Center(
-                                  child: Text(
-                                    snapshot.error.toString(),
-                                    style: const TextStyle(fontSize: 18),
-                                  ),
-                                );
-                              } else if (snapshot.hasData) {
-                                return ListView.builder(
-                                  itemCount: snapshot.data!.length,
-                                  shrinkWrap: true,
-                                  physics: const NeverScrollableScrollPhysics(),
-                                  itemBuilder:
-                                      (BuildContext context, int index) {
-                                    return ResultCard(
-                                        loanData: snapshot.data![index]);
-                                  },
-                                );
-                              }
-                            }
-                            return Column(
-                              children: [
-                                SizedBox(
-                                  height: height * 0.2,
-                                  width: width * 1,
-                                ),
-                                const CircularProgressIndicator(),
-                              ],
-                            );
-                          },
-                        ),
+                        LoanListView()
                       ],
                     ),
                     const TopBar2View(),
