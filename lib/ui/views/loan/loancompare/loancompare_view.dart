@@ -36,14 +36,14 @@ class LoancompareView extends StackedView<LoanViewModel> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   verticalSpace(70),
-                  const Expanded(
+                  Expanded(
                     child: SingleChildScrollView(
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 8),
                         child: Column(
                           children: [
-                            CompareHead(),
-                            CompareBottom(),
+                            CompareHead(compareData: compareData),
+                            CompareBottom(compareData: compareData),
                           ],
                         ),
                       ),
