@@ -5,11 +5,11 @@ import 'package:stacked/stacked.dart';
 import '../../../services/Models/loan_card.dart';
 import '../../common/app_colors.dart';
 import '../../common/ui_helpers.dart';
-import '../widgets_Model.dart';
+import '../../views/loan/loan_viewmodel.dart';
 import 'icon_box_btn/submit_button.dart';
 import 'icon_box_btn/text.dart';
 
-class ResultCard extends StackedView<WidgetViewModel> {
+class ResultCard extends ViewModelWidget<LoanViewModel> {
   final LoanCard loanData;
   final double detailPage;
 
@@ -20,10 +20,9 @@ class ResultCard extends StackedView<WidgetViewModel> {
   });
 
   @override
-  Widget builder(
+  Widget build(
     BuildContext context,
-    WidgetViewModel viewModel,
-    Widget? child,
+    LoanViewModel viewModel,
   ) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 5),
@@ -96,7 +95,7 @@ class ResultCard extends StackedView<WidgetViewModel> {
                             child: Checkbox(
                               value: loanData.checkBox,
                               onChanged: (value) {
-                                viewModel.toggleSelection(loanData);
+                                viewModel.setCompareData(loanData);
                               },
                             ),
                           ),
@@ -140,10 +139,4 @@ class ResultCard extends StackedView<WidgetViewModel> {
       ),
     );
   }
-
-  @override
-  WidgetViewModel viewModelBuilder(
-    BuildContext context,
-  ) =>
-      WidgetViewModel();
 }

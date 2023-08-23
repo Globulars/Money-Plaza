@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'package:money_plaza/app/app.router.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
+import '../../../app/app.dialogs.dart';
 import '../../../app/app.locator.dart';
 import '../../../services/Models/loan_card.dart';
 import '../../../services/Models/loan_tags.dart';
@@ -9,8 +10,11 @@ import '../../../services/loan_card_service.dart';
 
 class LoanViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
+  final _dialogService = locator<DialogService>();
   List<LoanTags> loanCardList = [];
   List<String> features = [];
+  List<LoanCard> compareData = [];
+
   navigateToPersonalloan() {
     _navigationService.navigateToPersonalloanView();
   }
@@ -31,6 +35,15 @@ class LoanViewModel extends BaseViewModel {
     _navigationService.navigateToCommericalLoanView();
   }
 
+  applyConfirm() {
+    _navigationService.navigateToApplyconfirmView();
+  }
+
+  showDetail(loanData) {
+    _dialogService.showCustomDialog(
+        variant: DialogType.detailFilte, data: loanData);
+  }
+
   setFeatures(LoanTags loanTags) {
     if (features.contains(loanTags.id)) {
       features.remove(loanTags.id);
@@ -39,6 +52,25 @@ class LoanViewModel extends BaseViewModel {
       features.add(loanTags.id ?? "");
       loanTags.selected = true;
     }
+    notifyListeners();
+  }
+
+  setCompareData(LoanCard loanData) {
+    log("Value: , LoanData: $loanData");
+
+    if (compareData.contains(loanData)) {
+      compareData.remove(loanData);
+      log("remove list");
+      loanData.checkBox = false;
+    } else if (compareData.length < 3) {
+      compareData.add(loanData);
+      log("add list=====");
+      loanData.checkBox = true;
+    } else {
+      log("=========alreay to seleced");
+    }
+
+    log("Selected Loan Cards: $compareData");
     notifyListeners();
   }
 
