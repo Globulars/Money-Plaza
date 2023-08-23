@@ -10,8 +10,10 @@ import '../../../services/loan_card_service.dart';
 
 class LoanViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
+  final _loanCardService = locator<LoanCardService>();
   final _dialogService = locator<DialogService>();
-  List<LoanTags> loanCardList = [];
+  List<LoanCard> loanCardList = [];
+  List<LoanTags> loanTagsList = [];
   List<String> features = [];
   List<LoanCard> compareData = [];
 
@@ -74,7 +76,6 @@ class LoanViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  final _loanCardService = locator<LoanCardService>();
   Future<List<LoanCard>> loanListData() async {
     Map<String, dynamic> body = {
       "order": "descending",
@@ -84,32 +85,36 @@ class LoanViewModel extends BaseViewModel {
       "features": features,
       "search": ""
     };
-    var data = await _loanCardService.loanlist(body);
-    if (data?["success"] == true) {
-      List dataList = data["data"]["records"];
-      log("===>${dataList.length}");
-      List<LoanCard> loanCardList =
-          dataList.map((data) => LoanCard.fromJson(data)).toList();
-      return loanCardList;
-    } else {
-      log(data["message"].toString());
-      throw Exception(data["message"].toString());
-    }
-  }
-
-  Future<List<LoanTags>> getLoanTags() async {
     if (loanCardList.isEmpty) {
-      var data = await _loanCardService.getLoanTags();
+      var data = await _loanCardService.loanlist(body);
       if (data?["success"] == true) {
-        List dataList = data["data"];
-        loanCardList = dataList.map((data) => LoanTags.fromJson(data)).toList();
+        List dataList = data["data"]["records"];
+        log("===>${dataList.length}");
+        loanCardList = dataList.map((data) => LoanCard.fromJson(data)).toList();
         notifyListeners();
         return loanCardList;
       } else {
+        log(data["message"].toString());
         throw Exception(data["message"].toString());
       }
     } else {
       return loanCardList;
+    }
+  }
+
+  Future<List<LoanTags>> getLoanTags() async {
+    if (loanTagsList.isEmpty) {
+      var data = await _loanCardService.getLoanTags();
+      if (data?["success"] == true) {
+        List dataList = data["data"];
+        loanTagsList = dataList.map((data) => LoanTags.fromJson(data)).toList();
+        notifyListeners();
+        return loanTagsList;
+      } else {
+        throw Exception(data["message"].toString());
+      }
+    } else {
+      return loanTagsList;
     }
   }
 }
