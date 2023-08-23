@@ -5,7 +5,7 @@ import 'package:money_plaza/ui/common/app_icons.dart';
 import '../../../common/app_colors.dart';
 import '../loan_viewmodel.dart';
 import '../../../widgets/common/icon_box_btn/icon_box_btn.dart';
-import '../../../widgets/filter_bar_widget.dart';
+import 'filter_bar_widget.dart';
 
 class FilterBottomBar extends ViewModelWidget<LoanViewModel> {
   const FilterBottomBar({Key? key}) : super(key: key);

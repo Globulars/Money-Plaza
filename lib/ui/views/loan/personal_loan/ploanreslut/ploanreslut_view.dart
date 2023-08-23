@@ -8,7 +8,7 @@ import '../../../../widgets/bottom_bar.dart';
 import '../../../../widgets/common/background_image.dart';
 import '../../../../widgets/common/icon_box_btn/return_button.dart';
 import '../../widgets/result_card.dart';
-import '../../../../widgets/loan_tags_list_view.dart';
+import '../../widgets/loan_tags_list_view.dart';
 import '../../widgets/filter_bottom_bar.dart';
 import 'ploanreslut_viewmodel.dart';
 

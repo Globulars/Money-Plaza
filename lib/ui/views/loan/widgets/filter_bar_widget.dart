@@ -1,9 +1,9 @@
 // ignore_for_file: unused_element
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
-import '../common/ui_helpers.dart';
-import '../views/loan/loan_viewmodel.dart';
-import 'common/icon_box_btn/icon_box_btn.dart';
+import '../../../common/ui_helpers.dart';
+import '../loan_viewmodel.dart';
+import '../../../widgets/common/icon_box_btn/icon_box_btn.dart';
 import 'package:stacked/stacked.dart';
 
 class FilterBarWidget extends ViewModelWidget<LoanViewModel> {
