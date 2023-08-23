@@ -8,7 +8,7 @@ import 'icon_box_btn_model.dart';
 import 'package:flutter_html/flutter_html.dart';
 
 class CustomText extends StackedView<IconBoxBtnModel> {
- String text;
+  String text;
   double? fontSize;
   Color? color;
   FontWeight? fontWeight;
@@ -20,7 +20,7 @@ class CustomText extends StackedView<IconBoxBtnModel> {
   int? maxLines;
   CustomText(
       {super.key,
-       this.text="",
+      this.text = "",
       this.color,
       this.fontSize,
       this.fontWeight,

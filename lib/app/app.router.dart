@@ -287,8 +287,10 @@ class StackedRouter extends _i1.RouterBase {
       );
     },
     _i6.LoancompareView: (data) {
+      final args = data.getArgs<LoancompareViewArguments>(nullOk: false);
       return _i29.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i6.LoancompareView(),
+        builder: (context) =>
+            _i6.LoancompareView(compareData: args.compareData, key: args.key),
         settings: data,
       );
     },
@@ -478,6 +480,33 @@ class LoanViewArguments {
   @override
   int get hashCode {
     return key.hashCode ^ loanCard.hashCode;
+  }
+}
+
+class LoancompareViewArguments {
+  const LoancompareViewArguments({
+    required this.compareData,
+    this.key,
+  });
+
+  final List<_i30.LoanCard> compareData;
+
+  final _i29.Key? key;
+
+  @override
+  String toString() {
+    return '{"compareData": "$compareData", "key": "$key"}';
+  }
+
+  @override
+  bool operator ==(covariant LoancompareViewArguments other) {
+    if (identical(this, other)) return true;
+    return other.compareData == compareData && other.key == key;
+  }
+
+  @override
+  int get hashCode {
+    return compareData.hashCode ^ key.hashCode;
   }
 }
 
@@ -752,14 +781,17 @@ extension NavigatorStateExtension on _i31.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> navigateToLoancompareView([
+  Future<dynamic> navigateToLoancompareView({
+    required List<_i30.LoanCard> compareData,
+    _i29.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return navigateTo<dynamic>(Routes.loancompareView,
+        arguments: LoancompareViewArguments(compareData: compareData, key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -1175,14 +1207,17 @@ extension NavigatorStateExtension on _i31.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> replaceWithLoancompareView([
+  Future<dynamic> replaceWithLoancompareView({
+    required List<_i30.LoanCard> compareData,
+    _i29.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return replaceWith<dynamic>(Routes.loancompareView,
+        arguments: LoancompareViewArguments(compareData: compareData, key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

@@ -56,7 +56,7 @@ class DetailFilteDialog extends StackedView<DetailFilteDialogModel> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    ResultCard(  detailPage: 0.17, loanData: loanData),
+                    ResultCard(detailPage: 0.17, loanData: loanData),
                     DetailCard1(loanData: loanData),
                     // const DetailCard2(),
                     // const DetailCard3(),

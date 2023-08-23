@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/submit_button.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
+import '../../../../../services/Models/loan_card.dart';
 import '../../../../common/ui_helpers.dart';
 import '../../../../widgets/common/icon_box_btn/text.dart';
 import '../../loan_viewmodel.dart';
 
-class PromiseLand extends ViewModelWidget<LoanViewModel> {
-  const PromiseLand({Key? key}) : super(key: key);
+class CompareHead extends ViewModelWidget<LoanViewModel> {
+  final List<LoanCard> compareData;
+
+  const CompareHead({required this.compareData, Key? key}) : super(key: key);
 
   @override
   Widget build(
@@ -24,9 +27,9 @@ class PromiseLand extends ViewModelWidget<LoanViewModel> {
             children: [
               Column(
                 children: [
-                  Image.asset(
-                    myIcons.promise,
-                    width: 90,
+                  Image.network(
+                    viewModel.compareData[0].company?.signLogoUrl ?? "",
+                    width: 80,
                   ),
                   verticalSpaceTiny,
                   CustomText(

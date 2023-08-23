@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:stacked/stacked.dart';
+import '../../../../../services/Models/loan_card.dart';
 import '../../../../common/ui_helpers.dart';
 import '../../../../widgets/common/icon_box_btn/text.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 import '../../loan_viewmodel.dart';
 
-class HeadBtmText extends ViewModelWidget<LoanViewModel> {
-  const HeadBtmText({Key? key}) : super(key: key);
+class CompareBottom extends ViewModelWidget<LoanViewModel> {
+  final List<LoanCard> compareData;
+
+  const CompareBottom({required this.compareData, Key? key}) : super(key: key);
 
   @override
   Widget build(

@@ -65,7 +65,7 @@ class LoanCard {
   bool? pureApr;
   String? aprStr;
   bool? customRate;
-  bool? checkBox=false;
+  bool? checkBox = false;
 
   LoanCard(
       {this.id,

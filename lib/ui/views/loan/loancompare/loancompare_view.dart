@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
+import '../../../../services/Models/loan_card.dart';
 import '../../../common/ui_helpers.dart';
 import '../../../widgets/app_bar.dart';
 import '../../../widgets/bottom_bar.dart';
@@ -8,11 +9,13 @@ import '../../../widgets/common/background_image.dart';
 import '../../../widgets/common/icon_box_btn/return_button.dart';
 import '../loan_viewmodel.dart';
 import '../widgets/filter_bottom_bar.dart';
-import 'compare_widgets/head_btm_text.dart';
-import 'compare_widgets/prom_land.dart';
+import 'compare_widgets/compare_bottom.dart';
+import 'compare_widgets/compare_head.dart';
 
 class LoancompareView extends StackedView<LoanViewModel> {
-  const LoancompareView({Key? key}) : super(key: key);
+  final List<LoanCard> compareData;
+  const LoancompareView({required this.compareData, Key? key})
+      : super(key: key);
 
   @override
   Widget builder(
@@ -39,8 +42,8 @@ class LoancompareView extends StackedView<LoanViewModel> {
                         padding: EdgeInsets.symmetric(horizontal: 8),
                         child: Column(
                           children: [
-                            PromiseLand(),
-                            HeadBtmText(),
+                            CompareHead(),
+                            CompareBottom(),
                           ],
                         ),
                       ),

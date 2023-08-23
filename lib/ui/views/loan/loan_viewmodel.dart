@@ -91,7 +91,7 @@ class LoanViewModel extends BaseViewModel {
   void compareScreen() {
     log(compareData.length.toString());
     if (compareData.length == 2) {
-      _navigationService.navigateToLoancompareView();
+      _navigationService.navigateToLoancompareView(compareData: compareData);
     } else {
       log("Please select two value${compareData.length}");
     }
