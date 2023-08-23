@@ -10,7 +10,8 @@ import '../../../services/loan_card_service.dart';
 
 class LoanViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
-  List features = [];
+  List<LoanTags> loanCardList = [];
+  List<String> features = [];
   navigateToPersonalloan() {
     _navigationService.navigateToPersonalloanView();
   }
@@ -29,6 +30,17 @@ class LoanViewModel extends BaseViewModel {
 
   navigateToCommerical() {
     _navigationService.navigateToCommericalLoanView();
+  }
+
+  setFeatures(LoanTags loanTags) {
+    if (features.contains(loanTags.id)) {
+      features.remove(loanTags.id);
+      loanTags.selected = false;
+    } else {
+      features.add(loanTags.id ?? "");
+      loanTags.selected = true;
+    }
+    notifyListeners();
   }
 
   final _loanCardService = locator<LoanCardService>();
@@ -55,16 +67,18 @@ class LoanViewModel extends BaseViewModel {
   }
 
   Future<List<LoanTags>> getLoanTags() async {
-    var data = await _loanCardService.getLoanTags();
-    if (data?["success"] == true) {
-      List dataList = data["data"];
-      log("===>${dataList.length}");
-      List<LoanTags> loanCardList =
-          dataList.map((data) => LoanTags.fromJson(data)).toList();
-      return loanCardList;
+    if (loanCardList.isEmpty) {
+      var data = await _loanCardService.getLoanTags();
+      if (data?["success"] == true) {
+        List dataList = data["data"];
+        loanCardList = dataList.map((data) => LoanTags.fromJson(data)).toList();
+        notifyListeners();
+        return loanCardList;
+      } else {
+        throw Exception(data["message"].toString());
+      }
     } else {
-      log(data["message"].toString());
-      throw Exception(data["message"].toString());
+      return loanCardList;
     }
   }
 }

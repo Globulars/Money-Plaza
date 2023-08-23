@@ -14,6 +14,7 @@ class LoanTags {
   String? updateDate;
   String? createDate;
   String? code;
+  bool? selected;
 
   LoanTags(
       {this.id,
@@ -30,7 +31,8 @@ class LoanTags {
       this.insuranceExtra,
       this.updateDate,
       this.createDate,
-      this.code});
+      this.code,
+      this.selected = false});
 
   LoanTags.fromJson(Map<String, dynamic> json) {
     id = json['id'];
