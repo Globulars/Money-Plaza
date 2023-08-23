@@ -16,6 +16,11 @@ class LoancompareView extends StackedView<LoanViewModel> {
   final List<LoanCard> compareData;
   const LoancompareView({required this.compareData, Key? key})
       : super(key: key);
+  @override
+  void onViewModelReady(LoanViewModel viewModel) {
+    viewModel.compareData = compareData;
+    super.onViewModelReady(viewModel);
+  }
 
   @override
   Widget builder(
@@ -23,7 +28,6 @@ class LoancompareView extends StackedView<LoanViewModel> {
     LoanViewModel viewModel,
     Widget? child,
   ) {
-    // final width = MediaQuery.of(context).size.width;
     return Stack(
       children: [
         const BackgroundImage(),
@@ -39,7 +43,7 @@ class LoancompareView extends StackedView<LoanViewModel> {
                   Expanded(
                     child: SingleChildScrollView(
                       child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 8),
+                        padding: const EdgeInsets.symmetric(horizontal: 8),
                         child: Column(
                           children: [
                             CompareHead(compareData: compareData),

@@ -51,7 +51,7 @@ class CustomText extends StackedView<IconBoxBtnModel> {
             textAlign: textAlign,
             overflow: textOverflow,
             maxLines: maxLines,
-          );
+          ).tr();
   }
 
   @override

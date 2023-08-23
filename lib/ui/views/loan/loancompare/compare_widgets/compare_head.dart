@@ -33,7 +33,7 @@ class CompareHead extends ViewModelWidget<LoanViewModel> {
                   ),
                   verticalSpaceTiny,
                   CustomText(
-                    text: 'promise',
+                    text: viewModel.compareData[0].company?.name ?? "",
                     fontWeight: FontWeight.w500,
                     fontSize: 20,
                   ),
@@ -50,13 +50,13 @@ class CompareHead extends ViewModelWidget<LoanViewModel> {
               horizontalSpaceLarge,
               Column(
                 children: [
-                  Image.asset(
-                    myIcons.weLend,
-                    width: 90,
+                  Image.network(
+                    viewModel.compareData[1].company?.signLogoUrl ?? "",
+                    width: 80,
                   ),
                   verticalSpaceTiny,
                   CustomText(
-                    text: 'weLand',
+                    text: viewModel.compareData[1].company?.name ?? "",
                     fontWeight: FontWeight.w500,
                     fontSize: 20,
                   ),
