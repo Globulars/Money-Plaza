@@ -78,7 +78,7 @@ class LoanView extends StackedView<LoanViewModel> {
                             return Column(
                               children: [
                                 SizedBox(
-                                  height: height * 0.4,
+                                  height: height * 0.2,
                                   width: width * 1,
                                 ),
                                 const CircularProgressIndicator(),
