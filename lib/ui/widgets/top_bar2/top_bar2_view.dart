@@ -4,7 +4,7 @@ import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import '../../common/app_colors.dart';
 import '../common/icon_box_btn/icon_box_btn.dart';
-import '../loan_containers.dart';
+import '../filter_bar_widget.dart';
 import 'top_bar2_viewmodel.dart';
 
 class TopBar2View extends StackedView<TopBar2ViewModel> {
@@ -88,7 +88,7 @@ class TopBar2View extends StackedView<TopBar2ViewModel> {
           thickness: 3,
         ),
         verticalSpaceTiny,
-        viewModel.showcard ? loanCont(context) : Container(),
+        viewModel.showcard ? const FilterBarWidget() : Container(),
       ],
     );
   }

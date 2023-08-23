@@ -5,7 +5,7 @@ import 'package:stacked/stacked.dart';
 import 'package:flutter/material.dart';
 import '../../widgets/bottom_bar.dart';
 import 'widgets/loan_list_builder.dart';
-import '../../widgets/loan_containers.dart';
+import '../../widgets/filter_bar_widget.dart';
 import '../../widgets/loan_tags_list_view.dart';
 import '../../../services/Models/loan_card.dart';
 import '../../widgets/common/background_image.dart';
@@ -44,7 +44,7 @@ class LoanView extends StackedView<LoanViewModel> {
                     url:
                         "https://admin.moneyplaza.com.hk/banner/getBannersByType?type=loan"),
                 verticalSpaceMedium,
-                loanCont(context),
+                const FilterBarWidget(),
                 verticalSpaceTiny,
                 verticalSpaceSmall,
                 Stack(
