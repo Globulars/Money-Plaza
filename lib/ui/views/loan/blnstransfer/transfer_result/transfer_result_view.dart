@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
+import 'package:money_plaza/ui/widgets/loan_tags_list_view.dart';
 import 'package:stacked/stacked.dart';
 import '../../../../../services/Models/loan_card.dart';
 import '../../../../common/ui_helpers.dart';
 import '../../../../widgets/app_bar.dart';
 import '../../../../widgets/bottom_bar.dart';
 import '../../../../widgets/common/background_image.dart';
-import '../../../../widgets/common/horizental_list_view/horizental_list_view_view.dart';
 import '../../../../widgets/common/icon_box_btn/return_button.dart';
 import '../../../../widgets/common/result_card.dart';
 import '../../../../widgets/top_bar2/top_bar2_view.dart';
@@ -33,7 +33,7 @@ class TransferResultView extends StackedView<TransferResultViewModel> {
               Column(
                 children: [
                   verticalSpace(70),
-                  const HorizentalListViewView(),
+                  const LoanTagsListView(),
                   Expanded(
                     child: ListView.builder(
                       itemCount: 3,

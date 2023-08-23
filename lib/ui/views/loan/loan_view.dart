@@ -8,10 +8,10 @@ import '../../common/app_icons.dart';
 import '../../widgets/app_bar.dart';
 import '../../widgets/bottom_bar.dart';
 import '../../widgets/common/background_image.dart';
-import '../../widgets/common/horizental_list_view/horizental_list_view_view.dart';
 import '../../widgets/common/icon_box_btn/return_button.dart';
 import '../../widgets/common/result_card.dart';
 import '../../widgets/loan_containers.dart';
+import '../../widgets/loan_tags_list_view.dart';
 import 'loan_viewmodel.dart';
 
 class LoanView extends StackedView<LoanViewModel> {
@@ -49,7 +49,7 @@ class LoanView extends StackedView<LoanViewModel> {
                     Column(
                       children: [
                         verticalSpace(70.0),
-                        const HorizentalListViewView(),
+                        const LoanTagsListView(),
                         FutureBuilder<List<LoanCard>>(
                           future: viewModel.loanListData(),
                           builder: (ctx, snapshot) {

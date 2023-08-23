@@ -1,14 +1,15 @@
-import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
-import '../../../../services/Models/loan_tags.dart';
-import '../../../common/app_colors.dart';
-import '../../../common/ui_helpers.dart';
-import '../../../views/loan/loan_viewmodel.dart';
-import '../icon_box_btn/text.dart';
+import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
+import 'package:money_plaza/ui/common/app_colors.dart';
+import 'package:money_plaza/ui/common/ui_helpers.dart';
+import 'package:money_plaza/services/Models/loan_tags.dart';
+import 'package:money_plaza/ui/views/loan/loan_viewmodel.dart';
+import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
 
-class HorizentalListViewView extends ViewModelWidget<LoanViewModel> {
-  const HorizentalListViewView({Key? key}) : super(key: key);
+
+class LoanTagsListView extends ViewModelWidget<LoanViewModel> {
+  const LoanTagsListView({Key? key}) : super(key: key);
 
   @override
   Widget build(
