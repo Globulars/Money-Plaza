@@ -94,9 +94,9 @@ class ResultCard extends StackedView<WidgetViewModel> {
                             height: 10,
                             width: 20,
                             child: Checkbox(
-                              value:viewModel. selectedLoanCards.contains(loanData),
+                              value: loanData.checkBox,
                               onChanged: (value) {
-                                viewModel.toggleSelection(value,loanData);
+                                viewModel.toggleSelection(loanData);
                               },
                             ),
                           ),
@@ -104,7 +104,7 @@ class ResultCard extends StackedView<WidgetViewModel> {
                             boxColor: Colors.transparent,
                             text: 'compare',
                             color: Colors.black87,
-                            onPress: (){},
+                            onPress: () {},
                             fontSize: 18,
                           ),
                         ],

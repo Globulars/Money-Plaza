@@ -13,7 +13,7 @@ class WidgetViewModel extends BaseViewModel {
   final _creditCardService = locator<CreditCardService>();
   final _navigationService = locator<NavigationService>();
   final _dialogService = locator<DialogService>();
-  final List<LoanCard> selectedLoanCards = [];
+  List<LoanCard> selectedLoanCards = [];
 
   applyConfirm() {
     _navigationService.navigateToApplyconfirmView();
@@ -27,7 +27,7 @@ class WidgetViewModel extends BaseViewModel {
 //   toggleSelection(value, LoanCard loanData) {
 //   log("Value: $value, LoanData: $loanData");
 //   if (value) {
-//     if (selectedLoanCards.length <= 2) {
+//     if (selectedLoanCards.length < 2) {
 //       log("Adding $loanData");
 //       selectedLoanCards.add(loanData);
 //     }
@@ -39,14 +39,19 @@ class WidgetViewModel extends BaseViewModel {
 //   notifyListeners();
 // }
 
-  toggleSelection(value, LoanCard loanData) {
-    log("Value: $value, LoanData: $loanData");
-    // loanData.checkBox = !value;
+  toggleSelection( LoanCard loanData) {
+    log("Value: , LoanData: $loanData");
 
     if (selectedLoanCards.contains(loanData)) {
       selectedLoanCards.remove(loanData);
-    } else if(selectedLoanCards.length < 2){
+      log("remove list");
+      loanData.checkBox = false;
+    } else if (selectedLoanCards.length < 3) {
       selectedLoanCards.add(loanData);
+      log("add list=====");
+      loanData.checkBox = true;
+    } else {
+      log("=========alreay to seleced");
     }
 
     log("Selected Loan Cards: $selectedLoanCards");
