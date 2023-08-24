@@ -279,12 +279,14 @@ class StackedRouter extends _i1.RouterBase {
       );
     },
     _i5.CalculatorResultView: (data) {
-      final args = data.getArgs<CalculatorResultViewArguments>(
-        orElse: () => const CalculatorResultViewArguments(),
-      );
+      final args = data.getArgs<CalculatorResultViewArguments>(nullOk: false);
       return _i29.MaterialPageRoute<dynamic>(
-        builder: (context) =>
-            _i5.CalculatorResultView(key: args.key, loanCard: args.loanCard),
+        builder: (context) => _i5.CalculatorResultView(
+            args.calculatorMonthlyPayment,
+            args.calculatorLoanAmount,
+            args.calculatorInterest,
+            key: args.key,
+            loanCard: args.loanCard),
         settings: data,
       );
     },
@@ -486,9 +488,18 @@ class LoanViewArguments {
 
 class CalculatorResultViewArguments {
   const CalculatorResultViewArguments({
+    required this.calculatorMonthlyPayment,
+    required this.calculatorLoanAmount,
+    required this.calculatorInterest,
     this.key,
     this.loanCard,
   });
+
+  final String calculatorMonthlyPayment;
+
+  final String calculatorLoanAmount;
+
+  final String calculatorInterest;
 
   final _i29.Key? key;
 
@@ -496,18 +507,26 @@ class CalculatorResultViewArguments {
 
   @override
   String toString() {
-    return '{"key": "$key", "loanCard": "$loanCard"}';
+    return '{"calculatorMonthlyPayment": "$calculatorMonthlyPayment", "calculatorLoanAmount": "$calculatorLoanAmount", "calculatorInterest": "$calculatorInterest", "key": "$key", "loanCard": "$loanCard"}';
   }
 
   @override
   bool operator ==(covariant CalculatorResultViewArguments other) {
     if (identical(this, other)) return true;
-    return other.key == key && other.loanCard == loanCard;
+    return other.calculatorMonthlyPayment == calculatorMonthlyPayment &&
+        other.calculatorLoanAmount == calculatorLoanAmount &&
+        other.calculatorInterest == calculatorInterest &&
+        other.key == key &&
+        other.loanCard == loanCard;
   }
 
   @override
   int get hashCode {
-    return key.hashCode ^ loanCard.hashCode;
+    return calculatorMonthlyPayment.hashCode ^
+        calculatorLoanAmount.hashCode ^
+        calculatorInterest.hashCode ^
+        key.hashCode ^
+        loanCard.hashCode;
   }
 }
 
@@ -796,6 +815,9 @@ extension NavigatorStateExtension on _i31.NavigationService {
   }
 
   Future<dynamic> navigateToCalculatorResultView({
+    required String calculatorMonthlyPayment,
+    required String calculatorLoanAmount,
+    required String calculatorInterest,
     _i29.Key? key,
     List<_i30.LoanCard>? loanCard,
     int? routerId,
@@ -805,7 +827,12 @@ extension NavigatorStateExtension on _i31.NavigationService {
         transition,
   }) async {
     return navigateTo<dynamic>(Routes.calculatorResultView,
-        arguments: CalculatorResultViewArguments(key: key, loanCard: loanCard),
+        arguments: CalculatorResultViewArguments(
+            calculatorMonthlyPayment: calculatorMonthlyPayment,
+            calculatorLoanAmount: calculatorLoanAmount,
+            calculatorInterest: calculatorInterest,
+            key: key,
+            loanCard: loanCard),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -1225,6 +1252,9 @@ extension NavigatorStateExtension on _i31.NavigationService {
   }
 
   Future<dynamic> replaceWithCalculatorResultView({
+    required String calculatorMonthlyPayment,
+    required String calculatorLoanAmount,
+    required String calculatorInterest,
     _i29.Key? key,
     List<_i30.LoanCard>? loanCard,
     int? routerId,
@@ -1234,7 +1264,12 @@ extension NavigatorStateExtension on _i31.NavigationService {
         transition,
   }) async {
     return replaceWith<dynamic>(Routes.calculatorResultView,
-        arguments: CalculatorResultViewArguments(key: key, loanCard: loanCard),
+        arguments: CalculatorResultViewArguments(
+            calculatorMonthlyPayment: calculatorMonthlyPayment,
+            calculatorLoanAmount: calculatorLoanAmount,
+            calculatorInterest: calculatorInterest,
+            key: key,
+            loanCard: loanCard),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

@@ -56,13 +56,18 @@ class LoanViewModel extends BaseViewModel {
      var isValid = formKey.currentState!.validate();
     if (isValid) {
     _navigationService.navigateToCalculatorResultView(
-      // calculatorLoanAmount: calculatorLoanAmountCtrl.text,
-      // calculatorMonthlyPayment: calculatorMonthlyPaymentCtrl.text,
-      // calculatorInterest : calculatorInterestCtrl.text,
-      // repayment=1?
+      calculatorLoanAmount: calculatorLoanAmountCtrl.text,
+      calculatorMonthlyPayment: calculatorMonthlyPaymentCtrl.text,
+      calculatorInterest : calculatorInterestCtrl.text,
+     
+      
     );
    }
   }
+  back() {
+    _navigationService.back();
+  }
+
 
   
   /// /////////
@@ -166,9 +171,11 @@ class LoanViewModel extends BaseViewModel {
       "order": "descending",
       "sort": "ordering",
       "tenor": 12,
-      "amount": 50000,
+      "amount": calculatorLoanAmountCtrl.text,
       "features": features,
-      "search": ""
+      "search": "",
+      "interestRate": calculatorInterestCtrl.text, 
+      "monthlyRepayment": calculatorMonthlyPaymentCtrl.text
     };
     log(features.toString());
     var data = await _loanCardService.loanlist(body);

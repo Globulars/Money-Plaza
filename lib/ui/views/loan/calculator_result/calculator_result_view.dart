@@ -18,9 +18,16 @@ import 'calculator_widgets/calc_items.dart';
 import 'calculator_widgets/data_table.dart';
 
 class CalculatorResultView extends StackedView<LoanViewModel> {
+  final String calculatorMonthlyPayment,
+      calculatorInterest,
+      calculatorLoanAmount;
+      
   final List<LoanCard>? loanCard;
   final LoanViewModel viewModel = LoanViewModel();
-  CalculatorResultView({Key? key, this.loanCard}) : super(key: key);
+  CalculatorResultView(this.calculatorMonthlyPayment, this.calculatorLoanAmount,
+      this.calculatorInterest,
+      {Key? key, this.loanCard})
+      : super(key: key);
   @override
   void onViewModelReady(LoanViewModel viewModel) {
     viewModel.getLoanTags();
@@ -86,7 +93,7 @@ class CalculatorResultView extends StackedView<LoanViewModel> {
                                     loanData: viewModel.loanCardList[index]);
                               },
                             ),
-                   
+
                       verticalSpaceTiny,
                       // const CalculatorItems(),
                       // const CalDataTable(),
