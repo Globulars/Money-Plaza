@@ -111,12 +111,12 @@ class ResultCard extends ViewModelWidget<LoanViewModel> {
                     ),
                     verticalSpaceSmall,
                     SubmitButton(
-                      image: myIcons.apply,
-                      imgwidth: 16,
-                      text: 'apply',
-                      fontSize: 18,
                       height: 40,
-                      onPress: viewModel.applyConfirm,
+                      imgwidth: 16,
+                      fontSize: 18,
+                      text: 'apply',
+                      image: myIcons.apply,
+                      onPress:viewModel.navigateToSurveySplashView,
                     ),
                     verticalSpaceSmall,
                     SubmitButton(

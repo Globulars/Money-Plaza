@@ -3,14 +3,14 @@ import 'package:flutter/scheduler.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
 import 'package:stacked/stacked.dart';
-import '../../../common/app_colors.dart';
-import 'morgages_splash_viewmodel.dart';
+import '../../common/app_colors.dart';
+import 'survey_form_viewmodel.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 
-class MorgagesSplashView extends StackedView<MorgagesSplashViewModel> {
+class SurveySplashView extends StackedView<SurveyFormViewModel> {
   final String organization;
 
-  const MorgagesSplashView({
+  const SurveySplashView({
     Key? key,
     required this.organization,
   }) : super(key: key);
@@ -18,7 +18,7 @@ class MorgagesSplashView extends StackedView<MorgagesSplashViewModel> {
   @override
   Widget builder(
     BuildContext context,
-    MorgagesSplashViewModel viewModel,
+    SurveyFormViewModel viewModel,
     Widget? child,
   ) {
     final width = MediaQuery.of(context).size.width;
@@ -74,13 +74,13 @@ class MorgagesSplashView extends StackedView<MorgagesSplashViewModel> {
   }
 
   @override
-  MorgagesSplashViewModel viewModelBuilder(
+  SurveyFormViewModel viewModelBuilder(
     BuildContext context,
   ) =>
-      MorgagesSplashViewModel();
+      SurveyFormViewModel();
 
   @override
-  void onViewModelReady(MorgagesSplashViewModel viewModel) =>
+  void onViewModelReady(SurveyFormViewModel viewModel) =>
       SchedulerBinding.instance.addPostFrameCallback(
           (timeStamp) => viewModel.runStartupMorgaesInfo(organization));
 }

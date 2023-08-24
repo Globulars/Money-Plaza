@@ -34,8 +34,8 @@ class MorgagesResultViewModel extends BaseViewModel {
     );
   }
 
-  navigateToMorgagesSplash() {
-    _navigationService.navigateToMorgagesSplashView(
+  navigateToSurveySplashView() {
+    _navigationService.navigateToSurveySplashView(
         organization: "HSBC+New Owner / Mortgage Transfer");
   }
 

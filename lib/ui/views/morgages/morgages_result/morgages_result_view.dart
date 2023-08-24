@@ -130,7 +130,7 @@ class MorgagesResultView extends StackedView<MorgagesResultViewModel> {
               SubmitButton(
                 image: myIcons.apply,
                 imgwidth: 12,
-                onPress: viewModel.navigateToMorgagesSplash,
+                onPress: viewModel.navigateToSurveySplashView,
                 text: 'apply',
                 height: 40,
                 width: 80,
