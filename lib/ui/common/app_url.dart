@@ -99,6 +99,9 @@ class ApiUrl {
   // final Uri loanLike = Uri.parse("$baseUrl/loan/like/");
   final Uri loanList = Uri.parse("$baseUrl/loan/list");
   final Uri getLoanTags = Uri.parse("$baseUrl/tag/getTagsByType?type=loan");
+  final Uri scheduleByPLoanForRepayment =
+      Uri.parse("$baseUrl/repayment/scheduleByPLoanForRepayment");
+
   // final Uri loanMatch = Uri.parse("$baseUrl/loan/match");
   // final Uri loanPreview = Uri.parse("$baseUrl/loan/preview/");
 

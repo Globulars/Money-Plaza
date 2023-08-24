@@ -7,6 +7,7 @@ import '../../../app/app.dialogs.dart';
 import '../../../app/app.locator.dart';
 import '../../../services/Models/loan_card.dart';
 import '../../../services/Models/loan_tags.dart';
+import '../../../services/Models/schedule_loan.dart';
 import '../../../services/loan_card_service.dart';
 
 class LoanViewModel extends BaseViewModel {
@@ -17,6 +18,7 @@ class LoanViewModel extends BaseViewModel {
   List<LoanTags> loanTagsList = [];
   List<String> features = [];
   List<LoanCard> compareData = [];
+  List<ScheduleLoan> scheduleLoan = [];
   var showcard = false;
 
   /////////////////// calculator dialog data//////////////////
@@ -164,6 +166,21 @@ class LoanViewModel extends BaseViewModel {
       loanCardList = dataList.map((data) => LoanCard.fromJson(data)).toList();
       notifyListeners();
       return loanCardList;
+    } else {
+      throw Exception(data["message"].toString());
+    }
+  }
+
+  Future<ScheduleLoan> scheduleByPLoanForRepayment(
+      amount, numOfMonths, interestRate) async {
+    Map<String, dynamic> body = {
+      "amount": amount,
+      "numOfMonths": numOfMonths,
+      "interestRate": interestRate
+    };
+    var data = await _loanCardService.scheduleByPLoanForRepayment(body);
+    if (data?["success"] == true) {
+      return ScheduleLoan.fromJson(data["data"]);
     } else {
       throw Exception(data["message"].toString());
     }
