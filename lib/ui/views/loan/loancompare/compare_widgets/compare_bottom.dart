@@ -49,7 +49,7 @@ class CompareBottom extends ViewModelWidget<LoanViewModel> {
     Widget _title(title) {
       return Container(
         height: 30,
-        width: width * (0.48 * compareData.length),
+        width: width * (0.49 * compareData.length),
         decoration: const BoxDecoration(
             color: lightGreenHeigh,
             borderRadius: BorderRadius.only(

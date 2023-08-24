@@ -28,7 +28,7 @@ class ScheduleLoanBuilder extends ViewModelWidget<LoanViewModel> {
                 itemCount: viewModel.compareData.length,
                 itemBuilder: (context, index) {
                   return SizedBox(
-                    width: width * 0.42,
+                    width: width * 0.48,
                     child: FutureBuilder<ScheduleLoan>(
                       future: viewModel.scheduleByPLoanForRepayment(
                           "${viewModel.compareData[index].minIncome}",

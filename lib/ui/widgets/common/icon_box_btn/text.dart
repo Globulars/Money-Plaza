@@ -37,7 +37,7 @@ class CustomText extends StackedView<IconBoxBtnModel> {
     IconBoxBtnModel viewModel,
     Widget? child,
   ) {
-    return text[0] == "<"
+    return text != "" && text[0] == "<"
         ? Html(data: text)
         : Text(
             text,
