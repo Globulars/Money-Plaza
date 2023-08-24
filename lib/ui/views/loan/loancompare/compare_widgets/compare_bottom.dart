@@ -19,7 +19,7 @@ class CompareBottom extends ViewModelWidget<LoanViewModel> {
   ) {
     final width = MediaQuery.of(context).size.width;
 
-    Widget detailData(text, height) {
+    Widget detailData(text) {
       return Container(
         color: Colors.white,
         height: 30,
@@ -34,7 +34,7 @@ class CompareBottom extends ViewModelWidget<LoanViewModel> {
                   itemCount: compareData.length,
                   itemBuilder: (context, index) {
                     return SizedBox(
-                      width: width * 0.42,
+                      width: width * 0.48,
                       child: Center(
                         child: CustomText(text: text),
                       ),
@@ -46,228 +46,141 @@ class CompareBottom extends ViewModelWidget<LoanViewModel> {
       );
     }
 
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            height: 30,
-            decoration: const BoxDecoration(
-                color: lightGreenHeigh,
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(4), topRight: Radius.circular(4))),
-            child: Center(
-                child: CustomText(
-              text: 'apr',
-            )),
-          ),
-          Container(
-            color: Colors.white,
-            height: 30,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 3),
-              child: Row(
-                children: [
-                  ListView.builder(
-                      shrinkWrap: true,
-                      scrollDirection: Axis.horizontal,
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemCount: compareData.length,
-                      itemBuilder: (context, index) {
-                        return SizedBox(
-                          width: width * 0.42,
-                          child: Center(
-                            child: CustomText(
-                                text:
-                                    '${compareData[0].minInterestRate}% - ${compareData[0].maxInterestRate}%'),
-                          ),
-                        );
-                      }),
-                ],
-              ),
+    Widget _title(title) {
+      return Container(
+        height: 30,
+        width: width * (0.48 * compareData.length),
+        decoration: const BoxDecoration(
+            color: lightGreenHeigh,
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(4), topRight: Radius.circular(4))),
+        child: Center(
+            child: CustomText(
+          text: title,
+        )),
+      );
+    }
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        _title("apr"),
+        Container(
+          color: Colors.white,
+          height: 30,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 3),
+            child: Row(
+              children: [
+                ListView.builder(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: compareData.length,
+                    itemBuilder: (context, index) {
+                      return SizedBox(
+                        width: width * 0.48,
+                        child: Center(
+                          child: CustomText(
+                              text:
+                                  '${compareData[0].minInterestRate}% - ${compareData[0].maxInterestRate}%'),
+                        ),
+                      );
+                    }),
+              ],
             ),
           ),
-          verticalSpaceTiny,
-          Container(
-            height: 30,
-            decoration: const BoxDecoration(
-                color: lightGreenHeigh,
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(4), topRight: Radius.circular(4))),
-            child: Center(
-                child: CustomText(
-              text: 'moneyPlazaExclusive',
-            )),
+        ),
+        verticalSpaceTiny,
+        _title("moneyPlazaExclusive"),
+    
+        Container(
+          color: Colors.white,
+          height: 80,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 3),
+            child: ListView.builder(
+                shrinkWrap: true,
+                scrollDirection: Axis.horizontal,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: compareData.length,
+                itemBuilder: (context, index) {
+                  return SizedBox(
+                    width: width * 0.48,
+                    child: Center(
+                      child: CustomText(
+                          text: compareData[index].incentive.toString()),
+                    ),
+                  );
+                }),
           ),
-          Container(
-            color: Colors.white,
-            height: 30,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 3),
-              child: Row(
-                children: [
-                  ListView.builder(
-                      shrinkWrap: true,
-                      scrollDirection: Axis.horizontal,
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemCount: compareData.length,
-                      itemBuilder: (context, index) {
-                        return SizedBox(
-                          width: width * 0.42,
-                          child: Center(
-                            child: CustomText(
-                                text: compareData[index].incentive.toString()),
-                          ),
-                        );
-                      }),
-                ],
-              ),
+        ),
+        verticalSpaceTiny,
+        _title("repaymentType"),
+     
+        detailData("termLoan"),
+        verticalSpaceTiny,
+        _title("moneyRepaymentDetails"),
+        const ScheduleLoanBuilder(),
+        verticalSpaceTiny,
+        _title("totalRepaymentAmount"),
+        Container(
+          color: Colors.white,
+          height: 30,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 3),
+            child: ListView.builder(
+                shrinkWrap: true,
+                scrollDirection: Axis.horizontal,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: compareData.length,
+                itemBuilder: (context, index) {
+                  return SizedBox(
+                    width: width * 0.48,
+                    child: Center(
+                      child: CustomText(
+                          text: compareData[index]
+                              .totalPaymentAmount
+                              .toString()),
+                    ),
+                  );
+                }),
+          ),
+        ),
+        verticalSpaceTiny,
+        _title("totalInterest"),
+        detailData(compareData[1].interestRate.toString()),
+        Container(
+          color: Colors.white,
+          height: 30,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 3),
+            child: Row(
+              children: [
+                ListView.builder(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: compareData.length,
+                    itemBuilder: (context, index) {
+                      return SizedBox(
+                        width: width * 0.48,
+                        child: Center(
+                          child: CustomText(
+                              text:
+                                  compareData[index].interestRate.toString()),
+                        ),
+                      );
+                    }),
+              ],
             ),
           ),
-          verticalSpaceTiny,
-          Container(
-            height: 30,
-            decoration: const BoxDecoration(
-                color: lightGreenHeigh,
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(4), topRight: Radius.circular(4))),
-            child: Center(
-                child: CustomText(
-              text: 'repaymentType',
-            )),
-          ),
-          Container(
-            color: Colors.white,
-            height: 30,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 3),
-              child: Row(
-                children: [
-                  ListView.builder(
-                      shrinkWrap: true,
-                      scrollDirection: Axis.horizontal,
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemCount: compareData.length,
-                      itemBuilder: (context, index) {
-                        return SizedBox(
-                          width: width * 0.42,
-                          child: Center(
-                            child: CustomText(text: "termLoan"),
-                          ),
-                        );
-                      }),
-                ],
-              ),
-            ),
-          ),
-          verticalSpaceTiny,
-          Container(
-            height: 30,
-            decoration: const BoxDecoration(
-                color: lightGreenHeigh,
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(4), topRight: Radius.circular(4))),
-            child: Center(
-                child: CustomText(
-              text: 'moneyRepaymentDetails',
-            )),
-          ),
-          ScheduleLoanBuilder(),
-          verticalSpaceTiny,
-          Container(
-            height: 30,
-            decoration: const BoxDecoration(
-                color: lightGreenHeigh,
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(4), topRight: Radius.circular(4))),
-            child: Center(
-                child: CustomText(
-              text: 'moneyRepaymentDetails',
-            )),
-          ),
-          Container(
-            color: Colors.white,
-            height: 30,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 3),
-              child: Row(
-                children: [
-                  ListView.builder(
-                      shrinkWrap: true,
-                      scrollDirection: Axis.horizontal,
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemCount: compareData.length,
-                      itemBuilder: (context, index) {
-                        return SizedBox(
-                          width: width * 0.42,
-                          child: Center(
-                            child: CustomText(
-                                text: compareData[index]
-                                    .totalPaymentAmount
-                                    .toString()),
-                          ),
-                        );
-                      }),
-                ],
-              ),
-            ),
-          ),
-          verticalSpaceTiny,
-          Container(
-            height: 30,
-            decoration: const BoxDecoration(
-                color: lightGreenHeigh,
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(4), topRight: Radius.circular(4))),
-            child: Center(
-                child: CustomText(
-              text: 'totalInterest',
-            )),
-          ),
-          detailData(compareData[1].interestRate.toString(), 30),
-          Container(
-            color: Colors.white,
-            height: 30,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 3),
-              child: Row(
-                children: [
-                  ListView.builder(
-                      shrinkWrap: true,
-                      scrollDirection: Axis.horizontal,
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemCount: compareData.length,
-                      itemBuilder: (context, index) {
-                        return SizedBox(
-                          width: width * 0.42,
-                          child: Center(
-                            child: CustomText(
-                                text:
-                                    compareData[index].interestRate.toString()),
-                          ),
-                        );
-                      }),
-                ],
-              ),
-            ),
-          ),
-          verticalSpaceTiny,
-          Container(
-            height: 30,
-            decoration: const BoxDecoration(
-                color: lightGreenHeigh,
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(4), topRight: Radius.circular(4))),
-            child: Center(
-                child: CustomText(
-              text: 'earlyPaybackPenalty1',
-            )),
-          ),
-          detailData("No", 30),
-          verticalSpaceSmall,
-        ],
-      ),
+        ),
+        verticalSpaceTiny,
+        _title("earlyPaybackPenalty1"),
+        detailData("No"),
+        verticalSpaceSmall,
+      ],
     );
   }
 }

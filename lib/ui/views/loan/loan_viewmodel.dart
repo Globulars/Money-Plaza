@@ -61,11 +61,9 @@ class LoanViewModel extends BaseViewModel {
     if (compareData.contains(loanData)) {
       compareData.remove(loanData);
       loanData.checkBox = false;
-    } else if (compareData.length < 2) {
+    } else {
       compareData.add(loanData);
       loanData.checkBox = true;
-    } else {
-      log("=========>alreay to seleced${compareData.length}");
     }
     notifyListeners();
   }
@@ -88,10 +86,10 @@ class LoanViewModel extends BaseViewModel {
 
   void compareScreen() {
     log(compareData.length.toString());
-    if (compareData.length == 2) {
+    if (compareData.length >= 2) {
       _navigationService.navigateToLoancompareView(compareData: compareData);
     } else {
-      log("Please select two value${compareData.length}");
+      log("Please select more then two value${compareData.length}");
     }
     showcard = false;
     notifyListeners();

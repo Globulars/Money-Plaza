@@ -17,65 +17,55 @@ class CompareHead extends ViewModelWidget<LoanViewModel> {
     BuildContext context,
     LoanViewModel viewModel,
   ) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Column(
-                children: [
-                  Image.network(
-                    viewModel.compareData[0].company?.signLogoUrl ?? "",
-                    width: 80,
-                  ),
-                  verticalSpaceTiny,
-                  CustomText(
-                    text: viewModel.compareData[0].company?.name ?? "",
-                    fontWeight: FontWeight.w500,
-                    fontSize: 20,
-                  ),
-                  verticalSpaceTiny,
-                  SubmitButton(
-                    image: myIcons.apply,
-                    height: 40,
-                    width: 80,
-                    text: 'apply',
-                    imgwidth: 12,
-                    onPress: viewModel.navigateToSurveySplashView,
-                  )
-                ],
-              ),
-              horizontalSpaceLarge,
-              Column(
-                children: [
-                  Image.network(
-                    viewModel.compareData[1].company?.signLogoUrl ?? "",
-                    width: 80,
-                  ),
-                  verticalSpaceTiny,
-                  CustomText(
-                    text: viewModel.compareData[1].company?.name ?? "",
-                    fontWeight: FontWeight.w500,
-                    fontSize: 20,
-                  ),
-                  verticalSpaceTiny,
-                  SubmitButton(
-                    image: myIcons.apply,
-                    height: 40,
-                    width: 80,
-                    text: 'apply',
-                    imgwidth: 12,
-                    onPress: viewModel.navigateToSurveySplashView,
-                  )
-                ],
-              ),
-            ],
-          ),
-          verticalSpaceSmall,
-        ],
+    final width = MediaQuery.of(context).size.width;
+
+    return SizedBox(
+      height: 130,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 3),
+        child: Row(
+          children: [
+            ListView.builder(
+                shrinkWrap: true,
+                scrollDirection: Axis.horizontal,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: compareData.length,
+                itemBuilder: (context, index) {
+                  return SizedBox(
+                    width: width * 0.48,
+                    child: Center(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Image.network(
+                            viewModel.compareData[index].company?.signLogoUrl ??
+                                "",
+                            width: 80,
+                          ),
+                          verticalSpaceTiny,
+                          CustomText(
+                            text: viewModel.compareData[index].company?.name ??
+                                "",
+                            fontWeight: FontWeight.w500,
+                            fontSize: 20,
+                          ),
+                          verticalSpaceTiny,
+                          SubmitButton(
+                            image: myIcons.apply,
+                            height: 40,
+                            width: 80,
+                            text: 'apply',
+                            imgwidth: 12,
+                            onPress: viewModel.navigateToSurveySplashView,
+                          )
+                        ],
+                      ),
+                    ),
+                  );
+                }),
+          ],
+        ),
       ),
     );
   }
