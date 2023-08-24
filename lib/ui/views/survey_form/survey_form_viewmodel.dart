@@ -15,12 +15,13 @@ class SurveyFormViewModel extends BaseViewModel {
   navigateToMorgagesResult() {
     _navigationService.back();
   }
+
   Future runStartupMorgaesInfo(organization) async {
     await Future.delayed(const Duration(seconds: 2));
 
-    _navigationService.replaceWithSurveyFormView(
-        organization: organization);
+    _navigationService.replaceWithSurveyFormView(organization: organization);
   }
+
   final TextEditingController emailCtrl = TextEditingController();
   final TextEditingController nameCtrl = TextEditingController();
   final TextEditingController refeNoCtrl = TextEditingController();

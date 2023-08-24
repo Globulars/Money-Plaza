@@ -15,8 +15,7 @@ import '../../widgets/common/icon_box_btn/submit_button.dart';
 import '../../widgets/common/icon_box_btn/text.dart';
 import 'survey_form_viewmodel.dart';
 
-class SurveyFormView
-    extends StackedView<SurveyFormViewModel> {
+class SurveyFormView extends StackedView<SurveyFormViewModel> {
   final String organization;
   const SurveyFormView({Key? key, required this.organization})
       : super(key: key);

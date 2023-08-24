@@ -136,11 +136,11 @@ class CompareBottom extends ViewModelWidget<LoanViewModel> {
                   ScheduleLoanBuilder(
                       amount: "${compareData[0].minIncome}",
                       numOfMonths: "${compareData[0].minTenor}",
-                      interestRate: compareData[0].interestRate??0.0),
+                      interestRate: compareData[0].interestRate ?? 0.0),
                   ScheduleLoanBuilder(
                       amount: "${compareData[1].minIncome}",
                       numOfMonths: "${compareData[1].minTenor}",
-                      interestRate: compareData[1].interestRate??0.0),
+                      interestRate: compareData[1].interestRate ?? 0.0),
                 ],
               ),
             ),
