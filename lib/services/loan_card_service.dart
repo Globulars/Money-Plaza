@@ -39,4 +39,20 @@ class LoanCardService {
       return {"message": e};
     }
   }
+
+  /////////////////////////////////////Schedule By PLoan For Repayment////////////////////////////////
+  scheduleByPLoanForRepayment(body) async {
+    try {
+      final response = await http.post(_apiUrl.scheduleByPLoanForRepayment,
+          body: jsonEncode(body), headers: headers);
+      if (response.statusCode == 200) {
+        var data = json.decode(response.body);
+        return data;
+      } else {
+        return {"message": "${response.statusCode} error found"};
+      }
+    } catch (e) {
+      return {"message": e};
+    }
+  }
 }

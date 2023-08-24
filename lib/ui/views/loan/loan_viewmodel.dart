@@ -6,6 +6,7 @@ import '../../../app/app.dialogs.dart';
 import '../../../app/app.locator.dart';
 import '../../../services/Models/loan_card.dart';
 import '../../../services/Models/loan_tags.dart';
+import '../../../services/Models/schedule_loan.dart';
 import '../../../services/loan_card_service.dart';
 
 class LoanViewModel extends BaseViewModel {
@@ -16,6 +17,7 @@ class LoanViewModel extends BaseViewModel {
   List<LoanTags> loanTagsList = [];
   List<String> features = [];
   List<LoanCard> compareData = [];
+  List<ScheduleLoan> scheduleLoan = [];
   var showcard = false;
 
   navigateToPersonalloan() {
@@ -31,14 +33,13 @@ class LoanViewModel extends BaseViewModel {
   }
 
   navigateToSurveySplashView() {
-    _navigationService.navigateToSurveySplashView(
-        organization: "Promise");
+    _navigationService.navigateToSurveySplashView(organization: "Promise");
   }
 
   navigateToCommerical() {
     _navigationService.navigateToCommericalLoanView();
   }
-  
+
   showDetail(loanData) {
     _dialogService.showCustomDialog(
         variant: DialogType.detailFilte, data: loanData);
@@ -130,6 +131,19 @@ class LoanViewModel extends BaseViewModel {
       loanCardList = dataList.map((data) => LoanCard.fromJson(data)).toList();
       notifyListeners();
       return loanCardList;
+    } else {
+      throw Exception(data["message"].toString());
+    }
+  }
+
+  Future<List<ScheduleLoan>> scheduleByPLoanForRepayment(body) async {
+    var data = await _loanCardService.scheduleByPLoanForRepayment(body);
+    if (data?["success"] == true) {
+      List dataList = data["data"];
+      scheduleLoan = dataList.map((data) => ScheduleLoan.fromJson(data)).toList();
+      loanListData();
+      notifyListeners();
+      return scheduleLoan;
     } else {
       throw Exception(data["message"].toString());
     }
