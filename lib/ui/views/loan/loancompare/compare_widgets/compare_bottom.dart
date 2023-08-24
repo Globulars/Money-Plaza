@@ -44,8 +44,8 @@ class CompareBottom extends ViewModelWidget<LoanViewModel> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CustomText(text: '1.12% - 42.86%'),
-                  CustomText(text: '2.75% - 2.78%'),
+                  CustomText(text: '${viewModel.compareData[0].minInterestRate}% - ${viewModel.compareData[0].maxInterestRate}%'),
+                  CustomText(text: '${viewModel.compareData[1].minInterestRate}% - ${viewModel.compareData[1].maxInterestRate}%'),
                 ],
               ),
             ),
@@ -69,13 +69,14 @@ class CompareBottom extends ViewModelWidget<LoanViewModel> {
               padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 2),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
                       width: width * 0.42,
-                      child: CustomText(text: 'successfullyApply')),
+                      child: CustomText(text: compareData[0].incentive.toString())),
                   SizedBox(
                       width: width * 0.42,
-                      child: CustomText(text: 'limitedTimeOfferUntil')),
+                      child: CustomText(text: compareData[1].incentive.toString())),
                 ],
               ),
             ),
@@ -166,8 +167,8 @@ class CompareBottom extends ViewModelWidget<LoanViewModel> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CustomText(text: '\$51.290'),
-                  CustomText(text: '\$51.290'),
+                  CustomText(text: compareData[0].totalPaymentAmount.toString()),
+                  CustomText(text:  compareData[1].totalPaymentAmount.toString()),
                 ],
               ),
             ),
@@ -193,8 +194,8 @@ class CompareBottom extends ViewModelWidget<LoanViewModel> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CustomText(text: '2.75%'),
-                  CustomText(text: '1.12%'),
+                  CustomText(text: "${compareData[0].interestRate}%"),
+                  CustomText(text: "${compareData[1].interestRate}%"),
                 ],
               ),
             ),
