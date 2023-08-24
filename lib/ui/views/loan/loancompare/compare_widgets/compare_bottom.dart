@@ -18,14 +18,41 @@ class CompareBottom extends ViewModelWidget<LoanViewModel> {
     LoanViewModel viewModel,
   ) {
     final width = MediaQuery.of(context).size.width;
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 0),
+
+    Widget detailData(text, height) {
+      return Container(
+        color: Colors.white,
+        height: 30,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 3),
+          child: Row(
+            children: [
+              ListView.builder(
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: compareData.length,
+                  itemBuilder: (context, index) {
+                    return SizedBox(
+                      width: width * 0.42,
+                      child: Center(
+                        child: CustomText(text: text),
+                      ),
+                    );
+                  }),
+            ],
+          ),
+        ),
+      );
+    }
+
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
             height: 30,
-            width: double.infinity,
             decoration: const BoxDecoration(
                 color: lightGreenHeigh,
                 borderRadius: BorderRadius.only(
@@ -37,18 +64,26 @@ class CompareBottom extends ViewModelWidget<LoanViewModel> {
           ),
           Container(
             color: Colors.white,
+            height: 30,
             child: Padding(
-              padding:
-                  EdgeInsets.symmetric(horizontal: width * 0.1, vertical: 3),
+              padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 3),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CustomText(
-                      text:
-                          '${compareData[0].minInterestRate}% - ${compareData[0].maxInterestRate}%'),
-                  CustomText(
-                      text:
-                          '${compareData[1].minInterestRate}% - ${compareData[1].maxInterestRate}%'),
+                  ListView.builder(
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: compareData.length,
+                      itemBuilder: (context, index) {
+                        return SizedBox(
+                          width: width * 0.42,
+                          child: Center(
+                            child: CustomText(
+                                text:
+                                    '${compareData[0].minInterestRate}% - ${compareData[0].maxInterestRate}%'),
+                          ),
+                        );
+                      }),
                 ],
               ),
             ),
@@ -56,7 +91,6 @@ class CompareBottom extends ViewModelWidget<LoanViewModel> {
           verticalSpaceTiny,
           Container(
             height: 30,
-            width: double.infinity,
             decoration: const BoxDecoration(
                 color: lightGreenHeigh,
                 borderRadius: BorderRadius.only(
@@ -68,20 +102,25 @@ class CompareBottom extends ViewModelWidget<LoanViewModel> {
           ),
           Container(
             color: Colors.white,
+            height: 30,
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 2),
+              padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 3),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
-                      width: width * 0.42,
-                      child: CustomText(
-                          text: compareData[0].incentive.toString())),
-                  SizedBox(
-                      width: width * 0.42,
-                      child: CustomText(
-                          text: compareData[1].incentive.toString())),
+                  ListView.builder(
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: compareData.length,
+                      itemBuilder: (context, index) {
+                        return SizedBox(
+                          width: width * 0.42,
+                          child: Center(
+                            child: CustomText(
+                                text: compareData[index].incentive.toString()),
+                          ),
+                        );
+                      }),
                 ],
               ),
             ),
@@ -89,7 +128,6 @@ class CompareBottom extends ViewModelWidget<LoanViewModel> {
           verticalSpaceTiny,
           Container(
             height: 30,
-            width: double.infinity,
             decoration: const BoxDecoration(
                 color: lightGreenHeigh,
                 borderRadius: BorderRadius.only(
@@ -101,14 +139,24 @@ class CompareBottom extends ViewModelWidget<LoanViewModel> {
           ),
           Container(
             color: Colors.white,
+            height: 30,
             child: Padding(
-              padding:
-                  EdgeInsets.symmetric(horizontal: width * 0.1, vertical: 3),
+              padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 3),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CustomText(text: 'termLoan'),
-                  CustomText(text: 'termLoan'),
+                  ListView.builder(
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: compareData.length,
+                      itemBuilder: (context, index) {
+                        return SizedBox(
+                          width: width * 0.42,
+                          child: Center(
+                            child: CustomText(text: "termLoan"),
+                          ),
+                        );
+                      }),
                 ],
               ),
             ),
@@ -116,7 +164,19 @@ class CompareBottom extends ViewModelWidget<LoanViewModel> {
           verticalSpaceTiny,
           Container(
             height: 30,
-            width: double.infinity,
+            decoration: const BoxDecoration(
+                color: lightGreenHeigh,
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(4), topRight: Radius.circular(4))),
+            child: Center(
+                child: CustomText(
+              text: 'moneyRepaymentDetails',
+            )),
+          ),
+          ScheduleLoanBuilder(),
+          verticalSpaceTiny,
+          Container(
+            height: 30,
             decoration: const BoxDecoration(
                 color: lightGreenHeigh,
                 borderRadius: BorderRadius.only(
@@ -128,19 +188,27 @@ class CompareBottom extends ViewModelWidget<LoanViewModel> {
           ),
           Container(
             color: Colors.white,
+            height: 30,
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 3),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  ScheduleLoanBuilder(
-                      amount: "${compareData[0].minIncome}",
-                      numOfMonths: "${compareData[0].minTenor}",
-                      interestRate: compareData[0].interestRate ?? 0.0),
-                  ScheduleLoanBuilder(
-                      amount: "${compareData[1].minIncome}",
-                      numOfMonths: "${compareData[1].minTenor}",
-                      interestRate: compareData[1].interestRate ?? 0.0),
+                  ListView.builder(
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: compareData.length,
+                      itemBuilder: (context, index) {
+                        return SizedBox(
+                          width: width * 0.42,
+                          child: Center(
+                            child: CustomText(
+                                text: compareData[index]
+                                    .totalPaymentAmount
+                                    .toString()),
+                          ),
+                        );
+                      }),
                 ],
               ),
             ),
@@ -148,36 +216,6 @@ class CompareBottom extends ViewModelWidget<LoanViewModel> {
           verticalSpaceTiny,
           Container(
             height: 30,
-            width: double.infinity,
-            decoration: const BoxDecoration(
-                color: lightGreenHeigh,
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(4), topRight: Radius.circular(4))),
-            child: Center(
-                child: CustomText(
-              text: 'moneyRepaymentDetails',
-            )),
-          ),
-          Container(
-            color: Colors.white,
-            child: Padding(
-              padding:
-                  EdgeInsets.symmetric(horizontal: width * 0.1, vertical: 3),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  CustomText(
-                      text: compareData[0].totalPaymentAmount.toString()),
-                  CustomText(
-                      text: compareData[1].totalPaymentAmount.toString()),
-                ],
-              ),
-            ),
-          ),
-          verticalSpaceTiny,
-          Container(
-            height: 30,
-            width: double.infinity,
             decoration: const BoxDecoration(
                 color: lightGreenHeigh,
                 borderRadius: BorderRadius.only(
@@ -187,16 +225,29 @@ class CompareBottom extends ViewModelWidget<LoanViewModel> {
               text: 'totalInterest',
             )),
           ),
+          detailData(compareData[1].interestRate.toString(), 30),
           Container(
             color: Colors.white,
+            height: 30,
             child: Padding(
-              padding:
-                  EdgeInsets.symmetric(horizontal: width * 0.1, vertical: 3),
+              padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 3),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CustomText(text: "${compareData[0].interestRate}%"),
-                  CustomText(text: "${compareData[1].interestRate}%"),
+                  ListView.builder(
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: compareData.length,
+                      itemBuilder: (context, index) {
+                        return SizedBox(
+                          width: width * 0.42,
+                          child: Center(
+                            child: CustomText(
+                                text:
+                                    compareData[index].interestRate.toString()),
+                          ),
+                        );
+                      }),
                 ],
               ),
             ),
@@ -204,7 +255,6 @@ class CompareBottom extends ViewModelWidget<LoanViewModel> {
           verticalSpaceTiny,
           Container(
             height: 30,
-            width: double.infinity,
             decoration: const BoxDecoration(
                 color: lightGreenHeigh,
                 borderRadius: BorderRadius.only(
@@ -214,20 +264,7 @@ class CompareBottom extends ViewModelWidget<LoanViewModel> {
               text: 'earlyPaybackPenalty1',
             )),
           ),
-          Container(
-            color: Colors.white,
-            child: Padding(
-              padding:
-                  EdgeInsets.symmetric(horizontal: width * 0.1, vertical: 3),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  CustomText(text: 'no'),
-                  CustomText(text: 'no'),
-                ],
-              ),
-            ),
-          ),
+          detailData("No", 30),
           verticalSpaceSmall,
         ],
       ),
