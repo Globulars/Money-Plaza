@@ -4,6 +4,7 @@ import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
+import '../../views/loan/loan_viewmodel.dart';
 import '../../widgets/common/custom_text_field/custom_text_field.dart';
 import '../../widgets/common/icon_box_btn/return_button.dart';
 import '../../widgets/common/icon_box_btn/sub_bar.dart';
@@ -11,7 +12,7 @@ import '../../widgets/common/icon_box_btn/submit_button.dart';
 import '../../widgets/common/icon_box_btn/text.dart';
 import 'calculator_dialog_model.dart';
 
-class CalculatorDialog extends StackedView<CalculatorDialogModel> {
+class CalculatorDialog extends StackedView<LoanViewModel> {
   final DialogRequest request;
   final Function(DialogResponse) completer;
 
@@ -24,7 +25,7 @@ class CalculatorDialog extends StackedView<CalculatorDialogModel> {
   @override
   Widget builder(
     BuildContext context,
-    CalculatorDialogModel viewModel,
+    LoanViewModel viewModel,
     Widget? child,
   ) {
     final width = MediaQuery.of(context).size.width;
@@ -208,6 +209,7 @@ class CalculatorDialog extends StackedView<CalculatorDialogModel> {
                             imgwidth: 15,
                             text: 'resetAll',
                             color: darkGreenLight,
+                            onPress: viewModel.calculatorResetAll,
                           ),
                           SubmitButton(
                             text: 'calculateNow',
@@ -229,6 +231,6 @@ class CalculatorDialog extends StackedView<CalculatorDialogModel> {
   }
 
   @override
-  CalculatorDialogModel viewModelBuilder(BuildContext context) =>
-      CalculatorDialogModel();
+  LoanViewModel viewModelBuilder(BuildContext context) =>
+      LoanViewModel();
 }

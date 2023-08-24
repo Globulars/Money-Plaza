@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'package:flutter/material.dart';
 import 'package:money_plaza/app/app.router.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
@@ -18,6 +19,40 @@ class LoanViewModel extends BaseViewModel {
   List<LoanCard> compareData = [];
   var showcard = false;
 
+  /////////////////// calculator dialog data//////////////////
+  var repayment = 0;
+  var calculation = 0;
+  TextEditingController calculatorLoanAmount =
+      TextEditingController(text: "50000");
+  TextEditingController calculatorMonthlyPayment =
+      TextEditingController(text: "10000");
+  TextEditingController calculatorInterest = TextEditingController(text: "4");
+
+  setRepayment(value) {
+    repayment = value;
+    notifyListeners();
+  }
+
+  setCalculation(value) {
+    calculation = value;
+    notifyListeners();
+  }
+
+  navigateToCalculatorResult() {
+    _navigationService.navigateToCalculatorResultView();
+  }
+
+  calculatorResetAll() {
+    repayment = 0;
+    calculation = 0;
+    calculatorLoanAmount.text = "50000";
+    calculatorMonthlyPayment.text = "10000";
+    calculatorInterest.text = "4";
+
+    notifyListeners();
+  }
+
+  /// /////////
   navigateToPersonalloan() {
     _navigationService.navigateToPersonalloanView();
   }
@@ -31,14 +66,13 @@ class LoanViewModel extends BaseViewModel {
   }
 
   navigateToSurveySplashView() {
-    _navigationService.navigateToSurveySplashView(
-        organization: "Promise");
+    _navigationService.navigateToSurveySplashView(organization: "Promise");
   }
 
   navigateToCommerical() {
     _navigationService.navigateToCommericalLoanView();
   }
-  
+
   showDetail(loanData) {
     _dialogService.showCustomDialog(
         variant: DialogType.detailFilte, data: loanData);
