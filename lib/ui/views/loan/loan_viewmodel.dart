@@ -136,14 +136,16 @@ class LoanViewModel extends BaseViewModel {
     }
   }
 
-  Future<List<ScheduleLoan>> scheduleByPLoanForRepayment(body) async {
+  Future<ScheduleLoan> scheduleByPLoanForRepayment(
+      amount, numOfMonths, interestRate) async {
+    Map<String, dynamic> body = {
+      "amount": amount,
+      "numOfMonths": numOfMonths,
+      "interestRate": interestRate
+    };
     var data = await _loanCardService.scheduleByPLoanForRepayment(body);
     if (data?["success"] == true) {
-      List dataList = data["data"];
-      scheduleLoan = dataList.map((data) => ScheduleLoan.fromJson(data)).toList();
-      loanListData();
-      notifyListeners();
-      return scheduleLoan;
+      return ScheduleLoan.fromJson(data["data"]);
     } else {
       throw Exception(data["message"].toString());
     }

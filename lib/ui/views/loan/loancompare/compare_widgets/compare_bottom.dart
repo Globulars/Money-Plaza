@@ -4,9 +4,8 @@ import 'package:stacked/stacked.dart';
 import '../../../../../services/Models/loan_card.dart';
 import '../../../../common/ui_helpers.dart';
 import '../../../../widgets/common/icon_box_btn/text.dart';
-import 'package:easy_localization/easy_localization.dart';
-
 import '../../loan_viewmodel.dart';
+import 'schedule_loan_builder.dart';
 
 class CompareBottom extends ViewModelWidget<LoanViewModel> {
   final List<LoanCard> compareData;
@@ -44,8 +43,12 @@ class CompareBottom extends ViewModelWidget<LoanViewModel> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CustomText(text: '${viewModel.compareData[0].minInterestRate}% - ${viewModel.compareData[0].maxInterestRate}%'),
-                  CustomText(text: '${viewModel.compareData[1].minInterestRate}% - ${viewModel.compareData[1].maxInterestRate}%'),
+                  CustomText(
+                      text:
+                          '${compareData[0].minInterestRate}% - ${compareData[0].maxInterestRate}%'),
+                  CustomText(
+                      text:
+                          '${compareData[1].minInterestRate}% - ${compareData[1].maxInterestRate}%'),
                 ],
               ),
             ),
@@ -73,10 +76,12 @@ class CompareBottom extends ViewModelWidget<LoanViewModel> {
                 children: [
                   SizedBox(
                       width: width * 0.42,
-                      child: CustomText(text: compareData[0].incentive.toString())),
+                      child: CustomText(
+                          text: compareData[0].incentive.toString())),
                   SizedBox(
                       width: width * 0.42,
-                      child: CustomText(text: compareData[1].incentive.toString())),
+                      child: CustomText(
+                          text: compareData[1].incentive.toString())),
                 ],
               ),
             ),
@@ -128,20 +133,14 @@ class CompareBottom extends ViewModelWidget<LoanViewModel> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SizedBox(
-                      width: width * 0.42,
-                      child: CustomText(
-                        text: "firstMonth"
-                            .tr(args: ["4,281.29", "4,281.29", "4,281.20"]),
-                        textAlign: TextAlign.center,
-                      )),
-                  SizedBox(
-                      width: width * 0.42,
-                      child: CustomText(
-                        text: "firstMonth"
-                            .tr(args: ["4,281.29", "4,281.29", "4,281.20"]),
-                        textAlign: TextAlign.center,
-                      )),
+                  ScheduleLoanBuilder(
+                      amount: "${compareData[0].minIncome}",
+                      numOfMonths: "${compareData[0].minTenor}",
+                      interestRate: compareData[0].interestRate??0.0),
+                  ScheduleLoanBuilder(
+                      amount: "${compareData[1].minIncome}",
+                      numOfMonths: "${compareData[1].minTenor}",
+                      interestRate: compareData[1].interestRate??0.0),
                 ],
               ),
             ),
@@ -167,8 +166,10 @@ class CompareBottom extends ViewModelWidget<LoanViewModel> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CustomText(text: compareData[0].totalPaymentAmount.toString()),
-                  CustomText(text:  compareData[1].totalPaymentAmount.toString()),
+                  CustomText(
+                      text: compareData[0].totalPaymentAmount.toString()),
+                  CustomText(
+                      text: compareData[1].totalPaymentAmount.toString()),
                 ],
               ),
             ),

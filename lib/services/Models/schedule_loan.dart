@@ -1,5 +1,5 @@
 class ScheduleLoan {
-  int? amount;
+  double? amount;
   double? interestRate;
   int? totalNumOfPayments;
   double? scheduledPaymentAmount;
