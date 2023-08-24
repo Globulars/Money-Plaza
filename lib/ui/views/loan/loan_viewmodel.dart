@@ -32,7 +32,7 @@ class LoanViewModel extends BaseViewModel {
 
   navigateToSurveySplashView() {
     _navigationService.navigateToSurveySplashView(
-        organization: "HSBC+New Owner / Mortgage Transfer");
+        organization: "Promise");
   }
 
   navigateToCommerical() {
