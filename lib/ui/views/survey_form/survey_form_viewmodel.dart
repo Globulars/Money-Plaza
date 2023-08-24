@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:money_plaza/app/app.router.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
-import '../../../../app/app.locator.dart';
-import '../../../../services/credit_card_service.dart';
-import '../../../../services/toaster_service.dart';
+import '../../../app/app.locator.dart';
+import '../../../services/credit_card_service.dart';
+import '../../../services/toaster_service.dart';
 
-class MorgagesContactInfoViewModel extends BaseViewModel {
+class SurveyFormViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
   final _toasterService = locator<ToasterService>();
   final _creditCardService = locator<CreditCardService>();
@@ -14,7 +15,12 @@ class MorgagesContactInfoViewModel extends BaseViewModel {
   navigateToMorgagesResult() {
     _navigationService.back();
   }
+  Future runStartupMorgaesInfo(organization) async {
+    await Future.delayed(const Duration(seconds: 2));
 
+    _navigationService.replaceWithSurveyFormView(
+        organization: organization);
+  }
   final TextEditingController emailCtrl = TextEditingController();
   final TextEditingController nameCtrl = TextEditingController();
   final TextEditingController refeNoCtrl = TextEditingController();

@@ -44,6 +44,7 @@ class CompareHead extends ViewModelWidget<LoanViewModel> {
                     width: 80,
                     text: 'apply',
                     imgwidth: 12,
+                    onPress: viewModel.navigateToSurveySplashView,
                   )
                 ],
               ),
@@ -67,7 +68,7 @@ class CompareHead extends ViewModelWidget<LoanViewModel> {
                     width: 80,
                     text: 'apply',
                     imgwidth: 12,
-                    onPress: viewModel.navigateToApplyconfirm,
+                    onPress: viewModel.navigateToSurveySplashView,
                   )
                 ],
               ),

@@ -30,18 +30,15 @@ class LoanViewModel extends BaseViewModel {
     _navigationService.navigateToBlnstransferView();
   }
 
-  navigateToApplyconfirm() {
-    _navigationService.navigateToApplyconfirmView();
+  navigateToSurveySplashView() {
+    _navigationService.navigateToSurveySplashView(
+        organization: "Promise");
   }
 
   navigateToCommerical() {
     _navigationService.navigateToCommericalLoanView();
   }
-
-  applyConfirm() {
-    _navigationService.navigateToApplyconfirmView();
-  }
-
+  
   showDetail(loanData) {
     _dialogService.showCustomDialog(
         variant: DialogType.detailFilte, data: loanData);

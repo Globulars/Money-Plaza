@@ -15,8 +15,6 @@ import 'package:money_plaza/ui/views/landing/landing_view.dart' as _i3;
 import 'package:money_plaza/ui/views/landing/settings/settings_view.dart'
     as _i12;
 import 'package:money_plaza/ui/views/landing/startup/startup_view.dart' as _i2;
-import 'package:money_plaza/ui/views/loan/applyconfirm/applyconfirm_view.dart'
-    as _i7;
 import 'package:money_plaza/ui/views/loan/blnstransfer/blnstransfer_view.dart'
     as _i14;
 import 'package:money_plaza/ui/views/loan/blnstransfer/transfer_result/transfer_result_view.dart'
@@ -27,6 +25,7 @@ import 'package:money_plaza/ui/views/loan/commerical_loan/commerical_loan_view.d
     as _i16;
 import 'package:money_plaza/ui/views/loan/commerical_loan/commerical_result/commerical_result_view.dart'
     as _i17;
+import 'package:money_plaza/ui/views/loan/del/applyconfirm_view.dart' as _i7;
 import 'package:money_plaza/ui/views/loan/loan_view.dart' as _i4;
 import 'package:money_plaza/ui/views/loan/loancompare/loancompare_view.dart'
     as _i6;
@@ -49,13 +48,12 @@ import 'package:money_plaza/ui/views/member/reward_application/reward_applicatio
     as _i27;
 import 'package:money_plaza/ui/views/member_login/member_login_view.dart'
     as _i13;
-import 'package:money_plaza/ui/views/morgages/morgages_contact_info/morgages_contact_info_view.dart'
-    as _i21;
 import 'package:money_plaza/ui/views/morgages/morgages_result/morgages_result_view.dart'
     as _i19;
-import 'package:money_plaza/ui/views/morgages/morgages_splash/morgages_splash_view.dart'
-    as _i20;
 import 'package:money_plaza/ui/views/morgages/morgages_view.dart' as _i18;
+import 'package:money_plaza/ui/views/survey_form/survey_form_view.dart' as _i21;
+import 'package:money_plaza/ui/views/survey_form/survey_splash_view.dart'
+    as _i20;
 import 'package:stacked/stacked.dart' as _i1;
 import 'package:stacked_services/stacked_services.dart' as _i31;
 
@@ -96,9 +94,9 @@ class Routes {
 
   static const morgagesResultView = '/morgages-result-view';
 
-  static const morgagesSplashView = '/morgages-splash-view';
+  static const surveySplashView = '/survey-splash-view';
 
-  static const morgagesContactInfoView = '/morgages-contact-info-view';
+  static const surveyFormView = '/survey-form-view';
 
   static const creditCardView = '/credit-card-view';
 
@@ -133,8 +131,8 @@ class Routes {
     commericalResultView,
     morgagesView,
     morgagesResultView,
-    morgagesSplashView,
-    morgagesContactInfoView,
+    surveySplashView,
+    surveyFormView,
     creditCardView,
     creditResultView,
     memberSettingView,
@@ -220,12 +218,12 @@ class StackedRouter extends _i1.RouterBase {
       page: _i19.MorgagesResultView,
     ),
     _i1.RouteDef(
-      Routes.morgagesSplashView,
-      page: _i20.MorgagesSplashView,
+      Routes.surveySplashView,
+      page: _i20.SurveySplashView,
     ),
     _i1.RouteDef(
-      Routes.morgagesContactInfoView,
-      page: _i21.MorgagesContactInfoView,
+      Routes.surveyFormView,
+      page: _i21.SurveyFormView,
     ),
     _i1.RouteDef(
       Routes.creditCardView,
@@ -386,20 +384,19 @@ class StackedRouter extends _i1.RouterBase {
         settings: data,
       );
     },
-    _i20.MorgagesSplashView: (data) {
-      final args = data.getArgs<MorgagesSplashViewArguments>(nullOk: false);
+    _i20.SurveySplashView: (data) {
+      final args = data.getArgs<SurveySplashViewArguments>(nullOk: false);
       return _i29.MaterialPageRoute<dynamic>(
-        builder: (context) => _i20.MorgagesSplashView(
+        builder: (context) => _i20.SurveySplashView(
             key: args.key, organization: args.organization),
         settings: data,
       );
     },
-    _i21.MorgagesContactInfoView: (data) {
-      final args =
-          data.getArgs<MorgagesContactInfoViewArguments>(nullOk: false);
+    _i21.SurveyFormView: (data) {
+      final args = data.getArgs<SurveyFormViewArguments>(nullOk: false);
       return _i29.MaterialPageRoute<dynamic>(
-        builder: (context) => _i21.MorgagesContactInfoView(
-            key: args.key, organization: args.organization),
+        builder: (context) =>
+            _i21.SurveyFormView(key: args.key, organization: args.organization),
         settings: data,
       );
     },
@@ -623,8 +620,8 @@ class MorgagesResultViewArguments {
   }
 }
 
-class MorgagesSplashViewArguments {
-  const MorgagesSplashViewArguments({
+class SurveySplashViewArguments {
+  const SurveySplashViewArguments({
     this.key,
     required this.organization,
   });
@@ -639,7 +636,7 @@ class MorgagesSplashViewArguments {
   }
 
   @override
-  bool operator ==(covariant MorgagesSplashViewArguments other) {
+  bool operator ==(covariant SurveySplashViewArguments other) {
     if (identical(this, other)) return true;
     return other.key == key && other.organization == organization;
   }
@@ -650,8 +647,8 @@ class MorgagesSplashViewArguments {
   }
 }
 
-class MorgagesContactInfoViewArguments {
-  const MorgagesContactInfoViewArguments({
+class SurveyFormViewArguments {
+  const SurveyFormViewArguments({
     this.key,
     required this.organization,
   });
@@ -666,7 +663,7 @@ class MorgagesContactInfoViewArguments {
   }
 
   @override
-  bool operator ==(covariant MorgagesContactInfoViewArguments other) {
+  bool operator ==(covariant SurveyFormViewArguments other) {
     if (identical(this, other)) return true;
     return other.key == key && other.organization == organization;
   }
@@ -1003,7 +1000,7 @@ extension NavigatorStateExtension on _i31.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> navigateToMorgagesSplashView({
+  Future<dynamic> navigateToSurveySplashView({
     _i29.Key? key,
     required String organization,
     int? routerId,
@@ -1012,16 +1009,16 @@ extension NavigatorStateExtension on _i31.NavigationService {
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
   }) async {
-    return navigateTo<dynamic>(Routes.morgagesSplashView,
+    return navigateTo<dynamic>(Routes.surveySplashView,
         arguments:
-            MorgagesSplashViewArguments(key: key, organization: organization),
+            SurveySplashViewArguments(key: key, organization: organization),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
         transition: transition);
   }
 
-  Future<dynamic> navigateToMorgagesContactInfoView({
+  Future<dynamic> navigateToSurveyFormView({
     _i29.Key? key,
     required String organization,
     int? routerId,
@@ -1030,9 +1027,9 @@ extension NavigatorStateExtension on _i31.NavigationService {
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
   }) async {
-    return navigateTo<dynamic>(Routes.morgagesContactInfoView,
-        arguments: MorgagesContactInfoViewArguments(
-            key: key, organization: organization),
+    return navigateTo<dynamic>(Routes.surveyFormView,
+        arguments:
+            SurveyFormViewArguments(key: key, organization: organization),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -1429,7 +1426,7 @@ extension NavigatorStateExtension on _i31.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> replaceWithMorgagesSplashView({
+  Future<dynamic> replaceWithSurveySplashView({
     _i29.Key? key,
     required String organization,
     int? routerId,
@@ -1438,16 +1435,16 @@ extension NavigatorStateExtension on _i31.NavigationService {
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
   }) async {
-    return replaceWith<dynamic>(Routes.morgagesSplashView,
+    return replaceWith<dynamic>(Routes.surveySplashView,
         arguments:
-            MorgagesSplashViewArguments(key: key, organization: organization),
+            SurveySplashViewArguments(key: key, organization: organization),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
         transition: transition);
   }
 
-  Future<dynamic> replaceWithMorgagesContactInfoView({
+  Future<dynamic> replaceWithSurveyFormView({
     _i29.Key? key,
     required String organization,
     int? routerId,
@@ -1456,9 +1453,9 @@ extension NavigatorStateExtension on _i31.NavigationService {
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
   }) async {
-    return replaceWith<dynamic>(Routes.morgagesContactInfoView,
-        arguments: MorgagesContactInfoViewArguments(
-            key: key, organization: organization),
+    return replaceWith<dynamic>(Routes.surveyFormView,
+        arguments:
+            SurveyFormViewArguments(key: key, organization: organization),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

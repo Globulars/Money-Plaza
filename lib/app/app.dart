@@ -5,7 +5,7 @@ import 'package:money_plaza/ui/views/landing/landing_view.dart';
 import 'package:money_plaza/ui/views/loan/loan_view.dart';
 import 'package:money_plaza/ui/views/loan/calculator_result/calculator_result_view.dart';
 import 'package:money_plaza/ui/views/loan/loancompare/loancompare_view.dart';
-import 'package:money_plaza/ui/views/loan/applyconfirm/applyconfirm_view.dart';
+import 'package:money_plaza/ui/views/loan/del/applyconfirm_view.dart';
 import 'package:money_plaza/ui/views/loan/personal_loan/personalloan_view.dart';
 import 'package:money_plaza/ui/views/loan/personal_loan/ploanreslut/ploanreslut_view.dart';
 import 'package:money_plaza/ui/views/loan/ownerloan/ownerloan_view.dart';
@@ -23,8 +23,7 @@ import 'package:money_plaza/ui/views/morgages/morgages_result/morgages_result_vi
 import 'package:money_plaza/ui/dialogs/reset_password/reset_password_dialog.dart';
 import 'package:money_plaza/ui/dialogs/contact_us/contact_us_dialog.dart';
 import 'package:money_plaza/ui/dialogs/morgages_filter/morgages_filter_dialog.dart';
-import 'package:money_plaza/ui/views/morgages/morgages_splash/morgages_splash_view.dart';
-import 'package:money_plaza/ui/views/morgages/morgages_contact_info/morgages_contact_info_view.dart';
+import 'package:money_plaza/ui/views/survey_form/survey_splash_view.dart';
 import 'package:money_plaza/ui/views/credit_card/credit_card_view.dart';
 import 'package:money_plaza/ui/views/credit_card/credit_result/credit_result_view.dart';
 import 'package:money_plaza/ui/dialogs/credit_card_filter/credit_card_filter_dialog.dart';
@@ -39,6 +38,8 @@ import 'package:money_plaza/services/toaster_service.dart';
 import 'package:money_plaza/services/mortgage_service.dart';
 import 'package:money_plaza/services/credit_card_service.dart';
 import 'package:money_plaza/services/loan_card_service.dart';
+
+import '../ui/views/survey_form/survey_form_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -61,8 +62,8 @@ import 'package:money_plaza/services/loan_card_service.dart';
     MaterialRoute(page: CommericalResultView),
     MaterialRoute(page: MorgagesView),
     MaterialRoute(page: MorgagesResultView),
-    MaterialRoute(page: MorgagesSplashView),
-    MaterialRoute(page: MorgagesContactInfoView),
+    MaterialRoute(page: SurveySplashView),
+    MaterialRoute(page: SurveyFormView),
     MaterialRoute(page: CreditCardView),
     MaterialRoute(page: CreditResultView),
     MaterialRoute(page: MemberSettingView),

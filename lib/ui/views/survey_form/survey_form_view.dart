@@ -3,28 +3,28 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
-import '../../../common/ui_helpers.dart';
-import '../../../widgets/app_bar.dart';
-import '../../../widgets/bottom_bar.dart';
-import '../../../widgets/common/background_image.dart';
-import '../../../widgets/common/custom_text_field/custom_text_field.dart';
-import '../../../widgets/common/dropdown_textfield/dropdown_textfield.dart';
-import '../../../widgets/common/icon_box_btn/return_button.dart';
-import '../../../widgets/common/icon_box_btn/sub_bar.dart';
-import '../../../widgets/common/icon_box_btn/submit_button.dart';
-import '../../../widgets/common/icon_box_btn/text.dart';
-import 'morgages_contact_info_viewmodel.dart';
+import '../../common/ui_helpers.dart';
+import '../../widgets/app_bar.dart';
+import '../../widgets/bottom_bar.dart';
+import '../../widgets/common/background_image.dart';
+import '../../widgets/common/custom_text_field/custom_text_field.dart';
+import '../../widgets/common/dropdown_textfield/dropdown_textfield.dart';
+import '../../widgets/common/icon_box_btn/return_button.dart';
+import '../../widgets/common/icon_box_btn/sub_bar.dart';
+import '../../widgets/common/icon_box_btn/submit_button.dart';
+import '../../widgets/common/icon_box_btn/text.dart';
+import 'survey_form_viewmodel.dart';
 
-class MorgagesContactInfoView
-    extends StackedView<MorgagesContactInfoViewModel> {
+class SurveyFormView
+    extends StackedView<SurveyFormViewModel> {
   final String organization;
-  const MorgagesContactInfoView({Key? key, required this.organization})
+  const SurveyFormView({Key? key, required this.organization})
       : super(key: key);
 
   @override
   Widget builder(
     BuildContext context,
-    MorgagesContactInfoViewModel viewModel,
+    SurveyFormViewModel viewModel,
     Widget? child,
   ) {
     return Stack(
@@ -121,8 +121,8 @@ class MorgagesContactInfoView
   }
 
   @override
-  MorgagesContactInfoViewModel viewModelBuilder(
+  SurveyFormViewModel viewModelBuilder(
     BuildContext context,
   ) =>
-      MorgagesContactInfoViewModel();
+      SurveyFormViewModel();
 }

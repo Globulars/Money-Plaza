@@ -18,8 +18,8 @@ class CreditResultViewModel extends BaseViewModel {
     );
   }
 
-  navigateToSplashCreditCard() {
-    _navigationService.navigateToMorgagesSplashView(
+  navigateToSurveySplashView() {
+    _navigationService.navigateToSurveySplashView(
         organization: "DBS Bank (Hong Kong)+Personal Card");
   }
 
