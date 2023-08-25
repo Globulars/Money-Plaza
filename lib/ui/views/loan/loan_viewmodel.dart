@@ -171,6 +171,7 @@ class LoanViewModel extends BaseViewModel {
   }
 
   Future<List<LoanCard>> loanListData() async {
+    // log("====>${loanAmountCtrl.text}===>${interestCtrl.text}===>${monthlyPaymentCtrl.text}");
     Map<String, dynamic> body = {
       "order": "descending",
       "sort": "ordering",

@@ -12,6 +12,8 @@ import '../loan_viewmodel.dart';
 import '../widgets/filter_bottom_bar.dart';
 import '../widgets/loan_tags_list_view.dart';
 import '../widgets/result_card.dart';
+import 'calculator_widgets/calc_items.dart';
+import 'calculator_widgets/data_table.dart';
 
 class CalculatorResultView extends StackedView<LoanViewModel> {
   final String monthlyPayment, interest, loanAmount;
@@ -91,8 +93,8 @@ class CalculatorResultView extends StackedView<LoanViewModel> {
                             ),
 
                       verticalSpaceTiny,
-                      // const CalculatorItems(),
-                      // const CalDataTable(),
+                      const CalculatorItems(),
+                      const CalDataTable(),
                       verticalSpaceLarge
                     ],
                   ),
