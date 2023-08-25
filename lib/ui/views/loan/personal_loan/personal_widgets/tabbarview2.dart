@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import '../../../../common/ui_helpers.dart';
@@ -25,9 +24,9 @@ class TabBarView2 extends ViewModelWidget<PersonalloanViewModel> {
             titleText: 'monthlyIncome',
           ),
           verticalSpaceSmall,
-           DropdownTextfield(
+          DropdownTextfield(
             onChanged: viewModel.setSalaryPayment,
-            options:viewModel.salaryPaymentList,
+            options: viewModel.salaryPaymentList,
             value: viewModel.salaryPayment,
             titleText: 'Salary Payment',
           ),

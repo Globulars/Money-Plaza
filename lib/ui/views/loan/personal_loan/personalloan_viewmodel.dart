@@ -12,22 +12,16 @@ class PersonalloanViewModel extends BaseViewModel {
       TextEditingController(text: "50000");
   TextEditingController monthlyIncomeCtrl =
       TextEditingController(text: "40000");
-      TextEditingController numOfLoansCtrl =
-      TextEditingController(text: "");
-      TextEditingController totalOutstandingLoanCtrl =
+  TextEditingController numOfLoansCtrl = TextEditingController(text: "");
+  TextEditingController totalOutstandingLoanCtrl =
       TextEditingController(text: "5000");
-      TextEditingController monthlyRepaymentCtrl =
+  TextEditingController monthlyRepaymentCtrl =
       TextEditingController(text: "2000");
   String loanReason = "Business Expansion";
-  //  String loanReasonFOrApi = "Business Expansion";
   String propertyOwner = "Have";
-  // String propertyOwnerForApi = "";
   String salaryPayment = "Bank transfer";
-  // String salaryPaymentForApi = "";
   String typeOfIncome = "Full Time";
-  // String typeOfIncomeForApi = "";
   String proofOfIncome = "Bank Statement";
-  // String proofOfIncomeForApi = "";
 
   final loanReasonList = [
     "Business Expansion",
