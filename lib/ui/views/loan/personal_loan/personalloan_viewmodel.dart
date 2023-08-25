@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 class PersonalloanViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
 
-  TextEditingController borrowingAmount =
+  TextEditingController borrowingAmountCtrl =
       TextEditingController(text: "50000");
        String loanReason = "Business Expansion";
       //  String loanReasonFOrApi = "Business Expansion";
@@ -21,9 +21,29 @@ class PersonalloanViewModel extends BaseViewModel {
     "Car Purchase",
     "Credit Card Repayment",
     "Debt Consolidation",
-    "Car Purchase",
-    "Car Purchase",
+    "Children Education",
+    "Self-Education",
+    "Home Renovation",
+    "Medical or Health Care",
+    "Investment",
+    "Bills Repayment",
+    "Income Tax"
   ];
+
+  final propertyOwnerList = [
+    "Have",
+    "No",
+  ];
+
+  setPropertyOwner(value){
+  propertyOwner=value;
+  notifyListeners();
+  }
+
+   setLoanReasonr(value){
+  loanReason=value;
+  notifyListeners();
+  }
 
   var initialIndex = 0;
   var loanTenors = 6;
