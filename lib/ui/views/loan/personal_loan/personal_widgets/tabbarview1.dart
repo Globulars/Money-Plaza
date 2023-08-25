@@ -1,4 +1,3 @@
-// ignore_for_file: non_constant_identifier_names, avoid_types_as_parameter_names, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_colors.dart';
@@ -26,6 +25,7 @@ class TabBarView1 extends ViewModelWidget<PersonalloanViewModel> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomTextField(
+              controller: viewModel.borrowingAmountCtrl,
               hintText: 'hk',
               titleText: 'borrowingAmount',
             ),
@@ -158,14 +158,16 @@ class TabBarView1 extends ViewModelWidget<PersonalloanViewModel> {
             ),
             verticalSpaceSmall,
             DropdownTextfield(
-              onChanged: (String) {},
-              options: [],
+              onChanged: viewModel.setLoanReasonr,
+              options: viewModel.loanReasonList,
+              value: viewModel.loanReason,
               titleText: 'loanReason',
             ),
             verticalSpaceSmall,
             DropdownTextfield(
-              onChanged: (String) {},
-              options: [],
+              onChanged: viewModel.setPropertyOwner,
+              options: viewModel.propertyOwnerList,
+              value: viewModel.propertyOwner,
               titleText: 'propertyOwner',
             ),
           ],
