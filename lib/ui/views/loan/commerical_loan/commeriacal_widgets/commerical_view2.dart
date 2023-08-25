@@ -1,5 +1,3 @@
-// ignore_for_file: non_constant_identifier_names, avoid_types_as_parameter_names, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import '../../../../common/ui_helpers.dart';
@@ -23,27 +21,50 @@ class CommTabBar2 extends ViewModelWidget<CommericalLoanViewModel> {
           CustomTextField(
             hintText: 'hk',
             titleText: 'annualTurnover',
+            controller: viewModel.annualTurnoverCtrl,
+          ),
+            verticalSpaceSmall,
+          CustomTextField(
+            controller: viewModel.digitalPaymentCtrl,
+            titleText: 'Average monthly Income by digital payment',
           ),
           verticalSpaceSmall,
           DropdownTextfield(
-            onChanged: (String) {},
-            options: [],
-            titleText: 'industory',
+            onChanged: viewModel.setBusinessNature,
+            options: viewModel.businessNatureList,
+            value: viewModel.businessNature,
+            titleText: 'Business Nature',
+          ),
+          verticalSpaceSmall,
+          DropdownTextfield(
+            onChanged:viewModel.setPosSystemEquipment,
+            options: viewModel.posSystemEquipmentrList,
+            value: viewModel.posSystemEquipment,
+            titleText: 'POS system equipped',
           ),
           verticalSpaceSmall,
           CustomTextField(
+            controller: viewModel.companyNameCtrl,
             titleText: 'companyName',
           ),
+           verticalSpaceSmall,
+          CustomTextField(
+            controller: viewModel.futureReceivableAmountCtrl,
+            titleText: 'Future receivable amount(if any)',
+          ),
           verticalSpaceSmall,
           DropdownTextfield(
-            onChanged: (String) {},
-            options: [],
+            onChanged:viewModel.setAudioReport,
+            options: viewModel.audioReportList,
             titleText: 'audioReport',
+            value: viewModel.audioReport,
           ),
           verticalSpaceSmall,
           CustomTextField(
+            controller: viewModel.operationYearCtrl,
             titleText: 'operationYear',
           ),
+          verticalSpaceLarge
         ],
       ),
     );

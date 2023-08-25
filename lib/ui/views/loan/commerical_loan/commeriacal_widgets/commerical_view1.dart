@@ -1,5 +1,3 @@
-// ignore_for_file: non_constant_identifier_names, prefer_const_literals_to_create_immutables, avoid_types_as_parameter_names
-
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import '../../../../common/app_colors.dart';
@@ -28,6 +26,7 @@ class CommTabBar1 extends ViewModelWidget<CommericalLoanViewModel> {
             CustomTextField(
               hintText: 'hk',
               titleText: 'borrowingAmount',
+               controller: viewModel.borrowingAmountCtrl,
             ),
             verticalSpaceSmall,
             CustomText(
@@ -157,15 +156,17 @@ class CommTabBar1 extends ViewModelWidget<CommericalLoanViewModel> {
               ],
             ),
             verticalSpaceSmall,
-            DropdownTextfield(
-              onChanged: (String) {},
-              options: [],
+             DropdownTextfield(
+              onChanged: viewModel.setLoanReasonr,
+              options: viewModel.loanReasonList,
+              value: viewModel.loanReason,
               titleText: 'loanReason',
             ),
             verticalSpaceSmall,
             DropdownTextfield(
-              onChanged: (String) {},
-              options: [],
+              onChanged: viewModel.setPropertyOwner,
+              options: viewModel.propertyOwnerList,
+              value: viewModel.propertyOwner,
               titleText: 'propertyOwner',
             ),
           ],

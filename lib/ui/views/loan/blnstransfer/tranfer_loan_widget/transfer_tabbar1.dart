@@ -27,6 +27,7 @@ class TransferTabBar1 extends ViewModelWidget<BlnstransferViewModel> {
           CustomTextField(
             hintText: 'hk',
             titleText: 'borrowingAmount',
+             controller: viewModel.borrowingAmountCtrl,
           ),
           verticalSpaceSmall,
           CustomText(
@@ -142,17 +143,19 @@ class TransferTabBar1 extends ViewModelWidget<BlnstransferViewModel> {
             ],
           ),
           verticalSpaceSmall,
-          DropdownTextfield(
-            onChanged: (String) {},
-            options: [],
-            titleText: 'loanReason',
-          ),
-          verticalSpaceSmall,
-          DropdownTextfield(
-            onChanged: (String) {},
-            options: [],
-            titleText: 'propertyOwner',
-          ),
+         DropdownTextfield(
+              onChanged: viewModel.setLoanReasonr,
+              options: viewModel.loanReasonList,
+              value: viewModel.loanReason,
+              titleText: 'loanReason',
+            ),
+            verticalSpaceSmall,
+            DropdownTextfield(
+              onChanged: viewModel.setPropertyOwner,
+              options: viewModel.propertyOwnerList,
+              value: viewModel.propertyOwner,
+              titleText: 'propertyOwner',
+            ),
         ],
       ),
     );

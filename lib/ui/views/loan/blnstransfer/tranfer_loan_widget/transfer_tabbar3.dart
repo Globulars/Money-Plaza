@@ -60,20 +60,54 @@ class TransferTabBar3 extends ViewModelWidget<BlnstransferViewModel> {
           ),
           verticalSpaceSmall,
           verticalSpaceSmall,
-          CustomTextField(
-            titleText: 'numberOfLoans',
-          ),
+          viewModel.outStanding == 1
+              ? CustomTextField(
+                  titleText: 'companyName',
+                  controller: viewModel.companyNameCtrl,
+                )
+              : Container(),
           verticalSpaceSmall,
-          CustomTextField(
-            hintText: 'hk',
-            titleText: 'totalOutstandingLoan',
-          ),
+          viewModel.outStanding == 1
+              ? DropdownTextfield(
+                  onChanged: viewModel.setRepaymentType,
+                  options: viewModel.repaymentTypeList,
+                  value: viewModel.repaymentType,
+                  titleText: 'repaymentType',
+                )
+              : Container(),
           verticalSpaceSmall,
-          DropdownTextfield(
-            onChanged: (String) {},
-            options: [],
-            titleText: 'monthlyRepayment',
-          ),
+          viewModel.outStanding == 1
+              ? CustomTextField(
+                  hintText: 'hk',
+                  controller: viewModel.totalOutstandingLoanCtrl,
+                  titleText: 'totalOutstandingLoan',
+                )
+              : Container(),
+          verticalSpaceSmall,
+          viewModel.outStanding == 1
+              ? CustomTextField(
+                  controller: viewModel.tenorCtrl,
+                  hintText: 'Months',
+                  titleText: 'tenor',
+                )
+              : Container(),
+          verticalSpaceSmall,
+          viewModel.outStanding == 1
+              ? CustomTextField(
+                  controller: viewModel.remainigTenorCtrl,
+                  hintText: 'Months',
+                  titleText: 'Remaining Tenor',
+                )
+              : Container(),
+          verticalSpaceSmall,
+          viewModel.outStanding == 1
+              ? CustomTextField(
+                  controller: viewModel.monthlyRepaymentCtrl,
+                  hintText: 'hk',
+                  titleText: 'monthlyRepayment',
+                )
+              : Container(),
+          verticalSpaceLarge
         ],
       ),
     );

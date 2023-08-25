@@ -1,11 +1,8 @@
-// ignore_for_file: non_constant_identifier_names, prefer_const_literals_to_create_immutables, avoid_types_as_parameter_names
-
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import '../../../../common/app_colors.dart';
 import '../../../../common/ui_helpers.dart';
 import '../../../../widgets/common/custom_text_field/custom_text_field.dart';
-import '../../../../widgets/common/dropdown_textfield/dropdown_textfield.dart';
 import '../../../../widgets/common/icon_box_btn/return_button.dart';
 import '../../../../widgets/common/icon_box_btn/text.dart';
 import '../commerical_loan_viewmodel.dart';
@@ -59,20 +56,26 @@ class CommTabBar3 extends ViewModelWidget<CommericalLoanViewModel> {
             ],
           ),
           verticalSpaceSmall,
+             viewModel.outStanding == 1?
           CustomTextField(
             titleText: 'numberOfLoans',
-          ),
+            controller: viewModel.numOfLoansCtrl
+          ):Container(),
           verticalSpaceSmall,
+             viewModel.outStanding == 1?
           CustomTextField(
+            controller: viewModel.totalOutstandingLoanCtrl,
             hintText: 'hk',
             titleText: 'totalOutstandingLoan',
-          ),
+          ):Container(),
           verticalSpaceSmall,
-          DropdownTextfield(
-            onChanged: (String) {},
-            options: [],
-            titleText: 'monthlyRepayment',
-          ),
+           viewModel.outStanding == 1
+              ? CustomTextField(
+                  controller: viewModel.monthlyRepaymentCtrl,
+                  hintText: 'hk',
+                  titleText: 'monthlyRepayment',
+                )
+              : Container(),
         ],
       ),
     );

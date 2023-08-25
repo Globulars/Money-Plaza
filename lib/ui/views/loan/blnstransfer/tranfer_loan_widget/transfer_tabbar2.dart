@@ -20,20 +20,30 @@ class TransferTabBar2 extends ViewModelWidget<BlnstransferViewModel> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CustomTextField(
+           CustomTextField(
             hintText: 'hk',
+            controller: viewModel.monthlyIncomeCtrl,
             titleText: 'monthlyIncome',
           ),
           verticalSpaceSmall,
           DropdownTextfield(
-            onChanged: (String) {},
-            options: [],
+            onChanged: viewModel.setSalaryPayment,
+            options: viewModel.salaryPaymentList,
+            value: viewModel.salaryPayment,
+            titleText: 'Salary Payment',
+          ),
+          verticalSpaceSmall,
+          DropdownTextfield(
+            onChanged: viewModel.setTypeOfIncome,
+            options: viewModel.typeOfIncomeList,
+            value: viewModel.typeOfIncome,
             titleText: 'typeOfIncome',
           ),
           verticalSpaceSmall,
           DropdownTextfield(
-            onChanged: (String) {},
-            options: [],
+            onChanged: viewModel.setProofOfIncome,
+            options: viewModel.proofOfIncomeList,
+            value: viewModel.proofOfIncome,
             titleText: 'proofOfIncome',
           ),
         ],
