@@ -22,18 +22,28 @@ class TabBarView2 extends ViewModelWidget<PersonalloanViewModel> {
         children: [
           CustomTextField(
             hintText: 'hk',
+            controller: viewModel.monthlyIncomeCtrl,
             titleText: 'monthlyIncome',
           ),
           verticalSpaceSmall,
+           DropdownTextfield(
+            onChanged: viewModel.setSalaryPayment,
+            options:viewModel.salaryPaymentList,
+            value: viewModel.salaryPayment,
+            titleText: 'Salary Payment',
+          ),
+          verticalSpaceSmall,
           DropdownTextfield(
-            onChanged: (String) {},
-            options: [],
+            onChanged: viewModel.setTypeOfIncome,
+            options: viewModel.typeOfIncomeList,
+            value: viewModel.typeOfIncome,
             titleText: 'typeOfIncome',
           ),
           verticalSpaceSmall,
           DropdownTextfield(
-            onChanged: (String) {},
-            options: [],
+            onChanged: viewModel.setProofOfIncome,
+            options: viewModel.proofOfIncomeList,
+            value: viewModel.proofOfIncome,
             titleText: 'proofOfIncome',
           ),
         ],

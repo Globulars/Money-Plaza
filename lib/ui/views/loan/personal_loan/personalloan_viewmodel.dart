@@ -11,10 +11,19 @@ class PersonalloanViewModel extends BaseViewModel {
 
   TextEditingController borrowingAmountCtrl =
       TextEditingController(text: "50000");
+      TextEditingController monthlyIncomeCtrl =
+      TextEditingController(text: "40000");
        String loanReason = "Business Expansion";
       //  String loanReasonFOrApi = "Business Expansion";
       String propertyOwner= "Have";
   // String propertyOwnerForApi = "";
+   String salaryPayment= "Bank transfer";
+  // String salaryPaymentForApi = "";
+  String typeOfIncome= "Full Time";
+  // String typeOfIncomeForApi = "";
+   String proofOfIncome= "Bank Statement";
+  // String proofOfIncomeForApi = "";
+
 
    final loanReasonList = [
     "Business Expansion",
@@ -29,21 +38,56 @@ class PersonalloanViewModel extends BaseViewModel {
     "Bills Repayment",
     "Income Tax"
   ];
+   setLoanReasonr(value){
+  loanReason=value;
+  notifyListeners();
+  }
 
   final propertyOwnerList = [
     "Have",
     "No",
   ];
-
   setPropertyOwner(value){
   propertyOwner=value;
   notifyListeners();
   }
 
-   setLoanReasonr(value){
-  loanReason=value;
+  final salaryPaymentList = [
+    "Cash",
+    "Bank transfer",
+    "Cheque"
+  ];
+  setSalaryPayment(value){
+  salaryPayment=value;
   notifyListeners();
   }
+
+  
+  final typeOfIncomeList = [
+    "Full Time",
+    "Part Time"
+  ];
+  setTypeOfIncome(value){
+  typeOfIncome=value;
+  notifyListeners();
+  }
+
+  final proofOfIncomeList = [
+    "MPF",
+    "Bank Statement",
+    "Letter"
+  ];
+  setProofOfIncome(value){
+  typeOfIncome=value;
+  notifyListeners();
+  }
+
+
+
+
+
+
+
 
   var initialIndex = 0;
   var loanTenors = 6;
