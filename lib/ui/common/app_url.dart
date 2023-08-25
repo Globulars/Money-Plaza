@@ -105,8 +105,10 @@ class ApiUrl {
       "$baseUrl/surveyform/survey/submit/76d99393-0023-4113-ad92-3068197adc14");
   final Uri ownerLoneSurveyform = Uri.parse(
       "$baseUrl/surveyform/survey/submit/c9d7ef93-4ea3-4df3-8aab-373aa633046e");
-  final Uri ownerLoneSurveyform = Uri.parse(
-      "$baseUrl/surveyform/survey/submit/c9d7ef93-4ea3-4df3-8aab-373aa633046e");
+  final Uri balanceTransferSurveyform = Uri.parse(
+      "$baseUrl/surveyform/survey/submit/573310d0-2ec8-478b-8fe7-2531fa78813c");
+  final Uri commercialLoanSurveyform = Uri.parse(
+      "$baseUrl/surveyform/survey/submit/3c54426a-4c43-4d56-988d-87c55e97ebe5");
   final Uri incomeProofTypes = Uri.parse("$baseUrl/option/incomeProofTypes");
   final Uri employmentTypes = Uri.parse("$baseUrl/option/employmentTypes");
 

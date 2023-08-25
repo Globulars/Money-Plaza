@@ -210,149 +210,29 @@ class LoanViewModel extends BaseViewModel {
   }
 }
 
+
 //2 https://admin.moneyplaza.com.hk/option/incomeProofTypes
 //2 https://admin.moneyplaza.com.hk/option/employmentTypes
-//
+// 
 // personel loan
 // https://admin.moneyplaza.com.hk/surveyform/survey/submit/76d99393-0023-4113-ad92-3068197adc14
-var data = [
-  {
-    "fieldName": "amount",
-    "fieldTitle": "借貸金額",
-    "fieldValue": "435",
-    "fieldType": "text",
-    "fieldOrder": "",
-    "fieldAttrs": []
-  },
-  {
-    "fieldName": "tenor",
-    "fieldTitle": "還款期",
-    "fieldValue": "12",
-    "fieldType": "text",
-    "fieldOrder": "",
-    "fieldAttrs": []
-  },
-  {
-    "fieldName": "reason",
-    "fieldTitle": "借貸原因",
-    "fieldValue": "債務整合",
-    "fieldType": "text",
-    "fieldOrder": "",
-    "fieldAttrs": []
-  },
-  {
-    "fieldName": "hasProperty",
-    "fieldTitle": "是否物業持有人",
-    "fieldValue": "沒有",
-    "fieldType": "text",
-    "fieldOrder": "",
-    "fieldAttrs": []
-  },
-  {
-    "fieldName": "income",
-    "fieldTitle": "每月收入",
-    "fieldValue": "3443",
-    "fieldType": "text",
-    "fieldOrder": "",
-    "fieldAttrs": []
-  },
-  {
-    "fieldName": "salaryPayment",
-    "fieldTitle": "出糧方式",
-    "fieldValue": "銀行轉賬",
-    "fieldType": "text",
-    "fieldOrder": "",
-    "fieldAttrs": []
-  },
-  {
-    "fieldName": "employmentType",
-    "fieldTitle": "收入類型",
-    "fieldValue": "全職",
-    "fieldType": "text",
-    "fieldOrder": "",
-    "fieldAttrs": []
-  },
-  {
-    "fieldName": "incomeProofType",
-    "fieldTitle": "收入證明",
-    "fieldValue": "強積金",
-    "fieldType": "text",
-    "fieldOrder": "",
-    "fieldAttrs": []
-  },
-  {
-    "fieldName": "hasLoan",
-    "fieldTitle": "現有未還清的貸款",
-    "fieldValue": "沒有",
-    "fieldType": "text",
-    "fieldOrder": "",
-    "fieldAttrs": []
-  },
-  {
-    "fieldName": "remainingLoans",
-    "fieldTitle": "貸款數量",
-    "fieldValue": "0",
-    "fieldType": "totalLoanCount",
-    "fieldOrder": "",
-    "fieldAttrs": []
-  },
-  {
-    "fieldName": "remainingLoanAmount",
-    "fieldTitle": "未償還貸款總額",
-    "fieldValue": "0",
-    "fieldType": "remainingLoanAmount",
-    "fieldOrder": "",
-    "fieldAttrs": []
-  },
-  {
-    "fieldName": "monthlyRepayment",
-    "fieldTitle": "每月還款",
-    "fieldValue": "0",
-    "fieldType": "monthlyRepayment",
-    "fieldOrder": "",
-    "fieldAttrs": []
-  },
-  {
-    "fieldName": "fullname",
-    "fieldTitle": "英文全名",
-    "fieldValue": "Mudassir Mukhtar",
-    "fieldType": "name",
-    "fieldOrder": "",
-    "fieldAttrs": []
-  },
-  {
-    "fieldName": "mobile",
-    "fieldTitle": "聯絡電話",
-    "fieldValue": "+85246303385",
-    "fieldType": "mobile",
-    "fieldOrder": "",
-    "fieldAttrs": ["unique"]
-  },
-  {
-    "fieldName": "email",
-    "fieldTitle": "E-mail",
-    "fieldValue": "mudassirmukhtar4@gmail.com",
-    "fieldType": "email",
-    "fieldOrder": "",
-    "fieldAttrs": []
-  },
-  {
-    "fieldName": "identity",
-    "fieldTitle": "身份證號碼",
-    "fieldValue": "A331230-8",
-    "fieldType": "hkid",
-    "fieldOrder": "",
-    "fieldAttrs": ["unique"]
-  },
-  {
-    "fieldName": "bornInHK",
-    "fieldTitle": "是否在香港出生?",
-    "fieldValue": "yes",
-    "fieldType": "text",
-    "fieldOrder": "",
-    "fieldAttrs": []
-  }
-];
+// result:  [{"fieldName":"amount","fieldTitle":"借貸金額","fieldValue":"435","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"tenor","fieldTitle":"還款期","fieldValue":"12","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"reason","fieldTitle":"借貸原因","fieldValue":"債務整合","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"hasProperty","fieldTitle":"是否物業持有人","fieldValue":"沒有","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"income","fieldTitle":"每月收入","fieldValue":"3443","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"salaryPayment","fieldTitle":"出糧方式","fieldValue":"銀行轉賬","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"employmentType","fieldTitle":"收入類型","fieldValue":"全職","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"incomeProofType","fieldTitle":"收入證明","fieldValue":"強積金","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"hasLoan","fieldTitle":"現有未還清的貸款","fieldValue":"沒有","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"remainingLoans","fieldTitle":"貸款數量","fieldValue":"0","fieldType":"totalLoanCount","fieldOrder":"","fieldAttrs":[]},{"fieldName":"remainingLoanAmount","fieldTitle":"未償還貸款總額","fieldValue":"0","fieldType":"remainingLoanAmount","fieldOrder":"","fieldAttrs":[]},{"fieldName":"monthlyRepayment","fieldTitle":"每月還款","fieldValue":"0","fieldType":"monthlyRepayment","fieldOrder":"","fieldAttrs":[]},{"fieldName":"fullname","fieldTitle":"英文全名","fieldValue":"Mudassir Mukhtar","fieldType":"name","fieldOrder":"","fieldAttrs":[]},{"fieldName":"mobile","fieldTitle":"聯絡電話","fieldValue":"+85246303385","fieldType":"mobile","fieldOrder":"","fieldAttrs":["unique"]},{"fieldName":"email","fieldTitle":"E-mail","fieldValue":"mudassirmukhtar4@gmail.com","fieldType":"email","fieldOrder":"","fieldAttrs":[]},{"fieldName":"identity","fieldTitle":"身份證號碼","fieldValue":"A331230-8","fieldType":"hkid","fieldOrder":"","fieldAttrs":["unique"]},{"fieldName":"bornInHK","fieldTitle":"是否在香港出生?","fieldValue":"yes","fieldType":"text","fieldOrder":"","fieldAttrs":[]}]
+
 // Owner Loan
 // https://admin.moneyplaza.com.hk/surveyform/survey/submit/c9d7ef93-4ea3-4df3-8aab-373aa633046e
 // result: [{"fieldName":"amount","fieldTitle":"借貸金額","fieldValue":"435","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"tenor","fieldTitle":"還款期","fieldValue":"12","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"reason","fieldTitle":"借貸原因","fieldValue":"債務整合","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"income","fieldTitle":"每月收入","fieldValue":"3443","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"salaryPayment","fieldTitle":"出糧方式","fieldValue":"銀行轉賬","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"employmentType","fieldTitle":"收入類型","fieldValue":"全職","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"incomeProofType","fieldTitle":"收入證明","fieldValue":"強積金","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"hasLoan","fieldTitle":"現有未還清的貸款","fieldValue":"沒有","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"remainingLoans","fieldTitle":"貸款數量","fieldValue":"0","fieldType":"totalLoanCount","fieldOrder":"","fieldAttrs":[]},{"fieldName":"remainingLoanAmount","fieldTitle":"未償還貸款總額","fieldValue":"0","fieldType":"remainingLoanAmount","fieldOrder":"","fieldAttrs":[]},{"fieldName":"monthlyRepayment","fieldTitle":"每月還款","fieldValue":"0","fieldType":"monthlyRepayment","fieldOrder":"","fieldAttrs":[]},{"fieldName":"propertyValue","fieldTitle":"物業價值","fieldValue":"","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"propertyShare","fieldTitle":"現按成數","fieldValue":"0","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"fullname","fieldTitle":"英文全名","fieldValue":"Mudassir Mukhtar","fieldType":"name","fieldOrder":"","fieldAttrs":[]},{"fieldName":"mobile","fieldTitle":"聯絡電話","fieldValue":"+85246303385","fieldType":"mobile","fieldOrder":"","fieldAttrs":["unique"]},{"fieldName":"email","fieldTitle":"E-mail","fieldValue":"mudassirmukhtar4@gmail.com","fieldType":"email","fieldOrder":"","fieldAttrs":[]},{"fieldName":"identity","fieldTitle":"身份證號碼","fieldValue":"A331230-8","fieldType":"hkid","fieldOrder":"","fieldAttrs":["unique"]},{"fieldName":"bornInHK","fieldTitle":"是否在香港出生?","fieldValue":"yes","fieldType":"text","fieldOrder":"","fieldAttrs":[]}]
+
+
+// balance_transfer
+// https://admin.moneyplaza.com.hk/surveyform/survey/submit/573310d0-2ec8-478b-8fe7-2531fa78813c
+// result: [{"fieldName":"loanHistory","fieldTitle":"貸款紀錄","fieldValue":"[]","fieldType":"jsonArray","fieldOrder":"","fieldAttrs":[]},{"fieldName":"amount","fieldTitle":"借貸金額","fieldValue":"435","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"tenor","fieldTitle":"還款期","fieldValue":"12","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"reason","fieldTitle":"借貸原因","fieldValue":"債務整合","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"hasProperty","fieldTitle":"是否物業持有人","fieldValue":"沒有","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"income","fieldTitle":"每月收入","fieldValue":"3443","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"salaryPayment","fieldTitle":"出糧方式","fieldValue":"銀行轉賬","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"employmentType","fieldTitle":"收入類型","fieldValue":"全職","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"incomeProofType","fieldTitle":"收入證明","fieldValue":"強積金","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"hasLoan","fieldTitle":"現有未還清的貸款","fieldValue":"沒有","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"remainingLoans","fieldTitle":"貸款數量","fieldValue":"0","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"remainingLoanAmount","fieldTitle":"未償還貸款總額","fieldValue":"0","fieldType":"remainingLoanAmount","fieldOrder":"","fieldAttrs":[]},{"fieldName":"fullname","fieldTitle":"英文全名","fieldValue":"Mudassir Mukhtar","fieldType":"name","fieldOrder":"","fieldAttrs":[]},{"fieldName":"mobile","fieldTitle":"聯絡電話","fieldValue":"+85246303385","fieldType":"mobile","fieldOrder":"","fieldAttrs":["unique"]},{"fieldName":"email","fieldTitle":"E-mail","fieldValue":"mudassirmukhtar4@gmail.com","fieldType":"email","fieldOrder":"","fieldAttrs":[]},{"fieldName":"identity","fieldTitle":"身份證號碼","fieldValue":"A331230-8","fieldType":"hkid","fieldOrder":"","fieldAttrs":["unique"]},{"fieldName":"bornInHK","fieldTitle":"是否在香港出生?","fieldValue":"yes","fieldType":"text","fieldOrder":"","fieldAttrs":[]}]
+
+// commercial_loan
+// https://admin.moneyplaza.com.hk/surveyform/survey/submit/3c54426a-4c43-4d56-988d-87c55e97ebe5
+// result: [{"fieldName":"amount","fieldTitle":"借貸金額","fieldValue":"435","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"tenor","fieldTitle":"還款期","fieldValue":"12","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"reason","fieldTitle":"借貸原因","fieldValue":"債務整合","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"hasProperty","fieldTitle":"是否物業持有人","fieldValue":"沒有","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"turnover","fieldTitle":"全年總營利","fieldValue":"3245","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"digitalIncome","fieldTitle":"數字支付的平均月收入","fieldValue":"363","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"industry","fieldTitle":"業務性質","fieldValue":"進出口貿易","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"pos","fieldTitle":"配備POS系統","fieldValue":"沒有","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"company","fieldTitle":"公司名稱","fieldValue":"student","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"receivableAmount","fieldTitle":"未來應收金額（如有）","fieldValue":"345","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"audit","fieldTitle":"審計報告","fieldValue":"沒有","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"operationYears","fieldTitle":"經營年期","fieldValue":"435","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"hasLoan","fieldTitle":"現有未還清的貸款","fieldValue":"沒有","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"remainingLoans","fieldTitle":"貸款數量","fieldValue":"0","fieldType":"totalLoanCount","fieldOrder":"","fieldAttrs":[]},{"fieldName":"remainingLoanAmount","fieldTitle":"未償還貸款總額","fieldValue":"0","fieldType":"remainingLoanAmount","fieldOrder":"","fieldAttrs":[]},{"fieldName":"monthlyRepayment","fieldTitle":"每月還款","fieldValue":"0","fieldType":"monthlyRepayment","fieldOrder":"","fieldAttrs":[]},{"fieldName":"fullname","fieldTitle":"英文全名","fieldValue":"Mudassir Mukhtar","fieldType":"name","fieldOrder":"","fieldAttrs":[]},{"fieldName":"mobile","fieldTitle":"聯絡電話","fieldValue":"+85246303385","fieldType":"mobile","fieldOrder":"","fieldAttrs":["unique"]},{"fieldName":"email","fieldTitle":"E-mail","fieldValue":"mudassirmukhtar4@gmail.com","fieldType":"email","fieldOrder":"","fieldAttrs":[]}]
+
+
+
+
+// https://admin.moneyplaza.com.hk/loan/match
+// {"amount":435,"tenor":12,"type":"commercial_loan","income":3245,"currentTotalLoanAmount":0,"monthlyRepayment":0,"pol":false}
