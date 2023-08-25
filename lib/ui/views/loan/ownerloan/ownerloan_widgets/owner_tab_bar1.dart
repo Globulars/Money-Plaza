@@ -28,6 +28,7 @@ class OwnerTabBar1 extends ViewModelWidget<OwnerloanViewModel> {
           CustomTextField(
             hintText: 'hk',
             titleText: 'borrowingAmount',
+            controller: viewModel.borrowingAmountCtrl,
           ),
           verticalSpaceSmall,
           CustomText(

@@ -60,28 +60,36 @@ class OwnerTabBar3 extends ViewModelWidget<OwnerloanViewModel> {
           ),
           verticalSpaceSmall,
           CustomTextField(
-            titleText: 'numberOfLoans',
-          ),
-          verticalSpaceSmall,
-          CustomTextField(
-            hintText: 'hk',
-            titleText: 'totalOutstandingLoan',
-          ),
-          verticalSpaceSmall,
-          DropdownTextfield(
-            onChanged: (String) {},
-            options: [],
-            titleText: 'monthlyRepayment',
-          ),
-          verticalSpaceSmall,
-          CustomTextField(
             hintText: 'hk',
             titleText: 'propertyValuation',
           ),
           verticalSpaceSmall,
           CustomTextField(
-            titleText: '',
+            hintText: '0%',
+            titleText: 'currentMortgageRatio',
           ),
+          verticalSpaceSmall,
+          viewModel.outStanding == 1
+              ? CustomTextField(
+                  titleText: 'numberOfLoans',
+                )
+              : Container(),
+          verticalSpaceSmall,
+          viewModel.outStanding == 1
+              ? CustomTextField(
+                  hintText: 'hk',
+                  titleText: 'totalOutstandingLoan',
+                )
+              : Container(),
+          verticalSpaceSmall,
+          viewModel.outStanding == 1
+              ? DropdownTextfield(
+                  onChanged: (String) {},
+                  options: [],
+                  titleText: 'monthlyRepayment',
+                )
+              : Container(),
+          verticalSpaceSmall,
         ],
       ),
     );

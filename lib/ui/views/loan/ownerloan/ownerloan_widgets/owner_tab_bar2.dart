@@ -34,7 +34,7 @@ class OwnerTabBar2 extends ViewModelWidget<OwnerloanViewModel> {
           DropdownTextfield(
             onChanged: (String) {},
             options: [],
-            titleText: 'typeOfIncome',
+            titleText: 'proofOfIncome',
           ),
         ],
       ),

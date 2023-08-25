@@ -5,27 +5,25 @@ import 'package:stacked_services/stacked_services.dart';
 import '../../../../app/app.locator.dart';
 import 'package:flutter/material.dart';
 
-
 class PersonalloanViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
 
   TextEditingController borrowingAmountCtrl =
       TextEditingController(text: "50000");
-      TextEditingController monthlyIncomeCtrl =
+  TextEditingController monthlyIncomeCtrl =
       TextEditingController(text: "40000");
-       String loanReason = "Business Expansion";
-      //  String loanReasonFOrApi = "Business Expansion";
-      String propertyOwner= "Have";
+  String loanReason = "Business Expansion";
+  //  String loanReasonFOrApi = "Business Expansion";
+  String propertyOwner = "Have";
   // String propertyOwnerForApi = "";
-   String salaryPayment= "Bank transfer";
+  String salaryPayment = "Bank transfer";
   // String salaryPaymentForApi = "";
-  String typeOfIncome= "Full Time";
+  String typeOfIncome = "Full Time";
   // String typeOfIncomeForApi = "";
-   String proofOfIncome= "Bank Statement";
+  String proofOfIncome = "Bank Statement";
   // String proofOfIncomeForApi = "";
 
-
-   final loanReasonList = [
+  final loanReasonList = [
     "Business Expansion",
     "Car Purchase",
     "Credit Card Repayment",
@@ -38,56 +36,37 @@ class PersonalloanViewModel extends BaseViewModel {
     "Bills Repayment",
     "Income Tax"
   ];
-   setLoanReasonr(value){
-  loanReason=value;
-  notifyListeners();
+  setLoanReasonr(value) {
+    loanReason = value;
+    notifyListeners();
   }
 
   final propertyOwnerList = [
     "Have",
     "No",
   ];
-  setPropertyOwner(value){
-  propertyOwner=value;
-  notifyListeners();
+  setPropertyOwner(value) {
+    propertyOwner = value;
+    notifyListeners();
   }
 
-  final salaryPaymentList = [
-    "Cash",
-    "Bank transfer",
-    "Cheque"
-  ];
-  setSalaryPayment(value){
-  salaryPayment=value;
-  notifyListeners();
+  final salaryPaymentList = ["Cash", "Bank transfer", "Cheque"];
+  setSalaryPayment(value) {
+    salaryPayment = value;
+    notifyListeners();
   }
 
-  
-  final typeOfIncomeList = [
-    "Full Time",
-    "Part Time"
-  ];
-  setTypeOfIncome(value){
-  typeOfIncome=value;
-  notifyListeners();
+  final typeOfIncomeList = ["Full Time", "Part Time"];
+  setTypeOfIncome(value) {
+    typeOfIncome = value;
+    notifyListeners();
   }
 
-  final proofOfIncomeList = [
-    "MPF",
-    "Bank Statement",
-    "Letter"
-  ];
-  setProofOfIncome(value){
-  typeOfIncome=value;
-  notifyListeners();
+  final proofOfIncomeList = ["MPF", "Bank Statement", "Letter"];
+  setProofOfIncome(value) {
+    typeOfIncome = value;
+    notifyListeners();
   }
-
-
-
-
-
-
-
 
   var initialIndex = 0;
   var loanTenors = 6;
@@ -114,10 +93,6 @@ class PersonalloanViewModel extends BaseViewModel {
     outStanding = value;
     notifyListeners();
   }
-
-
-
-
 
   navigateToApplyconfirm() {
     _navigationService.navigateToApplyconfirmView(match: true);
