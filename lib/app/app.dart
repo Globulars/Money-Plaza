@@ -1,4 +1,6 @@
 import 'package:money_plaza/ui/views/landing/startup/startup_view.dart';
+import 'package:money_plaza/ui/views/loan/ownerloan/applyconfirm_view.dart';
+import 'package:money_plaza/ui/views/survey_form/survey_form_view.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:money_plaza/ui/views/landing/landing_view.dart';
@@ -38,8 +40,6 @@ import 'package:money_plaza/services/toaster_service.dart';
 import 'package:money_plaza/services/mortgage_service.dart';
 import 'package:money_plaza/services/credit_card_service.dart';
 import 'package:money_plaza/services/loan_card_service.dart';
-
-import '../ui/views/survey_form/survey_form_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -71,6 +71,8 @@ import '../ui/views/survey_form/survey_form_view.dart';
     MaterialRoute(page: RewardView),
     MaterialRoute(page: RewardApplicationView),
     MaterialRoute(page: ChangePasswordView),
+    MaterialRoute(page: OwnerApplyConfirmView),
+
 // @stacked-route
   ],
   dependencies: [

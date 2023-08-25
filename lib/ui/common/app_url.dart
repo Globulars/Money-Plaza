@@ -115,7 +115,7 @@ class ApiUrl {
   // dropdown
   // https://admin.moneyplaza.com.hk/option/loanCalculateMethods
 
-  // final Uri loanMatch = Uri.parse("$baseUrl/loan/match");
+  final Uri loanMatch = Uri.parse("$baseUrl/loan/match");
   // final Uri loanPreview = Uri.parse("$baseUrl/loan/preview/");
 
   /////////////////////////////////////loan-request Controller////////////////////////////////

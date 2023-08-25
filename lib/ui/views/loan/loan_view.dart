@@ -21,6 +21,7 @@ class LoanView extends StackedView<LoanViewModel> {
   @override
   void onViewModelReady(LoanViewModel viewModel) {
     viewModel.getLoanTags();
+    viewModel.loanListData();
     super.onViewModelReady(viewModel);
   }
 

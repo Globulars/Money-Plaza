@@ -29,6 +29,7 @@ class CalculatorResultView extends StackedView<LoanViewModel> {
     viewModel.interestCtrl.text = interest;
     viewModel.loanAmountCtrl.text = loanAmount;
     viewModel.getLoanTags();
+    viewModel.loanListData();
     super.onViewModelReady(viewModel);
   }
 
@@ -91,7 +92,6 @@ class CalculatorResultView extends StackedView<LoanViewModel> {
                                     loanData: viewModel.loanCardList[index]);
                               },
                             ),
-
                       verticalSpaceTiny,
                       const CalculatorItems(),
                       const CalDataTable(),

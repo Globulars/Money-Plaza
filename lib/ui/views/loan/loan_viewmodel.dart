@@ -15,6 +15,7 @@ class LoanViewModel extends BaseViewModel {
   final _loanCardService = locator<LoanCardService>();
   final _dialogService = locator<DialogService>();
   var formKey = GlobalKey<FormState>();
+  Map<String, dynamic> loneMachBody={};
   List<LoanCard> loanCardList = [];
   List<LoanTags> loanTagsList = [];
   List<String> features = [];
@@ -162,7 +163,6 @@ class LoanViewModel extends BaseViewModel {
     if (data?["success"] == true) {
       List dataList = data["data"];
       loanTagsList = dataList.map((data) => LoanTags.fromJson(data)).toList();
-      loanListData();
       notifyListeners();
       return loanTagsList;
     } else {
@@ -182,7 +182,6 @@ class LoanViewModel extends BaseViewModel {
       "interestRate": interestCtrl.text,
       "monthlyRepayment": monthlyPaymentCtrl.text
     };
-    log(features.toString());
     var data = await _loanCardService.loanlist(body);
     if (data?["success"] == true) {
       List dataList = data["data"]["records"];
@@ -208,6 +207,21 @@ class LoanViewModel extends BaseViewModel {
       throw Exception(data["message"].toString());
     }
   }
+
+
+    Future<List<LoanCard>> loanMatch() async {
+    log(features.toString());
+    var data = await _loanCardService.loanMatch(loneMachBody);
+    if (data?["success"] == true) {
+      List dataList = data["data"]["records"];
+      loanCardList = dataList.map((data) => LoanCard.fromJson(data)).toList();
+      notifyListeners();
+      return loanCardList;
+    } else {
+      throw Exception(data["message"].toString());
+    }
+  }
+
 }
 
 

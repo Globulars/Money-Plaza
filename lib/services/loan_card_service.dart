@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 import '../ui/common/app_url.dart';
 import 'package:http/http.dart' as http;
 
@@ -13,6 +14,21 @@ class LoanCardService {
   loanlist(body) async {
     try {
       final response = await http.post(_apiUrl.loanList,
+          body: jsonEncode(body), headers: headers);
+      if (response.statusCode == 200) {
+        var data = json.decode(response.body);
+        return data;
+      } else {
+        return {"message": "${response.statusCode} error found"};
+      }
+    } catch (e) {
+      return {"message": e};
+    }
+  }
+  /////////////////////////////////////Card List////////////////////////////////
+  loanMatch(body) async {
+    try {
+      final response = await http.post(_apiUrl.loanMatch,
           body: jsonEncode(body), headers: headers);
       if (response.statusCode == 200) {
         var data = json.decode(response.body);
@@ -57,13 +73,15 @@ class LoanCardService {
   }
 
   /////////////////////////////////////Lone Survey Form////////////////////////////////
-  loneSurveyform(body) async {
+  personeLoneSurveyform(body) async {
     try {
       final response = await http.post(_apiUrl.personeLoneSurveyform,
           body: jsonEncode(body), headers: headers);
       if (response.statusCode == 200) {
         var data = json.decode(response.body);
         return data;
+      } else if (response.statusCode == 302) {
+        return {"message": "Successful Submittion", "success": true};
       } else {
         return {"message": "${response.statusCode} error found"};
       }
@@ -71,4 +89,24 @@ class LoanCardService {
       return {"message": e};
     }
   }
+
+  /////////////////////////////////////ownerLone Survey Form////////////////////////////////
+  ownerLoneSurveyform(body) async {
+    try {
+      final response = await http.post(_apiUrl.ownerLoneSurveyform,
+          body: jsonEncode(body), headers: headers);
+      if (response.statusCode == 200) {
+        var data = json.decode(response.body);
+        return data;
+      } else if (response.statusCode == 302) {
+        return {"message": "Successful Submittion", "success": true};
+      } else {
+        log(response.body.toString());
+        return {"message": "${response.statusCode} error found"};
+      }
+    } catch (e) {
+      return {"message": e};
+    }
+  }
+  
 }

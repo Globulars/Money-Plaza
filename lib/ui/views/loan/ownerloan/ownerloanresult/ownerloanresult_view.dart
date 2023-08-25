@@ -1,24 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
-import '../../../../../services/Models/loan_card.dart';
 import '../../../../common/ui_helpers.dart';
 import '../../../../widgets/app_bar.dart';
 import '../../../../widgets/bottom_bar.dart';
 import '../../../../widgets/common/background_image.dart';
 import '../../../../widgets/common/icon_box_btn/return_button.dart';
-import '../../widgets/result_card.dart';
+import '../../loan_viewmodel.dart';
+import '../../widgets/loan_list_builder.dart';
 import '../../widgets/loan_tags_list_view.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import '../../widgets/filter_bottom_bar.dart';
-import 'ownerloanresult_viewmodel.dart';
 
-class OwnerloanresultView extends StackedView<OwnerloanresultViewModel> {
-  const OwnerloanresultView({Key? key}) : super(key: key);
+class OwnerloanresultView extends StackedView<LoanViewModel> {
+  final Map<String, dynamic> body;
+  const OwnerloanresultView(this.body, {Key? key}) : super(key: key);
+  @override
+  void onViewModelReady(LoanViewModel viewModel) {
+    viewModel.loneMachBody = body;
+    viewModel.getLoanTags();
+    viewModel.loanMatch();
+    super.onViewModelReady(viewModel);
+  }
 
   @override
   Widget builder(
     BuildContext context,
-    OwnerloanresultViewModel viewModel,
+    LoanViewModel viewModel,
     Widget? child,
   ) {
     return Stack(
@@ -29,21 +36,15 @@ class OwnerloanresultView extends StackedView<OwnerloanresultViewModel> {
           appBar: appBar(context),
           body: Stack(
             children: [
-              Column(
-                children: [
-                  verticalSpace(70),
-                  const LoanTagsListView(),
-                  Expanded(
-                    child: ListView.builder(
-                      itemCount: 3,
-                      shrinkWrap: true,
-                      itemBuilder: (BuildContext context, int index) {
-                        return ResultCard(loanData: LoanCard());
-                      },
-                    ),
-                  ),
-                  verticalSpaceLarge,
-                ],
+              SingleChildScrollView(
+                child: Column(
+                  children: [
+                    verticalSpace(70),
+                    const LoanTagsListView(),
+                    LoanListView(),
+                    verticalSpaceLarge,
+                  ],
+                ),
               ),
               const FilterBottomBar(),
             ],
@@ -63,8 +64,8 @@ class OwnerloanresultView extends StackedView<OwnerloanresultViewModel> {
   }
 
   @override
-  OwnerloanresultViewModel viewModelBuilder(
+  LoanViewModel viewModelBuilder(
     BuildContext context,
   ) =>
-      OwnerloanresultViewModel();
+      LoanViewModel();
 }
