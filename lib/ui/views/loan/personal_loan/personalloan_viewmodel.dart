@@ -12,6 +12,12 @@ class PersonalloanViewModel extends BaseViewModel {
       TextEditingController(text: "50000");
   TextEditingController monthlyIncomeCtrl =
       TextEditingController(text: "40000");
+      TextEditingController numOfLoansCtrl =
+      TextEditingController(text: "");
+      TextEditingController totalOutstandingLoanCtrl =
+      TextEditingController(text: "5000");
+      TextEditingController monthlyRepaymentCtrl =
+      TextEditingController(text: "2000");
   String loanReason = "Business Expansion";
   //  String loanReasonFOrApi = "Business Expansion";
   String propertyOwner = "Have";
@@ -64,20 +70,20 @@ class PersonalloanViewModel extends BaseViewModel {
 
   final proofOfIncomeList = ["MPF", "Bank Statement", "Letter"];
   setProofOfIncome(value) {
-    typeOfIncome = value;
+    proofOfIncome = value;
     notifyListeners();
   }
 
   var initialIndex = 0;
   var loanTenors = 6;
-  var outStanding = 10;
+  var outStanding = 0;
   int currentIndex = 0;
 
-  indexing(int index) {
-    currentIndex = index;
-    notifyListeners();
-    print(currentIndex);
-  }
+  // indexing(int index) {
+  //   currentIndex = index;
+  //   notifyListeners();
+  //   print(currentIndex);
+  // }
 
   setInitialIndex() {
     initialIndex++;

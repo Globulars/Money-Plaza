@@ -1,11 +1,8 @@
-// ignore_for_file: non_constant_identifier_names, prefer_const_literals_to_create_immutables, avoid_types_as_parameter_names
-
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:stacked/stacked.dart';
 import '../../../../common/ui_helpers.dart';
 import '../../../../widgets/common/custom_text_field/custom_text_field.dart';
-import '../../../../widgets/common/dropdown_textfield/dropdown_textfield.dart';
 import '../../../../widgets/common/icon_box_btn/return_button.dart';
 import '../../../../widgets/common/icon_box_btn/text.dart';
 import '../personalloan_viewmodel.dart';
@@ -60,20 +57,26 @@ class TabBarView3 extends ViewModelWidget<PersonalloanViewModel> {
           ),
           verticalSpaceSmall,
           verticalSpaceSmall,
+          viewModel.outStanding==1?
           CustomTextField(
+            controller: viewModel.numOfLoansCtrl,
             titleText: 'numberOfLoans',
-          ),
+          ):Container(),
           verticalSpaceSmall,
+          viewModel.outStanding==1?
           CustomTextField(
+            controller: viewModel.totalOutstandingLoanCtrl,
             hintText: 'hk',
             titleText: 'totalOutstandingLoan',
-          ),
+          ):Container(),
           verticalSpaceSmall,
-          DropdownTextfield(
-            onChanged: (String) {},
-            options: [],
+          viewModel.outStanding==1?
+           CustomTextField(
+            controller: viewModel.monthlyRepaymentCtrl,
+            hintText: 'hk',
             titleText: 'monthlyRepayment',
-          ),
+          ):Container(),
+         
         ],
       ),
     );
