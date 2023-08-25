@@ -57,26 +57,28 @@ class TabBarView3 extends ViewModelWidget<PersonalloanViewModel> {
           ),
           verticalSpaceSmall,
           verticalSpaceSmall,
-          viewModel.outStanding==1?
-          CustomTextField(
-            controller: viewModel.numOfLoansCtrl,
-            titleText: 'numberOfLoans',
-          ):Container(),
+          viewModel.outStanding == 1
+              ? CustomTextField(
+                  controller: viewModel.numOfLoansCtrl,
+                  titleText: 'numberOfLoans',
+                )
+              : Container(),
           verticalSpaceSmall,
-          viewModel.outStanding==1?
-          CustomTextField(
-            controller: viewModel.totalOutstandingLoanCtrl,
-            hintText: 'hk',
-            titleText: 'totalOutstandingLoan',
-          ):Container(),
+          viewModel.outStanding == 1
+              ? CustomTextField(
+                  controller: viewModel.totalOutstandingLoanCtrl,
+                  hintText: 'hk',
+                  titleText: 'totalOutstandingLoan',
+                )
+              : Container(),
           verticalSpaceSmall,
-          viewModel.outStanding==1?
-           CustomTextField(
-            controller: viewModel.monthlyRepaymentCtrl,
-            hintText: 'hk',
-            titleText: 'monthlyRepayment',
-          ):Container(),
-         
+          viewModel.outStanding == 1
+              ? CustomTextField(
+                  controller: viewModel.monthlyRepaymentCtrl,
+                  hintText: 'hk',
+                  titleText: 'monthlyRepayment',
+                )
+              : Container(),
         ],
       ),
     );

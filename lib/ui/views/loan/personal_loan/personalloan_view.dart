@@ -25,8 +25,7 @@ class PersonalloanView extends StackedView<PersonalloanViewModel> {
     final width = MediaQuery.of(context).size.width;
     return DefaultTabController(
       length: 3,
-      child: Builder(
-          builder: (context) {
+      child: Builder(builder: (context) {
         return Stack(
           children: [
             Container(
