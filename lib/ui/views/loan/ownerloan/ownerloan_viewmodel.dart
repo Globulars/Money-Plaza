@@ -121,7 +121,15 @@ class OwnerloanViewModel extends BaseViewModel {
   }
 
   navigateToOwnerloanresultView() {
-    _navigationService.navigateToOwnerloanresultView(body: {"amount":borrowingAmountCtrl.text,"tenor":loanTenors,"type":"owner_loan","income":monthlyIncomeCtrl.text,"currentTotalLoanAmount":totalOutstandingLoanCtrl.text,"monthlyRepayment":monthlyRepaymentCtrl.text,"pol":false});
+    _navigationService.navigateToOwnerloanresultView(body: {
+      "amount": borrowingAmountCtrl.text,
+      "tenor": loanTenors,
+      "type": "owner_loan",
+      "income": monthlyIncomeCtrl.text,
+      "currentTotalLoanAmount": totalOutstandingLoanCtrl.text,
+      "monthlyRepayment": monthlyRepaymentCtrl.text,
+      "pol": false
+    });
   }
 
   submitSurveyForm() async {

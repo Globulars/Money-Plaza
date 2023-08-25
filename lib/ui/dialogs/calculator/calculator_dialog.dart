@@ -220,7 +220,6 @@ class CalculatorDialog extends StackedView<LoanViewModel> {
                                 height: 40,
                                 width: 120,
                                 onPress: () {
-
                                   viewModel.back();
                                   viewModel.navigateToCalculatorResult();
                                 }),

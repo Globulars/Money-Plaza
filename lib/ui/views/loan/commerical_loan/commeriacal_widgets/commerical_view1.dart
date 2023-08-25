@@ -26,7 +26,7 @@ class CommTabBar1 extends ViewModelWidget<CommericalLoanViewModel> {
             CustomTextField(
               hintText: 'hk',
               titleText: 'borrowingAmount',
-               controller: viewModel.borrowingAmountCtrl,
+              controller: viewModel.borrowingAmountCtrl,
             ),
             verticalSpaceSmall,
             CustomText(
@@ -156,7 +156,7 @@ class CommTabBar1 extends ViewModelWidget<CommericalLoanViewModel> {
               ],
             ),
             verticalSpaceSmall,
-             DropdownTextfield(
+            DropdownTextfield(
               onChanged: viewModel.setLoanReasonr,
               options: viewModel.loanReasonList,
               value: viewModel.loanReason,

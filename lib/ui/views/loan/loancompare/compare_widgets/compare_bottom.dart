@@ -93,7 +93,6 @@ class CompareBottom extends ViewModelWidget<LoanViewModel> {
         ),
         verticalSpaceTiny,
         _title("moneyPlazaExclusive"),
-    
         Container(
           color: Colors.white,
           height: 80,
@@ -117,7 +116,6 @@ class CompareBottom extends ViewModelWidget<LoanViewModel> {
         ),
         verticalSpaceTiny,
         _title("repaymentType"),
-     
         detailData("termLoan"),
         verticalSpaceTiny,
         _title("moneyRepaymentDetails"),
@@ -139,9 +137,8 @@ class CompareBottom extends ViewModelWidget<LoanViewModel> {
                     width: width * 0.48,
                     child: Center(
                       child: CustomText(
-                          text: compareData[index]
-                              .totalPaymentAmount
-                              .toString()),
+                          text:
+                              compareData[index].totalPaymentAmount.toString()),
                     ),
                   );
                 }),
@@ -167,8 +164,7 @@ class CompareBottom extends ViewModelWidget<LoanViewModel> {
                         width: width * 0.48,
                         child: Center(
                           child: CustomText(
-                              text:
-                                  compareData[index].interestRate.toString()),
+                              text: compareData[index].interestRate.toString()),
                         ),
                       );
                     }),

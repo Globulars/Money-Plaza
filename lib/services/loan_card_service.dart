@@ -25,6 +25,7 @@ class LoanCardService {
       return {"message": e};
     }
   }
+
   /////////////////////////////////////Card List////////////////////////////////
   loanMatch(body) async {
     try {
@@ -108,5 +109,4 @@ class LoanCardService {
       return {"message": e};
     }
   }
-  
 }
