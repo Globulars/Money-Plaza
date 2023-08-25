@@ -101,6 +101,17 @@ class ApiUrl {
   final Uri getLoanTags = Uri.parse("$baseUrl/tag/getTagsByType?type=loan");
   final Uri scheduleByPLoanForRepayment =
       Uri.parse("$baseUrl/repayment/scheduleByPLoanForRepayment");
+  final Uri personeLoneSurveyform = Uri.parse(
+      "$baseUrl/surveyform/survey/submit/76d99393-0023-4113-ad92-3068197adc14");
+  final Uri ownerLoneSurveyform = Uri.parse(
+      "$baseUrl/surveyform/survey/submit/c9d7ef93-4ea3-4df3-8aab-373aa633046e");
+  final Uri ownerLoneSurveyform = Uri.parse(
+      "$baseUrl/surveyform/survey/submit/c9d7ef93-4ea3-4df3-8aab-373aa633046e");
+  final Uri incomeProofTypes = Uri.parse("$baseUrl/option/incomeProofTypes");
+  final Uri employmentTypes = Uri.parse("$baseUrl/option/employmentTypes");
+
+  // dropdown
+  // https://admin.moneyplaza.com.hk/option/loanCalculateMethods
 
   // final Uri loanMatch = Uri.parse("$baseUrl/loan/match");
   // final Uri loanPreview = Uri.parse("$baseUrl/loan/preview/");
