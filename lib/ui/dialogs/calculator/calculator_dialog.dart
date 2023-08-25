@@ -67,7 +67,7 @@ class CalculatorDialog extends StackedView<LoanViewModel> {
                         ),
                         CustomTextField(
                           hintText: 'hk',
-                          controller: viewModel.calculatorLoanAmountCtrl,
+                          controller: viewModel.loanAmountCtrl,
                           height: 40,
                         ),
                         verticalSpaceTiny,
@@ -188,7 +188,7 @@ class CalculatorDialog extends StackedView<LoanViewModel> {
                         ),
                         CustomTextField(
                           hintText: 'hk',
-                          controller: viewModel.calculatorMonthlyPaymentCtrl,
+                          controller: viewModel.monthlyPaymentCtrl,
                           height: 40,
                         ),
                         verticalSpaceTiny,
@@ -198,7 +198,7 @@ class CalculatorDialog extends StackedView<LoanViewModel> {
                         ),
                         CustomTextField(
                           hintText: '%',
-                          controller: viewModel.calculatorInterestCtrl,
+                          controller: viewModel.interestCtrl,
                           height: 40,
                         ),
                         verticalSpaceSmall,
@@ -220,6 +220,8 @@ class CalculatorDialog extends StackedView<LoanViewModel> {
                                 height: 40,
                                 width: 120,
                                 onPress: () {
+
+                                  viewModel.back();
                                   viewModel.navigateToCalculatorResult();
                                 }),
                           ],

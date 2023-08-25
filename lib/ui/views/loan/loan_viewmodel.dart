@@ -27,12 +27,10 @@ class LoanViewModel extends BaseViewModel {
   var calculation = 0;
   var calculationitem = 0;
 
-  TextEditingController calculatorLoanAmountCtrl =
-      TextEditingController(text: "50000");
-  TextEditingController calculatorMonthlyPaymentCtrl =
+  TextEditingController loanAmountCtrl = TextEditingController(text: "50000");
+  TextEditingController monthlyPaymentCtrl =
       TextEditingController(text: "10000");
-  TextEditingController calculatorInterestCtrl =
-      TextEditingController(text: "4");
+  TextEditingController interestCtrl = TextEditingController(text: "4");
 
   setRepayment(value) {
     repayment = value;
@@ -47,10 +45,9 @@ class LoanViewModel extends BaseViewModel {
   calculatorResetAll() {
     repayment = 0;
     calculation = 0;
-    calculatorLoanAmountCtrl.text = "50000";
-    calculatorMonthlyPaymentCtrl.text = "10000";
-    calculatorInterestCtrl.text = "4";
-
+    loanAmountCtrl.text = "50000";
+    monthlyPaymentCtrl.text = "10000";
+    interestCtrl.text = "4";
     notifyListeners();
   }
 
@@ -59,13 +56,11 @@ class LoanViewModel extends BaseViewModel {
     if (isValid) {
       if (_navigationService.currentRoute == "/calculator-result-view") {
         back();
-        back();
-        getLoanTags();
       }
       _navigationService.navigateToCalculatorResultView(
-        calculatorLoanAmount: calculatorLoanAmountCtrl.text,
-        calculatorMonthlyPayment: calculatorMonthlyPaymentCtrl.text,
-        calculatorInterest: calculatorInterestCtrl.text,
+        loanAmount: loanAmountCtrl.text,
+        monthlyPayment: monthlyPaymentCtrl.text,
+        interest: interestCtrl.text,
       );
 
       notifyListeners();
@@ -180,11 +175,11 @@ class LoanViewModel extends BaseViewModel {
       "order": "descending",
       "sort": "ordering",
       "tenor": 12,
-      "amount": calculatorLoanAmountCtrl.text,
+      "amount": loanAmountCtrl.text,
       "features": features,
       "search": "",
-      "interestRate": calculatorInterestCtrl.text,
-      "monthlyRepayment": calculatorMonthlyPaymentCtrl.text
+      "interestRate": interestCtrl.text,
+      "monthlyRepayment": monthlyPaymentCtrl.text
     };
     log(features.toString());
     var data = await _loanCardService.loanlist(body);
@@ -213,3 +208,15 @@ class LoanViewModel extends BaseViewModel {
     }
   }
 }
+
+
+// https://admin.moneyplaza.com.hk/surveyform/survey/submit/76d99393-0023-4113-ad92-3068197adc14
+// Request Method:
+// POST
+// Status Code:
+// 200
+// Remote Address:
+// 16.162.30.173:443
+
+
+// [{"fieldName":"amount","fieldTitle":"借貸金額","fieldValue":"435","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"tenor","fieldTitle":"還款期","fieldValue":"12","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"reason","fieldTitle":"借貸原因","fieldValue":"債務整合","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"hasProperty","fieldTitle":"是否物業持有人","fieldValue":"沒有","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"income","fieldTitle":"每月收入","fieldValue":"3443","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"salaryPayment","fieldTitle":"出糧方式","fieldValue":"銀行轉賬","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"employmentType","fieldTitle":"收入類型","fieldValue":"全職","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"incomeProofType","fieldTitle":"收入證明","fieldValue":"強積金","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"hasLoan","fieldTitle":"現有未還清的貸款","fieldValue":"沒有","fieldType":"text","fieldOrder":"","fieldAttrs":[]},{"fieldName":"remainingLoans","fieldTitle":"貸款數量","fieldValue":"0","fieldType":"totalLoanCount","fieldOrder":"","fieldAttrs":[]},{"fieldName":"remainingLoanAmount","fieldTitle":"未償還貸款總額","fieldValue":"0","fieldType":"remainingLoanAmount","fieldOrder":"","fieldAttrs":[]},{"fieldName":"monthlyRepayment","fieldTitle":"每月還款","fieldValue":"0","fieldType":"monthlyRepayment","fieldOrder":"","fieldAttrs":[]},{"fieldName":"fullname","fieldTitle":"英文全名","fieldValue":"Mudassir Mukhtar","fieldType":"name","fieldOrder":"","fieldAttrs":[]},{"fieldName":"mobile","fieldTitle":"聯絡電話","fieldValue":"+85246303385","fieldType":"mobile","fieldOrder":"","fieldAttrs":["unique"]},{"fieldName":"email","fieldTitle":"E-mail","fieldValue":"mudassirmukhtar4@gmail.com","fieldType":"email","fieldOrder":"","fieldAttrs":[]},{"fieldName":"identity","fieldTitle":"身份證號碼","fieldValue":"A331230-8","fieldType":"hkid","fieldOrder":"","fieldAttrs":["unique"]},{"fieldName":"bornInHK","fieldTitle":"是否在香港出生?","fieldValue":"yes","fieldType":"text","fieldOrder":"","fieldAttrs":[]}]
