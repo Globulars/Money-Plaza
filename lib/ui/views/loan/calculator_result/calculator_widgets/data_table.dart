@@ -3,15 +3,15 @@ import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:stacked/stacked.dart';
 
 import '../../../../widgets/common/icon_box_btn/text.dart';
-import '../calculator_result_viewmodel.dart';
+import '../../loan_viewmodel.dart';
 
-class CalDataTable extends ViewModelWidget<CalculatorResultViewModel> {
+class CalDataTable extends ViewModelWidget<LoanViewModel> {
   const CalDataTable({Key? key}) : super(key: key);
 
   @override
   Widget build(
     BuildContext context,
-    CalculatorResultViewModel viewModel,
+    LoanViewModel viewModel,
   ) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10),

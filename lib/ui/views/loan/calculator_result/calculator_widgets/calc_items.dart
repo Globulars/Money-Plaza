@@ -8,15 +8,15 @@ import 'package:stacked/stacked.dart';
 import '../../../../widgets/common/custom_text_field/custom_text_field.dart';
 import '../../../../widgets/common/icon_box_btn/return_button.dart';
 import '../../../../widgets/common/icon_box_btn/submit_button.dart';
-import '../calculator_result_viewmodel.dart';
+import '../../loan_viewmodel.dart';
 
-class CalculatorItems extends ViewModelWidget<CalculatorResultViewModel> {
+class CalculatorItems extends ViewModelWidget<LoanViewModel> {
   const CalculatorItems({Key? key}) : super(key: key);
 
   @override
   Widget build(
     BuildContext context,
-    CalculatorResultViewModel viewModel,
+    LoanViewModel viewModel,
   ) {
     final width = MediaQuery.of(context).size.width;
     return Padding(

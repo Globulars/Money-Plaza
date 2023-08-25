@@ -4,16 +4,16 @@ import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
 import 'package:stacked/stacked.dart';
 import '../../../../common/app_colors.dart';
+import '../../loan_viewmodel.dart';
 import '../../widgets/filter_bottom_bar.dart';
-import '../calculator_result_viewmodel.dart';
 
-class BtnListView extends ViewModelWidget<CalculatorResultViewModel> {
+class BtnListView extends ViewModelWidget<LoanViewModel> {
   const BtnListView({Key? key}) : super(key: key);
 
   @override
   Widget build(
     BuildContext context,
-    CalculatorResultViewModel viewModel,
+    LoanViewModel viewModel,
   ) {
     final width = MediaQuery.of(context).size.width;
     return Column(

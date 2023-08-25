@@ -54,7 +54,7 @@ class CalculatorDialog extends StackedView<LoanViewModel> {
             Expanded(
               child: SingleChildScrollView(
                 child: Form(
-                    key: viewModel.formKey,
+                  key: viewModel.formKey,
                   child: Padding(
                     padding:
                         const EdgeInsets.symmetric(horizontal: 6, vertical: 6),
@@ -67,7 +67,7 @@ class CalculatorDialog extends StackedView<LoanViewModel> {
                         ),
                         CustomTextField(
                           hintText: 'hk',
-                        controller: viewModel.calculatorLoanAmountCtrl,
+                          controller: viewModel.calculatorLoanAmountCtrl,
                           height: 40,
                         ),
                         verticalSpaceTiny,
@@ -216,14 +216,12 @@ class CalculatorDialog extends StackedView<LoanViewModel> {
                               onPress: viewModel.calculatorResetAll,
                             ),
                             SubmitButton(
-                              text: 'calculateNow',
-                              height: 40,
-                              width: 120,
-                              onPress:(){
-                               viewModel.back();
-                            viewModel.back();
-                               viewModel.navigateToCalculatorResult();}
-                            ),
+                                text: 'calculateNow',
+                                height: 40,
+                                width: 120,
+                                onPress: () {
+                                  viewModel.navigateToCalculatorResult();
+                                }),
                           ],
                         )
                       ],
@@ -239,6 +237,5 @@ class CalculatorDialog extends StackedView<LoanViewModel> {
   }
 
   @override
-  LoanViewModel viewModelBuilder(BuildContext context) =>
-      LoanViewModel();
+  LoanViewModel viewModelBuilder(BuildContext context) => LoanViewModel();
 }

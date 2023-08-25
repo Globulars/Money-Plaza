@@ -25,12 +25,14 @@ class LoanViewModel extends BaseViewModel {
   /////////////////// calculator dialog data//////////////////
   var repayment = 0;
   var calculation = 0;
-  
+  var calculationitem = 0;
+
   TextEditingController calculatorLoanAmountCtrl =
       TextEditingController(text: "50000");
   TextEditingController calculatorMonthlyPaymentCtrl =
       TextEditingController(text: "10000");
-  TextEditingController calculatorInterestCtrl = TextEditingController(text: "4");
+  TextEditingController calculatorInterestCtrl =
+      TextEditingController(text: "4");
 
   setRepayment(value) {
     repayment = value;
@@ -53,23 +55,27 @@ class LoanViewModel extends BaseViewModel {
   }
 
   navigateToCalculatorResult() {
-     var isValid = formKey.currentState!.validate();
+    var isValid = formKey.currentState!.validate();
     if (isValid) {
-    _navigationService.navigateToCalculatorResultView(
-      calculatorLoanAmount: calculatorLoanAmountCtrl.text,
-      calculatorMonthlyPayment: calculatorMonthlyPaymentCtrl.text,
-      calculatorInterest : calculatorInterestCtrl.text,
-     
-      
-    );
-   }
+      if (_navigationService.currentRoute == "/calculator-result-view") {
+        back();
+        back();
+        getLoanTags();
+      }
+      _navigationService.navigateToCalculatorResultView(
+        calculatorLoanAmount: calculatorLoanAmountCtrl.text,
+        calculatorMonthlyPayment: calculatorMonthlyPaymentCtrl.text,
+        calculatorInterest: calculatorInterestCtrl.text,
+      );
+
+      notifyListeners();
+    }
   }
+
   back() {
     _navigationService.back();
   }
 
-
-  
   /// /////////
   navigateToPersonalloan() {
     _navigationService.navigateToPersonalloanView();
@@ -105,6 +111,11 @@ class LoanViewModel extends BaseViewModel {
       loanTags.selected = true;
     }
     loanListData();
+    notifyListeners();
+  }
+
+  setCalculationItems(value) {
+    calculationitem = value;
     notifyListeners();
   }
 
@@ -172,7 +183,7 @@ class LoanViewModel extends BaseViewModel {
       "amount": calculatorLoanAmountCtrl.text,
       "features": features,
       "search": "",
-      "interestRate": calculatorInterestCtrl.text, 
+      "interestRate": calculatorInterestCtrl.text,
       "monthlyRepayment": calculatorMonthlyPaymentCtrl.text
     };
     log(features.toString());
