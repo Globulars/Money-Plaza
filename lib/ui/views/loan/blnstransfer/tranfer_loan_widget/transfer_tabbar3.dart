@@ -60,9 +60,10 @@ class TransferTabBar3 extends ViewModelWidget<BlnstransferViewModel> {
           ),
           verticalSpaceSmall,
           verticalSpaceSmall,
+          viewModel.outStanding == 1?
           CustomTextField(
-            titleText: 'numberOfLoans',
-          ),
+            titleText: 'companyName',
+          ):Container(),
           verticalSpaceSmall,
           CustomTextField(
             hintText: 'hk',
