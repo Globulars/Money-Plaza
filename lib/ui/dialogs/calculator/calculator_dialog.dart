@@ -10,7 +10,6 @@ import '../../widgets/common/icon_box_btn/return_button.dart';
 import '../../widgets/common/icon_box_btn/sub_bar.dart';
 import '../../widgets/common/icon_box_btn/submit_button.dart';
 import '../../widgets/common/icon_box_btn/text.dart';
-import 'calculator_dialog_model.dart';
 
 class CalculatorDialog extends StackedView<LoanViewModel> {
   final DialogRequest request;
@@ -66,6 +65,7 @@ class CalculatorDialog extends StackedView<LoanViewModel> {
                       ),
                       CustomTextField(
                         hintText: 'hk',
+                      controller: viewModel.calculatorLoanAmount,
                         height: 40,
                       ),
                       verticalSpaceTiny,
@@ -186,6 +186,7 @@ class CalculatorDialog extends StackedView<LoanViewModel> {
                       ),
                       CustomTextField(
                         hintText: 'hk',
+                        controller: viewModel.calculatorMonthlyPayment,
                         height: 40,
                       ),
                       verticalSpaceTiny,
@@ -195,6 +196,7 @@ class CalculatorDialog extends StackedView<LoanViewModel> {
                       ),
                       CustomTextField(
                         hintText: '%',
+                        controller: viewModel.calculatorInterest,
                         height: 40,
                       ),
                       verticalSpaceSmall,

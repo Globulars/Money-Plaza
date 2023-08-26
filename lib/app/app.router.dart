@@ -279,8 +279,12 @@ class StackedRouter extends _i1.RouterBase {
       );
     },
     _i5.CalculatorResultView: (data) {
+      final args = data.getArgs<CalculatorResultViewArguments>(
+        orElse: () => const CalculatorResultViewArguments(),
+      );
       return _i29.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i5.CalculatorResultView(),
+        builder: (context) =>
+            _i5.CalculatorResultView(key: args.key, loanCard: args.loanCard),
         settings: data,
       );
     },
@@ -470,6 +474,33 @@ class LoanViewArguments {
 
   @override
   bool operator ==(covariant LoanViewArguments other) {
+    if (identical(this, other)) return true;
+    return other.key == key && other.loanCard == loanCard;
+  }
+
+  @override
+  int get hashCode {
+    return key.hashCode ^ loanCard.hashCode;
+  }
+}
+
+class CalculatorResultViewArguments {
+  const CalculatorResultViewArguments({
+    this.key,
+    this.loanCard,
+  });
+
+  final _i29.Key? key;
+
+  final List<_i30.LoanCard>? loanCard;
+
+  @override
+  String toString() {
+    return '{"key": "$key", "loanCard": "$loanCard"}';
+  }
+
+  @override
+  bool operator ==(covariant CalculatorResultViewArguments other) {
     if (identical(this, other)) return true;
     return other.key == key && other.loanCard == loanCard;
   }
@@ -764,14 +795,17 @@ extension NavigatorStateExtension on _i31.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> navigateToCalculatorResultView([
+  Future<dynamic> navigateToCalculatorResultView({
+    _i29.Key? key,
+    List<_i30.LoanCard>? loanCard,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return navigateTo<dynamic>(Routes.calculatorResultView,
+        arguments: CalculatorResultViewArguments(key: key, loanCard: loanCard),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -1190,14 +1224,17 @@ extension NavigatorStateExtension on _i31.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> replaceWithCalculatorResultView([
+  Future<dynamic> replaceWithCalculatorResultView({
+    _i29.Key? key,
+    List<_i30.LoanCard>? loanCard,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return replaceWith<dynamic>(Routes.calculatorResultView,
+        arguments: CalculatorResultViewArguments(key: key, loanCard: loanCard),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
