@@ -10,16 +10,25 @@ class BlnstransferViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
   TextEditingController borrowingAmountCtrl =
       TextEditingController(text: "50000");
-      TextEditingController monthlyIncomeCtrl =
+  TextEditingController monthlyIncomeCtrl =
       TextEditingController(text: "40000");
+  TextEditingController companyNameCtrl =
+      TextEditingController(text: "Gloubulars");
+  TextEditingController totalOutstandingLoanCtrl =
+      TextEditingController(text: "10000");
+  TextEditingController tenorCtrl = TextEditingController(text: "4");
+  TextEditingController remainigTenorCtrl = TextEditingController(text: "22");
+  TextEditingController monthlyRepaymentCtrl =
+      TextEditingController(text: "8000");
 
-      String loanReason = "Business Expansion";
+  String loanReason = "Business Expansion";
   String propertyOwner = "Have";
   String salaryPayment = "Bank transfer";
   String typeOfIncome = "Full Time";
   String proofOfIncome = "Bank Statement";
+  String repaymentType = "Personal Loans";
 
-    final salaryPaymentList = ["Cash", "Bank transfer", "Cheque"];
+  final salaryPaymentList = ["Cash", "Bank transfer", "Cheque"];
   setSalaryPayment(value) {
     salaryPayment = value;
     notifyListeners();
@@ -61,6 +70,19 @@ class BlnstransferViewModel extends BaseViewModel {
   ];
   setPropertyOwner(value) {
     propertyOwner = value;
+    notifyListeners();
+  }
+
+  final repaymentTypeList = [
+    "Personal Loan",
+    "Property Owner's Loan",
+    "Commerical Loans",
+    "Revolving Loans",
+    "Credit Card/Min Pay",
+    "Prepaid Interest Loan"
+  ];
+  setRepaymentType(value) {
+    repaymentType = value;
     notifyListeners();
   }
 
