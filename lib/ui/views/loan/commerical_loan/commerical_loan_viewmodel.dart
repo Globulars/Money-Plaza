@@ -1,4 +1,3 @@
-// ignore_for_file: avoid_print
 import 'package:flutter/material.dart';
 import 'package:money_plaza/app/app.router.dart';
 import 'package:stacked/stacked.dart';
@@ -116,7 +115,7 @@ class CommericalLoanViewModel extends BaseViewModel {
   indexing(int index) {
     currentIndex = index;
     notifyListeners();
-    print(currentIndex);
+    
   }
 
   setInitialIndex() {
