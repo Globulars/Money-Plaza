@@ -14,6 +14,7 @@ class LoanViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
   final _loanCardService = locator<LoanCardService>();
   final _dialogService = locator<DialogService>();
+  var formKey = GlobalKey<FormState>();
   List<LoanCard> loanCardList = [];
   List<LoanTags> loanTagsList = [];
   List<String> features = [];
@@ -24,11 +25,12 @@ class LoanViewModel extends BaseViewModel {
   /////////////////// calculator dialog data//////////////////
   var repayment = 0;
   var calculation = 0;
-  TextEditingController calculatorLoanAmount =
+  
+  TextEditingController calculatorLoanAmountCtrl =
       TextEditingController(text: "50000");
-  TextEditingController calculatorMonthlyPayment =
+  TextEditingController calculatorMonthlyPaymentCtrl =
       TextEditingController(text: "10000");
-  TextEditingController calculatorInterest = TextEditingController(text: "4");
+  TextEditingController calculatorInterestCtrl = TextEditingController(text: "4");
 
   setRepayment(value) {
     repayment = value;
@@ -40,20 +42,29 @@ class LoanViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  navigateToCalculatorResult() {
-    _navigationService.navigateToCalculatorResultView();
-  }
-
   calculatorResetAll() {
     repayment = 0;
     calculation = 0;
-    calculatorLoanAmount.text = "50000";
-    calculatorMonthlyPayment.text = "10000";
-    calculatorInterest.text = "4";
+    calculatorLoanAmountCtrl.text = "50000";
+    calculatorMonthlyPaymentCtrl.text = "10000";
+    calculatorInterestCtrl.text = "4";
 
     notifyListeners();
   }
 
+  navigateToCalculatorResult() {
+     var isValid = formKey.currentState!.validate();
+    if (isValid) {
+    _navigationService.navigateToCalculatorResultView(
+      // calculatorLoanAmount: calculatorLoanAmountCtrl.text,
+      // calculatorMonthlyPayment: calculatorMonthlyPaymentCtrl.text,
+      // calculatorInterest : calculatorInterestCtrl.text,
+      // repayment=1?
+    );
+   }
+  }
+
+  
   /// /////////
   navigateToPersonalloan() {
     _navigationService.navigateToPersonalloanView();

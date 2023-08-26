@@ -9,6 +9,7 @@ import '../../../widgets/common/background_image.dart';
 import '../../../widgets/common/icon_box_btn/return_button.dart';
 import '../../../widgets/common/icon_box_btn/text.dart';
 import '../loan_viewmodel.dart';
+import '../widgets/filter_bottom_bar.dart';
 import '../widgets/loan_tags_list_view.dart';
 import '../widgets/result_card.dart';
 import 'calculator_widgets/btn_listview.dart';
@@ -19,19 +20,20 @@ import 'calculator_widgets/data_table.dart';
 class CalculatorResultView extends StackedView<LoanViewModel> {
   final List<LoanCard>? loanCard;
   final LoanViewModel viewModel = LoanViewModel();
-   CalculatorResultView({Key? key, this.loanCard}) : super(key: key);
- @override
+  CalculatorResultView({Key? key, this.loanCard}) : super(key: key);
+  @override
   void onViewModelReady(LoanViewModel viewModel) {
     viewModel.getLoanTags();
     super.onViewModelReady(viewModel);
   }
+
   @override
   Widget builder(
     BuildContext context,
     LoanViewModel viewModel,
     Widget? child,
   ) {
-     final height = MediaQuery.of(context).size.height;
+    final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     return Stack(
       children: [
@@ -41,6 +43,7 @@ class CalculatorResultView extends StackedView<LoanViewModel> {
           appBar: appBar(context),
           body: Column(
             children: [
+              const FilterBottomBar(),
               const LoanTagsListView(),
               Expanded(
                 child: SingleChildScrollView(
@@ -64,32 +67,26 @@ class CalculatorResultView extends StackedView<LoanViewModel> {
                           fontSize: 10,
                         ),
                       ),
-                       viewModel.loanCardList.isEmpty
-        ? Column(
-            children: [
-              SizedBox(
-                height: height * 0.2,
-                width: width * 1,
-              ),
-              const CircularProgressIndicator(),
-            ],
-          )
-        : ListView.builder(
-            itemCount: viewModel.loanCardList.length,
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            itemBuilder: (BuildContext context, int index) {
-              return ResultCard(loanData: viewModel.loanCardList[index]);
-            },
-          ),
-                      // ListView.builder(
-                      //   shrinkWrap: true,
-                      //   itemCount: 2,
-                      //   physics: const NeverScrollableScrollPhysics(),
-                      //   itemBuilder: (BuildContext context, int index) {
-                      //     return ResultCard(loanData: LoanCard());
-                      //   },
-                      // ),
+                      viewModel.loanCardList.isEmpty
+                          ? Column(
+                              children: [
+                                SizedBox(
+                                  height: height * 0.2,
+                                  width: width * 1,
+                                ),
+                                const CircularProgressIndicator(),
+                              ],
+                            )
+                          : ListView.builder(
+                              itemCount: viewModel.loanCardList.length,
+                              shrinkWrap: true,
+                              physics: const NeverScrollableScrollPhysics(),
+                              itemBuilder: (BuildContext context, int index) {
+                                return ResultCard(
+                                    loanData: viewModel.loanCardList[index]);
+                              },
+                            ),
+                   
                       verticalSpaceTiny,
                       // const CalculatorItems(),
                       // const CalDataTable(),
