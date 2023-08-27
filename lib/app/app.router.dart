@@ -25,7 +25,7 @@ import 'package:money_plaza/ui/views/loan/commerical_loan/commerical_loan_view.d
     as _i16;
 import 'package:money_plaza/ui/views/loan/commerical_loan/commerical_result/commerical_result_view.dart'
     as _i17;
-import 'package:money_plaza/ui/views/loan/del/applyconfirm_view.dart' as _i7;
+import 'package:money_plaza/ui/views/loan/apply_confirm/applyconfirm_view.dart' as _i7;
 import 'package:money_plaza/ui/views/loan/loan_view.dart' as _i4;
 import 'package:money_plaza/ui/views/loan/loancompare/loancompare_view.dart'
     as _i6;

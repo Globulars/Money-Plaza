@@ -5,7 +5,7 @@ import 'package:money_plaza/ui/views/landing/landing_view.dart';
 import 'package:money_plaza/ui/views/loan/loan_view.dart';
 import 'package:money_plaza/ui/views/loan/calculator_result/calculator_result_view.dart';
 import 'package:money_plaza/ui/views/loan/loancompare/loancompare_view.dart';
-import 'package:money_plaza/ui/views/loan/del/applyconfirm_view.dart';
+import 'package:money_plaza/ui/views/loan/apply_confirm/applyconfirm_view.dart';
 import 'package:money_plaza/ui/views/loan/personal_loan/personalloan_view.dart';
 import 'package:money_plaza/ui/views/loan/personal_loan/ploanreslut/ploanreslut_view.dart';
 import 'package:money_plaza/ui/views/loan/ownerloan/ownerloan_view.dart';

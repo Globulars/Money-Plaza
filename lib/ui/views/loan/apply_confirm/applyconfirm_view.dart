@@ -56,17 +56,22 @@ class ApplyconfirmView extends StackedView<ApplyconfirmViewModel> {
                         verticalSpaceTiny,
                         CustomTextField(
                           titleText: 'fullName',
+                          controller: viewModel.fullNameCtrl,
                         ),
                         verticalSpaceTiny,
                         CustomTextField(
+                          controller: viewModel.phoneNumberCtrl,
+                          textInputType: TextInputType.number,
                           titleText: 'phoneNumber',
                         ),
                         verticalSpaceTiny,
                         CustomTextField(
+                          controller: viewModel.emailCtrl,
                           titleText: 'email',
                         ),
                         verticalSpaceTiny,
                         CustomTextField(
+                          controller: viewModel.hkidCtrl,
                           titleText: 'hkid',
                         ),
                       ],
