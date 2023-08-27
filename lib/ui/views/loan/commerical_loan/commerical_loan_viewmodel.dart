@@ -19,6 +19,11 @@ class CommericalLoanViewModel extends BaseViewModel {
       TextEditingController(text: "90000");
       TextEditingController operationYearCtrl =
       TextEditingController(text: "10");
+      TextEditingController numOfLoansCtrl = TextEditingController(text: "");
+  TextEditingController totalOutstandingLoanCtrl =
+      TextEditingController(text: "5000");
+  TextEditingController monthlyRepaymentCtrl =
+      TextEditingController(text: "2000");
 
 
     String loanReason = "Business Expansion";
@@ -104,7 +109,7 @@ class CommericalLoanViewModel extends BaseViewModel {
 
 
   var loanTenors = 6;
-  var outStanding = 10;
+  var outStanding = 0;
   var initialIndex = 0;
   int currentIndex = 0;
 

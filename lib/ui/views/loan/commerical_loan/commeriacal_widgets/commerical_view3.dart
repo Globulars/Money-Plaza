@@ -59,20 +59,26 @@ class CommTabBar3 extends ViewModelWidget<CommericalLoanViewModel> {
             ],
           ),
           verticalSpaceSmall,
+             viewModel.outStanding == 1?
           CustomTextField(
             titleText: 'numberOfLoans',
-          ),
+            controller: viewModel.numOfLoansCtrl
+          ):Container(),
           verticalSpaceSmall,
+             viewModel.outStanding == 1?
           CustomTextField(
+            controller: viewModel.totalOutstandingLoanCtrl,
             hintText: 'hk',
             titleText: 'totalOutstandingLoan',
-          ),
+          ):Container(),
           verticalSpaceSmall,
-          DropdownTextfield(
-            onChanged: (String) {},
-            options: [],
-            titleText: 'monthlyRepayment',
-          ),
+           viewModel.outStanding == 1
+              ? CustomTextField(
+                  controller: viewModel.monthlyRepaymentCtrl,
+                  hintText: 'hk',
+                  titleText: 'monthlyRepayment',
+                )
+              : Container(),
         ],
       ),
     );
