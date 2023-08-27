@@ -5,7 +5,6 @@ import 'package:stacked/stacked.dart';
 import '../../../../common/app_colors.dart';
 import '../../../../common/ui_helpers.dart';
 import '../../../../widgets/common/custom_text_field/custom_text_field.dart';
-import '../../../../widgets/common/dropdown_textfield/dropdown_textfield.dart';
 import '../../../../widgets/common/icon_box_btn/return_button.dart';
 import '../../../../widgets/common/icon_box_btn/text.dart';
 import '../ownerloan_viewmodel.dart';
@@ -62,16 +61,19 @@ class OwnerTabBar3 extends ViewModelWidget<OwnerloanViewModel> {
           CustomTextField(
             hintText: 'hk',
             titleText: 'propertyValuation',
+            controller: viewModel.propertyValuationCtrl,
           ),
           verticalSpaceSmall,
           CustomTextField(
             hintText: '0%',
             titleText: 'currentMortgageRatio',
+            controller: viewModel.currentMortgageRatioCtrl,
           ),
           verticalSpaceSmall,
           viewModel.outStanding == 1
               ? CustomTextField(
                   titleText: 'numberOfLoans',
+                  controller: viewModel.numOfLoansCtrl,
                 )
               : Container(),
           verticalSpaceSmall,
@@ -79,14 +81,14 @@ class OwnerTabBar3 extends ViewModelWidget<OwnerloanViewModel> {
               ? CustomTextField(
                   hintText: 'hk',
                   titleText: 'totalOutstandingLoan',
+                  controller: viewModel.totalOutstandingLoanCtrl,
                 )
               : Container(),
           verticalSpaceSmall,
           viewModel.outStanding == 1
-              ? DropdownTextfield(
-                  onChanged: (String) {},
-                  options: [],
+              ? CustomTextField(
                   titleText: 'monthlyRepayment',
+                  controller: viewModel.monthlyRepaymentCtrl,
                 )
               : Container(),
           verticalSpaceSmall,

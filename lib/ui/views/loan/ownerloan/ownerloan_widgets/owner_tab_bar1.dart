@@ -145,8 +145,9 @@ class OwnerTabBar1 extends ViewModelWidget<OwnerloanViewModel> {
           ),
           verticalSpaceSmall,
           DropdownTextfield(
-            onChanged: (String) {},
-            options: [],
+            onChanged: viewModel.setLoanReasonr,
+            options: viewModel.loanReasonList,
+            value: viewModel.loanReason,
             titleText: 'loanReason',
           ),
         ],
