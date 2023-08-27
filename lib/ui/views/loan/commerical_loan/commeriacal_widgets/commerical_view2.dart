@@ -23,16 +23,35 @@ class CommTabBar2 extends ViewModelWidget<CommericalLoanViewModel> {
           CustomTextField(
             hintText: 'hk',
             titleText: 'annualTurnover',
+            controller: viewModel.annualTurnoverCtrl,
+          ),
+            verticalSpaceSmall,
+          CustomTextField(
+            controller: viewModel.digitalPaymentCtrl,
+            titleText: 'Average monthly Income by digital payment',
+          ),
+          verticalSpaceSmall,
+          DropdownTextfield(
+            onChanged: viewModel.setBusinessNature,
+            options: viewModel.businessNatureList,
+            value: viewModel.businessNature,
+            titleText: 'Business Nature',
           ),
           verticalSpaceSmall,
           DropdownTextfield(
             onChanged: (String) {},
             options: [],
-            titleText: 'industory',
+            titleText: 'POS system equipped',
           ),
           verticalSpaceSmall,
           CustomTextField(
+            controller: viewModel.companyNameCtrl,
             titleText: 'companyName',
+          ),
+           verticalSpaceSmall,
+          CustomTextField(
+            controller: viewModel.futureReceivableAmountCtrl,
+            titleText: 'Future receivable amount(if any)',
           ),
           verticalSpaceSmall,
           DropdownTextfield(
@@ -42,8 +61,10 @@ class CommTabBar2 extends ViewModelWidget<CommericalLoanViewModel> {
           ),
           verticalSpaceSmall,
           CustomTextField(
+            controller: viewModel.operationYearCtrl,
             titleText: 'operationYear',
           ),
+          verticalSpaceLarge
         ],
       ),
     );
