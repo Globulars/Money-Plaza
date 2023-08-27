@@ -39,8 +39,9 @@ class CommTabBar2 extends ViewModelWidget<CommericalLoanViewModel> {
           ),
           verticalSpaceSmall,
           DropdownTextfield(
-            onChanged: (String) {},
-            options: [],
+            onChanged:viewModel.setPosSystemEquipment,
+            options: viewModel.posSystemEquipmentrList,
+            value: viewModel.posSystemEquipment,
             titleText: 'POS system equipped',
           ),
           verticalSpaceSmall,
@@ -55,9 +56,10 @@ class CommTabBar2 extends ViewModelWidget<CommericalLoanViewModel> {
           ),
           verticalSpaceSmall,
           DropdownTextfield(
-            onChanged: (String) {},
-            options: [],
+            onChanged:viewModel.setAudioReport,
+            options: viewModel.audioReportList,
             titleText: 'audioReport',
+            value: viewModel.audioReport,
           ),
           verticalSpaceSmall,
           CustomTextField(

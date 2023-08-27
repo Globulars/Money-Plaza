@@ -24,6 +24,8 @@ class CommericalLoanViewModel extends BaseViewModel {
     String loanReason = "Business Expansion";
   String propertyOwner = "Have";
   String businessNature = "Business Service";
+  String posSystemEquipment = "Have";
+  String audioReport = "Have";
 
   final loanReasonList = [
     "Business Expansion",
@@ -79,6 +81,26 @@ class CommericalLoanViewModel extends BaseViewModel {
     businessNature = value;
     notifyListeners();
   }
+
+   final posSystemEquipmentrList = [
+    "Have",
+    "No",
+  ];
+  setPosSystemEquipment(value) {
+    posSystemEquipment = value;
+    notifyListeners();
+  }
+
+  
+   final audioReportList = [
+    "Have",
+    "No",
+  ];
+  setAudioReport(value) {
+    audioReport = value;
+    notifyListeners();
+  }
+
 
 
   var loanTenors = 6;
