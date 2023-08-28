@@ -1,3 +1,4 @@
+// ignore_for_file: must_be_immutable
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/return_button.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
@@ -10,17 +11,19 @@ import '../../../widgets/common/background_image.dart';
 import '../../../widgets/common/custom_text_field/custom_text_field.dart';
 import '../../../widgets/common/icon_box_btn/sub_bar.dart';
 import '../../../widgets/common/icon_box_btn/submit_button.dart';
-import 'ownerloan_viewmodel.dart';
+import 'commerical_loan_viewmodel.dart';
 
-class OwnerApplyConfirmView extends StackedView<OwnerloanViewModel> {
+class CommericalApplyConfirmView extends StackedView<CommericalLoanViewModel> {
   final Map<String, dynamic> machBody;
   final List survayBody;
-  const OwnerApplyConfirmView(this.machBody, this.survayBody, {super.key});
+  bool match;
+  CommericalApplyConfirmView(this.machBody, this.survayBody,
+      {super.key, this.match = false});
 
   @override
   Widget builder(
     BuildContext context,
-    OwnerloanViewModel viewModel,
+    CommericalLoanViewModel viewModel,
     Widget? child,
   ) {
     return Form(
@@ -85,23 +88,22 @@ class OwnerApplyConfirmView extends StackedView<OwnerloanViewModel> {
             Row(
               children: [
                 ReturnButton(
-                  imageLeft: myIcons.returnIcon1,
+                  imageLeft: match ? myIcons.returnIcon1 : myIcons.previous,
                   imgwidth: 12,
-                  text: 'return',
+                  text: match ? 'return' : 'previous',
                   height: 40,
                   width: 90,
                 ),
                 horizontalSpaceTiny,
                 SubmitButton(
-                  image: myIcons.done,
-                  imgwidth: 16,
-                  text: 'Done',
-                  height: 40,
-                  width: 80,
-                  onPress: () {
-                    viewModel.submitSurveyForm(machBody, survayBody);
-                  },
-                ),
+                    image: match ? myIcons.done : myIcons.match,
+                    imgwidth: 16,
+                    text: match ? 'Done' : 'match',
+                    height: 40,
+                    width: 80,
+                    onPress: () {
+                      viewModel.submitSurveyForm(machBody, survayBody);
+                    }),
               ],
             ),
           ),
@@ -111,8 +113,8 @@ class OwnerApplyConfirmView extends StackedView<OwnerloanViewModel> {
   }
 
   @override
-  OwnerloanViewModel viewModelBuilder(
+  CommericalLoanViewModel viewModelBuilder(
     BuildContext context,
   ) =>
-      OwnerloanViewModel();
+      CommericalLoanViewModel();
 }

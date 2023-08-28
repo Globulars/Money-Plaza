@@ -17,7 +17,7 @@ import 'package:money_plaza/ui/views/landing/settings/settings_view.dart'
 import 'package:money_plaza/ui/views/landing/startup/startup_view.dart' as _i2;
 import 'package:money_plaza/ui/views/loan/apply_confirm/applyconfirm_view.dart'
     as _i7;
-import 'package:money_plaza/ui/views/loan/blnstransfer/applyconfirm_view.dart'
+import 'package:money_plaza/ui/views/loan/blnstransfer/blnstransfer_applyconfirm_view.dart'
     as _i31;
 import 'package:money_plaza/ui/views/loan/blnstransfer/blnstransfer_view.dart'
     as _i14;
@@ -25,14 +25,14 @@ import 'package:money_plaza/ui/views/loan/blnstransfer/transfer_result/transfer_
     as _i15;
 import 'package:money_plaza/ui/views/loan/calculator_result/calculator_result_view.dart'
     as _i5;
-import 'package:money_plaza/ui/views/loan/commerical_loan/applyconfirm_view.dart'
+import 'package:money_plaza/ui/views/loan/commerical_loan/comm_applyconfirm_view.dart'
     as _i30;
 import 'package:money_plaza/ui/views/loan/commerical_loan/commerical_loan_view.dart'
     as _i16;
 import 'package:money_plaza/ui/views/loan/loan_view.dart' as _i4;
 import 'package:money_plaza/ui/views/loan/loancompare/loancompare_view.dart'
     as _i6;
-import 'package:money_plaza/ui/views/loan/ownerloan/applyconfirm_view.dart'
+import 'package:money_plaza/ui/views/loan/ownerloan/owner_applyconfirm_view.dart'
     as _i28;
 import 'package:money_plaza/ui/views/loan/ownerloan/ownerloan_view.dart'
     as _i10;

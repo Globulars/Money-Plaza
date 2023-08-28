@@ -1,6 +1,5 @@
 // ignore_for_file: must_be_immutable
 import 'package:flutter/material.dart';
-import 'package:money_plaza/ui/views/loan/blnstransfer/blnstransfer_viewmodel.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/return_button.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
 import 'package:stacked/stacked.dart';
@@ -12,18 +11,19 @@ import '../../../widgets/common/background_image.dart';
 import '../../../widgets/common/custom_text_field/custom_text_field.dart';
 import '../../../widgets/common/icon_box_btn/sub_bar.dart';
 import '../../../widgets/common/icon_box_btn/submit_button.dart';
+import 'ownerloan_viewmodel.dart';
 
-class BlnstransferloanApplyConfirmView
-    extends StackedView<BlnstransferViewModel> {
+class OwnerApplyConfirmView extends StackedView<OwnerloanViewModel> {
   final Map<String, dynamic> machBody;
   final List survayBody;
-  const BlnstransferloanApplyConfirmView(this.machBody, this.survayBody,
-      {super.key});
+  bool match;
+  OwnerApplyConfirmView(this.machBody, this.survayBody,
+      {super.key, this.match = false});
 
   @override
   Widget builder(
     BuildContext context,
-    BlnstransferViewModel viewModel,
+    OwnerloanViewModel viewModel,
     Widget? child,
   ) {
     return Form(
@@ -88,17 +88,17 @@ class BlnstransferloanApplyConfirmView
             Row(
               children: [
                 ReturnButton(
-                  imageLeft: myIcons.returnIcon1,
+                  imageLeft: match ? myIcons.returnIcon1 : myIcons.previous,
                   imgwidth: 12,
-                  text: 'return',
+                  text: match ? 'return' : 'previous',
                   height: 40,
                   width: 90,
                 ),
                 horizontalSpaceTiny,
                 SubmitButton(
-                  image: myIcons.done,
+                  image: match ? myIcons.done : myIcons.match,
                   imgwidth: 16,
-                  text: 'Done',
+                  text: match ? 'Done' : 'match',
                   height: 40,
                   width: 80,
                   onPress: () {
@@ -114,8 +114,8 @@ class BlnstransferloanApplyConfirmView
   }
 
   @override
-  BlnstransferViewModel viewModelBuilder(
+  OwnerloanViewModel viewModelBuilder(
     BuildContext context,
   ) =>
-      BlnstransferViewModel();
+      OwnerloanViewModel();
 }

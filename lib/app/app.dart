@@ -1,7 +1,7 @@
 import 'package:money_plaza/ui/views/landing/startup/startup_view.dart';
-import 'package:money_plaza/ui/views/loan/blnstransfer/applyconfirm_view.dart';
-import 'package:money_plaza/ui/views/loan/commerical_loan/applyconfirm_view.dart';
-import 'package:money_plaza/ui/views/loan/ownerloan/applyconfirm_view.dart';
+import 'package:money_plaza/ui/views/loan/blnstransfer/blnstransfer_applyconfirm_view.dart';
+import 'package:money_plaza/ui/views/loan/commerical_loan/comm_applyconfirm_view.dart';
+import 'package:money_plaza/ui/views/loan/ownerloan/owner_applyconfirm_view.dart';
 import 'package:money_plaza/ui/views/survey_form/survey_form_view.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
