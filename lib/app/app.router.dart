@@ -490,8 +490,10 @@ class StackedRouter extends _i1.RouterBase {
       );
     },
     _i29.OwnerApplyConfirmView: (data) {
+      final args = data.getArgs<OwnerApplyConfirmViewArguments>(nullOk: false);
       return _i33.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i29.OwnerApplyConfirmView(),
+        builder: (context) =>
+            _i29.OwnerApplyConfirmView(args.body, key: args.key),
         settings: data,
       );
     },
@@ -854,6 +856,33 @@ class CreditResultViewArguments {
         annualIncome.hashCode ^
         financialInstitutesList.hashCode ^
         key.hashCode;
+  }
+}
+
+class OwnerApplyConfirmViewArguments {
+  const OwnerApplyConfirmViewArguments({
+    required this.body,
+    this.key,
+  });
+
+  final Map<String, dynamic> body;
+
+  final _i33.Key? key;
+
+  @override
+  String toString() {
+    return '{"body": "$body", "key": "$key"}';
+  }
+
+  @override
+  bool operator ==(covariant OwnerApplyConfirmViewArguments other) {
+    if (identical(this, other)) return true;
+    return other.body == body && other.key == key;
+  }
+
+  @override
+  int get hashCode {
+    return body.hashCode ^ key.hashCode;
   }
 }
 
@@ -1298,14 +1327,17 @@ extension NavigatorStateExtension on _i35.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> navigateToOwnerApplyConfirmView([
+  Future<dynamic> navigateToOwnerApplyConfirmView({
+    required Map<String, dynamic> body,
+    _i33.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return navigateTo<dynamic>(Routes.ownerApplyConfirmView,
+        arguments: OwnerApplyConfirmViewArguments(body: body, key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -1794,14 +1826,17 @@ extension NavigatorStateExtension on _i35.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> replaceWithOwnerApplyConfirmView([
+  Future<dynamic> replaceWithOwnerApplyConfirmView({
+    required Map<String, dynamic> body,
+    _i33.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return replaceWith<dynamic>(Routes.ownerApplyConfirmView,
+        arguments: OwnerApplyConfirmViewArguments(body: body, key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

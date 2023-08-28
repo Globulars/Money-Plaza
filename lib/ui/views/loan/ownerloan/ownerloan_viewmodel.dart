@@ -1,5 +1,7 @@
 // ignore_for_file: avoid_print
 
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:money_plaza/app/app.router.dart';
 import 'package:money_plaza/services/loan_card_service.dart';
@@ -21,9 +23,8 @@ class OwnerloanViewModel extends BaseViewModel {
       TextEditingController(text: "40000");
   TextEditingController numOfLoansCtrl = TextEditingController(text: "");
   TextEditingController totalOutstandingLoanCtrl =
-      TextEditingController(text: "5000");
-  TextEditingController monthlyRepaymentCtrl =
-      TextEditingController(text: "2000");
+      TextEditingController(text: "0");
+  TextEditingController monthlyRepaymentCtrl = TextEditingController(text: "0");
   TextEditingController propertyValuationCtrl =
       TextEditingController(text: "20");
   TextEditingController currentMortgageRatioCtrl =
@@ -113,26 +114,26 @@ class OwnerloanViewModel extends BaseViewModel {
   }
 
   navigateToOwnerApplyConfirmView() {
-    _navigationService.navigateToOwnerApplyConfirmView();
-  }
-
-  navigateToBackScreen() {
-    _navigationService.back();
-  }
-
-  navigateToOwnerloanresultView() {
-    _navigationService.navigateToOwnerloanresultView(body: {
+    _navigationService.navigateToOwnerApplyConfirmView(body: {
       "amount": borrowingAmountCtrl.text,
       "tenor": loanTenors,
       "type": "owner_private_loan",
       "income": monthlyIncomeCtrl.text,
       "currentTotalLoanAmount": totalOutstandingLoanCtrl.text,
       "monthlyRepayment": monthlyRepaymentCtrl.text,
-      "pol": false
+      "pol": true
     });
   }
 
-  submitSurveyForm() async {
+  navigateToBackScreen() {
+    _navigationService.back();
+  }
+
+  navigateToOwnerloanresultView(body) {
+    _navigationService.navigateToOwnerloanresultView(body: body);
+  }
+
+  submitSurveyForm(matchBody) async {
     var isValid = formKey.currentState!.validate();
     if (isValid) {
       Map<String, dynamic> body = {
@@ -283,10 +284,12 @@ class OwnerloanViewModel extends BaseViewModel {
           // }
         ]
       };
+      log(body.toString());
+
       var data = await _loanCardService.ownerLoneSurveyform(body);
       if (data["success"] == true) {
         _toasterService.successToast(data["message"]);
-        navigateToOwnerloanresultView();
+        navigateToOwnerloanresultView(matchBody);
       } else {
         _toasterService.errorToast(data["message"].toString());
       }

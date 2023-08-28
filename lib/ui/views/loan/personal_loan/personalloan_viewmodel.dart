@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'package:stacked/stacked.dart';
 import 'package:flutter/material.dart';
 import 'package:money_plaza/app/app.locator.dart';
@@ -18,9 +19,9 @@ class PersonalloanViewModel extends BaseViewModel {
       TextEditingController(text: "40000");
   TextEditingController numOfLoansCtrl = TextEditingController(text: "0");
   TextEditingController totalOutstandingLoanCtrl =
-      TextEditingController(text: "5000");
+      TextEditingController(text: "0");
   TextEditingController monthlyRepaymentCtrl =
-      TextEditingController(text: "2000");
+      TextEditingController(text: "0");
   TextEditingController fullNameCtrl =
       TextEditingController(text: "Mudassir Mukhtar");
   TextEditingController phoneNumberCtrl =
@@ -33,6 +34,10 @@ class PersonalloanViewModel extends BaseViewModel {
   String salaryPayment = "Bank transfer";
   String typeOfIncome = "Full Time";
   String proofOfIncome = "Bank Statement";
+  var initialIndex = 0;
+  var loanTenors = 6;
+  var outStanding = 0;
+  int currentIndex = 0;
 
   final loanReasonList = [
     "Business Expansion",
@@ -79,10 +84,6 @@ class PersonalloanViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  var initialIndex = 0;
-  var loanTenors = 6;
-  var outStanding = 0;
-  int currentIndex = 0;
 
   setInitialIndex() {
     initialIndex++;
@@ -110,12 +111,12 @@ class PersonalloanViewModel extends BaseViewModel {
   navigateToOwnerloanresultView() {
     _navigationService.navigateToOwnerloanresultView(body: {
       "amount": borrowingAmountCtrl.text,
-      "tenor": loanTenors,
-      "type": "owner_loan",
+      "tenor": loanTenors.toString(),
+      "type": "personal_loan",
       "income": monthlyIncomeCtrl.text,
       "currentTotalLoanAmount": totalOutstandingLoanCtrl.text,
       "monthlyRepayment": monthlyRepaymentCtrl.text,
-      "pol": false
+      "pol": true
     });
   }
 
@@ -262,6 +263,7 @@ class PersonalloanViewModel extends BaseViewModel {
           // }
         ]
       };
+      log(body.toString());
       var data = await _loanCardService.personelLoneSurveyform(body);
       if (data["success"] == true) {
         _toasterService.successToast(data["message"]);
