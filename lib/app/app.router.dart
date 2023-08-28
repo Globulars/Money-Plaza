@@ -509,8 +509,12 @@ class StackedRouter extends _i1.RouterBase {
       );
     },
     _i31.CommericalApplyConfirmView: (data) {
+      final args =
+          data.getArgs<CommericalApplyConfirmViewArguments>(nullOk: false);
       return _i33.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i31.CommericalApplyConfirmView(),
+        builder: (context) => _i31.CommericalApplyConfirmView(
+            args.machBody, args.survayBody,
+            key: args.key),
         settings: data,
       );
     },
@@ -920,6 +924,38 @@ class PersonalloanApplyConfirmViewArguments {
 
   @override
   bool operator ==(covariant PersonalloanApplyConfirmViewArguments other) {
+    if (identical(this, other)) return true;
+    return other.machBody == machBody &&
+        other.survayBody == survayBody &&
+        other.key == key;
+  }
+
+  @override
+  int get hashCode {
+    return machBody.hashCode ^ survayBody.hashCode ^ key.hashCode;
+  }
+}
+
+class CommericalApplyConfirmViewArguments {
+  const CommericalApplyConfirmViewArguments({
+    required this.machBody,
+    required this.survayBody,
+    this.key,
+  });
+
+  final Map<String, dynamic> machBody;
+
+  final List<dynamic> survayBody;
+
+  final _i33.Key? key;
+
+  @override
+  String toString() {
+    return '{"machBody": "$machBody", "survayBody": "$survayBody", "key": "$key"}';
+  }
+
+  @override
+  bool operator ==(covariant CommericalApplyConfirmViewArguments other) {
     if (identical(this, other)) return true;
     return other.machBody == machBody &&
         other.survayBody == survayBody &&
@@ -1443,14 +1479,19 @@ extension NavigatorStateExtension on _i35.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> navigateToCommericalApplyConfirmView([
+  Future<dynamic> navigateToCommericalApplyConfirmView({
+    required Map<String, dynamic> machBody,
+    required List<dynamic> survayBody,
+    _i33.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return navigateTo<dynamic>(Routes.commericalApplyConfirmView,
+        arguments: CommericalApplyConfirmViewArguments(
+            machBody: machBody, survayBody: survayBody, key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -1954,14 +1995,19 @@ extension NavigatorStateExtension on _i35.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> replaceWithCommericalApplyConfirmView([
+  Future<dynamic> replaceWithCommericalApplyConfirmView({
+    required Map<String, dynamic> machBody,
+    required List<dynamic> survayBody,
+    _i33.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return replaceWith<dynamic>(Routes.commericalApplyConfirmView,
+        arguments: CommericalApplyConfirmViewArguments(
+            machBody: machBody, survayBody: survayBody, key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
