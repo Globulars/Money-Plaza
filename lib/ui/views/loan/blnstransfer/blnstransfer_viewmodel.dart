@@ -126,7 +126,7 @@ class BlnstransferViewModel extends BaseViewModel {
   }
 
   navigateToApplyconfirm() {
-    _navigationService.navigateToApplyconfirmView(match: true);
+    _navigationService.navigateToBlnstransferloanApplyConfirmView();
   }
 
   navigateToBackScreen() {
@@ -145,7 +145,7 @@ class BlnstransferViewModel extends BaseViewModel {
     });
   }
 
-  submitSurveyForm() async {
+   submitSurveyForm() async {
     var isValid = formKey.currentState!.validate();
     if (isValid) {
       Map<String, dynamic> body = {
@@ -170,6 +170,14 @@ class BlnstransferViewModel extends BaseViewModel {
             "fieldName": "reason",
             "fieldTitle": "借貸原因",
             "fieldValue": loanReason,
+            "fieldType": "text",
+            "fieldOrder": "",
+            "fieldAttrs": []
+          },
+          {
+            "fieldName": "hasProperty",
+            "fieldTitle": "是否物業持有人",
+            "fieldValue": propertyOwner,
             "fieldType": "text",
             "fieldOrder": "",
             "fieldAttrs": []
@@ -209,7 +217,7 @@ class BlnstransferViewModel extends BaseViewModel {
           {
             "fieldName": "hasLoan",
             "fieldTitle": "現有未還清的貸款",
-            "fieldValue": "沒有",
+            "fieldValue": outStanding,
             "fieldType": "text",
             "fieldOrder": "",
             "fieldAttrs": []
@@ -235,22 +243,6 @@ class BlnstransferViewModel extends BaseViewModel {
             "fieldTitle": "每月還款",
             "fieldValue": monthlyRepaymentCtrl.text,
             "fieldType": "monthlyRepayment",
-            "fieldOrder": "",
-            "fieldAttrs": []
-          },
-          {
-            "fieldName": "propertyValue",
-            "fieldTitle": "物業價值",
-            "fieldValue": propertyOwner,
-            "fieldType": "text",
-            "fieldOrder": "",
-            "fieldAttrs": []
-          },
-          {
-            "fieldName": "propertyShare",
-            "fieldTitle": "現按成數",
-            "fieldValue": "0",
-            "fieldType": "text",
             "fieldOrder": "",
             "fieldAttrs": []
           },
@@ -296,7 +288,7 @@ class BlnstransferViewModel extends BaseViewModel {
           // }
         ]
       };
-      var data = await _loanCardService.ownerLoneSurveyform(body);
+      var data = await _loanCardService.blnxTransferLoneSurveyform(body);
       if (data["success"] == true) {
         _toasterService.successToast(data["message"]);
         navigateToOwnerloanresultView();

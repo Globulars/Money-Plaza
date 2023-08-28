@@ -109,4 +109,25 @@ class LoanCardService {
       return {"message": e};
     }
   }
+
+   /////////////////////////////////////blnxtranferloan Survey Form////////////////////////////////
+   blnxTransferLoneSurveyform(body) async {
+    try {
+      final response = await http.post(_apiUrl.balanceTransferSurveyform,
+          body: jsonEncode(body), headers: headers);
+      if (response.statusCode == 200) {
+        var data = json.decode(response.body);
+        return data;
+      } else if (response.statusCode == 302) {
+        return {"message": "Successful Submittion", "success": true};
+      } else {
+        log(response.body.toString());
+        return {"message": "${response.statusCode} error found"};
+      }
+    } catch (e) {
+      return {"message": e};
+    }
+  }
+
+
 }

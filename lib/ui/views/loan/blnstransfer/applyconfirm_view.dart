@@ -23,7 +23,7 @@ class BlnstransferloanApplyConfirmView extends StackedView<BlnstransferViewModel
     BlnstransferViewModel viewModel,
     Widget? child,
   ) {
-    return Form(
+   return Form(
       key: viewModel.formKey,
       child: Stack(
         children: [
