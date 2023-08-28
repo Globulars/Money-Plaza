@@ -143,110 +143,109 @@ class CommericalLoanViewModel extends BaseViewModel {
     _navigationService.navigateToCommericalApplyConfirmView(machBody: {
       "amount": borrowingAmountCtrl.text,
       "tenor": loanTenors,
-      "type": "owner_loan",
+      "type": "commercial_loan",
       "income": "",
       "currentTotalLoanAmount": totalOutstandingLoanCtrl.text,
       "monthlyRepayment": monthlyRepaymentCtrl.text,
       "pol": true
     }, survayBody: [
-          {
-            "fieldName": "amount",
-            "fieldTitle": "借貸金額",
-            "fieldValue": borrowingAmountCtrl.text,
-            "fieldType": "text",
-            "fieldOrder": "",
-            "fieldAttrs": []
-          },
-          {
-            "fieldName": "tenor",
-            "fieldTitle": "還款期",
-            "fieldValue": loanTenors,
-            "fieldType": "text",
-            "fieldOrder": "",
-            "fieldAttrs": []
-          },
-          {
-            "fieldName": "reason",
-            "fieldTitle": "借貸原因",
-            "fieldValue": loanReason,
-            "fieldType": "text",
-            "fieldOrder": "",
-            "fieldAttrs": []
-          },
-          {
-            "fieldName": "hasProperty",
-            "fieldTitle": "是否物業持有人",
-            "fieldValue": propertyOwner,
-            "fieldType": "text",
-            "fieldOrder": "",
-            "fieldAttrs": []
-          },
-          // {
-          //   "fieldName": "income",
-          //   "fieldTitle": "每月收入",
-          //   "fieldValue": monthlyIncomeCtrl.text,
-          //   "fieldType": "text",
-          //   "fieldOrder": "",
-          //   "fieldAttrs": []
-          // },
-          // {
-          //   "fieldName": "salaryPayment",
-          //   "fieldTitle": "出糧方式",
-          //   "fieldValue": salaryPayment,
-          //   "fieldType": "text",
-          //   "fieldOrder": "",
-          //   "fieldAttrs": []
-          // },
-          // {
-          //   "fieldName": "employmentType",
-          //   "fieldTitle": "收入類型",
-          //   "fieldValue": typeOfIncome,
-          //   "fieldType": "text",
-          //   "fieldOrder": "",
-          //   "fieldAttrs": []
-          // },
-          // {
-          //   "fieldName": "incomeProofType",
-          //   "fieldTitle": "收入證明",
-          //   "fieldValue": proofOfIncome,
-          //   "fieldType": "text",
-          //   "fieldOrder": "",
-          //   "fieldAttrs": []
-          // },
-          {
-            "fieldName": "hasLoan",
-            "fieldTitle": "現有未還清的貸款",
-            "fieldValue": outStanding,
-            "fieldType": "text",
-            "fieldOrder": "",
-            "fieldAttrs": []
-          },
-          {
-            "fieldName": "remainingLoans",
-            "fieldTitle": "貸款數量",
-            "fieldValue": numOfLoansCtrl.text,
-            "fieldType": "totalLoanCount",
-            "fieldOrder": "",
-            "fieldAttrs": []
-          },
-          {
-            "fieldName": "remainingLoanAmount",
-            "fieldTitle": "未償還貸款總額",
-            "fieldValue": totalOutstandingLoanCtrl.text,
-            "fieldType": "remainingLoanAmount",
-            "fieldOrder": "",
-            "fieldAttrs": []
-          },
-          {
-            "fieldName": "monthlyRepayment",
-            "fieldTitle": "每月還款",
-            "fieldValue": monthlyRepaymentCtrl.text,
-            "fieldType": "monthlyRepayment",
-            "fieldOrder": "",
-            "fieldAttrs": []
-          },
-    ]
-    );
+      {
+        "fieldName": "amount",
+        "fieldTitle": "借貸金額",
+        "fieldValue": borrowingAmountCtrl.text,
+        "fieldType": "text",
+        "fieldOrder": "",
+        "fieldAttrs": []
+      },
+      {
+        "fieldName": "tenor",
+        "fieldTitle": "還款期",
+        "fieldValue": loanTenors,
+        "fieldType": "text",
+        "fieldOrder": "",
+        "fieldAttrs": []
+      },
+      {
+        "fieldName": "reason",
+        "fieldTitle": "借貸原因",
+        "fieldValue": loanReason,
+        "fieldType": "text",
+        "fieldOrder": "",
+        "fieldAttrs": []
+      },
+      {
+        "fieldName": "hasProperty",
+        "fieldTitle": "是否物業持有人",
+        "fieldValue": propertyOwner,
+        "fieldType": "text",
+        "fieldOrder": "",
+        "fieldAttrs": []
+      },
+      // {
+      //   "fieldName": "income",
+      //   "fieldTitle": "每月收入",
+      //   "fieldValue": monthlyIncomeCtrl.text,
+      //   "fieldType": "text",
+      //   "fieldOrder": "",
+      //   "fieldAttrs": []
+      // },
+      // {
+      //   "fieldName": "salaryPayment",
+      //   "fieldTitle": "出糧方式",
+      //   "fieldValue": salaryPayment,
+      //   "fieldType": "text",
+      //   "fieldOrder": "",
+      //   "fieldAttrs": []
+      // },
+      // {
+      //   "fieldName": "employmentType",
+      //   "fieldTitle": "收入類型",
+      //   "fieldValue": typeOfIncome,
+      //   "fieldType": "text",
+      //   "fieldOrder": "",
+      //   "fieldAttrs": []
+      // },
+      // {
+      //   "fieldName": "incomeProofType",
+      //   "fieldTitle": "收入證明",
+      //   "fieldValue": proofOfIncome,
+      //   "fieldType": "text",
+      //   "fieldOrder": "",
+      //   "fieldAttrs": []
+      // },
+      {
+        "fieldName": "hasLoan",
+        "fieldTitle": "現有未還清的貸款",
+        "fieldValue": outStanding,
+        "fieldType": "text",
+        "fieldOrder": "",
+        "fieldAttrs": []
+      },
+      {
+        "fieldName": "remainingLoans",
+        "fieldTitle": "貸款數量",
+        "fieldValue": numOfLoansCtrl.text,
+        "fieldType": "totalLoanCount",
+        "fieldOrder": "",
+        "fieldAttrs": []
+      },
+      {
+        "fieldName": "remainingLoanAmount",
+        "fieldTitle": "未償還貸款總額",
+        "fieldValue": totalOutstandingLoanCtrl.text,
+        "fieldType": "remainingLoanAmount",
+        "fieldOrder": "",
+        "fieldAttrs": []
+      },
+      {
+        "fieldName": "monthlyRepayment",
+        "fieldTitle": "每月還款",
+        "fieldValue": monthlyRepaymentCtrl.text,
+        "fieldType": "monthlyRepayment",
+        "fieldOrder": "",
+        "fieldAttrs": []
+      },
+    ]);
   }
 
   navigateToBackScreen() {
@@ -260,48 +259,48 @@ class CommericalLoanViewModel extends BaseViewModel {
   submitSurveyForm(machBody, List survayBody) async {
     var isValid = formKey.currentState!.validate();
     if (isValid) {
-     List applyBody = [
-            {
-            "fieldName": "fullname",
-            "fieldTitle": "英文全名",
-            "fieldValue": fullNameCtrl.text,
-            "fieldType": "name",
-            "fieldOrder": "",
-            "fieldAttrs": []
-          },
-          {
-            "fieldName": "mobile",
-            "fieldTitle": "聯絡電話",
-            "fieldValue": phoneNumberCtrl.text,
-            "fieldType": "mobile",
-            "fieldOrder": "",
-            "fieldAttrs": ["unique"]
-          },
-          {
-            "fieldName": "email",
-            "fieldTitle": "E-mail",
-            "fieldValue": emailCtrl.text,
-            "fieldType": "email",
-            "fieldOrder": "",
-            "fieldAttrs": []
-          },
-          {
-            "fieldName": "identity",
-            "fieldTitle": "身份證號碼",
-            "fieldValue": hkidCtrl.text,
-            "fieldType": "hkid",
-            "fieldOrder": "",
-            "fieldAttrs": ["unique"]
-          },
-          // {
-          //   "fieldName": "bornInHK",
-          //   "fieldTitle": "是否在香港出生?",
-          //   "fieldValue": "yes",
-          //   "fieldType": "text",
-          //   "fieldOrder": "",
-          //   "fieldAttrs": []
-          // }
-     ];
+      List applyBody = [
+        {
+          "fieldName": "fullname",
+          "fieldTitle": "英文全名",
+          "fieldValue": fullNameCtrl.text,
+          "fieldType": "name",
+          "fieldOrder": "",
+          "fieldAttrs": []
+        },
+        {
+          "fieldName": "mobile",
+          "fieldTitle": "聯絡電話",
+          "fieldValue": phoneNumberCtrl.text,
+          "fieldType": "mobile",
+          "fieldOrder": "",
+          "fieldAttrs": ["unique"]
+        },
+        {
+          "fieldName": "email",
+          "fieldTitle": "E-mail",
+          "fieldValue": emailCtrl.text,
+          "fieldType": "email",
+          "fieldOrder": "",
+          "fieldAttrs": []
+        },
+        {
+          "fieldName": "identity",
+          "fieldTitle": "身份證號碼",
+          "fieldValue": hkidCtrl.text,
+          "fieldType": "hkid",
+          "fieldOrder": "",
+          "fieldAttrs": ["unique"]
+        },
+        // {
+        //   "fieldName": "bornInHK",
+        //   "fieldTitle": "是否在香港出生?",
+        //   "fieldValue": "yes",
+        //   "fieldType": "text",
+        //   "fieldOrder": "",
+        //   "fieldAttrs": []
+        // }
+      ];
 
       survayBody.addAll(applyBody);
       Map<String, dynamic> body = {"result": survayBody};

@@ -94,13 +94,14 @@ class CommericalApplyConfirmView extends StackedView<CommericalLoanViewModel> {
                 ),
                 horizontalSpaceTiny,
                 SubmitButton(
-                  image: myIcons.done,
-                  imgwidth: 16,
-                  text: 'Done',
-                  height: 40,
-                  width: 80,
-                  onPress:(){viewModel.submitSurveyForm(machBody, survayBody);} 
-                ),
+                    image: myIcons.done,
+                    imgwidth: 16,
+                    text: 'Done',
+                    height: 40,
+                    width: 80,
+                    onPress: () {
+                      viewModel.submitSurveyForm(machBody, survayBody);
+                    }),
               ],
             ),
           ),
