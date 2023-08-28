@@ -14,7 +14,10 @@ import '../../../widgets/common/icon_box_btn/submit_button.dart';
 import 'personalloan_viewmodel.dart';
 
 class PersonalloanApplyConfirmView extends StackedView<PersonalloanViewModel> {
-  const PersonalloanApplyConfirmView({super.key});
+  final Map<String, dynamic> machBody;
+  final List survayBody;
+  const PersonalloanApplyConfirmView(this.machBody, this.survayBody,
+      {super.key});
 
   @override
   Widget builder(
@@ -97,7 +100,9 @@ class PersonalloanApplyConfirmView extends StackedView<PersonalloanViewModel> {
                   text: 'Done',
                   height: 40,
                   width: 80,
-                  onPress: viewModel.submitSurveyForm,
+                  onPress: () {
+                    viewModel.submitSurveyForm(machBody, survayBody);
+                  },
                 ),
               ],
             ),

@@ -145,7 +145,7 @@ class BlnstransferViewModel extends BaseViewModel {
     });
   }
 
-   submitSurveyForm() async {
+  submitSurveyForm() async {
     var isValid = formKey.currentState!.validate();
     if (isValid) {
       Map<String, dynamic> body = {

@@ -22,7 +22,7 @@ class LoanViewModel extends BaseViewModel {
   List<LoanCard> compareData = [];
   List<ScheduleLoan> scheduleLoan = [];
   var showcard = false;
-  String loanCardListMessage="";
+  String loanCardListMessage = "";
   /////////////////// calculator dialog data//////////////////
   var repayment = 0;
   var calculation = 0;

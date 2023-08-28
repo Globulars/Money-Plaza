@@ -13,8 +13,8 @@ import '../../../widgets/common/custom_text_field/custom_text_field.dart';
 import '../../../widgets/common/icon_box_btn/sub_bar.dart';
 import '../../../widgets/common/icon_box_btn/submit_button.dart';
 
-
-class BlnstransferloanApplyConfirmView extends StackedView<BlnstransferViewModel> {
+class BlnstransferloanApplyConfirmView
+    extends StackedView<BlnstransferViewModel> {
   const BlnstransferloanApplyConfirmView({super.key});
 
   @override
@@ -23,7 +23,7 @@ class BlnstransferloanApplyConfirmView extends StackedView<BlnstransferViewModel
     BlnstransferViewModel viewModel,
     Widget? child,
   ) {
-   return Form(
+    return Form(
       key: viewModel.formKey,
       child: Stack(
         children: [

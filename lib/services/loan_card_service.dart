@@ -109,8 +109,8 @@ class LoanCardService {
     }
   }
 
-   /////////////////////////////////////blnxtranferloan Survey Form////////////////////////////////
-   blnxTransferLoneSurveyform(body) async {
+  /////////////////////////////////////blnxtranferloan Survey Form////////////////////////////////
+  blnxTransferLoneSurveyform(body) async {
     try {
       final response = await http.post(_apiUrl.balanceTransferSurveyform,
           body: jsonEncode(body), headers: headers);
@@ -127,6 +127,4 @@ class LoanCardService {
       return {"message": e};
     }
   }
-
-
 }

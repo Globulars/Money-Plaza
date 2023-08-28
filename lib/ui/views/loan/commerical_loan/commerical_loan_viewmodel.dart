@@ -8,7 +8,7 @@ import '../../../../services/toaster_service.dart';
 
 class CommericalLoanViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
-    final _loanCardService = locator<LoanCardService>();
+  final _loanCardService = locator<LoanCardService>();
   final _toasterService = locator<ToasterService>();
   var formKey = GlobalKey<FormState>();
 
@@ -146,7 +146,8 @@ class CommericalLoanViewModel extends BaseViewModel {
   navigateToBackScreen() {
     _navigationService.back();
   }
-    navigateToOwnerloanresultView() {
+
+  navigateToOwnerloanresultView() {
     _navigationService.navigateToOwnerloanresultView(body: {
       "amount": borrowingAmountCtrl.text,
       "tenor": loanTenors,
@@ -310,5 +311,4 @@ class CommericalLoanViewModel extends BaseViewModel {
       }
     }
   }
-
 }

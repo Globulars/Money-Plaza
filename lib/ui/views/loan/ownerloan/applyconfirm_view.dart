@@ -16,7 +16,7 @@ import 'ownerloan_viewmodel.dart';
 class OwnerApplyConfirmView extends StackedView<OwnerloanViewModel> {
   final Map<String, dynamic> machBody;
   final List survayBody;
-  const OwnerApplyConfirmView(this.machBody, this.survayBody,  {super.key});
+  const OwnerApplyConfirmView(this.machBody, this.survayBody, {super.key});
 
   @override
   Widget builder(
@@ -100,7 +100,7 @@ class OwnerApplyConfirmView extends StackedView<OwnerloanViewModel> {
                   height: 40,
                   width: 80,
                   onPress: () {
-                    viewModel.submitSurveyForm(machBody,survayBody);
+                    viewModel.submitSurveyForm(machBody, survayBody);
                   },
                 ),
               ],
