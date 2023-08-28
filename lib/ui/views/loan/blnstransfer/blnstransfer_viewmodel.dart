@@ -238,8 +238,8 @@ class BlnstransferViewModel extends BaseViewModel {
     _navigationService.back();
   }
 
-  navigateToOwnerloanresultView(body) {
-    _navigationService.navigateToOwnerloanresultView(body: body);
+  navigateToServayLoanResultView(body) {
+    _navigationService.navigateToServayLoanResultView(body: body);
   }
 
   submitSurveyForm(machBody, List survayBody) async {
@@ -292,7 +292,7 @@ class BlnstransferViewModel extends BaseViewModel {
       var data = await _loanCardService.blnxTransferLoneSurveyform(body);
       if (data["success"] == true) {
         _toasterService.successToast(data["message"]);
-        navigateToOwnerloanresultView(machBody);
+        navigateToServayLoanResultView(machBody);
       } else {
         _toasterService.errorToast(data["message"].toString());
       }

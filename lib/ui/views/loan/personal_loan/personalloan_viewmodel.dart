@@ -218,8 +218,8 @@ class PersonalloanViewModel extends BaseViewModel {
     _navigationService.back();
   }
 
-  navigateToOwnerloanresultView(machBody) {
-    _navigationService.navigateToOwnerloanresultView(body: machBody);
+  navigateToServayLoanResultView(machBody) {
+    _navigationService.navigateToServayLoanResultView(body: machBody);
   }
 
   submitSurveyForm(machBody, List survayBody) async {
@@ -272,7 +272,7 @@ class PersonalloanViewModel extends BaseViewModel {
       var data = await _loanCardService.ownerLoneSurveyform(body);
       if (data["success"] == true) {
         _toasterService.successToast(data["message"]);
-        navigateToOwnerloanresultView(machBody);
+        navigateToServayLoanResultView(machBody);
       } else {
         _toasterService.errorToast(data["message"].toString());
       }

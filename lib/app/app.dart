@@ -13,13 +13,12 @@ import 'package:money_plaza/ui/views/loan/apply_confirm/applyconfirm_view.dart';
 import 'package:money_plaza/ui/views/loan/personal_loan/personalloan_view.dart';
 import 'package:money_plaza/ui/views/loan/personal_loan/ploanreslut/ploanreslut_view.dart';
 import 'package:money_plaza/ui/views/loan/ownerloan/ownerloan_view.dart';
-import 'package:money_plaza/ui/views/loan/ownerloan/ownerloanresult/ownerloanresult_view.dart';
+import 'package:money_plaza/ui/views/loan/servayloanresult_view.dart';
 import 'package:money_plaza/ui/views/landing/settings/settings_view.dart';
 import 'package:money_plaza/ui/views/member_login/member_login_view.dart';
 import 'package:money_plaza/ui/views/loan/blnstransfer/blnstransfer_view.dart';
 import 'package:money_plaza/ui/views/loan/blnstransfer/transfer_result/transfer_result_view.dart';
 import 'package:money_plaza/ui/views/loan/commerical_loan/commerical_loan_view.dart';
-import 'package:money_plaza/ui/views/loan/commerical_loan/commerical_result/commerical_result_view.dart';
 import 'package:money_plaza/ui/dialogs/filter/filter_dialog.dart';
 import 'package:money_plaza/ui/dialogs/calculator/calculator_dialog.dart';
 import 'package:money_plaza/ui/views/morgages/morgages_view.dart';
@@ -57,13 +56,12 @@ import '../ui/views/loan/personal_loan/applyconfirm_view.dart';
     MaterialRoute(page: PersonalloanView),
     MaterialRoute(page: PloanreslutView),
     MaterialRoute(page: OwnerloanView),
-    MaterialRoute(page: OwnerloanresultView),
+    MaterialRoute(page: ServayLoanResultView),
     MaterialRoute(page: SettingsView),
     MaterialRoute(page: MemberLoginView),
     MaterialRoute(page: BlnstransferView),
     MaterialRoute(page: TransferResultView),
     MaterialRoute(page: CommericalLoanView),
-    MaterialRoute(page: CommericalResultView),
     MaterialRoute(page: MorgagesView),
     MaterialRoute(page: MorgagesResultView),
     MaterialRoute(page: SurveySplashView),
