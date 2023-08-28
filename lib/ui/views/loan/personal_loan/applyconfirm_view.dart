@@ -11,15 +11,15 @@ import '../../../widgets/common/background_image.dart';
 import '../../../widgets/common/custom_text_field/custom_text_field.dart';
 import '../../../widgets/common/icon_box_btn/sub_bar.dart';
 import '../../../widgets/common/icon_box_btn/submit_button.dart';
-import 'ownerloan_viewmodel.dart';
+import 'personalloan_viewmodel.dart';
 
-class OwnerApplyConfirmView extends StackedView<OwnerloanViewModel> {
-  const OwnerApplyConfirmView({super.key});
+class PersonalloanApplyConfirmView extends StackedView<PersonalloanViewModel> {
+  const PersonalloanApplyConfirmView({super.key});
 
   @override
   Widget builder(
     BuildContext context,
-    OwnerloanViewModel viewModel,
+    PersonalloanViewModel viewModel,
     Widget? child,
   ) {
     return Form(
@@ -108,8 +108,8 @@ class OwnerApplyConfirmView extends StackedView<OwnerloanViewModel> {
   }
 
   @override
-  OwnerloanViewModel viewModelBuilder(
+  PersonalloanViewModel viewModelBuilder(
     BuildContext context,
   ) =>
-      OwnerloanViewModel();
+      PersonalloanViewModel();
 }

@@ -113,7 +113,7 @@ class OwnerloanViewModel extends BaseViewModel {
   }
 
   navigateToOwnerApplyConfirmView() {
-    _navigationService.navigateToOwnerApplyConfirmView(match: true);
+    _navigationService.navigateToOwnerApplyConfirmView();
   }
 
   navigateToBackScreen() {

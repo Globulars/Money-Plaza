@@ -40,6 +40,8 @@ import 'package:money_plaza/services/toaster_service.dart';
 import 'package:money_plaza/services/mortgage_service.dart';
 import 'package:money_plaza/services/credit_card_service.dart';
 import 'package:money_plaza/services/loan_card_service.dart';
+
+import '../ui/views/loan/personal_loan/applyconfirm_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -72,6 +74,7 @@ import 'package:money_plaza/services/loan_card_service.dart';
     MaterialRoute(page: RewardApplicationView),
     MaterialRoute(page: ChangePasswordView),
     MaterialRoute(page: OwnerApplyConfirmView),
+    MaterialRoute(page: PersonalloanApplyConfirmView),
 
 // @stacked-route
   ],

@@ -74,9 +74,9 @@ class LoanCardService {
   }
 
   /////////////////////////////////////Lone Survey Form////////////////////////////////
-  personeLoneSurveyform(body) async {
+  personelLoneSurveyform(body) async {
     try {
-      final response = await http.post(_apiUrl.personeLoneSurveyform,
+      final response = await http.post(_apiUrl.personelLoneSurveyform,
           body: jsonEncode(body), headers: headers);
       if (response.statusCode == 200) {
         var data = json.decode(response.body);
