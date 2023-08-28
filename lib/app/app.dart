@@ -1,4 +1,5 @@
 import 'package:money_plaza/ui/views/landing/startup/startup_view.dart';
+import 'package:money_plaza/ui/views/loan/commerical_loan/applyconfirm_view.dart';
 import 'package:money_plaza/ui/views/loan/ownerloan/applyconfirm_view.dart';
 import 'package:money_plaza/ui/views/survey_form/survey_form_view.dart';
 import 'package:stacked/stacked_annotations.dart';
@@ -75,6 +76,7 @@ import '../ui/views/loan/personal_loan/applyconfirm_view.dart';
     MaterialRoute(page: ChangePasswordView),
     MaterialRoute(page: OwnerApplyConfirmView),
     MaterialRoute(page: PersonalloanApplyConfirmView),
+    MaterialRoute(page: CommericalApplyConfirmView),
 
 // @stacked-route
   ],
