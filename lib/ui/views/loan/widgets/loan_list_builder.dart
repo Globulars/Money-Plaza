@@ -17,15 +17,17 @@ class LoanListView extends ViewModelWidget<LoanViewModel> {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     return viewModel.loanCardList.isEmpty
-        ? Column(
-            children: [
-              SizedBox(
-                height: height * 0.2,
-                width: width * 1,
-              ),
-              const CircularProgressIndicator(),
-            ],
-          )
+        ? viewModel.loanCardListMessage != ""
+            ? Text(viewModel.loanCardListMessage)
+            : Column(
+                children: [
+                  SizedBox(
+                    height: height * 0.2,
+                    width: width * 1,
+                  ),
+                  const CircularProgressIndicator(),
+                ],
+              )
         : ListView.builder(
             itemCount: viewModel.loanCardList.length,
             shrinkWrap: true,

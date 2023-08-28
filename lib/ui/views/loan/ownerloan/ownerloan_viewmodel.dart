@@ -124,7 +124,7 @@ class OwnerloanViewModel extends BaseViewModel {
     _navigationService.navigateToOwnerloanresultView(body: {
       "amount": borrowingAmountCtrl.text,
       "tenor": loanTenors,
-      "type": "owner_loan",
+      "type": "owner_private_loan",
       "income": monthlyIncomeCtrl.text,
       "currentTotalLoanAmount": totalOutstandingLoanCtrl.text,
       "monthlyRepayment": monthlyRepaymentCtrl.text,

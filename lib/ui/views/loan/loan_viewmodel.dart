@@ -22,7 +22,7 @@ class LoanViewModel extends BaseViewModel {
   List<LoanCard> compareData = [];
   List<ScheduleLoan> scheduleLoan = [];
   var showcard = false;
-
+  String loanCardListMessage="";
   /////////////////// calculator dialog data//////////////////
   var repayment = 0;
   var calculation = 0;
@@ -49,6 +49,11 @@ class LoanViewModel extends BaseViewModel {
     loanAmountCtrl.text = "50000";
     monthlyPaymentCtrl.text = "10000";
     interestCtrl.text = "4";
+    notifyListeners();
+  }
+
+  setloneMachBody(body) {
+    loneMachBody = body;
     notifyListeners();
   }
 
@@ -185,10 +190,15 @@ class LoanViewModel extends BaseViewModel {
     var data = await _loanCardService.loanlist(body);
     if (data?["success"] == true) {
       List dataList = data["data"]["records"];
-      loanCardList = dataList.map((data) => LoanCard.fromJson(data)).toList();
+      if (dataList.isEmpty) {
+        loanCardListMessage = "No data found";
+      } else {
+        loanCardList = dataList.map((data) => LoanCard.fromJson(data)).toList();
+      }
       notifyListeners();
       return loanCardList;
     } else {
+      loanCardListMessage = data["message"].toString();
       throw Exception(data["message"].toString());
     }
   }
@@ -209,14 +219,20 @@ class LoanViewModel extends BaseViewModel {
   }
 
   Future<List<LoanCard>> loanMatch() async {
-    log(features.toString());
+    log(loneMachBody.toString());
     var data = await _loanCardService.loanMatch(loneMachBody);
+    log(data.toString());
     if (data?["success"] == true) {
       List dataList = data["data"]["records"];
-      loanCardList = dataList.map((data) => LoanCard.fromJson(data)).toList();
+      if (dataList.isEmpty) {
+        loanCardListMessage = "No data found";
+      } else {
+        loanCardList = dataList.map((data) => LoanCard.fromJson(data)).toList();
+      }
       notifyListeners();
       return loanCardList;
     } else {
+      loanCardListMessage = data["message"].toString();
       throw Exception(data["message"].toString());
     }
   }
