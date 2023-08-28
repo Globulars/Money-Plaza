@@ -515,8 +515,12 @@ class StackedRouter extends _i1.RouterBase {
       );
     },
     _i32.BlnstransferloanApplyConfirmView: (data) {
+      final args = data.getArgs<BlnstransferloanApplyConfirmViewArguments>(
+          nullOk: false);
       return _i33.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i32.BlnstransferloanApplyConfirmView(),
+        builder: (context) => _i32.BlnstransferloanApplyConfirmView(
+            args.machBody, args.survayBody,
+            key: args.key),
         settings: data,
       );
     },
@@ -916,6 +920,38 @@ class PersonalloanApplyConfirmViewArguments {
 
   @override
   bool operator ==(covariant PersonalloanApplyConfirmViewArguments other) {
+    if (identical(this, other)) return true;
+    return other.machBody == machBody &&
+        other.survayBody == survayBody &&
+        other.key == key;
+  }
+
+  @override
+  int get hashCode {
+    return machBody.hashCode ^ survayBody.hashCode ^ key.hashCode;
+  }
+}
+
+class BlnstransferloanApplyConfirmViewArguments {
+  const BlnstransferloanApplyConfirmViewArguments({
+    required this.machBody,
+    required this.survayBody,
+    this.key,
+  });
+
+  final Map<String, dynamic> machBody;
+
+  final List<dynamic> survayBody;
+
+  final _i33.Key? key;
+
+  @override
+  String toString() {
+    return '{"machBody": "$machBody", "survayBody": "$survayBody", "key": "$key"}';
+  }
+
+  @override
+  bool operator ==(covariant BlnstransferloanApplyConfirmViewArguments other) {
     if (identical(this, other)) return true;
     return other.machBody == machBody &&
         other.survayBody == survayBody &&
@@ -1421,14 +1457,19 @@ extension NavigatorStateExtension on _i35.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> navigateToBlnstransferloanApplyConfirmView([
+  Future<dynamic> navigateToBlnstransferloanApplyConfirmView({
+    required Map<String, dynamic> machBody,
+    required List<dynamic> survayBody,
+    _i33.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return navigateTo<dynamic>(Routes.blnstransferloanApplyConfirmView,
+        arguments: BlnstransferloanApplyConfirmViewArguments(
+            machBody: machBody, survayBody: survayBody, key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -1927,14 +1968,19 @@ extension NavigatorStateExtension on _i35.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> replaceWithBlnstransferloanApplyConfirmView([
+  Future<dynamic> replaceWithBlnstransferloanApplyConfirmView({
+    required Map<String, dynamic> machBody,
+    required List<dynamic> survayBody,
+    _i33.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return replaceWith<dynamic>(Routes.blnstransferloanApplyConfirmView,
+        arguments: BlnstransferloanApplyConfirmViewArguments(
+            machBody: machBody, survayBody: survayBody, key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

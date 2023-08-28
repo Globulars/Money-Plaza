@@ -126,30 +126,15 @@ class BlnstransferViewModel extends BaseViewModel {
   }
 
   navigateToApplyconfirm() {
-    _navigationService.navigateToBlnstransferloanApplyConfirmView();
-  }
-
-  navigateToBackScreen() {
-    _navigationService.back();
-  }
-
-  navigateToOwnerloanresultView() {
-    _navigationService.navigateToOwnerloanresultView(body: {
+    _navigationService.navigateToBlnstransferloanApplyConfirmView(machBody:  {
       "amount": borrowingAmountCtrl.text,
       "tenor": loanTenors,
-      "type": "owner_loan",
+      "type": "balance_transfer",
       "income": monthlyIncomeCtrl.text,
       "currentTotalLoanAmount": totalOutstandingLoanCtrl.text,
       "monthlyRepayment": monthlyRepaymentCtrl.text,
-      "pol": false
-    });
-  }
-
-  submitSurveyForm() async {
-    var isValid = formKey.currentState!.validate();
-    if (isValid) {
-      Map<String, dynamic> body = {
-        "result": [
+      "pol": true
+    },survayBody: [
           {
             "fieldName": "amount",
             "fieldTitle": "借貸金額",
@@ -245,7 +230,21 @@ class BlnstransferViewModel extends BaseViewModel {
             "fieldType": "monthlyRepayment",
             "fieldOrder": "",
             "fieldAttrs": []
-          },
+          },]);
+  }
+
+  navigateToBackScreen() {
+    _navigationService.back();
+  }
+
+  navigateToOwnerloanresultView(body) {
+    _navigationService.navigateToOwnerloanresultView(body:body);
+  }
+
+  submitSurveyForm(machBody, List survayBody) async {
+    var isValid = formKey.currentState!.validate();
+    if (isValid) {
+      List applyBody = [
           {
             "fieldName": "fullname",
             "fieldTitle": "英文全名",
@@ -286,12 +285,13 @@ class BlnstransferViewModel extends BaseViewModel {
           //   "fieldOrder": "",
           //   "fieldAttrs": []
           // }
-        ]
-      };
+        ];
+       survayBody.addAll(applyBody);
+       Map<String, dynamic> body = {"result": survayBody};
       var data = await _loanCardService.blnxTransferLoneSurveyform(body);
       if (data["success"] == true) {
         _toasterService.successToast(data["message"]);
-        navigateToOwnerloanresultView();
+        navigateToOwnerloanresultView(machBody);
       } else {
         _toasterService.errorToast(data["message"].toString());
       }

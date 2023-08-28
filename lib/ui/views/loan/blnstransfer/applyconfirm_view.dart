@@ -15,7 +15,9 @@ import '../../../widgets/common/icon_box_btn/submit_button.dart';
 
 class BlnstransferloanApplyConfirmView
     extends StackedView<BlnstransferViewModel> {
-  const BlnstransferloanApplyConfirmView({super.key});
+      final Map<String, dynamic> machBody;
+  final List survayBody;
+  const BlnstransferloanApplyConfirmView(this.machBody, this.survayBody, {super.key});
 
   @override
   Widget builder(
@@ -98,7 +100,7 @@ class BlnstransferloanApplyConfirmView
                   text: 'Done',
                   height: 40,
                   width: 80,
-                  onPress: viewModel.submitSurveyForm,
+                  onPress:(){ viewModel.submitSurveyForm(machBody,survayBody);},
                 ),
               ],
             ),
