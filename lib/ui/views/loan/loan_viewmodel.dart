@@ -221,7 +221,6 @@ class LoanViewModel extends BaseViewModel {
   Future<List<LoanCard>> loanMatch() async {
     log(loneMachBody.toString());
     var data = await _loanCardService.loanMatch(loneMachBody);
-    log(data.toString());
     if (data?["success"] == true) {
       List dataList = data["data"]["records"];
       if (dataList.isEmpty) {

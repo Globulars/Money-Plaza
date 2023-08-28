@@ -492,8 +492,9 @@ class StackedRouter extends _i1.RouterBase {
     _i29.OwnerApplyConfirmView: (data) {
       final args = data.getArgs<OwnerApplyConfirmViewArguments>(nullOk: false);
       return _i33.MaterialPageRoute<dynamic>(
-        builder: (context) =>
-            _i29.OwnerApplyConfirmView(args.body, key: args.key),
+        builder: (context) => _i29.OwnerApplyConfirmView(
+            args.machBody, args.survayBody,
+            key: args.key),
         settings: data,
       );
     },
@@ -861,28 +862,33 @@ class CreditResultViewArguments {
 
 class OwnerApplyConfirmViewArguments {
   const OwnerApplyConfirmViewArguments({
-    required this.body,
+    required this.machBody,
+    required this.survayBody,
     this.key,
   });
 
-  final Map<String, dynamic> body;
+  final Map<String, dynamic> machBody;
+
+  final List<dynamic> survayBody;
 
   final _i33.Key? key;
 
   @override
   String toString() {
-    return '{"body": "$body", "key": "$key"}';
+    return '{"machBody": "$machBody", "survayBody": "$survayBody", "key": "$key"}';
   }
 
   @override
   bool operator ==(covariant OwnerApplyConfirmViewArguments other) {
     if (identical(this, other)) return true;
-    return other.body == body && other.key == key;
+    return other.machBody == machBody &&
+        other.survayBody == survayBody &&
+        other.key == key;
   }
 
   @override
   int get hashCode {
-    return body.hashCode ^ key.hashCode;
+    return machBody.hashCode ^ survayBody.hashCode ^ key.hashCode;
   }
 }
 
@@ -1328,7 +1334,8 @@ extension NavigatorStateExtension on _i35.NavigationService {
   }
 
   Future<dynamic> navigateToOwnerApplyConfirmView({
-    required Map<String, dynamic> body,
+    required Map<String, dynamic> machBody,
+    required List<dynamic> survayBody,
     _i33.Key? key,
     int? routerId,
     bool preventDuplicates = true,
@@ -1337,7 +1344,8 @@ extension NavigatorStateExtension on _i35.NavigationService {
         transition,
   }) async {
     return navigateTo<dynamic>(Routes.ownerApplyConfirmView,
-        arguments: OwnerApplyConfirmViewArguments(body: body, key: key),
+        arguments: OwnerApplyConfirmViewArguments(
+            machBody: machBody, survayBody: survayBody, key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -1827,7 +1835,8 @@ extension NavigatorStateExtension on _i35.NavigationService {
   }
 
   Future<dynamic> replaceWithOwnerApplyConfirmView({
-    required Map<String, dynamic> body,
+    required Map<String, dynamic> machBody,
+    required List<dynamic> survayBody,
     _i33.Key? key,
     int? routerId,
     bool preventDuplicates = true,
@@ -1836,7 +1845,8 @@ extension NavigatorStateExtension on _i35.NavigationService {
         transition,
   }) async {
     return replaceWith<dynamic>(Routes.ownerApplyConfirmView,
-        arguments: OwnerApplyConfirmViewArguments(body: body, key: key),
+        arguments: OwnerApplyConfirmViewArguments(
+            machBody: machBody, survayBody: survayBody, key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
