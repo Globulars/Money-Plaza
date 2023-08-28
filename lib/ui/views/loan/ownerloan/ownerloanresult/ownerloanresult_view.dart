@@ -16,7 +16,7 @@ class OwnerloanresultView extends StackedView<LoanViewModel> {
   const OwnerloanresultView(this.body, {Key? key}) : super(key: key);
   @override
   void onViewModelReady(LoanViewModel viewModel) {
-    viewModel.setloneMachBody(body);
+    viewModel.loneMachBody = body;
     viewModel.getLoanTags();
     viewModel.loanMatch();
     super.onViewModelReady(viewModel);
@@ -46,7 +46,10 @@ class OwnerloanresultView extends StackedView<LoanViewModel> {
                   ],
                 ),
               ),
-              const FilterBottomBar(),
+              Container(
+                  height: 70,
+                  color: Colors.white,
+                  child: const FilterBottomBar()),
             ],
           ),
         ),

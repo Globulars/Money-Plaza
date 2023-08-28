@@ -35,7 +35,7 @@ class LoanTagsListView extends ViewModelWidget<LoanViewModel> {
                           physics: const ClampingScrollPhysics(),
                           shrinkWrap: true,
                           scrollDirection: Axis.horizontal,
-                          itemCount: 15,
+                          itemCount: viewModel.loanTagsList.length,
                           itemBuilder: (BuildContext context, int index) {
                             LoanTags loanTags = viewModel.loanTagsList[index];
                             return InkWell(
