@@ -126,6 +126,7 @@ class MemberLoginViewModel extends BaseViewModel {
   }
 
   login(type) async {
+    log("message");
     var isValid = formKey.currentState!.validate();
     if (isValid) {
       Map<String, dynamic> body = {
