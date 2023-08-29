@@ -138,11 +138,14 @@ class ApiUrl {
   // final Uri mortgageRequestQuery = Uri.parse("$baseUrl/mortgageRequest/query");
 
   ///////////////////////////////////////option Controller////////////////////////////////
+  ///
+ final Uri selectCountries = Uri.parse("$baseUrl/option/countries");
+ 
   // final Uri optionAreas = Uri.parse("$baseUrl/option/areas");
   // final Uri optionCarFactories = Uri.parse("$baseUrl/option/carFactories");
   // final Uri optionCarModelByCarFactory =
   //     Uri.parse("$baseUrl/option/carModelByCarFactory");
-  // final Uri optionCountries = Uri.parse("$baseUrl/option/countries");
+  
   // final Uri optionDistricts = Uri.parse("$baseUrl/option/districts");
   // final Uri optionEducations = Uri.parse("$baseUrl/option/educations");
   // final Uri optionEmploymentTypes =
