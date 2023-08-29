@@ -15,15 +15,17 @@ class ToasterService {
   }
 
   successToast(title) {
-    Fluttertoast.showToast(
-        msg: title,
-        toastLength: Toast.LENGTH_LONG,
-        webShowClose: true,
-        gravity: ToastGravity.NONE,
-        timeInSecForIosWeb: 5,
-        backgroundColor: Colors.green.withOpacity(0.3),
-        textColor: Colors.black,
-        fontSize: 16.0);
+    if (title != null) {
+      Fluttertoast.showToast(
+          msg: title ?? "",
+          toastLength: Toast.LENGTH_LONG,
+          webShowClose: true,
+          gravity: ToastGravity.NONE,
+          timeInSecForIosWeb: 5,
+          backgroundColor: Colors.green.withOpacity(0.3),
+          textColor: Colors.black,
+          fontSize: 16.0);
+    }
   }
 
   infoToast(title) {
