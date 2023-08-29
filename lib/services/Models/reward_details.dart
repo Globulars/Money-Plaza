@@ -1,20 +1,20 @@
 class RewardDetails {
   int? productId;
-  String? incentive;
+  String? name;
   String? incentiveCht;
 
-  RewardDetails({this.productId, this.incentive, this.incentiveCht});
+  RewardDetails({this.productId, this.name, this.incentiveCht});
 
   RewardDetails.fromJson(Map<String, dynamic> json) {
     productId = json['productId'];
-    incentive = json['incentive'];
+    name = json['incentive'];
     incentiveCht = json['incentiveCht'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['productId'] = productId;
-    data['incentive'] = incentive;
+    data['incentive'] = name;
     data['incentiveCht'] = incentiveCht;
     return data;
   }

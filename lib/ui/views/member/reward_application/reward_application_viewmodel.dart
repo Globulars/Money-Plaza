@@ -28,6 +28,7 @@ class RewardApplicationViewModel extends BaseViewModel {
   ];
   setTypeOfProduct(value) {
     typeOfProduct = value;
+    getCompaniesByType();
     notifyListeners();
   }
 
@@ -43,10 +44,10 @@ class RewardApplicationViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  Future<List<CompanyByCard>> getCompaniesByType(type) async {
+  Future<List<CompanyByCard>> getCompaniesByType() async {
     if (institutionList.isEmpty) {
       var data = await _apiHelperService
-          .getApi(Uri.parse(_apiUrl.getCompaniesByType + type));
+          .getApi(Uri.parse(_apiUrl.getCompaniesByType + typeOfProduct));
       if (data?["success"] == true) {
         List dataList = data["data"];
         institutionList =
@@ -63,11 +64,12 @@ class RewardApplicationViewModel extends BaseViewModel {
     }
   }
 
-  Future<List<RewardDetails>> getRewardDetailsList() async {
+  Future<List<RewardDetails>> getRewardDetailsList() async {      
+
     if (rewardDetailsList.isEmpty) {
       Map<String, dynamic> body = {
         "companyId": institution?.id,
-        "type": institution?.name
+        "type": typeOfProduct.toLowerCase()
       };
       log(body.toString());
       var data =
@@ -76,11 +78,15 @@ class RewardApplicationViewModel extends BaseViewModel {
         List dataList = data["data"];
         rewardDetailsList =
             dataList.map((data) => RewardDetails.fromJson(data)).toList();
-        rewardDetails = rewardDetailsList[0];
+        if (rewardDetailsList.isNotEmpty) {
+          rewardDetails = rewardDetailsList[0];
+        }
         notifyListeners();
         return rewardDetailsList;
       } else {
-        throw Exception(data["message"].toString());
+        log(data["message"].toString());
+
+        return rewardDetailsList;
       }
     } else {
       return rewardDetailsList;

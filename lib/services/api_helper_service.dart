@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 import 'package:http/http.dart' as http;
 import 'package:money_plaza/app/app.locator.dart';
 import 'package:money_plaza/services/auth_service.dart';
@@ -14,12 +15,10 @@ class ApiHelperService {
   };
   /////////////////////////////////////Post////////////////////////////////
   postApi(_url, body) async {
+    log(accessToken.toString());
     try {
-      final response = await http.post(_url, body: jsonEncode(body), headers: {
-        "Accept": "application/json",
-        "content-type": "application/json",
-        "Authorization": "Bearer $accessToken"
-      });
+      final response =
+          await http.post(_url, body: jsonEncode(body), headers: headers);
       if (response.statusCode == 200) {
         var data = json.decode(response.body);
         return data;
@@ -33,8 +32,11 @@ class ApiHelperService {
 
   postAuthApi(_url, body) async {
     try {
-      final response =
-          await http.post(_url, body: jsonEncode(body), headers: headers);
+      final response = await http.post(_url, body: jsonEncode(body), headers: {
+        "Accept": "application/json",
+        "content-type": "application/json",
+        "Authorization": "Bearer $accessToken"
+      });
       if (response.statusCode == 200) {
         var data = json.decode(response.body);
         return data;

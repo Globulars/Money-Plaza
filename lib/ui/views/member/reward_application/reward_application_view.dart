@@ -21,8 +21,7 @@ class RewardApplicationView extends StackedView<RewardApplicationViewModel> {
   const RewardApplicationView({Key? key}) : super(key: key);
   @override
   void onViewModelReady(RewardApplicationViewModel viewModel) {
-    viewModel.getCompaniesByType(viewModel.typeOfProduct);
-    viewModel.getRewardDetailsList();
+    viewModel.getCompaniesByType();
     super.onViewModelReady(viewModel);
   }
 
