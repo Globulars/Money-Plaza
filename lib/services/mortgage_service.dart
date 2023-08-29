@@ -47,8 +47,9 @@ class MortgageService {
 
   getCompaniesByType() async {
     try {
-      final response =
-          await http.get(_apiUrl.getCompaniesByType, headers: headers);
+      final response = await http.get(
+          Uri.parse(_apiUrl.getCompaniesByType + "mortgag"),
+          headers: headers);
       if (response.statusCode == 200) {
         var data = json.decode(response.body);
         return data;

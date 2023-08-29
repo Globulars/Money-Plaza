@@ -26,7 +26,7 @@ class ApiHelperService {
   /////////////////////////////////////Get////////////////////////////////
   getApi(_url) async {
     try {
-      final response = await http.post(_url, headers: headers);
+      final response = await http.get(_url, headers: headers);
       if (response.statusCode == 200) {
         var data = json.decode(response.body);
         return data;

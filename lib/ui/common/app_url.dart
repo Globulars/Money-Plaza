@@ -77,8 +77,8 @@ class ApiUrl {
   // final Uri checkIdSubmit = Uri.parse("$baseUrl/checkId/submit/");
 
   ///////////////////////////////////////company Controller////////////////////////////////
-  final Uri getCompaniesByType =
-      Uri.parse("$baseUrl/company/getCompaniesByType?type=mortgag");
+  final String getCompaniesByType =
+      "$baseUrl/company/getCompaniesByType?type=";
 
   // final Uri companyGetCompaniesByType =
   //     Uri.parse("$baseUrl/company/getCompaniesByType");
@@ -122,6 +122,10 @@ class ApiUrl {
   // final Uri loanRequestApply = Uri.parse("$baseUrl/loanRequest/apply");
   // final Uri loanRequestQuery = Uri.parse("$baseUrl/loanRequest/query");
 
+  /////////////////////////////////////Money Plaza Reward////////////////////////////////
+  final Uri userReward = Uri.parse("$baseUrl/userReward/list");
+  // final Uri menuList = Uri.parse("$baseUrl/menu/list");
+  
   /////////////////////////////////////menu Controller////////////////////////////////
   // final Uri menuGetTopMenus = Uri.parse("$baseUrl/menu/getTopMenus");
   // final Uri menuList = Uri.parse("$baseUrl/menu/list");

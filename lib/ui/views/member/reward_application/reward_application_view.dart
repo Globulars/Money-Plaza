@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
+import 'package:money_plaza/ui/widgets/common/dropdown_textfield/model_dropdown.dart';
 import 'package:stacked/stacked.dart';
 import '../../../common/app_colors.dart';
 import '../../../common/ui_helpers.dart';
@@ -69,12 +70,18 @@ class RewardApplicationView extends StackedView<RewardApplicationViewModel> {
                           value: viewModel.typeOfProduct,
                         ),
                         verticalSpaceTiny,
-                        DropdownTextfield(
-                          value: viewModel.institution,
-                          titleText: 'institution',
-                          onChanged: viewModel.setInstitution,
-                          options: viewModel.institutionList,
-                        ),
+                        viewModel.institution != null
+                            ? ModelDropdown(
+                                value: viewModel.institution,
+                                titleText: 'institution',
+                                onChanged: viewModel.setInstitution,
+                                options: viewModel.institutionList,
+                              )
+                            : DropdownTextfield(
+                                titleText: 'rewardDetails',
+                                onChanged: (String) {},
+                                options: [],
+                              ),
                         verticalSpaceTiny,
                         DropdownTextfield(
                           titleText: 'rewardDetails',
