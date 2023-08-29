@@ -44,15 +44,15 @@ class RewardApplicationViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  Future<List<CompanyByCard>> mortgagesBankListData(type) async {
-    if (rewardDetailsList.isEmpty) {
+  Future<List<CompanyByCard>> getCompaniesByType(type) async {
+    if (institutionList.isEmpty) {
       var data = await _apiHelperService
           .getApi(Uri.parse(_apiUrl.getCompaniesByType + type));
       if (data?["success"] == true) {
         List dataList = data["data"];
         institutionList =
             dataList.map((data) => CompanyByCard.fromJson(data)).toList();
-        rewardDetails = rewardDetailsList[0];
+        institution = institutionList[0];
         notifyListeners();
         return institutionList;
       } else {
