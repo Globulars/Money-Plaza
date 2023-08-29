@@ -128,7 +128,6 @@ class MemberLoginViewModel extends BaseViewModel {
   }
 
   login(type) async {
-    log("message");
     var isValid = formKey.currentState!.validate();
     if (isValid) {
       Map<String, dynamic> body = {
@@ -138,7 +137,6 @@ class MemberLoginViewModel extends BaseViewModel {
       };
       var data = await _authnService.login(body);
       if (data?["success"] == true) {
-        log(data.toString());
         resetAll();
         _toasterService.successToast(data["message"]);
 

@@ -19,11 +19,13 @@ import 'reward_application_viewmodel.dart';
 
 class RewardApplicationView extends StackedView<RewardApplicationViewModel> {
   const RewardApplicationView({Key? key}) : super(key: key);
-@override
+  @override
   void onViewModelReady(RewardApplicationViewModel viewModel) {
     viewModel.getCompaniesByType(viewModel.typeOfProduct);
+    viewModel.getRewardDetailsList();
     super.onViewModelReady(viewModel);
   }
+
   @override
   Widget builder(
     BuildContext context,
@@ -87,12 +89,18 @@ class RewardApplicationView extends StackedView<RewardApplicationViewModel> {
                                 options: [],
                               ),
                         verticalSpaceTiny,
-                        DropdownTextfield(
-                          titleText: 'rewardDetails',
-                          onChanged: viewModel.setRewardDetails,
-                          options: viewModel.rewardDetailsList,
-                          value: viewModel.rewardDetails,
-                        ),
+                        viewModel.institution != null
+                            ? ModelDropdown(
+                                titleText: 'rewardDetails',
+                                onChanged: viewModel.setRewardDetails,
+                                options: viewModel.rewardDetailsList,
+                                value: viewModel.rewardDetails,
+                              )
+                            : DropdownTextfield(
+                                titleText: 'rewardDetails',
+                                onChanged: (String) {},
+                                options: [],
+                              ),
                         verticalSpaceTiny,
                         CustomTextField(
                           controller: viewModel.referenceNumberCtrl,

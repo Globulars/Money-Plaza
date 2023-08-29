@@ -1,9 +1,11 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:money_plaza/services/Models/auth.dart';
 import '../ui/common/app_url.dart';
 
 class AuthService {
   final ApiUrl _apiUrl = ApiUrl();
+  Auth? authData;
   Map<String, String> headers = {
     "Accept": "application/json",
     "content-type": "application/json"
@@ -46,6 +48,7 @@ class AuthService {
           body: jsonEncode(body), headers: headers);
       if (response.statusCode == 200) {
         var data = json.decode(response.body);
+        authData = Auth.fromJson(data["data"]);
         return data;
       } else {
         return {"message": "${response.statusCode} error found"};

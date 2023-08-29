@@ -1,5 +1,8 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:money_plaza/services/Models/company_by_card.dart';
+import 'package:money_plaza/services/Models/reward_details.dart';
 import 'package:money_plaza/services/api_helper_service.dart';
 import 'package:stacked/stacked.dart';
 
@@ -13,7 +16,7 @@ class RewardApplicationViewModel extends BaseViewModel {
   var formKey = GlobalKey<FormState>();
   String typeOfProduct = "Loan";
   CompanyByCard? institution;
-  String rewardDetails = "MONEY PLAZA Reward Rebate Up to 1% Cash Rebate";
+  RewardDetails? rewardDetails;
   TextEditingController referenceNumberCtrl = TextEditingController(text: "");
 
   final typeOfProductList = [
@@ -34,11 +37,7 @@ class RewardApplicationViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  final rewardDetailsList = [
-    "MONEY PLAZA Reward Rebate Up to 1% Cash Rebate",
-    "MONEY PLAZA Reward Rebate Up to 2% Cash Rebate",
-    "MONEY PLAZA Reward Rebate Up to 3% Cash Rebate"
-  ];
+  List<RewardDetails> rewardDetailsList = [];
   setRewardDetails(value) {
     rewardDetails = value;
     notifyListeners();
@@ -54,12 +53,37 @@ class RewardApplicationViewModel extends BaseViewModel {
             dataList.map((data) => CompanyByCard.fromJson(data)).toList();
         institution = institutionList[0];
         notifyListeners();
+        getRewardDetailsList();
         return institutionList;
       } else {
         throw Exception(data["message"].toString());
       }
     } else {
       return institutionList;
+    }
+  }
+
+  Future<List<RewardDetails>> getRewardDetailsList() async {
+    if (rewardDetailsList.isEmpty) {
+      Map<String, dynamic> body = {
+        "companyId": institution?.id,
+        "type": institution?.name
+      };
+      log(body.toString());
+      var data =
+          await _apiHelperService.postAuthApi(_apiUrl.getIncentives, body);
+      if (data?["success"] == true) {
+        List dataList = data["data"];
+        rewardDetailsList =
+            dataList.map((data) => RewardDetails.fromJson(data)).toList();
+        rewardDetails = rewardDetailsList[0];
+        notifyListeners();
+        return rewardDetailsList;
+      } else {
+        throw Exception(data["message"].toString());
+      }
+    } else {
+      return rewardDetailsList;
     }
   }
 }
