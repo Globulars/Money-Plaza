@@ -18,7 +18,11 @@ import 'personal_info_viewmodel.dart';
 
 class PersonalInfoView extends StackedView<PersonalInfoViewModel> {
   const PersonalInfoView({Key? key}) : super(key: key);
-
+@override
+  void onViewModelReady(PersonalInfoViewModel viewModel) {
+    viewModel.countryNameListData(); 
+    super.onViewModelReady(viewModel);
+  }
   @override
   Widget builder(
     BuildContext context,
