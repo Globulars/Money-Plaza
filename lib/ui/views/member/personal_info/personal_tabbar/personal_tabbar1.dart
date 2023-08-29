@@ -76,39 +76,37 @@ class PersonalTabBar1 extends ViewModelWidget<PersonalInfoViewModel> {
             ),
             verticalSpaceSmall,
             DropdownTextfield(
-               onTap: () {
-              DatePicker.showDatePicker(context,
-                  showTitleActions: true,
-                  onConfirm: (date) {
-                 var   dob = DateFormat('EEEE, MMM d, yyyy').format(date);
-                viewModel.setDob(dob.toString());
-                log('confirm $date');
-                log(viewModel.dob.toString());
-              }, currentTime: DateTime(0), locale: LocaleType.en);
-            },
+              onTap: () {
+                DatePicker.showDatePicker(context, showTitleActions: true,
+                    onConfirm: (date) {
+                  var dob = DateFormat('EEEE, MMM d, yyyy').format(date);
+                  viewModel.setDob(dob.toString());
+                  log('confirm $date');
+                  log(viewModel.dob.toString());
+                }, currentTime: DateTime(0), locale: LocaleType.en);
+              },
               onChanged: (String) {},
               options: [viewModel.dob],
               value: viewModel.dob,
               titleText: 'birthDate',
             ),
             verticalSpaceSmall,
-            viewModel.countryList!=null?
-            ModelDropdown(
-              onChanged: viewModel.setSelectCountry,
-              options: viewModel.countryDataList,
-              value: viewModel.countryList,
-              titleText: 'nationality',
-            ):
-              DropdownTextfield(
-              onChanged: (String) {},
-              options: [],
-              titleText: 'nationality',
-            ),
-
+            viewModel.countryList != null
+                ? ModelDropdown(
+                    onChanged: viewModel.setSelectCountry,
+                    options: viewModel.countryDataList,
+                    value: viewModel.countryList,
+                    titleText: 'nationality',
+                  )
+                : DropdownTextfield(
+                    onChanged: (String) {},
+                    options: [],
+                    titleText: 'nationality',
+                  ),
             verticalSpaceSmall,
             DropdownTextfield(
               onChanged: viewModel.setDoYouKnow,
-              options:viewModel.doYouKnowList,
+              options: viewModel.doYouKnowList,
               titleText: 'doyouknowMoneyPlaza',
               value: viewModel.doYouKnow,
             ),
