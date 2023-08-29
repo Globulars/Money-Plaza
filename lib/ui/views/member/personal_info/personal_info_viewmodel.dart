@@ -6,10 +6,15 @@ class PersonalInfoViewModel extends BaseViewModel {
       TextEditingController(text: "Mudassir");
       TextEditingController lastNameCtrl =
       TextEditingController(text: "Mukhtar");
-  var gender = '';
+      String dob = "";
+      var gender = '';
 
   setGender(value) {
     gender = value;
+    notifyListeners();
+  }
+  setDob(value) {
+    dob = value;
     notifyListeners();
   }
 }
