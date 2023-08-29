@@ -10,6 +10,7 @@ import '../../../../common/app_colors.dart';
 import '../../../../common/ui_helpers.dart';
 import '../../../../widgets/common/custom_text_field/custom_text_field.dart';
 import '../../../../widgets/common/dropdown_textfield/dropdown_textfield.dart';
+import '../../../../widgets/common/dropdown_textfield/model_dropdown.dart';
 import '../../../../widgets/common/icon_box_btn/return_button.dart';
 import '../../../../widgets/common/icon_box_btn/text.dart';
 import '../personal_info_viewmodel.dart';
@@ -91,11 +92,19 @@ class PersonalTabBar1 extends ViewModelWidget<PersonalInfoViewModel> {
               titleText: 'birthDate',
             ),
             verticalSpaceSmall,
-            DropdownTextfield(
+            viewModel.countryList!=null?
+            ModelDropdown(
+              onChanged: viewModel.setSelectCountry,
+              options: [],
+              value: viewModel.countryList,
+              titleText: 'nationality',
+            ):
+              DropdownTextfield(
               onChanged: (String) {},
               options: [],
               titleText: 'nationality',
             ),
+
             verticalSpaceSmall,
             DropdownTextfield(
               onChanged: (String) {},
