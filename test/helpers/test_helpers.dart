@@ -7,6 +7,7 @@ import 'package:money_plaza/services/toaster_service.dart';
 import 'package:money_plaza/services/mortgage_service.dart';
 import 'package:money_plaza/services/credit_card_service.dart';
 import 'package:money_plaza/services/loan_card_service.dart';
+import 'package:money_plaza/services/api_helper_service.dart';
 // @stacked-import
 
 import 'test_helpers.mocks.dart';
@@ -20,6 +21,7 @@ import 'test_helpers.mocks.dart';
   MockSpec<MortgageService>(onMissingStub: OnMissingStub.returnDefault),
   MockSpec<CreditCardService>(onMissingStub: OnMissingStub.returnDefault),
   MockSpec<LoanCardService>(onMissingStub: OnMissingStub.returnDefault),
+  MockSpec<ApiHelperService>(onMissingStub: OnMissingStub.returnDefault),
 // @stacked-mock-spec
 ])
 void registerServices() {
@@ -31,6 +33,7 @@ void registerServices() {
   getAndRegisterMortgageService();
   getAndRegisterCreditCardService();
   getAndRegisterLoanCardService();
+  getAndRegisterApiHelperService();
 // @stacked-mock-register
 }
 
@@ -116,6 +119,13 @@ MockLoanCardService getAndRegisterLoanCardService() {
   _removeRegistrationIfExists<LoanCardService>();
   final service = MockLoanCardService();
   locator.registerSingleton<LoanCardService>(service);
+  return service;
+}
+
+MockApiHelperService getAndRegisterApiHelperService() {
+  _removeRegistrationIfExists<ApiHelperService>();
+  final service = MockApiHelperService();
+  locator.registerSingleton<ApiHelperService>(service);
   return service;
 }
 // @stacked-mock-create

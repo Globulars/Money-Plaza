@@ -8,6 +8,7 @@ import 'dart:ui' as _i5;
 
 import 'package:flutter/material.dart' as _i3;
 import 'package:mockito/mockito.dart' as _i1;
+import 'package:money_plaza/services/api_helper_service.dart' as _i11;
 import 'package:money_plaza/services/auth_service.dart' as _i6;
 import 'package:money_plaza/services/credit_card_service.dart' as _i9;
 import 'package:money_plaza/services/loan_card_service.dart' as _i10;
@@ -717,3 +718,8 @@ class MockLoanCardService extends _i1.Mock implements _i10.LoanCardService {
         returnValueForMissingStub: null,
       );
 }
+
+/// A class which mocks [ApiHelperService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockApiHelperService extends _i1.Mock implements _i11.ApiHelperService {}

@@ -72,7 +72,7 @@ class RewardApplicationView extends StackedView<RewardApplicationViewModel> {
                         DropdownTextfield(
                           value: viewModel.institution,
                           titleText: 'institution',
-                          onChanged:viewModel.setInstitution,
+                          onChanged: viewModel.setInstitution,
                           options: viewModel.institutionList,
                         ),
                         verticalSpaceTiny,

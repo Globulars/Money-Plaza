@@ -16,11 +16,13 @@ class MemberLoginViewModel extends BaseViewModel {
 
   final _navigationService = locator<NavigationService>();
   final _authnService = locator<AuthService>();
-  TextEditingController emailCtrl = TextEditingController();
+  TextEditingController emailCtrl =
+      TextEditingController(text: "mudassirmukhtar4@gmail.com");
   TextEditingController verifyCode = TextEditingController();
   TextEditingController firstNameCtrl = TextEditingController();
   TextEditingController lastNameCtrl = TextEditingController();
-  TextEditingController passwordCtrl = TextEditingController();
+  TextEditingController passwordCtrl =
+      TextEditingController(text: "qwerty1234");
   TextEditingController confirmPasswordCtrl = TextEditingController();
   TextEditingController phoneNoCtrl = TextEditingController();
   String interestProducts = "Loans";

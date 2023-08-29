@@ -478,7 +478,7 @@ class StackedRouter extends _i1.RouterBase {
       return _i32.MaterialPageRoute<dynamic>(
         builder: (context) => _i28.OwnerApplyConfirmView(
             args.machBody, args.survayBody,
-            key: args.key),
+            key: args.key, match: args.match),
         settings: data,
       );
     },
@@ -498,7 +498,7 @@ class StackedRouter extends _i1.RouterBase {
       return _i32.MaterialPageRoute<dynamic>(
         builder: (context) => _i30.CommericalApplyConfirmView(
             args.machBody, args.survayBody,
-            key: args.key),
+            key: args.key, match: args.match),
         settings: data,
       );
     },
@@ -508,7 +508,7 @@ class StackedRouter extends _i1.RouterBase {
       return _i32.MaterialPageRoute<dynamic>(
         builder: (context) => _i31.BlnstransferloanApplyConfirmView(
             args.machBody, args.survayBody,
-            key: args.key),
+            key: args.key, match: args.match),
         settings: data,
       );
     },
@@ -861,6 +861,7 @@ class OwnerApplyConfirmViewArguments {
     required this.machBody,
     required this.survayBody,
     this.key,
+    this.match = false,
   });
 
   final Map<String, dynamic> machBody;
@@ -869,9 +870,11 @@ class OwnerApplyConfirmViewArguments {
 
   final _i32.Key? key;
 
+  final bool match;
+
   @override
   String toString() {
-    return '{"machBody": "$machBody", "survayBody": "$survayBody", "key": "$key"}';
+    return '{"machBody": "$machBody", "survayBody": "$survayBody", "key": "$key", "match": "$match"}';
   }
 
   @override
@@ -879,12 +882,16 @@ class OwnerApplyConfirmViewArguments {
     if (identical(this, other)) return true;
     return other.machBody == machBody &&
         other.survayBody == survayBody &&
-        other.key == key;
+        other.key == key &&
+        other.match == match;
   }
 
   @override
   int get hashCode {
-    return machBody.hashCode ^ survayBody.hashCode ^ key.hashCode;
+    return machBody.hashCode ^
+        survayBody.hashCode ^
+        key.hashCode ^
+        match.hashCode;
   }
 }
 
@@ -925,6 +932,7 @@ class CommericalApplyConfirmViewArguments {
     required this.machBody,
     required this.survayBody,
     this.key,
+    this.match = false,
   });
 
   final Map<String, dynamic> machBody;
@@ -933,9 +941,11 @@ class CommericalApplyConfirmViewArguments {
 
   final _i32.Key? key;
 
+  final bool match;
+
   @override
   String toString() {
-    return '{"machBody": "$machBody", "survayBody": "$survayBody", "key": "$key"}';
+    return '{"machBody": "$machBody", "survayBody": "$survayBody", "key": "$key", "match": "$match"}';
   }
 
   @override
@@ -943,12 +953,16 @@ class CommericalApplyConfirmViewArguments {
     if (identical(this, other)) return true;
     return other.machBody == machBody &&
         other.survayBody == survayBody &&
-        other.key == key;
+        other.key == key &&
+        other.match == match;
   }
 
   @override
   int get hashCode {
-    return machBody.hashCode ^ survayBody.hashCode ^ key.hashCode;
+    return machBody.hashCode ^
+        survayBody.hashCode ^
+        key.hashCode ^
+        match.hashCode;
   }
 }
 
@@ -957,6 +971,7 @@ class BlnstransferloanApplyConfirmViewArguments {
     required this.machBody,
     required this.survayBody,
     this.key,
+    this.match = false,
   });
 
   final Map<String, dynamic> machBody;
@@ -965,9 +980,11 @@ class BlnstransferloanApplyConfirmViewArguments {
 
   final _i32.Key? key;
 
+  final bool match;
+
   @override
   String toString() {
-    return '{"machBody": "$machBody", "survayBody": "$survayBody", "key": "$key"}';
+    return '{"machBody": "$machBody", "survayBody": "$survayBody", "key": "$key", "match": "$match"}';
   }
 
   @override
@@ -975,12 +992,16 @@ class BlnstransferloanApplyConfirmViewArguments {
     if (identical(this, other)) return true;
     return other.machBody == machBody &&
         other.survayBody == survayBody &&
-        other.key == key;
+        other.key == key &&
+        other.match == match;
   }
 
   @override
   int get hashCode {
-    return machBody.hashCode ^ survayBody.hashCode ^ key.hashCode;
+    return machBody.hashCode ^
+        survayBody.hashCode ^
+        key.hashCode ^
+        match.hashCode;
   }
 }
 
@@ -1415,6 +1436,7 @@ extension NavigatorStateExtension on _i34.NavigationService {
     required Map<String, dynamic> machBody,
     required List<dynamic> survayBody,
     _i32.Key? key,
+    bool match = false,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -1423,7 +1445,7 @@ extension NavigatorStateExtension on _i34.NavigationService {
   }) async {
     return navigateTo<dynamic>(Routes.ownerApplyConfirmView,
         arguments: OwnerApplyConfirmViewArguments(
-            machBody: machBody, survayBody: survayBody, key: key),
+            machBody: machBody, survayBody: survayBody, key: key, match: match),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -1453,6 +1475,7 @@ extension NavigatorStateExtension on _i34.NavigationService {
     required Map<String, dynamic> machBody,
     required List<dynamic> survayBody,
     _i32.Key? key,
+    bool match = false,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -1461,7 +1484,7 @@ extension NavigatorStateExtension on _i34.NavigationService {
   }) async {
     return navigateTo<dynamic>(Routes.commericalApplyConfirmView,
         arguments: CommericalApplyConfirmViewArguments(
-            machBody: machBody, survayBody: survayBody, key: key),
+            machBody: machBody, survayBody: survayBody, key: key, match: match),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -1472,6 +1495,7 @@ extension NavigatorStateExtension on _i34.NavigationService {
     required Map<String, dynamic> machBody,
     required List<dynamic> survayBody,
     _i32.Key? key,
+    bool match = false,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -1480,7 +1504,7 @@ extension NavigatorStateExtension on _i34.NavigationService {
   }) async {
     return navigateTo<dynamic>(Routes.blnstransferloanApplyConfirmView,
         arguments: BlnstransferloanApplyConfirmViewArguments(
-            machBody: machBody, survayBody: survayBody, key: key),
+            machBody: machBody, survayBody: survayBody, key: key, match: match),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -1917,6 +1941,7 @@ extension NavigatorStateExtension on _i34.NavigationService {
     required Map<String, dynamic> machBody,
     required List<dynamic> survayBody,
     _i32.Key? key,
+    bool match = false,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -1925,7 +1950,7 @@ extension NavigatorStateExtension on _i34.NavigationService {
   }) async {
     return replaceWith<dynamic>(Routes.ownerApplyConfirmView,
         arguments: OwnerApplyConfirmViewArguments(
-            machBody: machBody, survayBody: survayBody, key: key),
+            machBody: machBody, survayBody: survayBody, key: key, match: match),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -1955,6 +1980,7 @@ extension NavigatorStateExtension on _i34.NavigationService {
     required Map<String, dynamic> machBody,
     required List<dynamic> survayBody,
     _i32.Key? key,
+    bool match = false,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -1963,7 +1989,7 @@ extension NavigatorStateExtension on _i34.NavigationService {
   }) async {
     return replaceWith<dynamic>(Routes.commericalApplyConfirmView,
         arguments: CommericalApplyConfirmViewArguments(
-            machBody: machBody, survayBody: survayBody, key: key),
+            machBody: machBody, survayBody: survayBody, key: key, match: match),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -1974,6 +2000,7 @@ extension NavigatorStateExtension on _i34.NavigationService {
     required Map<String, dynamic> machBody,
     required List<dynamic> survayBody,
     _i32.Key? key,
+    bool match = false,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -1982,7 +2009,7 @@ extension NavigatorStateExtension on _i34.NavigationService {
   }) async {
     return replaceWith<dynamic>(Routes.blnstransferloanApplyConfirmView,
         arguments: BlnstransferloanApplyConfirmViewArguments(
-            machBody: machBody, survayBody: survayBody, key: key),
+            machBody: machBody, survayBody: survayBody, key: key, match: match),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

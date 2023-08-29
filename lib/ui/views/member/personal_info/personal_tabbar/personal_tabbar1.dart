@@ -47,12 +47,10 @@ class PersonalTabBar1 extends ViewModelWidget<PersonalInfoViewModel> {
                   height: 41.5,
                   text: 'm',
                   width: width * 0.43,
-                  boxcolor: viewModel.gender == 'm'
-                      ? darkGreenHeigh
-                      : Colors.white,
-                  color: viewModel.gender != "m"
-                      ? darkGreenHeigh
-                      : Colors.white,
+                  boxcolor:
+                      viewModel.gender == 'm' ? darkGreenHeigh : Colors.white,
+                  color:
+                      viewModel.gender != "m" ? darkGreenHeigh : Colors.white,
                   onPress: () {
                     viewModel.setGender('m');
                   },
@@ -61,12 +59,10 @@ class PersonalTabBar1 extends ViewModelWidget<PersonalInfoViewModel> {
                   height: 41.5,
                   text: 'f',
                   width: width * 0.43,
-                  boxcolor: viewModel.gender == "f"
-                      ? darkGreenHeigh
-                      : Colors.white,
-                  color: viewModel.gender != "f"
-                      ? darkGreenHeigh
-                      : Colors.white,
+                  boxcolor:
+                      viewModel.gender == "f" ? darkGreenHeigh : Colors.white,
+                  color:
+                      viewModel.gender != "f" ? darkGreenHeigh : Colors.white,
                   onPress: () {
                     viewModel.setGender('f');
                   },
