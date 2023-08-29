@@ -1,10 +1,15 @@
+import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
 class PersonalInfoViewModel extends BaseViewModel {
-  var loanTenors = '';
+  TextEditingController firstNameCtrl =
+      TextEditingController(text: "Mudassir");
+      TextEditingController lastNameCtrl =
+      TextEditingController(text: "Mukhtar");
+  var gender = '';
 
-  setLoanTenors(value) {
-    loanTenors = value;
+  setGender(value) {
+    gender = value;
     notifyListeners();
   }
 }

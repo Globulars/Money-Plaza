@@ -26,15 +26,17 @@ class PersonalTabBar1 extends ViewModelWidget<PersonalInfoViewModel> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomTextField(
+              controller: viewModel.firstNameCtrl,
               titleText: 'firstName',
             ),
             verticalSpaceSmall,
             CustomTextField(
+              controller: viewModel.lastNameCtrl,
               titleText: 'lastName',
             ),
             verticalSpaceSmall,
             CustomText(
-              text: 'sex',
+              text: 'gender',
               fontWeight: FontWeight.w600,
             ),
             verticalSpaceTiny,
@@ -45,28 +47,28 @@ class PersonalTabBar1 extends ViewModelWidget<PersonalInfoViewModel> {
                   height: 41.5,
                   text: 'm',
                   width: width * 0.43,
-                  boxcolor: viewModel.loanTenors == 'm'
+                  boxcolor: viewModel.gender == 'm'
                       ? darkGreenHeigh
                       : Colors.white,
-                  color: viewModel.loanTenors != "m"
+                  color: viewModel.gender != "m"
                       ? darkGreenHeigh
                       : Colors.white,
                   onPress: () {
-                    viewModel.setLoanTenors('m');
+                    viewModel.setGender('m');
                   },
                 ),
                 ReturnButton(
                   height: 41.5,
                   text: 'f',
                   width: width * 0.43,
-                  boxcolor: viewModel.loanTenors == "f"
+                  boxcolor: viewModel.gender == "f"
                       ? darkGreenHeigh
                       : Colors.white,
-                  color: viewModel.loanTenors != "f"
+                  color: viewModel.gender != "f"
                       ? darkGreenHeigh
                       : Colors.white,
                   onPress: () {
-                    viewModel.setLoanTenors('f');
+                    viewModel.setGender('f');
                   },
                 ),
               ],

@@ -46,7 +46,7 @@
   "next": "下一個",
   "firstName": "名",
   "lastName": "姓",
-  "sex": "性別",
+  "gender": "性别",
   "m": "男",
   "f": "女",
   "login": "登錄",

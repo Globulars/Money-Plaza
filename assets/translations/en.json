@@ -46,7 +46,7 @@
   "next": "Next",
   "firstName": "First Name",
   "lastName": "Last Name",
-  "sex": "Sex",
+  "gender": "Gender",
   "m": "M",
   "f": "F",
   "login": "Login",
