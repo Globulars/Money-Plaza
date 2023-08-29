@@ -22,9 +22,11 @@ class PersonalTabBar2 extends ViewModelWidget<PersonalInfoViewModel> {
           children: [
             CustomTextField(
               titleText: 'email',
+              controller: viewModel.emailCtrl,
             ),
             verticalSpaceSmall,
             CustomTextField(
+              controller: viewModel.contactNumCtrl,
               titleText: 'contactNumber',
             ),
             verticalSpaceLarge

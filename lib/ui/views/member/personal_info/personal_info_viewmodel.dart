@@ -13,6 +13,10 @@ class PersonalInfoViewModel extends BaseViewModel {
   final ApiUrl _apiUrl = ApiUrl();
   TextEditingController firstNameCtrl = TextEditingController(text: "Mudassir");
   TextEditingController lastNameCtrl = TextEditingController(text: "Mukhtar");
+  TextEditingController emailCtrl =
+      TextEditingController();
+  TextEditingController contactNumCtrl =
+      TextEditingController();
   String dob = "";
   var gender = '';
   String doYouKnow = "Facebook";
