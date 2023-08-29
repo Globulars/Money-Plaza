@@ -5,7 +5,6 @@ import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
-import '../../../services/Models/list_of_banks.dart';
 import '../../views/morgages/morgages_viewmodel.dart';
 import '../../widgets/common/custom_text_field/custom_text_field.dart';
 import '../../widgets/common/dropdown_textfield/dropdown_textfield.dart';
@@ -22,6 +21,11 @@ class MorgagesFilterDialog extends StackedView<MorgagesViewModel> {
     required this.request,
     required this.completer,
   }) : super(key: key);
+  @override
+  void onViewModelReady(MorgagesViewModel viewModel) {
+    viewModel.mortgagesBankListData();
+    super.onViewModelReady(viewModel);
+  }
 
   @override
   Widget builder(
@@ -80,35 +84,20 @@ class MorgagesFilterDialog extends StackedView<MorgagesViewModel> {
                       hintText: 'year',
                     ),
                     verticalSpaceSmall,
-                    FutureBuilder<List<BankList>>(
-                      future: viewModel.mortgagesBankListData(),
-                      builder: (ctx, snapshot) {
-                        if (snapshot.connectionState == ConnectionState.done) {
-                          if (snapshot.hasError) {
-                            return Center(
-                              child: Text(
-                                snapshot.error.toString(),
-                                style: const TextStyle(fontSize: 18),
-                              ),
-                            );
-                          } else if (snapshot.hasData) {
-                            return ModelDropdown(
-                              titleText: 'bankFinancialInstitutes',
-                              value: viewModel.bankList,
-                              onChanged: (value) {
-                                viewModel.setBankList(value);
-                              },
-                              options: viewModel.bankDataList,
-                            );
-                          }
-                        }
-                        return DropdownTextfield(
-                          titleText: 'bankFinancialInstitutes',
-                          onChanged: (String) {},
-                          options: [],
-                        );
-                      },
-                    ),
+                    viewModel.bankList != null
+                        ? ModelDropdown(
+                            titleText: 'bankFinancialInstitutes',
+                            value: viewModel.bankList,
+                            onChanged: (value) {
+                              viewModel.setBankList(value);
+                            },
+                            options: viewModel.bankDataList,
+                          )
+                        : DropdownTextfield(
+                            titleText: 'bankFinancialInstitutes',
+                            onChanged: (String) {},
+                            options: [],
+                          ),
                     verticalSpaceSmall,
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,

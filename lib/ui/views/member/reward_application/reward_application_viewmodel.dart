@@ -31,8 +31,8 @@ class RewardApplicationViewModel extends BaseViewModel {
 
   final rewardDetailsList = [
     "MONEY PLAZA Reward Rebate Up to 1% Cash Rebate",
-    "MONEY PLAZA Reward Rebate Up to 1% Cash Rebate",
-    "MONEY PLAZA Reward Rebate Up to 1% Cash Rebate"
+    "MONEY PLAZA Reward Rebate Up to 2% Cash Rebate",
+    "MONEY PLAZA Reward Rebate Up to 3% Cash Rebate"
   ];
   setRewardDetails(value) {
     rewardDetails = value;
