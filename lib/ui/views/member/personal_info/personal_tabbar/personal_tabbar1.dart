@@ -1,6 +1,10 @@
 // ignore_for_file: non_constant_identifier_names, avoid_types_as_parameter_names, prefer_const_literals_to_create_immutables
 
+import 'dart:developer';
+
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_datetime_picker_plus/flutter_datetime_picker_plus.dart';
 import 'package:stacked/stacked.dart';
 import '../../../../common/app_colors.dart';
 import '../../../../common/ui_helpers.dart';
@@ -71,8 +75,19 @@ class PersonalTabBar1 extends ViewModelWidget<PersonalInfoViewModel> {
             ),
             verticalSpaceSmall,
             DropdownTextfield(
+               onTap: () {
+              DatePicker.showDatePicker(context,
+                  showTitleActions: true,
+                  onConfirm: (date) {
+                 var   dob = DateFormat('EEEE, MMM d, yyyy').format(date);
+                viewModel.setDob(dob.toString());
+                log('confirm $date');
+                log(viewModel.dob.toString());
+              }, currentTime: DateTime(0), locale: LocaleType.en);
+            },
               onChanged: (String) {},
-              options: [],
+              options: [viewModel.dob],
+              value: viewModel.dob,
               titleText: 'birthDate',
             ),
             verticalSpaceSmall,

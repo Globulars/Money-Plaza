@@ -16,6 +16,7 @@ class DropdownTextfield extends StackedView<DropdownTextfieldModel> {
   double? height;
   double? margin;
   void Function(String?) onChanged;
+  Function? onTap;
   DropdownTextfield({
     super.key,
     this.hintText = '',
@@ -25,6 +26,7 @@ class DropdownTextfield extends StackedView<DropdownTextfieldModel> {
     this.value,
     this.titleText = "",
     required this.onChanged,
+    this.onTap,
   });
 
   @override
@@ -74,6 +76,11 @@ class DropdownTextfield extends StackedView<DropdownTextfieldModel> {
                     iconDisabledColor: Colors.black,
                     iconSize: 32,
                     value: value,
+                    onTap: () {
+                      if (onTap != null) {
+                        onTap!();
+                      }
+                    },
                     isDense: true,
                     onChanged: onChanged,
                     items: options.map((String value) {
