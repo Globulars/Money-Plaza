@@ -1,3 +1,5 @@
+// ignore_for_file: void_checks, prefer_typing_uninitialized_variables
+
 import 'dart:convert';
 import 'dart:developer';
 import 'dart:io';
@@ -9,7 +11,7 @@ import 'package:money_plaza/services/auth_service.dart';
 class ApiHelperService {
   final AuthService _authnService = locator<AuthService>();
   String? get accessToken => _authnService.authData?.accessToken;
-
+  String? imagePath;
   // final ApiUrl _apiUrl = ApiUrl();
   Map<String, String> headers = {
     "Accept": "application/json",
@@ -30,7 +32,8 @@ class ApiHelperService {
     } catch (e) {
       return {"message": e};
     }
-  } /////////////////////////////////////Post Auth////////////////////////////////
+  }
+  /////////////////////////////////////Post Auth////////////////////////////////
 
   postAuthApi(_url, body) async {
     try {
@@ -49,39 +52,39 @@ class ApiHelperService {
       return {"message": e};
     }
   }
+  /////////////////////////////////////Upload Image////////////////////////////////
 
-  uploadImageAndPost(_url,_body) async {
+  uploadImage() async {
     final ImagePicker _picker = ImagePicker();
     final XFile? image = await _picker.pickImage(source: ImageSource.camera);
-    // File file = File(image!.path);
-    // return file;
-    if (image?.path == null) {
-      return {"message": "Please select image"};
-    } else {
-      return multiPartRequest(_url,_body,image!.path);
-    }
+    imagePath = image!.path;
   }
+  /////////////////////////////////////Post Auth////////////////////////////////
 
-  multiPartRequest(_url,_body,imagePath) async {
+  multiPartRequest(_url, _body) async {
+    log(_body.toString());
+    var data;
     try {
       var request = http.MultipartRequest("POST", _url);
       request.headers.addAll({
-        "Accept": "multipart/form-data",
-        "content-type": "multipart/form-data",
+        // "Accept": "multipart/form-data",
+        "content-type":
+            "multipart/form-data; boundary=<calculated when request is sent>",
         "Authorization": "Bearer $accessToken"
       });
       request.fields.addAll(_body);
       request.files.add(http.MultipartFile.fromBytes(
-          "files", File(imagePath).readAsBytesSync(),
+          "files", File(imagePath!).readAsBytesSync(),
           filename: imagePath));
       var response = await request.send();
       if (response.statusCode == 200) {
         // var data = json.decode(response.body);
         log(response.statusCode.toString());
-        response.stream.transform(utf8.decoder).listen((value) {
-          log(value.toString());
+        await response.stream.transform(utf8.decoder).listen((value) {
+          log("value: ${value.toString()}");
+          data = json.decode(value);
         });
-        return response;
+        return data;
       } else {
         return {"message": "${response.statusCode} error found"};
       }

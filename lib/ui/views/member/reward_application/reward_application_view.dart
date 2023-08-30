@@ -118,7 +118,7 @@ class RewardApplicationView extends StackedView<RewardApplicationViewModel> {
                           verticalSpaceTiny,
                           ReturnButton(
                             text: "Upload File",
-                            onPress: viewModel.uploadImageAndPost,
+                            onPress: viewModel.uploadImage,
                             height: 40,
                           ),
                           verticalSpaceLarge
@@ -145,6 +145,7 @@ class RewardApplicationView extends StackedView<RewardApplicationViewModel> {
                   image: myIcons.done,
                   imgwidth: 12,
                   text: 'submit',
+                  onPress: viewModel.multiPartRequest,
                   height: 40,
                   width: 80,
                 ),
