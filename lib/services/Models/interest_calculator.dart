@@ -1,6 +1,6 @@
 class InterestCalculator {
-  int? amount;
-  int? interestRate;
+  double? amount;
+  double? interestRate;
   int? totalNumOfPayments;
   double? scheduledPaymentAmount;
   double? totalPaymentAmount;

@@ -107,14 +107,14 @@ class LoanViewModel extends BaseViewModel {
     var data =
         await _apiHelperService.postApi( _apiUrl.scheduleByLoan,body);
     if (data?["success"] == true) {
-      log(data.toString());
       var dataList = data["data"];
+      log(dataList.toString());
       if (dataList.isEmpty) {
         paymentTableMessage = "No data found";
         log(paymentTableMessage.toString());
       } else {
-        paymentTable = InterestCalculator.fromJson(data);
-        log("=======>${paymentTable}");
+        paymentTable = InterestCalculator.fromJson(dataList);
+        log("=======>${paymentTable.amount}");
       }
       notifyListeners();
       return paymentTable;
