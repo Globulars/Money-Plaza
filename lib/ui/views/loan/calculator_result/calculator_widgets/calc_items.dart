@@ -178,6 +178,7 @@ class CalculatorItems extends ViewModelWidget<LoanViewModel> {
           ),
           verticalSpaceSmall,
           SubmitButton(
+            onPress: viewModel.recalculate,
             height: 40,
             text: 'recalculate',
             width: width * 0.46,

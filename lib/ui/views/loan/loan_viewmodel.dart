@@ -5,24 +5,33 @@ import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import '../../../app/app.dialogs.dart';
 import '../../../app/app.locator.dart';
+import '../../../services/Models/interest_calculator.dart';
 import '../../../services/Models/loan_card.dart';
 import '../../../services/Models/loan_tags.dart';
 import '../../../services/Models/schedule_loan.dart';
+import '../../../services/api_helper_service.dart';
 import '../../../services/loan_card_service.dart';
+import '../../common/app_url.dart';
 
 class LoanViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
+  final _apiHelperService = locator<ApiHelperService>();
+
   final _loanCardService = locator<LoanCardService>();
   final _dialogService = locator<DialogService>();
+  final ApiUrl _apiUrl = ApiUrl();
   var formKey = GlobalKey<FormState>();
   Map<String, dynamic> loneMachBody = {};
   List<LoanCard> loanCardList = [];
+   InterestCalculator paymentTable=InterestCalculator();
+
   List<LoanTags> loanTagsList = [];
   List<String> features = [];
   List<LoanCard> compareData = [];
   List<ScheduleLoan> scheduleLoan = [];
   var showcard = false;
   String loanCardListMessage = "";
+  String paymentTableMessage = "";
   /////////////////// calculator dialog data//////////////////
   var repayment = 0;
   var calculation = 0;
@@ -78,18 +87,43 @@ class LoanViewModel extends BaseViewModel {
   }
 
   /////////////////// calculator result//////////////////
-  TextEditingController borrowingAmountCtrl = TextEditingController(text: "50000");
-  TextEditingController aprCtrl =TextEditingController(text: "4");
-      
+  TextEditingController borrowingAmountCtrl =
+      TextEditingController(text: "50000");
+  TextEditingController aprCtrl = TextEditingController(text: "4");
+
   TextEditingController tenorCtrl = TextEditingController(text: "5");
-  TextEditingController monthyRepaymentAmountCtrl = TextEditingController(text: "10100");
+  TextEditingController monthyRepaymentAmountCtrl =
+      TextEditingController(text: "10100");
   TextEditingController totalPaymentAmountCtrl =
       TextEditingController(text: "50501");
   TextEditingController totalInterestCtrl = TextEditingController(text: "501");
-  
-  
- 
-  
+
+  Future<InterestCalculator> recalculate() async {
+     Map<String, dynamic> body = {
+      "amount": borrowingAmountCtrl.text,
+    "interestRate": interestCtrl.text,
+    "monthlyRepayment": monthlyPaymentCtrl.text
+    };
+    var data =
+        await _apiHelperService.postApi( _apiUrl.scheduleByLoan,body);
+    if (data?["success"] == true) {
+      var dataList = data["data"];
+      log(dataList.toString());
+      if (dataList.isEmpty) {
+        paymentTableMessage = "No data found";
+        log(paymentTableMessage.toString());
+      } else {
+        paymentTable = InterestCalculator.fromJson(dataList);
+        log("=======>${paymentTable.amount}");
+      }
+      notifyListeners();
+      return paymentTable;
+    } else {
+      paymentTableMessage = data["message"].toString();
+      throw Exception(data["message"].toString());
+    }
+  }
+
   ////// ////////////
   navigateToPersonalloan() {
     _navigationService.navigateToPersonalloanView();
