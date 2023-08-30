@@ -93,8 +93,12 @@ class CalculatorItems extends ViewModelWidget<LoanViewModel> {
             ],
           ),
           verticalSpaceTiny,
+           viewModel.paymentTable.schedules == null
+                  ? const SizedBox()
+                  :
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
                 width: width * 0.46,
@@ -165,12 +169,20 @@ class CalculatorItems extends ViewModelWidget<LoanViewModel> {
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
                     ),
-                    CustomTextField(
-                      controller: viewModel.totalInterestCtrl,
-                      hintText: '\$28.397,93',
-                      height: 40,
-                      textAlign: TextAlign.center,
-                    ),
+                    verticalSpaceTiny,
+                    ReturnButton(
+           
+            text:  viewModel.totalInterestCtrl.toString(),
+            height: 40,
+            btmRightRadius: 5,
+            topLeftRadius: 5,topRightRadius: 5,btmLeftRadius: 5,
+          ),
+                    // CustomTextField(
+                    //   controller:
+                    //   hintText: '\$28.397,93',
+                    //   height: 40,
+                    //   textAlign: TextAlign.center,
+                    // ),
                   ],
                 ),
               )

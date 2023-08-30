@@ -32,7 +32,7 @@ class ApiUrl {
   //     Uri.parse("$baseUrl/user/updateLoanInformation");
   // final Uri updateMortgageInformation =
   //     Uri.parse("$baseUrl/user/updateMortgageInformation");
-  // final Uri updatePassword = Uri.parse("$baseUrl/user/updatePassword");
+  final Uri updatePassword = Uri.parse("$baseUrl/user/updatePassword");
   final Uri updatePasswordByEmailCode =
       Uri.parse("$baseUrl/user/updatePasswordByEmailCode");
   final Uri updatePasswordByMobileCode =

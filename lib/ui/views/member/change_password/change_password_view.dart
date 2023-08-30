@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:stacked/stacked.dart';
-
 import '../../../common/ui_helpers.dart';
 import '../../../widgets/app_bar.dart';
 import '../../../widgets/bottom_bar.dart';
@@ -28,47 +27,50 @@ class ChangePasswordView extends StackedView<ChangePasswordViewModel> {
         Scaffold(
           backgroundColor: const Color.fromARGB(0, 92, 53, 53),
           appBar: appBar(context),
-          body: Column(
-            children: [
-              SubBar(
-                btmLeftRadius: 0,
-                btmRightRadius: 0,
-                image: myIcons.setting,
-                text: 'changePassword',
-                fontSize: 18,
-                divider: true,
-                // onPress: viewModel.showCreditFilter,
-              ),
-              Expanded(
-                child: SingleChildScrollView(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 20.0, vertical: 10.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        CustomTextField(
-                          controller: viewModel.currentPasswordCtrl,
-                          titleText: 'enterCurrentPassword',
-                        ),
-                        verticalSpaceTiny,
-                        CustomTextField(
-                          controller: viewModel.newPasswordCtrl,
-                          titleText: 'enterNewPassword',
-                        ),
-                        verticalSpaceTiny,
-                        CustomTextField(
-                          controller: viewModel.confirmNewPasswordCtrl,
-                          titleText: 'confirmNewPassword',
-                        ),
-                        verticalSpaceTiny,
-                      ],
+          body: Form(
+         key:   viewModel.formKey,
+            child: Column(
+              children: [
+                SubBar(
+                  btmLeftRadius: 0,
+                  btmRightRadius: 0,
+                  image: myIcons.setting,
+                  text: 'changePassword',
+                  fontSize: 18,
+                  divider: true,
+                  // onPress: viewModel.showCreditFilter,
+                ),
+                Expanded(
+                  child: SingleChildScrollView(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20.0, vertical: 10.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          CustomTextField(
+                            controller: viewModel.currentPasswordCtrl,
+                            titleText: 'enterCurrentPassword',
+                          ),
+                          verticalSpaceTiny,
+                          CustomTextField(
+                            controller: viewModel.newPasswordCtrl,
+                            titleText: 'enterNewPassword',
+                          ),
+                          verticalSpaceTiny,
+                          CustomTextField(
+                            controller: viewModel.confirmNewPasswordCtrl,
+                            titleText: 'confirmNewPassword',
+                          ),
+                          verticalSpaceTiny,
+                        ],
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
         bottomBar(
@@ -83,6 +85,7 @@ class ChangePasswordView extends StackedView<ChangePasswordViewModel> {
               ),
               horizontalSpaceTiny,
               SubmitButton(
+                onPress: viewModel.changePassword,
                 image: myIcons.save,
                 imgwidth: 12,
                 text: 'save',
