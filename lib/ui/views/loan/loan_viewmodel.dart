@@ -77,7 +77,20 @@ class LoanViewModel extends BaseViewModel {
     _navigationService.back();
   }
 
-  /// /////////
+  /////////////////// calculator result//////////////////
+  TextEditingController borrowingAmountCtrl = TextEditingController(text: "50000");
+  TextEditingController aprCtrl =TextEditingController(text: "4");
+      
+  TextEditingController tenorCtrl = TextEditingController(text: "5");
+  TextEditingController monthyRepaymentAmountCtrl = TextEditingController(text: "10100");
+  TextEditingController totalPaymentAmountCtrl =
+      TextEditingController(text: "50501");
+  TextEditingController totalInterestCtrl = TextEditingController(text: "501");
+  
+  
+ 
+  
+  ////// ////////////
   navigateToPersonalloan() {
     _navigationService.navigateToPersonalloanView();
   }
