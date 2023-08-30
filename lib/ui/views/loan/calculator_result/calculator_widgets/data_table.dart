@@ -130,7 +130,8 @@ class CalDataTable extends ViewModelWidget<LoanViewModel> {
                                   textAlign: TextAlign.center,
                                   fontSize: 8,
                                 )))),
-                            DataCell(SizedBox(
+                            DataCell(
+                              SizedBox(
                                 width: 60,
                                 child: Center(
                                     child: CustomText(
@@ -139,7 +140,9 @@ class CalDataTable extends ViewModelWidget<LoanViewModel> {
                                   //  "\$654.36.777",
                                   textAlign: TextAlign.center,
                                   fontSize: 8,
-                                )))),
+                                ))
+                                )
+                                ),
                           ]);
                         },
                       ).toList(),
