@@ -64,8 +64,7 @@ class RewardApplicationViewModel extends BaseViewModel {
     }
   }
 
-  Future<List<RewardDetails>> getRewardDetailsList() async {      
-
+  Future<List<RewardDetails>> getRewardDetailsList() async {
     if (rewardDetailsList.isEmpty) {
       Map<String, dynamic> body = {
         "companyId": institution?.id,
