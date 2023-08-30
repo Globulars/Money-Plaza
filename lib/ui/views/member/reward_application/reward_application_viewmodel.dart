@@ -7,10 +7,13 @@ import 'package:money_plaza/services/api_helper_service.dart';
 import 'package:stacked/stacked.dart';
 
 import '../../../../app/app.locator.dart';
+import '../../../../services/toaster_service.dart';
 import '../../../common/app_url.dart';
 
 class RewardApplicationViewModel extends BaseViewModel {
   final _apiHelperService = locator<ApiHelperService>();
+  final _toasterService = locator<ToasterService>();
+
   final ApiUrl _apiUrl = ApiUrl();
 
   var formKey = GlobalKey<FormState>();
@@ -89,6 +92,23 @@ class RewardApplicationViewModel extends BaseViewModel {
       }
     } else {
       return rewardDetailsList;
+    }
+  }
+
+  login(type) async {
+    var isValid = formKey.currentState!.validate();
+    if (isValid) {
+      Map<String, dynamic> body = {
+        "productId": institution?.id,
+        "productType": typeOfProduct,
+        "referenceNumber": referenceNumberCtrl.text,
+      };
+      var data = await _apiHelperService.uploadImageAndPost(body);
+      if (data?["success"] == true) {
+        _toasterService.successToast(data["message"]);
+      } else {
+        _toasterService.errorToast(data["message"].toString());
+      }
     }
   }
 }
