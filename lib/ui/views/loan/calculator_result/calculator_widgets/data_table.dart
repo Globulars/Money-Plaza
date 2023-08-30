@@ -1,7 +1,12 @@
+
+
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:stacked/stacked.dart';
 
+import '../../../../widgets/common/icon_box_btn/submit_button.dart';
 import '../../../../widgets/common/icon_box_btn/text.dart';
 import '../../loan_viewmodel.dart';
 
@@ -18,6 +23,13 @@ class CalDataTable extends ViewModelWidget<LoanViewModel> {
       child: Card(
         child: Column(
           children: [
+             SubmitButton(
+            onPress: (){log(  viewModel.paymentTable.amount.toString());},
+            height: 40,
+            text: 'recalculate',
+            
+            // width: width * 0.46,
+          ),
             Container(
                 height: 30,
                 padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 3),
@@ -33,7 +45,17 @@ class CalDataTable extends ViewModelWidget<LoanViewModel> {
                 )),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
-              child: DataTable(
+              child:viewModel.paymentTable.schedules==null
+                              ? Column(
+                                  children: [
+                                    SizedBox(
+                                      // height: height * 0.2,
+                                      // width: width * 1,
+                                    ),
+                                    const CircularProgressIndicator(),
+                                  ],
+                                ):
+               DataTable(
                   columnSpacing: 3,
                   dataRowMinHeight: 3,
                   dataRowMaxHeight: 20,
@@ -90,9 +112,13 @@ class CalDataTable extends ViewModelWidget<LoanViewModel> {
                           )),
                     ),
                   ],
-                  rows: [
-                    DataRow(cells: [
-                      DataCell(SizedBox(
+
+                    rows: List.generate(
+                viewModel.paymentTable.schedules!.length,
+                (index) {
+                  var data =   viewModel.paymentTable.schedules![index];
+                  return DataRow(cells: [
+                    DataCell(SizedBox(
                           width: 20,
                           child: CustomText(
                             text: '1',
@@ -103,7 +129,8 @@ class CalDataTable extends ViewModelWidget<LoanViewModel> {
                           width: 60,
                           child: Center(
                               child: CustomText(
-                            text: "\$6.36.777",
+                            text: data.paymentAmount.toString(),
+                            // "\$6.36.777",
                             textAlign: TextAlign.center,
                             fontSize: 8,
                           )))),
@@ -111,7 +138,8 @@ class CalDataTable extends ViewModelWidget<LoanViewModel> {
                           width: 60,
                           child: Center(
                               child: CustomText(
-                            text: "\$65.36.777",
+                            text:data.interestPaid.toString(),
+                            //  "\$65.36.777",
                             textAlign: TextAlign.center,
                             fontSize: 8,
                           )))),
@@ -119,7 +147,8 @@ class CalDataTable extends ViewModelWidget<LoanViewModel> {
                           width: 60,
                           child: Center(
                               child: CustomText(
-                            text: "\$65.36.777",
+                            text:data.capitalPaid.toString(),
+                            //  "\$65.36.777",
                             textAlign: TextAlign.center,
                             fontSize: 8,
                           )))),
@@ -127,52 +156,61 @@ class CalDataTable extends ViewModelWidget<LoanViewModel> {
                           width: 60,
                           child: Center(
                               child: CustomText(
-                            text: "\$654.36.777",
+                            text:data.interestBalance.toString(),
+                            //  "\$654.36.777",
                             textAlign: TextAlign.center,
                             fontSize: 8,
                           )))),
-                    ]),
-                    DataRow(cells: [
-                      DataCell(SizedBox(
-                          width: 20,
-                          child: CustomText(
-                            text: '2',
-                            textAlign: TextAlign.center,
-                            fontSize: 10,
-                          ))),
-                      DataCell(SizedBox(
-                          width: 60,
-                          child: Center(
-                              child: CustomText(
-                                  text: "\$6.36.777",
-                                  textAlign: TextAlign.center,
-                                  fontSize: 8)))),
-                      DataCell(SizedBox(
-                          width: 60,
-                          child: Center(
-                              child: CustomText(
-                            text: "\$65.36.777",
-                            textAlign: TextAlign.center,
-                            fontSize: 8,
-                          )))),
-                      DataCell(SizedBox(
-                          width: 60,
-                          child: Center(
-                              child: CustomText(
-                            text: "\$65.36.777",
-                            textAlign: TextAlign.center,
-                            fontSize: 8,
-                          )))),
-                      DataCell(SizedBox(
-                          width: 60,
-                          child: Center(
-                              child: CustomText(
-                            text: "\$654.36.777",
-                            textAlign: TextAlign.center,
-                            fontSize: 8,
-                          )))),
-                    ]),
-                  ]),
+                  ]);
+                },
+              ).toList(),
+                  
+                  // rows: [
+                    
+                  //   DataRow(cells: [
+                  //     DataCell(SizedBox(
+                  //         width: 20,
+                  //         child: CustomText(
+                  //           text: '1',
+                  //           textAlign: TextAlign.center,
+                  //           fontSize: 10,
+                  //         ))),
+                  //     DataCell(SizedBox(
+                  //         width: 60,
+                  //         child: Center(
+                  //             child: CustomText(
+                  //           text: "\$6.36.777",
+                  //           textAlign: TextAlign.center,
+                  //           fontSize: 8,
+                  //         )))),
+                  //     DataCell(SizedBox(
+                  //         width: 60,
+                  //         child: Center(
+                  //             child: CustomText(
+                  //           text: "\$65.36.777",
+                  //           textAlign: TextAlign.center,
+                  //           fontSize: 8,
+                  //         )))),
+                  //     DataCell(SizedBox(
+                  //         width: 60,
+                  //         child: Center(
+                  //             child: CustomText(
+                  //           text: "\$65.36.777",
+                  //           textAlign: TextAlign.center,
+                  //           fontSize: 8,
+                  //         )))),
+                  //     DataCell(SizedBox(
+                  //         width: 60,
+                  //         child: Center(
+                  //             child: CustomText(
+                  //           text: "\$654.36.777",
+                  //           textAlign: TextAlign.center,
+                  //           fontSize: 8,
+                  //         )))),
+                  //   ]),
+                   
+                  // ]
+                  ),
             ),
           ],
         ),
