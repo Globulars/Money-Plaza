@@ -122,7 +122,7 @@ class ApiUrl {
 
   /////////////////////////////////////Money Plaza Reward////////////////////////////////
   final Uri userReward = Uri.parse("$baseUrl/userReward/list");
-  // final Uri menuList = Uri.parse("$baseUrl/menu/list");
+  final Uri userRewardSubmit = Uri.parse("$baseUrl/userReward/submit");
 
   /////////////////////////////////////menu Controller////////////////////////////////
   // final Uri menuGetTopMenus = Uri.parse("$baseUrl/menu/getTopMenus");

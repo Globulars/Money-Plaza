@@ -95,15 +95,15 @@ class RewardApplicationViewModel extends BaseViewModel {
     }
   }
 
-  login(type) async {
+  uploadImageAndPost() async {
     var isValid = formKey.currentState!.validate();
     if (isValid) {
-      Map<String, dynamic> body = {
-        "productId": institution?.id,
+      Map<String, String> body = {
+        "productId": institution?.id.toString() ?? "",
         "productType": typeOfProduct,
         "referenceNumber": referenceNumberCtrl.text,
       };
-      var data = await _apiHelperService.uploadImageAndPost(body);
+      var data = await _apiHelperService.uploadImageAndPost(_apiUrl.userRewardSubmit, body);
       if (data?["success"] == true) {
         _toasterService.successToast(data["message"]);
       } else {

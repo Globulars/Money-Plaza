@@ -50,23 +50,27 @@ class ApiHelperService {
     }
   }
 
-  uploadImageAndPost(body) async {
+  uploadImageAndPost(_url,_body) async {
     final ImagePicker _picker = ImagePicker();
-    final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
+    final XFile? image = await _picker.pickImage(source: ImageSource.camera);
     // File file = File(image!.path);
     // return file;
-    return multiPartRequest(image!.path, body);
+    if (image?.path == null) {
+      return {"message": "Please select image"};
+    } else {
+      return multiPartRequest(_url,_body,image!.path);
+    }
   }
 
-  multiPartRequest(imagePath, body) async {
+  multiPartRequest(_url,_body,imagePath) async {
     try {
-      var request = http.MultipartRequest("POST", Uri.parse("urlInsertImage"));
+      var request = http.MultipartRequest("POST", _url);
       request.headers.addAll({
         "Accept": "multipart/form-data",
         "content-type": "multipart/form-data",
         "Authorization": "Bearer $accessToken"
       });
-      request.fields.addAll(body);
+      request.fields.addAll(_body);
       request.files.add(http.MultipartFile.fromBytes(
           "files", File(imagePath).readAsBytesSync(),
           filename: imagePath));
@@ -82,6 +86,7 @@ class ApiHelperService {
         return {"message": "${response.statusCode} error found"};
       }
     } catch (e) {
+      log(e.toString());
       return {"message": e};
     }
   }
