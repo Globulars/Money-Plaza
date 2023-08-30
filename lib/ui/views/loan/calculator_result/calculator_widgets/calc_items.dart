@@ -105,6 +105,7 @@ class CalculatorItems extends ViewModelWidget<LoanViewModel> {
                         fontSize: 12,
                         fontWeight: FontWeight.w500),
                     CustomTextField(
+                      controller: viewModel.borrowingAmountCtrl,
                       hintText: '\$50,000',
                       height: 40,
                       textAlign: TextAlign.center,
@@ -115,6 +116,7 @@ class CalculatorItems extends ViewModelWidget<LoanViewModel> {
                         fontSize: 12,
                         fontWeight: FontWeight.w500),
                     CustomTextField(
+                      controller: viewModel.tenorCtrl,
                       hintText: '3 months',
                       height: 40,
                       textAlign: TextAlign.center,
@@ -126,6 +128,7 @@ class CalculatorItems extends ViewModelWidget<LoanViewModel> {
                       fontWeight: FontWeight.w500,
                     ),
                     CustomTextField(
+                      controller: viewModel.totalPaymentAmountCtrl,
                       hintText: '\$78.397,93',
                       height: 40,
                       textAlign: TextAlign.center,
@@ -140,6 +143,7 @@ class CalculatorItems extends ViewModelWidget<LoanViewModel> {
                     CustomText(
                         text: 'apr', fontSize: 12, fontWeight: FontWeight.w500),
                     CustomTextField(
+                      controller: viewModel.aprCtrl,
                       hintText: '1.38%',
                       height: 40,
                       textAlign: TextAlign.center,
@@ -150,6 +154,7 @@ class CalculatorItems extends ViewModelWidget<LoanViewModel> {
                         fontSize: 12,
                         fontWeight: FontWeight.w500),
                     CustomTextField(
+                      controller: viewModel.monthyRepaymentAmountCtrl,
                       hintText: '\$2.177,72',
                       height: 40,
                       textAlign: TextAlign.center,
@@ -161,6 +166,7 @@ class CalculatorItems extends ViewModelWidget<LoanViewModel> {
                       fontWeight: FontWeight.w500,
                     ),
                     CustomTextField(
+                      controller: viewModel.totalInterestCtrl,
                       hintText: '\$28.397,93',
                       height: 40,
                       textAlign: TextAlign.center,

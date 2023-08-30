@@ -47,59 +47,64 @@ class CalculatorResultView extends StackedView<LoanViewModel> {
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: appBar(context),
-          body: Column(
+          body: Stack(
             children: [
-              const FilterBottomBar(),
-              const LoanTagsListView(),
-              Expanded(
-                child: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      verticalSpaceTiny,
-                      CustomText(
-                        text: 'ourRecommendation',
-                        color: Colors.black,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w700,
-                      ),
-                      verticalSpaceTiny,
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: CustomText(
-                          text: 'calculationIsBased',
-                          color: Colors.black,
-                          textAlign: TextAlign.center,
-                          fontSize: 10,
-                        ),
-                      ),
-                      viewModel.loanCardList.isEmpty
-                          ? Column(
-                              children: [
-                                SizedBox(
-                                  height: height * 0.2,
-                                  width: width * 1,
-                                ),
-                                const CircularProgressIndicator(),
-                              ],
-                            )
-                          : ListView.builder(
-                              itemCount: viewModel.loanCardList.length,
-                              shrinkWrap: true,
-                              physics: const NeverScrollableScrollPhysics(),
-                              itemBuilder: (BuildContext context, int index) {
-                                return ResultCard(
-                                    loanData: viewModel.loanCardList[index]);
-                              },
+              Column(
+                children: [
+                  verticalSpace(70.0),
+                  const LoanTagsListView(),
+                  Expanded(
+                    child: SingleChildScrollView(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          verticalSpaceTiny,
+                          CustomText(
+                            text: 'ourRecommendation',
+                            color: Colors.black,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700,
+                          ),
+                          verticalSpaceTiny,
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 20),
+                            child: CustomText(
+                              text: 'calculationIsBased',
+                              color: Colors.black,
+                              textAlign: TextAlign.center,
+                              fontSize: 10,
                             ),
-                      verticalSpaceTiny,
-                      const CalculatorItems(),
-                      const CalDataTable(),
-                      verticalSpaceLarge
-                    ],
+                          ),
+                          viewModel.loanCardList.isEmpty
+                              ? Column(
+                                  children: [
+                                    SizedBox(
+                                      height: height * 0.2,
+                                      width: width * 1,
+                                    ),
+                                    const CircularProgressIndicator(),
+                                  ],
+                                )
+                              : ListView.builder(
+                                  itemCount: viewModel.loanCardList.length,
+                                  shrinkWrap: true,
+                                  physics: const NeverScrollableScrollPhysics(),
+                                  itemBuilder: (BuildContext context, int index) {
+                                    return ResultCard(
+                                        loanData: viewModel.loanCardList[index]);
+                                  },
+                                ),
+                          verticalSpaceTiny,
+                          const CalculatorItems(),
+                          const CalDataTable(),
+                          verticalSpaceLarge
+                        ],
+                      ),
+                    ),
                   ),
-                ),
+                ],
               ),
+              const FilterBottomBar(),
             ],
           ),
         ),
