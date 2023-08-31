@@ -142,6 +142,9 @@ class ApiUrl {
   ///////////////////////////////////////option Controller////////////////////////////////
   ///
   final Uri selectCountries = Uri.parse("$baseUrl/option/countries");
+   final Uri loanRecord =
+      Uri.parse("$baseUrl/option/loanCalculateMethods");
+     
 
   // final Uri optionAreas = Uri.parse("$baseUrl/option/areas");
   // final Uri optionCarFactories = Uri.parse("$baseUrl/option/carFactories");
@@ -160,8 +163,7 @@ class ApiUrl {
   // final Uri optionInsuranceExtraFeatures =
   //     Uri.parse("$baseUrl/option/insuranceExtraFeatures");
   // final Uri optionInsuranceTypes = Uri.parse("$baseUrl/option/insuranceTypes");
-  // final Uri optionLoanCalculateMethods =
-  //     Uri.parse("$baseUrl/option/loanCalculateMethods");
+ 
   // final Uri optionMortgageCalculateMethods =
   //     Uri.parse("$baseUrl/option/mortgageCalculateMethods");
   // final Uri optionPaymentMethods = Uri.parse("$baseUrl/option/paymentMethods");
