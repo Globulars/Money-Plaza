@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:money_plaza/app/app.router.dart';
 import 'package:money_plaza/services/Models/select_country.dart';
 import 'package:money_plaza/ui/common/app_url.dart';
 import 'package:stacked/stacked.dart';
+import 'package:stacked_services/stacked_services.dart';
 import '../../../../app/app.locator.dart';
 import '../../../../services/api_helper_service.dart';
 
+
 class PersonalInfoViewModel extends BaseViewModel {
   final _apiHelperService = locator<ApiHelperService>();
+   final _navigationService = locator<NavigationService>();
   final ApiUrl _apiUrl = ApiUrl();
   TextEditingController firstNameCtrl = TextEditingController(text: "Mudassir");
   TextEditingController lastNameCtrl = TextEditingController(text: "Mukhtar");
@@ -57,6 +61,10 @@ class PersonalInfoViewModel extends BaseViewModel {
   setIntersetProduct(value) {
     intersetProduct = value;
     notifyListeners();
+  }
+
+  navigateToLoanRecordView() {
+    _navigationService.navigateToLoanRecordView();
   }
 
   Future<List<SelectCountry>> countryNameListData() async {

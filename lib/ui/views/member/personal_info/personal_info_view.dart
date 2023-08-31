@@ -7,7 +7,6 @@ import 'package:money_plaza/ui/views/member/personal_info/personal_tabbar/person
 import 'package:money_plaza/ui/views/member/personal_info/personal_tabbar/personal_tabbar3.dart';
 import 'package:money_plaza/ui/views/member/personal_info/personal_tabbar/personal_tabbar4.dart';
 import 'package:stacked/stacked.dart';
-
 import '../../../common/app_colors.dart';
 import '../../../common/ui_helpers.dart';
 import '../../../widgets/app_bar.dart';

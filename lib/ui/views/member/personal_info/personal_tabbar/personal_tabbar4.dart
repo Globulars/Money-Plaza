@@ -96,6 +96,7 @@ class PersonalTabBar4 extends ViewModelWidget<PersonalInfoViewModel> {
               topLeftRadius: 5,
               topRightRadius: 5,
               width: width * 0.6,
+              onPress: viewModel.navigateToLoanRecordView,
             ),
             verticalSpaceLarge
           ],

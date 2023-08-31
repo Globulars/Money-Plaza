@@ -8,12 +8,13 @@ import 'dart:ui' as _i5;
 
 import 'package:flutter/material.dart' as _i3;
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:money_plaza/services/api_helper_service.dart' as _i11;
+import 'package:money_plaza/services/api_helper_service.dart' as _i12;
 import 'package:money_plaza/services/auth_service.dart' as _i6;
-import 'package:money_plaza/services/credit_card_service.dart' as _i9;
-import 'package:money_plaza/services/loan_card_service.dart' as _i10;
-import 'package:money_plaza/services/mortgage_service.dart' as _i8;
-import 'package:money_plaza/services/toaster_service.dart' as _i7;
+import 'package:money_plaza/services/credit_card_service.dart' as _i10;
+import 'package:money_plaza/services/loan_card_service.dart' as _i11;
+import 'package:money_plaza/services/Models/auth.dart' as _i7;
+import 'package:money_plaza/services/mortgage_service.dart' as _i9;
+import 'package:money_plaza/services/toaster_service.dart' as _i8;
 import 'package:stacked_services/stacked_services.dart' as _i2;
 
 // ignore_for_file: type=lint
@@ -639,6 +640,14 @@ class MockDialogService extends _i1.Mock implements _i2.DialogService {
 /// See the documentation for Mockito's code generation for more information.
 class MockAuthService extends _i1.Mock implements _i6.AuthService {
   @override
+  set authData(_i7.Auth? _authData) => super.noSuchMethod(
+        Invocation.setter(
+          #authData,
+          _authData,
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
   Map<String, String> get headers => (super.noSuchMethod(
         Invocation.getter(#headers),
         returnValue: <String, String>{},
@@ -657,12 +666,12 @@ class MockAuthService extends _i1.Mock implements _i6.AuthService {
 /// A class which mocks [ToasterService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockToasterService extends _i1.Mock implements _i7.ToasterService {}
+class MockToasterService extends _i1.Mock implements _i8.ToasterService {}
 
 /// A class which mocks [MortgageService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockMortgageService extends _i1.Mock implements _i8.MortgageService {
+class MockMortgageService extends _i1.Mock implements _i9.MortgageService {
   @override
   Map<String, String> get headers => (super.noSuchMethod(
         Invocation.getter(#headers),
@@ -682,7 +691,7 @@ class MockMortgageService extends _i1.Mock implements _i8.MortgageService {
 /// A class which mocks [CreditCardService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockCreditCardService extends _i1.Mock implements _i9.CreditCardService {
+class MockCreditCardService extends _i1.Mock implements _i10.CreditCardService {
   @override
   Map<String, String> get headers => (super.noSuchMethod(
         Invocation.getter(#headers),
@@ -702,7 +711,7 @@ class MockCreditCardService extends _i1.Mock implements _i9.CreditCardService {
 /// A class which mocks [LoanCardService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockLoanCardService extends _i1.Mock implements _i10.LoanCardService {
+class MockLoanCardService extends _i1.Mock implements _i11.LoanCardService {
   @override
   Map<String, String> get headers => (super.noSuchMethod(
         Invocation.getter(#headers),
@@ -722,4 +731,27 @@ class MockLoanCardService extends _i1.Mock implements _i10.LoanCardService {
 /// A class which mocks [ApiHelperService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockApiHelperService extends _i1.Mock implements _i11.ApiHelperService {}
+class MockApiHelperService extends _i1.Mock implements _i12.ApiHelperService {
+  @override
+  set imagePath(String? _imagePath) => super.noSuchMethod(
+        Invocation.setter(
+          #imagePath,
+          _imagePath,
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  Map<String, String> get headers => (super.noSuchMethod(
+        Invocation.getter(#headers),
+        returnValue: <String, String>{},
+        returnValueForMissingStub: <String, String>{},
+      ) as Map<String, String>);
+  @override
+  set headers(Map<String, String>? _headers) => super.noSuchMethod(
+        Invocation.setter(
+          #headers,
+          _headers,
+        ),
+        returnValueForMissingStub: null,
+      );
+}
