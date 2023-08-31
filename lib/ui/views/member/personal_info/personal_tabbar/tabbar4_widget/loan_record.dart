@@ -26,127 +26,197 @@ class LoanRecordView extends StackedView<PersonalInfoViewModel> {
     PersonalInfoViewModel viewModel,
     Widget? child,
   ) {
-    final width = MediaQuery.of(context).size.width;   
-        return Stack(
-          children: [
-            Container(
-              width: width * 1,
-              height: MediaQuery.of(context).size.height * 1,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage(myIcons.backgroundimage),
-                    fit: BoxFit.fill),
+    final width = MediaQuery.of(context).size.width;
+    return Stack(
+      children: [
+        Container(
+          width: width * 1,
+          height: MediaQuery.of(context).size.height * 1,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage(myIcons.backgroundimage), fit: BoxFit.fill),
+          ),
+          child: Scaffold(
+            backgroundColor: Colors.transparent,
+            appBar: appBar(context),
+            body: SingleChildScrollView(
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CustomText(
+                      text: 'Loan Record',
+                      fontWeight: FontWeight.w600,
+                      fontSize: 18,
+                    ),
+                    verticalSpaceSmall,
+                    ModelDropdown(
+                      onChanged: viewModel.setLoanRecord,
+                      options: viewModel.loanRecordDataList,
+                      value: viewModel.loanRecordList,
+                      titleText: 'Type of Loan*',
+                    ),
+                    verticalSpaceTiny,
+                    CustomTextField(
+                      controller: viewModel.lenderCtrl,
+                      titleText: 'Lender *',
+                    ),
+                    verticalSpaceTiny,
+                    CustomTextField(
+                      controller: viewModel.outstandingCtrl,
+                      titleText: 'Outstanding *',
+                      hintText: 'hk',
+                    ),
+                    verticalSpaceTiny,
+                    //  CustomTextField(
+                    //     controller: viewModel.monthlyRepaymentCtrl,
+                    //     titleText: 'Monthly Repayment*',
+                    //   ),
+
+                    viewModel.loanRecordList?.code == "PrepaidInterest"
+                        ? Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              verticalSpaceTiny,
+                              CustomText(
+                                  text: "Tenor Unit",
+                                  color: Colors.black,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500),
+                              verticalSpaceTiny,
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  ReturnButton(
+                                    height: 41.5,
+                                    text: 'Daily',
+                                    width: width * 0.43,
+                                    boxcolor: viewModel.tenorUnit == 'Daily'
+                                        ? darkGreenHeigh
+                                        : Colors.white,
+                                    color: viewModel.tenorUnit != "Daily"
+                                        ? darkGreenHeigh
+                                        : Colors.white,
+                                    onPress: () {
+                                      viewModel.setTenorUnit('Daily');
+                                    },
+                                  ),
+                                  ReturnButton(
+                                    height: 41.5,
+                                    text: 'Monthly',
+                                    width: width * 0.43,
+                                    boxcolor: viewModel.tenorUnit == "Monthly"
+                                        ? darkGreenHeigh
+                                        : Colors.white,
+                                    color: viewModel.tenorUnit != "Monthly"
+                                        ? darkGreenHeigh
+                                        : Colors.white,
+                                    onPress: () {
+                                      viewModel.setTenorUnit('Monthly');
+                                    },
+                                  ),
+                                ],
+                              ),
+                            ],
+                          )
+                        : Container(),
+
+                    verticalSpaceTiny,
+                    CustomTextField(
+                      controller: viewModel.loanRecordList?.code == "PLoan" ||
+                              viewModel.loanRecordList?.code ==
+                                  "PrepaidInterest" ||
+                              viewModel.loanRecordList?.code == "InterestOnly"
+                          ? viewModel.tenorCtrl
+                          : viewModel.monthlyInterestCtrl,
+                      titleText: viewModel.loanRecordList?.code == "PLoan" ||
+                              viewModel.loanRecordList?.code ==
+                                  "PrepaidInterest" ||
+                              viewModel.loanRecordList?.code == "InterestOnly"
+                          ? 'Tenor *'
+                          : "Monthly Interest *",
+                    ),
+                    verticalSpaceTiny,
+                    CustomTextField(
+                        controller: viewModel.loanRecordList?.code == "PLoan" ||
+                                viewModel.loanRecordList?.code == "InterestOnly"
+                            ? viewModel.remainingTenorCtrl
+                            : viewModel.loanRecordList?.code == "MinPay"
+                                ? viewModel.penaltyCtrl
+                                : viewModel.totalPrepaidInterestCtrl,
+                        titleText: viewModel.loanRecordList?.code == "PLoan" ||
+                                viewModel.loanRecordList?.code == "InterestOnly"
+                            ? 'Remaining Tenor*'
+                            : viewModel.loanRecordList?.code == "MinPay"
+                                ? "Penalty *"
+                                : "Total Prepaid Interest *"),
+                    verticalSpaceTiny,
+                    viewModel.loanRecordList?.code == "PLoan" ||
+                            viewModel.loanRecordList?.code == "InterestOnly" ||
+                            viewModel.loanRecordList?.code == "MinPay"
+                        ? CustomTextField(
+                            hintText: 'hk',
+                            controller: viewModel.loanRecordList?.code ==
+                                        "PLoan" ||
+                                    viewModel.loanRecordList?.code ==
+                                        "InterestOnly"
+                                ? viewModel.monthlyRepaymentCtrl
+                                : viewModel.loanRecordList?.code == "MinPay"
+                                    ? viewModel.minPayCtrl
+                                    : viewModel.totalPrepaidInterestCtrl,
+                            titleText:
+                                viewModel.loanRecordList?.code == "PLoan" ||
+                                        viewModel.loanRecordList?.code ==
+                                            "InterestOnly"
+                                    ? 'Monthly Repayment *'
+                                    : viewModel.loanRecordList?.code == "MinPay"
+                                        ? "Min pay % *"
+                                        : "Total Prepaid Interest *")
+                        : Container(),
+                    verticalSpaceTiny,
+                    viewModel.loanRecordList?.code == "MinPay"
+                        ? CustomTextField(
+                            controller: viewModel.minPayInDollarCtrl,
+                            titleText: 'Min pay in dollar *',
+                            hintText: 'hk',
+                          )
+                        : Container(),
+
+                    verticalSpaceSmall,
+
+                    verticalSpaceLarge
+                  ],
+                ),
               ),
-              child: Scaffold(
-                backgroundColor: Colors.transparent,
-                appBar: appBar(context),
-                body:SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-             CustomText(
-              text: 'Loan Record',
-              fontWeight: FontWeight.w600,fontSize: 18,
             ),
-            verticalSpaceSmall,
-            ModelDropdown(
-                    onChanged: viewModel.setLoanRecord,
-                    options: viewModel.loanRecordDataList,
-                    value: viewModel.loanRecordList,
-                    titleText: 'Type of Loan*',
-                  ),
-                  verticalSpaceTiny,
-            CustomTextField(
-              // controller: viewModel.firstNameCtrl,
-              titleText: 'Lender*',
-            ),
-            verticalSpaceTiny,
-            CustomTextField(
-              // controller: viewModel.lastNameCtrl,
-              titleText: 'Outstanding*',
-            ),
-            verticalSpaceTiny,
-           CustomTextField(
-              // controller: viewModel.lastNameCtrl,
-              titleText: 'Tenor*',
-            ),
-            verticalSpaceTiny,
-           CustomTextField(
-              // controller: viewModel.lastNameCtrl,
-              titleText: 'Remaining Tenor*',
-            ),
-            verticalSpaceTiny,
-           CustomTextField(
-              // controller: viewModel.lastNameCtrl,
-              titleText: 'Monthly Repayment*',
-            ),
-            // verticalSpaceTiny,
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //   children: [
-            //     ReturnButton(
-            //       height: 41.5,
-            //       text: 'm',
-            //       width: width * 0.43,
-            //       boxcolor:
-            //           viewModel.gender == 'm' ? darkGreenHeigh : Colors.white,
-            //       color:
-            //           viewModel.gender != "m" ? darkGreenHeigh : Colors.white,
-            //       onPress: () {
-            //         viewModel.setGender('m');
-            //       },
-            //     ),
-            //     ReturnButton(
-            //       height: 41.5,
-            //       text: 'f',
-            //       width: width * 0.43,
-            //       boxcolor:
-            //           viewModel.gender == "f" ? darkGreenHeigh : Colors.white,
-            //       color:
-            //           viewModel.gender != "f" ? darkGreenHeigh : Colors.white,
-            //       onPress: () {
-            //         viewModel.setGender('f');
-            //       },
-            //     ),
-            //   ],
-            // ),
-            verticalSpaceSmall,
-           
-           
-            verticalSpaceLarge
-          ],
+          ),
         ),
-      ),
-    ),
+        bottomBar(
+          Row(
+            children: [
+              ReturnButton(
+                imageLeft: myIcons.returnIcon1,
+                imgwidth: 12,
+                text: 'return',
+                height: 40,
+                width: 80,
               ),
-            ),
-            bottomBar(
-              Row(
-                children: [
-                  ReturnButton(
-                    imageLeft: myIcons.returnIcon1,
-                    imgwidth: 12,
-                    text: 'return',
-                    height: 40,
-                    width: 80,
-                  ),
-                  horizontalSpaceTiny,
-                  SubmitButton(
-                    image: myIcons.done,
-                    imgwidth: 16,
-                    text: 'Submit',
-                    height: 40,
-                    width: 80,
-                  ),
-                ],
+              horizontalSpaceTiny,
+              SubmitButton(
+                image: myIcons.done,
+                imgwidth: 16,
+                text: 'Submit',
+                height: 40,
+                width: 80,
               ),
-            ),
-          ],
-        );
-     
-   
+            ],
+          ),
+        ),
+      ],
+    );
   }
 
   @override

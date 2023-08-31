@@ -8,24 +8,35 @@ import '../../../../app/app.locator.dart';
 import '../../../../services/Models/loan_record.dart';
 import '../../../../services/api_helper_service.dart';
 
-
 class PersonalInfoViewModel extends BaseViewModel {
   final _apiHelperService = locator<ApiHelperService>();
-   final _navigationService = locator<NavigationService>();
+  final _navigationService = locator<NavigationService>();
   final ApiUrl _apiUrl = ApiUrl();
   TextEditingController firstNameCtrl = TextEditingController(text: "Mudassir");
   TextEditingController lastNameCtrl = TextEditingController(text: "Mukhtar");
   TextEditingController emailCtrl = TextEditingController();
   TextEditingController contactNumCtrl = TextEditingController();
+  TextEditingController lenderCtrl = TextEditingController();
+  TextEditingController outstandingCtrl = TextEditingController();
+  TextEditingController tenorCtrl = TextEditingController();
+  TextEditingController remainingTenorCtrl = TextEditingController();
+  TextEditingController monthlyRepaymentCtrl = TextEditingController();
+  TextEditingController monthlyInterestCtrl = TextEditingController();
+  TextEditingController penaltyCtrl = TextEditingController();
+  TextEditingController totalPrepaidInterestCtrl = TextEditingController();
+  TextEditingController minPayCtrl = TextEditingController();
+  TextEditingController minPayInDollarCtrl = TextEditingController();
+
   String dob = "";
   var gender = '';
+  var tenorUnit = '';
   String doYouKnow = "Facebook";
   String intersetProduct = "Loans";
   // String typeOfLoan ="Term Loan";
   SelectCountry? countryList;
   LoanRecord? loanRecordList;
   List<SelectCountry> countryDataList = [];
-  List<LoanRecord> loanRecordDataList=[];
+  List<LoanRecord> loanRecordDataList = [];
   final doYouKnowList = [
     "Facebook",
     "Mortgages",
@@ -44,6 +55,11 @@ class PersonalInfoViewModel extends BaseViewModel {
 
   setGender(value) {
     gender = value;
+    notifyListeners();
+  }
+
+  setTenorUnit(value) {
+    tenorUnit = value;
     notifyListeners();
   }
 
@@ -95,18 +111,19 @@ class PersonalInfoViewModel extends BaseViewModel {
   }
 
   Future<List<LoanRecord>> loanRecordListData() async {
-    if(loanRecordDataList.isEmpty){
-      var data=await _apiHelperService.getApi(_apiUrl.loanRecord);
-      if (data?["success"]==true){
+    if (loanRecordDataList.isEmpty) {
+      var data = await _apiHelperService.getApi(_apiUrl.loanRecord);
+      if (data?["success"] == true) {
         List dataList = data["data"];
-        loanRecordDataList = dataList.map((data) => LoanRecord.fromJson(data)).toList();
+        loanRecordDataList =
+            dataList.map((data) => LoanRecord.fromJson(data)).toList();
         loanRecordList = loanRecordDataList[0];
         notifyListeners();
         return loanRecordDataList;
-      }else {
+      } else {
         throw Exception(data["message"].toString());
       }
-    }else{
+    } else {
       return loanRecordDataList;
     }
   }
