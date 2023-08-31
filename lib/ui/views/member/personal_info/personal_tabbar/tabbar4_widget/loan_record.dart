@@ -75,7 +75,7 @@ class LoanRecordView extends StackedView<PersonalInfoViewModel> {
                     //     titleText: 'Monthly Repayment*',
                     //   ),
 
-                    viewModel.loanRecordList?.code == "InterestOnly"
+                    viewModel.loanRecordList?.code == "PrepaidInterest"
                         ? Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -177,7 +177,7 @@ class LoanRecordView extends StackedView<PersonalInfoViewModel> {
                                         : "Total Prepaid Interest *")
                         : Container(),
                     verticalSpaceTiny,
-                    viewModel.loanRecordList?.code == "InterestOnly"
+                    viewModel.loanRecordList?.code == "MinPay"
                         ? CustomTextField(
                             controller: viewModel.minPayInDollarCtrl,
                             titleText: 'Min pay in dollar *',
