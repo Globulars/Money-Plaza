@@ -2,6 +2,7 @@ import 'package:money_plaza/ui/views/landing/startup/startup_view.dart';
 import 'package:money_plaza/ui/views/loan/blnstransfer/blnstransfer_applyconfirm_view.dart';
 import 'package:money_plaza/ui/views/loan/commerical_loan/comm_applyconfirm_view.dart';
 import 'package:money_plaza/ui/views/loan/ownerloan/owner_applyconfirm_view.dart';
+import 'package:money_plaza/ui/views/member/personal_info/personal_tabbar/tabbar4_widget/loan_record.dart';
 import 'package:money_plaza/ui/views/survey_form/survey_form_view.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
@@ -41,7 +42,6 @@ import 'package:money_plaza/services/toaster_service.dart';
 import 'package:money_plaza/services/mortgage_service.dart';
 import 'package:money_plaza/services/credit_card_service.dart';
 import 'package:money_plaza/services/loan_card_service.dart';
-
 import '../ui/views/loan/personal_loan/applyconfirm_view.dart';
 import 'package:money_plaza/services/api_helper_service.dart';
 // @stacked-import
@@ -78,6 +78,7 @@ import 'package:money_plaza/services/api_helper_service.dart';
     MaterialRoute(page: PersonalloanApplyConfirmView),
     MaterialRoute(page: CommericalApplyConfirmView),
     MaterialRoute(page: BlnstransferloanApplyConfirmView),
+    MaterialRoute(page: LoanRecordView),
 
 // @stacked-route
   ],
