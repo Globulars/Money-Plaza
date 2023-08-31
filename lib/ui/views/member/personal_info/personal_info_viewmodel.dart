@@ -22,9 +22,13 @@ class PersonalInfoViewModel extends BaseViewModel {
   TextEditingController remainingTenorCtrl = TextEditingController();
   TextEditingController monthlyRepaymentCtrl = TextEditingController();
   TextEditingController monthlyInterestCtrl = TextEditingController();
+  TextEditingController penaltyCtrl = TextEditingController();
+  TextEditingController totalPrepaidInterestCtrl = TextEditingController();
+  TextEditingController minPayCtrl = TextEditingController();
 
   String dob = "";
   var gender = '';
+  var tenorUnit = '';
   String doYouKnow = "Facebook";
   String intersetProduct = "Loans";
   // String typeOfLoan ="Term Loan";
@@ -50,6 +54,11 @@ class PersonalInfoViewModel extends BaseViewModel {
 
   setGender(value) {
     gender = value;
+    notifyListeners();
+  }
+
+  setTenorUnit(value) {
+    tenorUnit = value;
     notifyListeners();
   }
 

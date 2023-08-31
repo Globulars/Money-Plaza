@@ -61,68 +61,119 @@ class LoanRecordView extends StackedView<PersonalInfoViewModel> {
                     verticalSpaceTiny,
                     CustomTextField(
                       controller: viewModel.lenderCtrl,
-                      titleText: 'Lender*',
+                      titleText: 'Lender *',
                     ),
                     verticalSpaceTiny,
                     CustomTextField(
                       controller: viewModel.outstandingCtrl,
-                      titleText: 'Outstanding*',
+                      titleText: 'Outstanding *',
                     ),
                     verticalSpaceTiny,
+                  //  CustomTextField(
+                  //     controller: viewModel.monthlyRepaymentCtrl,
+                  //     titleText: 'Monthly Repayment*',
+                  //   ),
+
+
+
+         viewModel.loanRecordList?.code == "InterestOnly"?          
+
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [ verticalSpaceTiny,
+                    CustomText(text: "Tenor Unit",color: Colors.black,  fontSize: 14, fontWeight: FontWeight.w500),                 
+                     verticalSpaceTiny,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        ReturnButton(
+                          height: 41.5,
+                          text: 'Daily',
+                          width: width * 0.43,
+                          boxcolor:
+                              viewModel.tenorUnit == 'Daily' ? darkGreenHeigh : Colors.white,
+                          color:
+                              viewModel.tenorUnit != "Daily" ? darkGreenHeigh : Colors.white,
+                          onPress: () {
+                            viewModel.setTenorUnit('Daily');
+                          },
+                        ),
+                        ReturnButton(
+                          height: 41.5,
+                          text: 'Monthly',
+                          width: width * 0.43,
+                          boxcolor:
+                              viewModel.tenorUnit == "Monthly" ? darkGreenHeigh : Colors.white,
+                          color:
+                              viewModel.tenorUnit != "Monthly" ? darkGreenHeigh : Colors.white,
+                          onPress: () {
+                            viewModel.setTenorUnit('Monthly');
+                          },
+                        ),
+                      ],
+                    ),
+
+ ],
+      ):Container(),
+
+
+
+
+
+                    verticalSpaceTiny,
                     CustomTextField(
-                      controller: viewModel.loanRecordList!.code == "PLoan" ||
-                              viewModel.loanRecordList!.code ==
+                      controller: viewModel.loanRecordList?.code == "PLoan" ||
+                              viewModel.loanRecordList?.code ==
                                   "PrepaidInterest" ||
-                              viewModel.loanRecordList!.code == "InterestOnly"
+                              viewModel.loanRecordList?.code == "InterestOnly"
                           ? viewModel.tenorCtrl
                           : viewModel.monthlyInterestCtrl,
-                      titleText: viewModel.loanRecordList!.code == "PLoan" ||
-                              viewModel.loanRecordList!.code ==
+                      titleText: viewModel.loanRecordList?.code ==
+                                  "PLoan" ||
+                              viewModel.loanRecordList?.code ==
                                   "PrepaidInterest" ||
-                              viewModel.loanRecordList!.code == "InterestOnly"
-                          ? 'Tenor*'
-                          : "Monthly Interest",
+                              viewModel.loanRecordList?.code == "InterestOnly"
+                          ? 'Tenor *'
+                          : "Monthly Interest *",
                     ),
                     verticalSpaceTiny,
                     CustomTextField(
-                      controller: viewModel.remainingTenorCtrl,
-                      titleText: 'Remaining Tenor*',
-                    ),
-                    verticalSpaceTiny,
-                    CustomTextField(
-                      controller: viewModel.monthlyRepaymentCtrl,
-                      titleText: 'Monthly Repayment*',
-                    ),
-                    // verticalSpaceTiny,
-                    // Row(
-                    //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    //   children: [
-                    //     ReturnButton(
-                    //       height: 41.5,
-                    //       text: 'm',
-                    //       width: width * 0.43,
-                    //       boxcolor:
-                    //           viewModel.gender == 'm' ? darkGreenHeigh : Colors.white,
-                    //       color:
-                    //           viewModel.gender != "m" ? darkGreenHeigh : Colors.white,
-                    //       onPress: () {
-                    //         viewModel.setGender('m');
-                    //       },
-                    //     ),
-                    //     ReturnButton(
-                    //       height: 41.5,
-                    //       text: 'f',
-                    //       width: width * 0.43,
-                    //       boxcolor:
-                    //           viewModel.gender == "f" ? darkGreenHeigh : Colors.white,
-                    //       color:
-                    //           viewModel.gender != "f" ? darkGreenHeigh : Colors.white,
-                    //       onPress: () {
-                    //         viewModel.setGender('f');
-                    //       },
-                    //     ),
-                    //   ],
-                    // ),
+                        controller: viewModel.loanRecordList?.code == "PLoan" ||
+                                viewModel.loanRecordList?.code == "InterestOnly"
+                            ? viewModel.remainingTenorCtrl
+                            : viewModel.loanRecordList?.code == "MinPay"
+                                ? viewModel.penaltyCtrl
+                                : viewModel.totalPrepaidInterestCtrl,
+                        titleText: viewModel.loanRecordList?.code == "PLoan" ||
+                                viewModel.loanRecordList?.code == "InterestOnly"
+                            ? 'Remaining Tenor*'
+                            : viewModel.loanRecordList?.code == "MinPay"
+                                ? "Penalty *"
+                                : "Total Prepaid Interest *"),
+                                 verticalSpaceTiny,
+                    viewModel.loanRecordList?.code == "PLoan" ||
+                            viewModel.loanRecordList?.code == "InterestOnly" ||
+                            viewModel.loanRecordList?.code == "MinPay"
+                        ? CustomTextField(
+                            controller: viewModel.loanRecordList?.code ==
+                                        "PLoan" ||
+                                    viewModel.loanRecordList?.code ==
+                                        "InterestOnly"
+                                ? viewModel.monthlyRepaymentCtrl
+                                : viewModel.loanRecordList?.code == "MinPay"
+                                    ? viewModel.minPayCtrl
+                                    : viewModel.totalPrepaidInterestCtrl,
+                            titleText:
+                                viewModel.loanRecordList?.code == "PLoan" ||
+                                        viewModel.loanRecordList?.code ==
+                                            "InterestOnly"
+                                    ? 'Monthly Repayment *'
+                                    : viewModel.loanRecordList?.code == "MinPay"
+                                        ? "Min pay % *"
+                                        : "Total Prepaid Interest *")
+                        : Container(),
+                    
+                   
                     verticalSpaceSmall,
 
                     verticalSpaceLarge
