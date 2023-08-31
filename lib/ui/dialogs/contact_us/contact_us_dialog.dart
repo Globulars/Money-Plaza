@@ -62,7 +62,7 @@ class ContactUsDialog extends StackedView<ContactUsDialogModel> {
                     ),
                     IconBoxBtn(
                       topimage: myIcons.tele,
-                      onPress: viewModel.call,
+                      onPress: viewModel.telegram,
                       imgwidth: 60,
                       boxcolor: Colors.transparent,
                       margin: 5,
@@ -75,6 +75,7 @@ class ContactUsDialog extends StackedView<ContactUsDialogModel> {
                   children: [
                     IconBoxBtn(
                       topimage: myIcons.mail,
+                      onPress: viewModel.mailto,
                       imgwidth: 60,
                       boxcolor: Colors.transparent,
                       margin: 5,

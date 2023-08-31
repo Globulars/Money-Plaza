@@ -9,21 +9,28 @@ class ContactUsDialogModel extends BaseViewModel {
   }
 
   Future<void> whatsappsms() async {
-    final Uri _url = Uri.parse("whatsapp://send?phone=+93454335400");
+    final Uri _url = Uri.parse("https://wa.me/+85261820861");
     if (await canLaunchUrl(_url)) {
       await launchUrl(_url);
     }
   }
 
-  Future<void> simsms() async {
-    final Uri _url = Uri.parse("sms:03454335400");
+  Future<void> mailto() async {
+    final Uri _url = Uri.parse("mailto:info@moneyplaza.com.hk");
     if (await canLaunchUrl(_url)) {
       await launchUrl(_url);
     }
   }
 
   Future<void> call() async {
-    final Uri _url = Uri.parse("tel:+1-555-010-999");
+    final Uri _url = Uri.parse("tel:+85261820861");
+    if (await canLaunchUrl(_url)) {
+      await launchUrl(_url);
+    }
+  }
+
+  Future<void> telegram() async {
+    final Uri _url = Uri.parse("");
     if (await canLaunchUrl(_url)) {
       await launchUrl(_url);
     }
