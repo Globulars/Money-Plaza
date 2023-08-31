@@ -12,7 +12,7 @@ class ContactUsDialogModel extends BaseViewModel {
     final Uri _url = Uri.parse("whatsapp://send?phone=+93454335400");
     if (await canLaunchUrl(_url)) {
       await launchUrl(_url);
-    } else {}
+    }
   }
 
   Future<void> simsms() async {
