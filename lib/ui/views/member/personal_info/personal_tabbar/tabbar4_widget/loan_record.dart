@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
+import 'package:money_plaza/ui/widgets/common/custom_text_field/custom_text_field.dart';
+import 'package:money_plaza/ui/widgets/common/dropdown_textfield/model_dropdown.dart';
 import 'package:stacked/stacked.dart';
+import '../../../../../common/app_colors.dart';
 import '../../../../../common/ui_helpers.dart';
 import '../../../../../widgets/app_bar.dart';
 import '../../../../../widgets/bottom_bar.dart';
 import '../../../../../widgets/common/icon_box_btn/return_button.dart';
 import '../../../../../widgets/common/icon_box_btn/submit_button.dart';
+import '../../../../../widgets/common/icon_box_btn/text.dart';
 import '../../personal_info_viewmodel.dart';
 
 class LoanRecordView extends StackedView<PersonalInfoViewModel> {
@@ -36,11 +40,86 @@ class LoanRecordView extends StackedView<PersonalInfoViewModel> {
               child: Scaffold(
                 backgroundColor: Colors.transparent,
                 appBar: appBar(context),
-                body: Column(
-                  children: [
-
-                  ],
-                )
+                body:SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+             CustomText(
+              text: 'Loan Record',
+              fontWeight: FontWeight.w600,fontSize: 18,
+            ),
+            verticalSpaceSmall,
+            ModelDropdown(
+                    onChanged: viewModel.setSelectCountry,
+                    options: viewModel.countryDataList,
+                    value: viewModel.countryList,
+                    titleText: 'Type of Loan*',
+                  ),
+                  verticalSpaceTiny,
+            CustomTextField(
+              // controller: viewModel.firstNameCtrl,
+              titleText: 'Lender*',
+            ),
+            verticalSpaceTiny,
+            CustomTextField(
+              // controller: viewModel.lastNameCtrl,
+              titleText: 'Outstanding*',
+            ),
+            verticalSpaceTiny,
+           CustomTextField(
+              // controller: viewModel.lastNameCtrl,
+              titleText: 'Tenor*',
+            ),
+            verticalSpaceTiny,
+           CustomTextField(
+              // controller: viewModel.lastNameCtrl,
+              titleText: 'Remaining Tenor*',
+            ),
+            verticalSpaceTiny,
+           CustomTextField(
+              // controller: viewModel.lastNameCtrl,
+              titleText: 'Monthly Repayment*',
+            ),
+            // verticalSpaceTiny,
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //   children: [
+            //     ReturnButton(
+            //       height: 41.5,
+            //       text: 'm',
+            //       width: width * 0.43,
+            //       boxcolor:
+            //           viewModel.gender == 'm' ? darkGreenHeigh : Colors.white,
+            //       color:
+            //           viewModel.gender != "m" ? darkGreenHeigh : Colors.white,
+            //       onPress: () {
+            //         viewModel.setGender('m');
+            //       },
+            //     ),
+            //     ReturnButton(
+            //       height: 41.5,
+            //       text: 'f',
+            //       width: width * 0.43,
+            //       boxcolor:
+            //           viewModel.gender == "f" ? darkGreenHeigh : Colors.white,
+            //       color:
+            //           viewModel.gender != "f" ? darkGreenHeigh : Colors.white,
+            //       onPress: () {
+            //         viewModel.setGender('f');
+            //       },
+            //     ),
+            //   ],
+            // ),
+            verticalSpaceSmall,
+           
+           
+            verticalSpaceLarge
+          ],
+        ),
+      ),
+    ),
               ),
             ),
             bottomBar(
@@ -57,7 +136,7 @@ class LoanRecordView extends StackedView<PersonalInfoViewModel> {
                   SubmitButton(
                     image: myIcons.done,
                     imgwidth: 16,
-                    text: 'Save',
+                    text: 'Submit',
                     height: 40,
                     width: 80,
                   ),
