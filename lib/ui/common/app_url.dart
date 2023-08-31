@@ -198,8 +198,8 @@ class ApiUrl {
   //     Uri.parse("$baseUrl/repayment/scheduleByPLoanForInterestRate");
   // final Uri repaymentScheduleByPLoanForRepayment =
   //     Uri.parse("$baseUrl/repayment/scheduleByPLoanForRepayment");
-  final Uri scheduleByLoan =
-      Uri.parse("$baseUrl/repayment/scheduleByPLoanForTenor");
+  // final Uri scheduleByLoan =
+  //     Uri.parse("$baseUrl/repayment/scheduleByPLoanForTenor");
   // final Uri repaymentScheduleByPrepaidInterestForInterestRate =
   //     Uri.parse("$baseUrl/repayment/scheduleByPrepaidInterestForInterestRate");
   // final Uri repaymentScheduleByPrepaidInterestForPrepaidInterestAmount =

@@ -32,9 +32,7 @@ class CalDataTable extends ViewModelWidget<LoanViewModel> {
                 )),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
-              child: viewModel.paymentTable.schedules == null
-                  ? const SizedBox()
-                  : DataTable(
+              child:  DataTable(
                       columnSpacing: 3,
                       dataRowMinHeight: 3,
                       dataRowMaxHeight: 20,
