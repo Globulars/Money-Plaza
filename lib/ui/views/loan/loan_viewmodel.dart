@@ -35,7 +35,7 @@ class LoanViewModel extends BaseViewModel {
   var repayment = 0;
   var calculation = 0;
   var calculationitem = 0;
-
+  LoanViewModel? loanViewModel;
   TextEditingController loanAmountCtrl = TextEditingController(text: "50000");
   TextEditingController monthlyPaymentCtrl =
       TextEditingController(text: "10000");
@@ -83,6 +83,20 @@ class LoanViewModel extends BaseViewModel {
 
   back() {
     _navigationService.back();
+  }
+  ////////////////////////// Filter ///////////////////////////
+
+  var repaymentType = 0;
+  var repaymentPeriod = 6;
+
+  setRepaymentType(value) {
+    repaymentType = value;
+    notifyListeners();
+  }
+
+  setRepaymentPeriod(value) {
+    repaymentPeriod = value;
+    notifyListeners();
   }
 
   /////////////////// calculator result//////////////////
@@ -205,12 +219,10 @@ class LoanViewModel extends BaseViewModel {
     );
   }
 
-  void showFilter() {
-    showcard = false;
+  void showFilter(viewModel) {
     notifyListeners();
     _dialogService.showCustomDialog(
-      variant: DialogType.filter,
-    );
+        variant: DialogType.filter, data: viewModel);
   }
 
   void compareScreen() {
@@ -246,9 +258,16 @@ class LoanViewModel extends BaseViewModel {
     Map<String, dynamic> body = {
       "order": "descending",
       "sort": "ordering",
-      "tenor": 12,
+      "tenor": repaymentPeriod,
       "amount": loanAmountCtrl.text,
       "features": features,
+      "calculateMethod": repaymentType == 0
+          ? "PLoan"
+          : repaymentType == 1
+              ? "MinPay"
+              : repaymentType == 2
+                  ? "InterestOnly"
+                  : "PrepaidInterest",
       "search": "",
       "interestRate": interestCtrl.text,
       "monthlyRepayment": monthlyPaymentCtrl.text
