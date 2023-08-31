@@ -19,7 +19,6 @@ class LoanViewModel extends BaseViewModel {
 
   final _loanCardService = locator<LoanCardService>();
   final _dialogService = locator<DialogService>();
-  final ApiUrl _apiUrl = ApiUrl();
   var formKey = GlobalKey<FormState>();
   Map<String, dynamic> loneMachBody = {};
   List<LoanCard> loanCardList = [];
@@ -89,22 +88,43 @@ class LoanViewModel extends BaseViewModel {
   /////////////////// calculator result//////////////////
   TextEditingController borrowingAmountCtrl =
       TextEditingController(text: "50000");
-  TextEditingController aprCtrl = TextEditingController(text: "4");
+  TextEditingController aprCtrl = TextEditingController(text: "8216.17");
 
-  TextEditingController tenorCtrl = TextEditingController(text: "5");
+  TextEditingController tenorCtrl = TextEditingController(text: "6");
   TextEditingController monthyRepaymentAmountCtrl =
       TextEditingController(text: "10100");
   TextEditingController totalPaymentAmountCtrl =
-      TextEditingController(text: "50501");
-  TextEditingController totalInterestCtrl = TextEditingController(text: "501");
+      TextEditingController(text: "2054051");
+  TextEditingController totalInterestCtrl =
+      TextEditingController(text: "2004051");
 
   Future<InterestCalculator> recalculate() async {
-    Map<String, dynamic> body = {
-      "amount": borrowingAmountCtrl.text,
-      "interestRate": interestCtrl.text,
-      "monthlyRepayment": monthlyPaymentCtrl.text
-    };
-    var data = await _apiHelperService.postApi(_apiUrl.scheduleByLoan, body);
+    String calculationType = "";
+    Map<String, dynamic> body = {};
+    if (calculationitem == 0) {
+      calculationType = "scheduleByPLoanForTenor";
+      body = {
+        "amount": borrowingAmountCtrl.text,
+        "interestRate": interestCtrl.text,
+        "monthlyRepayment": monthlyPaymentCtrl.text
+      };
+    } else if (calculationitem == 1) {
+      calculationType = "scheduleByPLoanForInterestRate";
+      body = {
+        "amount": borrowingAmountCtrl.text,
+        "monthlyRepayment": monthlyPaymentCtrl.text,
+        "numOfMonths": tenorCtrl.text
+      };
+    } else if (calculationitem == 2) {
+      calculationType = "scheduleByPLoanForRepayment";
+      body = {
+        "amount": borrowingAmountCtrl.text,
+        "interestRate": interestCtrl.text,
+        "numOfMonths": tenorCtrl.text
+      };
+    }
+    var data = await _apiHelperService.postApi(
+        Uri.parse("$baseUrl/repayment/$calculationType"), body);
     if (data?["success"] == true) {
       var dataList = data["data"];
       log(dataList.toString());
