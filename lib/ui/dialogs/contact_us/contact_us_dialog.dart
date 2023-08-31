@@ -55,12 +55,18 @@ class ContactUsDialog extends StackedView<ContactUsDialogModel> {
                   children: [
                     IconBoxBtn(
                       topimage: myIcons.wts,
+                      onPress: () {
+                        viewModel.urlLaunch("wa.me/+923454335400");
+                      },
                       imgwidth: 60,
                       boxcolor: Colors.transparent,
                       margin: 5,
                     ),
                     IconBoxBtn(
                       topimage: myIcons.tele,
+                      onPress: () {
+                        viewModel.urlLaunch("tel:+1-555-010-999");
+                      },
                       imgwidth: 60,
                       boxcolor: Colors.transparent,
                       margin: 5,
