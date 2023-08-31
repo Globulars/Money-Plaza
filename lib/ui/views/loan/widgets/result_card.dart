@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:stacked/stacked.dart';
 import '../../../../services/Models/loan_card.dart';
@@ -39,10 +40,15 @@ class ResultCard extends ViewModelWidget<LoanViewModel> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Image.network(
-                      loanData.company?.signLogoUrl ?? "",
-                      width: 80,
-                    ),
+                    loanData.company?.signLogoUrl!.substring(
+                                loanData.company!.signLogoUrl!.length - 3) !=
+                            "svg"
+                        ? Image.network(
+                            loanData.company?.signLogoUrl ?? "",
+                            width: 80,
+                          )
+                        : SvgPicture.network(
+                            loanData.company?.signLogoUrl ?? ""),
                     verticalSpaceTiny,
                     CustomText(
                       text: loanData.company?.name ?? "",
