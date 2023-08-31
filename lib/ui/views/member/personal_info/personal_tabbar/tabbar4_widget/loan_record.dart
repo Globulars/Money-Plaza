@@ -67,58 +67,62 @@ class LoanRecordView extends StackedView<PersonalInfoViewModel> {
                     CustomTextField(
                       controller: viewModel.outstandingCtrl,
                       titleText: 'Outstanding *',
+                      hintText: 'hk',
                     ),
                     verticalSpaceTiny,
-                  //  CustomTextField(
-                  //     controller: viewModel.monthlyRepaymentCtrl,
-                  //     titleText: 'Monthly Repayment*',
-                  //   ),
+                    //  CustomTextField(
+                    //     controller: viewModel.monthlyRepaymentCtrl,
+                    //     titleText: 'Monthly Repayment*',
+                    //   ),
 
-
-
-         viewModel.loanRecordList?.code == "InterestOnly"?          
-
-      Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [ verticalSpaceTiny,
-                    CustomText(text: "Tenor Unit",color: Colors.black,  fontSize: 14, fontWeight: FontWeight.w500),                 
-                     verticalSpaceTiny,
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        ReturnButton(
-                          height: 41.5,
-                          text: 'Daily',
-                          width: width * 0.43,
-                          boxcolor:
-                              viewModel.tenorUnit == 'Daily' ? darkGreenHeigh : Colors.white,
-                          color:
-                              viewModel.tenorUnit != "Daily" ? darkGreenHeigh : Colors.white,
-                          onPress: () {
-                            viewModel.setTenorUnit('Daily');
-                          },
-                        ),
-                        ReturnButton(
-                          height: 41.5,
-                          text: 'Monthly',
-                          width: width * 0.43,
-                          boxcolor:
-                              viewModel.tenorUnit == "Monthly" ? darkGreenHeigh : Colors.white,
-                          color:
-                              viewModel.tenorUnit != "Monthly" ? darkGreenHeigh : Colors.white,
-                          onPress: () {
-                            viewModel.setTenorUnit('Monthly');
-                          },
-                        ),
-                      ],
-                    ),
-
- ],
-      ):Container(),
-
-
-
-
+                    viewModel.loanRecordList?.code == "InterestOnly"
+                        ? Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              verticalSpaceTiny,
+                              CustomText(
+                                  text: "Tenor Unit",
+                                  color: Colors.black,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500),
+                              verticalSpaceTiny,
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  ReturnButton(
+                                    height: 41.5,
+                                    text: 'Daily',
+                                    width: width * 0.43,
+                                    boxcolor: viewModel.tenorUnit == 'Daily'
+                                        ? darkGreenHeigh
+                                        : Colors.white,
+                                    color: viewModel.tenorUnit != "Daily"
+                                        ? darkGreenHeigh
+                                        : Colors.white,
+                                    onPress: () {
+                                      viewModel.setTenorUnit('Daily');
+                                    },
+                                  ),
+                                  ReturnButton(
+                                    height: 41.5,
+                                    text: 'Monthly',
+                                    width: width * 0.43,
+                                    boxcolor: viewModel.tenorUnit == "Monthly"
+                                        ? darkGreenHeigh
+                                        : Colors.white,
+                                    color: viewModel.tenorUnit != "Monthly"
+                                        ? darkGreenHeigh
+                                        : Colors.white,
+                                    onPress: () {
+                                      viewModel.setTenorUnit('Monthly');
+                                    },
+                                  ),
+                                ],
+                              ),
+                            ],
+                          )
+                        : Container(),
 
                     verticalSpaceTiny,
                     CustomTextField(
@@ -128,8 +132,7 @@ class LoanRecordView extends StackedView<PersonalInfoViewModel> {
                               viewModel.loanRecordList?.code == "InterestOnly"
                           ? viewModel.tenorCtrl
                           : viewModel.monthlyInterestCtrl,
-                      titleText: viewModel.loanRecordList?.code ==
-                                  "PLoan" ||
+                      titleText: viewModel.loanRecordList?.code == "PLoan" ||
                               viewModel.loanRecordList?.code ==
                                   "PrepaidInterest" ||
                               viewModel.loanRecordList?.code == "InterestOnly"
@@ -150,11 +153,12 @@ class LoanRecordView extends StackedView<PersonalInfoViewModel> {
                             : viewModel.loanRecordList?.code == "MinPay"
                                 ? "Penalty *"
                                 : "Total Prepaid Interest *"),
-                                 verticalSpaceTiny,
+                    verticalSpaceTiny,
                     viewModel.loanRecordList?.code == "PLoan" ||
                             viewModel.loanRecordList?.code == "InterestOnly" ||
                             viewModel.loanRecordList?.code == "MinPay"
                         ? CustomTextField(
+                            hintText: 'hk',
                             controller: viewModel.loanRecordList?.code ==
                                         "PLoan" ||
                                     viewModel.loanRecordList?.code ==
@@ -172,8 +176,15 @@ class LoanRecordView extends StackedView<PersonalInfoViewModel> {
                                         ? "Min pay % *"
                                         : "Total Prepaid Interest *")
                         : Container(),
-                    
-                   
+                    verticalSpaceTiny,
+                    viewModel.loanRecordList?.code == "InterestOnly"
+                        ? CustomTextField(
+                            controller: viewModel.minPayInDollarCtrl,
+                            titleText: 'Min pay in dollar *',
+                            hintText: 'hk',
+                          )
+                        : Container(),
+
                     verticalSpaceSmall,
 
                     verticalSpaceLarge

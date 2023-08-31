@@ -25,6 +25,7 @@ class PersonalInfoViewModel extends BaseViewModel {
   TextEditingController penaltyCtrl = TextEditingController();
   TextEditingController totalPrepaidInterestCtrl = TextEditingController();
   TextEditingController minPayCtrl = TextEditingController();
+  TextEditingController minPayInDollarCtrl = TextEditingController();
 
   String dob = "";
   var gender = '';
