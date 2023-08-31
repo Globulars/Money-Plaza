@@ -14,11 +14,11 @@ import '../../personal_info_viewmodel.dart';
 
 class LoanRecordView extends StackedView<PersonalInfoViewModel> {
   const LoanRecordView({Key? key}) : super(key: key);
-  // @override
-  // void onViewModelReady(PersonalInfoViewModel viewModel) {
-  //   viewModel.countryNameListData();
-  //   super.onViewModelReady(viewModel);
-  // }
+  @override
+  void onViewModelReady(PersonalInfoViewModel viewModel) {
+    viewModel.loanRecordListData();
+    super.onViewModelReady(viewModel);
+  }
 
   @override
   Widget builder(
@@ -52,9 +52,9 @@ class LoanRecordView extends StackedView<PersonalInfoViewModel> {
             ),
             verticalSpaceSmall,
             ModelDropdown(
-                    onChanged: viewModel.setSelectCountry,
-                    options: viewModel.countryDataList,
-                    value: viewModel.countryList,
+                    onChanged: viewModel.setLoanRecord,
+                    options: viewModel.loanRecordDataList,
+                    value: viewModel.loanRecordList,
                     titleText: 'Type of Loan*',
                   ),
                   verticalSpaceTiny,

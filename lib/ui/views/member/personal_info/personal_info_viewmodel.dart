@@ -5,6 +5,7 @@ import 'package:money_plaza/ui/common/app_url.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import '../../../../app/app.locator.dart';
+import '../../../../services/Models/loan_record.dart';
 import '../../../../services/api_helper_service.dart';
 
 
@@ -20,8 +21,11 @@ class PersonalInfoViewModel extends BaseViewModel {
   var gender = '';
   String doYouKnow = "Facebook";
   String intersetProduct = "Loans";
+  // String typeOfLoan ="Term Loan";
   SelectCountry? countryList;
+  LoanRecord? loanRecordList;
   List<SelectCountry> countryDataList = [];
+  List<LoanRecord> loanRecordDataList=[];
   final doYouKnowList = [
     "Facebook",
     "Mortgages",
@@ -63,6 +67,11 @@ class PersonalInfoViewModel extends BaseViewModel {
     notifyListeners();
   }
 
+  setLoanRecord(value) {
+    loanRecordList = value;
+    notifyListeners();
+  }
+
   navigateToLoanRecordView() {
     _navigationService.navigateToLoanRecordView();
   }
@@ -82,6 +91,23 @@ class PersonalInfoViewModel extends BaseViewModel {
       }
     } else {
       return countryDataList;
+    }
+  }
+
+  Future<List<LoanRecord>> loanRecordListData() async {
+    if(loanRecordDataList.isEmpty){
+      var data=await _apiHelperService.getApi(_apiUrl.loanRecord);
+      if (data?["success"]==true){
+        List dataList = data["data"];
+        loanRecordDataList = dataList.map((data) => LoanRecord.fromJson(data)).toList();
+        loanRecordList = loanRecordDataList[0];
+        notifyListeners();
+        return loanRecordDataList;
+      }else {
+        throw Exception(data["message"].toString());
+      }
+    }else{
+      return loanRecordDataList;
     }
   }
 }
