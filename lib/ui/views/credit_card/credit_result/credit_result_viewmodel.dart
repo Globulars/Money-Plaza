@@ -12,7 +12,7 @@ class CreditResultViewModel extends BaseViewModel {
   final _dialogService = locator<DialogService>();
   final _creditCardService = locator<CreditCardService>();
   final _toasterService = locator<ToasterService>();
-  String creditError="";
+  String creditError = "";
   List<CreditCard> creditCardList = [];
   void showCreditFilter() {
     _dialogService.showCustomDialog(

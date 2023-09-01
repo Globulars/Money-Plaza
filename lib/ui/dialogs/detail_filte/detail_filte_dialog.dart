@@ -71,6 +71,5 @@ class DetailFilteDialog extends StackedView<LoanViewModel> {
   }
 
   @override
-  LoanViewModel viewModelBuilder(BuildContext context) =>
-      LoanViewModel();
+  LoanViewModel viewModelBuilder(BuildContext context) => LoanViewModel();
 }

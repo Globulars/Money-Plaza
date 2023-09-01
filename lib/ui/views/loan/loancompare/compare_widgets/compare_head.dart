@@ -50,9 +50,11 @@ class CompareHead extends ViewModelWidget<LoanViewModel> {
                                       "",
                                   height: 30,
                                 )
-                              : SvgPicture.network(  height: 30,viewModel.compareData[index]
-                                      .company?.signLogoUrl ??
-                                  ""),
+                              : SvgPicture.network(
+                                  height: 30,
+                                  viewModel.compareData[index].company
+                                          ?.signLogoUrl ??
+                                      ""),
                           verticalSpaceTiny,
                           CustomText(
                             text: viewModel.compareData[index].company?.name ??

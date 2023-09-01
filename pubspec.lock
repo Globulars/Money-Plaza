@@ -318,14 +318,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.0-beta.2"
-  flutter_html_iframe:
-    dependency: "direct main"
-    description:
-      name: flutter_html_iframe
-      sha256: "979405fafcbd29c930bf96d9f3f0ade9d87dfd567a03180b13424a0e89a5de46"
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.0.0-beta.2"
   flutter_html_table:
     dependency: "direct main"
     description:
@@ -1178,38 +1170,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.4.0"
-  webview_flutter:
-    dependency: transitive
-    description:
-      name: webview_flutter
-      sha256: "789d52bd789373cc1e100fb634af2127e86c99cf9abde09499743270c5de8d00"
-      url: "https://pub.dev"
-    source: hosted
-    version: "4.2.2"
-  webview_flutter_android:
-    dependency: transitive
-    description:
-      name: webview_flutter_android
-      sha256: bca797abba472868655b5f1a6029c1132385685ee9db4713cb0e7f33076210c6
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.9.3"
-  webview_flutter_platform_interface:
-    dependency: transitive
-    description:
-      name: webview_flutter_platform_interface
-      sha256: "0ca3cfcc6781a7de701d580917af4a9efc4e3e129f8ead95a80587f0a749480a"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.5.0"
-  webview_flutter_wkwebview:
-    dependency: transitive
-    description:
-      name: webview_flutter_wkwebview
-      sha256: ed749f94ac9e814d04a258a9255cf69cfa4cc6006ff59542aea7fb4590144972
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.7.3"
   win32:
     dependency: transitive
     description:

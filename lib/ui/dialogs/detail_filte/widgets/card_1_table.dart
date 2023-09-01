@@ -176,8 +176,6 @@ class _WebViewHtmlState extends State<WebViewHtml> {
     return Html(
       data: widget.url,
       shrinkWrap: true,
-    
-
       extensions: const [TableHtmlExtension()],
     );
   }
