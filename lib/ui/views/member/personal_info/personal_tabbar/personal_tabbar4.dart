@@ -31,272 +31,273 @@ class PersonalTabBar4 extends ViewModelWidget<PersonalInfoViewModel> {
               text: 'noLoanRecord',
             ),
             verticalSpaceSmall,
-             Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 0),
-      child: Card(
-        child: Column(
-          children: [         
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: DataTable(
-                columnSpacing: 3,
-                dataRowMinHeight: 3,
-                dataRowMaxHeight: 20,
-                horizontalMargin: 6,
-                columns: [
-                  DataColumn(
-                    label: SizedBox(
-                        width: 40,
-                        child: CustomText(
-                          text: 'lender',
-                          textAlign: TextAlign.start,
-                          color: darkGreenHeigh,
-                          fontSize: 10,
-                        )),
-                  ),
-                  DataColumn(
-                    label: SizedBox(
-                        width: 60,
-                        child: CustomText(
-                          text: 'Type Of LOan',
-                          textAlign: TextAlign.center,
-                          color: darkGreenHeigh,
-                          fontSize: 10,
-                        )),
-                  ),
-                  DataColumn(
-                    label: SizedBox(
-                        width: 60,
-                        child: CustomText(
-                          text: 'Debt amount',
-                          textAlign: TextAlign.center,
-                          color: darkGreenHeigh,
-                          fontSize: 10,
-                        )),
-                  ),
-                  DataColumn(
-                    label: SizedBox(
-                        width: 60,
-                        child: CustomText(
-                          text: 'total repayment period',
-                          textAlign: TextAlign.center,
-                          color: darkGreenHeigh,
-                          fontSize: 10,
-                        )),
-                  ),
-                  DataColumn(
-                    label: SizedBox(
-                        width: 60,
-                        child: CustomText(
-                          text: 'Repayment amount per period',
-                          textAlign: TextAlign.center,
-                          color: darkGreenHeigh,
-                          fontSize: 10,
-                        )),
-                  ),
-                   DataColumn(
-                    label: SizedBox(
-                        width: 60,
-                        child: CustomText(
-                          text: 'Remaining repayment period',
-                          textAlign: TextAlign.center,
-                          color: darkGreenHeigh,
-                          fontSize: 10,
-                        )),
-                  ),
-                  DataColumn(
-                    label: SizedBox(
-                        width: 60,
-                        child: CustomText(
-                          text: 'APR',
-                          textAlign: TextAlign.center,
-                          color: darkGreenHeigh,
-                          fontSize: 10,
-                        )),
-                  ),
-                  DataColumn(
-                    label: SizedBox(
-                        width: 60,
-                        child: CustomText(
-                          text: 'total interest',
-                          textAlign: TextAlign.center,
-                          color: darkGreenHeigh,
-                          fontSize: 10,
-                        )),
-                  ),
-                  DataColumn(
-                    label: SizedBox(
-                        width: 60,
-                        child: CustomText(
-                          text: 'Amount of existing debt',
-                          textAlign: TextAlign.center,
-                          color: darkGreenHeigh,
-                          fontSize: 10,
-                        )),
-                  ),
-                  DataColumn(
-                    label: SizedBox(
-                        width: 60,
-                        child: CustomText(
-                          text: 'Total prepaid interest',
-                          textAlign: TextAlign.center,
-                          color: darkGreenHeigh,
-                          fontSize: 10,
-                        )),
-                  ),
-                  DataColumn(
-                    label: SizedBox(
-                        width: 60,
-                        child: CustomText(
-                          text: 'Monthly interest',
-                          textAlign: TextAlign.center,
-                          color: darkGreenHeigh,
-                          fontSize: 10,
-                        )),
-                  ),
-                  DataColumn(
-                    label: SizedBox(
-                        width: 60,
-                        child: CustomText(
-                          text: 'late payment feet',
-                          textAlign: TextAlign.center,
-                          color: darkGreenHeigh,
-                          fontSize: 10,
-                        )),
-                  ),
-                   DataColumn(
-                    label: SizedBox(
-                        width: 60,
-                        child: CustomText(
-                          text: 'Min Pay %',
-                          textAlign: TextAlign.center,
-                          color: darkGreenHeigh,
-                          fontSize: 10,
-                        )),
-                  ),
-                  DataColumn(
-                    label: SizedBox(
-                        width: 60,
-                        child: CustomText(
-                          text: 'Pay in dollar',
-                          textAlign: TextAlign.center,
-                          color: darkGreenHeigh,
-                          fontSize: 10,
-                        )),
-                  ),
-                ],
-                rows: List.generate(
-                  viewModel.userData!.loanInformations!.length,
-                  (index) {
-                     var data = viewModel.userData!.loanInformations![index];
-                    return DataRow(cells: [
-                      DataCell(SizedBox(
-                          width: 20,
-                          child: CustomText(
-                            text: "${(index + 1)}",
-                            textAlign: TextAlign.center,
-                            fontSize: 10,
-                          ))),
-                      DataCell(SizedBox(
-                          width: 20,
-                          child: CustomText(
-                            text: "${(index + 1)}",
-                            textAlign: TextAlign.center,
-                            fontSize: 10,
-                          ))),
-                     DataCell(SizedBox(
-                          width: 20,
-                          child: CustomText(
-                            text: "${(index + 1)}",
-                            textAlign: TextAlign.center,
-                            fontSize: 10,
-                          ))),
-                     DataCell(SizedBox(
-                          width: 20,
-                          child: CustomText(
-                            text: "${(index + 1)}",
-                            textAlign: TextAlign.center,
-                            fontSize: 10,
-                          ))),
-                     DataCell(SizedBox(
-                          width: 20,
-                          child: CustomText(
-                            text: "${(index + 1)}",
-                            textAlign: TextAlign.center,
-                            fontSize: 10,
-                          ))),
-                          DataCell(SizedBox(
-                          width: 20,
-                          child: CustomText(
-                            text: "${(index + 1)}",
-                            textAlign: TextAlign.center,
-                            fontSize: 10,
-                          ))),
-                          DataCell(SizedBox(
-                          width: 20,
-                          child: CustomText(
-                            text: "${(index + 1)}",
-                            textAlign: TextAlign.center,
-                            fontSize: 10,
-                          ))),
-                          DataCell(SizedBox(
-                          width: 20,
-                          child: CustomText(
-                            text: "${(index + 1)}",
-                            textAlign: TextAlign.center,
-                            fontSize: 10,
-                          ))),
-                          DataCell(SizedBox(
-                          width: 20,
-                          child: CustomText(
-                            text: "${(index + 1)}",
-                            textAlign: TextAlign.center,
-                            fontSize: 10,
-                          ))),
-                          DataCell(SizedBox(
-                          width: 20,
-                          child: CustomText(
-                            text: "${(index + 1)}",
-                            textAlign: TextAlign.center,
-                            fontSize: 10,
-                          ))),
-                          DataCell(SizedBox(
-                          width: 20,
-                          child: CustomText(
-                            text: "${(index + 1)}",
-                            textAlign: TextAlign.center,
-                            fontSize: 10,
-                          ))),
-                          DataCell(SizedBox(
-                          width: 20,
-                          child: CustomText(
-                            text: "${(index + 1)}",
-                            textAlign: TextAlign.center,
-                            fontSize: 10,
-                          ))),
-                          DataCell(SizedBox(
-                          width: 20,
-                          child: CustomText(
-                            text: "${(index + 1)}",
-                            textAlign: TextAlign.center,
-                            fontSize: 10,
-                          ))),
-                          DataCell(SizedBox(
-                          width: 20,
-                          child: CustomText(
-                            text: "${(index + 1)}",
-                            textAlign: TextAlign.center,
-                            fontSize: 10,
-                          ))),
-                    ]);
-                  },
-                ).toList(),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 0),
+              child: Card(
+                child: Column(
+                  children: [
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: DataTable(
+                        columnSpacing: 3,
+                        dataRowMinHeight: 3,
+                        dataRowMaxHeight: 20,
+                        horizontalMargin: 6,
+                        columns: [
+                          DataColumn(
+                            label: SizedBox(
+                                width: 40,
+                                child: CustomText(
+                                  text: 'lender',
+                                  textAlign: TextAlign.start,
+                                  color: darkGreenHeigh,
+                                  fontSize: 10,
+                                )),
+                          ),
+                          DataColumn(
+                            label: SizedBox(
+                                width: 60,
+                                child: CustomText(
+                                  text: 'Type Of LOan',
+                                  textAlign: TextAlign.center,
+                                  color: darkGreenHeigh,
+                                  fontSize: 10,
+                                )),
+                          ),
+                          DataColumn(
+                            label: SizedBox(
+                                width: 60,
+                                child: CustomText(
+                                  text: 'Debt amount',
+                                  textAlign: TextAlign.center,
+                                  color: darkGreenHeigh,
+                                  fontSize: 10,
+                                )),
+                          ),
+                          DataColumn(
+                            label: SizedBox(
+                                width: 60,
+                                child: CustomText(
+                                  text: 'total repayment period',
+                                  textAlign: TextAlign.center,
+                                  color: darkGreenHeigh,
+                                  fontSize: 10,
+                                )),
+                          ),
+                          DataColumn(
+                            label: SizedBox(
+                                width: 60,
+                                child: CustomText(
+                                  text: 'Repayment amount per period',
+                                  textAlign: TextAlign.center,
+                                  color: darkGreenHeigh,
+                                  fontSize: 10,
+                                )),
+                          ),
+                          DataColumn(
+                            label: SizedBox(
+                                width: 60,
+                                child: CustomText(
+                                  text: 'Remaining repayment period',
+                                  textAlign: TextAlign.center,
+                                  color: darkGreenHeigh,
+                                  fontSize: 10,
+                                )),
+                          ),
+                          DataColumn(
+                            label: SizedBox(
+                                width: 60,
+                                child: CustomText(
+                                  text: 'APR',
+                                  textAlign: TextAlign.center,
+                                  color: darkGreenHeigh,
+                                  fontSize: 10,
+                                )),
+                          ),
+                          DataColumn(
+                            label: SizedBox(
+                                width: 60,
+                                child: CustomText(
+                                  text: 'total interest',
+                                  textAlign: TextAlign.center,
+                                  color: darkGreenHeigh,
+                                  fontSize: 10,
+                                )),
+                          ),
+                          DataColumn(
+                            label: SizedBox(
+                                width: 60,
+                                child: CustomText(
+                                  text: 'Amount of existing debt',
+                                  textAlign: TextAlign.center,
+                                  color: darkGreenHeigh,
+                                  fontSize: 10,
+                                )),
+                          ),
+                          DataColumn(
+                            label: SizedBox(
+                                width: 60,
+                                child: CustomText(
+                                  text: 'Total prepaid interest',
+                                  textAlign: TextAlign.center,
+                                  color: darkGreenHeigh,
+                                  fontSize: 10,
+                                )),
+                          ),
+                          DataColumn(
+                            label: SizedBox(
+                                width: 60,
+                                child: CustomText(
+                                  text: 'Monthly interest',
+                                  textAlign: TextAlign.center,
+                                  color: darkGreenHeigh,
+                                  fontSize: 10,
+                                )),
+                          ),
+                          DataColumn(
+                            label: SizedBox(
+                                width: 60,
+                                child: CustomText(
+                                  text: 'late payment feet',
+                                  textAlign: TextAlign.center,
+                                  color: darkGreenHeigh,
+                                  fontSize: 10,
+                                )),
+                          ),
+                          DataColumn(
+                            label: SizedBox(
+                                width: 60,
+                                child: CustomText(
+                                  text: 'Min Pay %',
+                                  textAlign: TextAlign.center,
+                                  color: darkGreenHeigh,
+                                  fontSize: 10,
+                                )),
+                          ),
+                          DataColumn(
+                            label: SizedBox(
+                                width: 60,
+                                child: CustomText(
+                                  text: 'Pay in dollar',
+                                  textAlign: TextAlign.center,
+                                  color: darkGreenHeigh,
+                                  fontSize: 10,
+                                )),
+                          ),
+                        ],
+                        rows: List.generate(
+                          viewModel.userData!.loanInformations!.length,
+                          (index) {
+                            var data =
+                                viewModel.userData!.loanInformations![index];
+                            return DataRow(cells: [
+                              DataCell(SizedBox(
+                                  width: 20,
+                                  child: CustomText(
+                                    text: "${(index + 1)}",
+                                    textAlign: TextAlign.center,
+                                    fontSize: 10,
+                                  ))),
+                              DataCell(SizedBox(
+                                  width: 20,
+                                  child: CustomText(
+                                    text: "${(index + 1)}",
+                                    textAlign: TextAlign.center,
+                                    fontSize: 10,
+                                  ))),
+                              DataCell(SizedBox(
+                                  width: 20,
+                                  child: CustomText(
+                                    text: "${(index + 1)}",
+                                    textAlign: TextAlign.center,
+                                    fontSize: 10,
+                                  ))),
+                              DataCell(SizedBox(
+                                  width: 20,
+                                  child: CustomText(
+                                    text: "${(index + 1)}",
+                                    textAlign: TextAlign.center,
+                                    fontSize: 10,
+                                  ))),
+                              DataCell(SizedBox(
+                                  width: 20,
+                                  child: CustomText(
+                                    text: "${(index + 1)}",
+                                    textAlign: TextAlign.center,
+                                    fontSize: 10,
+                                  ))),
+                              DataCell(SizedBox(
+                                  width: 20,
+                                  child: CustomText(
+                                    text: "${(index + 1)}",
+                                    textAlign: TextAlign.center,
+                                    fontSize: 10,
+                                  ))),
+                              DataCell(SizedBox(
+                                  width: 20,
+                                  child: CustomText(
+                                    text: "${(index + 1)}",
+                                    textAlign: TextAlign.center,
+                                    fontSize: 10,
+                                  ))),
+                              DataCell(SizedBox(
+                                  width: 20,
+                                  child: CustomText(
+                                    text: "${(index + 1)}",
+                                    textAlign: TextAlign.center,
+                                    fontSize: 10,
+                                  ))),
+                              DataCell(SizedBox(
+                                  width: 20,
+                                  child: CustomText(
+                                    text: "${(index + 1)}",
+                                    textAlign: TextAlign.center,
+                                    fontSize: 10,
+                                  ))),
+                              DataCell(SizedBox(
+                                  width: 20,
+                                  child: CustomText(
+                                    text: "${(index + 1)}",
+                                    textAlign: TextAlign.center,
+                                    fontSize: 10,
+                                  ))),
+                              DataCell(SizedBox(
+                                  width: 20,
+                                  child: CustomText(
+                                    text: "${(index + 1)}",
+                                    textAlign: TextAlign.center,
+                                    fontSize: 10,
+                                  ))),
+                              DataCell(SizedBox(
+                                  width: 20,
+                                  child: CustomText(
+                                    text: "${(index + 1)}",
+                                    textAlign: TextAlign.center,
+                                    fontSize: 10,
+                                  ))),
+                              DataCell(SizedBox(
+                                  width: 20,
+                                  child: CustomText(
+                                    text: "${(index + 1)}",
+                                    textAlign: TextAlign.center,
+                                    fontSize: 10,
+                                  ))),
+                              DataCell(SizedBox(
+                                  width: 20,
+                                  child: CustomText(
+                                    text: "${(index + 1)}",
+                                    textAlign: TextAlign.center,
+                                    fontSize: 10,
+                                  ))),
+                            ]);
+                          },
+                        ).toList(),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
-          ],
-        ),
-      ),
-    ),
             // SizedBox(
             //   height: 100,
             //   child: ListView.builder(
@@ -340,7 +341,7 @@ class PersonalTabBar4 extends ViewModelWidget<PersonalInfoViewModel> {
             //     }
             //   ),
             // ),
-            
+
             verticalSpaceMedium,
             SubBar(
               text: "addLoanRecord",

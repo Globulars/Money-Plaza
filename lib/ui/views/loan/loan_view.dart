@@ -1,3 +1,4 @@
+import '../../common/app_url.dart';
 import 'loan_viewmodel.dart';
 import '../../widgets/app_bar.dart';
 import '../../common/app_icons.dart';
@@ -41,9 +42,7 @@ class LoanView extends StackedView<LoanViewModel> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const TopBanner(
-                    url:
-                        "https://admin.moneyplaza.com.hk/banner/getBannersByType?type=loan"),
+                TopBanner(url: "${ApiUrl().bannersByType}loan"),
                 verticalSpaceMedium,
                 const FilterBarWidget(),
                 verticalSpaceTiny,

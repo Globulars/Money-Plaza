@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:money_plaza/ui/views/landing/widgets/landing_body.dart';
 import 'package:stacked/stacked.dart';
+import '../../common/app_url.dart';
 import '../../widgets/app_bar.dart';
 import '../../widgets/bottom_bar.dart';
 import '../../widgets/top_banner.dart';
@@ -29,13 +30,11 @@ class LandingView extends StackedView<LandingViewModel> {
               image: DecorationImage(
                   image: AssetImage(myIcons.backgroundimage), fit: BoxFit.fill),
             ),
-            child: const SingleChildScrollView(
+            child: SingleChildScrollView(
               child: Column(
                 children: [
-                  const TopBanner(
-                      url:
-                          "https://admin.moneyplaza.com.hk/banner/getBannersByType?type=card"),
-                  LandingBody()
+                  TopBanner(url: "${ApiUrl().bannersByType}card"),
+                  const LandingBody()
                 ],
               ),
             ),

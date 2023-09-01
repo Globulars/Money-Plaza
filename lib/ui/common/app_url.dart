@@ -22,7 +22,7 @@ class ApiUrl {
       Uri.parse("$baseUrl/user/updatePasswordByMobileCode");
 
   /////////////////////////////////////banner Controller////////////////////////////////
-  final String creditCardGetBannersByType ="$baseUrl/banner/getBannersByType?type=card";
+  final String bannersByType = "$baseUrl/banner/getBannersByType?type=";
 
   ///////////////////////////////////////card Controller////////////////////////////////
   final Uri cardList = Uri.parse("$baseUrl/card/list");

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
+import '../../common/app_url.dart';
 import '../../common/ui_helpers.dart';
 import '../../widgets/app_bar.dart';
 import '../../widgets/bottom_bar.dart';
@@ -33,9 +34,7 @@ class CreditCardView extends StackedView<CreditCardViewModel> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const TopBanner(
-                    url:
-                        "https://admin.moneyplaza.com.hk/banner/getBannersByType?type=card"),
+                TopBanner(url: "${ApiUrl().bannersByType}card"),
                 Expanded(
                   child: SingleChildScrollView(
                     child: Padding(

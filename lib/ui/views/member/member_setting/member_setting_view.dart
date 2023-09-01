@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:stacked/stacked.dart';
+import '../../../common/app_url.dart';
 import '../../../widgets/app_bar.dart';
 import '../../../widgets/bottom_bar.dart';
 import '../../../widgets/common/background_image.dart';
@@ -30,9 +31,7 @@ class MemberSettingView extends StackedView<MemberSettingViewModel> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const TopBanner(
-                    url:
-                        "https://admin.moneyplaza.com.hk/banner/getBannersByType?type=card"),
+                TopBanner(url: "${ApiUrl().bannersByType}card"),
                 Padding(
                   padding: const EdgeInsets.all(15.0),
                   child: Column(

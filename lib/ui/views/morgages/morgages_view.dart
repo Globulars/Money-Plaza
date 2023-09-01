@@ -3,6 +3,7 @@ import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/submit_button.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
+import '../../common/app_url.dart';
 import '../../widgets/app_bar.dart';
 import '../../widgets/bottom_bar.dart';
 import '../../widgets/common/background_image.dart';
@@ -29,9 +30,7 @@ class MorgagesView extends StackedView<MorgagesViewModel> {
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const TopBanner(
-                  url:
-                      "https://admin.moneyplaza.com.hk/banner/getBannersByType?type=mortgage"),
+              TopBanner(url: "${ApiUrl().bannersByType}mortgage"),
               Form(key: viewModel.formKey, child: const MorgTextFields()),
             ],
           ),
