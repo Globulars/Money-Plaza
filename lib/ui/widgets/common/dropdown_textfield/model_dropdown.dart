@@ -81,7 +81,7 @@ class ModelDropdown extends StackedView<DropdownTextfieldModel> {
                       return DropdownMenuItem<dynamic>(
                         value: value,
                         child: SizedBox(
-                          width: width - 100,
+                          width: width - 150,
                           child: Text(
                             value.name.toString(),
                             overflow: TextOverflow.ellipsis,
