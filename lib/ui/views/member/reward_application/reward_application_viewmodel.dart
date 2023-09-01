@@ -93,10 +93,9 @@ class RewardApplicationViewModel extends BaseViewModel {
   Future<List<UserReward>> getUserRewardList() async {
     var data = await _apiHelperService.getAuthApi(_apiUrl.userReward);
     if (data?["success"] == true) {
-      List dataList = data["data"];
+      List dataList = data["data"]["records"];
       userRewardList =
           dataList.map((data) => UserReward.fromJson(data)).toList();
-
       notifyListeners();
       return userRewardList;
     } else {
