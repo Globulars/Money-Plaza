@@ -27,6 +27,8 @@ class MemberLoginViewModel extends BaseViewModel {
   String interestProducts = "Loans";
   String knownChannel = "Facebook";
   bool receiveNews = true;
+  bool phoneFieldEmpty = false;
+
   final interestProductsList = [
     "Loans",
     "Mortgages",
@@ -84,6 +86,16 @@ class MemberLoginViewModel extends BaseViewModel {
     receiveNews = value;
     notifyListeners();
   }
+
+   onChangeFunctionSetValue(v) {
+    if (v.isEmpty) {
+      phoneFieldEmpty = true;
+    } else {
+      phoneFieldEmpty = false;
+    }
+    notifyListeners();
+  }
+
 
   sendEmailCode() async {
     var isValid = formKey.currentState!.validate();
