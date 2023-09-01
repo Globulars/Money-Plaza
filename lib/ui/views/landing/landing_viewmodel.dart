@@ -24,7 +24,7 @@ class LandingViewModel extends BaseViewModel {
   }
 
   navigateToMemberLogin() async {
-    String accessToken = await Store.getUser();
+    var accessToken = await Store.getUser();
 // ignore: unnecessary_null_comparison
     if (accessToken == null || accessToken.isEmpty) {
       _navigationService.navigateToMemberLoginView();
