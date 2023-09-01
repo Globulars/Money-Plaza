@@ -13,6 +13,8 @@ import 'custom_text_field_model.dart';
 class CustomTextField extends StackedView<CustomTextFieldModel> {
   TextAlign? textAlign;
   List<TextInputFormatter>? inputFormaters;
+  void Function(String)? onChanged;
+
   // WidgetShape? shape;
 
   // WidgetPadding? padding;
@@ -99,6 +101,7 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
     this.inputFormaters,
     this.initialValue,
     this.textAlign,
+    this.onChanged
   });
 
   @override
@@ -139,6 +142,7 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
           width: width ?? double.infinity,
           margin: margin,
           child: TextFormField(
+            onChanged: onChanged,
             onTap: onTap,
             autovalidateMode: AutovalidateMode.onUserInteraction,
             controller: controller,
