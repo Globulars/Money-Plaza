@@ -35,6 +35,7 @@ class DropdownTextfield extends StackedView<DropdownTextfieldModel> {
     DropdownTextfieldModel viewModel,
     Widget? child,
   ) {
+    final width = MediaQuery.of(context).size.width;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -86,7 +87,12 @@ class DropdownTextfield extends StackedView<DropdownTextfieldModel> {
                     items: options.map((String value) {
                       return DropdownMenuItem<String>(
                         value: value,
-                        child: Text(value.toString()).tr(),
+                        child: SizedBox(
+                            width: width - 150,
+                            child: Text(
+                              value.toString(),
+                              overflow: TextOverflow.ellipsis,
+                            ).tr()),
                       );
                     }).toList(),
                   ),

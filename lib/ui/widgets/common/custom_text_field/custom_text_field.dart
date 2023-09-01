@@ -135,10 +135,8 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
         Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5),
-            // color: Colors.white,
           ),
           width: width ?? double.infinity,
-          // height: height ?? 40,
           margin: margin,
           child: TextFormField(
             onTap: onTap,
