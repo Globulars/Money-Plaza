@@ -5,13 +5,13 @@ import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'package:image_picker/image_picker.dart';
 import 'package:money_plaza/app/app.locator.dart';
-import 'package:money_plaza/app/app.router.dart';
-import 'package:money_plaza/services/shared_preferences_service.dart';
-import 'package:stacked_services/stacked_services.dart';
+import 'package:money_plaza/services/auth_service.dart';
 
 class ApiHelperService {
+  final AuthService _authnService = locator<AuthService>();
+  String? get accessToken => _authnService.authData?.accessToken;
   String? imagePath;
-  final _navigationService = locator<NavigationService>();
+  // final ApiUrl _apiUrl = ApiUrl();
   Map<String, String> headers = {
     "Accept": "application/json",
     "content-type": "application/json"
@@ -34,7 +34,6 @@ class ApiHelperService {
   /////////////////////////////////////Post Auth////////////////////////////////
 
   postAuthApi(_url, body) async {
-    String accessToken = await Store.getUser();
     try {
       final response = await http.post(_url, body: jsonEncode(body), headers: {
         "Accept": "application/json",
@@ -45,9 +44,6 @@ class ApiHelperService {
         var data = json.decode(response.body);
         return data;
       } else {
-        if (response.statusCode == 401) {
-          _navigationService.navigateToMemberLoginView();
-        }
         return {"message": "${response.statusCode} error found"};
       }
     } catch (e) {
@@ -58,8 +54,6 @@ class ApiHelperService {
   /////////////////////////////////////Post Auth////////////////////////////////
 
   getAuthApi(_url) async {
-    String accessToken = await Store.getUser();
-
     try {
       final response = await http.get(_url, headers: {
         "Accept": "application/json",
@@ -70,9 +64,6 @@ class ApiHelperService {
         var data = json.decode(response.body);
         return data;
       } else {
-        if (response.statusCode == 401) {
-          _navigationService.navigateToMemberLoginView();
-        }
         return {"message": "${response.statusCode} error found"};
       }
     } catch (e) {
@@ -90,7 +81,6 @@ class ApiHelperService {
 
   multiPartRequest(_url, _body) async {
     var data;
-    String accessToken = await Store.getUser();
     try {
       var request = http.MultipartRequest("POST", _url);
       request.headers.addAll({
@@ -112,9 +102,6 @@ class ApiHelperService {
         });
         return data;
       } else {
-        if (response.statusCode == 401) {
-          _navigationService.navigateToMemberLoginView();
-        }
         return {"message": "${response.statusCode} error found"};
       }
     } catch (e) {

@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:money_plaza/services/Models/auth.dart';
-import 'package:money_plaza/services/shared_preferences_service.dart';
 import '../ui/common/app_url.dart';
 
 class AuthService {
@@ -50,7 +49,6 @@ class AuthService {
       if (response.statusCode == 200) {
         var data = json.decode(response.body);
         authData = Auth.fromJson(data["data"]);
-        Store.save("accessToken", authData!.accessToken.toString());
         return data;
       } else {
         return {"message": "${response.statusCode} error found"};
