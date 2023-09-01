@@ -17,6 +17,7 @@ class LoanRecordView extends StackedView<PersonalInfoViewModel> {
   @override
   void onViewModelReady(PersonalInfoViewModel viewModel) {
     viewModel.loanRecordListData();
+    viewModel.getUserData();
     super.onViewModelReady(viewModel);
   }
 

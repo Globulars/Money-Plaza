@@ -6,14 +6,15 @@ import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import '../../../../app/app.locator.dart';
 import '../../../../services/Models/loan_record.dart';
+import '../../../../services/Models/user_data.dart';
 import '../../../../services/api_helper_service.dart';
 
 class PersonalInfoViewModel extends BaseViewModel {
   final _apiHelperService = locator<ApiHelperService>();
   final _navigationService = locator<NavigationService>();
   final ApiUrl _apiUrl = ApiUrl();
-  TextEditingController firstNameCtrl = TextEditingController(text: "Mudassir");
-  TextEditingController lastNameCtrl = TextEditingController(text: "Mukhtar");
+  TextEditingController firstNameCtrl = TextEditingController();
+  TextEditingController lastNameCtrl = TextEditingController();
   TextEditingController emailCtrl = TextEditingController();
   TextEditingController contactNumCtrl = TextEditingController();
   TextEditingController lenderCtrl = TextEditingController();
@@ -35,8 +36,10 @@ class PersonalInfoViewModel extends BaseViewModel {
   // String typeOfLoan ="Term Loan";
   SelectCountry? countryList;
   LoanRecord? loanRecordList;
+  UserData? userData;
   List<SelectCountry> countryDataList = [];
   List<LoanRecord> loanRecordDataList = [];
+  //  List<UserData> userDataList = [];
   final doYouKnowList = [
     "Facebook",
     "Search Engine",
@@ -125,6 +128,29 @@ class PersonalInfoViewModel extends BaseViewModel {
       }
     } else {
       return loanRecordDataList;
+    }
+  }
+
+  Future<UserData?> getUserData() async {
+    var data = await _apiHelperService.getAuthApi(_apiUrl.userDataApi);
+    if (data?["success"] == true) {
+      userData = UserData.fromJson(data["data"]);
+      firstNameCtrl.text = userData?.firstName ?? "";
+      lastNameCtrl.text = userData?.lastName ?? "";
+      emailCtrl.text = userData?.email ?? "";
+      lenderCtrl.text = userData?.loanInformations?[0].lender ?? "";
+      tenorCtrl.text = "${userData?.loanInformations?[0].tenor ?? 0}";
+      remainingTenorCtrl.text="${userData?.loanInformations?[0].remainingTenor ?? 0}";
+      monthlyRepaymentCtrl.text="${userData?.loanInformations?[0].monthlyRepayment ?? 0}";
+      monthlyInterestCtrl.text="${userData?.loanInformations?[0].interestRate ?? 0}";
+      totalPrepaidInterestCtrl.text="${userData?.loanInformations?[0].totalInterestAmount ?? 0}";
+      remainingTenorCtrl.text="${userData?.loanInformations?[0].totalRemainingAmount ?? 0}";
+      
+
+      notifyListeners();
+      return userData;
+    } else {
+      throw Exception(data["message"].toString());
     }
   }
 }

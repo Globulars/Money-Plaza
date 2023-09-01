@@ -52,6 +52,26 @@ class ApiHelperService {
       return {"message": e};
     }
   }
+
+  /////////////////////////////////////Post Auth////////////////////////////////
+
+  getAuthApi(_url) async {
+    try {
+      final response = await http.get(_url, headers: {
+        "Accept": "application/json",
+        "content-type": "application/json",
+        "Authorization": "Bearer $accessToken"
+      });
+      if (response.statusCode == 200) {
+        var data = json.decode(response.body);
+        return data;
+      } else {
+        return {"message": "${response.statusCode} error found"};
+      }
+    } catch (e) {
+      return {"message": e};
+    }
+  }
   /////////////////////////////////////Upload Image////////////////////////////////
 
   uploadImage() async {

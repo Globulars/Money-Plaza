@@ -20,6 +20,7 @@ class PersonalInfoView extends StackedView<PersonalInfoViewModel> {
   @override
   void onViewModelReady(PersonalInfoViewModel viewModel) {
     viewModel.countryNameListData();
+    viewModel.getUserData();
     super.onViewModelReady(viewModel);
   }
 

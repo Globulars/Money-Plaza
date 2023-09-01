@@ -16,9 +16,9 @@ class ApiUrl {
   // final Uri awardCreate = Uri.parse("$baseUrl/award");
 
   /////////////////////////////////////User Controller////////////////////////////////
-
+  final Uri userDataApi = Uri.parse("$baseUrl/user/me");
   // final Uri getIncentives = Uri.parse("$baseUrl/user/getIncentives");
-  // final Uri me = Uri.parse("$baseUrl/user/me");
+  //
   // final Uri query = Uri.parse("$baseUrl/user/query");
   final Uri sendForgetPasswordCodeByEmail =
       Uri.parse("$baseUrl/user/sendForgetPasswordCodeByEmail");
