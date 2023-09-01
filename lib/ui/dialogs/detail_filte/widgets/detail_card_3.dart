@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
+import 'package:money_plaza/ui/views/loan/loan_viewmodel.dart';
 import 'package:stacked/stacked.dart';
 import '../../../widgets/common/icon_box_btn/text.dart';
-import '../detail_filte_dialog_model.dart';
 import 'card_3_table.dart';
 
-class DetailCard3 extends ViewModelWidget<DetailFilteDialogModel> {
+class DetailCard3 extends ViewModelWidget<LoanViewModel> {
   const DetailCard3({Key? key}) : super(key: key);
 
   @override
   Widget build(
     BuildContext context,
-    DetailFilteDialogModel viewModel,
+    LoanViewModel viewModel,
   ) {
     return Card(
       margin: const EdgeInsets.all(5),

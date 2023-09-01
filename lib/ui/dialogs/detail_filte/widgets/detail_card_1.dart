@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:money_plaza/ui/views/loan/loan_viewmodel.dart';
 import 'package:stacked/stacked.dart';
 import '../../../../services/Models/loan_card.dart';
 import '../../../widgets/common/icon_box_btn/text.dart';
-import '../detail_filte_dialog_model.dart';
 
-class DetailCard1 extends ViewModelWidget<DetailFilteDialogModel> {
+class DetailCard1 extends ViewModelWidget<LoanViewModel> {
   final LoanCard loanData;
   const DetailCard1({Key? key, required this.loanData}) : super(key: key);
 
   @override
   Widget build(
     BuildContext context,
-    DetailFilteDialogModel viewModel,
+    LoanViewModel viewModel,
   ) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 5),

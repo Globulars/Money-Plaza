@@ -160,6 +160,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
+import 'package:flutter_html_table/flutter_html_table.dart';
 
 class WebViewHtml extends StatefulWidget {
   final String url;
@@ -175,41 +176,9 @@ class _WebViewHtmlState extends State<WebViewHtml> {
     return Html(
       data: widget.url,
       shrinkWrap: true,
-      style: {
-        "table": Style(
-          height: Height.auto(),
-          width: Width.auto(),
-        ),
-        "tr": Style(
-          height: Height.auto(),
-          width: Width.auto(),
-        ),
-        "th": Style(
-          padding: HtmlPaddings.all(6),
-          height: Height.auto(),
-          border: const Border(
-            left: BorderSide(color: Colors.black, width: 0.5),
-            bottom: BorderSide(color: Colors.black, width: 0.5),
-            top: BorderSide(color: Colors.black, width: 0.5),
-          ),
-        ),
-        "td": Style(
-          padding: HtmlPaddings.all(6),
-          height: Height.auto(),
-          border: const Border(
-            left: BorderSide(color: Colors.black, width: 0.5),
-            bottom: BorderSide(color: Colors.black, width: 0.5),
-            top: BorderSide(color: Colors.black, width: 0.5),
-            right: BorderSide(color: Colors.black, width: 0.5),
-          ),
-        ),
-        "col": Style(
-          height: Height.auto(),
-          width: Width.auto(),
-        ),
-      },
+    
 
-      // extensions: const [TableHtmlExtension(),IframeHtmlExtension()],
+      extensions: const [TableHtmlExtension()],
     );
   }
 }

@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:money_plaza/ui/dialogs/detail_filte/widgets/detail_card_1.dart';
+import 'package:money_plaza/ui/views/loan/loan_viewmodel.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import '../../../services/Models/loan_card.dart';
 import '../../widgets/common/icon_box_btn/sub_bar.dart';
 import '../../views/loan/widgets/result_card.dart';
-import 'detail_filte_dialog_model.dart';
 
-class DetailFilteDialog extends StackedView<DetailFilteDialogModel> {
+class DetailFilteDialog extends StackedView<LoanViewModel> {
   final DialogRequest request;
 
   final Function(DialogResponse) completer;
@@ -23,7 +23,7 @@ class DetailFilteDialog extends StackedView<DetailFilteDialogModel> {
   @override
   Widget builder(
     BuildContext context,
-    DetailFilteDialogModel viewModel,
+    LoanViewModel viewModel,
     Widget? child,
   ) {
     final width = MediaQuery.of(context).size.width;
@@ -71,6 +71,6 @@ class DetailFilteDialog extends StackedView<DetailFilteDialogModel> {
   }
 
   @override
-  DetailFilteDialogModel viewModelBuilder(BuildContext context) =>
-      DetailFilteDialogModel();
+  LoanViewModel viewModelBuilder(BuildContext context) =>
+      LoanViewModel();
 }
