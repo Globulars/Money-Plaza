@@ -14,11 +14,11 @@ class SelectCountry {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['code'] = this.code;
-    data['name'] = this.name;
-    data['nameCht'] = this.nameCht;
-    data['continent'] = this.continent;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['code'] = code;
+    data['name'] = name;
+    data['nameCht'] = nameCht;
+    data['continent'] = continent;
     return data;
   }
 }

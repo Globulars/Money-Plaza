@@ -55,7 +55,7 @@ class UserData {
     if (json['loanInformations'] != null) {
       loanInformations = <LoanInformations>[];
       json['loanInformations'].forEach((v) {
-        loanInformations!.add(new LoanInformations.fromJson(v));
+        loanInformations!.add(LoanInformations.fromJson(v));
       });
     }
     hasBankruptcy = json['hasBankruptcy'];
@@ -74,31 +74,31 @@ class UserData {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['firstName'] = this.firstName;
-    data['lastName'] = this.lastName;
-    data['email'] = this.email;
-    data['emailVerified'] = this.emailVerified;
-    data['mobileVerified'] = this.mobileVerified;
-    data['knowChannel'] = this.knowChannel;
-    if (this.loanInformations != null) {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['firstName'] = firstName;
+    data['lastName'] = lastName;
+    data['email'] = email;
+    data['emailVerified'] = emailVerified;
+    data['mobileVerified'] = mobileVerified;
+    data['knowChannel'] = knowChannel;
+    if (loanInformations != null) {
       data['loanInformations'] =
-          this.loanInformations!.map((v) => v.toJson()).toList();
+          loanInformations!.map((v) => v.toJson()).toList();
     }
-    data['hasBankruptcy'] = this.hasBankruptcy;
-    data['hasIva'] = this.hasIva;
-    data['hasLateRepayment'] = this.hasLateRepayment;
-    data['hasTax'] = this.hasTax;
-    data['hasTu'] = this.hasTu;
-    data['status'] = this.status;
-    data['receiveNews'] = this.receiveNews;
-    data['interestProducts'] = this.interestProducts;
-    data['updateDate'] = this.updateDate;
-    data['createDate'] = this.createDate;
-    data['hasPassword'] = this.hasPassword;
-    data['totalMonthlyRepayment'] = this.totalMonthlyRepayment;
-    data['totalLoanAmount'] = this.totalLoanAmount;
+    data['hasBankruptcy'] = hasBankruptcy;
+    data['hasIva'] = hasIva;
+    data['hasLateRepayment'] = hasLateRepayment;
+    data['hasTax'] = hasTax;
+    data['hasTu'] = hasTu;
+    data['status'] = status;
+    data['receiveNews'] = receiveNews;
+    data['interestProducts'] = interestProducts;
+    data['updateDate'] = updateDate;
+    data['createDate'] = createDate;
+    data['hasPassword'] = hasPassword;
+    data['totalMonthlyRepayment'] = totalMonthlyRepayment;
+    data['totalLoanAmount'] = totalLoanAmount;
     return data;
   }
 }
@@ -138,16 +138,16 @@ class LoanInformations {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['lender'] = this.lender;
-    data['calculateMethod'] = this.calculateMethod;
-    data['amount'] = this.amount;
-    data['tenor'] = this.tenor;
-    data['remainingTenor'] = this.remainingTenor;
-    data['monthlyRepayment'] = this.monthlyRepayment;
-    data['interestRate'] = this.interestRate;
-    data['totalInterestAmount'] = this.totalInterestAmount;
-    data['totalRemainingAmount'] = this.totalRemainingAmount;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['lender'] = lender;
+    data['calculateMethod'] = calculateMethod;
+    data['amount'] = amount;
+    data['tenor'] = tenor;
+    data['remainingTenor'] = remainingTenor;
+    data['monthlyRepayment'] = monthlyRepayment;
+    data['interestRate'] = interestRate;
+    data['totalInterestAmount'] = totalInterestAmount;
+    data['totalRemainingAmount'] = totalRemainingAmount;
     return data;
   }
 }

@@ -51,22 +51,22 @@ class UserReward {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['userId'] = this.userId;
-    data['companyId'] = this.companyId;
-    data['productId'] = this.productId;
-    data['productType'] = this.productType;
-    data['referenceNumber'] = this.referenceNumber;
-    data['incentive'] = this.incentive;
-    data['incentiveCht'] = this.incentiveCht;
-    data['companyName'] = this.companyName;
-    data['companyNameCht'] = this.companyNameCht;
-    data['status'] = this.status;
-    data['uploadFiles'] = this.uploadFiles;
-    data['updateDate'] = this.updateDate;
-    data['createDate'] = this.createDate;
-    data['hasFile'] = this.hasFile;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['userId'] = userId;
+    data['companyId'] = companyId;
+    data['productId'] = productId;
+    data['productType'] = productType;
+    data['referenceNumber'] = referenceNumber;
+    data['incentive'] = incentive;
+    data['incentiveCht'] = incentiveCht;
+    data['companyName'] = companyName;
+    data['companyNameCht'] = companyNameCht;
+    data['status'] = status;
+    data['uploadFiles'] = uploadFiles;
+    data['updateDate'] = updateDate;
+    data['createDate'] = createDate;
+    data['hasFile'] = hasFile;
     return data;
   }
 }

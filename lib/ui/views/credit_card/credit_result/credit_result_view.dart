@@ -3,7 +3,6 @@ import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:money_plaza/ui/views/credit_card/credit_result/result_card_widget.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
-import '../../../../services/Models/credit_card.dart';
 import '../../../common/app_colors.dart';
 import '../../../widgets/app_bar.dart';
 import '../../../widgets/bottom_bar.dart';
@@ -19,6 +18,12 @@ class CreditResultView extends StackedView<CreditResultViewModel> {
       this.financialInstitutesList,
       {Key? key})
       : super(key: key);
+  @override
+  void onViewModelReady(CreditResultViewModel viewModel) {
+    viewModel.cardListData(
+        issuersList, typesList, annualIncome, financialInstitutesList);
+    super.onViewModelReady(viewModel);
+  }
 
   @override
   Widget builder(
@@ -54,30 +59,16 @@ class CreditResultView extends StackedView<CreditResultViewModel> {
                   thickness: 3,
                 ),
                 verticalSpaceSmall,
-                FutureBuilder<List<CreditCard>>(
-                  future: viewModel.cardListData(issuersList, typesList,
-                      annualIncome, financialInstitutesList),
-                  builder: (ctx, snapshot) {
-                    if (snapshot.connectionState == ConnectionState.done) {
-                      if (snapshot.hasError) {
-                        return Center(
-                          child: Text(
-                            snapshot.error.toString(),
-                            style: const TextStyle(fontSize: 18),
-                          ),
-                        );
-                      } else if (snapshot.hasData) {
-                        return CreditCardWiget(creditCard: snapshot.data);
-                      }
-                    }
-                    return Column(
-                      children: [
-                        SizedBox(height: height * 0.3),
-                        const CircularProgressIndicator(),
-                      ],
-                    );
-                  },
-                ),
+                viewModel.isBusy
+                    ? Column(
+                        children: [
+                          SizedBox(height: height * 0.3),
+                          const CircularProgressIndicator(),
+                        ],
+                      )
+                    : viewModel.creditCardList.isNotEmpty
+                        ? CreditCardWiget(creditCard: viewModel.creditCardList)
+                        : const Center(child: Text("Not data found")),
                 verticalSpaceMedium
               ],
             ),

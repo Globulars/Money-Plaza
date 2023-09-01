@@ -12,7 +12,8 @@ class CreditResultViewModel extends BaseViewModel {
   final _dialogService = locator<DialogService>();
   final _creditCardService = locator<CreditCardService>();
   final _toasterService = locator<ToasterService>();
-
+  String creditError="";
+  List<CreditCard> creditCardList = [];
   void showCreditFilter() {
     _dialogService.showCustomDialog(
       variant: DialogType.creditCardFilter,
@@ -26,6 +27,7 @@ class CreditResultViewModel extends BaseViewModel {
 
   Future<List<CreditCard>> cardListData(
       issuersList, typesList, annualIncome, financialInstitutesList) async {
+    setBusy(true);
     Map<String, dynamic> body = {
       "companyIds": financialInstitutesList,
       // "features": ["string"],
@@ -45,12 +47,15 @@ class CreditResultViewModel extends BaseViewModel {
     var data = await _creditCardService.cardList(body);
     if (data?["success"] == true) {
       List dataList = data["data"]["records"];
-      List<CreditCard> creditCardList =
+      creditCardList =
           dataList.map((data) => CreditCard.fromJson(data)).toList();
+      notifyListeners();
+      setBusy(false);
       return creditCardList;
     } else {
       _toasterService.errorToast(data["message"].toString());
-      throw Exception(data["message"].toString());
+      setBusy(false);
+      return creditCardList;
     }
   }
 

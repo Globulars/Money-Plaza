@@ -29,22 +29,22 @@ class InterestCalculator {
     if (json['schedules'] != null) {
       schedules = <Schedules>[];
       json['schedules'].forEach((v) {
-        schedules!.add(new Schedules.fromJson(v));
+        schedules!.add(Schedules.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['amount'] = this.amount;
-    data['interestRate'] = this.interestRate;
-    data['totalNumOfPayments'] = this.totalNumOfPayments;
-    data['scheduledPaymentAmount'] = this.scheduledPaymentAmount;
-    data['totalPaymentAmount'] = this.totalPaymentAmount;
-    data['totalInterestAmount'] = this.totalInterestAmount;
-    data['dateOfLastPayment'] = this.dateOfLastPayment;
-    if (this.schedules != null) {
-      data['schedules'] = this.schedules!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['amount'] = amount;
+    data['interestRate'] = interestRate;
+    data['totalNumOfPayments'] = totalNumOfPayments;
+    data['scheduledPaymentAmount'] = scheduledPaymentAmount;
+    data['totalPaymentAmount'] = totalPaymentAmount;
+    data['totalInterestAmount'] = totalInterestAmount;
+    data['dateOfLastPayment'] = dateOfLastPayment;
+    if (schedules != null) {
+      data['schedules'] = schedules!.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -76,13 +76,13 @@ class Schedules {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['paymentDate'] = this.paymentDate;
-    data['interestBalance'] = this.interestBalance;
-    data['paymentAmount'] = this.paymentAmount;
-    data['capitalPaid'] = this.capitalPaid;
-    data['interestPaid'] = this.interestPaid;
-    data['remainingBalance'] = this.remainingBalance;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['paymentDate'] = paymentDate;
+    data['interestBalance'] = interestBalance;
+    data['paymentAmount'] = paymentAmount;
+    data['capitalPaid'] = capitalPaid;
+    data['interestPaid'] = interestPaid;
+    data['remainingBalance'] = remainingBalance;
     return data;
   }
 }

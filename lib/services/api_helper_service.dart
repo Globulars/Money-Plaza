@@ -96,6 +96,7 @@ class ApiHelperService {
       var response = await request.send();
       if (response.statusCode == 200) {
         // var data = json.decode(response.body);
+        // ignore: await_only_futures
         await response.stream.transform(utf8.decoder).listen((value) {
           data = json.decode(value);
         });

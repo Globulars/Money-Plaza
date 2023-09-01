@@ -12,10 +12,10 @@ class LoanRecord {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['code'] = this.code;
-    data['name'] = this.name;
-    data['nameCht'] = this.nameCht;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['code'] = code;
+    data['name'] = name;
+    data['nameCht'] = nameCht;
     return data;
   }
 }

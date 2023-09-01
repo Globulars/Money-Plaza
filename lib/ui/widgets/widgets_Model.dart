@@ -7,12 +7,14 @@ import '../../services/credit_card_service.dart';
 
 class WidgetViewModel extends BaseViewModel {
   final _creditCardService = locator<CreditCardService>();
-
-  Future<BannerImages> bannerImages(url) async {
+  BannerImages bannerImages = BannerImages();
+  Future<BannerImages> getBannerImages(url) async {
     var data = await _creditCardService.bannerImages(url);
     if (data?["success"] == true) {
       data = data["data"];
-      return BannerImages.fromJson(data[0]);
+      bannerImages = BannerImages.fromJson(data[0]);
+      notifyListeners();
+      return bannerImages;
     } else {
       throw Exception(data["message"].toString());
     }

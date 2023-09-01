@@ -61,10 +61,10 @@ class LoanViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  setloneMachBody(body) {
-    loneMachBody = body;
-    notifyListeners();
-  }
+  // setloneMachBody(body) {
+  //   loneMachBody = body;
+  //   notifyListeners();
+  // }
 
   navigateToCalculatorResult() {
     var isValid = formKey.currentState!.validate();
@@ -114,6 +114,7 @@ class LoanViewModel extends BaseViewModel {
       TextEditingController(text: "2004051");
 
   Future<InterestCalculator> recalculate() async {
+    setBusy(true);
     String calculationType = "";
     Map<String, dynamic> body = {};
     if (calculationitem == 0) {
@@ -148,10 +149,12 @@ class LoanViewModel extends BaseViewModel {
         paymentTable = InterestCalculator.fromJson(dataList);
       }
       notifyListeners();
+      setBusy(false);
       return paymentTable;
     } else {
       paymentTableMessage = data["message"].toString();
-      throw Exception(data["message"].toString());
+      setBusy(false);
+      return paymentTable;
     }
   }
 
