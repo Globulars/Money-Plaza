@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
-import '../../../../services/Models/mortgages_card.dart';
 import '../../../common/ui_helpers.dart';
 import '../../../widgets/app_bar.dart';
 import '../../../widgets/bottom_bar.dart';
@@ -29,6 +28,18 @@ class MorgagesResultView extends StackedView<MorgagesResultViewModel> {
       this.companyIds,
       {Key? key})
       : super(key: key);
+  @override
+  void onViewModelReady(MorgagesResultViewModel viewModel) {
+    viewModel.mortgagesCardData(
+        mortgagesPropertyValuation,
+        mortgagesValueRatio,
+        mortgagesTenor,
+        mortgagesMonthlyIncome,
+        mortgageList,
+        typePropertyList,
+        companyIds);
+    super.onViewModelReady(viewModel);
+  }
 
   @override
   Widget builder(
@@ -83,36 +94,14 @@ class MorgagesResultView extends StackedView<MorgagesResultViewModel> {
                 height: 1,
               ),
               verticalSpaceSmall,
-              FutureBuilder<List<MortgagesCard>>(
-                future: viewModel.mortgagesCardData(
-                    mortgagesPropertyValuation,
-                    mortgagesValueRatio,
-                    mortgagesTenor,
-                    mortgagesMonthlyIncome,
-                    mortgageList,
-                    typePropertyList,
-                    companyIds),
-                builder: (ctx, snapshot) {
-                  if (snapshot.connectionState == ConnectionState.done) {
-                    if (snapshot.hasError) {
-                      return Center(
-                        child: Text(
-                          snapshot.error.toString(),
-                          style: const TextStyle(fontSize: 18),
-                        ),
-                      );
-                    } else if (snapshot.hasData) {
-                      return MorgagesResultCard(mortgagesCard: snapshot.data);
-                    }
-                  }
-                  return Column(
-                    children: [
-                      SizedBox(height: height * 0.3),
-                      const CircularProgressIndicator(),
-                    ],
-                  );
-                },
-              ),
+              viewModel.mortgagesCard.isNotEmpty
+                  ? MorgagesResultCard(mortgagesCard: viewModel.mortgagesCard)
+                  : Column(
+                      children: [
+                        SizedBox(height: height * 0.3),
+                        const CircularProgressIndicator(),
+                      ],
+                    )
             ],
           ),
         ),

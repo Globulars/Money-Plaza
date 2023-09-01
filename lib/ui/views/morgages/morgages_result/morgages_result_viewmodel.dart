@@ -55,24 +55,20 @@ class MorgagesResultViewModel extends BaseViewModel {
       "tenor": mortgagesTenor,
       "propertyType": typePropertyList,
       "features": [],
-      "companyIds": companyIds,
+      "companyIds": companyIds, // when we dont pass id filter is work
       "income": mortgagesMonthlyIncome,
       "amount": mortgagesPropertyValuation
     };
-    if (mortgagesCard.isEmpty) {
-      var data = await _mortgagesService.mortgagesList(body);
-      if (data?["success"] == true) {
-        List dataList = data["data"]["records"];
-        mortgagesCard =
-            dataList.map((data) => MortgagesCard.fromJson(data)).toList();
-
-        return mortgagesCard;
-      } else {
-        _toasterService.errorToast(data["message"].toString());
-        throw Exception(data["message"].toString());
-      }
-    } else {
+    var data = await _mortgagesService.mortgagesList(body);
+    if (data?["success"] == true) {
+      List dataList = data["data"]["records"];
+      mortgagesCard =
+          dataList.map((data) => MortgagesCard.fromJson(data)).toList();
+      notifyListeners();
       return mortgagesCard;
+    } else {
+      _toasterService.errorToast(data["message"].toString());
+      throw Exception(data["message"].toString());
     }
   }
 }
