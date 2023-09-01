@@ -76,7 +76,6 @@ class RewardView extends StackedView<RewardApplicationViewModel> {
                                 child: DataTable(
                                   columnSpacing: 3,
                                   dataRowMinHeight: 3,
-                                  dataRowMaxHeight: 20,
                                   horizontalMargin: 6,
                                   columns: [
                                     DataColumn(
