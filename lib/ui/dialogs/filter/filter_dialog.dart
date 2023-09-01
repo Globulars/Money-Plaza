@@ -20,20 +20,15 @@ class FilterDialog extends StackedView<LoanViewModel> {
     required this.request,
     required this.completer,
   }) : super(key: key);
-// @override
-//   void onViewModelReady(LoanViewModel viewModel) {
-//      viewModel.loanViewModel = request.data;
-//     super.onViewModelReady(viewModel);
-//   }
+
   @override
   Widget builder(
     BuildContext context,
-    LoanViewModel loanViewModel,
+    LoanViewModel viewModel,
     Widget? child,
   ) {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
-   LoanViewModel  loanViewModel = request.data;
 
     return Dialog(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
@@ -73,6 +68,7 @@ class FilterDialog extends StackedView<LoanViewModel> {
                           ),
                           CustomTextField(
                             hintText: 'hk',
+                            controller: viewModel.loanAmountCtrl,
                             height: 40,
                           ),
                           verticalSpaceTiny,
@@ -88,31 +84,28 @@ class FilterDialog extends StackedView<LoanViewModel> {
                                 height: 40,
                                 text: 'termLoan',
                                 width: width * 0.36,
-                                boxcolor:
-                                    loanViewModel.repaymentType == 0
-                                        ? darkGreenHeigh
-                                        : Colors.white,
-                                color: loanViewModel.repaymentType != 0
+                                boxcolor: viewModel.repaymentType == 0
+                                    ? darkGreenHeigh
+                                    : Colors.white,
+                                color: viewModel.repaymentType != 0
                                     ? darkGreenHeigh
                                     : Colors.white,
                                 onPress: () {
-                                  loanViewModel.setRepaymentType(0);
+                                  viewModel.setRepaymentType(0);
                                 },
                               ),
                               ReturnButton(
                                   height: 40,
                                   text: 'min-pay',
                                   width: width * 0.36,
-                                  boxcolor:
-                                      loanViewModel.repaymentType == 1
-                                          ? darkGreenHeigh
-                                          : Colors.white,
-                                  color:
-                                      loanViewModel.repaymentType != 1
-                                          ? darkGreenHeigh
-                                          : Colors.white,
+                                  boxcolor: viewModel.repaymentType == 1
+                                      ? darkGreenHeigh
+                                      : Colors.white,
+                                  color: viewModel.repaymentType != 1
+                                      ? darkGreenHeigh
+                                      : Colors.white,
                                   onPress: () {
-                                    loanViewModel.setRepaymentType(1);
+                                    viewModel.setRepaymentType(1);
                                   })
                             ],
                           ),
@@ -124,30 +117,27 @@ class FilterDialog extends StackedView<LoanViewModel> {
                                   height: 40,
                                   text: 'interestOnly',
                                   width: width * 0.36,
-                                  boxcolor:
-                                      loanViewModel.repaymentType == 2
-                                          ? darkGreenHeigh
-                                          : Colors.white,
-                                  color:
-                                      loanViewModel.repaymentType != 2
-                                          ? darkGreenHeigh
-                                          : Colors.white,
+                                  boxcolor: viewModel.repaymentType == 2
+                                      ? darkGreenHeigh
+                                      : Colors.white,
+                                  color: viewModel.repaymentType != 2
+                                      ? darkGreenHeigh
+                                      : Colors.white,
                                   onPress: () {
-                                    loanViewModel.setRepaymentType(2);
+                                    viewModel.setRepaymentType(2);
                                   }),
                               ReturnButton(
                                 height: 40,
                                 text: 'prepaidInterest',
                                 width: width * 0.36,
-                                boxcolor:
-                                    loanViewModel.repaymentType == 3
-                                        ? darkGreenHeigh
-                                        : Colors.white,
-                                color: loanViewModel.repaymentType != 3
+                                boxcolor: viewModel.repaymentType == 3
+                                    ? darkGreenHeigh
+                                    : Colors.white,
+                                color: viewModel.repaymentType != 3
                                     ? darkGreenHeigh
                                     : Colors.white,
                                 onPress: () {
-                                  loanViewModel.setRepaymentType(3);
+                                  viewModel.setRepaymentType(3);
                                 },
                               )
                             ],
@@ -165,48 +155,42 @@ class FilterDialog extends StackedView<LoanViewModel> {
                                 height: 40,
                                 text: '6',
                                 width: width * 0.23,
-                                boxcolor:
-                                    loanViewModel.repaymentPeriod == 6
-                                        ? darkGreenHeigh
-                                        : Colors.white,
-                                color:
-                                    loanViewModel.repaymentPeriod != 6
-                                        ? darkGreenHeigh
-                                        : Colors.white,
+                                boxcolor: viewModel.repaymentPeriod == 6
+                                    ? darkGreenHeigh
+                                    : Colors.white,
+                                color: viewModel.repaymentPeriod != 6
+                                    ? darkGreenHeigh
+                                    : Colors.white,
                                 onPress: () {
-                                  loanViewModel.setRepaymentPeriod(6);
+                                  viewModel.setRepaymentPeriod(6);
                                 },
                               ),
                               ReturnButton(
                                 height: 40,
                                 text: '12',
                                 width: width * 0.23,
-                                boxcolor:
-                                    loanViewModel.repaymentPeriod == 12
-                                        ? darkGreenHeigh
-                                        : Colors.white,
-                                color:
-                                    loanViewModel.repaymentPeriod != 12
-                                        ? darkGreenHeigh
-                                        : Colors.white,
+                                boxcolor: viewModel.repaymentPeriod == 12
+                                    ? darkGreenHeigh
+                                    : Colors.white,
+                                color: viewModel.repaymentPeriod != 12
+                                    ? darkGreenHeigh
+                                    : Colors.white,
                                 onPress: () {
-                                  loanViewModel.setRepaymentPeriod(12);
+                                  viewModel.setRepaymentPeriod(12);
                                 },
                               ),
                               ReturnButton(
                                 height: 40,
                                 text: '24',
                                 width: width * 0.23,
-                                boxcolor:
-                                    loanViewModel.repaymentPeriod == 24
-                                        ? darkGreenHeigh
-                                        : Colors.white,
-                                color:
-                                    loanViewModel.repaymentPeriod != 24
-                                        ? darkGreenHeigh
-                                        : Colors.white,
+                                boxcolor: viewModel.repaymentPeriod == 24
+                                    ? darkGreenHeigh
+                                    : Colors.white,
+                                color: viewModel.repaymentPeriod != 24
+                                    ? darkGreenHeigh
+                                    : Colors.white,
                                 onPress: () {
-                                  loanViewModel.setRepaymentPeriod(24);
+                                  viewModel.setRepaymentPeriod(24);
                                 },
                               )
                             ],
@@ -219,48 +203,42 @@ class FilterDialog extends StackedView<LoanViewModel> {
                                 height: 40,
                                 text: '36',
                                 width: width * 0.23,
-                                boxcolor:
-                                    loanViewModel.repaymentPeriod == 36
-                                        ? darkGreenHeigh
-                                        : Colors.white,
-                                color:
-                                    loanViewModel.repaymentPeriod != 36
-                                        ? darkGreenHeigh
-                                        : Colors.white,
+                                boxcolor: viewModel.repaymentPeriod == 36
+                                    ? darkGreenHeigh
+                                    : Colors.white,
+                                color: viewModel.repaymentPeriod != 36
+                                    ? darkGreenHeigh
+                                    : Colors.white,
                                 onPress: () {
-                                  loanViewModel.setRepaymentPeriod(36);
+                                  viewModel.setRepaymentPeriod(36);
                                 },
                               ),
                               ReturnButton(
                                 height: 40,
                                 text: '48',
                                 width: width * 0.23,
-                                boxcolor:
-                                    loanViewModel.repaymentPeriod == 48
-                                        ? darkGreenHeigh
-                                        : Colors.white,
-                                color:
-                                    loanViewModel.repaymentPeriod != 48
-                                        ? darkGreenHeigh
-                                        : Colors.white,
+                                boxcolor: viewModel.repaymentPeriod == 48
+                                    ? darkGreenHeigh
+                                    : Colors.white,
+                                color: viewModel.repaymentPeriod != 48
+                                    ? darkGreenHeigh
+                                    : Colors.white,
                                 onPress: () {
-                                  loanViewModel.setRepaymentPeriod(48);
+                                  viewModel.setRepaymentPeriod(48);
                                 },
                               ),
                               ReturnButton(
                                 height: 40,
                                 text: '60',
                                 width: width * 0.23,
-                                boxcolor:
-                                    loanViewModel.repaymentPeriod == 60
-                                        ? darkGreenHeigh
-                                        : Colors.white,
-                                color:
-                                    loanViewModel.repaymentPeriod != 60
-                                        ? darkGreenHeigh
-                                        : Colors.white,
+                                boxcolor: viewModel.repaymentPeriod == 60
+                                    ? darkGreenHeigh
+                                    : Colors.white,
+                                color: viewModel.repaymentPeriod != 60
+                                    ? darkGreenHeigh
+                                    : Colors.white,
                                 onPress: () {
-                                  loanViewModel.setRepaymentPeriod(60);
+                                  viewModel.setRepaymentPeriod(60);
                                 },
                               )
                             ],
@@ -281,8 +259,11 @@ class FilterDialog extends StackedView<LoanViewModel> {
                               SubmitButton(
                                 text: 'apply',
                                 onPress: () {
-                                  loanViewModel.back();
-                                  loanViewModel.loanListData();
+                                  viewModel.back();
+                                  request.data(
+                                      viewModel.loanAmountCtrl,
+                                      viewModel.repaymentType,
+                                      viewModel.repaymentPeriod);
                                 },
                                 height: 40,
                                 width: 80,

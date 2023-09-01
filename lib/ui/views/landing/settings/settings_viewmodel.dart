@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:money_plaza/app/app.router.dart';
+// import 'package:money_plaza/app/app.router.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import '../../../../app/app.locator.dart';
@@ -13,9 +13,9 @@ class SettingsViewModel extends BaseViewModel {
   bool englishLanguage = true;
   bool notification = true;
 
-  navigateToMemberSetting() {
-    _navigationService.navigateToMemberSettingView();
-  }
+  // navigateToMemberSetting() {
+  //   _navigationService.navigateToMemberSettingView();
+  // }
 
   inState(BuildContext context) {
     if (context.locale.toString() == 'zh') {

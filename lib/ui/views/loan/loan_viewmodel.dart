@@ -35,7 +35,7 @@ class LoanViewModel extends BaseViewModel {
   var repayment = 0;
   var calculation = 0;
   var calculationitem = 0;
-  LoanViewModel? loanViewModel;
+
   TextEditingController loanAmountCtrl = TextEditingController(text: "50000");
   TextEditingController monthlyPaymentCtrl =
       TextEditingController(text: "10000");
@@ -141,13 +141,10 @@ class LoanViewModel extends BaseViewModel {
         Uri.parse("$baseUrl/repayment/$calculationType"), body);
     if (data?["success"] == true) {
       var dataList = data["data"];
-      log(dataList.toString());
       if (dataList.isEmpty) {
         paymentTableMessage = "No data found";
-        log(paymentTableMessage.toString());
       } else {
         paymentTable = InterestCalculator.fromJson(dataList);
-        log("=======>${paymentTable.amount}");
       }
       notifyListeners();
       return paymentTable;
@@ -219,10 +216,11 @@ class LoanViewModel extends BaseViewModel {
     );
   }
 
-  void showFilter(viewModel) {
+  void showFilter() {
+    showcard = false;
     notifyListeners();
     _dialogService.showCustomDialog(
-        variant: DialogType.filter, data: viewModel);
+        variant: DialogType.filter, data: filterData);
   }
 
   void compareScreen() {
@@ -251,6 +249,13 @@ class LoanViewModel extends BaseViewModel {
     } else {
       throw Exception(data["message"].toString());
     }
+  }
+
+  filterData(_loanAmount, _repaymentType, _repaymentPeriod) {
+    loanAmountCtrl = _loanAmount;
+    repaymentType = _repaymentType;
+    repaymentPeriod = _repaymentPeriod;
+    loanListData();
   }
 
   Future<List<LoanCard>> loanListData() async {

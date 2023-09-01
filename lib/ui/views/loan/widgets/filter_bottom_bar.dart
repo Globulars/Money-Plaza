@@ -46,9 +46,7 @@ class FilterBottomBar extends ViewModelWidget<LoanViewModel> {
                 boxcolor: darkGreenHeigh.withOpacity(0.8),
                 topimage: myIcons.filter,
                 text: 'filter',
-                onPress: () {
-                  viewModel.showFilter(viewModel);
-                },
+                onPress: viewModel.showFilter,
                 btmLeftRadius: 0,
                 btmRightRadius: 0,
               ),
