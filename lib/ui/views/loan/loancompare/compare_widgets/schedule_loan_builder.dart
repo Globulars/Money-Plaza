@@ -45,7 +45,6 @@ class ScheduleLoanBuilder extends ViewModelWidget<LoanViewModel> {
                             return data != null
                                 ? CustomText(
                                     text: "firstMonth".tr(args: [
-                                      // ignore: prefer_is_empty
                                       data.length >= 1
                                           ? data[0].paymentAmount.toString()
                                           : "N/A",
