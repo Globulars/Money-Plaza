@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/submit_button.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
@@ -38,15 +39,26 @@ class CompareHead extends ViewModelWidget<LoanViewModel> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Image.network(
-                            viewModel.compareData[index].company?.signLogoUrl ??
-                                "",
-                            width: 80,
-                          ),
+                          viewModel.compareData[index].company?.signLogoUrl!
+                                      .substring(viewModel.compareData[index]
+                                              .company!.signLogoUrl!.length -
+                                          3) !=
+                                  "svg"
+                              ? Image.network(
+                                  viewModel.compareData[index].company
+                                          ?.signLogoUrl ??
+                                      "",
+                                  height: 30,
+                                )
+                              : SvgPicture.network(  height: 30,viewModel.compareData[index]
+                                      .company?.signLogoUrl ??
+                                  ""),
                           verticalSpaceTiny,
                           CustomText(
                             text: viewModel.compareData[index].company?.name ??
                                 "",
+                            textOverflow: TextOverflow.ellipsis,
+                            maxLines: 1,
                             fontWeight: FontWeight.w500,
                             fontSize: 20,
                           ),

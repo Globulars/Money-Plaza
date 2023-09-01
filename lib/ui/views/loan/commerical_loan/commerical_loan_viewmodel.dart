@@ -144,7 +144,7 @@ class CommericalLoanViewModel extends BaseViewModel {
       "amount": borrowingAmountCtrl.text,
       "tenor": loanTenors,
       "type": "commercial_loan",
-      "income": "",
+      "income": borrowingAmountCtrl.text,
       "currentTotalLoanAmount": totalOutstandingLoanCtrl.text,
       "monthlyRepayment": monthlyRepaymentCtrl.text,
       "pol": true

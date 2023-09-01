@@ -307,7 +307,7 @@ class LoanViewModel extends BaseViewModel {
     if (data?["success"] == true) {
       return ScheduleLoan.fromJson(data["data"]);
     } else {
-      throw Exception(data["message"].toString());
+      return ScheduleLoan();
     }
   }
 
@@ -324,7 +324,7 @@ class LoanViewModel extends BaseViewModel {
       return loanCardList;
     } else {
       loanCardListMessage = data["message"].toString();
-      throw Exception(data["message"].toString());
+      return loanCardList;
     }
   }
 }

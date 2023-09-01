@@ -154,7 +154,7 @@ class PersonalInfoViewModel extends BaseViewModel {
       notifyListeners();
       return userData;
     } else {
-      throw Exception(data["message"].toString());
+      return userData;
     }
   }
 }

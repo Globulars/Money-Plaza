@@ -42,14 +42,20 @@ class ScheduleLoanBuilder extends ViewModelWidget<LoanViewModel> {
                             );
                           } else if (snapshot.hasData) {
                             List<Schedules>? data = snapshot.data!.schedules;
-                            return CustomText(
-                              text: "firstMonth".tr(args: [
-                                data![0].paymentAmount.toString(),
-                                data[1].paymentAmount.toString(),
-                                data.last.paymentAmount.toString(),
-                              ]),
-                              textAlign: TextAlign.center,
-                            );
+                            return data != null
+                                ? CustomText(
+                                    text: "firstMonth".tr(args: [
+                                      data.length >= 1
+                                          ? data[0].paymentAmount.toString()
+                                          : "N/A",
+                                      data.length >= 2
+                                          ? data[1].paymentAmount.toString()
+                                          : "N/A",
+                                      data.last.paymentAmount.toString(),
+                                    ]),
+                                    textAlign: TextAlign.center,
+                                  )
+                                : const Center(child: Text("N/A"));
                           }
                         }
                         return Container();

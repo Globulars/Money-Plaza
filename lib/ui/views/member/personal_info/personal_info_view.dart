@@ -112,12 +112,14 @@ class PersonalInfoView extends StackedView<PersonalInfoViewModel> {
                       ),
                     ];
                   },
-                  body: const TabBarView(
+                  body: TabBarView(
                     children: <Widget>[
-                      PersonalTabBar1(),
-                      PersonalTabBar2(),
-                      PersonalTabBar3(),
-                      PersonalTabBar4(),
+                      const PersonalTabBar1(),
+                      const PersonalTabBar2(),
+                      const PersonalTabBar3(),
+                      viewModel.userData != null
+                          ? const PersonalTabBar4()
+                          : const Center(child: Text("Data not found")),
                     ],
                   ),
                 ),
