@@ -21,7 +21,6 @@ class DetailCard1 extends ViewModelWidget<LoanViewModel> {
           child: Column(
             children: [
               CustomText(text: loanData.detail.toString()),
-
               // WebViewHtml(url: loanData.detail.toString(),)
             ],
           ),
