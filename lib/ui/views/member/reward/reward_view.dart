@@ -9,15 +9,15 @@ import '../../../widgets/bottom_bar.dart';
 import '../../../widgets/common/background_image.dart';
 import '../../../widgets/common/icon_box_btn/return_button.dart';
 import '../../../widgets/common/icon_box_btn/sub_bar.dart';
-import 'reward_viewmodel.dart';
+import '../reward_application/reward_application_viewmodel.dart';
 
-class RewardView extends StackedView<RewardViewModel> {
+class RewardView extends StackedView<RewardApplicationViewModel> {
   const RewardView({Key? key}) : super(key: key);
 
   @override
   Widget builder(
     BuildContext context,
-    RewardViewModel viewModel,
+    RewardApplicationViewModel viewModel,
     Widget? child,
   ) {
     final width = MediaQuery.of(context).size.width;
@@ -61,11 +61,185 @@ class RewardView extends StackedView<RewardViewModel> {
                           fontWeight: FontWeight.w300,
                           onPress: viewModel.navigateToRewardApplication,
                         ),
+                        verticalSpaceSmall,
+                         Card(
+               child: Column(
+                 children: [         
+                   SingleChildScrollView(
+                     scrollDirection: Axis.horizontal,
+                     child: DataTable(
+                       columnSpacing: 3,
+                       dataRowMinHeight: 3,
+                       dataRowMaxHeight: 20,
+                       horizontalMargin: 6,
+                       columns: [
+                         DataColumn(
+                           label: SizedBox(
+                               width: 40,
+                               child: CustomText(
+                                 text: 'Institution',
+                                 textAlign: TextAlign.start,
+                                 color: darkGreenHeigh,
+                                 fontSize: 10,
+                               )),
+                         ),
+                         DataColumn(
+                           label: SizedBox(
+                               width: 60,
+                               child: CustomText(
+                                 text: 'Type Of Product',
+                                 textAlign: TextAlign.center,
+                                 color: darkGreenHeigh,
+                                 fontSize: 10,
+                               )),
+                         ),
+                         DataColumn(
+                           label: SizedBox(
+                               width: 60,
+                               child: CustomText(
+                                 text: 'Reward detais',
+                                 textAlign: TextAlign.center,
+                                 color: darkGreenHeigh,
+                                 fontSize: 10,
+                               )),
+                         ),
+                         DataColumn(
+                           label: SizedBox(
+                               width: 60,
+                               child: CustomText(
+                                 text: 'Ref No:',
+                                 textAlign: TextAlign.center,
+                                 color: darkGreenHeigh,
+                                 fontSize: 10,
+                               )),
+                         ),
+                         DataColumn(
+                           label: SizedBox(
+                               width: 60,
+                               child: CustomText(
+                                 text: 'Application Uploaded?',
+                                 textAlign: TextAlign.center,
+                                 color: darkGreenHeigh,
+                                 fontSize: 10,
+                               )),
+                         ),
+                          DataColumn(
+                           label: SizedBox(
+                               width: 60,
+                               child: CustomText(
+                                 text: 'Date of Application',
+                                 textAlign: TextAlign.center,
+                                 color: darkGreenHeigh,
+                                 fontSize: 10,
+                               )),
+                         ),
+                         DataColumn(
+                           label: SizedBox(
+                               width: 60,
+                               child: CustomText(
+                                 text: 'Application Result',
+                                 textAlign: TextAlign.center,
+                                 color: darkGreenHeigh,
+                                 fontSize: 10,
+                               )),
+                         ),
+                         DataColumn(
+                           label: SizedBox(
+                               width: 60,
+                               child: CustomText(
+                                 text: '',
+                                 textAlign: TextAlign.center,
+                                 color: darkGreenHeigh,
+                                 fontSize: 10,
+                               )),
+                         ),
+                       
+                    
+                       ],
+                       rows: List.generate(
+                         viewModel.rewardDetailsList.length,
+                         (index) {
+                            var data = viewModel.rewardDetailsList[index];
+                           return DataRow(cells: [
+                             DataCell(SizedBox(
+                                 width: 20,
+                                 child: CustomText(
+                                   text: "${(index + 1)}",
+                                   textAlign: TextAlign.center,
+                                   fontSize: 10,
+                                 ))),
+                             DataCell(SizedBox(
+                                 width: 20,
+                                 child: CustomText(
+                                   text:  "${(index + 1)}",
+                                   textAlign: TextAlign.center,
+                                   fontSize: 10,
+                                 ))),
+                            DataCell(SizedBox(
+                                 width: 20,
+                                 child: CustomText(
+                                   text: "${(index + 1)}",
+                                   textAlign: TextAlign.center,
+                                   fontSize: 10,
+                                 ))),
+                            DataCell(SizedBox(
+                                 width: 20,
+                                 child: CustomText(
+                                   text: "${(index + 1)}",
+                                   textAlign: TextAlign.center,
+                                   fontSize: 10,
+                                 ))),
+                            DataCell(SizedBox(
+                                 width: 20,
+                                 child: CustomText(
+                                   text: "${(index + 1)}",
+                                   textAlign: TextAlign.center,
+                                   fontSize: 10,
+                                 ))),
+                                 DataCell(SizedBox(
+                                 width: 20,
+                                 child: CustomText(
+                                   text: "${(index + 1)}",
+                                   textAlign: TextAlign.center,
+                                   fontSize: 10,
+                                 ))),
+                                 DataCell(SizedBox(
+                                 width: 20,
+                                 child: CustomText(
+                                   text: "${(index + 1)}",
+                                   textAlign: TextAlign.center,
+                                   fontSize: 10,
+                                 ))),
+                                 DataCell(SizedBox(
+                                 width: 20,
+                                 child: CustomText(
+                                   text: "${(index + 1)}",
+                                   textAlign: TextAlign.center,
+                                   fontSize: 10,
+                                 ))),
+                                //  DataCell(SizedBox(
+                                //  width: 20,
+                                //  child: CustomText(
+                                //    text: "${(index + 1)}",
+                                //    textAlign: TextAlign.center,
+                                //    fontSize: 10,
+                                //  ))),
+                              
+                           ]);
+                         },
+                       ).toList(),
+                     ),
+                   ),
+                 ],
+               ),
+             ),
                       ],
                     ),
+
                   ),
                 ),
               ),
+
             ],
           ),
         ),
@@ -83,8 +257,8 @@ class RewardView extends StackedView<RewardViewModel> {
   }
 
   @override
-  RewardViewModel viewModelBuilder(
+  RewardApplicationViewModel viewModelBuilder(
     BuildContext context,
   ) =>
-      RewardViewModel();
+      RewardApplicationViewModel();
 }
