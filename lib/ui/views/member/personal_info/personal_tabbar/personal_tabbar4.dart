@@ -31,65 +31,50 @@ class PersonalTabBar4 extends ViewModelWidget<PersonalInfoViewModel> {
               text: 'noLoanRecord',
             ),
             verticalSpaceSmall,
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  children: [
-                    Container(
-                      height: 60,
+            SizedBox(
+              height: 100,
+              child: ListView.builder(
+               scrollDirection: Axis.horizontal,
+               itemCount: 10,
+               shrinkWrap: true,
+                itemBuilder:  (BuildContext context, int index) {
+                  return Padding(
+                    padding: const EdgeInsets.only(right: 5),
+                    child: SizedBox(
                       width: width * 0.43,
-                      decoration: const BoxDecoration(
-                          color: lightGreenHeigh,
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(10),
-                              topRight: Radius.circular(10))),
-                      child: Center(
-                          child: CustomText(
-                        text: 'totalMonthlyAmount',
-                        textAlign: TextAlign.center,
-                        fontSize: 12,
-                      )),
-                    ),
-                    Container(
-                      width: width * 0.44,
-                      color: Colors.white,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 3),
-                        child: Center(child: CustomText(text: '\$0')),
+                      child:   Column(
+                    children: [
+                      Container(
+                         height: 60,
+                        width: width * 0.43,
+                        decoration: const BoxDecoration(
+                            color: lightGreenHeigh,
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(10),
+                                topRight: Radius.circular(10))),
+                        child: Center(
+                            child: CustomText(
+                          text: 'totalMonthlyAmount',
+                          textAlign: TextAlign.center,
+                          fontSize: 12,
+                        )),
                       ),
-                    ),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Container(
-                      height: 60,
-                      width: width * 0.43,
-                      decoration: const BoxDecoration(
-                          color: lightGreenHeigh,
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(10),
-                              topRight: Radius.circular(10))),
-                      child: Center(
-                          child: CustomText(
-                        text: 'totalOutstandingDebts',
-                        textAlign: TextAlign.center,
-                        fontSize: 12,
-                      )),
-                    ),
-                    Container(
-                      width: width * 0.44,
-                      color: Colors.white,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 3),
-                        child: Center(child: CustomText(text: '\$0')),
+                      Container(
+                        width: width * 0.44,
+                        color: Colors.white,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 3),
+                          child: Center(child: CustomText(text: '\$0')),
+                        ),
                       ),
+                    ],
+                                  ),
                     ),
-                  ],
-                )
-              ],
+                  );
+                }
+              ),
             ),
+            
             verticalSpaceMedium,
             SubBar(
               text: "addLoanRecord",
