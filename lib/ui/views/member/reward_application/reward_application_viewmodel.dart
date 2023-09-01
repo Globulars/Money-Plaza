@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:money_plaza/app/app.router.dart';
 import 'package:money_plaza/services/Models/company_by_card.dart';
 import 'package:money_plaza/services/Models/reward_details.dart';
 import 'package:money_plaza/services/api_helper_service.dart';
 import 'package:stacked/stacked.dart';
-
+import 'package:stacked_services/stacked_services.dart';
 import '../../../../app/app.locator.dart';
+import '../../../../services/Models/user_reward.dart';
 import '../../../../services/toaster_service.dart';
 import '../../../common/app_url.dart';
 
 class RewardApplicationViewModel extends BaseViewModel {
   final _apiHelperService = locator<ApiHelperService>();
   final _toasterService = locator<ToasterService>();
+  final _navigationService = locator<NavigationService>();
   final ApiUrl _apiUrl = ApiUrl();
 
   var formKey = GlobalKey<FormState>();
@@ -39,6 +42,8 @@ class RewardApplicationViewModel extends BaseViewModel {
   }
 
   List<RewardDetails> rewardDetailsList = [];
+  List<UserReward> userRewardList = [];
+
   setRewardDetails(value) {
     rewardDetails = value;
     notifyListeners();
@@ -60,6 +65,10 @@ class RewardApplicationViewModel extends BaseViewModel {
     }
   }
 
+  navigateToRewardApplication() {
+    _navigationService.navigateToRewardApplicationView();
+  }
+
   Future<List<RewardDetails>> getRewardDetailsList() async {
     Map<String, dynamic> body = {
       "companyId": institution?.id,
@@ -78,6 +87,21 @@ class RewardApplicationViewModel extends BaseViewModel {
     } else {
       _toasterService.errorToast(data["message"].toString());
       return rewardDetailsList;
+    }
+  }
+
+  Future<List<UserReward>> getUserRewardList() async {
+    var data = await _apiHelperService.getAuthApi(_apiUrl.userReward);
+    if (data?["success"] == true) {
+      List dataList = data["data"];
+      userRewardList =
+          dataList.map((data) => UserReward.fromJson(data)).toList();
+
+      notifyListeners();
+      return userRewardList;
+    } else {
+      _toasterService.errorToast(data["message"].toString());
+      return userRewardList;
     }
   }
 
