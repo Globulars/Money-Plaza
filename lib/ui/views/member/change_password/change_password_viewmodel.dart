@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
@@ -31,8 +30,6 @@ class ChangePasswordViewModel extends BaseViewModel {
       if (data?["success"] == true) {
         _navigationService.back();
         _toasterService.successToast(data["message"]);
-        // resetAll();
-        log(data.toString());
       } else {
         _toasterService.errorToast(data["message"].toString());
       }

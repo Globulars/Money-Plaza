@@ -1,5 +1,5 @@
-import 'dart:developer';
 import 'package:money_plaza/app/app.router.dart';
+import 'package:money_plaza/services/toaster_service.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import '../../../../app/app.dialogs.dart';
@@ -11,6 +11,8 @@ class MorgagesResultViewModel extends BaseViewModel {
   final _dialogService = locator<DialogService>();
   final _navigationService = locator<NavigationService>();
   final _mortgagesService = locator<MortgageService>();
+  final _toasterService = locator<ToasterService>();
+
   late List<MortgagesCard> mortgagesCard = [];
   bool selectAll = false;
   setSelectAll() {
@@ -18,8 +20,6 @@ class MorgagesResultViewModel extends BaseViewModel {
     for (var e in mortgagesCard) {
       e.checkBox = selectAll;
     }
-
-    log("$selectAll======>${mortgagesCard[0].checkBox}");
     notifyListeners();
   }
 
@@ -62,14 +62,13 @@ class MorgagesResultViewModel extends BaseViewModel {
     if (mortgagesCard.isEmpty) {
       var data = await _mortgagesService.mortgagesList(body);
       if (data?["success"] == true) {
-        log(data.toString());
         List dataList = data["data"]["records"];
         mortgagesCard =
             dataList.map((data) => MortgagesCard.fromJson(data)).toList();
 
         return mortgagesCard;
       } else {
-        log(data["message"].toString());
+        _toasterService.errorToast(data["message"].toString());
         throw Exception(data["message"].toString());
       }
     } else {

@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:money_plaza/app/app.router.dart';
 import 'package:stacked/stacked.dart';
@@ -94,7 +93,6 @@ class MemberLoginViewModel extends BaseViewModel {
       if (data["success"] == true) {
         _toasterService.successToast(data["message"]);
         resetAll();
-        log(data.toString());
       } else {
         _toasterService.errorToast(data["message"].toString());
       }
@@ -116,10 +114,8 @@ class MemberLoginViewModel extends BaseViewModel {
       };
       var data = await _authnService.signupByEmail(body);
       if (data["success"] == true) {
-        log(data.toString());
         _toasterService.successToast(data["message"]);
         resetAll();
-
         _navigationService.back();
       } else {
         _toasterService.errorToast(data["message"].toString());
@@ -158,7 +154,6 @@ class MemberLoginViewModel extends BaseViewModel {
       if (data?["success"] == true) {
         _toasterService.successToast(data["message"]);
         resetAll();
-        log(data.toString());
       } else {
         _toasterService.errorToast(data["message"].toString());
       }
@@ -182,7 +177,6 @@ class MemberLoginViewModel extends BaseViewModel {
       if (data["success"] == true) {
         _toasterService.successToast(data["message"]);
         resetAll();
-        log(data.toString());
         _navigationService.back();
       } else {
         _toasterService.errorToast(data["message"].toString());

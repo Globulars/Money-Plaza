@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:developer';
 import '../ui/common/app_url.dart';
 import 'package:http/http.dart' as http;
 
@@ -120,7 +119,6 @@ class LoanCardService {
       } else if (response.statusCode == 302) {
         return {"message": "Successful Submittion", "success": true};
       } else {
-        log(response.body.toString());
         return {"message": "${response.statusCode} error found"};
       }
     } catch (e) {

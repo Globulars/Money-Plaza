@@ -1,7 +1,6 @@
 // ignore_for_file: void_checks, prefer_typing_uninitialized_variables
 
 import 'dart:convert';
-import 'dart:developer';
 import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'package:image_picker/image_picker.dart';
@@ -19,7 +18,6 @@ class ApiHelperService {
   };
   /////////////////////////////////////Post////////////////////////////////
   postApi(_url, body) async {
-    log(accessToken.toString());
     try {
       final response =
           await http.post(_url, body: jsonEncode(body), headers: headers);
@@ -82,7 +80,6 @@ class ApiHelperService {
   /////////////////////////////////////Post Auth////////////////////////////////
 
   multiPartRequest(_url, _body) async {
-    log(_body.toString());
     var data;
     try {
       var request = http.MultipartRequest("POST", _url);
@@ -99,9 +96,7 @@ class ApiHelperService {
       var response = await request.send();
       if (response.statusCode == 200) {
         // var data = json.decode(response.body);
-        log(response.statusCode.toString());
         await response.stream.transform(utf8.decoder).listen((value) {
-          log("value: ${value.toString()}");
           data = json.decode(value);
         });
         return data;
@@ -109,7 +104,6 @@ class ApiHelperService {
         return {"message": "${response.statusCode} error found"};
       }
     } catch (e) {
-      log(e.toString());
       return {"message": e};
     }
   }

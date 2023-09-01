@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:money_plaza/app/app.router.dart';
 import 'package:stacked/stacked.dart';
@@ -11,6 +10,7 @@ import '../../../services/Models/loan_tags.dart';
 import '../../../services/Models/schedule_loan.dart';
 import '../../../services/api_helper_service.dart';
 import '../../../services/loan_card_service.dart';
+import '../../../services/toaster_service.dart';
 import '../../common/app_url.dart';
 
 class LoanViewModel extends BaseViewModel {
@@ -23,6 +23,7 @@ class LoanViewModel extends BaseViewModel {
   Map<String, dynamic> loneMachBody = {};
   List<LoanCard> loanCardList = [];
   InterestCalculator paymentTable = InterestCalculator();
+  final _toasterService = locator<ToasterService>();
 
   List<LoanTags> loanTagsList = [];
   List<String> features = [];
@@ -224,11 +225,10 @@ class LoanViewModel extends BaseViewModel {
   }
 
   void compareScreen() {
-    log(compareData.length.toString());
     if (compareData.length >= 2) {
       _navigationService.navigateToLoancompareView(compareData: compareData);
     } else {
-      log("Please select more then two value${compareData.length}");
+      _toasterService.errorToast("Please select more then two value");
     }
     showcard = false;
     notifyListeners();
@@ -247,6 +247,7 @@ class LoanViewModel extends BaseViewModel {
       notifyListeners();
       return loanTagsList;
     } else {
+      _toasterService.errorToast(data["message"].toString());
       throw Exception(data["message"].toString());
     }
   }
@@ -259,7 +260,6 @@ class LoanViewModel extends BaseViewModel {
   }
 
   Future<List<LoanCard>> loanListData() async {
-    // log("====>${loanAmountCtrl.text}===>${interestCtrl.text}===>${monthlyPaymentCtrl.text}");
     Map<String, dynamic> body = {
       "order": "descending",
       "sort": "ordering",
@@ -309,7 +309,6 @@ class LoanViewModel extends BaseViewModel {
   }
 
   Future<List<LoanCard>> loanMatch() async {
-    log(loneMachBody.toString());
     var data = await _loanCardService.loanMatch(loneMachBody);
     if (data?["success"] == true) {
       List dataList = data["data"]["records"];

@@ -1,7 +1,4 @@
 // ignore_for_file: non_constant_identifier_names, avoid_types_as_parameter_names, prefer_const_literals_to_create_immutables
-
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
@@ -105,7 +102,6 @@ class CreditCardFilterDialog extends StackedView<CreditCardViewModel> {
                         SubmitButton(
                           text: 'matching',
                           onPress: () {
-                            log("message");
                             viewModel.back();
                             viewModel.back();
                             viewModel.navigateToCreditCardResult(

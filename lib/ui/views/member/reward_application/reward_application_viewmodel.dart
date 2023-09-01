@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:money_plaza/services/Models/company_by_card.dart';
 import 'package:money_plaza/services/Models/reward_details.dart';
@@ -67,7 +65,6 @@ class RewardApplicationViewModel extends BaseViewModel {
       "companyId": institution?.id,
       "type": typeOfProduct.toLowerCase()
     };
-    log("=======:>${body.toString()}");
     var data = await _apiHelperService.postAuthApi(_apiUrl.getIncentives, body);
     if (data?["success"] == true) {
       List dataList = data["data"];
@@ -76,13 +73,10 @@ class RewardApplicationViewModel extends BaseViewModel {
       if (rewardDetailsList.isNotEmpty) {
         rewardDetails = rewardDetailsList[0];
       }
-      log("=======:>${rewardDetails?.productId.toString()}");
-
       notifyListeners();
       return rewardDetailsList;
     } else {
-      log(data["message"].toString());
-
+      _toasterService.errorToast(data["message"].toString());
       return rewardDetailsList;
     }
   }

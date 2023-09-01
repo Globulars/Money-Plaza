@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
@@ -39,13 +38,11 @@ class ResetPasswordDialogModel extends BaseViewModel {
   }
 
   sendForgetPasswordCodeByEmail() async {
-    log("Runing....");
     Map<String, dynamic> body = {"email": emailCtrl.text};
     var data = await _authnService.sendForgetPasswordCodeByEmail(body);
     if (data?["success"] == true) {
       _toasterService.successToast(data["message"]);
       resetAll();
-      log(data.toString());
     } else {
       _toasterService.errorToast(data["message"].toString());
     }
@@ -61,8 +58,6 @@ class ResetPasswordDialogModel extends BaseViewModel {
     if (data?["success"] == true) {
       _toasterService.successToast(data["message"]);
       resetAll();
-
-      log(data.toString());
       _navigationService.back();
     } else {
       _toasterService.errorToast(data["message"].toString());
@@ -70,13 +65,11 @@ class ResetPasswordDialogModel extends BaseViewModel {
   }
 
   sendForgetPasswordCodeByMobile() async {
-    log("Runing....");
     Map<String, dynamic> body = {"mobile": emailCtrl.text};
     var data = await _authnService.sendForgetPasswordCodeByMobile(body);
     if (data?["success"] == true) {
       _toasterService.successToast(data["message"]);
       resetAll();
-      log(data.toString());
     } else {
       _toasterService.errorToast(data["message"].toString());
     }
@@ -92,8 +85,6 @@ class ResetPasswordDialogModel extends BaseViewModel {
     if (data?["success"] == true) {
       _toasterService.successToast(data["message"]);
       resetAll();
-
-      log(data.toString());
       _navigationService.back();
     } else {
       _toasterService.errorToast(data["message"].toString());
