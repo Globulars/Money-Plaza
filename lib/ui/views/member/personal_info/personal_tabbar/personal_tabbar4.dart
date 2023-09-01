@@ -42,7 +42,7 @@ class PersonalTabBar4 extends ViewModelWidget<PersonalInfoViewModel> {
                 columnSpacing: 3,
                 dataRowMinHeight: 3,
                 dataRowMaxHeight: 20,
-                horizontalMargin: 0,
+                horizontalMargin: 6,
                 columns: [
                   DataColumn(
                     label: SizedBox(
