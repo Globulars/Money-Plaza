@@ -188,7 +188,7 @@ class PersonalTabBar4 extends ViewModelWidget<PersonalInfoViewModel> {
                 rows: List.generate(
                   viewModel.userData!.loanInformations!.length,
                   (index) {
-                    // var data = viewModel.paymentTable.schedules![index];
+                     var data = viewModel.userData!.loanInformations![index];
                     return DataRow(cells: [
                       DataCell(SizedBox(
                           width: 20,
