@@ -39,18 +39,20 @@ class PersonalInfoViewModel extends BaseViewModel {
   List<LoanRecord> loanRecordDataList = [];
   final doYouKnowList = [
     "Facebook",
-    "Mortgages",
-    "Credit Cards",
-    "Accounts",
-    "Insurances"
-  ];
-  final intersetProductList = [
-    "Loans",
-    "Search Engine",
+     "Search Engine",
     "Friends",
     "Youtube",
     "Instragram",
     "Others"
+  
+  ];
+  final intersetProductList = [
+    "Loans",
+      "Mortgages",
+    "Credit Cards",
+    "Accounts",
+    "Insurances"
+   
   ];
 
   setGender(value) {
