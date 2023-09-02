@@ -21,10 +21,15 @@ class PersonalTabBar4 extends ViewModelWidget<PersonalInfoViewModel> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomText(text:  'loanStatus2',color: Colors.black,fontWeight: FontWeight.w500,),
+            CustomText(
+              text: 'loanStatus2',
+              color: Colors.black,
+              fontWeight: FontWeight.w500,
+            ),
             verticalSpaceTiny,
-               CustomText(text:  'noLoanRecord',),
-           
+            CustomText(
+              text: 'noLoanRecord',
+            ),
             verticalSpaceSmall,
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

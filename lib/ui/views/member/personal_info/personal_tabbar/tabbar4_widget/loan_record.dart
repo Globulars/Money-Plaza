@@ -61,7 +61,7 @@ class LoanRecordView extends StackedView<PersonalInfoViewModel> {
                     verticalSpaceTiny,
                     CustomTextField(
                       controller: viewModel.lenderCtrl,
-                      titleText:  "lender" ,
+                      titleText: "lender",
                     ),
                     verticalSpaceTiny,
                     CustomTextField(
@@ -118,7 +118,6 @@ class LoanRecordView extends StackedView<PersonalInfoViewModel> {
                             ],
                           )
                         : Container(),
-
                     verticalSpaceTiny,
                     CustomTextField(
                       controller: viewModel.loanRecordList?.code == "PLoan" ||
@@ -179,9 +178,7 @@ class LoanRecordView extends StackedView<PersonalInfoViewModel> {
                             hintText: 'hk',
                           )
                         : Container(),
-
                     verticalSpaceSmall,
-
                     verticalSpaceLarge
                   ],
                 ),
