@@ -30,7 +30,7 @@ class ContactUsDialogModel extends BaseViewModel {
   }
 
   Future<void> telegram() async {
-    final Uri _url = Uri.parse("");
+    final Uri _url = Uri.parse("https://t.me/dropletsofdew");
     if (await canLaunchUrl(_url)) {
       await launchUrl(_url);
     }
