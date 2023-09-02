@@ -3,7 +3,6 @@ import 'package:money_plaza/ui/widgets/common/icon_box_btn/sub_bar.dart';
 import 'package:stacked/stacked.dart';
 import '../../../../common/app_colors.dart';
 import '../../../../common/ui_helpers.dart';
-import '../../../../widgets/common/custom_text_field/custom_text_field.dart';
 import '../../../../widgets/common/icon_box_btn/text.dart';
 import '../personal_info_viewmodel.dart';
 

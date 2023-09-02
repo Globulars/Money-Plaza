@@ -47,7 +47,7 @@ class LoanRecordView extends StackedView<PersonalInfoViewModel> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CustomText(
-                      text: 'Loan Record',
+                      text: 'loanRecord',
                       fontWeight: FontWeight.w600,
                       fontSize: 18,
                     ),
@@ -56,12 +56,12 @@ class LoanRecordView extends StackedView<PersonalInfoViewModel> {
                       onChanged: viewModel.setLoanRecord,
                       options: viewModel.loanRecordDataList,
                       value: viewModel.loanRecordList,
-                      titleText: 'Type of Loan*',
+                      titleText: 'typeofLoan',
                     ),
                     verticalSpaceTiny,
                     CustomTextField(
                       controller: viewModel.lenderCtrl,
-                      titleText: 'Lender *',
+                      titleText: 'lender',
                     ),
                     verticalSpaceTiny,
                     CustomTextField(
