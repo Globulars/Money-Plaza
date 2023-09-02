@@ -61,27 +61,22 @@ class LoanRecordView extends StackedView<PersonalInfoViewModel> {
                     verticalSpaceTiny,
                     CustomTextField(
                       controller: viewModel.lenderCtrl,
-                      titleText: 'lender',
+                      titleText:  "lender" ,
                     ),
                     verticalSpaceTiny,
                     CustomTextField(
                       controller: viewModel.outstandingCtrl,
-                      titleText: 'Outstanding *',
+                      titleText: 'outstanding',
                       hintText: 'hk',
                     ),
                     verticalSpaceTiny,
-                    //  CustomTextField(
-                    //     controller: viewModel.monthlyRepaymentCtrl,
-                    //     titleText: 'Monthly Repayment*',
-                    //   ),
-
                     viewModel.loanRecordList?.code == "PrepaidInterest"
                         ? Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               verticalSpaceTiny,
                               CustomText(
-                                  text: "Tenor Unit",
+                                  text: "tenorUnit",
                                   color: Colors.black,
                                   fontSize: 14,
                                   fontWeight: FontWeight.w500),
@@ -92,30 +87,30 @@ class LoanRecordView extends StackedView<PersonalInfoViewModel> {
                                 children: [
                                   ReturnButton(
                                     height: 41.5,
-                                    text: 'Daily',
+                                    text: 'daily',
                                     width: width * 0.43,
-                                    boxcolor: viewModel.tenorUnit == 'Daily'
+                                    boxcolor: viewModel.tenorUnit == 'daily'
                                         ? darkGreenHeigh
                                         : Colors.white,
-                                    color: viewModel.tenorUnit != "Daily"
+                                    color: viewModel.tenorUnit != "daily"
                                         ? darkGreenHeigh
                                         : Colors.white,
                                     onPress: () {
-                                      viewModel.setTenorUnit('Daily');
+                                      viewModel.setTenorUnit('daily');
                                     },
                                   ),
                                   ReturnButton(
                                     height: 41.5,
-                                    text: 'Monthly',
+                                    text: 'monthly',
                                     width: width * 0.43,
-                                    boxcolor: viewModel.tenorUnit == "Monthly"
+                                    boxcolor: viewModel.tenorUnit == "monthly"
                                         ? darkGreenHeigh
                                         : Colors.white,
-                                    color: viewModel.tenorUnit != "Monthly"
+                                    color: viewModel.tenorUnit != "monthly"
                                         ? darkGreenHeigh
                                         : Colors.white,
                                     onPress: () {
-                                      viewModel.setTenorUnit('Monthly');
+                                      viewModel.setTenorUnit('monthly');
                                     },
                                   ),
                                 ],

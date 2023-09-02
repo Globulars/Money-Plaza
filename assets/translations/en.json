@@ -222,5 +222,9 @@
   "loanRecord": "Loan Record",
   "typeofLoan": "Type of Loan *",
   "lender" : "Lender *",
-  ""
+  "outstanding":"Outstanding *",
+  "tenorUnit":"Tenor Unit",
+  "daily":"Daily",
+  "monthly":"Monthly"
+
 }
