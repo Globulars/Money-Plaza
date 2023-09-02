@@ -217,5 +217,21 @@
   "signUpByEmail": "透過電郵地址登入",
   "signUpByMobile": "通過電話號碼登入",
   "getFinancialProduct": "獲取您的金融產品\n1 分鐘內！",
-  "addLoanRecord": "addLoanRecord"
+  "addLoanRecord": "addLoanRecord",
+
+  "loanRecord": "Loan Record",
+  "typeofLoan": "Type of Loan *",
+  "lender" : "Lender *",
+  "outstanding":"Outstanding *",
+  "tenorUnit":"Tenor Unit",
+  "daily":"Daily",
+  "monthly":"Monthly",
+  "tenor2":"Tenor *",
+  "monthlyInterest":"Monthly Interest *",
+  "remainingTenor":"Remaining Tenor *",
+  "penalty":"Penalty *",
+  "totalPrepaidInterest":"Total Prepaid Interest *",
+  "monthlyRepayment2":"Monthly Repayment *",
+  "minpay":"Min pay % *",
+  "minPayinDollar":"Min pay in dollar *"
 }
