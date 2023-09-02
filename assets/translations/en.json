@@ -225,6 +225,15 @@
   "outstanding":"Outstanding *",
   "tenorUnit":"Tenor Unit",
   "daily":"Daily",
-  "monthly":"Monthly"
+  "monthly":"Monthly",
+  "tenor2":"Tenor *",
+  "monthlyInterest":"Monthly Interest *",
+  "remainingTenor":"Remaining Tenor *",
+  "penalty":"Penalty *",
+  "totalPrepaidInterest":"Total Prepaid Interest *",
+  "monthlyRepayment2":"Monthly Repayment *",
+  "minpay":"Min pay % *",
+  "minPayinDollar":"Min pay in dollar *"
+
 
 }

@@ -131,7 +131,7 @@ class LoanRecordView extends StackedView<PersonalInfoViewModel> {
                               viewModel.loanRecordList?.code ==
                                   "PrepaidInterest" ||
                               viewModel.loanRecordList?.code == "InterestOnly"
-                          ? 'Tenor *'
+                          ? 'tenor2'
                           : "Monthly Interest *",
                     ),
                     verticalSpaceTiny,
@@ -144,10 +144,10 @@ class LoanRecordView extends StackedView<PersonalInfoViewModel> {
                                 : viewModel.totalPrepaidInterestCtrl,
                         titleText: viewModel.loanRecordList?.code == "PLoan" ||
                                 viewModel.loanRecordList?.code == "InterestOnly"
-                            ? 'Remaining Tenor*'
+                            ? 'remainingTenor'
                             : viewModel.loanRecordList?.code == "MinPay"
-                                ? "Penalty *"
-                                : "Total Prepaid Interest *"),
+                                ? "penalty"
+                                : "totalPrepaidInterest"),
                     verticalSpaceTiny,
                     viewModel.loanRecordList?.code == "PLoan" ||
                             viewModel.loanRecordList?.code == "InterestOnly" ||
@@ -166,16 +166,16 @@ class LoanRecordView extends StackedView<PersonalInfoViewModel> {
                                 viewModel.loanRecordList?.code == "PLoan" ||
                                         viewModel.loanRecordList?.code ==
                                             "InterestOnly"
-                                    ? 'Monthly Repayment *'
+                                    ? 'monthlyRepayment2'
                                     : viewModel.loanRecordList?.code == "MinPay"
-                                        ? "Min pay % *"
-                                        : "Total Prepaid Interest *")
+                                        ? "minpay"
+                                        : "totalPrepaidInterest")
                         : Container(),
                     verticalSpaceTiny,
                     viewModel.loanRecordList?.code == "MinPay"
                         ? CustomTextField(
                             controller: viewModel.minPayInDollarCtrl,
-                            titleText: 'Min pay in dollar *',
+                            titleText: 'minPayinDollar',
                             hintText: 'hk',
                           )
                         : Container(),
