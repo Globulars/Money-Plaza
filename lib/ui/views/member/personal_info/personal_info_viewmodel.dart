@@ -13,8 +13,8 @@ class PersonalInfoViewModel extends BaseViewModel {
   final _apiHelperService = locator<ApiHelperService>();
   final _navigationService = locator<NavigationService>();
   final ApiUrl _apiUrl = ApiUrl();
-  TextEditingController firstNameCtrl = TextEditingController(text: "Mudassir");
-  TextEditingController lastNameCtrl = TextEditingController(text: "Mukhtar");
+  TextEditingController firstNameCtrl = TextEditingController();
+  TextEditingController lastNameCtrl = TextEditingController();
   TextEditingController emailCtrl = TextEditingController();
   TextEditingController contactNumCtrl = TextEditingController();
   TextEditingController lenderCtrl = TextEditingController();
