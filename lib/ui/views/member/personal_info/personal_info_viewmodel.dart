@@ -138,11 +138,14 @@ class PersonalInfoViewModel extends BaseViewModel {
       firstNameCtrl.text = userData?.firstName ?? "";
       lastNameCtrl.text = userData?.lastName ?? "";
       emailCtrl.text = userData?.email ?? "";
-      // intersetProduct=userData?.interestProducts
       lenderCtrl.text = userData?.loanInformations?[0].lender ?? "";
       tenorCtrl.text = "${userData?.loanInformations?[0].tenor ?? 0}";
       remainingTenorCtrl.text="${userData?.loanInformations?[0].remainingTenor ?? 0}";
-      remainingTenorCtrl.text="${userData?.loanInformations?[0].remainingTenor ?? 0}";
+      monthlyRepaymentCtrl.text="${userData?.loanInformations?[0].monthlyRepayment ?? 0}";
+      monthlyInterestCtrl.text="${userData?.loanInformations?[0].interestRate ?? 0}";
+      totalPrepaidInterestCtrl.text="${userData?.loanInformations?[0].totalInterestAmount ?? 0}";
+      remainingTenorCtrl.text="${userData?.loanInformations?[0].totalRemainingAmount ?? 0}";
+      
 
       notifyListeners();
       return userData;
