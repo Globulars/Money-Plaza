@@ -132,7 +132,7 @@ class PersonalInfoViewModel extends BaseViewModel {
   }
 
   Future<UserData?> getUserData() async {
-    var data = await _apiHelperService.getApi(_apiUrl.userDataApi);
+    var data = await _apiHelperService.getAuthApi(_apiUrl.userDataApi);
     if (data?["success"] == true) {
       userData = UserData.fromJson(data["data"]);
       firstNameCtrl.text = userData?.firstName ?? "";

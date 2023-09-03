@@ -106,12 +106,12 @@ class UserData {
 class LoanInformations {
   String? lender;
   String? calculateMethod;
-  int? amount;
+  double? amount;
   int? tenor;
   int? remainingTenor;
-  int? monthlyRepayment;
+  double? monthlyRepayment;
   double? interestRate;
-  int? totalInterestAmount;
+  double? totalInterestAmount;
   double? totalRemainingAmount;
 
   LoanInformations(
