@@ -6,6 +6,7 @@ import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import '../../../../app/app.locator.dart';
 import '../../../../services/Models/loan_record.dart';
+import '../../../../services/Models/user_data.dart';
 import '../../../../services/api_helper_service.dart';
 
 class PersonalInfoViewModel extends BaseViewModel {
@@ -35,8 +36,10 @@ class PersonalInfoViewModel extends BaseViewModel {
   // String typeOfLoan ="Term Loan";
   SelectCountry? countryList;
   LoanRecord? loanRecordList;
+  UserData? userData;
   List<SelectCountry> countryDataList = [];
   List<LoanRecord> loanRecordDataList = [];
+  //  List<UserData> userDataList = [];
   final doYouKnowList = [
     "Facebook",
     "Search Engine",
@@ -125,6 +128,26 @@ class PersonalInfoViewModel extends BaseViewModel {
       }
     } else {
       return loanRecordDataList;
+    }
+  }
+
+  Future<UserData?> getUserData() async {
+    var data = await _apiHelperService.getApi(_apiUrl.userDataApi);
+    if (data?["success"] == true) {
+      userData = UserData.fromJson(data["data"]);
+      firstNameCtrl.text = userData?.firstName ?? "";
+      lastNameCtrl.text = userData?.lastName ?? "";
+      emailCtrl.text = userData?.email ?? "";
+      // intersetProduct=userData?.interestProducts
+      lenderCtrl.text = userData?.loanInformations?[0].lender ?? "";
+      tenorCtrl.text = "${userData?.loanInformations?[0].tenor ?? 0}";
+      remainingTenorCtrl.text="${userData?.loanInformations?[0].remainingTenor ?? 0}";
+      remainingTenorCtrl.text="${userData?.loanInformations?[0].remainingTenor ?? 0}";
+
+      notifyListeners();
+      return userData;
+    } else {
+      throw Exception(data["message"].toString());
     }
   }
 }
