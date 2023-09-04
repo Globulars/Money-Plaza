@@ -9,21 +9,19 @@ import '../../../services/Models/loan_card.dart';
 import '../../../services/Models/loan_tags.dart';
 import '../../../services/Models/schedule_loan.dart';
 import '../../../services/api_helper_service.dart';
-import '../../../services/loan_card_service.dart';
 import '../../../services/toaster_service.dart';
 import '../../common/app_url.dart';
 
 class LoanViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
   final _apiHelperService = locator<ApiHelperService>();
-
-  final _loanCardService = locator<LoanCardService>();
+  final _toasterService = locator<ToasterService>();
+  final ApiUrl _apiUrl = ApiUrl();
   final _dialogService = locator<DialogService>();
   var formKey = GlobalKey<FormState>();
   Map<String, dynamic> loneMachBody = {};
   List<LoanCard> loanCardList = [];
   InterestCalculator paymentTable = InterestCalculator();
-  final _toasterService = locator<ToasterService>();
 
   List<LoanTags> loanTagsList = [];
   List<String> features = [];
@@ -243,7 +241,7 @@ class LoanViewModel extends BaseViewModel {
   }
 
   Future<List<LoanTags>> getLoanTags() async {
-    var data = await _loanCardService.getLoanTags();
+    var data = await _apiHelperService.getApi(_apiUrl.getLoanTags);
     if (data?["success"] == true) {
       List dataList = data["data"];
       loanTagsList = dataList.map((data) => LoanTags.fromJson(data)).toList();
@@ -280,7 +278,7 @@ class LoanViewModel extends BaseViewModel {
       "interestRate": interestCtrl.text,
       "monthlyRepayment": monthlyPaymentCtrl.text
     };
-    var data = await _loanCardService.loanlist(body);
+    var data = await _apiHelperService.postApi(_apiUrl.loanList,body);
     if (data?["success"] == true) {
       List dataList = data["data"]["records"];
       if (dataList.isEmpty) {
@@ -303,7 +301,7 @@ class LoanViewModel extends BaseViewModel {
       "numOfMonths": numOfMonths,
       "interestRate": interestRate
     };
-    var data = await _loanCardService.scheduleByPLoanForRepayment(body);
+    var data = await _apiHelperService.postApi(_apiUrl.scheduleByPLoanForRepayment,body);
     if (data?["success"] == true) {
       return ScheduleLoan.fromJson(data["data"]);
     } else {
@@ -312,7 +310,7 @@ class LoanViewModel extends BaseViewModel {
   }
 
   Future<List<LoanCard>> loanMatch() async {
-    var data = await _loanCardService.loanMatch(loneMachBody);
+    var data = await _apiHelperService.postApi(_apiUrl.loanMatch,loneMachBody);
     if (data?["success"] == true) {
       List dataList = data["data"]["records"];
       if (dataList.isEmpty) {

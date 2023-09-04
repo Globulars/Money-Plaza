@@ -1,17 +1,18 @@
+import 'package:money_plaza/services/api_helper_service.dart';
+import 'package:money_plaza/ui/common/app_url.dart';
 import 'package:stacked/stacked.dart';
 import 'package:flutter/material.dart';
 import 'package:money_plaza/app/app.locator.dart';
 import 'package:money_plaza/app/app.router.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:money_plaza/services/toaster_service.dart';
-import 'package:money_plaza/services/loan_card_service.dart';
 
 class PersonalloanViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
-  final _loanCardService = locator<LoanCardService>();
   final _toasterService = locator<ToasterService>();
   var formKey = GlobalKey<FormState>();
-
+  final _apiHelperService = locator<ApiHelperService>();
+  final ApiUrl _apiUrl = ApiUrl();
   TextEditingController borrowingAmountCtrl =
       TextEditingController(text: "50000");
   TextEditingController monthlyIncomeCtrl =
@@ -269,7 +270,8 @@ class PersonalloanViewModel extends BaseViewModel {
       ];
       survayBody.addAll(applyBody);
       Map<String, dynamic> body = {"result": survayBody};
-      var data = await _loanCardService.ownerLoneSurveyform(body);
+      var data =
+          await _apiHelperService.postApi(_apiUrl.ownerLoneSurveyform, body);
       if (data["success"] == true) {
         _toasterService.successToast(data["message"]);
         navigateToServayLoanResultView(machBody);

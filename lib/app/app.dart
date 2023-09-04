@@ -38,7 +38,6 @@ import 'package:money_plaza/ui/views/member/reward_application/reward_applicatio
 import 'package:money_plaza/ui/views/member/change_password/change_password_view.dart';
 import 'package:money_plaza/ui/dialogs/detail_filte/detail_filte_dialog.dart';
 import 'package:money_plaza/services/toaster_service.dart';
-import 'package:money_plaza/services/loan_card_service.dart';
 import '../ui/views/loan/personal_loan/applyconfirm_view.dart';
 import 'package:money_plaza/services/api_helper_service.dart';
 // @stacked-import
@@ -84,7 +83,6 @@ import 'package:money_plaza/services/api_helper_service.dart';
     LazySingleton(classType: DialogService),
     LazySingleton(classType: NavigationService),
     LazySingleton(classType: ToasterService),
-    LazySingleton(classType: LoanCardService),
     LazySingleton(classType: ApiHelperService),
 // @stacked-service
   ],

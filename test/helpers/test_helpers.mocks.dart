@@ -8,8 +8,7 @@ import 'dart:ui' as _i6;
 
 import 'package:flutter/material.dart' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:money_plaza/services/api_helper_service.dart' as _i9;
-import 'package:money_plaza/services/loan_card_service.dart' as _i8;
+import 'package:money_plaza/services/api_helper_service.dart' as _i8;
 import 'package:money_plaza/services/Models/auth.dart' as _i2;
 import 'package:money_plaza/services/toaster_service.dart' as _i7;
 import 'package:stacked_services/stacked_services.dart' as _i3;
@@ -647,30 +646,10 @@ class MockDialogService extends _i1.Mock implements _i3.DialogService {
 /// See the documentation for Mockito's code generation for more information.
 class MockToasterService extends _i1.Mock implements _i7.ToasterService {}
 
-/// A class which mocks [LoanCardService].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockLoanCardService extends _i1.Mock implements _i8.LoanCardService {
-  @override
-  Map<String, String> get headers => (super.noSuchMethod(
-        Invocation.getter(#headers),
-        returnValue: <String, String>{},
-        returnValueForMissingStub: <String, String>{},
-      ) as Map<String, String>);
-  @override
-  set headers(Map<String, String>? _headers) => super.noSuchMethod(
-        Invocation.setter(
-          #headers,
-          _headers,
-        ),
-        returnValueForMissingStub: null,
-      );
-}
-
 /// A class which mocks [ApiHelperService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockApiHelperService extends _i1.Mock implements _i9.ApiHelperService {
+class MockApiHelperService extends _i1.Mock implements _i8.ApiHelperService {
   @override
   _i2.Auth get authData => (super.noSuchMethod(
         Invocation.getter(#authData),

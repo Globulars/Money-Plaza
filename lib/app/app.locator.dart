@@ -12,7 +12,6 @@ import 'package:stacked_services/src/navigation/navigation_service.dart';
 import 'package:stacked_shared/stacked_shared.dart';
 
 import '../services/api_helper_service.dart';
-import '../services/loan_card_service.dart';
 import '../services/toaster_service.dart';
 
 final locator = StackedLocator.instance;
@@ -30,6 +29,5 @@ Future<void> setupLocator({
   locator.registerLazySingleton(() => DialogService());
   locator.registerLazySingleton(() => NavigationService());
   locator.registerLazySingleton(() => ToasterService());
-  locator.registerLazySingleton(() => LoanCardService());
   locator.registerLazySingleton(() => ApiHelperService());
 }
