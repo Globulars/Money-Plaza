@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:money_plaza/services/api_helper_service.dart';
+import 'package:money_plaza/ui/common/app_url.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import '../../../app/app.locator.dart';
-import '../../../services/auth_service.dart';
 import '../../../services/toaster_service.dart';
 
 class ResetPasswordDialogModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
   final _toasterService = locator<ToasterService>();
-
-  final _authnService = locator<AuthService>();
+  final _apiHelperService = locator<ApiHelperService>();
+  final ApiUrl _apiUrl = ApiUrl();
 
   TextEditingController emailCtrl = TextEditingController();
   TextEditingController verifyCode = TextEditingController();
@@ -39,7 +40,7 @@ class ResetPasswordDialogModel extends BaseViewModel {
 
   sendForgetPasswordCodeByEmail() async {
     Map<String, dynamic> body = {"email": emailCtrl.text};
-    var data = await _authnService.sendForgetPasswordCodeByEmail(body);
+    var data = await _apiHelperService.postApi(_apiUrl.sendForgetPasswordCodeByEmail,body);
     if (data?["success"] == true) {
       _toasterService.successToast(data["message"]);
       resetAll();
@@ -54,7 +55,7 @@ class ResetPasswordDialogModel extends BaseViewModel {
       "email": emailCtrl.text,
       "password": passwordCtrl.text
     };
-    var data = await _authnService.updatePasswordByEmailCode(body);
+    var data = await _apiHelperService.postApi(_apiUrl.updatePasswordByEmailCode,body);
     if (data?["success"] == true) {
       _toasterService.successToast(data["message"]);
       resetAll();
@@ -66,7 +67,7 @@ class ResetPasswordDialogModel extends BaseViewModel {
 
   sendForgetPasswordCodeByMobile() async {
     Map<String, dynamic> body = {"mobile": emailCtrl.text};
-    var data = await _authnService.sendForgetPasswordCodeByMobile(body);
+    var data = await _apiHelperService.postApi(_apiUrl.sendForgetPasswordCodeByMobile,body);
     if (data?["success"] == true) {
       _toasterService.successToast(data["message"]);
       resetAll();
@@ -81,7 +82,7 @@ class ResetPasswordDialogModel extends BaseViewModel {
       "email": emailCtrl.text,
       "password": passwordCtrl.text
     };
-    var data = await _authnService.updatePasswordByMobileCode(body);
+    var data = await _apiHelperService.postApi(_apiUrl.updatePasswordByMobileCode,body);
     if (data?["success"] == true) {
       _toasterService.successToast(data["message"]);
       resetAll();

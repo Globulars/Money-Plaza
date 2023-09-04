@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:money_plaza/app/app.router.dart';
+import 'package:money_plaza/services/api_helper_service.dart';
+import 'package:money_plaza/ui/common/app_url.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import '../../../app/app.dialogs.dart';
 import '../../../app/app.locator.dart';
-import '../../../services/auth_service.dart';
 import '../../../services/toaster_service.dart';
 
 class MemberLoginViewModel extends BaseViewModel {
@@ -12,9 +13,9 @@ class MemberLoginViewModel extends BaseViewModel {
 
   final _dialogService = locator<DialogService>();
   final _toasterService = locator<ToasterService>();
-
+  final _apiHelperService = locator<ApiHelperService>();
+  final ApiUrl _apiUrl = ApiUrl();
   final _navigationService = locator<NavigationService>();
-  final _authnService = locator<AuthService>();
   TextEditingController emailCtrl =
       TextEditingController(text: "mudassirmukhtar4@gmail.com");
   TextEditingController verifyCode = TextEditingController();
@@ -100,7 +101,7 @@ class MemberLoginViewModel extends BaseViewModel {
     var isValid = formKey.currentState!.validate();
     if (isValid) {
       Map<String, dynamic> body = {"email": emailCtrl.text, "type": "signup"};
-      var data = await _authnService.sendEmailCode(body);
+      var data = await _apiHelperService.postApi(_apiUrl.sendEmailCode, body);
       if (data["success"] == true) {
         _toasterService.successToast(data["message"]);
         resetAll();
@@ -123,7 +124,7 @@ class MemberLoginViewModel extends BaseViewModel {
         "password": passwordCtrl.text,
         "receiveNews": receiveNews
       };
-      var data = await _authnService.signupByEmail(body);
+      var data = await _apiHelperService.postApi(_apiUrl.signupByEmail, body);
       if (data["success"] == true) {
         _toasterService.successToast(data["message"]);
         resetAll();
@@ -142,7 +143,7 @@ class MemberLoginViewModel extends BaseViewModel {
             type == "email" ? emailCtrl.text : "$verifyCode${phoneNoCtrl.text}",
         "password": passwordCtrl.text,
       };
-      var data = await _authnService.login(body);
+      var data = await _apiHelperService.login(body);
       if (data?["success"] == true) {
         resetAll();
         _toasterService.successToast(data["message"]);
@@ -161,7 +162,7 @@ class MemberLoginViewModel extends BaseViewModel {
         "mobile": "$verifyCode${phoneNoCtrl.text}",
         "type": "signup"
       };
-      var data = await _authnService.sendSmsCode(body);
+      var data = await _apiHelperService.postApi(_apiUrl.sendSmsCode, body);
       if (data?["success"] == true) {
         _toasterService.successToast(data["message"]);
         resetAll();
@@ -184,7 +185,7 @@ class MemberLoginViewModel extends BaseViewModel {
         "password": passwordCtrl.text,
         "receiveNews": receiveNews
       };
-      var data = await _authnService.signupByMobile(body);
+      var data = await _apiHelperService.postApi(_apiUrl.signupByMobile, body);
       if (data["success"] == true) {
         _toasterService.successToast(data["message"]);
         resetAll();

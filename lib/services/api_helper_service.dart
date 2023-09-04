@@ -4,12 +4,14 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'package:image_picker/image_picker.dart';
-import 'package:money_plaza/app/app.locator.dart';
-import 'package:money_plaza/services/auth_service.dart';
+import 'package:money_plaza/services/Models/auth.dart';
+import 'package:money_plaza/ui/common/app_url.dart';
 
 class ApiHelperService {
-  final AuthService _authnService = locator<AuthService>();
-  String? get accessToken => _authnService.authData?.accessToken;
+  Auth authData = Auth();
+  final ApiUrl _apiUrl = ApiUrl();
+  String? get accessToken => authData.accessToken;
+
   String? imagePath;
   // final ApiUrl _apiUrl = ApiUrl();
   Map<String, String> headers = {
@@ -119,6 +121,23 @@ class ApiHelperService {
       final response = await http.get(_url, headers: headers);
       if (response.statusCode == 200) {
         var data = json.decode(response.body);
+        return data;
+      } else {
+        return {"message": "${response.statusCode} error found"};
+      }
+    } catch (e) {
+      return {"message": e};
+    }
+  }
+  /////////////////////////////////////Login////////////////////////////////
+
+  login(body) async {
+    try {
+      final response = await http.post(_apiUrl.login,
+          body: jsonEncode(body), headers: headers);
+      if (response.statusCode == 200) {
+        var data = json.decode(response.body);
+        authData = Auth.fromJson(data["data"]);
         return data;
       } else {
         return {"message": "${response.statusCode} error found"};

@@ -2,7 +2,6 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:money_plaza/app/app.locator.dart';
 import 'package:stacked_services/stacked_services.dart';
-import 'package:money_plaza/services/auth_service.dart';
 import 'package:money_plaza/services/toaster_service.dart';
 import 'package:money_plaza/services/loan_card_service.dart';
 import 'package:money_plaza/services/api_helper_service.dart';
@@ -14,7 +13,6 @@ import 'test_helpers.mocks.dart';
   MockSpec<NavigationService>(onMissingStub: OnMissingStub.returnDefault),
   MockSpec<BottomSheetService>(onMissingStub: OnMissingStub.returnDefault),
   MockSpec<DialogService>(onMissingStub: OnMissingStub.returnDefault),
-  MockSpec<AuthService>(onMissingStub: OnMissingStub.returnDefault),
   MockSpec<ToasterService>(onMissingStub: OnMissingStub.returnDefault),
   MockSpec<LoanCardService>(onMissingStub: OnMissingStub.returnDefault),
   MockSpec<ApiHelperService>(onMissingStub: OnMissingStub.returnDefault),
@@ -24,7 +22,6 @@ void registerServices() {
   getAndRegisterNavigationService();
   getAndRegisterBottomSheetService();
   getAndRegisterDialogService();
-  getAndRegisterAuthService();
   getAndRegisterToasterService();
   getAndRegisterLoanCardService();
   getAndRegisterApiHelperService();
@@ -81,12 +78,7 @@ MockDialogService getAndRegisterDialogService() {
   return service;
 }
 
-MockAuthService getAndRegisterAuthService() {
-  _removeRegistrationIfExists<AuthService>();
-  final service = MockAuthService();
-  locator.registerSingleton<AuthService>(service);
-  return service;
-}
+
 
 MockToasterService getAndRegisterToasterService() {
   _removeRegistrationIfExists<ToasterService>();
