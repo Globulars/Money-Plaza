@@ -1,13 +1,13 @@
-import 'package:flutter/material.dart';
-import 'package:money_plaza/ui/common/app_icons.dart';
-import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:money_plaza/ui/dialogs/detail_filte/widgets/detail_card_1.dart';
 import 'package:money_plaza/ui/views/loan/loan_viewmodel.dart';
-import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
-import '../../../services/Models/loan_card.dart';
 import '../../widgets/common/icon_box_btn/sub_bar.dart';
+import 'package:money_plaza/ui/common/ui_helpers.dart';
+import 'package:money_plaza/ui/common/app_icons.dart';
 import '../../views/loan/widgets/result_card.dart';
+import '../../../services/Models/loan_card.dart';
+import 'package:flutter/material.dart';
+import 'package:stacked/stacked.dart';
 
 class DetailFilteDialog extends StackedView<LoanViewModel> {
   final DialogRequest request;
