@@ -87,7 +87,7 @@ class MemberLoginViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-   onChangeFunctionSetValue(v) {
+  onChangeFunctionSetValue(v) {
     if (v.isEmpty) {
       phoneFieldEmpty = true;
     } else {
@@ -95,7 +95,6 @@ class MemberLoginViewModel extends BaseViewModel {
     }
     notifyListeners();
   }
-
 
   sendEmailCode() async {
     var isValid = formKey.currentState!.validate();

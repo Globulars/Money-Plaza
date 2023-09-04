@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:money_plaza/app/app.router.dart';
+import 'package:money_plaza/services/api_helper_service.dart';
+import 'package:money_plaza/ui/common/app_url.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import '../../../app/app.locator.dart';
-import '../../../services/credit_card_service.dart';
 import '../../../services/toaster_service.dart';
 
 class SurveyFormViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
   final _toasterService = locator<ToasterService>();
-  final _creditCardService = locator<CreditCardService>();
+  final _apiHelperService = locator<ApiHelperService>();
+  final ApiUrl _apiUrl = ApiUrl();
+
   var formKey = GlobalKey<FormState>();
 
   navigateToMorgagesResult() {
@@ -76,7 +79,7 @@ class SurveyFormViewModel extends BaseViewModel {
           }
         ]
       };
-      var data = await _creditCardService.submitSurveyForm(body);
+      var data = await _apiHelperService.postApi(_apiUrl.surveyForm, body);
       if (data["success"] == true) {
         _toasterService.successToast(data["message"]);
         _navigationService.back();

@@ -40,7 +40,6 @@ import 'package:money_plaza/ui/dialogs/detail_filte/detail_filte_dialog.dart';
 import 'package:money_plaza/services/auth_service.dart';
 import 'package:money_plaza/services/toaster_service.dart';
 import 'package:money_plaza/services/mortgage_service.dart';
-import 'package:money_plaza/services/credit_card_service.dart';
 import 'package:money_plaza/services/loan_card_service.dart';
 import '../ui/views/loan/personal_loan/applyconfirm_view.dart';
 import 'package:money_plaza/services/api_helper_service.dart';
@@ -89,7 +88,6 @@ import 'package:money_plaza/services/api_helper_service.dart';
     LazySingleton(classType: AuthService),
     LazySingleton(classType: ToasterService),
     LazySingleton(classType: MortgageService),
-    LazySingleton(classType: CreditCardService),
     LazySingleton(classType: LoanCardService),
     LazySingleton(classType: ApiHelperService),
 // @stacked-service

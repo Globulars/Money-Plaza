@@ -41,17 +41,17 @@ class SignUpWithPhone extends StackedView<MemberLoginViewModel> {
                             color: viewModel.phoneFieldEmpty
                                 ? Colors.red
                                 : darkGreenLight.withOpacity(0.8),
-                            width:viewModel.phoneFieldEmpty?2: 1),
+                            width: viewModel.phoneFieldEmpty ? 2 : 1),
                         top: BorderSide(
                             color: viewModel.phoneFieldEmpty
                                 ? Colors.red
                                 : darkGreenLight.withOpacity(0.8),
-                            width: viewModel.phoneFieldEmpty?2: 1),
+                            width: viewModel.phoneFieldEmpty ? 2 : 1),
                         bottom: BorderSide(
                             color: viewModel.phoneFieldEmpty
                                 ? Colors.red
                                 : darkGreenLight.withOpacity(0.8),
-                            width: viewModel.phoneFieldEmpty?2: 1)),
+                            width: viewModel.phoneFieldEmpty ? 2 : 1)),
                   ),
                   child: CountryCodePicker(
                     padding: const EdgeInsets.all(0),
@@ -76,7 +76,7 @@ class SignUpWithPhone extends StackedView<MemberLoginViewModel> {
                     borderSide: BorderSide(
                         color: darkGreenLight.withOpacity(0.8), width: 1.0),
                   ),
-                  onChanged:viewModel.onChangeFunctionSetValue,
+                  onChanged: viewModel.onChangeFunctionSetValue,
                 ),
               ),
             ],

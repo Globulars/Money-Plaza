@@ -1,17 +1,20 @@
 import 'package:money_plaza/app/app.router.dart';
 import 'package:money_plaza/services/Models/credit_card.dart';
+import 'package:money_plaza/ui/common/app_url.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import '../../../../app/app.dialogs.dart';
 import '../../../../app/app.locator.dart';
-import '../../../../services/credit_card_service.dart';
+import '../../../../services/api_helper_service.dart';
 import '../../../../services/toaster_service.dart';
 
 class CreditResultViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
   final _dialogService = locator<DialogService>();
-  final _creditCardService = locator<CreditCardService>();
+  final _apiHelperService = locator<ApiHelperService>();
   final _toasterService = locator<ToasterService>();
+  final ApiUrl _apiUrl = ApiUrl();
+
   String creditError = "";
   List<CreditCard> creditCardList = [];
   void showCreditFilter() {
@@ -44,7 +47,7 @@ class CreditResultViewModel extends BaseViewModel {
       "status": true,
       "types": typesList
     };
-    var data = await _creditCardService.cardList(body);
+    var data = await _apiHelperService.postApi(_apiUrl.cardList, body);
     if (data?["success"] == true) {
       List dataList = data["data"]["records"];
       creditCardList =
