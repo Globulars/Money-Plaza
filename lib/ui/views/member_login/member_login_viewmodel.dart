@@ -16,13 +16,11 @@ class MemberLoginViewModel extends BaseViewModel {
   final _apiHelperService = locator<ApiHelperService>();
   final ApiUrl _apiUrl = ApiUrl();
   final _navigationService = locator<NavigationService>();
-  TextEditingController emailCtrl =
-      TextEditingController(text: "mudassirmukhtar4@gmail.com");
+  TextEditingController emailCtrl = TextEditingController();
   TextEditingController verifyCode = TextEditingController();
   TextEditingController firstNameCtrl = TextEditingController();
   TextEditingController lastNameCtrl = TextEditingController();
-  TextEditingController passwordCtrl =
-      TextEditingController(text: "qwerty1234");
+  TextEditingController passwordCtrl = TextEditingController();
   TextEditingController confirmPasswordCtrl = TextEditingController();
   TextEditingController phoneNoCtrl = TextEditingController();
   String interestProducts = "Loans";
@@ -98,8 +96,8 @@ class MemberLoginViewModel extends BaseViewModel {
   }
 
   sendEmailCode() async {
-    var isValid = formKey.currentState!.validate();
-    if (isValid) {
+    if (emailCtrl.text != "") {
+      setBusy(true);
       Map<String, dynamic> body = {"email": emailCtrl.text, "type": "signup"};
       var data = await _apiHelperService.postApi(_apiUrl.sendEmailCode, body);
       if (data["success"] == true) {
@@ -108,12 +106,16 @@ class MemberLoginViewModel extends BaseViewModel {
       } else {
         _toasterService.errorToast(data["message"].toString());
       }
+      setBusy(false);
+    } else {
+      _toasterService.errorToast("Please enter your email");
     }
   }
 
   signupByEmail() async {
     var isValid = formKey.currentState!.validate();
     if (isValid) {
+      setBusy(true);
       Map<String, dynamic> body = {
         "code": verifyCode.text,
         "email": emailCtrl.text,
@@ -132,32 +134,35 @@ class MemberLoginViewModel extends BaseViewModel {
       } else {
         _toasterService.errorToast(data["message"].toString());
       }
+      setBusy(false);
     }
   }
 
   login(type) async {
     var isValid = formKey.currentState!.validate();
     if (isValid) {
+      setBusy(true);
       Map<String, dynamic> body = {
-        "login":
-            type == "email" ? emailCtrl.text : "$verifyCode${phoneNoCtrl.text}",
+        "login": type == "email"
+            ? emailCtrl.text
+            : "$countryCode${phoneNoCtrl.text}",
         "password": passwordCtrl.text,
       };
       var data = await _apiHelperService.login(body);
       if (data?["success"] == true) {
         resetAll();
         _toasterService.successToast(data["message"]);
-
         _navigationService.navigateToMemberSettingView();
       } else {
         _toasterService.errorToast(data["message"].toString());
       }
+      setBusy(false);
     }
   }
 
   sendSmsCode() async {
-    var isValid = formKey.currentState!.validate();
-    if (isValid) {
+    if (phoneNoCtrl.text != '') {
+      setBusy(true);
       Map<String, dynamic> body = {
         "mobile": "$verifyCode${phoneNoCtrl.text}",
         "type": "signup"
@@ -169,12 +174,16 @@ class MemberLoginViewModel extends BaseViewModel {
       } else {
         _toasterService.errorToast(data["message"].toString());
       }
+      setBusy(false);
+    } else {
+      _toasterService.errorToast("Please enter your phone number");
     }
   }
 
   signupByMobile() async {
     var isValid = formKey.currentState!.validate();
     if (isValid) {
+      setBusy(true);
       Map<String, dynamic> body = {
         "code": verifyCode.text,
         "firstName": firstNameCtrl.text,
@@ -193,6 +202,7 @@ class MemberLoginViewModel extends BaseViewModel {
       } else {
         _toasterService.errorToast(data["message"].toString());
       }
+      setBusy(false);
     }
   }
 }

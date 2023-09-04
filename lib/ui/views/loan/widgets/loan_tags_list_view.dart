@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:stacked/stacked.dart';
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
@@ -75,14 +76,22 @@ class LoanTagsListView extends ViewModelWidget<LoanViewModel> {
         verticalSpaceTiny,
         Padding(
           padding: const EdgeInsets.only(right: 8),
-          child: Align(
-            alignment: Alignment.centerRight,
-            child: CustomText(
-              text: '${viewModel.loanCardList.length} results',
-              color: Colors.black,
-              fontSize: 15,
-              fontWeight: FontWeight.w400,
-            ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              CustomText(
+                text: '${viewModel.loanCardList.length}',
+                color: Colors.black,
+                fontSize: 15,
+                fontWeight: FontWeight.w400,
+              ),
+              CustomText(
+                text: 'results',
+                color: Colors.black,
+                fontSize: 15,
+                fontWeight: FontWeight.w400,
+              ),
+            ],
           ),
         ),
         const Divider(

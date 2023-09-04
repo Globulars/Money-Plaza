@@ -1,6 +1,7 @@
 // ignore_for_file: void_checks, prefer_typing_uninitialized_variables
 
 import 'dart:convert';
+import 'dart:developer';
 import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'package:image_picker/image_picker.dart';
@@ -135,9 +136,12 @@ class ApiHelperService {
     try {
       final response = await http.post(_apiUrl.login,
           body: jsonEncode(body), headers: headers);
+      log(response.body.toString());
       if (response.statusCode == 200) {
         var data = json.decode(response.body);
-        authData = Auth.fromJson(data["data"]);
+        if (data?["success"] == true) {
+          authData = Auth.fromJson(data["data"]);
+        }
         return data;
       } else {
         return {"message": "${response.statusCode} error found"};

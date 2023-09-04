@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
+import 'package:money_plaza/ui/widgets/loading.dart';
 import 'package:stacked/stacked.dart';
 import '../../common/ui_helpers.dart';
 import '../../widgets/common/custom_text_field/custom_text_field.dart';
@@ -15,59 +16,64 @@ class LoginWithEmail extends ViewModelWidget<MemberLoginViewModel> {
     BuildContext context,
     MemberLoginViewModel viewModel,
   ) {
-    return Column(
+    return Stack(
       children: [
-        verticalSpaceSmall,
-        verticalSpaceTiny,
-        CustomTextField(
-          hintText: "email",
-          controller: viewModel.emailCtrl,
-          hintStyle: const TextStyle(fontSize: 14),
-          textAlign: TextAlign.center,
-        ),
-        verticalSpaceTiny,
-        CustomTextField(
-          controller: viewModel.passwordCtrl,
-          hintText: "password",
-          hintStyle: const TextStyle(fontSize: 14),
-          textAlign: TextAlign.center,
-        ),
-        verticalSpaceMedium,
-        SubmitButton(
-          height: 40,
-          width: MediaQuery.of(context).size.width * 0.3,
-          text: "login",
-          fontSize: 16,
-          onPress: () {
-            viewModel.login("email");
-          },
-        ),
-        verticalSpaceMedium,
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+        Column(
           children: [
-            Image.asset(
-              myIcons.logoGoogle,
-              width: 50,
-              height: 50,
+            verticalSpaceSmall,
+            verticalSpaceTiny,
+            CustomTextField(
+              hintText: "email",
+              controller: viewModel.emailCtrl,
+              hintStyle: const TextStyle(fontSize: 14),
+              textAlign: TextAlign.center,
             ),
-            horizontalSpaceMedium,
-            Image.asset(
-              myIcons.facebookLogo,
-              width: 50,
-              height: 50,
+            verticalSpaceTiny,
+            CustomTextField(
+              controller: viewModel.passwordCtrl,
+              hintText: "password",
+              hintStyle: const TextStyle(fontSize: 14),
+              textAlign: TextAlign.center,
             ),
+            verticalSpaceMedium,
+            SubmitButton(
+              height: 40,
+              width: MediaQuery.of(context).size.width * 0.3,
+              text: "login",
+              fontSize: 16,
+              onPress: () {
+                viewModel.login("email");
+              },
+            ),
+            verticalSpaceMedium,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  myIcons.logoGoogle,
+                  width: 50,
+                  height: 50,
+                ),
+                horizontalSpaceMedium,
+                Image.asset(
+                  myIcons.facebookLogo,
+                  width: 50,
+                  height: 50,
+                ),
+              ],
+            ),
+            verticalSpaceMedium,
+            GestureDetector(
+              onTap: viewModel.showResetPassword,
+              child: CustomText(
+                text: "forgetPassword?",
+                fontSize: 16,
+                fontWeight: FontWeight.w400,
+              ),
+            )
           ],
         ),
-        verticalSpaceMedium,
-        GestureDetector(
-          onTap: viewModel.showResetPassword,
-          child: CustomText(
-            text: "forgetPassword?",
-            fontSize: 16,
-            fontWeight: FontWeight.w400,
-          ),
-        )
+        viewModel.isBusy ? Center(child: loading()) : Container(),
       ],
     );
   }

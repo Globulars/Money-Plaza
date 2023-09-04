@@ -78,16 +78,12 @@ MockDialogService getAndRegisterDialogService() {
   return service;
 }
 
-
-
 MockToasterService getAndRegisterToasterService() {
   _removeRegistrationIfExists<ToasterService>();
   final service = MockToasterService();
   locator.registerSingleton<ToasterService>(service);
   return service;
 }
-
-
 
 MockLoanCardService getAndRegisterLoanCardService() {
   _removeRegistrationIfExists<LoanCardService>();
@@ -102,7 +98,6 @@ MockApiHelperService getAndRegisterApiHelperService() {
   locator.registerSingleton<ApiHelperService>(service);
   return service;
 }
-
 
 // @stacked-mock-create
 
