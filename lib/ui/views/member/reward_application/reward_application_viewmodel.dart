@@ -51,7 +51,7 @@ class RewardApplicationViewModel extends BaseViewModel {
 
   Future<List<CompanyByCard>> getCompaniesByType() async {
     var data = await _apiHelperService
-        .getApi(Uri.parse(_apiUrl.getCompaniesByType + typeOfProduct));
+        .getApi(_apiUrl.getCompaniesByType + typeOfProduct);
     if (data?["success"] == true) {
       List dataList = data["data"];
       institutionList =

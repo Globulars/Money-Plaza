@@ -9,7 +9,7 @@ class WidgetViewModel extends BaseViewModel {
   final _apiHelperService = locator<ApiHelperService>();
   BannerImages bannerImages = BannerImages();
   Future<BannerImages> getBannerImages(url) async {
-    var data = await _apiHelperService.getApi(Uri.parse(url));
+    var data = await _apiHelperService.getApi(url);
     if (data?["success"] == true) {
       data = data["data"];
       bannerImages = BannerImages.fromJson(data[0]);

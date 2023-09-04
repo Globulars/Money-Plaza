@@ -109,7 +109,7 @@ class MorgagesViewModel extends BaseViewModel {
   Future<List<BankList>> mortgagesBankListData() async {
     if (bankDataList.isEmpty) {
       var data = await _apiHelperService
-          .getApi(Uri.parse(_apiUrl.getCompaniesByType + "mortgag"));
+          .getApi(_apiUrl.getCompaniesByType + "mortgag");
       if (data?["success"] == true) {
         List dataList = data["data"];
         bankDataList = dataList.map((data) => BankList.fromJson(data)).toList();

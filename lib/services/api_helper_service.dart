@@ -22,8 +22,8 @@ class ApiHelperService {
   /////////////////////////////////////Post////////////////////////////////
   postApi(_url, body) async {
     try {
-      final response =
-          await http.post(_url, body: jsonEncode(body), headers: headers);
+      final response = await http.post(Uri.parse(baseUrl + _url),
+          body: jsonEncode(body), headers: headers);
       if (response.statusCode == 200) {
         var data = json.decode(response.body);
         return data;
@@ -40,7 +40,8 @@ class ApiHelperService {
 
   postAuthApi(_url, body) async {
     try {
-      final response = await http.post(_url, body: jsonEncode(body), headers: {
+      final response = await http
+          .post(Uri.parse(baseUrl + _url), body: jsonEncode(body), headers: {
         "Accept": "application/json",
         "content-type": "application/json",
         "Authorization": "Bearer $accessToken"
@@ -62,7 +63,7 @@ class ApiHelperService {
 
   getAuthApi(_url) async {
     try {
-      final response = await http.get(_url, headers: {
+      final response = await http.get(Uri.parse(baseUrl + _url), headers: {
         "Accept": "application/json",
         "content-type": "application/json",
         "Authorization": "Bearer $accessToken"
@@ -89,7 +90,7 @@ class ApiHelperService {
   multiPartRequest(_url, _body) async {
     var data;
     try {
-      var request = http.MultipartRequest("POST", _url);
+      var request = http.MultipartRequest("POST", Uri.parse(baseUrl + _url));
       request.headers.addAll({
         // "Accept": "multipart/form-data",
         "content-type":
@@ -119,7 +120,8 @@ class ApiHelperService {
   /////////////////////////////////////Get////////////////////////////////
   getApi(_url) async {
     try {
-      final response = await http.get(_url, headers: headers);
+      final response =
+          await http.get(Uri.parse(baseUrl + _url), headers: headers);
       if (response.statusCode == 200) {
         var data = json.decode(response.body);
         return data;
@@ -134,7 +136,7 @@ class ApiHelperService {
 
   login(body) async {
     try {
-      final response = await http.post(_apiUrl.login,
+      final response = await http.post(Uri.parse(_apiUrl.login),
           body: jsonEncode(body), headers: headers);
       log(response.body.toString());
       if (response.statusCode == 200) {

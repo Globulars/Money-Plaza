@@ -137,8 +137,8 @@ class LoanViewModel extends BaseViewModel {
         "numOfMonths": tenorCtrl.text
       };
     }
-    var data = await _apiHelperService.postApi(
-        Uri.parse("$baseUrl/repayment/$calculationType"), body);
+    var data =
+        await _apiHelperService.postApi("{repayment/$calculationType}", body);
     if (data?["success"] == true) {
       var dataList = data["data"];
       if (dataList.isEmpty) {
@@ -278,7 +278,7 @@ class LoanViewModel extends BaseViewModel {
       "interestRate": interestCtrl.text,
       "monthlyRepayment": monthlyPaymentCtrl.text
     };
-    var data = await _apiHelperService.postApi(_apiUrl.loanList,body);
+    var data = await _apiHelperService.postApi(_apiUrl.loanList, body);
     if (data?["success"] == true) {
       List dataList = data["data"]["records"];
       if (dataList.isEmpty) {
@@ -301,7 +301,8 @@ class LoanViewModel extends BaseViewModel {
       "numOfMonths": numOfMonths,
       "interestRate": interestRate
     };
-    var data = await _apiHelperService.postApi(_apiUrl.scheduleByPLoanForRepayment,body);
+    var data = await _apiHelperService.postApi(
+        _apiUrl.scheduleByPLoanForRepayment, body);
     if (data?["success"] == true) {
       return ScheduleLoan.fromJson(data["data"]);
     } else {
@@ -310,7 +311,7 @@ class LoanViewModel extends BaseViewModel {
   }
 
   Future<List<LoanCard>> loanMatch() async {
-    var data = await _apiHelperService.postApi(_apiUrl.loanMatch,loneMachBody);
+    var data = await _apiHelperService.postApi(_apiUrl.loanMatch, loneMachBody);
     if (data?["success"] == true) {
       List dataList = data["data"]["records"];
       if (dataList.isEmpty) {
