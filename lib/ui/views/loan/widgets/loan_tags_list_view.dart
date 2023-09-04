@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:stacked/stacked.dart';
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
@@ -80,7 +79,7 @@ class LoanTagsListView extends ViewModelWidget<LoanViewModel> {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               CustomText(
-                text: '${viewModel.loanCardList.length}',
+                text: '${viewModel.loanCardList.length} ',
                 color: Colors.black,
                 fontSize: 15,
                 fontWeight: FontWeight.w400,

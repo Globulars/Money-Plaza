@@ -30,7 +30,7 @@ class TransferTabBar2 extends ViewModelWidget<BlnstransferViewModel> {
             onChanged: viewModel.setSalaryPayment,
             options: viewModel.salaryPaymentList,
             value: viewModel.salaryPayment,
-            titleText: 'Salary Payment',
+            titleText: 'salaryPayment',
           ),
           verticalSpaceSmall,
           DropdownTextfield(

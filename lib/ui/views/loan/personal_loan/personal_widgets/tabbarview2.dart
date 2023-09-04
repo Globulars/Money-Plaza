@@ -28,7 +28,7 @@ class TabBarView2 extends ViewModelWidget<PersonalloanViewModel> {
             onChanged: viewModel.setSalaryPayment,
             options: viewModel.salaryPaymentList,
             value: viewModel.salaryPayment,
-            titleText: 'Salary Payment',
+            titleText: 'salaryPayment',
           ),
           verticalSpaceSmall,
           DropdownTextfield(
