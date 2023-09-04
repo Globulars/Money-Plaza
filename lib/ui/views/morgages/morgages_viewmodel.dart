@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:money_plaza/app/app.router.dart';
+import 'package:money_plaza/services/api_helper_service.dart';
+import 'package:money_plaza/ui/common/app_url.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import '../../../app/app.locator.dart';
 import '../../../services/Models/list_of_banks.dart';
-import '../../../services/mortgage_service.dart';
-// import '../../../services/toaster_service.dart';
-// import 'package:money_plaza/services/mortgage_service.dart';
 
 class MorgagesViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
   var formKey = GlobalKey<FormState>();
-  // final _dialogService = locator<DialogService>();
-  // final _toasterService = locator<ToasterService>();
-  final _mortgagesService = locator<MortgageService>();
+  final _apiHelperService = locator<ApiHelperService>();
+  final ApiUrl _apiUrl = ApiUrl();
 
   TextEditingController mortgagesPropertyValuationCtrl =
       TextEditingController(text: "10000");
@@ -110,7 +108,8 @@ class MorgagesViewModel extends BaseViewModel {
 
   Future<List<BankList>> mortgagesBankListData() async {
     if (bankDataList.isEmpty) {
-      var data = await _mortgagesService.getCompaniesByType();
+      var data = await _apiHelperService
+          .getApi(Uri.parse(_apiUrl.getCompaniesByType + "mortgag"));
       if (data?["success"] == true) {
         List dataList = data["data"];
         bankDataList = dataList.map((data) => BankList.fromJson(data)).toList();

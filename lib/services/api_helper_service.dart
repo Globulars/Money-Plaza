@@ -24,6 +24,8 @@ class ApiHelperService {
       if (response.statusCode == 200) {
         var data = json.decode(response.body);
         return data;
+      } else if (response.statusCode == 302) {
+        return {"message": "Successful Submittion", "success": true};
       } else {
         return {"message": "${response.statusCode} error found"};
       }
@@ -43,6 +45,8 @@ class ApiHelperService {
       if (response.statusCode == 200) {
         var data = json.decode(response.body);
         return data;
+      } else if (response.statusCode == 302) {
+        return {"message": "Successful Submittion", "success": true};
       } else {
         return {"message": "${response.statusCode} error found"};
       }

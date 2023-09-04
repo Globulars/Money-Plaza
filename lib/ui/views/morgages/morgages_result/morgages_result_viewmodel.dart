@@ -1,17 +1,19 @@
 import 'package:money_plaza/app/app.router.dart';
+import 'package:money_plaza/services/api_helper_service.dart';
 import 'package:money_plaza/services/toaster_service.dart';
+import 'package:money_plaza/ui/common/app_url.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import '../../../../app/app.dialogs.dart';
 import '../../../../app/app.locator.dart';
 import '../../../../services/Models/mortgages_card.dart';
-import '../../../../services/mortgage_service.dart';
 
 class MorgagesResultViewModel extends BaseViewModel {
   final _dialogService = locator<DialogService>();
   final _navigationService = locator<NavigationService>();
-  final _mortgagesService = locator<MortgageService>();
   final _toasterService = locator<ToasterService>();
+  final _apiHelperService = locator<ApiHelperService>();
+  final ApiUrl _apiUrl = ApiUrl();
 
   late List<MortgagesCard> mortgagesCard = [];
   bool selectAll = false;
@@ -59,7 +61,7 @@ class MorgagesResultViewModel extends BaseViewModel {
       "income": mortgagesMonthlyIncome,
       "amount": mortgagesPropertyValuation
     };
-    var data = await _mortgagesService.mortgagesList(body);
+    var data = await _apiHelperService.postApi(_apiUrl.mortgageList, body);
     if (data?["success"] == true) {
       List dataList = data["data"]["records"];
       mortgagesCard =
