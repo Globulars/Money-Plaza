@@ -12,6 +12,12 @@ class LandingView extends StackedView<LandingViewModel> {
   const LandingView({Key? key}) : super(key: key);
 
   @override
+  void onViewModelReady(LandingViewModel viewModel) {
+    viewModel.getAccessToken();
+    super.onViewModelReady(viewModel);
+  }
+
+  @override
   Widget builder(
     BuildContext context,
     LandingViewModel viewModel,

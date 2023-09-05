@@ -1,3 +1,5 @@
+// ignore_for_file: unrelated_type_equality_checks
+
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
@@ -86,7 +88,9 @@ class LandingBody extends ViewModelWidget<LandingViewModel> {
             color: darkGreenHeigh,
             fontSize: 16,
             fontWeight: FontWeight.bold,
-            text: "signUpLogin",
+            text: viewModel.accessToken == "" || viewModel.accessToken.isEmpty
+                ? "signUpLogin"
+                : "memberZone",
             btmimage: myIcons.regularUser,
             imgwidth: 50,
             onPress: viewModel.navigateToMemberLogin,
