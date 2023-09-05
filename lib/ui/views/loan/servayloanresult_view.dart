@@ -36,20 +36,24 @@ class ServayLoanResultView extends StackedView<LoanViewModel> {
           appBar: appBar(context),
           body: Stack(
             children: [
-              SingleChildScrollView(
-                child: Column(
-                  children: [
-                    verticalSpace(70),
-                    const LoanTagsListView(),
-                    LoanListView(),
-                    verticalSpaceLarge,
-                  ],
-                ),
+              Column(
+                children: [
+                  verticalSpace(70),
+                          const LoanTagsListView(),
+                  Expanded(
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          
+                          LoanListView(),
+                          verticalSpaceLarge,
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
-              Container(
-                  height: 70,
-                  color: Colors.white,
-                  child: const FilterBottomBar()),
+              const FilterBottomBar(),
             ],
           ),
         ),
