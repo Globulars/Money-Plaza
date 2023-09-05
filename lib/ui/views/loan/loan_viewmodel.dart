@@ -138,12 +138,13 @@ class LoanViewModel extends BaseViewModel {
       };
     }
     var data =
-        await _apiHelperService.postApi("{repayment/$calculationType}", body);
+        await _apiHelperService.postApi("/repayment/$calculationType", body);
     if (data?["success"] == true) {
       var dataList = data["data"];
       if (dataList.isEmpty) {
         paymentTableMessage = "No data found";
       } else {
+        paymentTableMessage = "";
         paymentTable = InterestCalculator.fromJson(dataList);
       }
       notifyListeners();

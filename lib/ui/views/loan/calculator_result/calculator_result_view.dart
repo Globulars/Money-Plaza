@@ -99,7 +99,9 @@ class CalculatorResultView extends StackedView<LoanViewModel> {
                           verticalSpaceTiny,
                           const CalculatorItems(),
                           viewModel.paymentTable.schedules == null
-                              ? const SizedBox()
+                              ? viewModel.paymentTableMessage == ""
+                                  ? const SizedBox()
+                                  : Text(viewModel.paymentTableMessage)
                               : const CalDataTable(),
                           verticalSpaceLarge
                         ],
