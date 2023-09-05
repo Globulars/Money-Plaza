@@ -28,21 +28,20 @@ class PrivacyPolicyView extends StackedView<PrivacyPolicyViewModel> {
               ),
             ),
           ),
-         bottomBar(
-          Row(
-            children: [
-              ReturnButton(
-                imageLeft: myIcons.returnIcon1,
-                imgwidth: 12,
-                text: 'return',
-                height: 40,
-                width: 80,
-                onPress: viewModel.back,
-              ),
-            ],
+          bottomBar(
+            Row(
+              children: [
+                ReturnButton(
+                  imageLeft: myIcons.returnIcon1,
+                  imgwidth: 12,
+                  text: 'return',
+                  height: 40,
+                  width: 80,
+                  onPress: viewModel.back,
+                ),
+              ],
+            ),
           ),
-        ),
-    
         ],
       ),
     );

@@ -16,7 +16,7 @@ class TermConditionsView extends StackedView<TermConditionsViewModel> {
     TermConditionsViewModel viewModel,
     Widget? child,
   ) {
-   return Scaffold(
+    return Scaffold(
       appBar: appBar(context),
       body: Stack(
         children: [
@@ -28,21 +28,20 @@ class TermConditionsView extends StackedView<TermConditionsViewModel> {
               ),
             ),
           ),
-         bottomBar(
-          Row(
-            children: [
-              ReturnButton(
-                imageLeft: myIcons.returnIcon1,
-                imgwidth: 12,
-                text: 'return',
-                height: 40,
-                width: 80,
-                onPress: viewModel.back,
-              ),
-            ],
+          bottomBar(
+            Row(
+              children: [
+                ReturnButton(
+                  imageLeft: myIcons.returnIcon1,
+                  imgwidth: 12,
+                  text: 'return',
+                  height: 40,
+                  width: 80,
+                  onPress: viewModel.back,
+                ),
+              ],
+            ),
           ),
-        ),
-    
         ],
       ),
     );

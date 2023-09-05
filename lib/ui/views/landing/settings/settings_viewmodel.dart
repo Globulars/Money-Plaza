@@ -25,7 +25,9 @@ class SettingsViewModel extends BaseViewModel {
 
   navigateToPrivacyPolicy() async {
     _navigationService.navigateToPrivacyPolicyView();
-  }  navigateToTermConditionsView() async {
+  }
+
+  navigateToTermConditionsView() async {
     _navigationService.navigateToTermConditionsView();
   }
 
