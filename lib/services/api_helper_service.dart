@@ -136,7 +136,7 @@ class ApiHelperService {
 
   login(body) async {
     try {
-      final response = await http.post(Uri.parse(_apiUrl.login),
+      final response = await http.post(Uri.parse(baseUrl + _apiUrl.login),
           body: jsonEncode(body), headers: headers);
       log(response.body.toString());
       if (response.statusCode == 200) {
