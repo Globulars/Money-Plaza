@@ -126,6 +126,7 @@ class SignUpWithPhone extends StackedView<MemberLoginViewModel> {
               ),
               verticalSpaceTiny,
               Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   CustomTextField(

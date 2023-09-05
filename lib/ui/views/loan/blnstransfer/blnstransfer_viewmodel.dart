@@ -89,7 +89,7 @@ class BlnstransferViewModel extends BaseViewModel {
   }
 
   final repaymentTypeList = [
-    "Personal Loan",
+    "Personal Loans",
     "Property Owner's Loan",
     "Commerical Loans",
     "Revolving Loans",

@@ -11,6 +11,7 @@ class ResetPasswordDialogModel extends BaseViewModel {
   final _toasterService = locator<ToasterService>();
   final _apiHelperService = locator<ApiHelperService>();
   final ApiUrl _apiUrl = ApiUrl();
+   var formKey = GlobalKey<FormState>();
 
   TextEditingController emailCtrl = TextEditingController();
   TextEditingController verifyCode = TextEditingController();
@@ -51,6 +52,9 @@ class ResetPasswordDialogModel extends BaseViewModel {
   }
 
   updatePasswordByEmailCode() async {
+    var isValid = formKey.currentState!.validate();
+    if (isValid) {
+      setBusy(true);
     Map<String, dynamic> body = {
       "code": verifyCode.text,
       "email": emailCtrl.text,
@@ -65,6 +69,7 @@ class ResetPasswordDialogModel extends BaseViewModel {
     } else {
       _toasterService.errorToast(data["message"].toString());
     }
+   }
   }
 
   sendForgetPasswordCodeByMobile() async {
@@ -80,6 +85,8 @@ class ResetPasswordDialogModel extends BaseViewModel {
   }
 
   updatePasswordByMobileCode() async {
+     var isValid = formKey.currentState!.validate();
+    if (isValid) {
     Map<String, dynamic> body = {
       "code": verifyCode.text,
       "email": emailCtrl.text,
@@ -95,4 +102,5 @@ class ResetPasswordDialogModel extends BaseViewModel {
       _toasterService.errorToast(data["message"].toString());
     }
   }
+ }
 }

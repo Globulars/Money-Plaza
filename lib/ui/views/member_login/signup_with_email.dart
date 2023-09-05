@@ -74,6 +74,7 @@ class SignUpWithEmail extends ViewModelWidget<MemberLoginViewModel> {
             ),
             verticalSpaceTiny,
             Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 CustomTextField(
