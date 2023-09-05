@@ -64,7 +64,7 @@ import 'package:money_plaza/ui/views/landing/settings/privacy_policy/privacy_pol
 import 'package:money_plaza/ui/views/survey_form/survey_form_view.dart' as _i20;
 import 'package:money_plaza/ui/views/survey_form/survey_splash_view.dart'
     as _i19;
-import 'package:money_plaza/ui/views/term_conditions/term_conditions_view.dart'
+import 'package:money_plaza/ui/views/landing/settings/term_conditions/term_conditions_view.dart'
     as _i34;
 import 'package:stacked/stacked.dart' as _i1;
 import 'package:stacked_services/stacked_services.dart' as _i37;

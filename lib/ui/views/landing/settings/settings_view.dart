@@ -103,9 +103,12 @@ class SettingsView extends StackedView<SettingsViewModel> {
                       ),
                     ),
                     verticalSpaceSmall,
-                    CustomText(
-                      text: "termsConditions",
-                      fontSize: 18,
+                    InkWell(
+                      onTap: viewModel.navigateToTermConditionsView,
+                      child: CustomText(
+                        text: "termsConditions",
+                        fontSize: 18,
+                      ),
                     ),
                     verticalSpaceSmall,
                     InkWell(
