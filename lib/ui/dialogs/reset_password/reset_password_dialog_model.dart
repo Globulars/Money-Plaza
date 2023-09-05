@@ -45,7 +45,7 @@ class ResetPasswordDialogModel extends BaseViewModel {
         _apiUrl.sendForgetPasswordCodeByEmail, body);
     if (data?["success"] == true) {
       _toasterService.successToast(data["message"]);
-      resetAll();
+      // resetAll();
     } else {
       _toasterService.errorToast(data["message"].toString());
     }
@@ -78,7 +78,7 @@ class ResetPasswordDialogModel extends BaseViewModel {
         _apiUrl.sendForgetPasswordCodeByMobile, body);
     if (data?["success"] == true) {
       _toasterService.successToast(data["message"]);
-      resetAll();
+      // resetAll();
     } else {
       _toasterService.errorToast(data["message"].toString());
     }
