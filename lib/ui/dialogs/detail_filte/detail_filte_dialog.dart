@@ -58,8 +58,6 @@ class DetailFilteDialog extends StackedView<LoanViewModel> {
                   children: [
                     ResultCard(detailPage: 0.17, loanData: loanData),
                     DetailCard1(loanData: loanData),
-                    // const DetailCard2(),
-                    // const DetailCard3(),
                   ],
                 ),
               ),
