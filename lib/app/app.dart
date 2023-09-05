@@ -40,7 +40,7 @@ import 'package:money_plaza/ui/dialogs/detail_filte/detail_filte_dialog.dart';
 import 'package:money_plaza/services/toaster_service.dart';
 import '../ui/views/loan/personal_loan/applyconfirm_view.dart';
 import 'package:money_plaza/services/api_helper_service.dart';
-import 'package:money_plaza/ui/views/privacy_policy/privacy_policy_view.dart';
+import 'package:money_plaza/ui/views/landing/settings/privacy_policy/privacy_policy_view.dart';
 // @stacked-import
 
 @StackedApp(

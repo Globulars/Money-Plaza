@@ -59,7 +59,7 @@ import 'package:money_plaza/ui/views/member_login/member_login_view.dart'
 import 'package:money_plaza/ui/views/morgages/morgages_result/morgages_result_view.dart'
     as _i18;
 import 'package:money_plaza/ui/views/morgages/morgages_view.dart' as _i17;
-import 'package:money_plaza/ui/views/privacy_policy/privacy_policy_view.dart'
+import 'package:money_plaza/ui/views/landing/settings/privacy_policy/privacy_policy_view.dart'
     as _i33;
 import 'package:money_plaza/ui/views/survey_form/survey_form_view.dart' as _i20;
 import 'package:money_plaza/ui/views/survey_form/survey_splash_view.dart'
