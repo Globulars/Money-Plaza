@@ -10,7 +10,6 @@ import '../../../widgets/common/icon_box_btn/return_button.dart';
 import '../../../widgets/common/icon_box_btn/text.dart';
 import '../loan_viewmodel.dart';
 import '../widgets/filter_bottom_bar.dart';
-import '../widgets/loan_tags_list_view.dart';
 import '../widgets/result_card.dart';
 import 'calculator_widgets/calc_items.dart';
 import 'calculator_widgets/data_table.dart';
@@ -28,7 +27,6 @@ class CalculatorResultView extends StackedView<LoanViewModel> {
     viewModel.monthlyPaymentCtrl.text = monthlyPayment;
     viewModel.interestCtrl.text = interest;
     viewModel.loanAmountCtrl.text = loanAmount;
-    viewModel.getLoanTags();
     viewModel.loanListData();
     super.onViewModelReady(viewModel);
   }
@@ -52,7 +50,7 @@ class CalculatorResultView extends StackedView<LoanViewModel> {
               Column(
                 children: [
                   verticalSpace(70.0),
-                  const LoanTagsListView(),
+               
                   Expanded(
                     child: SingleChildScrollView(
                       child: Column(

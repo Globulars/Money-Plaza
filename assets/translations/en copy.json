@@ -216,5 +216,6 @@
   "signUpByMobile": "Sign-up by Mobile",
   "getYourFinancialProducts\nin1minutes!": "Get your Financial Products\nin 1 Minutes!",
   "addLoanRecord": "Add Loan Record",
-  "salaryPayment": "Salary Payment"
+  "salaryPayment": "Salary Payment",
+  "noDataFound": "No Data Found"
 }

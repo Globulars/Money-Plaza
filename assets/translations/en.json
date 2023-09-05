@@ -233,5 +233,6 @@
   "monthlyRepayment2": "Monthly Repayment *",
   "minpay": "Min pay % *",
   "minPayinDollar": "Min pay in dollar *",
-  "salaryPayment": "Salary Payment"
+  "salaryPayment": "Salary Payment",
+  "noDataFound": "No Data Found"
 }

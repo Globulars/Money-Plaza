@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_colors.dart';
+import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import '../../../common/ui_helpers.dart';
@@ -99,7 +100,9 @@ class MorgagesResultView extends StackedView<MorgagesResultViewModel> {
                   : Column(
                       children: [
                         SizedBox(height: height * 0.3),
-                        const CircularProgressIndicator(),
+                        viewModel.mortgagesCardMessage == ""
+                            ? const CircularProgressIndicator()
+                            : CustomText(text: "noDataFound")
                       ],
                     )
             ],

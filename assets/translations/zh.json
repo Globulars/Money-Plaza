@@ -233,5 +233,6 @@
   "monthlyRepayment2": "每月還款額 *",
   "minpay": "最低工資% *",
   "minPayinDollar": "最低工資以美元計算 *",
-  "salaryPayment": "工資支付"
+  "salaryPayment": "工資支付",
+  "noDataFound":"沒有找到數據"
 }

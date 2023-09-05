@@ -1,6 +1,5 @@
 import 'package:money_plaza/app/app.router.dart';
 import 'package:money_plaza/services/api_helper_service.dart';
-import 'package:money_plaza/services/toaster_service.dart';
 import 'package:money_plaza/ui/common/app_url.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
@@ -11,10 +10,9 @@ import '../../../../services/Models/mortgages_card.dart';
 class MorgagesResultViewModel extends BaseViewModel {
   final _dialogService = locator<DialogService>();
   final _navigationService = locator<NavigationService>();
-  final _toasterService = locator<ToasterService>();
   final _apiHelperService = locator<ApiHelperService>();
   final ApiUrl _apiUrl = ApiUrl();
-
+  String mortgagesCardMessage = "";
   late List<MortgagesCard> mortgagesCard = [];
   bool selectAll = false;
   setSelectAll() {
@@ -57,7 +55,7 @@ class MorgagesResultViewModel extends BaseViewModel {
       "tenor": mortgagesTenor,
       "propertyType": typePropertyList,
       "features": [],
-      "companyIds": companyIds, // when we dont pass id filter is work
+      "companyIds": companyIds,
       "income": mortgagesMonthlyIncome,
       "amount": mortgagesPropertyValuation
     };
@@ -66,11 +64,18 @@ class MorgagesResultViewModel extends BaseViewModel {
       List dataList = data["data"]["records"];
       mortgagesCard =
           dataList.map((data) => MortgagesCard.fromJson(data)).toList();
+      if (dataList.isNotEmpty) {
+        mortgagesCardMessage = "";
+      } else {
+        mortgagesCardMessage = "No Data Found";
+      }
       notifyListeners();
       return mortgagesCard;
     } else {
-      _toasterService.errorToast(data["message"].toString());
-      throw Exception(data["message"].toString());
+      mortgagesCardMessage = data["message"].toString();
+
+      notifyListeners();
+      return mortgagesCard;
     }
   }
 }
