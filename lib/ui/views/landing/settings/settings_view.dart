@@ -95,9 +95,13 @@ class SettingsView extends StackedView<SettingsViewModel> {
                       ],
                     ),
                     verticalSpaceSmall,
-                    CustomText(
-                      text: "privacyPolicy",
-                      fontSize: 18,
+                    InkWell(
+                      onTap: viewModel.navigateToPrivacyPolicy,
+                      child: CustomText(
+                        text: "privacyPolicy",
+                        fontSize: 18,
+                        
+                      ),
                     ),
                     verticalSpaceSmall,
                     CustomText(

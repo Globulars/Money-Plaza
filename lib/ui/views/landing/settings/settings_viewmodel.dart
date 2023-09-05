@@ -23,6 +23,10 @@ class SettingsViewModel extends BaseViewModel {
     _navigationService.clearStackAndShowView(const LandingView());
   }
 
+   navigateToPrivacyPolicy() async {
+    _navigationService.navigateToPrivacyPolicyView();
+  }
+
   logOut() async {
     bool accessToken = await Store.deleteUser();
     if (accessToken) {
