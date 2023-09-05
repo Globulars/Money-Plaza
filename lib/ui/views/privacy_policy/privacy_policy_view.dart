@@ -17,7 +17,9 @@ class PrivacyPolicyView extends StackedView<PrivacyPolicyViewModel> {
       backgroundColor: Theme.of(context).colorScheme.background,
       body: Container(
         padding: const EdgeInsets.only(left: 10.0, right: 10.0),
-        child: CustomText(text: viewModel.dat,),
+        child: CustomText(
+          text: viewModel.dat,
+        ),
       ),
     );
   }

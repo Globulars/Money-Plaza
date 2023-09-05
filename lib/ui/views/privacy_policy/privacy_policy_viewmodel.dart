@@ -2,7 +2,7 @@ import 'package:stacked/stacked.dart';
 
 class PrivacyPolicyViewModel extends BaseViewModel {
   var dat =
-    """ <div data-v-70578ed2="" class="row justify-content-center"><div data-v-70578ed2="" class="col-lg-9"><div data-v-70578ed2="" class="row"><div data-v-70578ed2="" class="col-lg-12"><div data-v-70578ed2="" class="privacy-policy-header text-center"><h1 data-v-70578ed2="">
+      """ <div data-v-70578ed2="" class="row justify-content-center"><div data-v-70578ed2="" class="col-lg-9"><div data-v-70578ed2="" class="row"><div data-v-70578ed2="" class="col-lg-12"><div data-v-70578ed2="" class="privacy-policy-header text-center"><h1 data-v-70578ed2="">
                         PRIVACY POLICY
                       </h1></div> <div data-v-70578ed2="" class="privacy-policy-content"><p data-v-70578ed2="">
                         This Statement applies to Money Plaza Hong Kong Limited (“the Company” or “we”) or its subsidiaries from time to time (“the Group”).
@@ -110,5 +110,4 @@ products or facilities or conducting credit reviews from time to time. In the ev
 the data subject wishes to access the credit report, the Company will advise the
 contact details of the relevant credit reference agency.
 </p> <p data-v-70578ed2="">15.In case of discrepancies between the English and Chinese versions, the English version shall prevail.</p></div></div></div></div></div>""";
-
 }

@@ -23,7 +23,7 @@ class SettingsViewModel extends BaseViewModel {
     _navigationService.clearStackAndShowView(const LandingView());
   }
 
-   navigateToPrivacyPolicy() async {
+  navigateToPrivacyPolicy() async {
     _navigationService.navigateToPrivacyPolicyView();
   }
 
