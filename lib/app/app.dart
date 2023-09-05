@@ -41,6 +41,7 @@ import 'package:money_plaza/services/toaster_service.dart';
 import '../ui/views/loan/personal_loan/applyconfirm_view.dart';
 import 'package:money_plaza/services/api_helper_service.dart';
 import 'package:money_plaza/ui/views/landing/settings/privacy_policy/privacy_policy_view.dart';
+import 'package:money_plaza/ui/views/term_conditions/term_conditions_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -78,6 +79,7 @@ import 'package:money_plaza/ui/views/landing/settings/privacy_policy/privacy_pol
     MaterialRoute(page: LoanRecordView),
 
     MaterialRoute(page: PrivacyPolicyView),
+    MaterialRoute(page: TermConditionsView),
 // @stacked-route
   ],
   dependencies: [
