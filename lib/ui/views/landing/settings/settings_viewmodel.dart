@@ -1,5 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:money_plaza/app/app.router.dart';
+import 'package:money_plaza/services/shared_preferences_service.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import '../../../../app/app.locator.dart';
@@ -19,6 +21,13 @@ class SettingsViewModel extends BaseViewModel {
 
   navigateToLanding() async {
     _navigationService.clearStackAndShowView(const LandingView());
+  }
+
+  logOut() async {
+    bool accessToken = await Store.deleteUser();
+    if (accessToken) {
+      _navigationService.navigateToMemberLoginView();
+    }
   }
 
   setEnglishLanguage(BuildContext context) {

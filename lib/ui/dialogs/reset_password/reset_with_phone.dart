@@ -20,7 +20,7 @@ class ResetWithPhone extends StackedView<ResetPasswordDialogModel> {
   ) {
     final width = MediaQuery.of(context).size.width;
     return Form(
-       key: viewModel.formKey,
+      key: viewModel.formKey,
       child: Column(
         children: [
           verticalSpaceSmall,
@@ -29,8 +29,8 @@ class ResetWithPhone extends StackedView<ResetPasswordDialogModel> {
             width: double.infinity,
             decoration: BoxDecoration(
                 color: Colors.white,
-                border:
-                    Border.all(color: darkGreenLight.withOpacity(0.8), width: 1),
+                border: Border.all(
+                    color: darkGreenLight.withOpacity(0.8), width: 1),
                 borderRadius: BorderRadius.circular(5)),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,

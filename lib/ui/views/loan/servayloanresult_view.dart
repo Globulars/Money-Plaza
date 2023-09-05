@@ -39,12 +39,11 @@ class ServayLoanResultView extends StackedView<LoanViewModel> {
               Column(
                 children: [
                   verticalSpace(70),
-                          const LoanTagsListView(),
+                  const LoanTagsListView(),
                   Expanded(
                     child: SingleChildScrollView(
                       child: Column(
                         children: [
-                          
                           LoanListView(),
                           verticalSpaceLarge,
                         ],

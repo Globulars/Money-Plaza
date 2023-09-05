@@ -50,7 +50,6 @@ class CalculatorResultView extends StackedView<LoanViewModel> {
               Column(
                 children: [
                   verticalSpace(70.0),
-               
                   Expanded(
                     child: SingleChildScrollView(
                       child: Column(

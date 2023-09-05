@@ -6,12 +6,12 @@ import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'package:image_picker/image_picker.dart';
 import 'package:money_plaza/services/Models/auth.dart';
+import 'package:money_plaza/services/shared_preferences_service.dart';
 import 'package:money_plaza/ui/common/app_url.dart';
 
 class ApiHelperService {
   Auth authData = Auth();
   final ApiUrl _apiUrl = ApiUrl();
-  String? get accessToken => authData.accessToken;
 
   String? imagePath;
   // final ApiUrl _apiUrl = ApiUrl();
@@ -39,6 +39,7 @@ class ApiHelperService {
   /////////////////////////////////////Post Auth////////////////////////////////
 
   postAuthApi(_url, body) async {
+    String accessToken = await Store.getUser();
     try {
       final response = await http
           .post(Uri.parse(baseUrl + _url), body: jsonEncode(body), headers: {
@@ -62,6 +63,8 @@ class ApiHelperService {
   /////////////////////////////////////Post Auth////////////////////////////////
 
   getAuthApi(_url) async {
+    String accessToken = await Store.getUser();
+
     try {
       final response = await http.get(Uri.parse(baseUrl + _url), headers: {
         "Accept": "application/json",
@@ -88,6 +91,8 @@ class ApiHelperService {
   /////////////////////////////////////Post Auth////////////////////////////////
 
   multiPartRequest(_url, _body) async {
+    String accessToken = await Store.getUser();
+
     var data;
     try {
       var request = http.MultipartRequest("POST", Uri.parse(baseUrl + _url));
@@ -143,6 +148,7 @@ class ApiHelperService {
         var data = json.decode(response.body);
         if (data?["success"] == true) {
           authData = Auth.fromJson(data["data"]);
+          Store.save("accessToken", authData.accessToken.toString());
         }
         return data;
       } else {

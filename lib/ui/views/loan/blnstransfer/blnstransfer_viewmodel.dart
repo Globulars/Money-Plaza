@@ -14,7 +14,7 @@ class BlnstransferViewModel extends BaseViewModel {
 
   final _toasterService = locator<ToasterService>();
   final _navigationService = locator<NavigationService>();
-    final _apiHelperService = locator<ApiHelperService>();
+  final _apiHelperService = locator<ApiHelperService>();
   final ApiUrl _apiUrl = ApiUrl();
   TextEditingController borrowingAmountCtrl =
       TextEditingController(text: "50000");
@@ -291,7 +291,8 @@ class BlnstransferViewModel extends BaseViewModel {
       ];
       survayBody.addAll(applyBody);
       Map<String, dynamic> body = {"result": survayBody};
-      var data = await _apiHelperService.postApi(_apiUrl.balanceTransferSurveyform,body);
+      var data = await _apiHelperService.postApi(
+          _apiUrl.balanceTransferSurveyform, body);
       if (data["success"] == true) {
         _toasterService.successToast(data["message"]);
         navigateToServayLoanResultView(machBody);

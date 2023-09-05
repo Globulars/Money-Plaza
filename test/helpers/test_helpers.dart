@@ -82,8 +82,6 @@ MockToasterService getAndRegisterToasterService() {
   return service;
 }
 
-
-
 MockApiHelperService getAndRegisterApiHelperService() {
   _removeRegistrationIfExists<ApiHelperService>();
   final service = MockApiHelperService();
