@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/views/loan/loan_viewmodel.dart';
-import 'package:stacked/stacked.dart';
 import '../../../../services/Models/loan_card.dart';
+import 'package:flutter/material.dart';
+import 'package:stacked/stacked.dart';
 import 'card_1_table.dart';
 
 class DetailCard1 extends ViewModelWidget<LoanViewModel> {
@@ -20,7 +20,6 @@ class DetailCard1 extends ViewModelWidget<LoanViewModel> {
           padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 0),
           child: Column(
             children: [
-              // CustomText(text: loanData.detail.toString()),
               WebViewHtml(
                 url: loanData.detail.toString(),
               )
