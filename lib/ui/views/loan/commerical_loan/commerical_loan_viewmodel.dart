@@ -14,21 +14,19 @@ class CommericalLoanViewModel extends BaseViewModel {
   final ApiUrl _apiUrl = ApiUrl();
   var formKey = GlobalKey<FormState>();
 
-  TextEditingController borrowingAmountCtrl = TextEditingController(text: "");
-  TextEditingController annualTurnoverCtrl = TextEditingController(text: "");
-  TextEditingController digitalPaymentCtrl = TextEditingController(text: "");
-  TextEditingController companyNameCtrl = TextEditingController(text: "");
-  TextEditingController futureReceivableAmountCtrl =
-      TextEditingController(text: "");
-  TextEditingController operationYearCtrl = TextEditingController(text: "");
-  TextEditingController numOfLoansCtrl = TextEditingController(text: "");
-  TextEditingController totalOutstandingLoanCtrl =
-      TextEditingController(text: "");
-  TextEditingController monthlyRepaymentCtrl = TextEditingController(text: "");
-  TextEditingController fullNameCtrl = TextEditingController(text: "");
-  TextEditingController phoneNumberCtrl = TextEditingController(text: "");
-  TextEditingController emailCtrl = TextEditingController(text: "");
-  TextEditingController hkidCtrl = TextEditingController(text: "");
+  TextEditingController borrowingAmountCtrl = TextEditingController();
+  TextEditingController annualTurnoverCtrl = TextEditingController();
+  TextEditingController digitalPaymentCtrl = TextEditingController();
+  TextEditingController companyNameCtrl = TextEditingController();
+  TextEditingController futureReceivableAmountCtrl = TextEditingController();
+  TextEditingController operationYearCtrl = TextEditingController();
+  TextEditingController numOfLoansCtrl = TextEditingController();
+  TextEditingController totalOutstandingLoanCtrl = TextEditingController();
+  TextEditingController monthlyRepaymentCtrl = TextEditingController();
+  TextEditingController fullNameCtrl = TextEditingController();
+  TextEditingController phoneNumberCtrl = TextEditingController();
+  TextEditingController emailCtrl = TextEditingController();
+  TextEditingController hkidCtrl = TextEditingController();
   String loanReason = "businessExpansion";
   String propertyOwner = "have";
   String businessNature = "businessService";
@@ -36,7 +34,7 @@ class CommericalLoanViewModel extends BaseViewModel {
   String audioReport = "have";
 
   final loanReasonList = [
-     "businessExpansion",
+    "businessExpansion",
     "carPurchase",
     "creditCardRepayment",
     "debtConsolidation",
@@ -91,7 +89,7 @@ class CommericalLoanViewModel extends BaseViewModel {
   }
 
   final posSystemEquipmentrList = [
-   "have",
+    "have",
     "no",
   ];
   setPosSystemEquipment(value) {
@@ -135,18 +133,18 @@ class CommericalLoanViewModel extends BaseViewModel {
 
   navigateToApplyconfirm() {
     _navigationService.navigateToCommericalApplyConfirmView(machBody: {
-      "amount": borrowingAmountCtrl.text,
+      "amount": _apiHelperService.removeComa(borrowingAmountCtrl.text),
       "tenor": loanTenors,
       "type": "commercial_loan",
-      "income": borrowingAmountCtrl.text,
-      "currentTotalLoanAmount": totalOutstandingLoanCtrl.text,
-      "monthlyRepayment": monthlyRepaymentCtrl.text,
+      "income": _apiHelperService.removeComa(borrowingAmountCtrl.text),
+      "currentTotalLoanAmount": _apiHelperService.removeComa(totalOutstandingLoanCtrl.text),
+      "monthlyRepayment": _apiHelperService.removeComa(monthlyRepaymentCtrl.text),
       "pol": true
     }, survayBody: [
       {
         "fieldName": "amount",
         "fieldTitle": "借貸金額",
-        "fieldValue": borrowingAmountCtrl.text,
+        "fieldValue": _apiHelperService.removeComa(borrowingAmountCtrl.text),
         "fieldType": "text",
         "fieldOrder": "",
         "fieldAttrs": []
@@ -218,7 +216,7 @@ class CommericalLoanViewModel extends BaseViewModel {
       {
         "fieldName": "remainingLoans",
         "fieldTitle": "貸款數量",
-        "fieldValue": numOfLoansCtrl.text,
+        "fieldValue": _apiHelperService.removeComa(annualTurnoverCtrl.text),
         "fieldType": "totalLoanCount",
         "fieldOrder": "",
         "fieldAttrs": []
@@ -226,7 +224,7 @@ class CommericalLoanViewModel extends BaseViewModel {
       {
         "fieldName": "remainingLoanAmount",
         "fieldTitle": "未償還貸款總額",
-        "fieldValue": totalOutstandingLoanCtrl.text,
+        "fieldValue": _apiHelperService.removeComa(totalOutstandingLoanCtrl.text),
         "fieldType": "remainingLoanAmount",
         "fieldOrder": "",
         "fieldAttrs": []
@@ -234,7 +232,7 @@ class CommericalLoanViewModel extends BaseViewModel {
       {
         "fieldName": "monthlyRepayment",
         "fieldTitle": "每月還款",
-        "fieldValue": monthlyRepaymentCtrl.text,
+        "fieldValue": _apiHelperService.removeComa(monthlyRepaymentCtrl.text),
         "fieldType": "monthlyRepayment",
         "fieldOrder": "",
         "fieldAttrs": []

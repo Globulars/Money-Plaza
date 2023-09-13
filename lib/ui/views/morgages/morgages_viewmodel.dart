@@ -14,12 +14,10 @@ class MorgagesViewModel extends BaseViewModel {
   final ApiUrl _apiUrl = ApiUrl();
 
   TextEditingController mortgagesPropertyValuationCtrl =
-      TextEditingController(text: "");
-  TextEditingController mortgagesValueRatioCtrl =
-      TextEditingController(text: "");
-  TextEditingController mortgagesTenorCtrl = TextEditingController(text: "");
-  TextEditingController mortgagesMonthlyIncomeCtrl =
-      TextEditingController(text: "");
+      TextEditingController();
+  TextEditingController mortgagesValueRatioCtrl = TextEditingController();
+  TextEditingController mortgagesTenorCtrl = TextEditingController();
+  TextEditingController mortgagesMonthlyIncomeCtrl = TextEditingController();
 
   String mortgages = "newOwnerMortgagesTransfer";
   String mortgagesForApi = "first_sub_mortgage";
@@ -92,9 +90,9 @@ class MorgagesViewModel extends BaseViewModel {
     var isValid = formKey.currentState!.validate();
     if (isValid) {
       _navigationService.navigateToMorgagesResultView(
-          mortgagesPropertyValuation: mortgagesPropertyValuationCtrl.text,
-          mortgagesValueRatio: mortgagesValueRatioCtrl.text,
-          mortgagesTenor: mortgagesTenorCtrl.text,
+          mortgagesPropertyValuation: _apiHelperService.removeComa(mortgagesPropertyValuationCtrl.text),
+          mortgagesValueRatio: _apiHelperService.removeComa(mortgagesValueRatioCtrl.text),
+          mortgagesTenor: _apiHelperService.removeComa(mortgagesTenorCtrl.text),
           mortgagesMonthlyIncome: mortgagesMonthlyIncomeCtrl.text,
           mortgageList: [mortgagesForApi],
           typePropertyList: [typeOfProperty],

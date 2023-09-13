@@ -14,19 +14,18 @@ class OwnerloanViewModel extends BaseViewModel {
   final ApiUrl _apiUrl = ApiUrl();
   var formKey = GlobalKey<FormState>();
 
-  TextEditingController borrowingAmountCtrl = TextEditingController(text: "");
-  TextEditingController monthlyIncomeCtrl = TextEditingController(text: "");
-  TextEditingController numOfLoansCtrl = TextEditingController(text: "");
+  TextEditingController borrowingAmountCtrl = TextEditingController();
+  TextEditingController monthlyIncomeCtrl = TextEditingController();
+  TextEditingController numOfLoansCtrl = TextEditingController();
   TextEditingController totalOutstandingLoanCtrl =
       TextEditingController(text: "0");
-  TextEditingController monthlyRepaymentCtrl = TextEditingController(text: "");
-  TextEditingController propertyValuationCtrl = TextEditingController(text: "");
-  TextEditingController currentMortgageRatioCtrl =
-      TextEditingController(text: "");
-  TextEditingController fullNameCtrl = TextEditingController(text: "");
-  TextEditingController phoneNumberCtrl = TextEditingController(text: "");
-  TextEditingController emailCtrl = TextEditingController(text: "");
-  TextEditingController hkidCtrl = TextEditingController(text: "");
+  TextEditingController monthlyRepaymentCtrl = TextEditingController();
+  TextEditingController propertyValuationCtrl = TextEditingController();
+  TextEditingController currentMortgageRatioCtrl = TextEditingController();
+  TextEditingController fullNameCtrl = TextEditingController();
+  TextEditingController phoneNumberCtrl = TextEditingController();
+  TextEditingController emailCtrl = TextEditingController();
+  TextEditingController hkidCtrl = TextEditingController();
 
   String loanReason = "businessExpansion";
   String propertyOwner = "have";
@@ -105,18 +104,18 @@ class OwnerloanViewModel extends BaseViewModel {
 
   navigateToOwnerApplyConfirmView() {
     _navigationService.navigateToOwnerApplyConfirmView(machBody: {
-      "amount": borrowingAmountCtrl.text,
+      "amount": _apiHelperService.removeComa(borrowingAmountCtrl.text),
       "tenor": loanTenors,
       "type": "owner_private_loan",
-      "income": monthlyIncomeCtrl.text,
+      "income": _apiHelperService.removeComa(monthlyIncomeCtrl.text),
       "currentTotalLoanAmount": totalOutstandingLoanCtrl.text,
-      "monthlyRepayment": monthlyRepaymentCtrl.text,
+      "monthlyRepayment": _apiHelperService.removeComa(monthlyRepaymentCtrl.text),
       "pol": true
     }, survayBody: [
       {
         "fieldName": "amount",
         "fieldTitle": "借貸金額",
-        "fieldValue": borrowingAmountCtrl.text,
+        "fieldValue": _apiHelperService.removeComa(borrowingAmountCtrl.text),
         "fieldType": "text",
         "fieldOrder": "",
         "fieldAttrs": []
@@ -140,7 +139,7 @@ class OwnerloanViewModel extends BaseViewModel {
       {
         "fieldName": "income",
         "fieldTitle": "每月收入",
-        "fieldValue": monthlyIncomeCtrl.text,
+        "fieldValue": _apiHelperService.removeComa(monthlyIncomeCtrl.text),
         "fieldType": "text",
         "fieldOrder": "",
         "fieldAttrs": []
@@ -180,7 +179,7 @@ class OwnerloanViewModel extends BaseViewModel {
       {
         "fieldName": "remainingLoans",
         "fieldTitle": "貸款數量",
-        "fieldValue": numOfLoansCtrl.text,
+        "fieldValue": _apiHelperService.removeComa(numOfLoansCtrl.text),
         "fieldType": "totalLoanCount",
         "fieldOrder": "",
         "fieldAttrs": []
@@ -196,7 +195,7 @@ class OwnerloanViewModel extends BaseViewModel {
       {
         "fieldName": "monthlyRepayment",
         "fieldTitle": "每月還款",
-        "fieldValue": monthlyRepaymentCtrl.text,
+        "fieldValue": _apiHelperService.removeComa(monthlyRepaymentCtrl.text),
         "fieldType": "monthlyRepayment",
         "fieldOrder": "",
         "fieldAttrs": []

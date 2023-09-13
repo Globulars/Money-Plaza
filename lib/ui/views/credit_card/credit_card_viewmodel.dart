@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:money_plaza/app/app.router.dart';
+import 'package:money_plaza/services/api_helper_service.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import '../../../app/app.locator.dart';
@@ -7,14 +8,15 @@ import '../../../app/app.locator.dart';
 class CreditCardViewModel extends BaseViewModel {
   var formKey = GlobalKey<FormState>();
   final _navigationService = locator<NavigationService>();
+  final _apiHelperService = locator<ApiHelperService>();
+
   // final _toasterService = locator<ToasterService>();
 
   String cardProvider = "visa";
   String cardType = "personal";
   String financialInstitutes = "dBSBankHongKong";
   String financialInstitutesValue = "53";
-  final TextEditingController annualIncomeCtrl =
-      TextEditingController(text: "");
+  final TextEditingController annualIncomeCtrl = TextEditingController();
   List<String> cardProviderList = [
     "visa",
     "master",
@@ -72,7 +74,7 @@ class CreditCardViewModel extends BaseViewModel {
     var isValid = formKey.currentState!.validate();
     if (isValid) {
       _navigationService.navigateToCreditResultView(
-        annualIncome: annualIncomeCtrl.text,
+        annualIncome: _apiHelperService.removeComa(annualIncomeCtrl.text),
         issuersList: [cardProvider],
         typesList: [cardType],
         financialInstitutesList: _financialInstitutesValue,

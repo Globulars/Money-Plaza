@@ -35,9 +35,9 @@ class LoanViewModel extends BaseViewModel {
   var calculation = 0;
   var calculationitem = 0;
 
-  TextEditingController loanAmountCtrl = TextEditingController(text: "");
-  TextEditingController monthlyPaymentCtrl = TextEditingController(text: "");
-  TextEditingController interestCtrl = TextEditingController(text: "");
+  TextEditingController loanAmountCtrl = TextEditingController();
+  TextEditingController monthlyPaymentCtrl = TextEditingController();
+  TextEditingController interestCtrl = TextEditingController();
 
   setRepayment(value) {
     repayment = value;
@@ -70,9 +70,9 @@ class LoanViewModel extends BaseViewModel {
         back();
       }
       _navigationService.navigateToCalculatorResultView(
-        loanAmount: loanAmountCtrl.text,
-        monthlyPayment: monthlyPaymentCtrl.text,
-        interest: interestCtrl.text,
+        loanAmount: _apiHelperService.removeComa(loanAmountCtrl.text),
+        monthlyPayment: _apiHelperService.removeComa(monthlyPaymentCtrl.text),
+        interest: _apiHelperService.removeComa(interestCtrl.text),
       );
 
       notifyListeners();
@@ -98,15 +98,13 @@ class LoanViewModel extends BaseViewModel {
   }
 
   /////////////////// calculator result//////////////////
-  TextEditingController borrowingAmountCtrl = TextEditingController(text: "");
-  TextEditingController aprCtrl = TextEditingController(text: "");
+  TextEditingController borrowingAmountCtrl = TextEditingController();
+  TextEditingController aprCtrl = TextEditingController();
 
-  TextEditingController tenorCtrl = TextEditingController(text: "");
-  TextEditingController monthyRepaymentAmountCtrl =
-      TextEditingController(text: "");
-  TextEditingController totalPaymentAmountCtrl =
-      TextEditingController(text: "");
-  TextEditingController totalInterestCtrl = TextEditingController(text: "");
+  TextEditingController tenorCtrl = TextEditingController();
+  TextEditingController monthyRepaymentAmountCtrl = TextEditingController();
+  TextEditingController totalPaymentAmountCtrl = TextEditingController();
+  TextEditingController totalInterestCtrl = TextEditingController();
 
   Future<InterestCalculator> recalculate() async {
     setBusy(true);
@@ -115,23 +113,25 @@ class LoanViewModel extends BaseViewModel {
     if (calculationitem == 0) {
       calculationType = "scheduleByPLoanForTenor";
       body = {
-        "amount": borrowingAmountCtrl.text,
-        "interestRate": interestCtrl.text,
-        "monthlyRepayment": monthlyPaymentCtrl.text
+        "amount": _apiHelperService.removeComa(borrowingAmountCtrl.text),
+        "interestRate": _apiHelperService.removeComa(interestCtrl.text),
+        "monthlyRepayment":
+            _apiHelperService.removeComa(monthlyPaymentCtrl.text)
       };
     } else if (calculationitem == 1) {
       calculationType = "scheduleByPLoanForInterestRate";
       body = {
-        "amount": borrowingAmountCtrl.text,
-        "monthlyRepayment": monthlyPaymentCtrl.text,
-        "numOfMonths": tenorCtrl.text
+        "amount": _apiHelperService.removeComa(borrowingAmountCtrl.text),
+        "monthlyRepayment":
+            _apiHelperService.removeComa(monthlyPaymentCtrl.text),
+        "numOfMonths": _apiHelperService.removeComa(tenorCtrl.text)
       };
     } else if (calculationitem == 2) {
       calculationType = "scheduleByPLoanForRepayment";
       body = {
-        "amount": borrowingAmountCtrl.text,
-        "interestRate": interestCtrl.text,
-        "numOfMonths": tenorCtrl.text
+        "amount": _apiHelperService.removeComa(borrowingAmountCtrl.text),
+        "interestRate": _apiHelperService.removeComa(interestCtrl.text),
+        "numOfMonths": _apiHelperService.removeComa(tenorCtrl.text)
       };
     }
     var data =
@@ -252,7 +252,7 @@ class LoanViewModel extends BaseViewModel {
   }
 
   filterData(_loanAmount, _repaymentType, _repaymentPeriod) {
-    loanAmountCtrl = _loanAmount;
+    loanAmountCtrl.text = _loanAmount;
     repaymentType = _repaymentType;
     repaymentPeriod = _repaymentPeriod;
     loanListData();
@@ -263,7 +263,7 @@ class LoanViewModel extends BaseViewModel {
       "order": "descending",
       "sort": "ordering",
       "tenor": repaymentPeriod,
-      "amount": loanAmountCtrl.text,
+      "amount": _apiHelperService.removeComa(loanAmountCtrl.text),
       "features": features,
       "calculateMethod": repaymentType == 0
           ? "PLoan"
@@ -273,8 +273,8 @@ class LoanViewModel extends BaseViewModel {
                   ? "InterestOnly"
                   : "PrepaidInterest",
       "search": "",
-      "interestRate": interestCtrl.text,
-      "monthlyRepayment": monthlyPaymentCtrl.text
+      "interestRate": _apiHelperService.removeComa(interestCtrl.text),
+      "monthlyRepayment": _apiHelperService.removeComa(monthlyPaymentCtrl.text)
     };
     var data = await _apiHelperService.postApi(_apiUrl.loanList, body);
     if (data?["success"] == true) {

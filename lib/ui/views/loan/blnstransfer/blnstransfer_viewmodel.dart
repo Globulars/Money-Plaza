@@ -16,18 +16,17 @@ class BlnstransferViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
   final _apiHelperService = locator<ApiHelperService>();
   final ApiUrl _apiUrl = ApiUrl();
-  TextEditingController borrowingAmountCtrl = TextEditingController(text: "");
-  TextEditingController monthlyIncomeCtrl = TextEditingController(text: "");
-  TextEditingController companyNameCtrl = TextEditingController(text: "");
-  TextEditingController totalOutstandingLoanCtrl =
-      TextEditingController(text: "");
-  TextEditingController tenorCtrl = TextEditingController(text: "");
-  TextEditingController remainigTenorCtrl = TextEditingController(text: "");
-  TextEditingController monthlyRepaymentCtrl = TextEditingController(text: "");
-  TextEditingController fullNameCtrl = TextEditingController(text: "");
-  TextEditingController phoneNumberCtrl = TextEditingController(text: "");
-  TextEditingController emailCtrl = TextEditingController(text: "");
-  TextEditingController hkidCtrl = TextEditingController(text: "");
+  TextEditingController borrowingAmountCtrl = TextEditingController();
+  TextEditingController monthlyIncomeCtrl = TextEditingController();
+  TextEditingController companyNameCtrl = TextEditingController();
+  TextEditingController totalOutstandingLoanCtrl = TextEditingController();
+  TextEditingController tenorCtrl = TextEditingController();
+  TextEditingController remainigTenorCtrl = TextEditingController();
+  TextEditingController monthlyRepaymentCtrl = TextEditingController();
+  TextEditingController fullNameCtrl = TextEditingController();
+  TextEditingController phoneNumberCtrl = TextEditingController();
+  TextEditingController emailCtrl = TextEditingController();
+  TextEditingController hkidCtrl = TextEditingController();
 
   String loanReason = "businessExpansion";
   String propertyOwner = "have";
@@ -55,7 +54,7 @@ class BlnstransferViewModel extends BaseViewModel {
   }
 
   final loanReasonList = [
-     "businessExpansion",
+    "businessExpansion",
     "carPurchase",
     "creditCardRepayment",
     "debtConsolidation",
@@ -73,7 +72,7 @@ class BlnstransferViewModel extends BaseViewModel {
   }
 
   final propertyOwnerList = [
-     "have",
+    "have",
     "no",
   ];
   setPropertyOwner(value) {
@@ -122,18 +121,18 @@ class BlnstransferViewModel extends BaseViewModel {
 
   navigateToApplyconfirm() {
     _navigationService.navigateToBlnstransferloanApplyConfirmView(machBody: {
-      "amount": borrowingAmountCtrl.text,
+      "amount": _apiHelperService.removeComa(borrowingAmountCtrl.text),
       "tenor": loanTenors,
       "type": "balance_transfer",
-      "income": monthlyIncomeCtrl.text,
-      "currentTotalLoanAmount": totalOutstandingLoanCtrl.text,
-      "monthlyRepayment": monthlyRepaymentCtrl.text,
+      "income": _apiHelperService.removeComa(monthlyIncomeCtrl.text),
+      "currentTotalLoanAmount": _apiHelperService.removeComa(totalOutstandingLoanCtrl.text),
+      "monthlyRepayment": _apiHelperService.removeComa(monthlyRepaymentCtrl.text),
       "pol": true
     }, survayBody: [
       {
         "fieldName": "amount",
         "fieldTitle": "借貸金額",
-        "fieldValue": borrowingAmountCtrl.text,
+        "fieldValue": _apiHelperService.removeComa(borrowingAmountCtrl.text),
         "fieldType": "text",
         "fieldOrder": "",
         "fieldAttrs": []
@@ -165,7 +164,7 @@ class BlnstransferViewModel extends BaseViewModel {
       {
         "fieldName": "income",
         "fieldTitle": "每月收入",
-        "fieldValue": monthlyIncomeCtrl.text,
+        "fieldValue": _apiHelperService.removeComa(monthlyIncomeCtrl.text),
         "fieldType": "text",
         "fieldOrder": "",
         "fieldAttrs": []
@@ -213,7 +212,7 @@ class BlnstransferViewModel extends BaseViewModel {
       {
         "fieldName": "remainingLoanAmount",
         "fieldTitle": "未償還貸款總額",
-        "fieldValue": totalOutstandingLoanCtrl.text,
+        "fieldValue": _apiHelperService.removeComa(totalOutstandingLoanCtrl.text),
         "fieldType": "remainingLoanAmount",
         "fieldOrder": "",
         "fieldAttrs": []
@@ -221,7 +220,7 @@ class BlnstransferViewModel extends BaseViewModel {
       {
         "fieldName": "monthlyRepayment",
         "fieldTitle": "每月還款",
-        "fieldValue": monthlyRepaymentCtrl.text,
+        "fieldValue": _apiHelperService.removeComa(monthlyRepaymentCtrl.text),
         "fieldType": "monthlyRepayment",
         "fieldOrder": "",
         "fieldAttrs": []

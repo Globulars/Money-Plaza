@@ -13,16 +13,15 @@ class PersonalloanViewModel extends BaseViewModel {
   var formKey = GlobalKey<FormState>();
   final _apiHelperService = locator<ApiHelperService>();
   final ApiUrl _apiUrl = ApiUrl();
-  TextEditingController borrowingAmountCtrl = TextEditingController(text: "");
-  TextEditingController monthlyIncomeCtrl = TextEditingController(text: "");
-  TextEditingController numOfLoansCtrl = TextEditingController(text: "");
-  TextEditingController totalOutstandingLoanCtrl =
-      TextEditingController(text: "");
-  TextEditingController monthlyRepaymentCtrl = TextEditingController(text: "");
-  TextEditingController fullNameCtrl = TextEditingController(text: "");
-  TextEditingController phoneNumberCtrl = TextEditingController(text: "");
-  TextEditingController emailCtrl = TextEditingController(text: "");
-  TextEditingController hkidCtrl = TextEditingController(text: "");
+  TextEditingController borrowingAmountCtrl = TextEditingController();
+  TextEditingController monthlyIncomeCtrl = TextEditingController();
+  TextEditingController numOfLoansCtrl = TextEditingController();
+  TextEditingController totalOutstandingLoanCtrl = TextEditingController();
+  TextEditingController monthlyRepaymentCtrl = TextEditingController();
+  TextEditingController fullNameCtrl = TextEditingController();
+  TextEditingController phoneNumberCtrl = TextEditingController();
+  TextEditingController emailCtrl = TextEditingController();
+  TextEditingController hkidCtrl = TextEditingController();
   String loanReason = "businessExpansion";
   String propertyOwner = "have";
   String salaryPayment = "cash";
@@ -95,18 +94,18 @@ class PersonalloanViewModel extends BaseViewModel {
 
   navigateToApplyconfirm() {
     _navigationService.navigateToPersonalloanApplyConfirmView(machBody: {
-      "amount": borrowingAmountCtrl.text,
+      "amount": _apiHelperService.removeComa(borrowingAmountCtrl.text),
       "tenor": loanTenors,
       "type": "personal_loan",
-      "income": monthlyIncomeCtrl.text,
-      "currentTotalLoanAmount": totalOutstandingLoanCtrl.text,
-      "monthlyRepayment": monthlyRepaymentCtrl.text,
+      "income": _apiHelperService.removeComa(monthlyIncomeCtrl.text),
+      "currentTotalLoanAmount": _apiHelperService.removeComa(totalOutstandingLoanCtrl.text),
+      "monthlyRepayment": _apiHelperService.removeComa(monthlyRepaymentCtrl.text),
       "pol": true
     }, survayBody: [
       {
         "fieldName": "amount",
         "fieldTitle": "借貸金額",
-        "fieldValue": borrowingAmountCtrl.text,
+        "fieldValue": _apiHelperService.removeComa(borrowingAmountCtrl.text),
         "fieldType": "text",
         "fieldOrder": "",
         "fieldAttrs": []
@@ -130,7 +129,7 @@ class PersonalloanViewModel extends BaseViewModel {
       {
         "fieldName": "income",
         "fieldTitle": "每月收入",
-        "fieldValue": monthlyIncomeCtrl.text,
+        "fieldValue": _apiHelperService.removeComa(monthlyIncomeCtrl.text),
         "fieldType": "text",
         "fieldOrder": "",
         "fieldAttrs": []
@@ -170,7 +169,7 @@ class PersonalloanViewModel extends BaseViewModel {
       {
         "fieldName": "remainingLoans",
         "fieldTitle": "貸款數量",
-        "fieldValue": numOfLoansCtrl.text,
+        "fieldValue": _apiHelperService.removeComa(numOfLoansCtrl.text),
         "fieldType": "totalLoanCount",
         "fieldOrder": "",
         "fieldAttrs": []
@@ -178,7 +177,7 @@ class PersonalloanViewModel extends BaseViewModel {
       {
         "fieldName": "remainingLoanAmount",
         "fieldTitle": "未償還貸款總額",
-        "fieldValue": totalOutstandingLoanCtrl.text,
+        "fieldValue": _apiHelperService.removeComa(totalOutstandingLoanCtrl.text),
         "fieldType": "remainingLoanAmount",
         "fieldOrder": "",
         "fieldAttrs": []
@@ -186,7 +185,7 @@ class PersonalloanViewModel extends BaseViewModel {
       {
         "fieldName": "monthlyRepayment",
         "fieldTitle": "每月還款",
-        "fieldValue": monthlyRepaymentCtrl.text,
+        "fieldValue": _apiHelperService.removeComa(monthlyRepaymentCtrl.text),
         "fieldType": "monthlyRepayment",
         "fieldOrder": "",
         "fieldAttrs": []

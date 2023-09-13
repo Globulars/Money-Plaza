@@ -7,10 +7,10 @@ import '../../../../app/app.locator.dart';
 class ApplyconfirmViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
 
-  TextEditingController fullNameCtrl = TextEditingController(text: "");
-  TextEditingController phoneNumberCtrl = TextEditingController(text: "");
-  TextEditingController emailCtrl = TextEditingController(text: "");
-  TextEditingController hkidCtrl = TextEditingController(text: "");
+  TextEditingController fullNameCtrl = TextEditingController();
+  TextEditingController phoneNumberCtrl = TextEditingController();
+  TextEditingController emailCtrl = TextEditingController();
+  TextEditingController hkidCtrl = TextEditingController();
 
   navigateToPloanreslut() {
     _navigationService.navigateToPloanreslutView();

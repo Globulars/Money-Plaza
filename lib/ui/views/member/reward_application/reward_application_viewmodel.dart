@@ -20,7 +20,7 @@ class RewardApplicationViewModel extends BaseViewModel {
   String typeOfProduct = "loan";
   CompanyByCard? institution;
   RewardDetails? rewardDetails;
-  TextEditingController referenceNumberCtrl = TextEditingController(text: "");
+  TextEditingController referenceNumberCtrl = TextEditingController();
 
   final typeOfProductList = [
     "loan",

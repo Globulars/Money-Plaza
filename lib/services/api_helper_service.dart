@@ -158,4 +158,8 @@ class ApiHelperService {
       return {"message": e};
     }
   }
+
+  removeComa(e) {
+    return e.replaceAll(',', '').toString();
+  }
 }
