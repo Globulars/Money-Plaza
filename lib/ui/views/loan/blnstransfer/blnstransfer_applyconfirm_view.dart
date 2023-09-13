@@ -57,17 +57,20 @@ class BlnstransferloanApplyConfirmView
                           CustomText(text: 'enterFollowingInformation'),
                           verticalSpaceTiny,
                           CustomTextField(
+                             number: false,
                             titleText: 'fullName',
                             controller: viewModel.fullNameCtrl,
                           ),
                           verticalSpaceTiny,
                           CustomTextField(
+                             number: false,
                             controller: viewModel.phoneNumberCtrl,
                             textInputType: TextInputType.number,
                             titleText: 'phoneNumber',
                           ),
                           verticalSpaceTiny,
                           CustomTextField(
+                             number: false,
                             controller: viewModel.emailCtrl,
                             titleText: 'email',
                           ),

@@ -87,6 +87,7 @@ class ResetWithPhone extends StackedView<ResetPasswordDialogModel> {
                 ),
               ),
               CustomTextField(
+                 number: false,
                 width: width * 0.51,
                 hintText: "verificationCode",
                 controller: viewModel.verifyCode,
@@ -97,6 +98,7 @@ class ResetWithPhone extends StackedView<ResetPasswordDialogModel> {
           ),
           verticalSpaceTiny,
           CustomTextField(
+             number: false,
             hintText: "enterPassword",
             controller: viewModel.passwordCtrl,
             hintStyle: const TextStyle(fontSize: 16),
@@ -104,6 +106,7 @@ class ResetWithPhone extends StackedView<ResetPasswordDialogModel> {
           ),
           verticalSpaceTiny,
           CustomTextField(
+             number: false,
             hintText: "confirmPassword",
             controller: viewModel.confirmPasswordCtrl,
             hintStyle: const TextStyle(fontSize: 16),

@@ -28,6 +28,7 @@ class ResetWithEmail extends StackedView<ResetPasswordDialogModel> {
             controller: viewModel.emailCtrl,
             hintStyle: const TextStyle(fontSize: 16),
             textAlign: TextAlign.center,
+             number: false,
           ),
           verticalSpaceTiny,
           Row(
@@ -52,11 +53,13 @@ class ResetWithEmail extends StackedView<ResetPasswordDialogModel> {
                 hintText: "verificationCode",
                 hintStyle: const TextStyle(),
                 textAlign: TextAlign.center,
+                 number: false,
               ),
             ],
           ),
           verticalSpaceTiny,
           CustomTextField(
+             number: false,
             hintText: "enterPassword",
             controller: viewModel.passwordCtrl,
             hintStyle: const TextStyle(fontSize: 16),
@@ -64,6 +67,7 @@ class ResetWithEmail extends StackedView<ResetPasswordDialogModel> {
           ),
           verticalSpaceTiny,
           CustomTextField(
+             number: false,
             hintText: "confirmPassword",
             controller: viewModel.confirmPasswordCtrl,
             hintStyle: const TextStyle(fontSize: 16),

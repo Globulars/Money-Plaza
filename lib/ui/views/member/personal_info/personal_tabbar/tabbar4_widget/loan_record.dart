@@ -60,7 +60,7 @@ class LoanRecordView extends StackedView<PersonalInfoViewModel> {
                       titleText: 'typeofLoan',
                     ),
                     verticalSpaceTiny,
-                    CustomTextField(
+                    CustomTextField( number: false,
                       controller: viewModel.lenderCtrl,
                       titleText: "lender",
                     ),

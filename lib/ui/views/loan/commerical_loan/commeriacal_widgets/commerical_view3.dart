@@ -57,7 +57,7 @@ class CommTabBar3 extends ViewModelWidget<CommericalLoanViewModel> {
           ),
           verticalSpaceSmall,
           viewModel.outStanding == 1
-              ? CustomTextField(
+              ? CustomTextField( 
                   titleText: 'numberOfLoans',
                   controller: viewModel.numOfLoansCtrl)
               : Container(),

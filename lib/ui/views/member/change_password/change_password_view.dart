@@ -49,17 +49,17 @@ class ChangePasswordView extends StackedView<ChangePasswordViewModel> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          CustomTextField(
+                          CustomTextField( number: false,
                             controller: viewModel.currentPasswordCtrl,
                             titleText: 'enterCurrentPassword',
                           ),
                           verticalSpaceTiny,
-                          CustomTextField(
+                          CustomTextField( number: false,
                             controller: viewModel.newPasswordCtrl,
                             titleText: 'enterNewPassword',
                           ),
                           verticalSpaceTiny,
-                          CustomTextField(
+                          CustomTextField( number: false,
                             controller: viewModel.confirmNewPasswordCtrl,
                             titleText: 'confirmNewPassword',
                           ),

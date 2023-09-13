@@ -69,7 +69,7 @@ class SignUpWithPhone extends StackedView<MemberLoginViewModel> {
                     ),
                   ),
                   Expanded(
-                    child: CustomTextField(
+                    child: CustomTextField( number: false,
                       hintText: "Phone No",
                       controller: viewModel.phoneNoCtrl,
                       hintStyle: const TextStyle(fontSize: 14),
@@ -101,7 +101,7 @@ class SignUpWithPhone extends StackedView<MemberLoginViewModel> {
                       fontSize: 14,
                     ),
                   ),
-                  CustomTextField(
+                  CustomTextField( number: false,
                     width: width * 0.68,
                     hintText: "verificationCode",
                     controller: viewModel.verifyCode,
@@ -111,14 +111,14 @@ class SignUpWithPhone extends StackedView<MemberLoginViewModel> {
                 ],
               ),
               verticalSpaceTiny,
-              CustomTextField(
+              CustomTextField( number: false,
                 hintText: "enterPassword",
                 controller: viewModel.passwordCtrl,
                 hintStyle: const TextStyle(),
                 textAlign: TextAlign.center,
               ),
               verticalSpaceTiny,
-              CustomTextField(
+              CustomTextField( number: false,
                 hintText: "confirmPassword",
                 controller: viewModel.confirmPasswordCtrl,
                 hintStyle: const TextStyle(),
@@ -129,14 +129,14 @@ class SignUpWithPhone extends StackedView<MemberLoginViewModel> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CustomTextField(
+                  CustomTextField( number: false,
                     width: width * 0.44,
                     hintText: "firstName",
                     controller: viewModel.firstNameCtrl,
                     hintStyle: const TextStyle(),
                     textAlign: TextAlign.center,
                   ),
-                  CustomTextField(
+                  CustomTextField( number: false,
                     width: width * 0.44,
                     hintText: "lastName",
                     controller: viewModel.lastNameCtrl,

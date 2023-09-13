@@ -56,7 +56,7 @@ class LoginWithPhone extends ViewModelWidget<MemberLoginViewModel> {
                   ),
                 ),
                 Expanded(
-                  child: CustomTextField(
+                  child: CustomTextField( number: false,
                     hintText: "Phone No",
                     controller: viewModel.phoneNoCtrl,
                     hintStyle: const TextStyle(fontSize: 14),
@@ -71,7 +71,7 @@ class LoginWithPhone extends ViewModelWidget<MemberLoginViewModel> {
               ],
             ),
             verticalSpaceTiny,
-            CustomTextField(
+            CustomTextField( number: false,
               hintText: "password",
               controller: viewModel.passwordCtrl,
               hintStyle: const TextStyle(fontSize: 14),

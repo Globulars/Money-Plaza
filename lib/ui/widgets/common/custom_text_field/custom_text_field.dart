@@ -1,5 +1,6 @@
 // ignore_for_file: must_be_immutable, prefer_typing_uninitialized_variables
 
+import 'package:currency_text_input_formatter/currency_text_input_formatter.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -8,11 +9,8 @@ import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:stacked/stacked.dart';
 import '../../../common/app_colors.dart';
 import 'custom_text_field_model.dart';
-import 'package:add_comma/add_comma.dart';
-
 
 class CustomTextField extends StackedView<CustomTextFieldModel> {
-  final putCommaIndian = addCommas();
   TextAlign? textAlign;
   List<TextInputFormatter>? inputFormaters;
   void Function(String)? onChanged;
@@ -38,6 +36,8 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
   FocusNode? focusNode;
 
   bool? isObscureText;
+
+  bool number=true;
 
   TextInputAction? textInputAction;
 
@@ -84,6 +84,7 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
       this.margin,
       this.controller,
       this.focusNode,
+      this.number=true,
       this.isObscureText = false,
       this.textInputAction = TextInputAction.next,
       this.textInputType = TextInputType.text,
@@ -103,9 +104,14 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
       this.inputFormaters,
       this.initialValue,
       this.textAlign,
-      this.onChanged});
+      this.onChanged,
+      });
 
   @override
+  // void onViewModelReady(CustomTextFieldModel viewModel) {
+  //      addCommasIndian();
+  //   super.onViewModelReady(viewModel);
+  // }
   Widget builder(
     BuildContext context,
     CustomTextFieldModel viewModel,
@@ -143,17 +149,27 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
           width: width ?? double.infinity,
           margin: margin,
           child: TextFormField(
+            inputFormatters: number
+                ? <TextInputFormatter>[
+                    CurrencyTextInputFormatter(
+                      locale: 'ko',
+                      decimalDigits: 0,
+                      symbol: '',
+                    ),
+                  ]
+                : null,
             onChanged: onChanged,
             onTap: onTap,
             autovalidateMode: AutovalidateMode.onUserInteraction,
             controller: controller,
+
             focusNode: focusNode,
             style: _setFontStyle(),
             obscureText: isObscureText!,
             textAlign: textAlign ?? TextAlign.start,
             textInputAction: textInputAction,
             keyboardType: textInputType,
-            inputFormatters: inputFormaters,
+            // inputFormatters: inputFormaters,
             maxLines: maxLines ?? 1,
             decoration: _buildDecoration(),
             initialValue: initialValue,
