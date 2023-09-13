@@ -14,24 +14,18 @@ class OwnerloanViewModel extends BaseViewModel {
   final ApiUrl _apiUrl = ApiUrl();
   var formKey = GlobalKey<FormState>();
 
-  TextEditingController borrowingAmountCtrl =
-      TextEditingController(text: "");
-  TextEditingController monthlyIncomeCtrl =
-      TextEditingController(text: "");
+  TextEditingController borrowingAmountCtrl = TextEditingController(text: "");
+  TextEditingController monthlyIncomeCtrl = TextEditingController(text: "");
   TextEditingController numOfLoansCtrl = TextEditingController(text: "");
   TextEditingController totalOutstandingLoanCtrl =
       TextEditingController(text: "0");
   TextEditingController monthlyRepaymentCtrl = TextEditingController(text: "");
-  TextEditingController propertyValuationCtrl =
-      TextEditingController(text: "");
+  TextEditingController propertyValuationCtrl = TextEditingController(text: "");
   TextEditingController currentMortgageRatioCtrl =
       TextEditingController(text: "");
-  TextEditingController fullNameCtrl =
-      TextEditingController(text: "");
-  TextEditingController phoneNumberCtrl =
-      TextEditingController(text: "");
-  TextEditingController emailCtrl =
-      TextEditingController(text: "");
+  TextEditingController fullNameCtrl = TextEditingController(text: "");
+  TextEditingController phoneNumberCtrl = TextEditingController(text: "");
+  TextEditingController emailCtrl = TextEditingController(text: "");
   TextEditingController hkidCtrl = TextEditingController(text: "");
 
   String loanReason = "Business Expansion";

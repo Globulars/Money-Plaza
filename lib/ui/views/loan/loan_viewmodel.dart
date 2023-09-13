@@ -36,8 +36,7 @@ class LoanViewModel extends BaseViewModel {
   var calculationitem = 0;
 
   TextEditingController loanAmountCtrl = TextEditingController(text: "");
-  TextEditingController monthlyPaymentCtrl =
-      TextEditingController(text: "");
+  TextEditingController monthlyPaymentCtrl = TextEditingController(text: "");
   TextEditingController interestCtrl = TextEditingController(text: "");
 
   setRepayment(value) {
@@ -99,8 +98,7 @@ class LoanViewModel extends BaseViewModel {
   }
 
   /////////////////// calculator result//////////////////
-  TextEditingController borrowingAmountCtrl =
-      TextEditingController(text: "");
+  TextEditingController borrowingAmountCtrl = TextEditingController(text: "");
   TextEditingController aprCtrl = TextEditingController(text: "");
 
   TextEditingController tenorCtrl = TextEditingController(text: "");
@@ -108,8 +106,7 @@ class LoanViewModel extends BaseViewModel {
       TextEditingController(text: "");
   TextEditingController totalPaymentAmountCtrl =
       TextEditingController(text: "");
-  TextEditingController totalInterestCtrl =
-      TextEditingController(text: "");
+  TextEditingController totalInterestCtrl = TextEditingController(text: "");
 
   Future<InterestCalculator> recalculate() async {
     setBusy(true);
