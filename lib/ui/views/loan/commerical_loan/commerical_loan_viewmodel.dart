@@ -29,24 +29,24 @@ class CommericalLoanViewModel extends BaseViewModel {
   TextEditingController phoneNumberCtrl = TextEditingController(text: "");
   TextEditingController emailCtrl = TextEditingController(text: "");
   TextEditingController hkidCtrl = TextEditingController(text: "");
-  String loanReason = "Business Expansion";
-  String propertyOwner = "Have";
-  String businessNature = "Business Service";
-  String posSystemEquipment = "Have";
-  String audioReport = "Have";
+  String loanReason = "businessExpansion";
+  String propertyOwner = "have";
+  String businessNature = "businessService";
+  String posSystemEquipment = "have";
+  String audioReport = "have";
 
   final loanReasonList = [
-    "Business Expansion",
-    "Car Purchase",
-    "Credit Card Repayment",
-    "Debt Consolidation",
-    "Children Education",
-    "Self-Education",
-    "Home Renovation",
-    "Medical or Health Care",
-    "Investment",
-    "Bills Repayment",
-    "Income Tax"
+     "businessExpansion",
+    "carPurchase",
+    "creditCardRepayment",
+    "debtConsolidation",
+    "childrenEducation",
+    "selfEducation",
+    "homeRenovation",
+    "medicalHealthCare",
+    "investment",
+    "billsRepayment",
+    "incomeTax"
   ];
   setLoanReasonr(value) {
     loanReason = value;
@@ -54,8 +54,8 @@ class CommericalLoanViewModel extends BaseViewModel {
   }
 
   final propertyOwnerList = [
-    "Have",
-    "No",
+    "have",
+    "no",
   ];
   setPropertyOwner(value) {
     propertyOwner = value;
@@ -63,27 +63,27 @@ class CommericalLoanViewModel extends BaseViewModel {
   }
 
   final businessNatureList = [
-    "Business Service",
-    "Import and Export Trades",
-    "Insurance",
-    "Manufacturing",
-    "Real Estates",
-    "Retail",
-    "Storage",
-    "Transport",
-    "Welfare Institutions",
-    "Wholesale",
+    "businessService",
+    "importExportTrades",
+    "insurances",
+    "manufacturing",
+    "realEstates",
+    "retail",
+    "storage",
+    "transport",
+    "welfareInstitutions",
+    "wholesale",
     "Catering",
-    "Other Community and Social Services",
-    "Personal Service",
-    "Communication",
-    "Construction",
-    "Domestic Services",
-    "Education Services",
-    "Finance",
-    "Hospitals",
-    "Hotels and Boarding Houses",
-    "Other"
+    "otherCommunitySocialServices",
+    "personalService",
+    "communication",
+    "construction",
+    "domesticServices",
+    "educationServices",
+    "finance",
+    "hospitals",
+    "hotelsBoardingHouses",
+    "other"
   ];
   setBusinessNature(value) {
     businessNature = value;
@@ -91,8 +91,8 @@ class CommericalLoanViewModel extends BaseViewModel {
   }
 
   final posSystemEquipmentrList = [
-    "Have",
-    "No",
+   "have",
+    "no",
   ];
   setPosSystemEquipment(value) {
     posSystemEquipment = value;
@@ -100,8 +100,8 @@ class CommericalLoanViewModel extends BaseViewModel {
   }
 
   final audioReportList = [
-    "Have",
-    "No",
+    "have",
+    "no",
   ];
   setAudioReport(value) {
     audioReport = value;

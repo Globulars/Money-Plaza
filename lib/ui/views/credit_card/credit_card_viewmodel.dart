@@ -9,28 +9,28 @@ class CreditCardViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
   // final _toasterService = locator<ToasterService>();
 
-  String cardProvider = "VISA";
-  String cardType = "Personal";
-  String financialInstitutes = "DBS Bank (Hong Kong)";
+  String cardProvider = "visa";
+  String cardType = "personal";
+  String financialInstitutes = "dBSBankHongKong";
   String financialInstitutesValue = "53";
   final TextEditingController annualIncomeCtrl =
       TextEditingController(text: "");
   List<String> cardProviderList = [
-    "VISA",
-    "MASTER",
-    "Americen Express",
-    "UnionPay"
+    "visa",
+    "master",
+    "americenExpress",
+    "unionPay"
   ];
   List<String> cardList = [
-    "Debit",
-    "Personal",
-    "Corporate Credit",
-    "Student Credit",
+    "debit",
+    "personal",
+    "corporateCredit",
+    "studentCredit",
   ];
   List<String> financialInstitutesList = [
-    "DBS Bank (Hong Kong)",
-    "Prime Credit",
-    "China Citic Bank International",
+    "dBSBankHongKong",
+    "primeCredit",
+    "chinaCiticBankInternational",
   ];
 
   setCardProvider(value) {

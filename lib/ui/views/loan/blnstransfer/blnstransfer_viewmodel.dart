@@ -29,43 +29,43 @@ class BlnstransferViewModel extends BaseViewModel {
   TextEditingController emailCtrl = TextEditingController(text: "");
   TextEditingController hkidCtrl = TextEditingController(text: "");
 
-  String loanReason = "Business Expansion";
-  String propertyOwner = "Have";
-  String salaryPayment = "Bank transfer";
-  String typeOfIncome = "Full Time";
-  String proofOfIncome = "Bank Statement";
-  String repaymentType = "Personal Loans";
+  String loanReason = "businessExpansion";
+  String propertyOwner = "have";
+  String salaryPayment = "cash";
+  String typeOfIncome = "fullTime";
+  String proofOfIncome = "mpf";
+  String repaymentType = "personalLoans";
 
-  final salaryPaymentList = ["Cash", "Bank transfer", "Cheque"];
+  final salaryPaymentList = ["cash", "bankTransfer", "cheque"];
   setSalaryPayment(value) {
     salaryPayment = value;
     notifyListeners();
   }
 
-  final typeOfIncomeList = ["Full Time", "Part Time"];
+  final typeOfIncomeList = ["fullTime", "partTime"];
   setTypeOfIncome(value) {
     typeOfIncome = value;
     notifyListeners();
   }
 
-  final proofOfIncomeList = ["MPF", "Bank Statement", "Letter"];
+  final proofOfIncomeList = ["mpf", "bankStatement", "letter"];
   setProofOfIncome(value) {
     proofOfIncome = value;
     notifyListeners();
   }
 
   final loanReasonList = [
-    "Business Expansion",
-    "Car Purchase",
-    "Credit Card Repayment",
-    "Debt Consolidation",
-    "Children Education",
-    "Self-Education",
-    "Home Renovation",
-    "Medical or Health Care",
-    "Investment",
-    "Bills Repayment",
-    "Income Tax"
+     "businessExpansion",
+    "carPurchase",
+    "creditCardRepayment",
+    "debtConsolidation",
+    "childrenEducation",
+    "selfEducation",
+    "homeRenovation",
+    "medicalHealthCare",
+    "investment",
+    "billsRepayment",
+    "incomeTax"
   ];
   setLoanReasonr(value) {
     loanReason = value;
@@ -73,8 +73,8 @@ class BlnstransferViewModel extends BaseViewModel {
   }
 
   final propertyOwnerList = [
-    "Have",
-    "No",
+     "have",
+    "no",
   ];
   setPropertyOwner(value) {
     propertyOwner = value;
@@ -82,12 +82,12 @@ class BlnstransferViewModel extends BaseViewModel {
   }
 
   final repaymentTypeList = [
-    "Personal Loans",
-    "Property Owner's Loan",
-    "Commerical Loans",
-    "Revolving Loans",
-    "Credit Card/Min Pay",
-    "Prepaid Interest Loan"
+    "personalLoans",
+    "propertyOwnerLoan",
+    "commericalLoans",
+    "revolvingLoans",
+    "creditCardMinPay",
+    "prepaidInterestLoan"
   ];
   setRepaymentType(value) {
     repaymentType = value;

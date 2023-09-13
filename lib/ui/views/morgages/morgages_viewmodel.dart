@@ -21,25 +21,25 @@ class MorgagesViewModel extends BaseViewModel {
   TextEditingController mortgagesMonthlyIncomeCtrl =
       TextEditingController(text: "");
 
-  String mortgages = "New Owner / Mortgages Transfer";
+  String mortgages = "newOwnerMortgagesTransfer";
   String mortgagesForApi = "first_sub_mortgage";
   BankList? bankList;
   List<BankList> bankDataList = [];
-  String typeOfProperty = "New building";
+  String typeOfProperty = "newBuilding";
   String typeOfPropertyForApi = "new_property";
 
   final mortgagesList = [
-    "New Owner / Mortgages Transfer",
-    "Second Mortgages",
+    "newOwnerMortgagesTransfer",
+    "secondMortgages",
     "Property Owner Loan"
   ];
 
   final typeOfPropertyList = [
-    "New building",
-    "Private housing",
-    "Village house",
-    "HOS House (Make -up price)",
-    "House (unpaid land price)"
+    "newBuilding",
+    "privateHousing",
+    "villageHouse",
+    "hosHouseMakePrice",
+    "houseUnpaidLandPrice"
   ];
 
   setMortgages(value) {
@@ -78,12 +78,12 @@ class MorgagesViewModel extends BaseViewModel {
   resetAll() {
     bankList = bankDataList[0];
     mortgagesTenorCtrl.text = "";
-    typeOfProperty = "New building";
+    typeOfProperty = "newBuilding";
     mortgagesValueRatioCtrl.text = "";
     typeOfPropertyForApi = "new_property";
     mortgagesForApi = "first_sub_mortgage";
     mortgagesMonthlyIncomeCtrl.text = "";
-    mortgages = "New Owner / Mortgages Transfer";
+    mortgages = "newOwnerMortgagesTransfer";
     mortgagesPropertyValuationCtrl.text = "";
     notifyListeners();
   }

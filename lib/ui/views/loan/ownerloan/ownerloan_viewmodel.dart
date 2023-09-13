@@ -28,28 +28,28 @@ class OwnerloanViewModel extends BaseViewModel {
   TextEditingController emailCtrl = TextEditingController(text: "");
   TextEditingController hkidCtrl = TextEditingController(text: "");
 
-  String loanReason = "Business Expansion";
-  String propertyOwner = "Have";
-  String salaryPayment = "Bank transfer";
-  String typeOfIncome = "Full Time";
-  String proofOfIncome = "Bank Statement";
+  String loanReason = "businessExpansion";
+  String propertyOwner = "have";
+  String salaryPayment = "cash";
+  String typeOfIncome = "fullTime";
+  String proofOfIncome = "mpf";
   var loanTenors = 6;
   var outStanding = 0;
   var initialIndex = 0;
   int currentIndex = 0;
 
   final loanReasonList = [
-    "Business Expansion",
-    "Car Purchase",
-    "Credit Card Repayment",
-    "Debt Consolidation",
-    "Children Education",
-    "Self-Education",
-    "Home Renovation",
-    "Medical or Health Care",
-    "Investment",
-    "Bills Repayment",
-    "Income Tax"
+    "businessExpansion",
+    "carPurchase",
+    "creditCardRepayment",
+    "debtConsolidation",
+    "childrenEducation",
+    "selfEducation",
+    "homeRenovation",
+    "medicalHealthCare",
+    "investment",
+    "billsRepayment",
+    "incomeTax"
   ];
   setLoanReasonr(value) {
     loanReason = value;
@@ -57,27 +57,27 @@ class OwnerloanViewModel extends BaseViewModel {
   }
 
   final propertyOwnerList = [
-    "Have",
-    "No",
+    "have",
+    "no",
   ];
   setPropertyOwner(value) {
     propertyOwner = value;
     notifyListeners();
   }
 
-  final salaryPaymentList = ["Cash", "Bank transfer", "Cheque"];
+  final salaryPaymentList = ["cash", "bankTransfer", "cheque"];
   setSalaryPayment(value) {
     salaryPayment = value;
     notifyListeners();
   }
 
-  final typeOfIncomeList = ["Full Time", "Part Time"];
+  final typeOfIncomeList = ["fullTime", "partTime"];
   setTypeOfIncome(value) {
     typeOfIncome = value;
     notifyListeners();
   }
 
-  final proofOfIncomeList = ["MPF", "Bank Statement", "Letter"];
+  final proofOfIncomeList = ["mpf", "bankStatement", "letter"];
   setProofOfIncome(value) {
     proofOfIncome = value;
     notifyListeners();
