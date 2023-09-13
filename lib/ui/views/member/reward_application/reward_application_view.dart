@@ -106,6 +106,7 @@ class RewardApplicationView extends StackedView<RewardApplicationViewModel> {
                                 ),
                           verticalSpaceTiny,
                           CustomTextField(
+                            number: false,
                             controller: viewModel.referenceNumberCtrl,
                             titleText: 'referenceNumber',
                           ),

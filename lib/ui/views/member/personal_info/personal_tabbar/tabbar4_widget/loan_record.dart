@@ -121,6 +121,7 @@ class LoanRecordView extends StackedView<PersonalInfoViewModel> {
                         : Container(),
                     verticalSpaceTiny,
                     CustomTextField(
+                      number: false,
                       controller: viewModel.loanRecordList?.code == "PLoan" ||
                               viewModel.loanRecordList?.code ==
                                   "PrepaidInterest" ||
@@ -136,6 +137,7 @@ class LoanRecordView extends StackedView<PersonalInfoViewModel> {
                     ),
                     verticalSpaceTiny,
                     CustomTextField(
+                      number: false,
                         controller: viewModel.loanRecordList?.code == "PLoan" ||
                                 viewModel.loanRecordList?.code == "InterestOnly"
                             ? viewModel.remainingTenorCtrl
@@ -153,6 +155,7 @@ class LoanRecordView extends StackedView<PersonalInfoViewModel> {
                             viewModel.loanRecordList?.code == "InterestOnly" ||
                             viewModel.loanRecordList?.code == "MinPay"
                         ? CustomTextField(
+                          number: false,
                             hintText: 'hk',
                             controller: viewModel.loanRecordList?.code ==
                                         "PLoan" ||
