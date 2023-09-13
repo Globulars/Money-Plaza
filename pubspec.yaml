@@ -35,6 +35,7 @@ dependencies:
   flutter_svg: ^2.0.7
   shared_preferences: ^2.2.1
   flutter_widget_from_html: ^0.10.4
+  add_comma: ^0.2.0
 
 dev_dependencies:
   flutter_test:

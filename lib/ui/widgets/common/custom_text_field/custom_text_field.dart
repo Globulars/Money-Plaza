@@ -6,11 +6,13 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:stacked/stacked.dart';
-
 import '../../../common/app_colors.dart';
 import 'custom_text_field_model.dart';
+import 'package:add_comma/add_comma.dart';
+
 
 class CustomTextField extends StackedView<CustomTextFieldModel> {
+  final putCommaIndian = addCommas();
   TextAlign? textAlign;
   List<TextInputFormatter>? inputFormaters;
   void Function(String)? onChanged;
