@@ -197,6 +197,7 @@ class CalculatorDialog extends StackedView<LoanViewModel> {
                           fontWeight: FontWeight.w500,
                         ),
                         CustomTextField(
+                          number: false,
                           hintText: '%',
                           controller: viewModel.interestCtrl,
                           height: 40,

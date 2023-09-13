@@ -168,6 +168,7 @@ class CalculatorItems extends ViewModelWidget<LoanViewModel> {
                     viewModel.calculationitem == 0 ||
                             viewModel.calculationitem == 2
                         ? CustomTextField( 
+                          number: false,
                             controller: viewModel.aprCtrl,
                             hintText: '1.38%',
                             height: 40,
@@ -195,6 +196,7 @@ class CalculatorItems extends ViewModelWidget<LoanViewModel> {
                     viewModel.calculationitem == 1 ||
                             viewModel.calculationitem == 2
                         ? CustomTextField(
+                          number: false,
                             controller: viewModel.tenorCtrl,
                             hintText: '1.38%',
                             height: 40,

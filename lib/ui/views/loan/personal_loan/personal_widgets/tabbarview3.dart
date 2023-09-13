@@ -59,6 +59,7 @@ class TabBarView3 extends ViewModelWidget<PersonalloanViewModel> {
           verticalSpaceSmall,
           viewModel.outStanding == 1
               ? CustomTextField(
+                number: false,
                   controller: viewModel.numOfLoansCtrl,
                   titleText: 'numberOfLoans',
                 )
