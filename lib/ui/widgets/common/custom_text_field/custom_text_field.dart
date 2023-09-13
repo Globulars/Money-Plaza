@@ -158,6 +158,7 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
                     ),
                   ]
                 : null,
+                
             onChanged: onChanged,
             onTap: onTap,
             autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -168,8 +169,8 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
             obscureText: isObscureText!,
             textAlign: textAlign ?? TextAlign.start,
             textInputAction: textInputAction,
-            keyboardType: textInputType,
-            // inputFormatters: inputFormaters,
+            keyboardType:  number
+                ? TextInputType.number:TextInputType.text,
             maxLines: maxLines ?? 1,
             decoration: _buildDecoration(),
             initialValue: initialValue,
