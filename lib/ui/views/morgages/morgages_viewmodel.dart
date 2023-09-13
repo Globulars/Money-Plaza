@@ -14,12 +14,12 @@ class MorgagesViewModel extends BaseViewModel {
   final ApiUrl _apiUrl = ApiUrl();
 
   TextEditingController mortgagesPropertyValuationCtrl =
-      TextEditingController(text: "10000");
+      TextEditingController(text: "");
   TextEditingController mortgagesValueRatioCtrl =
-      TextEditingController(text: "15");
-  TextEditingController mortgagesTenorCtrl = TextEditingController(text: "25");
+      TextEditingController(text: "");
+  TextEditingController mortgagesTenorCtrl = TextEditingController(text: "");
   TextEditingController mortgagesMonthlyIncomeCtrl =
-      TextEditingController(text: "5000000");
+      TextEditingController(text: "");
 
   String mortgages = "New Owner / Mortgages Transfer";
   String mortgagesForApi = "first_sub_mortgage";
@@ -77,14 +77,14 @@ class MorgagesViewModel extends BaseViewModel {
 
   resetAll() {
     bankList = bankDataList[0];
-    mortgagesTenorCtrl.text = "25";
+    mortgagesTenorCtrl.text = "";
     typeOfProperty = "New building";
-    mortgagesValueRatioCtrl.text = "15";
+    mortgagesValueRatioCtrl.text = "";
     typeOfPropertyForApi = "new_property";
     mortgagesForApi = "first_sub_mortgage";
-    mortgagesMonthlyIncomeCtrl.text = "5000000";
+    mortgagesMonthlyIncomeCtrl.text = "";
     mortgages = "New Owner / Mortgages Transfer";
-    mortgagesPropertyValuationCtrl.text = "10000";
+    mortgagesPropertyValuationCtrl.text = "";
     notifyListeners();
   }
 

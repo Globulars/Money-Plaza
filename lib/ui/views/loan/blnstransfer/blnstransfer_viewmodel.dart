@@ -17,24 +17,24 @@ class BlnstransferViewModel extends BaseViewModel {
   final _apiHelperService = locator<ApiHelperService>();
   final ApiUrl _apiUrl = ApiUrl();
   TextEditingController borrowingAmountCtrl =
-      TextEditingController(text: "50000");
+      TextEditingController(text: "");
   TextEditingController monthlyIncomeCtrl =
-      TextEditingController(text: "40000");
+      TextEditingController(text: "");
   TextEditingController companyNameCtrl =
-      TextEditingController(text: "Gloubulars");
+      TextEditingController(text: "");
   TextEditingController totalOutstandingLoanCtrl =
-      TextEditingController(text: "10000");
-  TextEditingController tenorCtrl = TextEditingController(text: "4");
-  TextEditingController remainigTenorCtrl = TextEditingController(text: "22");
+      TextEditingController(text: "");
+  TextEditingController tenorCtrl = TextEditingController(text: "");
+  TextEditingController remainigTenorCtrl = TextEditingController(text: "");
   TextEditingController monthlyRepaymentCtrl =
-      TextEditingController(text: "8000");
+      TextEditingController(text: "");
   TextEditingController fullNameCtrl =
-      TextEditingController(text: "Mudassir Mukhtar");
+      TextEditingController(text: "");
   TextEditingController phoneNumberCtrl =
-      TextEditingController(text: "3045655432");
+      TextEditingController(text: "");
   TextEditingController emailCtrl =
-      TextEditingController(text: "mudassirmukhtar4@gmail.com");
-  TextEditingController hkidCtrl = TextEditingController(text: "SM6867864");
+      TextEditingController(text: "");
+  TextEditingController hkidCtrl = TextEditingController(text: "");
 
   String loanReason = "Business Expansion";
   String propertyOwner = "Have";

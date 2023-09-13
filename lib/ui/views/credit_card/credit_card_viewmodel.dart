@@ -14,7 +14,7 @@ class CreditCardViewModel extends BaseViewModel {
   String financialInstitutes = "DBS Bank (Hong Kong)";
   String financialInstitutesValue = "53";
   final TextEditingController annualIncomeCtrl =
-      TextEditingController(text: "100000");
+      TextEditingController(text: "");
   List<String> cardProviderList = [
     "VISA",
     "MASTER",
@@ -58,7 +58,7 @@ class CreditCardViewModel extends BaseViewModel {
   resetAll() {
     cardProvider = cardProviderList[0];
     cardType = cardList[0];
-    annualIncomeCtrl.text = "100000";
+    annualIncomeCtrl.text = "";
     financialInstitutesValue = "53";
     financialInstitutes = financialInstitutesList[0];
     notifyListeners();

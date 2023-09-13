@@ -15,24 +15,24 @@ class OwnerloanViewModel extends BaseViewModel {
   var formKey = GlobalKey<FormState>();
 
   TextEditingController borrowingAmountCtrl =
-      TextEditingController(text: "50000");
+      TextEditingController(text: "");
   TextEditingController monthlyIncomeCtrl =
-      TextEditingController(text: "40000");
+      TextEditingController(text: "");
   TextEditingController numOfLoansCtrl = TextEditingController(text: "");
   TextEditingController totalOutstandingLoanCtrl =
       TextEditingController(text: "0");
-  TextEditingController monthlyRepaymentCtrl = TextEditingController(text: "0");
+  TextEditingController monthlyRepaymentCtrl = TextEditingController(text: "");
   TextEditingController propertyValuationCtrl =
-      TextEditingController(text: "20");
+      TextEditingController(text: "");
   TextEditingController currentMortgageRatioCtrl =
-      TextEditingController(text: "1.5");
+      TextEditingController(text: "");
   TextEditingController fullNameCtrl =
-      TextEditingController(text: "Mudassir Mukhtar");
+      TextEditingController(text: "");
   TextEditingController phoneNumberCtrl =
-      TextEditingController(text: "3045655432");
+      TextEditingController(text: "");
   TextEditingController emailCtrl =
-      TextEditingController(text: "mudassirmukhtar4@gmail.com");
-  TextEditingController hkidCtrl = TextEditingController(text: "SM6867864");
+      TextEditingController(text: "");
+  TextEditingController hkidCtrl = TextEditingController(text: "");
 
   String loanReason = "Business Expansion";
   String propertyOwner = "Have";

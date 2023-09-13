@@ -8,14 +8,15 @@ class ApplyconfirmViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
 
   TextEditingController fullNameCtrl =
-      TextEditingController(text: "Mudassir Mukhtar");
+      TextEditingController(text: "");
   TextEditingController phoneNumberCtrl =
-      TextEditingController(text: "3045655432");
+      TextEditingController(text: "");
   TextEditingController emailCtrl =
-      TextEditingController(text: "mudassirmukhtar4@gmail.com");
-  TextEditingController hkidCtrl = TextEditingController(text: "SM6867864");
+      TextEditingController(text: "");
+  TextEditingController hkidCtrl = TextEditingController(text: "");
 
   navigateToPloanreslut() {
     _navigationService.navigateToPloanreslutView();
   }
 }
+// SM6867864

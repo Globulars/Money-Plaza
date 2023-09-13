@@ -15,28 +15,28 @@ class CommericalLoanViewModel extends BaseViewModel {
   var formKey = GlobalKey<FormState>();
 
   TextEditingController borrowingAmountCtrl =
-      TextEditingController(text: "50000");
+      TextEditingController(text: "");
   TextEditingController annualTurnoverCtrl =
-      TextEditingController(text: "800000");
+      TextEditingController(text: "");
   TextEditingController digitalPaymentCtrl =
-      TextEditingController(text: "10000");
+      TextEditingController(text: "");
   TextEditingController companyNameCtrl =
-      TextEditingController(text: "Gloubular");
+      TextEditingController(text: "");
   TextEditingController futureReceivableAmountCtrl =
-      TextEditingController(text: "90000");
-  TextEditingController operationYearCtrl = TextEditingController(text: "10");
+      TextEditingController(text: "");
+  TextEditingController operationYearCtrl = TextEditingController(text: "");
   TextEditingController numOfLoansCtrl = TextEditingController(text: "");
   TextEditingController totalOutstandingLoanCtrl =
-      TextEditingController(text: "5000");
+      TextEditingController(text: "");
   TextEditingController monthlyRepaymentCtrl =
-      TextEditingController(text: "2000");
+      TextEditingController(text: "");
   TextEditingController fullNameCtrl =
-      TextEditingController(text: "Mudassir Mukhtar");
+      TextEditingController(text: "");
   TextEditingController phoneNumberCtrl =
-      TextEditingController(text: "3045655432");
+      TextEditingController(text: "");
   TextEditingController emailCtrl =
-      TextEditingController(text: "mudassirmukhtar4@gmail.com");
-  TextEditingController hkidCtrl = TextEditingController(text: "SM6867864");
+      TextEditingController(text: "");
+  TextEditingController hkidCtrl = TextEditingController(text: "");
   String loanReason = "Business Expansion";
   String propertyOwner = "Have";
   String businessNature = "Business Service";
