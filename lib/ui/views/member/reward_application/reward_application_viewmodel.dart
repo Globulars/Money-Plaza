@@ -17,17 +17,17 @@ class RewardApplicationViewModel extends BaseViewModel {
   final ApiUrl _apiUrl = ApiUrl();
 
   var formKey = GlobalKey<FormState>();
-  String typeOfProduct = "Loan";
+  String typeOfProduct = "loan";
   CompanyByCard? institution;
   RewardDetails? rewardDetails;
   TextEditingController referenceNumberCtrl = TextEditingController(text: "");
 
   final typeOfProductList = [
-    "Loan",
-    "Mortgage",
-    "Card",
-    "Account",
-    "Imsurance"
+    "loan",
+    "mortgage",
+    "card",
+    "account",
+    "insurance"
   ];
   setTypeOfProduct(value) {
     typeOfProduct = value;

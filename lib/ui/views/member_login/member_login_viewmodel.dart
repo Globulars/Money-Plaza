@@ -23,25 +23,25 @@ class MemberLoginViewModel extends BaseViewModel {
   TextEditingController passwordCtrl = TextEditingController();
   TextEditingController confirmPasswordCtrl = TextEditingController();
   TextEditingController phoneNoCtrl = TextEditingController();
-  String interestProducts = "Loans";
-  String knownChannel = "Facebook";
+  String interestProducts = "loans";
+  String knownChannel = "faceBook";
   bool receiveNews = true;
   bool phoneFieldEmpty = false;
 
   final interestProductsList = [
-    "Loans",
-    "Mortgages",
-    "Creadit Cards",
-    "Accounts",
-    "Insurances"
+    "loans",
+    "mortgages",
+    "creaditCards",
+    "accounts",
+    "insurances"
   ];
   final knownChannelList = [
-    "Facebook",
-    "Search Engine",
-    "Friends",
-    "Youtube",
-    "Instagram",
-    "Other"
+    "faceBook",
+    "searchEngine",
+    "friends",
+    "youtube",
+    "instagram",
+    "other"
   ];
   resetAll() {
     emailCtrl.clear();

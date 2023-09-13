@@ -139,7 +139,7 @@ class PersonalInfoView extends StackedView<PersonalInfoViewModel> {
                   SubmitButton(
                     image: myIcons.done,
                     imgwidth: 16,
-                    text: 'Save',
+                    text: 'save',
                     height: 40,
                     width: 80,
                   ),

@@ -295,7 +295,18 @@
   "privateHousing":"Private housing",
   "villageHouse":"Village house",
   "hosHouseMakePrice":"HOS House (Make -up price)",
-  "houseUnpaidLandPrice":"House (unpaid land price)"
+  "houseUnpaidLandPrice":"House (unpaid land price)",
+  "loan":"Loan",
+  "mortgage":"Mortgage",
+  "account":"Account",
+  "creaditCards":"Creadit Cards",
+  "accounts":"Accounts",
+  "faceBook":"Facebook",
+  "searchEngine":"Search Engine",
+  "friends":"Friends",
+  "youtube":"Youtube",
+  "instagram":"Instagram"
+ 
 
 
 

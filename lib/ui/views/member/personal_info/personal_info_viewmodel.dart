@@ -31,8 +31,8 @@ class PersonalInfoViewModel extends BaseViewModel {
   String dob = "";
   var gender = '';
   var tenorUnit = '';
-  String doYouKnow = "Facebook";
-  String intersetProduct = "Loans";
+  String doYouKnow = "faceBook";
+  String intersetProduct = "loans";
   // String typeOfLoan ="Term Loan";
   SelectCountry? countryList;
   LoanRecord? loanRecordList;
@@ -41,19 +41,19 @@ class PersonalInfoViewModel extends BaseViewModel {
   List<LoanRecord> loanRecordDataList = [];
   //  List<UserData> userDataList = [];
   final doYouKnowList = [
-    "Facebook",
-    "Search Engine",
-    "Friends",
-    "Youtube",
-    "Instragram",
-    "Others"
+    "faceBook",
+    "searchEngine",
+    "friends",
+    "youtube",
+    "instragram",
+    "others"
   ];
   final intersetProductList = [
-    "Loans",
-    "Mortgages",
-    "Credit Cards",
-    "Accounts",
-    "Insurances"
+    "loans",
+    "mortgages",
+    "creditCards",
+    "accounts",
+    "insurances"
   ];
 
   setGender(value) {

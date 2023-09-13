@@ -296,6 +296,17 @@
   "privateHousing":"私人房屋",
   "villageHouse":"村屋",
   "hosHouseMakePrice":"居屋 (補價)",
-  "houseUnpaidLandPrice":"房屋（未付地價）"
+  "houseUnpaidLandPrice":"房屋（未付地價",
+  "loan":"貸款",
+  "mortgage":"抵押",
+  "account":"帳戶",
+  "creaditCards":"信用卡",
+  "accounts":"賬戶",
+  "faceBook":"Facebook",
+  "searchEngine":"搜尋引擎",
+  "friends":"朋友們",
+  "youtube":"Youtube",
+  "instagram":"Instagram"
+
 
 }
