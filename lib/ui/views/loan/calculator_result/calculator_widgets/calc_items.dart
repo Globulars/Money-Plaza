@@ -104,7 +104,7 @@ class CalculatorItems extends ViewModelWidget<LoanViewModel> {
                         text: 'borrowingAmount',
                         fontSize: 12,
                         fontWeight: FontWeight.w500),
-                    CustomTextField( 
+                    CustomTextField(
                       controller: viewModel.borrowingAmountCtrl,
                       hintText: '\$',
                       height: 40,
@@ -117,7 +117,7 @@ class CalculatorItems extends ViewModelWidget<LoanViewModel> {
                         fontWeight: FontWeight.w500),
                     viewModel.calculationitem == 0 ||
                             viewModel.calculationitem == 1
-                        ? CustomTextField( 
+                        ? CustomTextField(
                             controller: viewModel.monthyRepaymentAmountCtrl,
                             hintText: '\$',
                             height: 40,
@@ -167,8 +167,8 @@ class CalculatorItems extends ViewModelWidget<LoanViewModel> {
                         text: 'apr', fontSize: 12, fontWeight: FontWeight.w500),
                     viewModel.calculationitem == 0 ||
                             viewModel.calculationitem == 2
-                        ? CustomTextField( 
-                          number: false,
+                        ? CustomTextField(
+                            number: false,
                             controller: viewModel.aprCtrl,
                             hintText: '%',
                             height: 40,
@@ -196,7 +196,7 @@ class CalculatorItems extends ViewModelWidget<LoanViewModel> {
                     viewModel.calculationitem == 1 ||
                             viewModel.calculationitem == 2
                         ? CustomTextField(
-                          number: false,
+                            number: false,
                             controller: viewModel.tenorCtrl,
                             hintText: '%',
                             height: 40,

@@ -122,7 +122,7 @@ class RewardApplicationViewModel extends BaseViewModel {
 
       var data = await _apiHelperService.multiPartRequest(
           _apiUrl.userRewardSubmit, body);
-       
+
       if (data?["success"] == true) {
         _toasterService.successToast(data["message"]);
         _navigationService.back();

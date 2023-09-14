@@ -135,7 +135,7 @@ class LoanViewModel extends BaseViewModel {
         "numOfMonths": _apiHelperService.removeComa(tenorCtrl.text)
       };
     }
-     log(body.toString());
+    log(body.toString());
     var data =
         await _apiHelperService.postApi("/repayment/$calculationType", body);
     if (data?["success"] == true) {

@@ -30,7 +30,8 @@ class LoginWithEmail extends ViewModelWidget<MemberLoginViewModel> {
               textAlign: TextAlign.center,
             ),
             verticalSpaceTiny,
-            CustomTextField( number: false,
+            CustomTextField(
+              number: false,
               controller: viewModel.passwordCtrl,
               hintText: "password",
               hintStyle: const TextStyle(fontSize: 14),

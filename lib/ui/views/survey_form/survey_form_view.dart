@@ -55,17 +55,20 @@ class SurveyFormView extends StackedView<SurveyFormViewModel> {
                         children: [
                           CustomText(text: 'enterFollowingInformation.'),
                           verticalSpaceTiny,
-                          CustomTextField( number: false,
+                          CustomTextField(
+                            number: false,
                             titleText: 'email',
                             controller: viewModel.emailCtrl,
                           ),
                           verticalSpaceTiny,
-                          CustomTextField( number: false,
+                          CustomTextField(
+                            number: false,
                             titleText: 'fullName',
                             controller: viewModel.nameCtrl,
                           ),
                           verticalSpaceTiny,
-                          CustomTextField( number: false,
+                          CustomTextField(
+                            number: false,
                             titleText: 'referenceNumber',
                             controller: viewModel.refeNoCtrl,
                           ),
@@ -77,7 +80,8 @@ class SurveyFormView extends StackedView<SurveyFormViewModel> {
                             options: [organization],
                           ),
                           verticalSpaceTiny,
-                          CustomTextField( number: false,
+                          CustomTextField(
+                            number: false,
                             titleText: 'contactNo',
                             controller: viewModel.contactNoCtrl,
                           ),

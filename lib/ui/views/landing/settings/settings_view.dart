@@ -110,14 +110,14 @@ class SettingsView extends StackedView<SettingsViewModel> {
                         fontSize: 18,
                       ),
                     ),
-                    verticalSpaceSmall,
-                    InkWell(
-                      onTap: viewModel.logOut,
-                      child: CustomText(
-                        text: "Logout",
-                        fontSize: 18,
-                      ),
-                    ),
+                    // verticalSpaceSmall,
+                    // InkWell(
+                    //   onTap: viewModel.logOut,
+                    //   child: CustomText(
+                    //     text: "Logout",
+                    //     fontSize: 18,
+                    //   ),
+                    // ),
                   ],
                 ),
               )

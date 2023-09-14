@@ -37,7 +37,7 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
 
   bool? isObscureText;
 
-  bool number=true;
+  bool number = true;
 
   TextInputAction? textInputAction;
 
@@ -72,40 +72,40 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
   GestureTapCallback? onTap;
 
   TextStyle? hintStyle;
-  CustomTextField(
-      {super.key,
-      //   this.shape,
-      // this.padding,
-      // this.variant,
-      // this.fontStyle,
-      this.alignment,
-      this.width,
-      this.height,
-      this.margin,
-      this.controller,
-      this.focusNode,
-      this.number=true,
-      this.isObscureText = false,
-      this.textInputAction = TextInputAction.next,
-      this.textInputType = TextInputType.text,
-      this.maxLines,
-      this.hintText,
-      this.titleText,
-      this.validationText,
-      this.prefix,
-      this.prefixConstraints,
-      this.suffix,
-      this.suffixConstraints,
-      this.border,
-      this.enabledBorder,
-      this.focusedBorder,
-      this.disabledBorder,
-      this.hintStyle,
-      this.inputFormaters,
-      this.initialValue,
-      this.textAlign,
-      this.onChanged,
-      });
+  CustomTextField({
+    super.key,
+    //   this.shape,
+    // this.padding,
+    // this.variant,
+    // this.fontStyle,
+    this.alignment,
+    this.width,
+    this.height,
+    this.margin,
+    this.controller,
+    this.focusNode,
+    this.number = true,
+    this.isObscureText = false,
+    this.textInputAction = TextInputAction.next,
+    this.textInputType = TextInputType.text,
+    this.maxLines,
+    this.hintText,
+    this.titleText,
+    this.validationText,
+    this.prefix,
+    this.prefixConstraints,
+    this.suffix,
+    this.suffixConstraints,
+    this.border,
+    this.enabledBorder,
+    this.focusedBorder,
+    this.disabledBorder,
+    this.hintStyle,
+    this.inputFormaters,
+    this.initialValue,
+    this.textAlign,
+    this.onChanged,
+  });
 
   @override
   // void onViewModelReady(CustomTextFieldModel viewModel) {
@@ -158,19 +158,16 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
                     ),
                   ]
                 : null,
-                
             onChanged: onChanged,
             onTap: onTap,
             autovalidateMode: AutovalidateMode.onUserInteraction,
             controller: controller,
-
             focusNode: focusNode,
             style: _setFontStyle(),
             obscureText: isObscureText!,
             textAlign: textAlign ?? TextAlign.start,
             textInputAction: textInputAction,
-            keyboardType:  number
-                ? TextInputType.number:TextInputType.text,
+            keyboardType: number ? TextInputType.number : TextInputType.text,
             maxLines: maxLines ?? 1,
             decoration: _buildDecoration(),
             initialValue: initialValue,

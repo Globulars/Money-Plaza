@@ -109,7 +109,8 @@ class OwnerloanViewModel extends BaseViewModel {
       "type": "owner_private_loan",
       "income": _apiHelperService.removeComa(monthlyIncomeCtrl.text),
       "currentTotalLoanAmount": totalOutstandingLoanCtrl.text,
-      "monthlyRepayment": _apiHelperService.removeComa(monthlyRepaymentCtrl.text),
+      "monthlyRepayment":
+          _apiHelperService.removeComa(monthlyRepaymentCtrl.text),
       "pol": true
     }, survayBody: [
       {

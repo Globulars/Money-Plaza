@@ -43,7 +43,8 @@ class CommTabBar2 extends ViewModelWidget<CommericalLoanViewModel> {
             titleText: 'POS system equipped',
           ),
           verticalSpaceSmall,
-          CustomTextField( number: false,
+          CustomTextField(
+            number: false,
             controller: viewModel.companyNameCtrl,
             titleText: 'companyName',
           ),
@@ -60,7 +61,8 @@ class CommTabBar2 extends ViewModelWidget<CommericalLoanViewModel> {
             value: viewModel.audioReport,
           ),
           verticalSpaceSmall,
-          CustomTextField( number: false,
+          CustomTextField(
+            number: false,
             controller: viewModel.operationYearCtrl,
             titleText: 'operationYear',
           ),

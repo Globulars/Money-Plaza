@@ -65,7 +65,6 @@ class OwnerTabBar3 extends ViewModelWidget<OwnerloanViewModel> {
           ),
           verticalSpaceSmall,
           CustomTextField(
-            number: false,
             hintText: '0%',
             titleText: 'currentMortgageRatio',
             controller: viewModel.currentMortgageRatioCtrl,
@@ -73,7 +72,7 @@ class OwnerTabBar3 extends ViewModelWidget<OwnerloanViewModel> {
           verticalSpaceSmall,
           viewModel.outStanding == 1
               ? CustomTextField(
-                number: false,
+                  number: false,
                   titleText: 'numberOfLoans',
                   controller: viewModel.numOfLoansCtrl,
                 )

@@ -61,7 +61,8 @@ class TransferTabBar3 extends ViewModelWidget<BlnstransferViewModel> {
           verticalSpaceSmall,
           verticalSpaceSmall,
           viewModel.outStanding == 1
-              ? CustomTextField( number: false,
+              ? CustomTextField(
+                  number: false,
                   titleText: 'companyName',
                   controller: viewModel.companyNameCtrl,
                 )
@@ -85,9 +86,9 @@ class TransferTabBar3 extends ViewModelWidget<BlnstransferViewModel> {
               : Container(),
           verticalSpaceSmall,
           viewModel.outStanding == 1
-              ? CustomTextField( number: false,
+              ? CustomTextField(
+                  number: false,
                   controller: viewModel.tenorCtrl,
-                  hintText: 'Months',
                   titleText: 'tenor',
                 )
               : Container(),
@@ -95,7 +96,7 @@ class TransferTabBar3 extends ViewModelWidget<BlnstransferViewModel> {
           viewModel.outStanding == 1
               ? CustomTextField(
                   controller: viewModel.remainigTenorCtrl,
-                  hintText: 'Months', number: false,
+                  number: false,
                   titleText: 'Remaining Tenor',
                 )
               : Container(),
@@ -103,7 +104,6 @@ class TransferTabBar3 extends ViewModelWidget<BlnstransferViewModel> {
           viewModel.outStanding == 1
               ? CustomTextField(
                   controller: viewModel.monthlyRepaymentCtrl,
-                  hintText: 'hk',
                   titleText: 'monthlyRepayment',
                 )
               : Container(),

@@ -137,8 +137,10 @@ class CommericalLoanViewModel extends BaseViewModel {
       "tenor": loanTenors,
       "type": "commercial_loan",
       "income": _apiHelperService.removeComa(borrowingAmountCtrl.text),
-      "currentTotalLoanAmount": _apiHelperService.removeComa(totalOutstandingLoanCtrl.text),
-      "monthlyRepayment": _apiHelperService.removeComa(monthlyRepaymentCtrl.text),
+      "currentTotalLoanAmount":
+          _apiHelperService.removeComa(totalOutstandingLoanCtrl.text),
+      "monthlyRepayment":
+          _apiHelperService.removeComa(monthlyRepaymentCtrl.text),
       "pol": true
     }, survayBody: [
       {
@@ -224,7 +226,8 @@ class CommericalLoanViewModel extends BaseViewModel {
       {
         "fieldName": "remainingLoanAmount",
         "fieldTitle": "未償還貸款總額",
-        "fieldValue": _apiHelperService.removeComa(totalOutstandingLoanCtrl.text),
+        "fieldValue":
+            _apiHelperService.removeComa(totalOutstandingLoanCtrl.text),
         "fieldType": "remainingLoanAmount",
         "fieldOrder": "",
         "fieldAttrs": []

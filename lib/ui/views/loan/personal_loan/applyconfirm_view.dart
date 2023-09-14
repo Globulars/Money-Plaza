@@ -54,23 +54,27 @@ class PersonalloanApplyConfirmView extends StackedView<PersonalloanViewModel> {
                         children: [
                           CustomText(text: 'enterFollowingInformation'),
                           verticalSpaceTiny,
-                          CustomTextField( number: false,
+                          CustomTextField(
+                            number: false,
                             titleText: 'fullName',
                             controller: viewModel.fullNameCtrl,
                           ),
                           verticalSpaceTiny,
-                          CustomTextField( number: false,
+                          CustomTextField(
+                            number: false,
                             controller: viewModel.phoneNumberCtrl,
                             textInputType: TextInputType.number,
                             titleText: 'phoneNumber',
                           ),
                           verticalSpaceTiny,
-                          CustomTextField( number: false,
+                          CustomTextField(
+                            number: false,
                             controller: viewModel.emailCtrl,
                             titleText: 'email',
                           ),
                           verticalSpaceTiny,
-                          CustomTextField( number: false,
+                          CustomTextField(
+                            number: false,
                             controller: viewModel.hkidCtrl,
                             titleText: 'hkid',
                           ),

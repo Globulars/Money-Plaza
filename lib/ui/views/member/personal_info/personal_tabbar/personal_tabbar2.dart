@@ -20,12 +20,14 @@ class PersonalTabBar2 extends ViewModelWidget<PersonalInfoViewModel> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomTextField( number: false,
+            CustomTextField(
+              number: false,
               titleText: 'email',
               controller: viewModel.emailCtrl,
             ),
             verticalSpaceSmall,
-            CustomTextField( number: false,
+            CustomTextField(
+              number: false,
               controller: viewModel.contactNumCtrl,
               titleText: 'contactNumber',
             ),
