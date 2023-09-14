@@ -34,11 +34,11 @@ class TabBarView3 extends ViewModelWidget<PersonalloanViewModel> {
                 text: 'yes',
                 width: width * 0.43,
                 boxcolor:
-                    viewModel.outStanding == 0 ? darkGreenHeigh : Colors.white,
+                    viewModel.outStanding == 1 ? darkGreenHeigh : Colors.white,
                 color:
-                    viewModel.outStanding != 0 ? darkGreenHeigh : Colors.white,
+                    viewModel.outStanding != 1 ? darkGreenHeigh : Colors.white,
                 onPress: () {
-                  viewModel.setOutstandingLoan(0);
+                  viewModel.setOutstandingLoan(1);
                 },
               ),
               ReturnButton(
@@ -46,11 +46,11 @@ class TabBarView3 extends ViewModelWidget<PersonalloanViewModel> {
                 text: 'no',
                 width: width * 0.43,
                 boxcolor:
-                    viewModel.outStanding == 1 ? darkGreenHeigh : Colors.white,
+                    viewModel.outStanding == 0 ? darkGreenHeigh : Colors.white,
                 color:
-                    viewModel.outStanding != 1 ? darkGreenHeigh : Colors.white,
+                    viewModel.outStanding != 0 ? darkGreenHeigh : Colors.white,
                 onPress: () {
-                  viewModel.setOutstandingLoan(1);
+                  viewModel.setOutstandingLoan(0);
                 },
               ),
             ],
@@ -59,7 +59,7 @@ class TabBarView3 extends ViewModelWidget<PersonalloanViewModel> {
           verticalSpaceSmall,
           viewModel.outStanding == 1
               ? CustomTextField(
-                number: false,
+                  number: false,
                   controller: viewModel.numOfLoansCtrl,
                   titleText: 'numberOfLoans',
                 )
