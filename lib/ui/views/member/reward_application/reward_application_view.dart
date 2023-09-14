@@ -92,7 +92,7 @@ class RewardApplicationView extends StackedView<RewardApplicationViewModel> {
                                   options: [],
                                 ),
                           verticalSpaceTiny,
-                          viewModel.institution != null
+                          viewModel.rewardDetails != null
                               ? ModelDropdown(
                                   titleText: 'rewardDetails',
                                   onChanged: viewModel.setRewardDetails,

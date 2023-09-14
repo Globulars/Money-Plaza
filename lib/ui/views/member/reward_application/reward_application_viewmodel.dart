@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:money_plaza/app/app.router.dart';
 import 'package:money_plaza/services/Models/company_by_card.dart';
@@ -75,6 +77,7 @@ class RewardApplicationViewModel extends BaseViewModel {
       "type": typeOfProduct.toLowerCase()
     };
     var data = await _apiHelperService.postAuthApi(_apiUrl.getIncentives, body);
+    log(data.toString());
     if (data?["success"] == true) {
       List dataList = data["data"];
       rewardDetailsList =
@@ -116,10 +119,13 @@ class RewardApplicationViewModel extends BaseViewModel {
         "productType": typeOfProduct,
         "referenceNumber": referenceNumberCtrl.text,
       };
+
       var data = await _apiHelperService.multiPartRequest(
           _apiUrl.userRewardSubmit, body);
+       
       if (data?["success"] == true) {
         _toasterService.successToast(data["message"]);
+        _navigationService.back();
       } else {
         _toasterService.errorToast(data["message"].toString());
       }

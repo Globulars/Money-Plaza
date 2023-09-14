@@ -93,7 +93,7 @@ class MorgagesViewModel extends BaseViewModel {
           mortgagesPropertyValuation: _apiHelperService.removeComa(mortgagesPropertyValuationCtrl.text),
           mortgagesValueRatio: _apiHelperService.removeComa(mortgagesValueRatioCtrl.text),
           mortgagesTenor: _apiHelperService.removeComa(mortgagesTenorCtrl.text),
-          mortgagesMonthlyIncome: mortgagesMonthlyIncomeCtrl.text,
+          mortgagesMonthlyIncome:  _apiHelperService.removeComa(mortgagesMonthlyIncomeCtrl.text),
           mortgageList: [mortgagesForApi],
           typePropertyList: [typeOfProperty],
           companyIds: companyIds);
