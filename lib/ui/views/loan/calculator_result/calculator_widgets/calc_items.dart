@@ -110,52 +110,6 @@ class CalculatorItems extends ViewModelWidget<LoanViewModel> {
                       height: 40,
                       textAlign: TextAlign.center,
                     ),
-                    verticalSpaceTiny,
-                    CustomText(
-                        text: 'monthlyRepaymentAmount',
-                        fontSize: 12,
-                        fontWeight: FontWeight.w500),
-                    viewModel.calculationitem == 0 ||
-                            viewModel.calculationitem == 1
-                        ? CustomTextField(
-                            controller: viewModel.monthyRepaymentAmountCtrl,
-                            hintText: '\$',
-                            height: 40,
-                            textAlign: TextAlign.center,
-                          )
-                        : Padding(
-                            padding: const EdgeInsets.only(top: 5.0),
-                            child: ReturnButton(
-                              text:
-                                  "${viewModel.paymentTable.scheduledPaymentAmount ?? 23224}",
-                              height: 40,
-                              onPress: () {},
-                              btmRightRadius: 5,
-                              topLeftRadius: 5,
-                              topRightRadius: 5,
-                              btmLeftRadius: 5,
-                            ),
-                          ),
-                    verticalSpaceTiny,
-                    CustomText(
-                      text: 'totalRepaymentAmount',
-                      fontSize: 12,
-                      fontWeight: FontWeight.w500,
-                    ),
-                    verticalSpaceTiny,
-                    Padding(
-                      padding: const EdgeInsets.only(top: 5.0),
-                      child: ReturnButton(
-                        text:
-                            "${viewModel.paymentTable.totalPaymentAmount ?? 23224}",
-                        height: 40,
-                        onPress: () {},
-                        btmRightRadius: 5,
-                        topLeftRadius: 5,
-                        topRightRadius: 5,
-                        btmLeftRadius: 5,
-                      ),
-                    ),
                   ],
                 ),
               ),
@@ -187,12 +141,56 @@ class CalculatorItems extends ViewModelWidget<LoanViewModel> {
                               btmLeftRadius: 5,
                             ),
                           ),
-                    verticalSpaceTiny,
+                  ],
+                ),
+              ),
+            ],
+          ),
+          verticalSpaceTiny,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                width: width * 0.46,
+                child: Column(
+                  children: [
+                    CustomText(
+                        text: 'monthlyRepaymentAmount',
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500),
+                    viewModel.calculationitem == 0 ||
+                            viewModel.calculationitem == 1
+                        ? CustomTextField(
+                            controller: viewModel.monthyRepaymentAmountCtrl,
+                            hintText: '\$',
+                            height: 40,
+                            textAlign: TextAlign.center,
+                          )
+                        : Padding(
+                            padding: const EdgeInsets.only(top: 5.0),
+                            child: ReturnButton(
+                              text:
+                                  "${viewModel.paymentTable.scheduledPaymentAmount ?? 23224}",
+                              height: 40,
+                              onPress: () {},
+                              btmRightRadius: 5,
+                              topLeftRadius: 5,
+                              topRightRadius: 5,
+                              btmLeftRadius: 5,
+                            ),
+                          ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: width * 0.46,
+                child: Column(
+                  children: [
                     CustomText(
                         text: 'tenor',
                         fontSize: 12,
                         fontWeight: FontWeight.w500),
-                    verticalSpaceTiny,
                     viewModel.calculationitem == 1 ||
                             viewModel.calculationitem == 2
                         ? CustomTextField(
@@ -215,7 +213,45 @@ class CalculatorItems extends ViewModelWidget<LoanViewModel> {
                               btmLeftRadius: 5,
                             ),
                           ),
-                    verticalSpaceTiny,
+                  ],
+                ),
+              ),
+            ],
+          ),
+          verticalSpaceTiny,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                width: width * 0.46,
+                child: Column(
+                  children: [
+                    CustomText(
+                      text: 'totalRepaymentAmount',
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 5.0),
+                      child: ReturnButton(
+                        text:
+                            "${viewModel.paymentTable.totalPaymentAmount ?? 23224}",
+                        height: 40,
+                        onPress: () {},
+                        btmRightRadius: 5,
+                        topLeftRadius: 5,
+                        topRightRadius: 5,
+                        btmLeftRadius: 5,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: width * 0.46,
+                child: Column(
+                  children: [
                     CustomText(
                       text: 'totalInterest',
                       fontSize: 12,
