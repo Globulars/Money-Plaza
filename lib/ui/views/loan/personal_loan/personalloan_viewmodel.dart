@@ -30,6 +30,7 @@ class PersonalloanViewModel extends BaseViewModel {
   var initialIndex = 0;
   var loanTenors = 6;
   var outStanding = 0;
+  var bornInHK = 'yes';
   int currentIndex = 0;
 
   final loanReasonList = [
@@ -89,6 +90,10 @@ class PersonalloanViewModel extends BaseViewModel {
 
   setOutstandingLoan(value) {
     outStanding = value;
+    notifyListeners();
+  }
+    setbornInHK(value) {
+    bornInHK = value;
     notifyListeners();
   }
 
@@ -256,14 +261,14 @@ class PersonalloanViewModel extends BaseViewModel {
           "fieldOrder": "",
           "fieldAttrs": ["unique"]
         },
-        // {
-        //   "fieldName": "bornInHK",
-        //   "fieldTitle": "是否在香港出生?",
-        //   "fieldValue": "yes",
-        //   "fieldType": "text",
-        //   "fieldOrder": "",
-        //   "fieldAttrs": []
-        // }
+        {
+          "fieldName": "bornInHK",
+          "fieldTitle": "是否在香港出生?",
+          "fieldValue": bornInHK,
+          "fieldType": "text",
+          "fieldOrder": "",
+          "fieldAttrs": []
+        }
       ];
       survayBody.addAll(applyBody);
       Map<String, dynamic> body = {"result": survayBody};

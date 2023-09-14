@@ -72,7 +72,7 @@ class OwnerTabBar3 extends ViewModelWidget<OwnerloanViewModel> {
           verticalSpaceSmall,
           viewModel.outStanding == 1
               ? CustomTextField(
-                  number: false,
+                number: false,
                   titleText: 'numberOfLoans',
                   controller: viewModel.numOfLoansCtrl,
                 )

@@ -1,9 +1,10 @@
-// ignore_for_file: must_be_immutable
+// ignore_for_file: must_be_immutable, unrelated_type_equality_checks
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/return_button.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
+import '../../../common/app_colors.dart';
 import '../../../common/ui_helpers.dart';
 import '../../../widgets/app_bar.dart';
 import '../../../widgets/bottom_bar.dart';
@@ -25,6 +26,8 @@ class PersonalloanApplyConfirmView extends StackedView<PersonalloanViewModel> {
     PersonalloanViewModel viewModel,
     Widget? child,
   ) {
+    final width = MediaQuery.of(context).size.width;
+
     return Form(
       key: viewModel.formKey,
       child: Stack(
@@ -51,6 +54,7 @@ class PersonalloanApplyConfirmView extends StackedView<PersonalloanViewModel> {
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           CustomText(text: 'enterFollowingInformation'),
                           verticalSpaceTiny,
@@ -77,6 +81,45 @@ class PersonalloanApplyConfirmView extends StackedView<PersonalloanViewModel> {
                             number: false,
                             controller: viewModel.hkidCtrl,
                             titleText: 'hkid',
+                          ),
+                          verticalSpaceTiny,
+                          CustomText(
+                            text: 'areyouBorninHongKong',
+                            fontWeight: FontWeight.w600,
+                          ),
+                          verticalSpaceTiny,
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              ReturnButton(
+                                height: 40,
+                                text: 'yes',
+                                width: width * 0.43,
+                                boxcolor: viewModel.bornInHK == "yes"
+                                    ? darkGreenHeigh
+                                    : Colors.white,
+                                color: viewModel.bornInHK != "yes"
+                                    ? darkGreenHeigh
+                                    : Colors.white,
+                                onPress: () {
+                                  viewModel.setbornInHK("yes");
+                                },
+                              ),
+                              ReturnButton(
+                                height: 40,
+                                text: 'no',
+                                width: width * 0.43,
+                                boxcolor: viewModel.bornInHK == "no"
+                                    ? darkGreenHeigh
+                                    : Colors.white,
+                                color: viewModel.bornInHK != "no"
+                                    ? darkGreenHeigh
+                                    : Colors.white,
+                                onPress: () {
+                                  viewModel.setbornInHK("no");
+                                },
+                              ),
+                            ],
                           ),
                         ],
                       ),
