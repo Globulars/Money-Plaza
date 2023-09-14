@@ -1,4 +1,4 @@
-package com.example.money_plaza
+package com.globulars.moneyplaza
 
 import io.flutter.embedding.android.FlutterActivity
 

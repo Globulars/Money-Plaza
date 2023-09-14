@@ -76,6 +76,7 @@ class BlnstransferloanApplyConfirmView
                           ),
                           verticalSpaceTiny,
                           CustomTextField(
+                            number: false,
                             controller: viewModel.hkidCtrl,
                             titleText: 'hkid',
                           ),
