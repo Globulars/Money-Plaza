@@ -85,7 +85,6 @@ class PersonalloanApplyConfirmView extends StackedView<PersonalloanViewModel> {
                           verticalSpaceTiny,
                           CustomText(
                             text: 'areyouBorninHongKong',
-                            fontWeight: FontWeight.w600,
                           ),
                           verticalSpaceTiny,
                           Row(
@@ -144,7 +143,7 @@ class PersonalloanApplyConfirmView extends StackedView<PersonalloanViewModel> {
                 SubmitButton(
                   image: myIcons.done,
                   imgwidth: 16,
-                  text: 'Done',
+                  text: 'done',
                   height: 40,
                   width: 80,
                   onPress: () {

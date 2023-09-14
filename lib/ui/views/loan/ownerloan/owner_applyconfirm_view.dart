@@ -102,7 +102,7 @@ class OwnerApplyConfirmView extends StackedView<OwnerloanViewModel> {
                 SubmitButton(
                   image: match ? myIcons.done : myIcons.match,
                   imgwidth: 16,
-                  text: match ? 'Done' : 'match',
+                  text: match ? 'done' : 'match',
                   height: 40,
                   width: 80,
                   onPress: () {
