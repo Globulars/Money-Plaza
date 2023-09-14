@@ -3,6 +3,8 @@
 import 'dart:convert';
 import 'dart:developer';
 import 'dart:io';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:image_picker/image_picker.dart';
 import 'package:money_plaza/services/Models/auth.dart';
@@ -10,15 +12,24 @@ import 'package:money_plaza/services/shared_preferences_service.dart';
 import 'package:money_plaza/ui/common/app_url.dart';
 
 class ApiHelperService {
+  String acceptLanguage = "en-US";
   Auth authData = Auth();
   final ApiUrl _apiUrl = ApiUrl();
 
   String? imagePath;
   // final ApiUrl _apiUrl = ApiUrl();
-  Map<String, String> headers = {
-    "Accept": "application/json",
-    "content-type": "application/json"
-  };
+  Map<String, String> headers = {};
+
+  setLocalization(BuildContext context) {
+    log("==============================>");
+    acceptLanguage = context.locale.toString() == 'zh' ? "zh-HK" : "en-US";
+    headers = {
+      "Accept": "application/json",
+      "content-type": "application/json",
+      "Accept-Language": acceptLanguage
+    };
+  }
+
   /////////////////////////////////////Post////////////////////////////////
   postApi(_url, body) async {
     try {
@@ -45,7 +56,8 @@ class ApiHelperService {
           .post(Uri.parse(baseUrl + _url), body: jsonEncode(body), headers: {
         "Accept": "application/json",
         "content-type": "application/json",
-        "Authorization": "Bearer $accessToken"
+        "Authorization": "Bearer $accessToken",
+        "Accept-Language": acceptLanguage
       });
       if (response.statusCode == 200) {
         var data = json.decode(response.body);
@@ -69,6 +81,7 @@ class ApiHelperService {
       final response = await http.get(Uri.parse(baseUrl + _url), headers: {
         "Accept": "application/json",
         "content-type": "application/json",
+        "Accept-Language": acceptLanguage,
         "Authorization": "Bearer $accessToken"
       });
       if (response.statusCode == 200) {
@@ -100,6 +113,7 @@ class ApiHelperService {
         // "Accept": "multipart/form-data",
         "content-type":
             "multipart/form-data; boundary=<calculated when request is sent>",
+        "Accept-Language": acceptLanguage,
         "Authorization": "Bearer $accessToken"
       });
       request.fields.addAll(_body);

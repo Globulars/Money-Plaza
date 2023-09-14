@@ -55,5 +55,5 @@ class LandingView extends StackedView<LandingViewModel> {
   LandingViewModel viewModelBuilder(
     BuildContext context,
   ) =>
-      LandingViewModel();
+      LandingViewModel(context);
 }

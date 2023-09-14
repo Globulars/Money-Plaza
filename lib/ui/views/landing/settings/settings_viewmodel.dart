@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:money_plaza/app/app.router.dart';
+import 'package:money_plaza/services/api_helper_service.dart';
 import 'package:money_plaza/services/shared_preferences_service.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
@@ -9,11 +10,13 @@ import '../landing_view.dart';
 
 class SettingsViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
+  final _apiHelperService = locator<ApiHelperService>();
   bool englishLanguage = true;
   bool notification = true;
 
   inState(BuildContext context) {
     if (context.locale.toString() == 'zh') {
+      _apiHelperService.setLocalization(context);
       englishLanguage = false;
       notifyListeners();
     }
