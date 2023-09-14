@@ -83,7 +83,7 @@ class ModelDropdown extends StackedView<DropdownTextfieldModel> {
                         child: SizedBox(
                           width: width - 150,
                           child: Text(
-                            value.name.toString(),
+                            value.name ?? "",
                             overflow: TextOverflow.ellipsis,
                           ).tr(),
                         ),
