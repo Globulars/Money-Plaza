@@ -79,7 +79,7 @@ class CommTabBar1 extends ViewModelWidget<CommericalLoanViewModel> {
                 ),
                 ReturnButton(
                   height: 40,
-                  text: '12',
+                  text: '36',
                   width: width * 0.21,
                   boxcolor: viewModel.loanTenors == 36
                       ? darkGreenHeigh
@@ -99,7 +99,7 @@ class CommTabBar1 extends ViewModelWidget<CommericalLoanViewModel> {
               children: [
                 ReturnButton(
                   height: 40,
-                  text: '36',
+                  text: '48',
                   width: width * 0.21,
                   boxcolor: viewModel.loanTenors == 48
                       ? darkGreenHeigh
@@ -113,7 +113,7 @@ class CommTabBar1 extends ViewModelWidget<CommericalLoanViewModel> {
                 ),
                 ReturnButton(
                   height: 40,
-                  text: '48',
+                  text: '60',
                   width: width * 0.21,
                   boxcolor: viewModel.loanTenors == 60
                       ? darkGreenHeigh
@@ -127,7 +127,7 @@ class CommTabBar1 extends ViewModelWidget<CommericalLoanViewModel> {
                 ),
                 ReturnButton(
                   height: 40,
-                  text: '60',
+                  text: '72',
                   width: width * 0.21,
                   boxcolor: viewModel.loanTenors == 72
                       ? darkGreenHeigh
@@ -141,7 +141,7 @@ class CommTabBar1 extends ViewModelWidget<CommericalLoanViewModel> {
                 ),
                 ReturnButton(
                   height: 40,
-                  text: '12',
+                  text: '84',
                   width: width * 0.21,
                   boxcolor: viewModel.loanTenors == 84
                       ? darkGreenHeigh

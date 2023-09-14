@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:money_plaza/app/app.router.dart';
 import 'package:stacked/stacked.dart';
@@ -100,7 +102,6 @@ class LoanViewModel extends BaseViewModel {
   /////////////////// calculator result//////////////////
   TextEditingController borrowingAmountCtrl = TextEditingController();
   TextEditingController aprCtrl = TextEditingController();
-
   TextEditingController tenorCtrl = TextEditingController();
   TextEditingController monthyRepaymentAmountCtrl = TextEditingController();
   TextEditingController totalPaymentAmountCtrl = TextEditingController();
@@ -134,6 +135,7 @@ class LoanViewModel extends BaseViewModel {
         "numOfMonths": _apiHelperService.removeComa(tenorCtrl.text)
       };
     }
+     log(body.toString());
     var data =
         await _apiHelperService.postApi("/repayment/$calculationType", body);
     if (data?["success"] == true) {
