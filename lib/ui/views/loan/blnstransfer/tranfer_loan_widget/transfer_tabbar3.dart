@@ -34,7 +34,7 @@ class TransferTabBar3 extends ViewModelWidget<BlnstransferViewModel> {
             children: [
               ReturnButton(
                 height: 40,
-                text: 'Yes',
+                text: 'yes',
                 width: width * 0.43,
                 boxcolor:
                     viewModel.outStanding == 1 ? darkGreenHeigh : Colors.white,
@@ -46,7 +46,7 @@ class TransferTabBar3 extends ViewModelWidget<BlnstransferViewModel> {
               ),
               ReturnButton(
                 height: 40,
-                text: 'No',
+                text: 'no',
                 width: width * 0.43,
                 boxcolor:
                     viewModel.outStanding == 2 ? darkGreenHeigh : Colors.white,

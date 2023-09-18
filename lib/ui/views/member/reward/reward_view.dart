@@ -186,8 +186,8 @@ class RewardView extends StackedView<RewardApplicationViewModel> {
                                             width: 60,
                                             child: CustomText(
                                               text: data.hasFile ?? false
-                                                  ? "Yes"
-                                                  : "No",
+                                                  ? "yes"
+                                                  : "no",
                                               textAlign: TextAlign.center,
                                               fontSize: 10,
                                             ),
