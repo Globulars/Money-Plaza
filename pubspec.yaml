@@ -37,7 +37,8 @@ dependencies:
   flutter_widget_from_html: ^0.10.4
   add_comma: ^0.2.0
   currency_text_input_formatter: ^2.1.10
-
+  webview_flutter: ^4.2.4
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter

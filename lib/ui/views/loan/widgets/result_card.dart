@@ -122,7 +122,9 @@ class ResultCard extends ViewModelWidget<LoanViewModel> {
                       fontSize: 18,
                       text: 'apply',
                       image: myIcons.apply,
-                      onPress: viewModel.navigateToSurveySplashView,
+                      onPress: () {
+                        viewModel.navigateToWebView(loanData.applyLink);
+                      },
                     ),
                     verticalSpaceSmall,
                     SubmitButton(

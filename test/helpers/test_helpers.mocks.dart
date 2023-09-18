@@ -651,6 +651,20 @@ class MockToasterService extends _i1.Mock implements _i7.ToasterService {}
 /// See the documentation for Mockito's code generation for more information.
 class MockApiHelperService extends _i1.Mock implements _i8.ApiHelperService {
   @override
+  String get acceptLanguage => (super.noSuchMethod(
+        Invocation.getter(#acceptLanguage),
+        returnValue: '',
+        returnValueForMissingStub: '',
+      ) as String);
+  @override
+  set acceptLanguage(String? _acceptLanguage) => super.noSuchMethod(
+        Invocation.setter(
+          #acceptLanguage,
+          _acceptLanguage,
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
   _i2.Auth get authData => (super.noSuchMethod(
         Invocation.getter(#authData),
         returnValue: _FakeAuth_0(
@@ -689,6 +703,14 @@ class MockApiHelperService extends _i1.Mock implements _i8.ApiHelperService {
         Invocation.setter(
           #headers,
           _headers,
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  dynamic setLocalization(_i4.BuildContext? context) => super.noSuchMethod(
+        Invocation.method(
+          #setLocalization,
+          [context],
         ),
         returnValueForMissingStub: null,
       );

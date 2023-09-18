@@ -4,6 +4,7 @@ import 'package:money_plaza/ui/views/loan/commerical_loan/comm_applyconfirm_view
 import 'package:money_plaza/ui/views/loan/ownerloan/owner_applyconfirm_view.dart';
 import 'package:money_plaza/ui/views/member/personal_info/personal_tabbar/tabbar4_widget/loan_record.dart';
 import 'package:money_plaza/ui/views/survey_form/survey_form_view.dart';
+import 'package:money_plaza/ui/widgets/web_view.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:money_plaza/ui/views/landing/landing_view.dart';
@@ -77,6 +78,7 @@ import 'package:money_plaza/ui/views/landing/settings/term_conditions/term_condi
     MaterialRoute(page: CommericalApplyConfirmView),
     MaterialRoute(page: BlnstransferloanApplyConfirmView),
     MaterialRoute(page: LoanRecordView),
+    MaterialRoute(page: WebView),
 
     MaterialRoute(page: PrivacyPolicyView),
     MaterialRoute(page: TermConditionsView),
