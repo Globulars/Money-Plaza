@@ -8,7 +8,7 @@ import '../../services/Models/card_banners.dart';
 import '../../../../services/api_helper_service.dart';
 
 class WidgetViewModel extends BaseViewModel {
-    final _navigationService = locator<NavigationService>();
+  final _navigationService = locator<NavigationService>();
 
   int progress = 0;
   bool loading = true;
@@ -35,7 +35,8 @@ class WidgetViewModel extends BaseViewModel {
       throw Exception(data["message"].toString());
     }
   }
-   navigateToSurveySplashView() {
-    _navigationService.navigateToSurveySplashView(organization: "Promise");
+
+  navigateToSurveySplashView() {
+    _navigationService.navigateToSurveySplashView(organization: "promise");
   }
 }

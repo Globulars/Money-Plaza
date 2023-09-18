@@ -170,7 +170,7 @@ class LoanViewModel extends BaseViewModel {
   }
 
   navigateToSurveySplashView() {
-    _navigationService.navigateToSurveySplashView(organization: "Promise");
+    _navigationService.navigateToSurveySplashView(organization: "promise");
   }
 
   navigateToWebView(applyLink) {
