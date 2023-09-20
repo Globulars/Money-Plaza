@@ -101,7 +101,9 @@ class MorgagesResultView extends StackedView<MorgagesResultViewModel> {
                       children: [
                         SizedBox(height: height * 0.3),
                         viewModel.mortgagesCardMessage == ""
-                            ? const CircularProgressIndicator()
+                            ? const CircularProgressIndicator(
+                                color: darkGreenLight,
+                              )
                             : CustomText(text: "noDataFound")
                       ],
                     )

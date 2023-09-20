@@ -63,7 +63,9 @@ class CreditResultView extends StackedView<CreditResultViewModel> {
                     ? Column(
                         children: [
                           SizedBox(height: height * 0.3),
-                          const CircularProgressIndicator(),
+                          const CircularProgressIndicator(
+                            color: darkGreenLight,
+                          ),
                         ],
                       )
                     : viewModel.creditCardList.isNotEmpty

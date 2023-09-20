@@ -49,7 +49,7 @@ class WidgetViewModel extends BaseViewModel {
     notifyListeners();
 
     if (await canLaunchUrl(url)) {
-    await launchUrl(url, mode: LaunchMode.externalApplication);
+      await launchUrl(url, mode: LaunchMode.externalApplication);
     }
   }
 }

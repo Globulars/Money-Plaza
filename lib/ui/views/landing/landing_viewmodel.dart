@@ -13,8 +13,6 @@ class LandingViewModel extends BaseViewModel {
   final BuildContext context;
   LandingViewModel(this.context);
 
-
-  
   getAccessToken() async {
     accessToken = await Store.getUser() ?? "";
     _apiHelperService.setLocalization(context);

@@ -92,7 +92,8 @@ class PersonalloanViewModel extends BaseViewModel {
     outStanding = value;
     notifyListeners();
   }
-    setbornInHK(value) {
+
+  setbornInHK(value) {
     bornInHK = value;
     notifyListeners();
   }

@@ -160,6 +160,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
+import 'package:money_plaza/ui/common/app_colors.dart';
 
 class WebViewHtml extends StatefulWidget {
   final String url;
@@ -186,7 +187,9 @@ class _WebViewHtmlState extends State<WebViewHtml> {
       onErrorBuilder: (context, element, error) =>
           Text('$element error: $error'),
       onLoadingBuilder: (context, element, loadingProgress) =>
-          const CircularProgressIndicator(),
+          const CircularProgressIndicator(
+        color: darkGreenLight,
+      ),
       renderMode: RenderMode.column,
       textStyle: const TextStyle(fontSize: 14),
     );

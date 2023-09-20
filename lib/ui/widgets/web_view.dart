@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:money_plaza/ui/widgets/app_bar.dart';
@@ -62,10 +63,9 @@ class WebView extends StackedView<WidgetViewModel> {
                     viewModel.changeProgress(progress);
                   },
                   onLoadError: (controller, url, code, message) {
-                    if (message.toString()=="net::ERR_UNKNOWN_URL_SCHEME") {
-                      
-                    log(message.toString());
-                    viewModel.urlLauncher(Uri.parse(uri));
+                    if (message.toString() == "net::ERR_UNKNOWN_URL_SCHEME") {
+                      log(message.toString());
+                      viewModel.urlLauncher(Uri.parse(uri));
                     }
                   },
                   onReceivedServerTrustAuthRequest:
@@ -79,7 +79,10 @@ class WebView extends StackedView<WidgetViewModel> {
           viewModel.loading
               ? Container(
                   color: Colors.white,
-                  child: const Center(child: CircularProgressIndicator()))
+                  child: const Center(
+                      child: CircularProgressIndicator(
+                    color: darkGreenLight,
+                  )))
               : Container(),
           bottomBar(
             Row(

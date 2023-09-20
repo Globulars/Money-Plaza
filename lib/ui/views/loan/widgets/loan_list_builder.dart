@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:stacked/stacked.dart';
 import '../../../../services/Models/loan_card.dart';
 import 'result_card.dart';
@@ -25,7 +26,9 @@ class LoanListView extends ViewModelWidget<LoanViewModel> {
                     height: height * 0.2,
                     width: width * 1,
                   ),
-                  const CircularProgressIndicator(),
+                  const CircularProgressIndicator(
+                    color: darkGreenLight,
+                  ),
                 ],
               )
         : ListView.builder(
