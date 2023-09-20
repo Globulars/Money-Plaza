@@ -12,8 +12,8 @@ import 'package:stacked/stacked.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
 class WebView extends StackedView<WidgetViewModel> {
-  final String url;
-  const WebView({Key? key, required this.url}) : super(key: key);
+  final String uri;
+  const WebView({Key? key, required this.uri}) : super(key: key);
   // @override
   // void onViewModelReady(WidgetViewModel viewModel) {
   //   super.onViewModelReady(viewModel);
@@ -29,45 +29,53 @@ class WebView extends StackedView<WidgetViewModel> {
       appBar: appBar(context),
       body: Stack(
         children: [
-          InAppWebView(
-            initialUrlRequest: URLRequest(url: Uri.parse(url)),
-            initialOptions: InAppWebViewGroupOptions(
-              crossPlatform: InAppWebViewOptions(
-                cacheEnabled: true,
-                supportZoom: false,
-                javaScriptCanOpenWindowsAutomatically: true,
-                useOnLoadResource: true,
-                javaScriptEnabled: true,
-                mediaPlaybackRequiresUserGesture: false,
-                transparentBackground: false,
-              ),
-            ),
-            androidOnPermissionRequest: (controller, origin, resources) async {
-              return PermissionRequestResponse(
-                resources: resources,
-                action: PermissionRequestResponseAction.GRANT,
-              );
-            },
-            // InAppWebViewGroupOptions(crossPlatform: InAppWebViewOptions()),
-            onWebViewCreated: (InAppWebViewController controller) {
-              viewModel.webViewController = controller;
-            },
-            onLoadStart: (InAppWebViewController controller, Uri? url) {},
-            onLoadStop: (InAppWebViewController controller, Uri? url) async {},
-            onProgressChanged:
-                (InAppWebViewController controller, int progress) {
-              viewModel.changeProgress(progress);
-            },
-            onLoadError: (controller, url, code, message) {
-              log(message.toString());
-            },
-            onReceivedServerTrustAuthRequest:
-                (InAppWebViewController controller,
-                    URLAuthenticationChallenge challenge) async {
-              return ServerTrustAuthResponse(
-                  action: ServerTrustAuthResponseAction.PROCEED);
-            },
-          ),
+          viewModel.showWebView
+              ? InAppWebView(
+                  initialUrlRequest: URLRequest(url: Uri.parse(uri)),
+                  initialOptions: InAppWebViewGroupOptions(
+                    crossPlatform: InAppWebViewOptions(
+                      cacheEnabled: true,
+                      supportZoom: false,
+                      javaScriptCanOpenWindowsAutomatically: true,
+                      useOnLoadResource: true,
+                      javaScriptEnabled: true,
+                      mediaPlaybackRequiresUserGesture: false,
+                      transparentBackground: false,
+                    ),
+                  ),
+                  androidOnPermissionRequest:
+                      (controller, origin, resources) async {
+                    return PermissionRequestResponse(
+                      resources: resources,
+                      action: PermissionRequestResponseAction.GRANT,
+                    );
+                  },
+                  // InAppWebViewGroupOptions(crossPlatform: InAppWebViewOptions()),
+                  onWebViewCreated: (InAppWebViewController controller) {
+                    viewModel.webViewController = controller;
+                  },
+                  onLoadStart: (InAppWebViewController controller, Uri? url) {},
+                  onLoadStop:
+                      (InAppWebViewController controller, Uri? url) async {},
+                  onProgressChanged:
+                      (InAppWebViewController controller, int progress) {
+                    viewModel.changeProgress(progress);
+                  },
+                  onLoadError: (controller, url, code, message) {
+                    if (message.toString()=="net::ERR_UNKNOWN_URL_SCHEME") {
+                      
+                    log(message.toString());
+                    viewModel.urlLauncher(Uri.parse(uri));
+                    }
+                  },
+                  onReceivedServerTrustAuthRequest:
+                      (InAppWebViewController controller,
+                          URLAuthenticationChallenge challenge) async {
+                    return ServerTrustAuthResponse(
+                        action: ServerTrustAuthResponseAction.PROCEED);
+                  },
+                )
+              : const Center(child: Text("web is open in the browser")),
           viewModel.loading
               ? Container(
                   color: Colors.white,

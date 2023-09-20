@@ -556,7 +556,7 @@ class StackedRouter extends _i1.RouterBase {
     _i33.WebView: (data) {
       final args = data.getArgs<WebViewArguments>(nullOk: false);
       return _i36.MaterialPageRoute<dynamic>(
-        builder: (context) => _i33.WebView(key: args.key, url: args.url),
+        builder: (context) => _i33.WebView(key: args.key, uri: args.url),
         settings: data,
       );
     },
