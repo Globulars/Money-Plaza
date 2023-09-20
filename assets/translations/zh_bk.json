@@ -91,7 +91,7 @@
     "interestCalculator": "利息計算器",
     "calculationItems": "計算項目",
     "tenor": "還款期",
-    "apr": "每月還款額",
+    "apr": "四月",
     "50000": "50,000",
     "monthlyRepaymentAmount": "實際年利率",
     "totalRepaymentAmount": "每月還款額",
@@ -106,7 +106,7 @@
     "lowestAnnualInterest": "*此為最低年利率",
     "compare": "比較",
     "apply": "申請",
-    "a.I.Matching": "A.I.Matching",
+    "a.I.Matching": "人工智能匹配",
     "filter": "篩選",
     "calculator": "利息計算機",
     "personalLoans": "私人貸款",
@@ -313,7 +313,4 @@
     "Business Nature": "業務性質",
     "Balance transfer": "清數PLAN",
     "areyouBorninHongKong": "你出生在香港嗎?"
-
-
-
 }

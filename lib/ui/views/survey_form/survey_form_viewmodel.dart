@@ -82,7 +82,7 @@ class SurveyFormViewModel extends BaseViewModel {
       var data = await _apiHelperService.postApi(_apiUrl.surveyForm, body);
       if (data["success"] == true) {
         _toasterService.successToast(data["message"]);
-        _navigationService.back();
+        _navigationService.popRepeated(2);
       } else {
         _toasterService.errorToast(data["message"].toString());
       }
