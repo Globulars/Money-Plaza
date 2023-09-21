@@ -47,7 +47,6 @@ class WidgetViewModel extends BaseViewModel {
   Future<void> urlLauncher(url) async {
     showWebView = false;
     notifyListeners();
-
     if (await canLaunchUrl(url)) {
       await launchUrl(url, mode: LaunchMode.externalApplication);
     }

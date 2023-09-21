@@ -174,8 +174,13 @@ class LoanViewModel extends BaseViewModel {
   }
 
   navigateToWebView(applyLink) {
-    log(applyLink);
-    _navigationService.navigateToWebView(url: applyLink.toString());
+    if (applyLink == "" || applyLink == null) {
+      log("No link:$applyLink");
+      navigateToSurveySplashView();
+    } else {
+      log("link:$applyLink");
+      _navigationService.navigateToWebView(url: applyLink.toString());
+    }
   }
 
   navigateToCommerical() {

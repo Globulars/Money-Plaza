@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
@@ -63,10 +61,7 @@ class WebView extends StackedView<WidgetViewModel> {
                     viewModel.changeProgress(progress);
                   },
                   onLoadError: (controller, url, code, message) {
-                    if (message.toString() == "net::ERR_UNKNOWN_URL_SCHEME") {
-                      log(message.toString());
-                      viewModel.urlLauncher(Uri.parse(uri));
-                    }
+                    viewModel.urlLauncher(Uri.parse(uri));
                   },
                   onReceivedServerTrustAuthRequest:
                       (InAppWebViewController controller,
