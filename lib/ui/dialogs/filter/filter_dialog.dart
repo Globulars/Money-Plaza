@@ -54,226 +54,234 @@ class FilterDialog extends StackedView<LoanViewModel> {
             verticalSpaceTiny,
             Expanded(
               child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 6, vertical: 6),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          CustomText(
-                            text: 'borrowingAmount',
-                            fontWeight: FontWeight.w600,
-                          ),
-                          CustomTextField(
-                            hintText: 'hk',
-                            controller: viewModel.loanAmountCtrl,
-                            height: 40,
-                          ),
-                          verticalSpaceTiny,
-                          CustomText(
-                            text: 'repaymentType',
-                            fontWeight: FontWeight.w600,
-                          ),
-                          verticalSpaceTiny,
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              ReturnButton(
-                                height: 40,
-                                text: 'termLoan',
-                                width: width * 0.36,
-                                boxcolor: viewModel.repaymentType == 0
-                                    ? darkGreenHeigh
-                                    : Colors.white,
-                                color: viewModel.repaymentType != 0
-                                    ? darkGreenHeigh
-                                    : Colors.white,
-                                onPress: () {
-                                  viewModel.setRepaymentType(0);
-                                },
-                              ),
-                              ReturnButton(
+                child: Form(
+                  key: viewModel.formKey,
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 6, vertical: 6),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            CustomText(
+                              text: 'borrowingAmount',
+                              fontWeight: FontWeight.w600,
+                            ),
+                            CustomTextField(
+                              hintText: 'hk',
+                              controller: viewModel.loanAmountCtrl,
+                              height: 40,
+                            ),
+                            verticalSpaceTiny,
+                            CustomText(
+                              text: 'repaymentType',
+                              fontWeight: FontWeight.w600,
+                            ),
+                            verticalSpaceTiny,
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                ReturnButton(
                                   height: 40,
-                                  text: 'min-pay',
+                                  text: 'termLoan',
                                   width: width * 0.36,
-                                  boxcolor: viewModel.repaymentType == 1
+                                  boxcolor: viewModel.repaymentType == 0
                                       ? darkGreenHeigh
                                       : Colors.white,
-                                  color: viewModel.repaymentType != 1
+                                  color: viewModel.repaymentType != 0
                                       ? darkGreenHeigh
                                       : Colors.white,
                                   onPress: () {
-                                    viewModel.setRepaymentType(1);
-                                  })
-                            ],
-                          ),
-                          verticalSpace(5),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              ReturnButton(
+                                    viewModel.setRepaymentType(0);
+                                  },
+                                ),
+                                ReturnButton(
+                                    height: 40,
+                                    text: 'min-pay',
+                                    width: width * 0.36,
+                                    boxcolor: viewModel.repaymentType == 1
+                                        ? darkGreenHeigh
+                                        : Colors.white,
+                                    color: viewModel.repaymentType != 1
+                                        ? darkGreenHeigh
+                                        : Colors.white,
+                                    onPress: () {
+                                      viewModel.setRepaymentType(1);
+                                    })
+                              ],
+                            ),
+                            verticalSpace(5),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                ReturnButton(
+                                    height: 40,
+                                    text: 'interestOnly',
+                                    width: width * 0.36,
+                                    boxcolor: viewModel.repaymentType == 2
+                                        ? darkGreenHeigh
+                                        : Colors.white,
+                                    color: viewModel.repaymentType != 2
+                                        ? darkGreenHeigh
+                                        : Colors.white,
+                                    onPress: () {
+                                      viewModel.setRepaymentType(2);
+                                    }),
+                                ReturnButton(
                                   height: 40,
-                                  text: 'interestOnly',
+                                  text: 'prepaidInterest',
                                   width: width * 0.36,
-                                  boxcolor: viewModel.repaymentType == 2
+                                  boxcolor: viewModel.repaymentType == 3
                                       ? darkGreenHeigh
                                       : Colors.white,
-                                  color: viewModel.repaymentType != 2
+                                  color: viewModel.repaymentType != 3
                                       ? darkGreenHeigh
                                       : Colors.white,
                                   onPress: () {
-                                    viewModel.setRepaymentType(2);
-                                  }),
-                              ReturnButton(
-                                height: 40,
-                                text: 'prepaidInterest',
-                                width: width * 0.36,
-                                boxcolor: viewModel.repaymentType == 3
-                                    ? darkGreenHeigh
-                                    : Colors.white,
-                                color: viewModel.repaymentType != 3
-                                    ? darkGreenHeigh
-                                    : Colors.white,
-                                onPress: () {
-                                  viewModel.setRepaymentType(3);
-                                },
-                              )
-                            ],
-                          ),
-                          verticalSpaceTiny,
-                          CustomText(
-                            text: 'repaymentPeriod(Monthly)',
-                            fontWeight: FontWeight.w600,
-                          ),
-                          verticalSpaceTiny,
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              ReturnButton(
-                                height: 40,
-                                text: '6',
-                                width: width * 0.23,
-                                boxcolor: viewModel.repaymentPeriod == 6
-                                    ? darkGreenHeigh
-                                    : Colors.white,
-                                color: viewModel.repaymentPeriod != 6
-                                    ? darkGreenHeigh
-                                    : Colors.white,
-                                onPress: () {
-                                  viewModel.setRepaymentPeriod(6);
-                                },
-                              ),
-                              ReturnButton(
-                                height: 40,
-                                text: '12',
-                                width: width * 0.23,
-                                boxcolor: viewModel.repaymentPeriod == 12
-                                    ? darkGreenHeigh
-                                    : Colors.white,
-                                color: viewModel.repaymentPeriod != 12
-                                    ? darkGreenHeigh
-                                    : Colors.white,
-                                onPress: () {
-                                  viewModel.setRepaymentPeriod(12);
-                                },
-                              ),
-                              ReturnButton(
-                                height: 40,
-                                text: '24',
-                                width: width * 0.23,
-                                boxcolor: viewModel.repaymentPeriod == 24
-                                    ? darkGreenHeigh
-                                    : Colors.white,
-                                color: viewModel.repaymentPeriod != 24
-                                    ? darkGreenHeigh
-                                    : Colors.white,
-                                onPress: () {
-                                  viewModel.setRepaymentPeriod(24);
-                                },
-                              )
-                            ],
-                          ),
-                          verticalSpace(5),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              ReturnButton(
-                                height: 40,
-                                text: '36',
-                                width: width * 0.23,
-                                boxcolor: viewModel.repaymentPeriod == 36
-                                    ? darkGreenHeigh
-                                    : Colors.white,
-                                color: viewModel.repaymentPeriod != 36
-                                    ? darkGreenHeigh
-                                    : Colors.white,
-                                onPress: () {
-                                  viewModel.setRepaymentPeriod(36);
-                                },
-                              ),
-                              ReturnButton(
-                                height: 40,
-                                text: '48',
-                                width: width * 0.23,
-                                boxcolor: viewModel.repaymentPeriod == 48
-                                    ? darkGreenHeigh
-                                    : Colors.white,
-                                color: viewModel.repaymentPeriod != 48
-                                    ? darkGreenHeigh
-                                    : Colors.white,
-                                onPress: () {
-                                  viewModel.setRepaymentPeriod(48);
-                                },
-                              ),
-                              ReturnButton(
-                                height: 40,
-                                text: '60',
-                                width: width * 0.23,
-                                boxcolor: viewModel.repaymentPeriod == 60
-                                    ? darkGreenHeigh
-                                    : Colors.white,
-                                color: viewModel.repaymentPeriod != 60
-                                    ? darkGreenHeigh
-                                    : Colors.white,
-                                onPress: () {
-                                  viewModel.setRepaymentPeriod(60);
-                                },
-                              )
-                            ],
-                          ),
-                          verticalSpaceSmall,
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              SubmitButton(
-                                height: 40,
-                                width: 80,
-                                boxColor: Colors.transparent,
-                                image: myIcons.iconPowerReset,
-                                imgwidth: 15,
-                                text: 'resetAll',
-                                color: darkGreenLight,
-                              ),
-                              SubmitButton(
-                                text: 'apply',
-                                onPress: () {
-                                  viewModel.back();
-                                  request.data(
-                                      viewModel.loanAmountCtrl,
-                                      viewModel.repaymentType,
-                                      viewModel.repaymentPeriod);
-                                },
-                                height: 40,
-                                width: 80,
-                              ),
-                            ],
-                          )
-                        ],
+                                    viewModel.setRepaymentType(3);
+                                  },
+                                )
+                              ],
+                            ),
+                            verticalSpaceTiny,
+                            CustomText(
+                              text: 'repaymentPeriod(Monthly)',
+                              fontWeight: FontWeight.w600,
+                            ),
+                            verticalSpaceTiny,
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                ReturnButton(
+                                  height: 40,
+                                  text: '6',
+                                  width: width * 0.23,
+                                  boxcolor: viewModel.repaymentPeriod == 6
+                                      ? darkGreenHeigh
+                                      : Colors.white,
+                                  color: viewModel.repaymentPeriod != 6
+                                      ? darkGreenHeigh
+                                      : Colors.white,
+                                  onPress: () {
+                                    viewModel.setRepaymentPeriod(6);
+                                  },
+                                ),
+                                ReturnButton(
+                                  height: 40,
+                                  text: '12',
+                                  width: width * 0.23,
+                                  boxcolor: viewModel.repaymentPeriod == 12
+                                      ? darkGreenHeigh
+                                      : Colors.white,
+                                  color: viewModel.repaymentPeriod != 12
+                                      ? darkGreenHeigh
+                                      : Colors.white,
+                                  onPress: () {
+                                    viewModel.setRepaymentPeriod(12);
+                                  },
+                                ),
+                                ReturnButton(
+                                  height: 40,
+                                  text: '24',
+                                  width: width * 0.23,
+                                  boxcolor: viewModel.repaymentPeriod == 24
+                                      ? darkGreenHeigh
+                                      : Colors.white,
+                                  color: viewModel.repaymentPeriod != 24
+                                      ? darkGreenHeigh
+                                      : Colors.white,
+                                  onPress: () {
+                                    viewModel.setRepaymentPeriod(24);
+                                  },
+                                )
+                              ],
+                            ),
+                            verticalSpace(5),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                ReturnButton(
+                                  height: 40,
+                                  text: '36',
+                                  width: width * 0.23,
+                                  boxcolor: viewModel.repaymentPeriod == 36
+                                      ? darkGreenHeigh
+                                      : Colors.white,
+                                  color: viewModel.repaymentPeriod != 36
+                                      ? darkGreenHeigh
+                                      : Colors.white,
+                                  onPress: () {
+                                    viewModel.setRepaymentPeriod(36);
+                                  },
+                                ),
+                                ReturnButton(
+                                  height: 40,
+                                  text: '48',
+                                  width: width * 0.23,
+                                  boxcolor: viewModel.repaymentPeriod == 48
+                                      ? darkGreenHeigh
+                                      : Colors.white,
+                                  color: viewModel.repaymentPeriod != 48
+                                      ? darkGreenHeigh
+                                      : Colors.white,
+                                  onPress: () {
+                                    viewModel.setRepaymentPeriod(48);
+                                  },
+                                ),
+                                ReturnButton(
+                                  height: 40,
+                                  text: '60',
+                                  width: width * 0.23,
+                                  boxcolor: viewModel.repaymentPeriod == 60
+                                      ? darkGreenHeigh
+                                      : Colors.white,
+                                  color: viewModel.repaymentPeriod != 60
+                                      ? darkGreenHeigh
+                                      : Colors.white,
+                                  onPress: () {
+                                    viewModel.setRepaymentPeriod(60);
+                                  },
+                                )
+                              ],
+                            ),
+                            verticalSpaceSmall,
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                SubmitButton(
+                                  height: 40,
+                                  width: 80,
+                                  boxColor: Colors.transparent,
+                                  image: myIcons.iconPowerReset,
+                                  imgwidth: 15,
+                                  text: 'resetAll',
+                                  color: darkGreenLight,
+                                ),
+                                SubmitButton(
+                                  text: 'apply',
+                                  onPress: () {
+                                    var isValid = viewModel
+                                        .formKey.currentState!
+                                        .validate();
+                                    if (isValid) {
+                                      viewModel.back();
+                                      request.data(
+                                          viewModel.loanAmountCtrl.text,
+                                          viewModel.repaymentType,
+                                          viewModel.repaymentPeriod);
+                                    }
+                                  },
+                                  height: 40,
+                                  width: 80,
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),

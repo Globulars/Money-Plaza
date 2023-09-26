@@ -312,8 +312,6 @@
     "POS system equipped": "配備POS系統",
     "Business Nature": "業務性質",
     "Balance transfer": "清數PLAN",
-    "areyouBorninHongKong": "你出生在香港嗎?"
-
-
-
+    "areyouBorninHongKong": "你出生在香港嗎?",
+    "pleaseEnteraValidHKid": "請輸入有效的香港身分證"
 }

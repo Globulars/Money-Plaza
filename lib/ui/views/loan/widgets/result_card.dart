@@ -13,11 +13,13 @@ import '../../../widgets/common/icon_box_btn/text.dart';
 class ResultCard extends ViewModelWidget<LoanViewModel> {
   final LoanCard loanData;
   final double detailPage;
+  final bool? isDetails;
 
   const ResultCard({
     super.key,
     required this.loanData,
     this.detailPage = 0,
+    this.isDetails = true,
   });
 
   @override
@@ -91,28 +93,31 @@ class ResultCard extends ViewModelWidget<LoanViewModel> {
                       fontSize: 12,
                     ),
                     verticalSpaceSmall,
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.3,
-                      child: Row(
-                        children: [
-                          SizedBox(
-                            height: 10,
-                            width: 20,
-                            child: Checkbox(
-                              value: loanData.checkBox,
-                              onChanged: (value) {
-                                viewModel.setCompareData(loanData);
-                              },
+                    InkWell(
+                      onTap: () {
+                        viewModel.setCompareData(loanData);
+                      },
+                      child: SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.3,
+                        child: Row(
+                          children: [
+                            SizedBox(
+                              height: 10,
+                              width: 20,
+                              child: Checkbox(
+                                value: loanData.checkBox,
+                                onChanged: (value) {
+                                  // viewModel.setCompareData(loanData);
+                                },
+                              ),
                             ),
-                          ),
-                          SubmitButton(
-                            boxColor: Colors.transparent,
-                            text: 'compare',
-                            color: Colors.black87,
-                            onPress: (value) { viewModel.setCompareData(loanData);},
-                            fontSize: 18,
-                          ),
-                        ],
+                            CustomText(
+                              text: 'compare',
+                              color: Colors.black87,
+                              fontSize: 18,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     verticalSpaceSmall,
@@ -127,17 +132,19 @@ class ResultCard extends ViewModelWidget<LoanViewModel> {
                       },
                     ),
                     verticalSpaceSmall,
-                    SubmitButton(
-                      image: myIcons.detail,
-                      imgwidth: 30,
-                      boxColor: Colors.transparent,
-                      text: 'details',
-                      color: Colors.black,
-                      fontSize: 18,
-                      onPress: () {
-                        viewModel.showDetail(loanData);
-                      },
-                    ),
+                    isDetails == true
+                        ? SubmitButton(
+                            image: myIcons.detail,
+                            imgwidth: 30,
+                            boxColor: Colors.transparent,
+                            text: 'details',
+                            color: Colors.black,
+                            fontSize: 18,
+                            onPress: () {
+                              viewModel.showDetail(loanData);
+                            },
+                          )
+                        : Container(),
                   ],
                 ),
               ),
