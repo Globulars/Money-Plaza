@@ -38,30 +38,29 @@ class LoanView extends StackedView<LoanViewModel> {
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: appBar(context),
-          body: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                TopBanner(url: "${ApiUrl().bannersByType}loan"),
-                verticalSpaceMedium,
-                const FilterBarWidget(),
-                verticalSpaceTiny,
-                verticalSpaceSmall,
-                Stack(
-                  children: [
-                    Column(
-                      children: [
-                        verticalSpace(70.0),
-                        const LoanTagsListView(),
-                        LoanListView()
-                      ],
-                    ),
-                    const FilterBottomBar(),
-                  ],
-                ),
-                verticalSpaceLarge
-              ],
-            ),
+          body: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              TopBanner(url: "${ApiUrl().bannersByType}loan"),
+              verticalSpaceMedium,
+              const FilterBarWidget(),
+              verticalSpaceTiny,
+              verticalSpaceSmall,
+              Stack(
+                children: [
+                  Column(
+                    children: [
+                      verticalSpace(70.0),
+                      const LoanTagsListView(),
+                      SizedBox(
+                        height:MediaQuery.of(context).size.height*0.41,child: SingleChildScrollView(child: LoanListView()))
+                    ],
+                  ),
+                  const FilterBottomBar(),
+                ],
+              ),
+              verticalSpaceLarge
+            ],
           ),
         ),
         bottomBar(
