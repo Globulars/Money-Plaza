@@ -182,26 +182,51 @@ class CalculatorDialog extends StackedView<LoanViewModel> {
                         ),
                         verticalSpaceTiny,
                         verticalSpaceTiny,
-                        CustomText(
-                          text: 'totalRepaymentAmount',
-                          fontWeight: FontWeight.w600,
-                        ),
-                        CustomTextField(
-                          hintText: 'hk',
-                          controller: viewModel.monthlyPaymentCtrl,
-                          height: 40,
-                        ),
+                        viewModel.repayment == 0 &&
+                                (viewModel.calculation == 0 )
+                            ? CustomTextField(
+                                titleText: 'totalRepaymentAmount',
+                                hintText: 'hk',
+                                controller: viewModel.monthlyPaymentCtrl,
+                                height: 40,
+                              )
+                            : Container(),
                         verticalSpaceTiny,
-                        CustomText(
-                          text: 'interestRate',
-                          fontWeight: FontWeight.w500,
-                        ),
-                        CustomTextField(
-                          number: false,
-                          hintText: '%',
-                          controller: viewModel.interestCtrl,
-                          height: 40,
-                        ),
+                        viewModel.repayment == 0 && (viewModel.calculation == 0 || viewModel.calculation == 0)
+                            ? CustomTextField(
+                                titleText: 'interestRate',
+                                number: false,
+                                hintText: '%',
+                                controller: viewModel.interestCtrl,
+                                height: 40,
+                              )
+                            : Container(),
+                               viewModel.repayment == 2 && viewModel.calculation == 1
+                            ? CustomTextField(
+                                titleText: 'totalPrepaidInterest',
+                                number: false,
+                                hintText: '%',
+                                controller: viewModel.interestCtrl,
+                                height: 40,
+                              )
+                            : Container(),
+                        verticalSpaceSmall,
+                        (viewModel.repayment == 2 ) &&( viewModel.calculation == 1|| viewModel.calculation == 3)
+                            ? CustomTextField(
+                                titleText: 'tenor',
+                                controller: viewModel.tenorCtrl,
+                                height: 40,
+                              )
+                            : Container(),
+                       ( viewModel.repayment == 2|| viewModel.repayment == 1) && viewModel.calculation == 3
+                            ? CustomTextField(
+                                titleText: 'apr',
+                                number: false,
+                                hintText: '%',
+                                controller: viewModel.aprCtrl,
+                                height: 40,
+                              )
+                            : Container(),
                         verticalSpaceSmall,
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,

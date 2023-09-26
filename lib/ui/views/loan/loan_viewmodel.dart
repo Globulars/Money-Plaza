@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:money_plaza/app/app.router.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
-import 'package:url_launcher/url_launcher.dart';
 import '../../../app/app.dialogs.dart';
 import '../../../app/app.locator.dart';
 import '../../../services/Models/interest_calculator.dart';
@@ -88,7 +87,7 @@ class LoanViewModel extends BaseViewModel {
   ////////////////////////// Filter ///////////////////////////
 
   var repaymentType = 0;
-  var repaymentPeriod = 6;
+  var repaymentPeriod = 18;
 
   setRepaymentType(value) {
     repaymentType = value;
@@ -289,6 +288,7 @@ class LoanViewModel extends BaseViewModel {
       "interestRate": _apiHelperService.removeComa(interestCtrl.text),
       "monthlyRepayment": _apiHelperService.removeComa(monthlyPaymentCtrl.text)
     };
+    log("======>$body");
     var data = await _apiHelperService.postApi(_apiUrl.loanList, body);
     if (data?["success"] == true) {
       List dataList = data["data"]["records"];
