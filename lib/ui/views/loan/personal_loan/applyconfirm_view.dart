@@ -138,6 +138,7 @@ class PersonalloanApplyConfirmView extends StackedView<PersonalloanViewModel> {
                   text: 'return',
                   height: 40,
                   width: 90,
+                  onPress: viewModel.navigateToLoanView,
                 ),
                 horizontalSpaceTiny,
                 SubmitButton(

@@ -146,7 +146,11 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
                     style: GoogleFonts.ibmPlexSans(
                         fontSize: 14, fontWeight: FontWeight.w500),
                   ).tr(),
-                  isMandate == true
+                  isMandate == true ||
+                          titleText == "fullName" ||
+                          titleText == "phoneNumber" ||
+                          titleText == "monthlyIncome" ||
+                          titleText == "borrowingAmount"
                       ? const Text(
                           '*',
                           style: TextStyle(

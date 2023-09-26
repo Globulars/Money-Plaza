@@ -1,5 +1,6 @@
 import 'package:money_plaza/services/api_helper_service.dart';
 import 'package:money_plaza/ui/common/app_url.dart';
+import 'package:money_plaza/ui/views/loan/loan_view.dart';
 import 'package:stacked/stacked.dart';
 import 'package:flutter/material.dart';
 import 'package:money_plaza/app/app.locator.dart';
@@ -224,6 +225,10 @@ class PersonalloanViewModel extends BaseViewModel {
 
   navigateToServayLoanResultView(machBody) {
     _navigationService.navigateToServayLoanResultView(body: machBody);
+  }
+
+  navigateToLoanView() {
+    _navigationService.clearStackAndShowView(LoanView());
   }
 
   submitSurveyForm(machBody, List survayBody) async {
