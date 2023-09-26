@@ -109,7 +109,7 @@ class ResultCard extends ViewModelWidget<LoanViewModel> {
                             boxColor: Colors.transparent,
                             text: 'compare',
                             color: Colors.black87,
-                            onPress: () {},
+                            onPress: (value) { viewModel.setCompareData(loanData);},
                             fontSize: 18,
                           ),
                         ],
