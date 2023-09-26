@@ -49,6 +49,8 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
 
   String? titleText;
 
+  bool? isMandate;
+
   String? validationText;
 
   Widget? prefix;
@@ -91,6 +93,7 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
     this.maxLines,
     this.hintText,
     this.titleText,
+    this.isMandate,
     this.validationText,
     this.prefix,
     this.prefixConstraints,
@@ -135,11 +138,23 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         titleText != null
-            ? Text(
-                titleText.toString(),
-                style: GoogleFonts.ibmPlexSans(
-                    fontSize: 14, fontWeight: FontWeight.w500),
-              ).tr()
+            ? Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    titleText.toString(),
+                    style: GoogleFonts.ibmPlexSans(
+                        fontSize: 14, fontWeight: FontWeight.w500),
+                  ).tr(),
+                  isMandate == true
+                      ? const Text(
+                          '*',
+                          style: TextStyle(
+                              color: Colors.red, fontWeight: FontWeight.bold),
+                        )
+                      : Container(),
+                ],
+              )
             : Container(),
         verticalSpaceTiny,
         Container(
@@ -172,7 +187,12 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
             decoration: _buildDecoration(),
             initialValue: initialValue,
             validator: (value) {
-              if (value == null || value.isEmpty) {
+              if (titleText == "hkid") {
+                if (!RegExp(r"^[A-Z]+[0-9]").hasMatch(value!) ||
+                    value.length < 8) {
+                  return 'Please enter a valid hkid';
+                }
+              } else if (value == null || value.isEmpty) {
                 return validationText?.tr() ?? 'validation'.tr();
               }
               return null;

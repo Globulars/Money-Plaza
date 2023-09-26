@@ -22,6 +22,7 @@ class TabBarView2 extends ViewModelWidget<PersonalloanViewModel> {
             hintText: 'hk',
             controller: viewModel.monthlyIncomeCtrl,
             titleText: 'monthlyIncome',
+            isMandate: true,
           ),
           verticalSpaceSmall,
           DropdownTextfield(

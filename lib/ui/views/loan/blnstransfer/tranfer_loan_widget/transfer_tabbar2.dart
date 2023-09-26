@@ -24,6 +24,7 @@ class TransferTabBar2 extends ViewModelWidget<BlnstransferViewModel> {
             hintText: 'hk',
             controller: viewModel.monthlyIncomeCtrl,
             titleText: 'monthlyIncome',
+            // isMandate: true,
           ),
           verticalSpaceSmall,
           DropdownTextfield(
