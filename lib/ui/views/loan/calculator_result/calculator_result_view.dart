@@ -16,20 +16,17 @@ import 'calculator_widgets/calc_items.dart';
 import 'calculator_widgets/data_table.dart';
 
 class CalculatorResultView extends StackedView<LoanViewModel> {
-  final String monthlyPayment, interest, loanAmount;
+  final String loanTenor, loanAmount;
   final int repayment;
   final List<LoanCard>? loanCard;
-  const CalculatorResultView(
-      this.monthlyPayment, this.loanAmount, this.interest, this.repayment,
+  const CalculatorResultView(this.loanTenor, this.loanAmount, this.repayment,
       {Key? key, this.loanCard})
       : super(key: key);
   @override
   void onViewModelReady(LoanViewModel viewModel) {
-    viewModel.monthlyPaymentCtrl.text = monthlyPayment;
-    viewModel.interestCtrl.text = interest;
     viewModel.loanAmountCtrl.text = loanAmount;
     viewModel.repayment = repayment;
-    viewModel.loneListCalculatorBody();
+    viewModel.loneListCalculatorBody(loanTenor);
     super.onViewModelReady(viewModel);
   }
 
@@ -39,8 +36,6 @@ class CalculatorResultView extends StackedView<LoanViewModel> {
     LoanViewModel viewModel,
     Widget? child,
   ) {
-    final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.width;
     return Stack(
       children: [
         const BackgroundImage(),
@@ -75,17 +70,17 @@ class CalculatorResultView extends StackedView<LoanViewModel> {
                             ),
                           ),
                           viewModel.loanCardList.isEmpty
-                              ? Column(
-                                  children: [
-                                    SizedBox(
-                                      height: height * 0.2,
-                                      width: width * 1,
-                                    ),
-                                    const CircularProgressIndicator(
-                                      color: darkGreenLight,
-                                    ),
-                                  ],
-                                )
+                              ? viewModel.isBusy
+                                  ? const Padding(
+                                    padding: EdgeInsets.all(8.0),
+                                    child: CircularProgressIndicator(
+                                        color: darkGreenLight,
+                                      ),
+                                  )
+                                  : const Padding(
+                                    padding: EdgeInsets.all(8.0),
+                                    child: Text("sorryNoProductsIsFound"),
+                                  )
                               : ListView.builder(
                                   itemCount: viewModel.loanCardList.length,
                                   shrinkWrap: true,

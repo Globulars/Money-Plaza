@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
@@ -61,7 +62,6 @@ class CalculatorDialog extends StackedView<LoanViewModel> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        
                         CustomTextField(
                           titleText: 'borrowingAmount',
                           hintText: 'hk',
@@ -71,7 +71,8 @@ class CalculatorDialog extends StackedView<LoanViewModel> {
                         verticalSpaceTiny,
                         CustomText(
                           text: 'repaymentMethod',
-                          fontWeight: FontWeight.w500,fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
                         ),
                         verticalSpaceTiny,
                         Row(
@@ -127,7 +128,8 @@ class CalculatorDialog extends StackedView<LoanViewModel> {
                         verticalSpaceTiny,
                         CustomText(
                           text: 'calculationItems',
-                          fontWeight: FontWeight.w500,fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
                         ),
                         verticalSpaceTiny,
                         ReturnButton(

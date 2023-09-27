@@ -346,7 +346,7 @@ class StackedRouter extends _i1.RouterBase {
       final args = data.getArgs<CalculatorResultViewArguments>(nullOk: false);
       return _i36.MaterialPageRoute<dynamic>(
         builder: (context) => _i5.CalculatorResultView(
-            args.monthlyPayment, args.loanAmount, args.interest, args.repayment,
+            args.loanTenor, args.loanAmount, args.repayment,
             key: args.key, loanCard: args.loanCard),
         settings: data,
       );
@@ -609,19 +609,16 @@ class LoanViewArguments {
 
 class CalculatorResultViewArguments {
   const CalculatorResultViewArguments({
-    required this.monthlyPayment,
+    required this.loanTenor,
     required this.loanAmount,
-    required this.interest,
     required this.repayment,
     this.key,
     this.loanCard,
   });
 
-  final String monthlyPayment;
+  final String loanTenor;
 
   final String loanAmount;
-
-  final String interest;
 
   final int repayment;
 
@@ -631,15 +628,14 @@ class CalculatorResultViewArguments {
 
   @override
   String toString() {
-    return '{"monthlyPayment": "$monthlyPayment", "loanAmount": "$loanAmount", "interest": "$interest", "repayment": "$repayment", "key": "$key", "loanCard": "$loanCard"}';
+    return '{"loanTenor": "$loanTenor", "loanAmount": "$loanAmount", "repayment": "$repayment", "key": "$key", "loanCard": "$loanCard"}';
   }
 
   @override
   bool operator ==(covariant CalculatorResultViewArguments other) {
     if (identical(this, other)) return true;
-    return other.monthlyPayment == monthlyPayment &&
+    return other.loanTenor == loanTenor &&
         other.loanAmount == loanAmount &&
-        other.interest == interest &&
         other.repayment == repayment &&
         other.key == key &&
         other.loanCard == loanCard;
@@ -647,9 +643,8 @@ class CalculatorResultViewArguments {
 
   @override
   int get hashCode {
-    return monthlyPayment.hashCode ^
+    return loanTenor.hashCode ^
         loanAmount.hashCode ^
-        interest.hashCode ^
         repayment.hashCode ^
         key.hashCode ^
         loanCard.hashCode;
@@ -1144,9 +1139,8 @@ extension NavigatorStateExtension on _i38.NavigationService {
   }
 
   Future<dynamic> navigateToCalculatorResultView({
-    required String monthlyPayment,
+    required String loanTenor,
     required String loanAmount,
-    required String interest,
     required int repayment,
     _i36.Key? key,
     List<_i37.LoanCard>? loanCard,
@@ -1158,9 +1152,8 @@ extension NavigatorStateExtension on _i38.NavigationService {
   }) async {
     return navigateTo<dynamic>(Routes.calculatorResultView,
         arguments: CalculatorResultViewArguments(
-            monthlyPayment: monthlyPayment,
+            loanTenor: loanTenor,
             loanAmount: loanAmount,
-            interest: interest,
             repayment: repayment,
             key: key,
             loanCard: loanCard),
@@ -1710,9 +1703,8 @@ extension NavigatorStateExtension on _i38.NavigationService {
   }
 
   Future<dynamic> replaceWithCalculatorResultView({
-    required String monthlyPayment,
+    required String loanTenor,
     required String loanAmount,
-    required String interest,
     required int repayment,
     _i36.Key? key,
     List<_i37.LoanCard>? loanCard,
@@ -1724,9 +1716,8 @@ extension NavigatorStateExtension on _i38.NavigationService {
   }) async {
     return replaceWith<dynamic>(Routes.calculatorResultView,
         arguments: CalculatorResultViewArguments(
-            monthlyPayment: monthlyPayment,
+            loanTenor: loanTenor,
             loanAmount: loanAmount,
-            interest: interest,
             repayment: repayment,
             key: key,
             loanCard: loanCard),
