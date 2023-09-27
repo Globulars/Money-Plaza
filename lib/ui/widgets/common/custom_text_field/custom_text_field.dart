@@ -194,7 +194,7 @@ class CustomTextField extends StackedView<CustomTextFieldModel> {
               if (titleText == "hkid") {
                 if (!RegExp(r"^[A-Z]+[0-9]").hasMatch(value!) ||
                     value.length < 8) {
-                  return 'Please enter a valid hkid';
+                  return 'pleaseEnteraValidHKid';
                 }
               } else if (value == null || value.isEmpty) {
                 return validationText?.tr() ?? 'validation'.tr();
