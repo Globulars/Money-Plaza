@@ -181,7 +181,7 @@ class CalculatorDialog extends StackedView<LoanViewModel> {
                           ],
                         ),
                         verticalSpaceTiny,
-                        verticalSpaceTiny,
+                       
                         (viewModel.repayment == 0 &&
                                     (viewModel.calculation == 0 ||
                                         viewModel.calculation == 1)) ||
