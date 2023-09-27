@@ -76,7 +76,7 @@ class LoanViewModel extends BaseViewModel {
         repayment: repayment,
         loanTenor: calculation == 0 && repayment == 0
             ? await emiToTenor()
-            : tenorCtrl.text,
+            : _apiHelperService.removeComa(tenorCtrl.text),
       );
 
       notifyListeners();
