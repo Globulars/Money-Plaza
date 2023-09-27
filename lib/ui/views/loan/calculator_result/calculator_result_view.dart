@@ -17,10 +17,10 @@ import 'calculator_widgets/data_table.dart';
 
 class CalculatorResultView extends StackedView<LoanViewModel> {
   final String monthlyPayment, interest, loanAmount;
-
+  final int repayment;
   final List<LoanCard>? loanCard;
   const CalculatorResultView(
-      this.monthlyPayment, this.loanAmount, this.interest,
+      this.monthlyPayment, this.loanAmount, this.interest, this.repayment,
       {Key? key, this.loanCard})
       : super(key: key);
   @override
@@ -28,7 +28,8 @@ class CalculatorResultView extends StackedView<LoanViewModel> {
     viewModel.monthlyPaymentCtrl.text = monthlyPayment;
     viewModel.interestCtrl.text = interest;
     viewModel.loanAmountCtrl.text = loanAmount;
-    viewModel.loanListData();
+    viewModel.repayment = repayment;
+    viewModel.loneListCalculatorBody();
     super.onViewModelReady(viewModel);
   }
 

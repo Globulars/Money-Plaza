@@ -25,8 +25,8 @@ class CommericalLoanView extends StackedView<CommericalLoanViewModel> {
     return DefaultTabController(
       length: 3,
       child: Builder(builder: (context) {
-        return     Form(
-              key: viewModel.formKey,
+        return Form(
+          key: viewModel.formKey,
           child: Stack(
             children: [
               const BackgroundImage(),
@@ -72,7 +72,8 @@ class CommericalLoanView extends StackedView<CommericalLoanViewModel> {
                               var index = viewModel.currentIndex;
                               DefaultTabController.of(context)
                                   .animateTo(index - 1);
-                              viewModel.currentIndex = viewModel.currentIndex - 1;
+                              viewModel.currentIndex =
+                                  viewModel.currentIndex - 1;
                               viewModel.setInitialIndex();
                             },
                           ),
@@ -85,12 +86,14 @@ class CommericalLoanView extends StackedView<CommericalLoanViewModel> {
                       width: 80,
                       onPress: () {
                         var index = viewModel.currentIndex;
-                        var isValid = viewModel.formKey.currentState!.validate();
+                        var isValid =
+                            viewModel.formKey.currentState!.validate();
                         if (isValid) {
                           var length = DefaultTabController.of(context).length;
                           if (index < length - 1) {
                             viewModel.currentIndex = viewModel.currentIndex + 1;
-                            DefaultTabController.of(context).animateTo(index + 1);
+                            DefaultTabController.of(context)
+                                .animateTo(index + 1);
                           } else {
                             viewModel.navigateToApplyconfirm();
                           }

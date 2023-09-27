@@ -22,7 +22,7 @@ class LoanView extends StackedView<LoanViewModel> {
   @override
   void onViewModelReady(LoanViewModel viewModel) {
     viewModel.getLoanTags();
-    viewModel.loanListData();
+    viewModel.loneListBody();
     super.onViewModelReady(viewModel);
   }
 
@@ -38,29 +38,30 @@ class LoanView extends StackedView<LoanViewModel> {
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: appBar(context),
-          body: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              TopBanner(url: "${ApiUrl().bannersByType}loan"),
-              verticalSpaceMedium,
-              const FilterBarWidget(),
-              verticalSpaceTiny,
-              verticalSpaceSmall,
-              Stack(
-                children: [
-                  Column(
-                    children: [
-                      verticalSpace(70.0),
-                      const LoanTagsListView(),
-                      // LoanListView()
-                      LoanListView()
-                    ],
-                  ),
-                  const FilterBottomBar(),
-                ],
-              ),
-              verticalSpaceLarge
-            ],
+          body: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                TopBanner(url: "${ApiUrl().bannersByType}loan"),
+                verticalSpaceMedium,
+                const FilterBarWidget(),
+                verticalSpaceTiny,
+                verticalSpaceSmall,
+                Stack(
+                  children: [
+                    Column(
+                      children: [
+                        verticalSpace(70.0),
+                        const LoanTagsListView(),
+                        LoanListView()
+                      ],
+                    ),
+                    const FilterBottomBar(),
+                  ],
+                ),
+                verticalSpaceLarge
+              ],
+            ),
           ),
         ),
         bottomBar(
@@ -126,7 +127,7 @@ class LoanView extends StackedView<LoanViewModel> {
 //                 backgroundColor: Colors.transparent,
 //                 flexibleSpace: Column(
 //                   children: [
-                   
+
 //                   ],
 //                 ),
 

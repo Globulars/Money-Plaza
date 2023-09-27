@@ -43,6 +43,7 @@ class LoanViewModel extends BaseViewModel {
 
   setRepayment(value) {
     repayment = value;
+    log("===$value");
     notifyListeners();
   }
 
@@ -75,6 +76,7 @@ class LoanViewModel extends BaseViewModel {
         loanAmount: _apiHelperService.removeComa(loanAmountCtrl.text),
         monthlyPayment: _apiHelperService.removeComa(monthlyPaymentCtrl.text),
         interest: _apiHelperService.removeComa(interestCtrl.text),
+        repayment: repayment,
       );
 
       notifyListeners();
@@ -179,7 +181,7 @@ class LoanViewModel extends BaseViewModel {
       navigateToSurveySplashView();
     } else {
       log("link:$applyLink");
-      _navigationService.navigateToWebView(url: applyLink.toString());
+      _navigationService.navigateToWebView(uri: applyLink.toString());
     }
   }
 
@@ -200,7 +202,7 @@ class LoanViewModel extends BaseViewModel {
       features.add(loanTags.id ?? "");
       loanTags.selected = true;
     }
-    loanListData();
+    loneListBody();
     notifyListeners();
   }
 
@@ -267,10 +269,10 @@ class LoanViewModel extends BaseViewModel {
     loanAmountCtrl.text = _loanAmount;
     repaymentType = _repaymentType;
     repaymentPeriod = _repaymentPeriod;
-    loanListData();
+    loneListBody();
   }
 
-  Future<List<LoanCard>> loanListData() async {
+  loneListBody() {
     Map<String, dynamic> body = {
       "order": "descending",
       "sort": "ordering",
@@ -288,6 +290,26 @@ class LoanViewModel extends BaseViewModel {
       "interestRate": _apiHelperService.removeComa(interestCtrl.text),
       "monthlyRepayment": _apiHelperService.removeComa(monthlyPaymentCtrl.text)
     };
+    loanListData(body);
+  }
+
+  loneListCalculatorBody() {
+    Map<String, dynamic> body = {
+      "tenor": repayment == 0 ? 18 : 6,
+      "amount": _apiHelperService.removeComa(loanAmountCtrl.text),
+      "calculateMethod": repayment == 0
+          ? "PLoan"
+          : repayment == 1
+              ? "InterestOnly"
+              : repayment == 2
+                  ? "PrepaidInterest"
+                  : "PrepaidInterest",
+    };
+    log("=============$repayment");
+    loanListData(body);
+  }
+
+  Future<List<LoanCard>> loanListData(body) async {
     log("======>$body");
     var data = await _apiHelperService.postApi(_apiUrl.loanList, body);
     if (data?["success"] == true) {

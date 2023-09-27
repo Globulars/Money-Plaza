@@ -346,7 +346,7 @@ class StackedRouter extends _i1.RouterBase {
       final args = data.getArgs<CalculatorResultViewArguments>(nullOk: false);
       return _i36.MaterialPageRoute<dynamic>(
         builder: (context) => _i5.CalculatorResultView(
-            args.monthlyPayment, args.loanAmount, args.interest,
+            args.monthlyPayment, args.loanAmount, args.interest, args.repayment,
             key: args.key, loanCard: args.loanCard),
         settings: data,
       );
@@ -556,7 +556,7 @@ class StackedRouter extends _i1.RouterBase {
     _i33.WebView: (data) {
       final args = data.getArgs<WebViewArguments>(nullOk: false);
       return _i36.MaterialPageRoute<dynamic>(
-        builder: (context) => _i33.WebView(key: args.key, uri: args.url),
+        builder: (context) => _i33.WebView(key: args.key, uri: args.uri),
         settings: data,
       );
     },
@@ -612,6 +612,7 @@ class CalculatorResultViewArguments {
     required this.monthlyPayment,
     required this.loanAmount,
     required this.interest,
+    required this.repayment,
     this.key,
     this.loanCard,
   });
@@ -622,13 +623,15 @@ class CalculatorResultViewArguments {
 
   final String interest;
 
+  final int repayment;
+
   final _i36.Key? key;
 
   final List<_i37.LoanCard>? loanCard;
 
   @override
   String toString() {
-    return '{"monthlyPayment": "$monthlyPayment", "loanAmount": "$loanAmount", "interest": "$interest", "key": "$key", "loanCard": "$loanCard"}';
+    return '{"monthlyPayment": "$monthlyPayment", "loanAmount": "$loanAmount", "interest": "$interest", "repayment": "$repayment", "key": "$key", "loanCard": "$loanCard"}';
   }
 
   @override
@@ -637,6 +640,7 @@ class CalculatorResultViewArguments {
     return other.monthlyPayment == monthlyPayment &&
         other.loanAmount == loanAmount &&
         other.interest == interest &&
+        other.repayment == repayment &&
         other.key == key &&
         other.loanCard == loanCard;
   }
@@ -646,6 +650,7 @@ class CalculatorResultViewArguments {
     return monthlyPayment.hashCode ^
         loanAmount.hashCode ^
         interest.hashCode ^
+        repayment.hashCode ^
         key.hashCode ^
         loanCard.hashCode;
   }
@@ -1068,27 +1073,27 @@ class BlnstransferloanApplyConfirmViewArguments {
 class WebViewArguments {
   const WebViewArguments({
     this.key,
-    required this.url,
+    required this.uri,
   });
 
   final _i36.Key? key;
 
-  final String url;
+  final String uri;
 
   @override
   String toString() {
-    return '{"key": "$key", "url": "$url"}';
+    return '{"key": "$key", "uri": "$uri"}';
   }
 
   @override
   bool operator ==(covariant WebViewArguments other) {
     if (identical(this, other)) return true;
-    return other.key == key && other.url == url;
+    return other.key == key && other.uri == uri;
   }
 
   @override
   int get hashCode {
-    return key.hashCode ^ url.hashCode;
+    return key.hashCode ^ uri.hashCode;
   }
 }
 
@@ -1142,6 +1147,7 @@ extension NavigatorStateExtension on _i38.NavigationService {
     required String monthlyPayment,
     required String loanAmount,
     required String interest,
+    required int repayment,
     _i36.Key? key,
     List<_i37.LoanCard>? loanCard,
     int? routerId,
@@ -1155,6 +1161,7 @@ extension NavigatorStateExtension on _i38.NavigationService {
             monthlyPayment: monthlyPayment,
             loanAmount: loanAmount,
             interest: interest,
+            repayment: repayment,
             key: key,
             loanCard: loanCard),
         id: routerId,
@@ -1614,7 +1621,7 @@ extension NavigatorStateExtension on _i38.NavigationService {
 
   Future<dynamic> navigateToWebView({
     _i36.Key? key,
-    required String url,
+    required String uri,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -1622,7 +1629,7 @@ extension NavigatorStateExtension on _i38.NavigationService {
         transition,
   }) async {
     return navigateTo<dynamic>(Routes.webView,
-        arguments: WebViewArguments(key: key, url: url),
+        arguments: WebViewArguments(key: key, uri: uri),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -1706,6 +1713,7 @@ extension NavigatorStateExtension on _i38.NavigationService {
     required String monthlyPayment,
     required String loanAmount,
     required String interest,
+    required int repayment,
     _i36.Key? key,
     List<_i37.LoanCard>? loanCard,
     int? routerId,
@@ -1719,6 +1727,7 @@ extension NavigatorStateExtension on _i38.NavigationService {
             monthlyPayment: monthlyPayment,
             loanAmount: loanAmount,
             interest: interest,
+            repayment: repayment,
             key: key,
             loanCard: loanCard),
         id: routerId,
@@ -2178,7 +2187,7 @@ extension NavigatorStateExtension on _i38.NavigationService {
 
   Future<dynamic> replaceWithWebView({
     _i36.Key? key,
-    required String url,
+    required String uri,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -2186,7 +2195,7 @@ extension NavigatorStateExtension on _i38.NavigationService {
         transition,
   }) async {
     return replaceWith<dynamic>(Routes.webView,
-        arguments: WebViewArguments(key: key, url: url),
+        arguments: WebViewArguments(key: key, uri: uri),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
