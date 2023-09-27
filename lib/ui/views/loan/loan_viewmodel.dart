@@ -1,4 +1,4 @@
-import 'dart:developer';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:money_plaza/app/app.router.dart';
@@ -43,7 +43,6 @@ class LoanViewModel extends BaseViewModel {
 
   setRepayment(value) {
     repayment = value;
-    log("===$value");
     notifyListeners();
   }
 
@@ -66,7 +65,7 @@ class LoanViewModel extends BaseViewModel {
   //   notifyListeners();
   // }
 
-  navigateToCalculatorResult() {
+  navigateToCalculatorResult() async {
     var isValid = formKey.currentState!.validate();
     if (isValid) {
       if (_navigationService.currentRoute == "/calculator-result-view") {
@@ -74,13 +73,30 @@ class LoanViewModel extends BaseViewModel {
       }
       _navigationService.navigateToCalculatorResultView(
         loanAmount: _apiHelperService.removeComa(loanAmountCtrl.text),
-        monthlyPayment: _apiHelperService.removeComa(monthlyPaymentCtrl.text),
-        interest: _apiHelperService.removeComa(interestCtrl.text),
         repayment: repayment,
+        loanTenor: calculation == 0 && repayment == 0
+            ? await emiToTenor()
+            : tenorCtrl.text,
       );
 
       notifyListeners();
     }
+  }
+
+  emiToTenor() {
+    double emi = double.parse(_apiHelperService
+        .removeComa(monthlyPaymentCtrl.text)); // Replace with your desired EMI
+    double principalLoanAmount =
+        double.parse(_apiHelperService.removeComa(loanAmountCtrl.text));
+    double annualInterestRate =
+        double.parse(interestCtrl.text); // 8% annual interest rate
+    double monthlyInterestRate =
+        (annualInterestRate / 12) / 100; // Monthly interest rate
+    double n =
+        (log(emi) - log(emi - (principalLoanAmount * monthlyInterestRate))) /
+                log(1 + monthlyInterestRate) +
+            1;
+    return n.toString();
   }
 
   back() {
@@ -137,7 +153,7 @@ class LoanViewModel extends BaseViewModel {
         "numOfMonths": _apiHelperService.removeComa(tenorCtrl.text)
       };
     }
-    log(body.toString());
+    log(body.toString() as num);
     var data =
         await _apiHelperService.postApi("/repayment/$calculationType", body);
     if (data?["success"] == true) {
@@ -177,10 +193,10 @@ class LoanViewModel extends BaseViewModel {
 
   navigateToWebView(applyLink) {
     if (applyLink == "" || applyLink == null) {
-      log("No link:$applyLink");
+      log("No link:$applyLink" as num);
       navigateToSurveySplashView();
     } else {
-      log("link:$applyLink");
+      log("link:$applyLink" as num);
       _navigationService.navigateToWebView(uri: applyLink.toString());
     }
   }
@@ -293,9 +309,9 @@ class LoanViewModel extends BaseViewModel {
     loanListData(body);
   }
 
-  loneListCalculatorBody() {
+  loneListCalculatorBody(loanTenor) {
     Map<String, dynamic> body = {
-      "tenor": repayment == 0 ? 18 : 6,
+      "tenor": double.parse(loanTenor),
       "amount": _apiHelperService.removeComa(loanAmountCtrl.text),
       "calculateMethod": repayment == 0
           ? "PLoan"
@@ -305,12 +321,13 @@ class LoanViewModel extends BaseViewModel {
                   ? "PrepaidInterest"
                   : "PrepaidInterest",
     };
-    log("=============$repayment");
-    loanListData(body);
+    if (loanTenor != 'NaN') {
+      loanListData(body);
+    }
   }
 
   Future<List<LoanCard>> loanListData(body) async {
-    log("======>$body");
+    setBusy(true);
     var data = await _apiHelperService.postApi(_apiUrl.loanList, body);
     if (data?["success"] == true) {
       List dataList = data["data"]["records"];
@@ -319,9 +336,11 @@ class LoanViewModel extends BaseViewModel {
       } else {
         loanCardList = dataList.map((data) => LoanCard.fromJson(data)).toList();
       }
+      setBusy(false);
       notifyListeners();
       return loanCardList;
     } else {
+      setBusy(false);
       loanCardListMessage = data["message"].toString();
       throw Exception(data["message"].toString());
     }
