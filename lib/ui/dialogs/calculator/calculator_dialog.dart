@@ -61,11 +61,9 @@ class CalculatorDialog extends StackedView<LoanViewModel> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        CustomText(
-                          text: 'borrowingAmount',
-                          fontWeight: FontWeight.w600,
-                        ),
+                        
                         CustomTextField(
+                          titleText: 'borrowingAmount',
                           hintText: 'hk',
                           controller: viewModel.loanAmountCtrl,
                           height: 40,
@@ -73,7 +71,7 @@ class CalculatorDialog extends StackedView<LoanViewModel> {
                         verticalSpaceTiny,
                         CustomText(
                           text: 'repaymentMethod',
-                          fontWeight: FontWeight.w600,
+                          fontWeight: FontWeight.w500,fontSize: 14,
                         ),
                         verticalSpaceTiny,
                         Row(
@@ -129,7 +127,7 @@ class CalculatorDialog extends StackedView<LoanViewModel> {
                         verticalSpaceTiny,
                         CustomText(
                           text: 'calculationItems',
-                          fontWeight: FontWeight.w600,
+                          fontWeight: FontWeight.w500,fontSize: 14,
                         ),
                         verticalSpaceTiny,
                         ReturnButton(
