@@ -132,40 +132,6 @@ class CalculatorDialog extends StackedView<LoanViewModel> {
                           fontWeight: FontWeight.w600,
                         ),
                         verticalSpaceTiny,
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            ReturnButton(
-                              height: 40,
-                              text: 'tenor',
-                              width: width * 0.36,
-                              boxcolor: viewModel.calculation == 0
-                                  ? darkGreenHeigh
-                                  : Colors.white,
-                              color: viewModel.calculation != 0
-                                  ? darkGreenHeigh
-                                  : Colors.white,
-                              onPress: () {
-                                viewModel.setCalculation(0);
-                              },
-                            ),
-                            ReturnButton(
-                              height: 40,
-                              text: 'apr',
-                              width: width * 0.36,
-                              boxcolor: viewModel.calculation == 1
-                                  ? darkGreenHeigh
-                                  : Colors.white,
-                              color: viewModel.calculation != 1
-                                  ? darkGreenHeigh
-                                  : Colors.white,
-                              onPress: () {
-                                viewModel.setCalculation(1);
-                              },
-                            )
-                          ],
-                        ),
-                        verticalSpace(5),
                         ReturnButton(
                           height: 40,
                           text: 'monthlyRepaymentAmount',
@@ -180,10 +146,49 @@ class CalculatorDialog extends StackedView<LoanViewModel> {
                             viewModel.setCalculation(2);
                           },
                         ),
+                        verticalSpace(5),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            ReturnButton(
+                              height: 40,
+                              text: 'apr',
+                              width: width * 0.36,
+                              boxcolor: viewModel.calculation == 1
+                                  ? darkGreenHeigh
+                                  : Colors.white,
+                              color: viewModel.calculation != 1
+                                  ? darkGreenHeigh
+                                  : Colors.white,
+                              onPress: () {
+                                viewModel.setCalculation(1);
+                              },
+                            ),
+                            viewModel.repayment == 0
+                                ? ReturnButton(
+                                    height: 40,
+                                    text: 'tenor',
+                                    width: width * 0.36,
+                                    boxcolor: viewModel.calculation == 0
+                                        ? darkGreenHeigh
+                                        : Colors.white,
+                                    color: viewModel.calculation != 0
+                                        ? darkGreenHeigh
+                                        : Colors.white,
+                                    onPress: () {
+                                      viewModel.setCalculation(0);
+                                    },
+                                  )
+                                : Container(),
+                          ],
+                        ),
                         verticalSpaceTiny,
                         verticalSpaceTiny,
-                        viewModel.repayment == 0 &&
-                                (viewModel.calculation == 0 )
+                        (viewModel.repayment == 0 &&
+                                    (viewModel.calculation == 0 ||
+                                        viewModel.calculation == 1)) ||
+                                (viewModel.repayment == 1 &&
+                                    (viewModel.calculation == 1))
                             ? CustomTextField(
                                 titleText: 'totalRepaymentAmount',
                                 hintText: 'hk',
@@ -192,7 +197,9 @@ class CalculatorDialog extends StackedView<LoanViewModel> {
                               )
                             : Container(),
                         verticalSpaceTiny,
-                        viewModel.repayment == 0 && (viewModel.calculation == 0 || viewModel.calculation == 0)
+                        (viewModel.repayment == 0 &&
+                                (viewModel.calculation == 2 ||
+                                    viewModel.calculation == 0))
                             ? CustomTextField(
                                 titleText: 'interestRate',
                                 number: false,
@@ -201,7 +208,8 @@ class CalculatorDialog extends StackedView<LoanViewModel> {
                                 height: 40,
                               )
                             : Container(),
-                               viewModel.repayment == 2 && viewModel.calculation == 1
+                        verticalSpaceTiny,
+                        viewModel.repayment == 2 && viewModel.calculation == 1
                             ? CustomTextField(
                                 titleText: 'totalPrepaidInterest',
                                 number: false,
@@ -210,15 +218,27 @@ class CalculatorDialog extends StackedView<LoanViewModel> {
                                 height: 40,
                               )
                             : Container(),
-                        verticalSpaceSmall,
-                        (viewModel.repayment == 2 ) &&( viewModel.calculation == 1|| viewModel.calculation == 3)
+                        verticalSpaceTiny,
+                        (viewModel.repayment == 0 &&
+                                    (viewModel.calculation == 1 ||
+                                        viewModel.calculation == 2)) ||
+                                (viewModel.repayment == 1 &&
+                                    (viewModel.calculation == 1 ||
+                                        viewModel.calculation == 2)) ||
+                                (viewModel.repayment == 2 &&
+                                    (viewModel.calculation == 1 ||
+                                        viewModel.calculation == 2))
                             ? CustomTextField(
                                 titleText: 'tenor',
                                 controller: viewModel.tenorCtrl,
                                 height: 40,
                               )
                             : Container(),
-                       ( viewModel.repayment == 2|| viewModel.repayment == 1) && viewModel.calculation == 3
+                        verticalSpaceTiny,
+                        (viewModel.repayment == 1 &&
+                                    (viewModel.calculation == 2)) ||
+                                (viewModel.repayment == 2 &&
+                                    (viewModel.calculation == 2))
                             ? CustomTextField(
                                 titleText: 'apr',
                                 number: false,

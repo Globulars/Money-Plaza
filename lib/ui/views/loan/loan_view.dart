@@ -52,8 +52,8 @@ class LoanView extends StackedView<LoanViewModel> {
                     children: [
                       verticalSpace(70.0),
                       const LoanTagsListView(),
-                      SizedBox(
-                        height:MediaQuery.of(context).size.height*0.41,child: SingleChildScrollView(child: LoanListView()))
+                      // LoanListView()
+                      LoanListView()
                     ],
                   ),
                   const FilterBottomBar(),
@@ -82,3 +82,74 @@ class LoanView extends StackedView<LoanViewModel> {
   ) =>
       LoanViewModel();
 }
+
+// class LoanView extends StackedView<LoanViewModel> {
+//   final List<LoanCard>? loanCard;
+//   final LoanViewModel viewModel = LoanViewModel();
+//   LoanView({Key? key, this.loanCard}) : super(key: key);
+//   @override
+//   void onViewModelReady(LoanViewModel viewModel) {
+//     viewModel.getLoanTags();
+//     viewModel.loanListData();
+//     super.onViewModelReady(viewModel);
+//   }
+
+//   @override
+//   Widget builder(
+//     BuildContext context,
+//     LoanViewModel viewModel,
+//     Widget? child,
+//   ) {
+//     return Stack(
+//       children: [
+//         const BackgroundImage(),
+//         Scaffold(
+//           backgroundColor: Colors.transparent,
+//           appBar: appBar(context),
+//           body: CustomScrollView(
+//             shrinkWrap: true,
+//             slivers: [
+//               SliverToBoxAdapter(
+//                 child: Column(
+//                   children: [
+//                        TopBanner(url: "${ApiUrl().bannersByType}loan"),
+//               verticalSpaceMedium,
+//               const FilterBarWidget(),
+//               verticalSpaceTiny,
+//               verticalSpaceSmall,
+//                 const FilterBottomBar(),
+//                 const LoanTagsListView(),
+//                   ],
+//                 ),
+//                 expandedHeight: MediaQuery.of(context).size.height*0.61,
+//                 floating: false,
+//                 backgroundColor: Colors.transparent,
+//                 flexibleSpace: Column(
+//                   children: [
+                   
+//                   ],
+//                 ),
+
+//               )
+//             ],
+//           )
+//         ),
+//         bottomBar(
+//           ReturnButton(
+//             imageLeft: myIcons.returnIcon1,
+//             imgwidth: 12,
+//             text: 'return',
+//             height: 40,
+//             width: 80,
+//           ),
+//         ),
+//       ],
+//     );
+//   }
+
+//   @override
+//   LoanViewModel viewModelBuilder(
+//     BuildContext context,
+//   ) =>
+//       LoanViewModel();
+// }

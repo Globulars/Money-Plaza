@@ -34,7 +34,7 @@ class LoanListView extends ViewModelWidget<LoanViewModel> {
         : ListView.builder(
             itemCount: viewModel.loanCardList.length,
             shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
+            // physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (BuildContext context, int index) {
               return ResultCard(loanData: viewModel.loanCardList[index]);
             },
