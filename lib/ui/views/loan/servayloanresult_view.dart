@@ -44,7 +44,7 @@ class ServayLoanResultView extends StackedView<LoanViewModel> {
                     child: SingleChildScrollView(
                       child: Column(
                         children: [
-                          LoanListView(),
+                          LoanListView(height: MediaQuery.of(context).size.height * 0.8,),
                           verticalSpaceLarge,
                         ],
                       ),
@@ -56,15 +56,15 @@ class ServayLoanResultView extends StackedView<LoanViewModel> {
             ],
           ),
         ),
-        bottomBar(
-          ReturnButton(
-            imageLeft: myIcons.returnIcon1,
-            imgwidth: 12,
-            text: 'return',
-            height: 40,
-            width: 80,
-          ),
-        ),
+        // bottomBar(
+        //   ReturnButton(
+        //     imageLeft: myIcons.returnIcon1,
+        //     imgwidth: 12,
+        //     text: 'return',
+        //     height: 40,
+        //     width: 80,
+        //   ),
+        // ),
       ],
     );
   }

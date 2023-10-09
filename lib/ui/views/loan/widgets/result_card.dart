@@ -61,8 +61,14 @@ class ResultCard extends ViewModelWidget<LoanViewModel> {
                     verticalSpaceTiny,
                     CustomText(
                         text: "borrowingAmountTenor".tr(args: [
-                          "${loanData.minAmount}",
-                          "${loanData.maxAmount}",
+                          NumberFormat.decimalPatternDigits(
+                            locale: 'en_us',
+                            decimalDigits: 0,
+                          ).format(loanData.minAmount),
+                          NumberFormat.decimalPatternDigits(
+                            locale: 'en_us',
+                            decimalDigits: 0,
+                          ).format(loanData.maxAmount),
                           "${loanData.minTenor} - ${loanData.maxTenor}"
                         ]),
                         color: Colors.black87,
@@ -81,7 +87,7 @@ class ResultCard extends ViewModelWidget<LoanViewModel> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     CustomText(
-                      text: "${loanData.interestRate.toString()}%",
+                      text: "${loanData.apr.toString()}%",
                       color: Colors.black,
                       fontSize: 22,
                       fontWeight: FontWeight.w500,
@@ -93,30 +99,35 @@ class ResultCard extends ViewModelWidget<LoanViewModel> {
                       fontSize: 12,
                     ),
                     verticalSpaceSmall,
-                    InkWell(
-                      onTap: () {
-                        viewModel.setCompareData(loanData);
-                      },
-                      child: SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.3,
-                        child: Row(
-                          children: [
-                            SizedBox(
-                              height: 10,
-                              width: 20,
-                              child: Checkbox(
-                                value: loanData.checkBox,
-                                onChanged: (value) {
-                                  // viewModel.setCompareData(loanData);
-                                },
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical:10.0),
+                      child: InkWell(
+                        onTap: () {
+                          viewModel.setCompareData(loanData);
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 5,vertical: 5),
+                          width: MediaQuery.of(context).size.width * 0.4,
+                          child: Row(
+                            children: [
+                              SizedBox(
+                                height: 10,
+                                width: 20,
+                                child: Checkbox(
+                                  value: loanData.checkBox,
+                                  onChanged: (value) {
+                                    // viewModel.setCompareData(loanData);
+                                  },
+                                ),
                               ),
-                            ),
-                            CustomText(
-                              text: 'compare',
-                              color: Colors.black87,
-                              fontSize: 18,
-                            ),
-                          ],
+                              const SizedBox(width: 5,),
+                              CustomText(
+                                text: 'compare',
+                                color: Colors.black87,
+                                fontSize: 18,
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),

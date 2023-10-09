@@ -53,7 +53,7 @@ class LoanView extends StackedView<LoanViewModel> {
                       children: [
                         verticalSpace(70.0),
                         const LoanTagsListView(),
-                        LoanListView()
+                        LoanListView(height: MediaQuery.of(context).size.height * 0.4,)
                       ],
                     ),
                     const FilterBottomBar(),

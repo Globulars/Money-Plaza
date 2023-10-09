@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:money_plaza/app/app.router.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../../app/app.dialogs.dart';
 import '../../../app/app.locator.dart';
 import '../../../services/Models/interest_calculator.dart';
@@ -191,7 +192,8 @@ class LoanViewModel extends BaseViewModel {
     _navigationService.navigateToSurveySplashView(organization: "promise");
   }
 
-  navigateToWebView(applyLink) {
+  navigateToWebView(applyLink) async {
+    /*
     if (applyLink == "" || applyLink == null) {
       log("No link:$applyLink" as num);
       navigateToSurveySplashView();
@@ -199,6 +201,11 @@ class LoanViewModel extends BaseViewModel {
       log("link:$applyLink" as num);
       _navigationService.navigateToWebView(uri: applyLink.toString());
     }
+    */
+    await launchUrl(Uri.parse(applyLink.toString()));
+    Future.delayed(const Duration(milliseconds: 3000), () async {
+      await navigateToSurveySplashView();
+    });
   }
 
   navigateToCommerical() {

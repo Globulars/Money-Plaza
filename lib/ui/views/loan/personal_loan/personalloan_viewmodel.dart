@@ -23,11 +23,11 @@ class PersonalloanViewModel extends BaseViewModel {
   TextEditingController phoneNumberCtrl = TextEditingController();
   TextEditingController emailCtrl = TextEditingController();
   TextEditingController hkidCtrl = TextEditingController();
-  String loanReason = "businessExpansion";
-  String propertyOwner = "have";
-  String salaryPayment = "cash";
-  String typeOfIncome = "fullTime";
-  String proofOfIncome = "mpf";
+  String loanReason = "";
+  String propertyOwner = "";
+  String salaryPayment = "";
+  String typeOfIncome = "";
+  String proofOfIncome = "";
   var initialIndex = 0;
   var loanTenors = 6;
   var outStanding = 0;
@@ -35,6 +35,7 @@ class PersonalloanViewModel extends BaseViewModel {
   int currentIndex = 0;
 
   final loanReasonList = [
+    "",
     "businessExpansion",
     "carPurchase",
     "creditCardRepayment",
@@ -53,6 +54,7 @@ class PersonalloanViewModel extends BaseViewModel {
   }
 
   final propertyOwnerList = [
+    "",
     "have",
     "no",
   ];
@@ -61,19 +63,19 @@ class PersonalloanViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  final salaryPaymentList = ["cash", "bankTransfer", "cheque"];
+  final salaryPaymentList = ["", "cash", "bankTransfer", "cheque"];
   setSalaryPayment(value) {
     salaryPayment = value;
     notifyListeners();
   }
 
-  final typeOfIncomeList = ["fullTime", "partTime"];
+  final typeOfIncomeList = ["", "fullTime", "partTime"];
   setTypeOfIncome(value) {
     typeOfIncome = value;
     notifyListeners();
   }
 
-  final proofOfIncomeList = ["mpf", "bankStatement", "letter"];
+  final proofOfIncomeList = ["", "mpf", "bankStatement", "letter"];
   setProofOfIncome(value) {
     proofOfIncome = value;
     notifyListeners();

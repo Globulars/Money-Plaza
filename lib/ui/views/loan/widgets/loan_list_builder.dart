@@ -7,15 +7,16 @@ import '../loan_viewmodel.dart';
 
 class LoanListView extends ViewModelWidget<LoanViewModel> {
   final List<LoanCard>? loanCard;
+  final double height;
   final LoanViewModel viewModel = LoanViewModel();
-  LoanListView({Key? key, this.loanCard}) : super(key: key);
+  LoanListView({Key? key, this.loanCard, required this.height}) : super(key: key);
 
   @override
   Widget build(
     BuildContext context,
     LoanViewModel viewModel,
   ) {
-    final height = MediaQuery.of(context).size.height;
+    // final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     return viewModel.loanCardList.isEmpty
         ? viewModel.loanCardListMessage != ""
@@ -32,7 +33,7 @@ class LoanListView extends ViewModelWidget<LoanViewModel> {
                 ],
               )
         : SizedBox(
-            height: height * 0.4,
+            height: height,
             child: SingleChildScrollView(
               child: ListView.builder(
                 itemCount: viewModel.loanCardList.length,
