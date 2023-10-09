@@ -8,7 +8,7 @@ import '../../../widgets/app_bar.dart';
 import '../../../widgets/bottom_bar.dart';
 import '../../../widgets/common/background_image.dart';
 import '../../../widgets/common/icon_box_btn/return_button.dart';
-import '../../../widgets/common/icon_box_btn/text.dart';
+import '../../../widgets/custom_text.dart';
 import '../loan_viewmodel.dart';
 import '../widgets/filter_bottom_bar.dart';
 import '../widgets/result_card.dart';
@@ -72,15 +72,15 @@ class CalculatorResultView extends StackedView<LoanViewModel> {
                           viewModel.loanCardList.isEmpty
                               ? viewModel.isBusy
                                   ? const Padding(
-                                    padding: EdgeInsets.all(8.0),
-                                    child: CircularProgressIndicator(
+                                      padding: EdgeInsets.all(8.0),
+                                      child: CircularProgressIndicator(
                                         color: darkGreenLight,
                                       ),
-                                  )
+                                    )
                                   : const Padding(
-                                    padding: EdgeInsets.all(8.0),
-                                    child: Text("sorryNoProductsIsFound"),
-                                  )
+                                      padding: EdgeInsets.all(8.0),
+                                      child: Text("sorryNoProductsIsFound"),
+                                    )
                               : ListView.builder(
                                   itemCount: viewModel.loanCardList.length,
                                   shrinkWrap: true,

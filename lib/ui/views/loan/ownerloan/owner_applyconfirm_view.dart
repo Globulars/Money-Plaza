@@ -1,7 +1,7 @@
 // ignore_for_file: must_be_immutable
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/return_button.dart';
-import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
+import 'package:money_plaza/ui/widgets/custom_text.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import '../../../common/ui_helpers.dart';
@@ -53,7 +53,10 @@ class OwnerApplyConfirmView extends StackedView<OwnerloanViewModel> {
                       padding: const EdgeInsets.symmetric(horizontal: 10),
                       child: Column(
                         children: [
-                          CustomText(text: 'enterFollowingInformation'),
+                          CustomText(
+                            text: 'enterFollowingInformation',
+                            localization: false,
+                          ),
                           verticalSpaceTiny,
                           CustomTextField(
                             number: false,

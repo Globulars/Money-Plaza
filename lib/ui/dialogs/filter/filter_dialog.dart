@@ -9,7 +9,7 @@ import '../../widgets/common/custom_text_field/custom_text_field.dart';
 import '../../widgets/common/icon_box_btn/return_button.dart';
 import '../../widgets/common/icon_box_btn/sub_bar.dart';
 import '../../widgets/common/icon_box_btn/submit_button.dart';
-import '../../widgets/common/icon_box_btn/text.dart';
+import '../../widgets/custom_text.dart';
 
 class FilterDialog extends StackedView<LoanViewModel> {
   final DialogRequest request;

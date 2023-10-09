@@ -3,7 +3,7 @@ import 'package:money_plaza/ui/widgets/common/icon_box_btn/sub_bar.dart';
 import 'package:stacked/stacked.dart';
 import '../../../../common/app_colors.dart';
 import '../../../../common/ui_helpers.dart';
-import '../../../../widgets/common/icon_box_btn/text.dart';
+import '../../../../widgets/custom_text.dart';
 import '../personal_info_viewmodel.dart';
 
 class PersonalTabBar4 extends ViewModelWidget<PersonalInfoViewModel> {
@@ -193,6 +193,7 @@ class PersonalTabBar4 extends ViewModelWidget<PersonalInfoViewModel> {
                                 width: 20,
                                 child: CustomText(
                                   text: "${(index + 1)}",
+                                  localization: false,
                                   textAlign: TextAlign.center,
                                   fontSize: 10,
                                 ))),
@@ -200,6 +201,7 @@ class PersonalTabBar4 extends ViewModelWidget<PersonalInfoViewModel> {
                                 width: 20,
                                 child: CustomText(
                                   text: "${data.lender}",
+                                  localization: false,
                                   textAlign: TextAlign.center,
                                   fontSize: 10,
                                 ))),
@@ -207,6 +209,7 @@ class PersonalTabBar4 extends ViewModelWidget<PersonalInfoViewModel> {
                                 width: 20,
                                 child: CustomText(
                                   text: "${(index + 1)}",
+                                  localization: false,
                                   textAlign: TextAlign.center,
                                   fontSize: 10,
                                 ))),
@@ -214,6 +217,7 @@ class PersonalTabBar4 extends ViewModelWidget<PersonalInfoViewModel> {
                                 width: 20,
                                 child: CustomText(
                                   text: "${(index + 1)}",
+                                  localization: false,
                                   textAlign: TextAlign.center,
                                   fontSize: 10,
                                 ))),
@@ -221,6 +225,7 @@ class PersonalTabBar4 extends ViewModelWidget<PersonalInfoViewModel> {
                                 width: 20,
                                 child: CustomText(
                                   text: "${(index + 1)}",
+                                  localization: false,
                                   textAlign: TextAlign.center,
                                   fontSize: 10,
                                 ))),
@@ -228,6 +233,7 @@ class PersonalTabBar4 extends ViewModelWidget<PersonalInfoViewModel> {
                                 width: 20,
                                 child: CustomText(
                                   text: "${(index + 1)}",
+                                  localization: false,
                                   textAlign: TextAlign.center,
                                   fontSize: 10,
                                 ))),
@@ -235,6 +241,7 @@ class PersonalTabBar4 extends ViewModelWidget<PersonalInfoViewModel> {
                                 width: 20,
                                 child: CustomText(
                                   text: "${(index + 1)}",
+                                  localization: false,
                                   textAlign: TextAlign.center,
                                   fontSize: 10,
                                 ))),
@@ -242,6 +249,7 @@ class PersonalTabBar4 extends ViewModelWidget<PersonalInfoViewModel> {
                                 width: 20,
                                 child: CustomText(
                                   text: "${(index + 1)}",
+                                  localization: false,
                                   textAlign: TextAlign.center,
                                   fontSize: 10,
                                 ))),
@@ -249,6 +257,7 @@ class PersonalTabBar4 extends ViewModelWidget<PersonalInfoViewModel> {
                                 width: 20,
                                 child: CustomText(
                                   text: "${(index + 1)}",
+                                  localization: false,
                                   textAlign: TextAlign.center,
                                   fontSize: 10,
                                 ))),
@@ -256,6 +265,7 @@ class PersonalTabBar4 extends ViewModelWidget<PersonalInfoViewModel> {
                                 width: 20,
                                 child: CustomText(
                                   text: "${(index + 1)}",
+                                  localization: false,
                                   textAlign: TextAlign.center,
                                   fontSize: 10,
                                 ))),
@@ -263,6 +273,7 @@ class PersonalTabBar4 extends ViewModelWidget<PersonalInfoViewModel> {
                                 width: 20,
                                 child: CustomText(
                                   text: "${(index + 1)}",
+                                  localization: false,
                                   textAlign: TextAlign.center,
                                   fontSize: 10,
                                 ))),
@@ -270,6 +281,7 @@ class PersonalTabBar4 extends ViewModelWidget<PersonalInfoViewModel> {
                                 width: 20,
                                 child: CustomText(
                                   text: "${(index + 1)}",
+                                  localization: false,
                                   textAlign: TextAlign.center,
                                   fontSize: 10,
                                 ))),
@@ -277,6 +289,7 @@ class PersonalTabBar4 extends ViewModelWidget<PersonalInfoViewModel> {
                                 width: 20,
                                 child: CustomText(
                                   text: "${(index + 1)}",
+                                  localization: false,
                                   textAlign: TextAlign.center,
                                   fontSize: 10,
                                 ))),
@@ -284,6 +297,7 @@ class PersonalTabBar4 extends ViewModelWidget<PersonalInfoViewModel> {
                                 width: 20,
                                 child: CustomText(
                                   text: "${(index + 1)}",
+                                  localization: false,
                                   textAlign: TextAlign.center,
                                   fontSize: 10,
                                 ))),
@@ -295,7 +309,6 @@ class PersonalTabBar4 extends ViewModelWidget<PersonalInfoViewModel> {
                 ],
               ),
             ),
-
             verticalSpaceMedium,
             SubBar(
               text: "addLoanRecord",

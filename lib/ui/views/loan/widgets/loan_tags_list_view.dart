@@ -5,7 +5,7 @@ import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:money_plaza/services/Models/loan_tags.dart';
 import 'package:money_plaza/ui/views/loan/loan_viewmodel.dart';
-import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
+import 'package:money_plaza/ui/widgets/custom_text.dart';
 
 class LoanTagsListView extends ViewModelWidget<LoanViewModel> {
   const LoanTagsListView({Key? key}) : super(key: key);
@@ -59,6 +59,7 @@ class LoanTagsListView extends ViewModelWidget<LoanViewModel> {
                                       child: Center(
                                           child: CustomText(
                                         text: loanTags.name ?? "",
+                                        localization: false,
                                         color: loanTags.selected ?? false
                                             ? Colors.white
                                             : darkGreenHeigh,

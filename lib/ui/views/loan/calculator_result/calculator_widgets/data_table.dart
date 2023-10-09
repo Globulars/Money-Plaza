@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:stacked/stacked.dart';
-import '../../../../widgets/common/icon_box_btn/text.dart';
+import '../../../../widgets/custom_text.dart';
 import '../../loan_viewmodel.dart';
 
 class CalDataTable extends ViewModelWidget<LoanViewModel> {
@@ -98,6 +98,7 @@ class CalDataTable extends ViewModelWidget<LoanViewModel> {
                           width: 20,
                           child: CustomText(
                             text: "${(index + 1)}",
+                            localization: false,
                             textAlign: TextAlign.center,
                             fontSize: 10,
                           ))),
@@ -106,6 +107,7 @@ class CalDataTable extends ViewModelWidget<LoanViewModel> {
                           child: Center(
                               child: CustomText(
                             text: data.paymentAmount!.toStringAsFixed(2),
+                            localization: false,
                             // "\$6.36.777",
                             textAlign: TextAlign.center,
                             fontSize: 8,
@@ -115,6 +117,7 @@ class CalDataTable extends ViewModelWidget<LoanViewModel> {
                           child: Center(
                               child: CustomText(
                             text: data.interestPaid!.toStringAsFixed(2),
+                            localization: false,
                             //  "\$65.36.777",
                             textAlign: TextAlign.center,
                             fontSize: 8,
@@ -124,6 +127,7 @@ class CalDataTable extends ViewModelWidget<LoanViewModel> {
                           child: Center(
                               child: CustomText(
                             text: data.capitalPaid!.toStringAsFixed(2),
+                            localization: false,
                             //  "\$65.36.777",
                             textAlign: TextAlign.center,
                             fontSize: 8,
@@ -133,6 +137,7 @@ class CalDataTable extends ViewModelWidget<LoanViewModel> {
                           child: Center(
                               child: CustomText(
                             text: data.interestBalance!.toStringAsFixed(2),
+                            localization: false,
                             //  "\$654.36.777",
                             textAlign: TextAlign.center,
                             fontSize: 8,

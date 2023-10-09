@@ -8,7 +8,7 @@ import '../../../common/app_colors.dart';
 import '../../../common/ui_helpers.dart';
 import '../loan_viewmodel.dart';
 import '../../../widgets/common/icon_box_btn/submit_button.dart';
-import '../../../widgets/common/icon_box_btn/text.dart';
+import '../../../widgets/custom_text.dart';
 
 class ResultCard extends ViewModelWidget<LoanViewModel> {
   final LoanCard loanData;
@@ -54,6 +54,7 @@ class ResultCard extends ViewModelWidget<LoanViewModel> {
                     verticalSpaceTiny,
                     CustomText(
                       text: loanData.company?.name ?? "",
+                      localization: false,
                       color: Colors.black,
                       fontSize: 20,
                       fontWeight: FontWeight.w600,
@@ -76,6 +77,7 @@ class ResultCard extends ViewModelWidget<LoanViewModel> {
                     verticalSpaceTiny,
                     CustomText(
                         text: loanData.advantage.toString(),
+                        localization: false,
                         color: darkGreenLight,
                         fontSize: 14),
                   ],
@@ -88,6 +90,7 @@ class ResultCard extends ViewModelWidget<LoanViewModel> {
                   children: [
                     CustomText(
                       text: "${loanData.apr.toString()}%",
+                      localization: false,
                       color: Colors.black,
                       fontSize: 22,
                       fontWeight: FontWeight.w500,
@@ -100,13 +103,14 @@ class ResultCard extends ViewModelWidget<LoanViewModel> {
                     ),
                     verticalSpaceSmall,
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical:10.0),
+                      padding: const EdgeInsets.symmetric(vertical: 10.0),
                       child: InkWell(
                         onTap: () {
                           viewModel.setCompareData(loanData);
                         },
                         child: Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 5,vertical: 5),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 5, vertical: 5),
                           width: MediaQuery.of(context).size.width * 0.4,
                           child: Row(
                             children: [
@@ -120,7 +124,9 @@ class ResultCard extends ViewModelWidget<LoanViewModel> {
                                   },
                                 ),
                               ),
-                              const SizedBox(width: 5,),
+                              const SizedBox(
+                                width: 5,
+                              ),
                               CustomText(
                                 text: 'compare',
                                 color: Colors.black87,

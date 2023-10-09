@@ -3,7 +3,7 @@ import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:stacked/stacked.dart';
 import '../../../../../services/Models/loan_card.dart';
 import '../../../../common/ui_helpers.dart';
-import '../../../../widgets/common/icon_box_btn/text.dart';
+import '../../../../widgets/custom_text.dart';
 import '../../loan_viewmodel.dart';
 import 'schedule_loan_builder.dart';
 
@@ -36,7 +36,10 @@ class CompareBottom extends ViewModelWidget<LoanViewModel> {
                     return SizedBox(
                       width: width * 0.48,
                       child: Center(
-                        child: CustomText(text: text),
+                        child: CustomText(
+                          text: text,
+                          localization: false,
+                        ),
                       ),
                     );
                   }),
@@ -57,6 +60,7 @@ class CompareBottom extends ViewModelWidget<LoanViewModel> {
         child: Center(
             child: CustomText(
           text: title,
+          localization: false,
         )),
       );
     }
@@ -82,8 +86,10 @@ class CompareBottom extends ViewModelWidget<LoanViewModel> {
                         width: width * 0.48,
                         child: Center(
                           child: CustomText(
-                              text:
-                                  '${compareData[0].minInterestRate}% - ${compareData[0].maxInterestRate}%'),
+                            text:
+                                '${compareData[0].minInterestRate}% - ${compareData[0].maxInterestRate}%',
+                            localization: false,
+                          ),
                         ),
                       );
                     }),
@@ -108,7 +114,9 @@ class CompareBottom extends ViewModelWidget<LoanViewModel> {
                     width: width * 0.48,
                     child: Center(
                       child: CustomText(
-                          text: compareData[index].incentive.toString()),
+                        text: compareData[index].incentive.toString(),
+                        localization: false,
+                      ),
                     ),
                   );
                 }),
@@ -137,8 +145,9 @@ class CompareBottom extends ViewModelWidget<LoanViewModel> {
                     width: width * 0.48,
                     child: Center(
                       child: CustomText(
-                          text:
-                              compareData[index].totalPaymentAmount.toString()),
+                        text: compareData[index].totalPaymentAmount.toString(),
+                        localization: false,
+                      ),
                     ),
                   );
                 }),
@@ -164,7 +173,9 @@ class CompareBottom extends ViewModelWidget<LoanViewModel> {
                         width: width * 0.48,
                         child: Center(
                           child: CustomText(
-                              text: compareData[index].interestRate.toString()),
+                            text: compareData[index].interestRate.toString(),
+                            localization: false,
+                          ),
                         ),
                       );
                     }),

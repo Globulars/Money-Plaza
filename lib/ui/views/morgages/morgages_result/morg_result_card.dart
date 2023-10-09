@@ -3,7 +3,7 @@ import 'package:money_plaza/services/Models/mortgages_card.dart';
 import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:stacked/stacked.dart';
 import '../../../common/ui_helpers.dart';
-import '../../../widgets/common/icon_box_btn/text.dart';
+import '../../../widgets/custom_text.dart';
 import 'morgages_result_viewmodel.dart';
 
 class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
@@ -88,6 +88,7 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                                   ),
                                   CustomText(
                                     text: "${mortgage.interestRate}%",
+                                    localization: false,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ],
@@ -112,6 +113,7 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                                   ),
                                   CustomText(
                                     text: '${mortgage.totalRebate}',
+                                    localization: false,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ],
@@ -136,6 +138,7 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                                   ),
                                   CustomText(
                                     text: mortgage.minPaymentAmountStr ?? "",
+                                    localization: false,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ],
@@ -146,6 +149,7 @@ class MorgagesResultCard extends StackedView<MorgagesResultViewModel> {
                         verticalSpaceTiny,
                         CustomText(
                           text: mortgage.advantage.toString(),
+                          localization: false,
                           fontSize: 12,
                           color: darkGreenLight,
                         ),

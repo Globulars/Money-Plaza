@@ -5,7 +5,7 @@ import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import '../../../../../services/Models/loan_card.dart';
 import '../../../../common/ui_helpers.dart';
-import '../../../../widgets/common/icon_box_btn/text.dart';
+import '../../../../widgets/custom_text.dart';
 import '../../loan_viewmodel.dart';
 
 class CompareHead extends ViewModelWidget<LoanViewModel> {
@@ -59,6 +59,7 @@ class CompareHead extends ViewModelWidget<LoanViewModel> {
                           CustomText(
                             text: viewModel.compareData[index].company?.name ??
                                 "",
+                            localization: false,
                             textOverflow: TextOverflow.ellipsis,
                             maxLines: 1,
                             fontWeight: FontWeight.w500,

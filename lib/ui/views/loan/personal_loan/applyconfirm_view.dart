@@ -1,7 +1,7 @@
 // ignore_for_file: must_be_immutable, unrelated_type_equality_checks
 import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/widgets/common/icon_box_btn/return_button.dart';
-import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
+import 'package:money_plaza/ui/widgets/custom_text.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import '../../../common/app_colors.dart';
@@ -56,7 +56,10 @@ class PersonalloanApplyConfirmView extends StackedView<PersonalloanViewModel> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          CustomText(text: 'enterFollowingInformation'),
+                          CustomText(
+                            text: 'enterFollowingInformation',
+                            localization: false,
+                          ),
                           verticalSpaceTiny,
                           CustomTextField(
                             number: false,

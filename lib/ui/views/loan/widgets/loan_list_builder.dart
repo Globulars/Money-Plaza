@@ -9,7 +9,8 @@ class LoanListView extends ViewModelWidget<LoanViewModel> {
   final List<LoanCard>? loanCard;
   final double height;
   final LoanViewModel viewModel = LoanViewModel();
-  LoanListView({Key? key, this.loanCard, required this.height}) : super(key: key);
+  LoanListView({Key? key, this.loanCard, required this.height})
+      : super(key: key);
 
   @override
   Widget build(
