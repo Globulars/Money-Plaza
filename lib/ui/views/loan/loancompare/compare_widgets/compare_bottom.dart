@@ -60,7 +60,7 @@ class CompareBottom extends ViewModelWidget<LoanViewModel> {
         child: Center(
             child: CustomText(
           text: title,
-          localization: false,
+          localization: true,
         )),
       );
     }
