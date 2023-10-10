@@ -7,13 +7,13 @@ import 'package:flutter/material.dart';
 import '../../widgets/bottom_bar.dart';
 import 'widgets/filter_bottom_bar.dart';
 import 'widgets/loan_list_builder.dart';
-import 'widgets/filter_bar_widget.dart';
 import 'widgets/loan_tags_list_view.dart';
 import '../../../services/Models/loan_card.dart';
 import '../../widgets/common/background_image.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:money_plaza/ui/widgets/top_banner.dart';
 import '../../widgets/common/icon_box_btn/return_button.dart';
+import 'widgets/short_filter_bar.dart';
 
 class LoanView extends StackedView<LoanViewModel> {
   final List<LoanCard>? loanCard;
@@ -44,7 +44,7 @@ class LoanView extends StackedView<LoanViewModel> {
               children: [
                 TopBanner(url: "${ApiUrl().bannersByType}loan"),
                 verticalSpaceMedium,
-                const FilterBarWidget(),
+                const ShortFilterBarWidget(),
                 verticalSpaceTiny,
                 verticalSpaceSmall,
                 Stack(
@@ -54,7 +54,7 @@ class LoanView extends StackedView<LoanViewModel> {
                         verticalSpace(70.0),
                         const LoanTagsListView(),
                         LoanListView(
-                          height: MediaQuery.of(context).size.height * 0.4,
+                          height: MediaQuery.of(context).size.height * 0.54,
                         )
                       ],
                     ),
