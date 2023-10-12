@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:money_plaza/services/Models/user_reward.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import 'package:money_plaza/ui/common/ui_helpers.dart';
-import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
+import 'package:money_plaza/ui/widgets/custom_text.dart';
 import 'package:stacked/stacked.dart';
 import '../../../common/app_colors.dart';
 import '../../../widgets/app_bar.dart';
@@ -159,12 +159,14 @@ class RewardView extends StackedView<RewardApplicationViewModel> {
                                             width: 70,
                                             child: CustomText(
                                               text: "${data.companyName}",
+                                              localization: false,
                                               fontSize: 10,
                                             ))),
                                         DataCell(SizedBox(
                                             width: 70,
                                             child: CustomText(
                                               text: "${data.productType}",
+                                              localization: false,
                                               textAlign: TextAlign.center,
                                               fontSize: 10,
                                             ))),
@@ -172,12 +174,14 @@ class RewardView extends StackedView<RewardApplicationViewModel> {
                                             width: 130,
                                             child: CustomText(
                                               text: "${data.incentive}",
+                                              localization: false,
                                               fontSize: 10,
                                             ))),
                                         DataCell(SizedBox(
                                             width: 40,
                                             child: CustomText(
                                               text: "${data.referenceNumber}",
+                                              localization: false,
                                               textAlign: TextAlign.center,
                                               fontSize: 10,
                                             ))),
@@ -188,6 +192,7 @@ class RewardView extends StackedView<RewardApplicationViewModel> {
                                               text: data.hasFile ?? false
                                                   ? "yes"
                                                   : "no",
+                                              localization: false,
                                               textAlign: TextAlign.center,
                                               fontSize: 10,
                                             ),
@@ -197,6 +202,7 @@ class RewardView extends StackedView<RewardApplicationViewModel> {
                                             width: 60,
                                             child: CustomText(
                                               text: "${data.createDate}",
+                                              localization: false,
                                               textAlign: TextAlign.center,
                                               fontSize: 10,
                                             ))),
@@ -206,6 +212,7 @@ class RewardView extends StackedView<RewardApplicationViewModel> {
                                               text: data.status == 0
                                                   ? "Pending"
                                                   : "Aproved",
+                                              localization: false,
                                               textAlign: TextAlign.center,
                                               fontSize: 10,
                                             ))),

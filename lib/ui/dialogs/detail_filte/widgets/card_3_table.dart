@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:money_plaza/ui/common/app_colors.dart';
 import 'package:money_plaza/ui/views/loan/loan_viewmodel.dart';
 import 'package:stacked/stacked.dart';
-import '../../../widgets/common/icon_box_btn/text.dart';
+import '../../../widgets/custom_text.dart';
 
 class Card3Table extends ViewModelWidget<LoanViewModel> {
   const Card3Table({Key? key}) : super(key: key);

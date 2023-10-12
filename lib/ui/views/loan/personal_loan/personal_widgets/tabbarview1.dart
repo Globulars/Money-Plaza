@@ -5,7 +5,7 @@ import 'package:stacked/stacked.dart';
 import '../../../../widgets/common/custom_text_field/custom_text_field.dart';
 import '../../../../widgets/common/dropdown_textfield/dropdown_textfield.dart';
 import '../../../../widgets/common/icon_box_btn/return_button.dart';
-import '../../../../widgets/common/icon_box_btn/text.dart';
+import '../../../../widgets/custom_text.dart';
 import '../personalloan_viewmodel.dart';
 
 class TabBarView1 extends ViewModelWidget<PersonalloanViewModel> {

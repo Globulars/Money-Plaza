@@ -16,7 +16,7 @@ import '../../../widgets/common/dropdown_textfield/dropdown_textfield.dart';
 import '../../../widgets/common/icon_box_btn/return_button.dart';
 import '../../../widgets/common/icon_box_btn/sub_bar.dart';
 import '../../../widgets/common/icon_box_btn/submit_button.dart';
-import '../../../widgets/common/icon_box_btn/text.dart';
+import '../../../widgets/custom_text.dart';
 import 'reward_application_viewmodel.dart';
 
 class RewardApplicationView extends StackedView<RewardApplicationViewModel> {

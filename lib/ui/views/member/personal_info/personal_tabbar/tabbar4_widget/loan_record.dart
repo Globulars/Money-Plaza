@@ -9,7 +9,7 @@ import '../../../../../widgets/app_bar.dart';
 import '../../../../../widgets/bottom_bar.dart';
 import '../../../../../widgets/common/icon_box_btn/return_button.dart';
 import '../../../../../widgets/common/icon_box_btn/submit_button.dart';
-import '../../../../../widgets/common/icon_box_btn/text.dart';
+import '../../../../../widgets/custom_text.dart';
 import '../../personal_info_viewmodel.dart';
 
 class LoanRecordView extends StackedView<PersonalInfoViewModel> {

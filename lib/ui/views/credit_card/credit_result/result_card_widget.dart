@@ -4,7 +4,7 @@ import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import '../../../../services/Models/credit_card.dart';
 import '../../../common/ui_helpers.dart';
-import '../../../widgets/common/icon_box_btn/text.dart';
+import '../../../widgets/custom_text.dart';
 import 'credit_result_viewmodel.dart';
 
 class CreditCardWiget extends ViewModelWidget<CreditResultViewModel> {
@@ -54,6 +54,7 @@ class CreditCardWiget extends ViewModelWidget<CreditResultViewModel> {
                                 fontSize: 18,
                                 maxLines: 2,
                                 textOverflow: TextOverflow.ellipsis,
+                                localization: false,
                               ),
                             ),
                           ],
@@ -92,6 +93,7 @@ class CreditCardWiget extends ViewModelWidget<CreditResultViewModel> {
                                   CustomText(
                                     text:
                                         featureItems[subIndex].name.toString(),
+                                    localization: false,
                                     color: Colors.black.withOpacity(0.6),
                                     textAlign: TextAlign.center,
                                     fontSize: 12,
@@ -99,6 +101,7 @@ class CreditCardWiget extends ViewModelWidget<CreditResultViewModel> {
                                   ),
                                   CustomText(
                                     text: "\$${featureItems[subIndex].value}",
+                                    localization: false,
                                     textAlign: TextAlign.center,
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold,
@@ -110,6 +113,7 @@ class CreditCardWiget extends ViewModelWidget<CreditResultViewModel> {
                     ),
                     CustomText(
                         text: _creditCard.advantage.toString(),
+                        localization: false,
                         color: Colors.black,
                         textAlign: TextAlign.start,
                         fontWeight: FontWeight.w400),

@@ -2,13 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import '../../common/ui_helpers.dart';
 import '../../widgets/app_bar.dart';
-import '../../widgets/bottom_bar.dart';
 import '../../widgets/common/background_image.dart';
-import '../../widgets/common/icon_box_btn/return_button.dart';
 import 'loan_viewmodel.dart';
 import 'widgets/loan_list_builder.dart';
 import 'widgets/loan_tags_list_view.dart';
-import 'package:money_plaza/ui/common/app_icons.dart';
 import 'widgets/filter_bottom_bar.dart';
 
 class ServayLoanResultView extends StackedView<LoanViewModel> {
@@ -44,7 +41,9 @@ class ServayLoanResultView extends StackedView<LoanViewModel> {
                     child: SingleChildScrollView(
                       child: Column(
                         children: [
-                          LoanListView(height: MediaQuery.of(context).size.height * 0.8,),
+                          LoanListView(
+                            height: MediaQuery.of(context).size.height * 0.8,
+                          ),
                           verticalSpaceLarge,
                         ],
                       ),

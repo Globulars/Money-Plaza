@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
+import 'package:money_plaza/ui/widgets/custom_text.dart';
 import 'package:stacked/stacked.dart';
 import 'package:money_plaza/ui/common/app_icons.dart';
 import '../../common/app_url.dart';

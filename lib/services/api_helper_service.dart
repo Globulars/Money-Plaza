@@ -21,7 +21,6 @@ class ApiHelperService {
   Map<String, String> headers = {};
 
   setLocalization(BuildContext context) {
-    log("==============================>");
     acceptLanguage = context.locale.toString() == 'zh' ? "zh-HK" : "en-US";
     headers = {
       "Accept": "application/json",

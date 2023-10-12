@@ -6,9 +6,9 @@ import 'package:money_plaza/ui/common/ui_helpers.dart';
 import 'package:stacked/stacked.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../common/app_colors.dart';
-import 'icon_box_btn_model.dart';
+import '../loan_viewmodel.dart';
 
-class IconBoxBtn extends StackedView<IconBoxBtnModel> {
+class FilterContainerBtn extends StackedView<LoanViewModel> {
   double? height;
   double? width;
   // double? imgheight;
@@ -29,8 +29,9 @@ class IconBoxBtn extends StackedView<IconBoxBtnModel> {
   double? topRightRadius;
   double? btmLeftRadius;
   double? btmRightRadius;
+  double? btmWidth;
 
-  IconBoxBtn(
+  FilterContainerBtn(
       {super.key,
       this.color,
       this.height,
@@ -50,12 +51,13 @@ class IconBoxBtn extends StackedView<IconBoxBtnModel> {
       this.topRightRadius,
       this.btmLeftRadius,
       this.btmRightRadius,
-      this.vertical});
+      this.vertical,
+      this.btmWidth});
 
   @override
   Widget builder(
     BuildContext context,
-    IconBoxBtnModel viewModel,
+    LoanViewModel viewModel,
     Widget? child,
   ) {
     return GestureDetector(
@@ -82,28 +84,32 @@ class IconBoxBtn extends StackedView<IconBoxBtnModel> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            topimage != null
-                ? Column(
-                    children: [
-                      verticalSpaceTiny,
-                      Image.asset(
-                        topimage ?? "",
-                        width: imgwidth ?? 30,
-                      )
-                    ],
-                  )
-                : Container(),
+            // topimage != null
+            //     ? Column(
+            //         children: [
+            //           verticalSpaceTiny,
+            //           Image.asset(
+            //             topimage ?? "",
+            //             width: imgwidth ?? 30,
+            //           )
+            //         ],
+            //       )
+            //     : Container(),
             text != null
                 ? Column(
                     children: [
                       verticalSpaceTiny,
-                      Text(
-                        text ?? "",
-                        style: GoogleFonts.ibmPlexSans(
-                            color: color ?? Colors.black,
-                            fontSize: fontSize ?? 14,
-                            fontWeight: fontWeight ?? FontWeight.w400),
-                      ).tr(),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 8),
+                        child: Text(
+                          text ?? "",
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.ibmPlexSans(
+                              color: color ?? Colors.black,
+                              fontSize: fontSize ?? 10,
+                              fontWeight: fontWeight ?? FontWeight.w400),
+                        ).tr(),
+                      ),
                     ],
                   )
                 : Container(),
@@ -113,7 +119,7 @@ class IconBoxBtn extends StackedView<IconBoxBtnModel> {
                       verticalSpaceTiny,
                       Image.asset(
                         btmimage ?? "",
-                        width: imgwidth??30,
+                        width: btmWidth ?? 20,
                       )
                     ],
                   )
@@ -125,8 +131,8 @@ class IconBoxBtn extends StackedView<IconBoxBtnModel> {
   }
 
   @override
-  IconBoxBtnModel viewModelBuilder(
+  LoanViewModel viewModelBuilder(
     BuildContext context,
   ) =>
-      IconBoxBtnModel();
+      LoanViewModel();
 }

@@ -2,7 +2,7 @@ import '../../loan_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import '../../../../../services/Models/schedule_loan.dart';
-import '../../../../widgets/common/icon_box_btn/text.dart';
+import '../../../../widgets/custom_text.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class ScheduleLoanBuilder extends ViewModelWidget<LoanViewModel> {

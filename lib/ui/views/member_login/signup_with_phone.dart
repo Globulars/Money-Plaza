@@ -1,6 +1,6 @@
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:money_plaza/ui/widgets/common/icon_box_btn/text.dart';
+import 'package:money_plaza/ui/widgets/custom_text.dart';
 import 'package:money_plaza/ui/widgets/loading.dart';
 import 'package:stacked/stacked.dart';
 import '../../common/app_colors.dart';
